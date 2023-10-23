@@ -1,0 +1,15 @@
+.md-typeset code {
+background-color: #000;
+}
+.md-typeset table:not([class]) th {
+  color: white !important;
+}
+input {
+  color: black;
+}
+.md-footer-copyright {
+  color: white !important;
+}
+.table.tr{
+	background-color: #000;
+}
