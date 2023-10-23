@@ -2,6 +2,7 @@
 site_name: PyStarter
 site_description: "Навчальний курс з програмування мовою Python. Необхідне."
 site_author: "Ruslan Iskov"
+site_url: "http://ruslan.rv.ua/python-essential/"
 
 use_directory_urls: false
 strict: true
@@ -10,7 +11,6 @@ strict: true
 # site_dir: '.\docs'
 # docs_dir: '.\source'
 
-site_url: '' # TODO
 
 
 
@@ -38,6 +38,7 @@ theme:
   features:
     - header.autohide
     - navigation.instant
+    - navigation.footer
     # or - navigation.tabs
     # or - navigation.tabs.sticky
     # - navigation.sections
@@ -49,14 +50,15 @@ theme:
 
 # css overrides to make high contrast theme
 extra_css:
-  - stylesheets/dark_theme.css
-  - stylesheets/codehilite.css
-  - stylesheets/fixes.css
+  - _stylesheets/dark_theme.css
+  - _stylesheets/codehilite.css
+  - _stylesheets/fixes.css
 
 
 # switch off plugins, it's for removing 'search' feature
-plugins: []
-# plugins:
+# plugins: []
+plugins:
+  - offline
  # - search
  # - awesome-pages:
    # collapse_single_pages: true
@@ -65,13 +67,9 @@ plugins: []
 extra:
   # disqus: <shortname>
   generator: false
-#   social:
-#    - type: 'github'
-#      link: 'https://github.com/squidfunk'
-#    - type: 'twitter'
-#      link: 'https://twitter.com/squidfunk'
-#    - type: 'linkedin'
-#      link: 'https://linkedin.com/in/squidfunk'
+  social:
+   - icon: fontawesome/brands/github
+     link: https://github.com/ruslan-rv-ua/pystarter
 #    search:
 #        language: 'en, ru'
     
@@ -108,3 +106,13 @@ markdown_extensions:
       custom_checkbox: false
   - pymdownx.tilde
 
+nav:
+  - Про цей курс: index.md
+  - Мова програмування Python: about_python.md
+  - 01. Підготовка:
+    - Операційна система: preparations/os.md
+    - Інтерпретатор Python: preparations/interpreter.md
+    - Засоби розробки: preparations/editor.md
+    - Перегляд коду: preparations/telecode.md
+    - Скрінрідер: preparations/screenreader.md
+    - Інтерактивний режим інтерпретатора Python: preparations/console.md
