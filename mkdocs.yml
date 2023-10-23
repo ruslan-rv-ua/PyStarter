@@ -1,0 +1,110 @@
+# Project information
+site_name: PyStarter
+site_description: "Навчальний курс з програмування мовою Python. Необхідне."
+site_author: "Ruslan Iskov"
+
+use_directory_urls: false
+strict: true
+# dev_addr: '127.0.0.1:8010'
+
+# site_dir: '.\docs'
+# docs_dir: '.\source'
+
+site_url: '' # TODO
+
+
+
+# Repository
+#repo_name: 'winter design school'
+#repo_url: 'http://ruslan.rv.ua/winter_design_school/'
+# remote_branch: master
+
+
+# Copyright
+copyright: "Copyright &copy; Ruslan Iskov <ruslan.rv.ua@gmail.com>"
+
+# Configuration
+theme:
+  name: material
+  language: uk
+  icon:
+    logo: material/language-python
+    # logo: fontawesome/brands/python
+  # favicon: fontawesome/brands/python.svg
+  palette:
+    scheme: slate # or "default"
+    primary: 'black'
+    accent: 'yellow'
+  features:
+    - header.autohide
+    - navigation.instant
+    # or - navigation.tabs
+    # or - navigation.tabs.sticky
+    # - navigation.sections
+    # - navigation.expand
+    # - toc.integrate
+    # - navigation.indexes
+    # - navigation.top # totop button
+    - navigation.prune
+
+# css overrides to make high contrast theme
+extra_css:
+  - stylesheets/dark_theme.css
+  - stylesheets/codehilite.css
+  - stylesheets/fixes.css
+
+
+# switch off plugins, it's for removing 'search' feature
+plugins: []
+# plugins:
+ # - search
+ # - awesome-pages:
+   # collapse_single_pages: true
+
+# Customization
+extra:
+  # disqus: <shortname>
+  generator: false
+#   social:
+#    - type: 'github'
+#      link: 'https://github.com/squidfunk'
+#    - type: 'twitter'
+#      link: 'https://twitter.com/squidfunk'
+#    - type: 'linkedin'
+#      link: 'https://linkedin.com/in/squidfunk'
+#    search:
+#        language: 'en, ru'
+    
+
+# Google Analytics
+# google_analytics:
+#  - 'UA-XXXXXXXX-X'
+#  - 'auto'
+
+# Extensions
+markdown_extensions:
+  # - toc:
+      # permalink: false
+      # slugify: !!python/name:pymdownx.slugs.uslugify
+      # toc_depth: 3
+  - admonition
+  # - codehilite:
+  #     guess_lang: false
+  #     css_class: codehilite
+  #     # pygments_style: agate
+  # - meta
+  # - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: false
+  - pymdownx.tilde
+
