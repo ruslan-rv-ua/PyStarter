@@ -1,0 +1,547 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python. Необхідне.">
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+        <link rel="canonical" href="http://ruslan.rv.ua/python-essential/vars_and_types/vars.html">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>Змінні - PyStarter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../_stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../_stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../_stylesheets/fixes.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PyStarter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Змінні
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg>
+
+    </a>
+    PyStarter
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Про цей курс
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Мова програмування Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../preparations/os.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Підготовка
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Змінні у Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Іменування змінних
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Використання змінних в інтерактивній консолі
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Константи
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Завдання
+  </a>
+  
+    <nav class="md-nav" aria-label="Завдання">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    Завдання 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    Завдання 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">Змінні</h1>
+<p><strong>Замість епіграфу:</strong>
+<em>Коли дружина програміста народила двійню щоб не заморочуватись він назвав дітей new_daughter1 і new_daughter2</em></p>
+<hr />
+<blockquote>
+<p><strong><em>Змінна</em></strong> (variable) — об'єкт програми, що має ім'я та значення.</p>
+</blockquote>
+<p>Усі дані у комп'ютері зберігаються у пам'яті. Щоб отримати доступ до даних нам необхідно знати де саме у пам'яті вони знаходяться.
+Пам'ять комп'ютера поділена на комірки, і кожна комірка має свій номер. Отже у якості місця у пам'яті можна вказати її номер (адрес).
+На самому початку розвитку комп'ютерної техніки люди писали програми у машиних кодах, тобто у прямих інструкціях для процесора, і місцезнаходження даних так і визначали — вказуючи їх адрес у пам'яті.
+Це була дуже кропітка і складна робота, припуститись помилки було дуже легко.
+Згодом була написана програма Асемблер (Assembler, складальник), яка отримувала програму у текстовому вигляді і перекодувала її у машині коди для процесора.
+Програма складалась з інструкцій для процесора, але вже у більш зрозумілому для людини вигляді.
+А для звернення до певної комірки пам'яті замість адреси комірки почали використовувати мнемонічні імена.
+Це набагато полегшило процес розробки програм, а правила представлення машиних команд у текстовому вигляді назвали "мова Асемблера".
+Можна сказати що мова Асемблера — це перша мова програмування.</p>
+<p>З розвитком мов програмування вони дедалі ставали усе вищого рівня, тобто такими, які ближче до людської мови ніж до команд для процесора.
+І для звернення до даних у пам'яті з'явилось таке поняття як змінна.</p>
+<p>У різних мовах програмування принципи роботи зі змінними можуть дещо відрізнятись.
+Для початку припустимось ствердження що змінна — це певне ім'я, яке ми можемо пов'язати з певними даними, і для доступу до останніх ми можемо використовувати це ім'я.</p>
+<h2 id="python">Змінні у Python</h2>
+<p>Щоб пов'язати дані з іменем використовують операцію <em>присвоєння</em>. В Python ця операція позначається знаком "дорівнює".
+Зліва від знаку "=" вказують ім'я (змінну), а праворуч — дані які треба пов'язати з цим ім'ям.
+Наприклад:</p>
+<pre><code>quantity = 7
+</code></pre>
+<p>Цей вираз означає що до даних які дорівнюють числу 7 ми будемо звертатись за ім'ям <strong>quantity</strong>.<br />
+А читається цей вираз так: <strong>"Змінній quantity присвоєно значення 7"</strong>.</p>
+<h2 id="_2">Іменування змінних</h2>
+<p>Імена змінним у Python можна давати підпорядковуючись певним правилам:</p>
+<ul>
+<li>ім'я може містити букви, цифри, символ підкреслення (_)</li>
+<li>ім'я не може починатись з цифри</li>
+<li>ім'я не може співпадати з одним з ключових слів (словами які використовуються у мові програмування Python)</li>
+<li>імена чутливі до регістру</li>
+</ul>
+<p>Список ключових слів можна дізнатись виконавши в інтерактивному режимі спеціальну команду:</p>
+<pre><code>:::python
+&gt;&gt;&gt; help('keywords')
+...
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not
+&gt;&gt;&gt;
+</code></pre>
+<p>Часто імена змінних включають у себе декілька слів. 
+Наприклад, «ім'я користувача». </p>
+<p>У різних мовах застосовують різні стилі іменування, ось основні:</p>
+<ul>
+<li>camelCase — перше слово з маленької букви, усі наступні — з великої</li>
+<li>snake_case — усі слова з маленької букви, розділяють символом підкреслення</li>
+<li>kebab-case — усі слова з маленької букви, розділяють символом дефіса</li>
+<li>PascalCase — усі слова з великої букви</li>
+</ul>
+<p>Змінні в Python іменують в стилі snake_case. 
+Усі слова — англійською мовою. </p>
+<blockquote>
+<p>user_name</p>
+</blockquote>
+<p>Серед розробників є жарт: «саме складне у програмуванні — назви змінних і інвалідація кеша». 
+Придумати назву дійсно деколи складно. 
+Як би ви назвали змінну, у якій зберігається кількість неоплачених замовлень від клієнтів, які  мають заборгованість у минулому кварталі?</p>
+<p>Але все ж намагайтесь давати змінним осмислені імена які відносяться до даних, на які вони вказують. 
+З часом, вивчаючи чужий код, ви сформуєте правильні поняття іменування.</p>
+<hr />
+<h2 id="_3">Використання змінних в інтерактивній консолі</h2>
+<p>У консолі ми вже можемо давати команди інтерпретатору присвоїти змінним певні значення.
+А щоб дізнатись значення змінної достатньо ввести її ім'я.</p>
+<p>Приклад:</p>
+<pre><code>&gt;&gt;&gt; usd_rate = 26
+&gt;&gt;&gt; usd = 10
+&gt;&gt;&gt; uah = usd_rate * usd
+&gt;&gt;&gt; uah
+260
+&gt;&gt;&gt; usd_rate
+26
+</code></pre>
+<p>У Python можна робити множинне присвоювання:</p>
+<pre><code>a = b = c = 8
+</code></pre>
+<p>Коли ми присвоюємо змінній певне значення вперше, говорять що ми <em>проініціалізували</em> змінну, а така дія називається <em>ініціалізація</em>.</p>
+<p>Щоб використовувати будь-яку змінну її треба спочатку ініціалізувати. Якщо ж ми спробуємо отримати значення непроініціалізованої змінної, то інтерпретатор повідомить нам що ми припустились помилки, або ж у термінах Python що "виникла вийняткова ситуація".
+Інформація про вияйняткову ситуацію починається рядком</p>
+<blockquote>
+<p>Traceback (most recent call last):</p>
+</blockquote>
+<p>а як правило останній рядок пояснює нам що саме спричинило вийняткову ситуацію.</p>
+<pre><code>Python 3.5.0 (v3.5.0:374f501f4567, Sep 13 2015, 02:27:37) [MSC v.1900 64bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; a
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+NameError: name 'a' is not defined
+</code></pre>
+<p>У даному випадку рядок</p>
+<blockquote>
+<p>NameError: name 'a' is not defined</p>
+</blockquote>
+<p>можна прочитати як:</p>
+<blockquote>
+<p>Помилка імені: ім'я 'a' не визначене.</p>
+</blockquote>
+<p>Тобто ми намагались отримати значення змінної <strong>a</strong> але не проініцілізували її перед цим.</p>
+<p>Детальніше про вийняткові ситуації та що з ними робити коли вони виникають ми дізнаємось у подальшому.</p>
+<h2 id="_4">Константи</h2>
+<p>Деякі дані, такі як математичні постійні, ніколи не змінюються. 
+Наприклад число "пі". 
+Наближено воно завжди дорівнє 3.14 і не може змінюватись. 
+Такі дані називають константами. </p>
+<p>В Python немає спеціального механізму для визначення констант. 
+Створення константи не відрізняється від створення змінної. 
+Але є домовленість: константи прийнято іменувати буквами у верхньому регістрі. </p>
+<pre><code>PI = 3.14159
+</code></pre>
+<h2 id="_5">Завдання</h2>
+<h3 id="1">Завдання 1</h3>
+<p>Відповідь надати у текстовому файлі у кодуванні UTF-8.  </p>
+<p>Нижче наведені імена змінних, по одному у кожному рядку.
+Помітьте на початку знаком "+" ті, які допускаються у Python, і знаком "-" які неприпустимі.</p>
+<pre><code>Apples  
+count  
+counT  
+Jane Doe  
+John_Doe  
+Python_Starter-2018  
+room42  
+room#42  
+room_42  
+call(097_123_45_67)  
+price_$5  
+keywords_of_python_3.5  
+__currency__rate  
+_  
+1st_class  
+Кількість_користувачів_з_прізвищем_Непийпиво  
+ім'я_користувача
+</code></pre>
+<h3 id="2">Завдання 2</h3>
+<p>Відповідь надати у текстовому файлі у кодуванні UTF-8.  </p>
+<p>Створіть дві змінні з іменами «перше число» і «друге число» англійською мовою використовуючи snake_case.  Запишіть у першу змінну число 20, 
+у другу — -100. </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Ruslan Iskov <ruslan.rv.ua@gmail.com>
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ruslan-rv-ua/pystarter" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>

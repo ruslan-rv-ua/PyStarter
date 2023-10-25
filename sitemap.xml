@@ -2,42 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://ruslan.rv.ua/python-essential/index.html</loc>
-         <lastmod>2023-10-23</lastmod>
+         <lastmod>2023-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/python-essential/about_python.html</loc>
-         <lastmod>2023-10-23</lastmod>
+         <lastmod>2023-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/python-essential/preparations/console.html</loc>
-         <lastmod>2023-10-23</lastmod>
+         <lastmod>2023-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/python-essential/preparations/editor.html</loc>
-         <lastmod>2023-10-23</lastmod>
+         <lastmod>2023-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/python-essential/preparations/interpreter.html</loc>
-         <lastmod>2023-10-23</lastmod>
+         <lastmod>2023-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/python-essential/preparations/os.html</loc>
-         <lastmod>2023-10-23</lastmod>
+         <lastmod>2023-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/python-essential/preparations/screenreader.html</loc>
-         <lastmod>2023-10-23</lastmod>
+         <lastmod>2023-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/python-essential/preparations/telecode.html</loc>
-         <lastmod>2023-10-23</lastmod>
+         <lastmod>2023-10-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://ruslan.rv.ua/python-essential/source_code/comments.html</loc>
+         <lastmod>2023-10-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://ruslan.rv.ua/python-essential/source_code/print.html</loc>
+         <lastmod>2023-10-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://ruslan.rv.ua/python-essential/source_code/run_program.html</loc>
+         <lastmod>2023-10-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://ruslan.rv.ua/python-essential/source_code/source_code.html</loc>
+         <lastmod>2023-10-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://ruslan.rv.ua/python-essential/vars_and_types/numbers.html</loc>
+         <lastmod>2023-10-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://ruslan.rv.ua/python-essential/vars_and_types/problems.html</loc>
+         <lastmod>2023-10-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://ruslan.rv.ua/python-essential/vars_and_types/statement_and_expression.html</loc>
+         <lastmod>2023-10-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://ruslan.rv.ua/python-essential/vars_and_types/types.html</loc>
+         <lastmod>2023-10-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://ruslan.rv.ua/python-essential/vars_and_types/vars.html</loc>
+         <lastmod>2023-10-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
