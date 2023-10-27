@@ -1,8 +1,8 @@
 # Project information
 site_name: PyStarter
 site_description: "Навчальний курс з програмування мовою Python. Необхідне."
-site_author: "Ruslan Iskov"
-site_url: "http://ruslan.rv.ua/python-essential/"
+site_author : "Ruslan Iskov"
+site_url: ""
 
 use_directory_urls: false
 strict: true
@@ -108,6 +108,7 @@ markdown_extensions:
 
 nav:
   - Про цей курс: index.md
+  - Міфи про навчання: miths_about_education.md
   - Мова програмування Python: about_python.md
   - 01. Підготовка:
     - Операційна система: preparations/os.md
@@ -116,3 +117,14 @@ nav:
     - Перегляд коду: preparations/telecode.md
     - Скрінрідер: preparations/screenreader.md
     - Інтерактивний режим інтерпретатора Python: preparations/console.md
+  - 02. Типи даних. Змінні:
+    - Типи даних: vars_and_types/types.md
+    # - Числа: vars_and_types/numbers.md
+    # - Змінні: vars_and_types/vars.md
+    # - Вирази та інструкції: vars_and_types/statement_and_expression.md
+    ### - Завдання: vars_and_types/problems.md
+  - 03. Python-програми:
+    - Початковий код: source_code/source_code.md
+    # - Виконання програм: source_code/run_program.md
+    # - Вивід результатів: source_code/print.md
+    # - Коментарі: source_code/comments.md

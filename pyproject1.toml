@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "pystarter"
+version = "0.1.0"
+description = "Website for \"PyStarter\" programming course for visually impaired."
+authors = ["Ruslan Iskov <ruslan.rv.ua@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs-material = "^9.4.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
