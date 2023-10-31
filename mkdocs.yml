@@ -2,7 +2,7 @@
 site_name: PyStarter
 site_description: "Навчальний курс з програмування мовою Python. Необхідне."
 site_author : "Ruslan Iskov"
-site_url: ""
+site_url: "http://ruslan.rv.ua/PyStarter"
 
 use_directory_urls: false
 strict: true
@@ -128,3 +128,71 @@ nav:
     # - Виконання програм: source_code/run_program.md
     # - Вивід результатів: source_code/print.md
     # - Коментарі: source_code/comments.md
+  - 04. Символьні рядки:
+    - Тип даних str: strings/strings.md
+    # - Екрановані послідовності: strings/escapes.md
+    # - Операції над символьлними рядками: strings/strings_operations.md
+    # - Витяг символів: strings/indexing.md
+  - 05. Функції:
+    - Виклик функцій: functions/functions.md
+    # - Функції та вирази: functions/functions_exprs.md
+    # - Перетворення типів: functions/types_convertion.md
+  - 06. Логіка:
+    - Тип даних bool: bool_logic/bool.md
+    # - Логічні вирази: bool_logic/bool_expressions.md
+  # - 07. Розгалуження:
+  #   - Інструкція if: if/if_statement.md
+  #   - Інструкція else: if/else_statement.md
+  #   - Інструкція elif: if/elif_statement.md
+  #   - Тернарні умовні вирази: if/ternar_if.md
+  # - 08. Створення функцій:
+  #   - Функції у програмуванні: functions_def/functions_explained.md
+  #   - Визначення функцій: functions_def/functions_def.md
+  #   - Локальні та глобальні змінні: functions_def/local_global_vars.md
+  #   - Параметри і аргументи: functions_def/functions_params.md
+  #   - Повернення значень: functions_def/functions_return.md
+  #   - Іменування функцій: functions_def/functions_naming.md
+  # - 09. Цикли:
+  #   - Цикли у програмуванні: loop_while/loops.md
+  #   - Інструкція while: loop_while/while.md
+  #   - Синтаксичний цукор: loop_while/syntactic_sugar.md
+  #   - Прийоми використання циклів: loop_while/usage.md
+  # - 10. Послідовності:
+  #   - Тип даних list: sequences/list.md
+  #   - Тип даних tuple: sequences/tuple.md
+  #   - Вкладені структури даних: sequences/complex_structures.md
+  #   - Послідовності в Python: sequences/sequences.md
+  # - 11. Об'єкти в Python:
+  #   - Об'єкти і змінні: objects/objects_and_vars.md
+  #   - Мутабельність: objects/mutability.md
+  #   - Немутабельні винятки: objects/immutable_exceptions.md
+  #   - Посилання у контейнерах: objects/containers_bindings.md
+  # - 12. Цикли 2:
+  #   - Цик   л for: loop_for/for.md
+  #   - Тип даних range: loop_for/range.md
+  #   - Прийоми використання for: loop_for/usage.md
+  #   - Керування циклами: loop_for/loop_flow.md
+  # - 13. Методи:
+  #   - Методи в Python: methods/methods.md
+  #   - Методи символьних рядків: methods_str/str_methods.md
+  #   - Форматування символьних рядків: methods_str/str_format.md
+  # - 14. Методи списків: 
+  #   - Методи списків: methods_list/list_methods.md
+  #   - Структура даних "стек": methods_list/stack.md
+  # - 15. Словники:
+  #   - Тип даних dict: dict/dict.md
+  #   - Методи словників: dict/dict_methods.md
+  #   - Обхід словників: dict/dict_traversal.md
+  # - 16. Файли:
+  #   - Кодування текстової інформації: text_files/unicode.md
+  #   - Текстові файли: text_files/open_close_flush.md
+  #   - Читання і запис текстових файлів: text_files/read_write.md
+  # - 17. Модулі:
+  #   - Модулі в Python: modules/modules.md
+  #   - Використання модулів: modules/module_usage.md
+  #   - Створення модулів: modules/module_composing.md
+  #   # - math: modules/math_module.md
+  #   - Модуль random: modules/random_module.md
+  #   - Модуль pprint: modules/pprint_module.md
+  # - Дзен: zen.md
+  # - "Що далі?": next_steps.md
