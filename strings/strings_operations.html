@@ -12,13 +12,9 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/source_code/source_code.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/strings/strings_operations.html">
       
       
-        <link rel="prev" href="../vars_and_types/types.html">
-      
-      
-        <link rel="next" href="../strings/strings.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +22,7 @@
     
     
       
-        <title>Початковий код - PyStarter</title>
+        <title>Операції над символьними рядками - PyStarter</title>
       
     
     
@@ -121,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Початковий код
+              Операції над символьними рядками
             
           </span>
         </div>
@@ -148,8 +144,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -306,109 +300,34 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
+  
+  
+    <a href="../source_code/source_code.html" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     03. Python-програми
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            03. Python-програми
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Початковий код
-  </span>
+    </a>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="source_code.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Початковий код
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Зміст">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Оформлення початкового коду
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -432,7 +351,7 @@
         
   
   
-    <a href="../strings/strings.html" class="md-nav__link">
+    <a href="strings.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -533,9 +452,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -546,21 +463,6 @@
   
     
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Оформлення початкового коду
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -575,37 +477,51 @@
                   
 
 
-<h1 id="_1">Початковий код</h1>
-<p><strong>Початковий код</strong> (англ. <em>source code</em>; також перекладається українською як
-<strong>вихідний код</strong>, <strong>програмний код</strong>, <strong>джерельний код</strong>, <strong>первинний код</strong>,
-<strong>текст програми</strong>, у професійному середовищі також <strong>сирцевий код</strong>,
-у контексті <em>код</em> або <em>сирці</em>) — будь-який набір інструкцій
-у формі, що її може прочитати і модифікувати людина. 
-Початковий код 
-дозволяє програмісту вивчати і змінювати роботу програми в найбільш 
-зручний для людини спосіб.</p>
-<p>Початковий код програми — це набір файлів або інших джерел,
-потрібних для перетворення з форми,
-доступної для читання людині,
-на деякі види комп'ютерного виконуваного коду.
-Можливі два напрямки виконання початкового коду: 
-транслюється у машинний код або байт-код за допомогою *компілятора,
-призначеного для певної комп'ютерної архітектури,
-або виконується порядково безпосередньо за текстом за допомогою інтерпретатора.</p>
-<p>Початковий код на Python зберігають у файлах у форматі простого текста (plain text) 
-у кодуванні UTF-8 (рекомендується).
-Назва файлу як правило закінчується на ".py" 
-(у світі Windows це називають <em>розширенням</em> або <em>типом</em> файлу).</p>
-<p>Кожну інструкцію програми записують в окремому рядку редактора. 
-Є можливість в одному рядку записати декілька інструкій, у такому випадку інструкії розділяють символом <code>крапка з комою</code>, 
-але такий спосіб вкрай не рекомендується.</p>
-<h2 id="_2">Оформлення початкового коду</h2>
-<p>Актуальні рекомедації щодо оформлення початкового коду на Python можна знайти у наступному документі:<br />
-<a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a></p>
+<h1 id="_1">Операції над символьними рядками</h1>
+<p>В Python над двома string можна виконати операцію,
+яка позначається знаком "+". 
+Однак, на відміну від чисел, виконується не додавання
+(для рядків це принципово неможливо),
+а з'єднання, тобто у кінець однієї послідовності символів додається інша. 
+Інша назва операції з'єднання послідовностей — <em>"конкатенація"</em>.</p>
+<pre><code>:::python
+&gt;&gt;&gt; 'Sun' + 'day'
+'Sunday'
+&gt;&gt;&gt;
+&gt;&gt;&gt; fruit = 'apple'
+&gt;&gt;&gt; fruit = 'big ' + fruit
+&gt;&gt;&gt; fruit
+'big apple'
+&gt;&gt;&gt;
+&gt;&gt;&gt; r = 'Romeo'
+&gt;&gt;&gt; j = 'Juliette'
+&gt;&gt;&gt; love = r + '+' + j
+&gt;&gt;&gt; love
+'Romeo+Juliette'
+&gt;&gt;&gt;
+</code></pre>
+<p>В Python з string можна виконати операцію повторення символьного рядка. 
+Позначається вона знаком "зірочка" 
+(так само як операція множення для чисел) і називається <em>"мультиплікація"</em>. 
+З одного боку від знака "*" розташовується символьний рядок, а з іншого — ціле число,
+яке визначає кількість повторів. </p>
+<pre><code>:::python
+&gt;&gt;&gt; '.' * 3
+'...'
+&gt;&gt;&gt; 5 * '-'
+'-----'
+&gt;&gt;&gt;
+</code></pre>
+<p>У мультиплікації пріорітет вище ніж у конкатенації:</p>
+<pre><code>:::python
+&gt;&gt;&gt; title = "It's a " + "Mad " *4 + "World"
+&gt;&gt;&gt; print(title)
+It's a Mad Mad Mad Mad World
+&gt;&gt;&gt;
+</code></pre>
+<p>Зауважте: вирази, які містять операції конкатенація і мультиплікація в результаті призводять до значення типу даних <code>str</code>.</p>
 
 
-
-  
 
 
 
@@ -620,46 +536,6 @@
       
         <footer class="md-footer">
   
-    
-      
-        
-      
-      <nav class="md-footer__inner md-grid" aria-label="Футер" >
-        
-          
-          <a href="../vars_and_types/types.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Типи даних">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Назад
-              </span>
-              <div class="md-ellipsis">
-                Типи даних
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../strings/strings.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Тип даних str">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Вперед
-              </span>
-              <div class="md-ellipsis">
-                Тип даних str
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">

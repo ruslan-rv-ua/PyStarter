@@ -12,13 +12,9 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/source_code/source_code.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/bool_logic/bool_expressions.html">
       
       
-        <link rel="prev" href="../vars_and_types/types.html">
-      
-      
-        <link rel="next" href="../strings/strings.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +22,7 @@
     
     
       
-        <title>Початковий код - PyStarter</title>
+        <title>Bool expressions - PyStarter</title>
       
     
     
@@ -121,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Початковий код
+              Bool expressions
             
           </span>
         </div>
@@ -148,8 +144,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -306,109 +300,34 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
+  
+  
+    <a href="../source_code/source_code.html" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     03. Python-програми
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            03. Python-програми
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Початковий код
-  </span>
+    </a>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="source_code.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Початковий код
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Зміст">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Оформлення початкового коду
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -506,7 +425,7 @@
         
   
   
-    <a href="../bool_logic/bool.html" class="md-nav__link">
+    <a href="bool.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -533,9 +452,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -543,8 +460,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Зміст">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -554,8 +469,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Порівняння значень
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Оформлення початкового коду
+    Входження рядка в інший рядок
   </a>
   
 </li>
@@ -575,37 +497,133 @@
                   
 
 
-<h1 id="_1">Початковий код</h1>
-<p><strong>Початковий код</strong> (англ. <em>source code</em>; також перекладається українською як
-<strong>вихідний код</strong>, <strong>програмний код</strong>, <strong>джерельний код</strong>, <strong>первинний код</strong>,
-<strong>текст програми</strong>, у професійному середовищі також <strong>сирцевий код</strong>,
-у контексті <em>код</em> або <em>сирці</em>) — будь-який набір інструкцій
-у формі, що її може прочитати і модифікувати людина. 
-Початковий код 
-дозволяє програмісту вивчати і змінювати роботу програми в найбільш 
-зручний для людини спосіб.</p>
-<p>Початковий код програми — це набір файлів або інших джерел,
-потрібних для перетворення з форми,
-доступної для читання людині,
-на деякі види комп'ютерного виконуваного коду.
-Можливі два напрямки виконання початкового коду: 
-транслюється у машинний код або байт-код за допомогою *компілятора,
-призначеного для певної комп'ютерної архітектури,
-або виконується порядково безпосередньо за текстом за допомогою інтерпретатора.</p>
-<p>Початковий код на Python зберігають у файлах у форматі простого текста (plain text) 
-у кодуванні UTF-8 (рекомендується).
-Назва файлу як правило закінчується на ".py" 
-(у світі Windows це називають <em>розширенням</em> або <em>типом</em> файлу).</p>
-<p>Кожну інструкцію програми записують в окремому рядку редактора. 
-Є можливість в одному рядку записати декілька інструкій, у такому випадку інструкії розділяють символом <code>крапка з комою</code>, 
-але такий спосіб вкрай не рекомендується.</p>
-<h2 id="_2">Оформлення початкового коду</h2>
-<p>Актуальні рекомедації щодо оформлення початкового коду на Python можна знайти у наступному документі:<br />
-<a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a></p>
+  <h1>Bool expressions</h1>
+
+<p>Як і інші типи даних <code>bool</code> має свій набір операцій з даними цього типу.</p>
+<p>Оператор <code>not</code> (логічне "заперечення") змінює логічне значення на протилежне:</p>
+<pre><code>:::python
+&gt;&gt;&gt; not True
+False
+&gt;&gt;&gt; not not False
+False
+&gt;&gt;&gt;
+</code></pre>
+<p>Зауважте: оператор <code>not</code> працює лише з одним операндом, подібно як оператор зміни знаку для чисел. 
+Такі оператори називають <strong><em>"унарними"</em></strong>.</p>
+<p>Оператор <code>and</code> (логічне "І", логічне множення) повертає <code>True</code> тоді і лише тоді, 
+коли обидва його операнди мають значення <code>True</code>:</p>
+<pre><code>:::python
+&gt;&gt;&gt; True and True
+True
+&gt;&gt;&gt; True and False
+False
+&gt;&gt;&gt; False and False
+False
+&gt;&gt;&gt;
+</code></pre>
+<p>У <code>not</code> пріорітет вище ніж у <code>and</code>:</p>
+<pre><code>:::python
+&gt;&gt;&gt; True and not True
+False
+&gt;&gt;&gt;
+</code></pre>
+<p>Оператор <code>or</code> (логічне "АБО", логічне додавання) повертає <code>False</code> тоді і лише тоді, 
+коли обидва його операнди мають значення <code>False</code>:</p>
+<pre><code>:::python
+&gt;&gt;&gt; True or False
+True
+&gt;&gt;&gt; True or True
+True
+&gt;&gt;&gt; False or False
+False
+&gt;&gt;&gt;
+</code></pre>
+<p>У <code>and</code> пріорітет вище ніж у <code>and</code>.</p>
+<pre><code>:::python
+&gt;&gt;&gt; not False or True and False
+True
+&gt;&gt;&gt;
+</code></pre>
+<p>Вищенаведені операції проводились над даними типу <code>bool</code> і давали значення теж типу <code>bool</code>.</p>
+<h2 id="_1">Порівняння значень</h2>
+<p>Дані різних типів даних можна порівнювати між собою. </p>
+<table>
+<thead>
+<tr>
+<th>операція</th>
+<th>результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a == b</td>
+<td>True якщо значення a дорівнює значенню b, False в інших випадках</td>
+</tr>
+<tr>
+<td>a != b</td>
+<td>True якщо значення a не дорівнює значенню b, False в інших випадках</td>
+</tr>
+<tr>
+<td>a &gt; b</td>
+<td>True якщо значення a більше ніж значенню b, False в інших випадках</td>
+</tr>
+<tr>
+<td>a &gt;= b</td>
+<td>True якщо значення a більше ніж значенню b або дорівнює йому, False в інших випадках</td>
+</tr>
+<tr>
+<td>a &lt; b</td>
+<td>True якщо значення a меньше ніж значенню b, False в інших випадках</td>
+</tr>
+<tr>
+<td>a &lt;= b</td>
+<td>True якщо значення a меньше ніж значенню b або дорівнює йому, False в інших випадках</td>
+</tr>
+</tbody>
+</table>
+<p>Приклади:</p>
+<pre><code>:::python
+&gt;&gt;&gt; 5 == 5
+True
+&gt;&gt;&gt; 5 &gt;= 5
+True
+&gt;&gt;&gt; 5 != 'five'
+True
+&gt;&gt;&gt; s = 'Hi'
+&gt;&gt;&gt; s == 'Hi'
+True
+&gt;&gt;&gt; s + '!' == 'Hi'
+False
+&gt;&gt;&gt;
+</code></pre>
+<p>Зауважте: ми проводили порівняння значень різних типів. 
+Але операції порівняння завжди повертають значення типу <code>bool</code>.</p>
+<h2 id="_2">Входження рядка в інший рядок</h2>
+<p>За допомогою логічного оператора <code>in</code> можна перевірити чи входить 
+один символьний рядок в інший:</p>
+<pre><code>:::python
+&gt;&gt;&gt; s = 'Hello Jane'
+&gt;&gt;&gt; 'H' in s
+True
+&gt;&gt;&gt; 'Jane' in s
+True
+&gt;&gt;&gt; 'Jane!' in s + '!'
+True
+&gt;&gt;&gt; '' in s
+True
+&gt;&gt;&gt; 'John' in s
+False
+&gt;&gt;&gt;
+</code></pre>
+<p>А оператор <code>not in</code> повертає <code>True</code> якщо один рядок не входить в інший:</p>
+<pre><code>:::python
+&gt;&gt;&gt; 'John' not in "Hello Jane"
+True
+&gt;&gt;&gt;
+</code></pre>
+<p>Зауважте: <code>not in</code> — це один оператор.</p>
 
 
-
-  
 
 
 
@@ -620,46 +638,6 @@
       
         <footer class="md-footer">
   
-    
-      
-        
-      
-      <nav class="md-footer__inner md-grid" aria-label="Футер" >
-        
-          
-          <a href="../vars_and_types/types.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Типи даних">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Назад
-              </span>
-              <div class="md-ellipsis">
-                Типи даних
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../strings/strings.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Тип даних str">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Вперед
-              </span>
-              <div class="md-ellipsis">
-                Тип даних str
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">

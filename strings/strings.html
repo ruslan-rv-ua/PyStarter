@@ -12,13 +12,13 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/source_code/source_code.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/strings/strings.html">
       
       
-        <link rel="prev" href="../vars_and_types/types.html">
+        <link rel="prev" href="../source_code/source_code.html">
       
       
-        <link rel="next" href="../strings/strings.html">
+        <link rel="next" href="../functions/functions.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Початковий код - PyStarter</title>
+        <title>Тип даних str - PyStarter</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#str" class="md-skip">
           Перейти до змісту
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Початковий код
+              Тип даних str
             
           </span>
         </div>
@@ -148,8 +148,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -306,6 +304,43 @@
       
   
   
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../source_code/source_code.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    03. Python-програми
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -319,24 +354,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    03. Python-програми
+    04. Символьні рядки
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            03. Python-програми
+            04. Символьні рядки
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -359,18 +394,18 @@
           
   
   <span class="md-ellipsis">
-    Початковий код
+    Тип даних str
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="source_code.html" class="md-nav__link md-nav__link--active">
+      <a href="strings.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Початковий код
+    Тип даних str
   </span>
   
 
@@ -392,8 +427,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Оформлення початкового коду
+  <a href="#_1" class="md-nav__link">
+    Рядки у потрійних лапках чи апострофах
   </a>
   
 </li>
@@ -409,43 +444,6 @@
             
           </ul>
         </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../strings/strings.html" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    04. Символьні рядки
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
       
     </li>
   
@@ -533,9 +531,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -554,8 +550,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Оформлення початкового коду
+  <a href="#_1" class="md-nav__link">
+    Рядки у потрійних лапках чи апострофах
   </a>
   
 </li>
@@ -575,37 +571,50 @@
                   
 
 
-<h1 id="_1">Початковий код</h1>
-<p><strong>Початковий код</strong> (англ. <em>source code</em>; також перекладається українською як
-<strong>вихідний код</strong>, <strong>програмний код</strong>, <strong>джерельний код</strong>, <strong>первинний код</strong>,
-<strong>текст програми</strong>, у професійному середовищі також <strong>сирцевий код</strong>,
-у контексті <em>код</em> або <em>сирці</em>) — будь-який набір інструкцій
-у формі, що її може прочитати і модифікувати людина. 
-Початковий код 
-дозволяє програмісту вивчати і змінювати роботу програми в найбільш 
-зручний для людини спосіб.</p>
-<p>Початковий код програми — це набір файлів або інших джерел,
-потрібних для перетворення з форми,
-доступної для читання людині,
-на деякі види комп'ютерного виконуваного коду.
-Можливі два напрямки виконання початкового коду: 
-транслюється у машинний код або байт-код за допомогою *компілятора,
-призначеного для певної комп'ютерної архітектури,
-або виконується порядково безпосередньо за текстом за допомогою інтерпретатора.</p>
-<p>Початковий код на Python зберігають у файлах у форматі простого текста (plain text) 
-у кодуванні UTF-8 (рекомендується).
-Назва файлу як правило закінчується на ".py" 
-(у світі Windows це називають <em>розширенням</em> або <em>типом</em> файлу).</p>
-<p>Кожну інструкцію програми записують в окремому рядку редактора. 
-Є можливість в одному рядку записати декілька інструкій, у такому випадку інструкії розділяють символом <code>крапка з комою</code>, 
-але такий спосіб вкрай не рекомендується.</p>
-<h2 id="_2">Оформлення початкового коду</h2>
-<p>Актуальні рекомедації щодо оформлення початкового коду на Python можна знайти у наступному документі:<br />
-<a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a></p>
+<h1 id="str">Символьні рядки (str)</h1>
+<p>Символьний рядок (або просто рядок, string) — це упорядкована послідовність символів яку використовують для зберігання та представлення текстової інформації.</p>
+<p>Щоб створити рядок символи треба заключити у лапки або апострофи.</p>
+<pre><code>&gt;&gt;&gt; s = 'To be or not to be'
+&gt;&gt;&gt; s
+'To be or not to be'
+&gt;&gt;&gt; s = "Основи програмування на Python"
+&gt;&gt;&gt; s
+'Основи програмування на Python'
+&gt;&gt;&gt;
+</code></pre>
+<p>Якщо рядок містить, наприклад, лапки, тоді його треба заключити в апострофи і навпаки:</p>
+<pre><code>&gt;&gt;&gt; 'Вона сказала: "Нехай щастить"'
+'Вона сказала: "Нехай щастить"'
+&gt;&gt;&gt; phrase = "It's cool!"
+&gt;&gt;&gt; phrase
+"It's cool!"
+&gt;&gt;&gt;
+</code></pre>
+<p>Ви помітили що інтерпретатор виводить значення рядкових змінних саме так, як ми їх визначили? Тобто разом з лапками у які ми заключили символи:</p>
+<pre><code>"It's cool!"
+</code></pre>
+<p>Щоб Python показав "справжній" рядок, лише символи які у ньому містяться, необхідно написати <em>print</em> і зразу ж за цим словом у круглих дужках вказати рядок чи змінну яка на нього посилається:</p>
+<pre><code>&gt;&gt;&gt; phrase = "It's cool!"
+&gt;&gt;&gt; print(phrase)
+It's cool!
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="_1">Рядки у потрійних лапках чи апострофах</h3>
+<p>Якщо треба визначити блок тексту який складається з декількох рядків, тоді такі послідовності символів заключають у потрйні лапки чи апострофи. 
+Причому ми маємо змогу вільно користуватись звичайними лапками чи апострофами усередині таких блоків:</p>
+<pre><code>&gt;&gt;&gt; s = '''рядок 1
+... it's cool
+... рядок 3'''
+&gt;&gt;&gt; print(s)
+рядок 1
+it's cool
+рядок 3
+&gt;&gt;&gt; s
+"рядок 1\nit's cool\nрядок 3"
+&gt;&gt;&gt;
+</code></pre>
 
 
-
-  
 
 
 
@@ -622,12 +631,10 @@
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Футер" >
         
           
-          <a href="../vars_and_types/types.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Типи даних">
+          <a href="../source_code/source_code.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Початковий код">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -637,20 +644,20 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                Типи даних
+                Початковий код
               </div>
             </div>
           </a>
         
         
           
-          <a href="../strings/strings.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Тип даних str">
+          <a href="../functions/functions.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Виклик функцій">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Тип даних str
+                Виклик функцій
               </div>
             </div>
             <div class="md-footer__button md-icon">
