@@ -57,11 +57,13 @@ number1 = 20
 	
 При спробі запустити її отримаємо:
 
-	  File "...\example.py", line 2
-		number2 =
-				^
-	SyntaxError: invalid syntax
-	>>>
+```python
+	File "...\example.py", line 2
+	number2 =
+			^
+SyntaxError: invalid syntax
+>>>
+```
 
 Інтерпретатор вказав, що помилка синтаксу у файлі `example.py` у рядку номер 2. 
 Також вказано місце помилки. 
@@ -70,8 +72,8 @@ number1 = 20
 Завжди зберігайте початковий код у кодуванні `UTF-8`. 
 Використання інших кодувань текста також може призводити до синтаксичних помилок:
 
-	:::python
-	SyntaxError: Non-UTF-8 code starting with '\xcf' in file example2.py on line 1, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
-	>>>
-	
+```python
+SyntaxError: Non-UTF-8 code starting with '\xcf' in file example2.py on line 1, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+>>>
+```
 	

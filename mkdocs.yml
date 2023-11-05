@@ -119,24 +119,24 @@ nav:
     - Інтерактивний режим інтерпретатора Python: preparations/console.md
   - 02. Типи даних. Змінні:
     - Типи даних: vars_and_types/types.md
-    # - Числа: vars_and_types/numbers.md
-    # - Змінні: vars_and_types/vars.md
-    # - Вирази та інструкції: vars_and_types/statement_and_expression.md
+    - Числа: vars_and_types/numbers.md
+    - Змінні: vars_and_types/vars.md
+    - Вирази та інструкції: vars_and_types/statement_and_expression.md
     ### - Завдання: vars_and_types/problems.md
   - 03. Python-програми:
     - Початковий код: source_code/source_code.md
-    # - Виконання програм: source_code/run_program.md
-    # - Вивід результатів: source_code/print.md
-    # - Коментарі: source_code/comments.md
+    - Виконання програм: source_code/run_program.md
+    - Вивід результатів: source_code/print.md
+    - Коментарі: source_code/comments.md
   - 04. Символьні рядки:
     - Тип даних str: strings/strings.md
-    # - Екрановані послідовності: strings/escapes.md
-    # - Операції над символьлними рядками: strings/strings_operations.md
-    # - Витяг символів: strings/indexing.md
+    - Екрановані послідовності: strings/escapes.md
+    - Операції над символьними рядками: strings/strings_operations.md
+    - Індексація: strings/indexing.md
   - 05. Функції:
     - Виклик функцій: functions/functions.md
-    # - Функції та вирази: functions/functions_exprs.md
-    # - Перетворення типів: functions/types_convertion.md
+    - Функції та вирази: functions/functions_exprs.md
+    - Перетворення типів: functions/types_convertion.md
   - 06. Логіка:
     - Тип даних bool: bool_logic/bool.md
     # - Логічні вирази: bool_logic/bool_expressions.md

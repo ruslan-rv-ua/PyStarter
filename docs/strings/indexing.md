@@ -9,7 +9,6 @@
 
 Щоб звернутись до окремого символа по його індексу вказують символьний рядок і одразу ж у квадратних дужках індекс символа:
 
-	:::python
 	>>> 'hello'[0]
 	'h'
 	>>> s = '12345'
@@ -19,7 +18,6 @@
 
 Виходити за межі string не можна:
 
-	:::python
 	>>> s[5]
 	Traceback (most recent call last):
 	  File "<stdin>", line 1, in <module>
@@ -33,7 +31,6 @@
 Якщо вказувати від'ємні індекси, то відлік буде вестись не з початку string, а з його кінця. 
 Останній по порядку символ має індекс -1:
 
-	:::python
 	>>> s[-1]
 	'5'
 	>>> s[-5]
@@ -42,6 +39,15 @@
 	Traceback (most recent call last):
 	  File "<stdin>", line 1, in <module>
 	IndexError: string index out of range
+	>>>
+
+Індексами можуть бути лише цілі числа:
+
+	>>> index = 4 / 2
+	>>> '123'[index]
+	Traceback (most recent call last):
+	File "<stdin>", line 1, in <module>
+	TypeError: string indices must be integers, not 'float'
 	>>>
 
 ## Зрізання (slice)
