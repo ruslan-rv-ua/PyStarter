@@ -501,8 +501,7 @@
 
 <p>Як і інші типи даних <code>bool</code> має свій набір операцій з даними цього типу.</p>
 <p>Оператор <code>not</code> (логічне "заперечення") змінює логічне значення на протилежне:</p>
-<pre><code>:::python
-&gt;&gt;&gt; not True
+<pre><code>&gt;&gt;&gt; not True
 False
 &gt;&gt;&gt; not not False
 False
@@ -512,8 +511,7 @@ False
 Такі оператори називають <strong><em>"унарними"</em></strong>.</p>
 <p>Оператор <code>and</code> (логічне "І", логічне множення) повертає <code>True</code> тоді і лише тоді, 
 коли обидва його операнди мають значення <code>True</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; True and True
+<pre><code>&gt;&gt;&gt; True and True
 True
 &gt;&gt;&gt; True and False
 False
@@ -522,15 +520,13 @@ False
 &gt;&gt;&gt;
 </code></pre>
 <p>У <code>not</code> пріорітет вище ніж у <code>and</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; True and not True
+<pre><code>&gt;&gt;&gt; True and not True
 False
 &gt;&gt;&gt;
 </code></pre>
 <p>Оператор <code>or</code> (логічне "АБО", логічне додавання) повертає <code>False</code> тоді і лише тоді, 
 коли обидва його операнди мають значення <code>False</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; True or False
+<pre><code>&gt;&gt;&gt; True or False
 True
 &gt;&gt;&gt; True or True
 True
@@ -538,9 +534,8 @@ True
 False
 &gt;&gt;&gt;
 </code></pre>
-<p>У <code>and</code> пріорітет вище ніж у <code>and</code>.</p>
-<pre><code>:::python
-&gt;&gt;&gt; not False or True and False
+<p>У <code>and</code> пріорітет вище ніж у <code>or</code>.</p>
+<pre><code>&gt;&gt;&gt; not False or True and False
 True
 &gt;&gt;&gt;
 </code></pre>
@@ -582,8 +577,7 @@ True
 </tbody>
 </table>
 <p>Приклади:</p>
-<pre><code>:::python
-&gt;&gt;&gt; 5 == 5
+<pre><code>&gt;&gt;&gt; 5 == 5
 True
 &gt;&gt;&gt; 5 &gt;= 5
 True
@@ -601,8 +595,7 @@ False
 <h2 id="_2">Входження рядка в інший рядок</h2>
 <p>За допомогою логічного оператора <code>in</code> можна перевірити чи входить 
 один символьний рядок в інший:</p>
-<pre><code>:::python
-&gt;&gt;&gt; s = 'Hello Jane'
+<pre><code>&gt;&gt;&gt; s = 'Hello Jane'
 &gt;&gt;&gt; 'H' in s
 True
 &gt;&gt;&gt; 'Jane' in s
@@ -616,8 +609,7 @@ False
 &gt;&gt;&gt;
 </code></pre>
 <p>А оператор <code>not in</code> повертає <code>True</code> якщо один рядок не входить в інший:</p>
-<pre><code>:::python
-&gt;&gt;&gt; 'John' not in "Hello Jane"
+<pre><code>&gt;&gt;&gt; 'John' not in "Hello Jane"
 True
 &gt;&gt;&gt;
 </code></pre>
