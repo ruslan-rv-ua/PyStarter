@@ -36,6 +36,7 @@ theme:
     primary: 'black'
     accent: 'yellow'
   features:
+    - content.code.copy
     - header.autohide
     - navigation.instant
     - navigation.footer
@@ -139,14 +140,14 @@ nav:
     - Перетворення типів: functions/types_convertion.md
   - 06. Логіка:
     - Тип даних bool: bool_logic/bool.md
-    # - Логічні вирази: bool_logic/bool_expressions.md
-  # - 07. Розгалуження:
-  #   - Інструкція if: if/if_statement.md
-  #   - Інструкція else: if/else_statement.md
-  #   - Інструкція elif: if/elif_statement.md
-  #   - Тернарні умовні вирази: if/ternar_if.md
-  # - 08. Створення функцій:
-  #   - Функції у програмуванні: functions_def/functions_explained.md
+    - Логічні вирази: bool_logic/bool_expressions.md
+  - 07. Розгалуження:
+    - Інструкція if: if/if_statement.md
+    - Інструкція else: if/else_statement.md
+    - Інструкція elif: if/elif_statement.md
+    - Тернарні умовні вирази: if/ternar_if.md
+  - 08. Створення функцій:
+    - Функції у програмуванні: functions_def/functions_explained.md
   #   - Визначення функцій: functions_def/functions_def.md
   #   - Локальні та глобальні змінні: functions_def/local_global_vars.md
   #   - Параметри і аргументи: functions_def/functions_params.md
@@ -194,5 +195,6 @@ nav:
   #   # - math: modules/math_module.md
   #   - Модуль random: modules/random_module.md
   #   - Модуль pprint: modules/pprint_module.md
-  # - Дзен: zen.md
+  - Дзен: zen.md
+  - Корисні ресурси: resources.md
   # - "Що далі?": next_steps.md
