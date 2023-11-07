@@ -12,28 +12,28 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/strings/strings.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/zen.html">
       
       
-        <link rel="prev" href="../source_code/comments.html">
+        <link rel="prev" href="functions_def/functions_explained.html">
       
       
-        <link rel="next" href="escapes.html">
+        <link rel="next" href="resources.html">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>Тип даних str - PyStarter</title>
+        <title>Дзен - PyStarter</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.35e1ed30.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -54,13 +54,13 @@
       
     
     
-      <link rel="stylesheet" href="../_stylesheets/dark_theme.css">
+      <link rel="stylesheet" href="_stylesheets/dark_theme.css">
     
-      <link rel="stylesheet" href="../_stylesheets/codehilite.css">
+      <link rel="stylesheet" href="_stylesheets/codehilite.css">
     
-      <link rel="stylesheet" href="../_stylesheets/fixes.css">
+      <link rel="stylesheet" href="_stylesheets/fixes.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#str" class="md-skip">
+        <a href="#python" class="md-skip">
           Перейти до змісту
         </a>
       
@@ -101,7 +101,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Хедер">
-    <a href="../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
+    <a href="index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg>
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Тип даних str
+              Дзен
             
           </span>
         </div>
@@ -149,6 +149,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -158,7 +160,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Навігація" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
+    <a href="index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg>
@@ -175,7 +177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -194,7 +196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../miths_about_education.html" class="md-nav__link">
+      <a href="miths_about_education.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -213,7 +215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_python.html" class="md-nav__link">
+      <a href="about_python.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -244,7 +246,7 @@
         
   
   
-    <a href="../preparations/os.html" class="md-nav__link">
+    <a href="preparations/os.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -281,7 +283,7 @@
         
   
   
-    <a href="../vars_and_types/types.html" class="md-nav__link">
+    <a href="vars_and_types/types.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -318,7 +320,7 @@
         
   
   
-    <a href="../source_code/source_code.html" class="md-nav__link">
+    <a href="source_code/source_code.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -332,178 +334,6 @@
     </a>
   
 
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    04. Символьні рядки
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            04. Символьні рядки
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Тип даних str
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="strings.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Тип даних str
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Зміст">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Рядки у потрійних лапках чи апострофах
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="escapes.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Екрановані послідовності
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="strings_operations.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Операції над символьними рядками
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="indexing.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Індексація
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -527,7 +357,44 @@
         
   
   
-    <a href="../functions/functions.html" class="md-nav__link">
+    <a href="strings/strings.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    04. Символьні рядки
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="functions/functions.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -564,7 +431,7 @@
         
   
   
-    <a href="../bool_logic/bool.html" class="md-nav__link">
+    <a href="bool_logic/bool.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -601,7 +468,7 @@
         
   
   
-    <a href="../if/if_statement.html" class="md-nav__link">
+    <a href="if/if_statement.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -638,7 +505,7 @@
         
   
   
-    <a href="../functions_def/functions_explained.html" class="md-nav__link">
+    <a href="functions_def/functions_explained.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -661,9 +528,18 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../zen.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="zen.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -672,6 +548,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -682,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resources.html" class="md-nav__link">
+      <a href="resources.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -703,7 +580,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -714,21 +593,6 @@
   
     
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Рядки у потрійних лапках чи апострофах
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -743,50 +607,38 @@
                   
 
 
-<h1 id="str">Символьні рядки (str)</h1>
-<p>Символьний рядок (або просто рядок, string) — це упорядкована послідовність символів яку використовують для зберігання та представлення текстової інформації.</p>
-<p>Щоб створити рядок символи треба заключити у лапки або апострофи.</p>
-<pre><code>&gt;&gt;&gt; s = 'To be or not to be'
-&gt;&gt;&gt; s
-'To be or not to be'
-&gt;&gt;&gt; s = "Основи програмування на Python"
-&gt;&gt;&gt; s
-'Основи програмування на Python'
-&gt;&gt;&gt;
-</code></pre>
-<p>Якщо рядок містить, наприклад, лапки, тоді його треба заключити в апострофи і навпаки:</p>
-<pre><code>&gt;&gt;&gt; 'Вона сказала: "Нехай щастить"'
-'Вона сказала: "Нехай щастить"'
-&gt;&gt;&gt; phrase = "It's cool!"
-&gt;&gt;&gt; phrase
-"It's cool!"
-&gt;&gt;&gt;
-</code></pre>
-<p>Ви помітили що інтерпретатор виводить значення рядкових змінних саме так, як ми їх визначили? Тобто разом з лапками у які ми заключили символи:</p>
-<pre><code>"It's cool!"
-</code></pre>
-<p>Щоб Python показав "справжній" рядок, лише символи які у ньому містяться, необхідно написати <em>print</em> і зразу ж за цим словом у круглих дужках вказати рядок чи змінну яка на нього посилається:</p>
-<pre><code>&gt;&gt;&gt; phrase = "It's cool!"
-&gt;&gt;&gt; print(phrase)
-It's cool!
-&gt;&gt;&gt;
-</code></pre>
-<h3 id="_1">Рядки у потрійних лапках чи апострофах</h3>
-<p>Якщо треба визначити блок тексту який складається з декількох рядків, тоді такі послідовності символів заключають у потрйні лапки чи апострофи. 
-Причому ми маємо змогу вільно користуватись звичайними лапками чи апострофами усередині таких блоків:</p>
-<pre><code>&gt;&gt;&gt; s = '''рядок 1
-... it's cool
-... рядок 3'''
-&gt;&gt;&gt; print(s)
-рядок 1
-it's cool
-рядок 3
-&gt;&gt;&gt; s
-"рядок 1\nit's cool\nрядок 3"
-&gt;&gt;&gt;
-</code></pre>
+<h1 id="python">Дзен Python</h1>
+<p>Розробники мови Python є прихильниками певної філософії програмування, яку називають «The Zen of Python» («Дзен Пайтона»). 
+Її текст можна отримати у інтерпретаторі Python за допомогою команди (лише один раз за сесію)</p>
+<blockquote>
+<p>import this</p>
+</blockquote>
+<p>The Zen of Python українською:</p>
+<ul>
+<li>Гарне краще за потворне.</li>
+<li>Очевидне краще за неочевидне.</li>
+<li>Просте краще за складне.</li>
+<li>Складне краще за заплутане.</li>
+<li>Плоске краще за вкладене.</li>
+<li>Розділене є кращим за щільне.</li>
+<li>Легкість читання має значення.</li>
+<li>Особливі випадки не є настільки особливими, щоб порушувати правила.</li>
+<li>Хоча практичність є важливішою за бездоганність.</li>
+<li>Помилки ніколи не повинні бути замовчуваними.</li>
+<li>Хіба що замовчуваними відверто.</li>
+<li>Зустрівши двозначність, відкиньмо спокусу вгадати.</li>
+<li>Має бути один — і, бажано, тільки один — очевидний спосіб зробити це.</li>
+<li>Хоча спочатку він може бути й не очевидним, якщо ви не голландець.</li>
+<li>Зараз — краще, ніж ніколи.</li>
+<li>Хоча ніколи, найчастіше, — краще, ніж просто зараз.</li>
+<li>Якщо реалізацію важко пояснити — задум поганий.</li>
+<li>Якщо реалізацію легко пояснити — можливо, задум добрий.</li>
+<li>Простори імен — чудова річ, тож робімо їх більше!</li>
+</ul>
 
 
+
+  
 
 
 
@@ -803,10 +655,12 @@ it's cool
   
     
       
+        
+      
       <nav class="md-footer__inner md-grid" aria-label="Футер" >
         
           
-          <a href="../source_code/comments.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Коментарі">
+          <a href="functions_def/functions_explained.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Функції у програмуванні">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -816,20 +670,20 @@ it's cool
                 Назад
               </span>
               <div class="md-ellipsis">
-                Коментарі
+                Функції у програмуванні
               </div>
             </div>
           </a>
         
         
           
-          <a href="escapes.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Екрановані послідовності">
+          <a href="resources.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Корисні ресурси">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Екрановані послідовності
+                Корисні ресурси
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -877,10 +731,10 @@ it's cool
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>
