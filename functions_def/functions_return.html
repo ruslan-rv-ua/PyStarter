@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/functions_def/functions_return.html">
       
       
+        <link rel="prev" href="functions_params.html">
+      
+      
+        <link rel="next" href="functions_naming.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Інструкція return - PyStarter</title>
+        <title>Повернення значень - PyStarter</title>
       
     
     
@@ -117,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Інструкція return
+              Повернення значень
             
           </span>
         </div>
@@ -487,6 +491,161 @@
       
   
   
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    08. Створення функцій
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            08. Створення функцій
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions_explained.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Функції у програмуванні
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions_def.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Визначення функцій
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions_params.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Параметри і аргументи
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="functions_return.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Повернення значень
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions_naming.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Іменування функцій
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
     
     
@@ -501,11 +660,11 @@
         
   
   
-    <a href="functions_explained.html" class="md-nav__link">
+    <a href="../loop_while/loops.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    08. Створення функцій
+    09. Цикли
   </span>
   
 
@@ -598,8 +757,7 @@
 для <em>повернення</em> з функції, 
 тобто для припинення її роботи 
 і виходу з неї. </p>
-<pre><code>:::python
-def say_hello(name):
+<pre><code>def say_hello(name):
     if name == "Петя":
         return
     print('Hello,', name)
@@ -613,8 +771,7 @@ say_hello('Петя')
 <p>Після return можна вказати вираз, 
 і значення цього виразу функція поверне 
 у те місце, звідки вона була викликана:</p>
-<pre><code>:::python
-def my_max(a, b):
+<pre><code>def my_max(a, b):
     if a &gt; b:
         return a
     elif b &gt; a:
@@ -634,8 +791,7 @@ equal
 </code></pre>
 <p>Зауважте, що return без вказання значення що повертається 
 еквівалентно виразу "return None". </p>
-<pre><code>:::python
-def positive(a):
+<pre><code>def positive(a):
     if a &lt;= 0:
         return
     return 'yes'
@@ -650,8 +806,7 @@ None
 <p>Якщо явно не вказано return, 
 то він усе одно присутній у кожній функції неявно,
 у самому її кінці:</p>
-<pre><code>:::python
-def f():
+<pre><code>def f():
     print('It works!')
 a = f()
 print(a)
@@ -679,6 +834,46 @@ None
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="functions_params.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Параметри і аргументи">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Параметри і аргументи
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="functions_naming.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Іменування функцій">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Іменування функцій
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
