@@ -23,7 +23,6 @@ hide:
 
 Напишемо функцію з одним параметром:
 
-	:::python
 	def say_hello(name):
 		print('Hello,', name)
 	say_hello('Вася')
@@ -45,7 +44,6 @@ hide:
 
 Якщо параметрів у функції більше одного, перераховуємо їх через кому:
 
-	:::python
 	def print_salary(name, base_salary):
 		salary = base_salary - base_salary * 0.17 # -17% tax
 		print(name, ':', salary)
@@ -56,13 +54,11 @@ hide:
 у порядку, визначеному при оголошенні функції. 
 Запустивши вищенаведений код отримаємо: 
 
-	:::python
 	Вася : 830.0
 	>>>
 	
-Функції передають таку ж кілкість аргументів, як і кількість параметрів:
+Функції необхідно передавати таку ж кількість аргументів, як і кількість параметрів при її оголошенні:
 
-	:::python
 	>>> print_salary('Вася')
 	Traceback (most recent call last):
 	  File "<stdin>", line 1, in <module>
@@ -73,7 +69,6 @@ hide:
 
 > При виклику функції print_salary пропущено 1 обов'язковий аргумент: 'base_salary'
 
-	:::python
 	>>> print_salary('Вася', 1000, 1)
 	Traceback (most recent call last):
 	  File "<stdin>", line 1, in <module>
@@ -83,4 +78,3 @@ hide:
 Читаємо так:
 
 > Функція print_salary приймає 2 аргументи, а передано 3
-

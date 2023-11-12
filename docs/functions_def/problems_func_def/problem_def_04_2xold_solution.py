@@ -17,4 +17,4 @@ assert twice_as_old(36,7) == 22
 assert twice_as_old(55,30) == 5
 assert twice_as_old(42,21) == 0
 assert twice_as_old(22,1) == 20
-assert twice_as_old(29,0) , 29
+assert twice_as_old(29,0) == 29
