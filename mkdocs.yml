@@ -11,15 +11,6 @@ strict: true
 # site_dir: '.\docs'
 # docs_dir: '.\source'
 
-
-
-
-# Repository
-#repo_name: 'winter design school'
-#repo_url: 'http://ruslan.rv.ua/winter_design_school/'
-# remote_branch: master
-
-
 # Copyright
 copyright: "Copyright &copy; Ruslan Iskov <ruslan.rv.ua@gmail.com>"
 
@@ -145,24 +136,24 @@ nav:
     - Інструкція if: if/if_statement.md
     - Інструкція else: if/else_statement.md
     - Інструкція elif: if/elif_statement.md
-    - Тернарні умовні вирази: if/ternar_if.md
+    - Тернарний умовний оператор: if/ternar_if.md
   - 08. Створення функцій:
     - Функції у програмуванні: functions_def/functions_explained.md
     - Визначення функцій: functions_def/functions_def.md
     - Параметри і аргументи: functions_def/functions_params.md
     - Повернення значень: functions_def/functions_return.md
     - Іменування функцій: functions_def/functions_naming.md
-    # - Локальні та глобальні змінні: functions_def/local_global_vars.md
+    - Локальні та глобальні змінні: functions_def/local_global_vars.md
   - 09. Цикли:
     - Цикли у програмуванні: loop_while/loops.md
-  #   - Інструкція while: loop_while/while.md
-  #   - Синтаксичний цукор: loop_while/syntactic_sugar.md
-  #   - Прийоми використання циклів: loop_while/usage.md
+    - Інструкція while: loop_while/while.md
+    - Синтаксичний цукор: loop_while/syntax_sugar.md
+    - Прийоми використання циклів: loop_while/usage.md
   # - 10. Послідовності:
   #   - Тип даних list: sequences/list.md
   #   - Тип даних tuple: sequences/tuple.md
-  #   - Вкладені структури даних: sequences/complex_structures.md
-  #   - Послідовності в Python: sequences/sequences.md
+    # - Вкладені структури даних: sequences/complex_structures.md
+    # - Послідовності в Python: sequences/sequences.md
   # - 11. Об'єкти в Python:
   #   - Об'єкти і змінні: objects/objects_and_vars.md
   #   - Мутабельність: objects/mutability.md
@@ -188,11 +179,11 @@ nav:
   #   - Кодування текстової інформації: text_files/unicode.md
   #   - Текстові файли: text_files/open_close_flush.md
   #   - Читання і запис текстових файлів: text_files/read_write.md
-  # - 17. Модулі:
-  #   - Модулі в Python: modules/modules.md
+  - 17. Модулі:
+    - Модулі в Python: modules/modules.md
   #   - Використання модулів: modules/module_usage.md
   #   - Створення модулів: modules/module_composing.md
-  #   # - math: modules/math_module.md
+    # - math: modules/math_module.md
   #   - Модуль random: modules/random_module.md
   #   - Модуль pprint: modules/pprint_module.md
   - Дзен: zen.md

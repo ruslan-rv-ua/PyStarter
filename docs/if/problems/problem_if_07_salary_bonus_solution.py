@@ -15,15 +15,15 @@
 # ваш код починається тут
 
 # отримуємо вхідні дані
-salary = float(input('Enter salary: '))
-period = int(input('Enter period'))
+salary = float(input('Введіть зарплату: '))
+exp = int(input('Введіть стаж роботи: '))
 
 # визначаємо розмір премії
-if period >= 10:
+if exp >= 10:
 	bonus_percent = 10
-elif period >= 5:
+elif exp >= 5:
 	bonus_percent = 4
-elif period >= 2:
+elif exp >= 2:
 	bonus_percent = 2
 else:
 	bonus_percent = 0
@@ -32,4 +32,4 @@ else:
 total = salary * (1 + bonus_percent * .01)
 
 # виводимо результат
-print('Total:', total)
+print('Зарплата:', total)

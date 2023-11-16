@@ -29,7 +29,6 @@ hide:
 тобто він повторюється для кожного числа, 
 а кількість ітерацій залежить від розміру діапазона.
 
-	:::python
 	def sum_of_range(from_inclusive, to_exclusive):
 		sum = 0
 		number = from_inclusive
@@ -59,7 +58,6 @@ hide:
 Будемо використовувати конкатенацію, 
 нейтральний елемент для останньої — пустий символьний рядок.
 
-	:::python
 	def multiply_string(string, times):
 		result = ''
 		while times > 0:
@@ -75,7 +73,6 @@ hide:
 
 Створимо функцію, яка виводить усі символи з рядка:
 
-	:::python
 	def print_symbols(string):
 		i = 0
 		while i < len(string):
@@ -85,7 +82,6 @@ hide:
 	
 Результат:
 
-	:::python
 	H
 	e
 	l
@@ -95,8 +91,4 @@ hide:
 
 При проході символьних рядків змінній, яка відповідає індексу, 
 часто дають назву "i" від англійського "index". 
-
-
-
-
 
