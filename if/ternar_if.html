@@ -26,7 +26,7 @@
     
     
       
-        <title>Тернарні умовні вирази - PyStarter</title>
+        <title>Тернарний умовний оператор - PyStarter</title>
       
     
     
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Тернарні умовні вирази
+              Тернарний умовний оператор
             
           </span>
         </div>
@@ -567,7 +567,7 @@
         
   
   <span class="md-ellipsis">
-    Тернарні умовні вирази
+    Тернарний умовний оператор
   </span>
   
 
@@ -645,6 +645,43 @@
   
   <span class="md-ellipsis">
     09. Цикли
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../modules/modules.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. Модулі
   </span>
   
 
@@ -755,6 +792,23 @@ else:
 else:
     result = 'Not good'
 </code></pre>
+<p>Зауважте: <code>if-else</code> у таких конструкціях — це оператор. 
+Операція відбувається над трьома операндами: умовою і двома значеннями. 
+Результатом оператора є значення.</p>
+<p>Тернарні <code>if</code> навіть можна вкладати один в одного:</p>
+<pre><code>x = 1 if a &gt; b else 2 if c &gt; d else -1
+</code></pre>
+<p>хоча читати такий код вже дещо складніше. </p>
+<p>Переваги тернарного оператора <code>if</code>:</p>
+<ul>
+<li>Компактність коду</li>
+<li>Читабельність в невеликих умовних виразах</li>
+<li>Можливість вбудови в складніші вирази</li>
+</ul>
+<p>Недоліки:</p>
+<ul>
+<li>При складних умовах код стає нечитабельним</li>
+</ul>
 
 
 
