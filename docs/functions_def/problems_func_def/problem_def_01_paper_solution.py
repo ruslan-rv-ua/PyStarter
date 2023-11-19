@@ -10,9 +10,11 @@ num_layers(1) → 0.001
 num_layers(4) → 0.008
 num_layers(21) → 1048.576
 '''
+SHEET_THICKNESS = 0.0005 # in meters
+
 def num_layers(n):
 	# ваш код починається тут
-	return 0.0005 * 2 ** n
+	return SHEET_THICKNESS * 2 ** n
 # не міняйте наступний код
 assert num_layers(0) == 0.0005
 assert num_layers(1) == 0.001
