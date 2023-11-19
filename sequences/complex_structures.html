@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/sequences/complex_structures.html">
       
       
+        <link rel="prev" href="tuple.html">
+      
+      
+        <link rel="next" href="sequences.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -561,6 +565,141 @@
       
   
   
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    10. Послідовності
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            10. Послідовності
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="list.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Тип даних list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tuple.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Тип даних tuple
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="complex_structures.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Вкладені структури даних
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sequences.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Послідовності в Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
     
     
@@ -671,8 +810,7 @@
 <p>Оскільки списки і кортежі можуть містити елементи будь-яких типів, 
 то в них можна включити і самі ж списки і кортежі також. </p>
 <p>Створимо список людей, наприклад студентів:</p>
-<pre><code>:::python
-&gt;&gt;&gt; person1 = ('Іван', 'Петренко', 23)
+<pre><code>&gt;&gt;&gt; person1 = ('Іван', 'Петренко', 23)
 &gt;&gt;&gt; person2 = ('Даринка', 'Пилипчук', 19)
 &gt;&gt;&gt; students = [person1, person2]
 &gt;&gt;&gt; students
@@ -685,21 +823,19 @@
 19
 &gt;&gt;&gt;
 </code></pre>
-<p>Вище було створено список елементиами якого є кортежі. 
+<p>Вище було створено список елементами якого є кортежі. 
 Списки у свою чергу можуть бути елементами кортежа. 
 Давайте разом із даними про кожного студента зберігати і отримані оцінки: </p>
-<pre><code>:::python
-&gt;&gt;&gt; person = ('Юля', 'Хоменко', [5, 4, 5, 5])
+<pre><code>&gt;&gt;&gt; person = ('Юля', 'Хоменко', [5, 4, 5, 5])
 &gt;&gt;&gt; person
 ('Юля', 'Хоменко', [5, 4, 5, 5])
-&gt;&gt;&gt; marks = person[2]
-&gt;&gt;&gt; marks
+&gt;&gt;&gt; grades = person[2]
+&gt;&gt;&gt; grades
 [5, 4, 5, 5]
 &gt;&gt;&gt;
 </code></pre>
 <p>А як щодо створити список списків?</p>
-<pre><code>:::python
-&gt;&gt;&gt; matrix = [[1, 2, 3],
+<pre><code>&gt;&gt;&gt; matrix = [[1, 2, 3],
 ... [4, 5, 6],
 ... [7, 8, 9]]
 &gt;&gt;&gt; matrix
@@ -748,6 +884,46 @@ v - кортеж з трьох елементів, а (x, y, z) - кортеж �
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="tuple.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Тип даних tuple">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Тип даних tuple
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="sequences.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Послідовності в Python">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Послідовності в Python
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

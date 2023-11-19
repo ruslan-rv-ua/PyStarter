@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/sequences/sequences.html">
       
       
+        <link rel="prev" href="complex_structures.html">
+      
+      
+        <link rel="next" href="../modules/modules.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -561,6 +565,219 @@
       
   
   
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    10. Послідовності
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            10. Послідовності
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="list.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Тип даних list
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tuple.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Тип даних tuple
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="complex_structures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Вкладені структури даних
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Послідовності в Python
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="sequences.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Послідовності в Python
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Перетворення послідовностей
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Операції з послідовностями
+  </a>
+  
+    <nav class="md-nav" aria-label="Операції з послідовностями">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#len" class="md-nav__link">
+    len()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min-max" class="md-nav__link">
+    min() та max()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum" class="md-nav__link">
+    sum()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorted" class="md-nav__link">
+    sorted()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
     
     
@@ -725,21 +942,19 @@
 
 <h1 id="python">Послідовності в Python</h1>
 <p>Що є спільного у списка та символьного рядка?
-Коли ми описували списки і рядки ми згадували що це "впорядкована послідовність".
-Для рядків це впорядкована послідовність символів, для списків — впорядкована послідовність елементів певних типів.
-Кортеж також є впорядкованою послідовністю.</p>
+Коли ми описували списки і рядки ми згадували що це "послідовність".
+Для рядків це послідовність символів, для списків — послідовність елементів певних типів.
+Кортеж також є послідовністю.</p>
 <p>До окремих символів рядків ми можемо "дістатись" за допомогою індексів.
 Так само можна зробити і зі списками чи кортежами 
-з тою лише різницею, що у останніх ми вилучаємо не символи, 
+з тою лише різницею, що у останніх ми отримуємо не символи, 
 а елементи довільних типів.</p>
 <p>Якщо у цих трьох типів даних вже є немало спільного, 
-то чи не можна їх якось об'єднати? 
-Можна. </p>
+то чи не можна їх якось об'єднати? </p>
 <p>Символьні рядки, списки та кортежі в Python є <strong><em>послідовностями</em></strong>. </p>
 <h2 id="_1">Перетворення послідовностей</h2>
 <p>Використовуючи приведення типів можна привести послідовність одного типу до послідовності іншого:</p>
-<pre><code>:::python
-&gt;&gt;&gt; tuple([1, 2])
+<pre><code>&gt;&gt;&gt; tuple([1, 2])
 (1, 2)
 &gt;&gt;&gt; list((1,2))
 [1, 2]
@@ -749,14 +964,12 @@
 </code></pre>
 <p>Приведення послідовностей до <code>str</code> дає символьний рядок з 
 "читабельним" відображенням даної послідовності:</p>
-<pre><code>:::python
-&gt;&gt;&gt; str([11, 22])
+<pre><code>&gt;&gt;&gt; str([11, 22])
 '[11, 22]'
 &gt;&gt;&gt;
 </code></pre>
 <p>Використання <code>list()</code> і <code>tuple()</code> без аргументів повертає порожню послідовність:</p>
-<pre><code>:::python
-&gt;&gt;&gt; list()
+<pre><code>&gt;&gt;&gt; list()
 []
 &gt;&gt;&gt; tuple()
 ()
@@ -766,8 +979,7 @@
 <p>Те, що властиве для послідовностей одного типу є справедливим для послідовностей інших типів.</p>
 <p>Оскільки списки і кортежі як і рядки теж є послідовностями, 
 то зрізання можна застосовувати і до них:</p>
-<pre><code>:::python
-&gt;&gt;&gt; l = ['Alice', 'Romeo', 'Jane', "Juliette", 'John']
+<pre><code>&gt;&gt;&gt; l = ['Alice', 'Romeo', 'Jane', "Juliette", 'John']
 &gt;&gt;&gt; l[1::2]
 ['Romeo', 'Juliette']
 &gt;&gt;&gt; (1, True, 3, False)[::2]
@@ -778,15 +990,13 @@
 але того ж самого типу як і початкова послідовність.</p>
 <p>Конкатенація, як і для символьних рядків, 
 працює і для списків і кортежів. </p>
-<pre><code>:::python
-&gt;&gt;&gt; l = [1, 2, 3, 4, 5]
+<pre><code>&gt;&gt;&gt; l = [1, 2, 3, 4, 5]
 &gt;&gt;&gt; l + l[::-1]
 [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]
 &gt;&gt;&gt;
 </code></pre>
 <p>Конкатенувати можна послідовності однакових типів:</p>
-<pre><code>:::python
-&gt;&gt;&gt; (1, 2) + [3, 4]
+<pre><code>&gt;&gt;&gt; (1, 2) + [3, 4]
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 TypeError: can only concatenate tuple (not "list") to tuple
@@ -798,8 +1008,7 @@ TypeError: can only concatenate tuple (not "list") to tuple
 &gt;&gt;&gt;
 </code></pre>
 <p>Мультиплікація:</p>
-<pre><code>:::python
-&gt;&gt;&gt; [1, 2, 3] * 2
+<pre><code>&gt;&gt;&gt; [1, 2, 3] * 2
 [1, 2, 3, 1, 2, 3]
 &gt;&gt;&gt;
 &gt;&gt;&gt; 4 * (1,)
@@ -810,8 +1019,7 @@ TypeError: can only concatenate tuple (not "list") to tuple
 &gt;&gt;&gt;
 </code></pre>
 <p>Можна перевірити чи є певне значення у спискові чи кортежі:</p>
-<pre><code>:::python
-&gt;&gt;&gt; 'Alice' in ['Bob', 'Alice', 'Eve']
+<pre><code>&gt;&gt;&gt; 'Alice' in ['Bob', 'Alice', 'Eve']
 True
 &gt;&gt;&gt; 'Alice' not in ['Bob', 'Alice', 'Eve']
 False
@@ -825,8 +1033,7 @@ True
 <h3 id="len"><code>len()</code></h3>
 <p>Щоб дізнатись довжину списка чи кортежа, тобто кількість елементів яку вони містять, 
 використовують вже знайому нам вбудовану у Python функцію <code>len()</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; len((1, 2))
+<pre><code>&gt;&gt;&gt; len((1, 2))
 2
 &gt;&gt;&gt; len([])
 0
@@ -837,16 +1044,14 @@ True
 <h3 id="min-max"><code>min()</code> та <code>max()</code></h3>
 <p>Щоб визначити мінімальний і максимальний по значенню елемент послідовності 
 використовують відповідні функції <code>min()</code> та <code>max()</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; min([1, 2, 999, -999])
+<pre><code>&gt;&gt;&gt; min([1, 2, 999, -999])
 -999
 &gt;&gt;&gt; max((3, 2, 1))
 3
 &gt;&gt;&gt;
 </code></pre>
 <p>Функції вимагають, щоб передані їм послідовності не були пустими:</p>
-<pre><code>:::python
-&gt;&gt;&gt; min([])
+<pre><code>&gt;&gt;&gt; min([])
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 ValueError: min() arg is an empty sequence
@@ -856,8 +1061,7 @@ ValueError: min() arg is an empty sequence
 <h3 id="sum"><code>sum()</code></h3>
 <p>Функція sum() приймає у якості аргумента послідовність чисел
 і повертає суму усіх елементів аргумента.</p>
-<pre><code>:::python
-&gt;&gt;&gt; sum([1,2,3,4,5,6,7,8,9,10])
+<pre><code>&gt;&gt;&gt; sum([1,2,3,4,5,6,7,8,9,10])
 55
 &gt;&gt;&gt;
 </code></pre>
@@ -866,8 +1070,7 @@ ValueError: min() arg is an empty sequence
 а повертає список з вже відсортованими елементами цієї послідовності. 
 Сортування відбувається за зростанням, 
 тобто спочатку будуть йти елементи з меньшим значенням:</p>
-<pre><code>:::python
-&gt;&gt;&gt; sorted([3, 1, 2])
+<pre><code>&gt;&gt;&gt; sorted([3, 1, 2])
 [1, 2, 3]
 &gt;&gt;&gt; sorted('hello')
 ['e', 'h', 'l', 'l', 'o']
@@ -895,6 +1098,46 @@ ValueError: min() arg is an empty sequence
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="complex_structures.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Вкладені структури даних">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Вкладені структури даних
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../modules/modules.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Модулі в Python">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Модулі в Python
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

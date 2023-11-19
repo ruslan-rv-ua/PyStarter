@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/sequences/list.html">
       
       
+        <link rel="prev" href="../loop_while/usage.html">
+      
+      
+        <link rel="next" href="tuple.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -561,6 +565,141 @@
       
   
   
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    10. Послідовності
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            10. Послідовності
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="list.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Тип даних list
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tuple.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Тип даних tuple
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="complex_structures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Вкладені структури даних
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sequences.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Послідовності в Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
     
     
@@ -678,8 +817,7 @@
 <p><strong><em>Список</em></strong> (англ. list) в Python — це послідовність елементів. 
 Елементами списка є значення, причому значення можуть бути різних типів. </p>
 <p>Створити список дуже просто — перерахуйте значення, розділені комою, у квадратних дужках:</p>
-<pre><code>:::python
-&gt;&gt;&gt; my_list = [1, 'два', 3, 4.4, 55555, True]
+<pre><code>&gt;&gt;&gt; my_list = [1, 'два', 3, 4.4, 55555, True]
 &gt;&gt;&gt; my_list
 [1, 'два', 3, 4.4, 55555, True]
 &gt;&gt;&gt; type(my_list)
@@ -687,22 +825,19 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>А як щодо створити список у якому не міститиметься жодного елементу?</p>
-<pre><code>:::python
-&gt;&gt;&gt; empty_list = []
+<pre><code>&gt;&gt;&gt; empty_list = []
 &gt;&gt;&gt; empty_list
 []
 &gt;&gt;&gt;
 </code></pre>
 <p>До окремих елементів списка можна дістатись вказавши його <em>індекс</em>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; my_list[0]
+<pre><code>&gt;&gt;&gt; my_list[0]
 1
 </code></pre>
 <p>За допомогою індексації у символьних рядків ми могли дістатись до окремих символів, 
 а у списків — до окремих його елементів. </p>
 <p>Виходити за межі списку не дозволяється:</p>
-<pre><code>:::python
-&gt;&gt;&gt; my_list[6]
+<pre><code>&gt;&gt;&gt; my_list[6]
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 IndexError: list index out of range
@@ -719,7 +854,7 @@ IndexError: list index out of range
 [-1, 'два', 3, 4.4, 55555, True]
 &gt;&gt;&gt;
 </code></pre>
-<p>Списки — дуже потужний і гручкий інструмент. Детальніше робота зі списками буде розглянута у наступних прозділах. </p>
+<p>Списки — дуже потужний і гнучкий інструмент. Детальніше робота зі списками буде розглянута у наступних прозділах. </p>
 
 
 
@@ -738,6 +873,46 @@ IndexError: list index out of range
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="../loop_while/usage.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Прийоми використання циклів">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Прийоми використання циклів
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="tuple.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Тип даних tuple">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Тип даних tuple
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
