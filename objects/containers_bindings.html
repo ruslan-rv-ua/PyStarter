@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/objects/containers_bindings.html">
       
       
+        <link rel="prev" href="immutable_exceptions.html">
+      
+      
+        <link rel="next" href="../loop_for/for.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -596,6 +600,215 @@
       
   
   
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    11. Об'єкти в Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            11. Об'єкти в Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="objects_and_vars.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Об'єкти і змінні
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mutability.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Мутабельність
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="immutable_exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Немутабельні винятки
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="containers_bindings.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Посилання у контейнерах
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../loop_for/for.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Цикли 2
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../methods/methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Методи
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
     
     
@@ -706,16 +919,14 @@
 а посилання на об'єкти. 
 Давайте переконаємось у цьому. </p>
 <p>Створимо немутабельний кортеж, який буде містити у собі мутабельний список: </p>
-<pre><code>:::python
-&gt;&gt;&gt; t = ([1, 1], )
+<pre><code>&gt;&gt;&gt; t = ([1, 1], )
 &gt;&gt;&gt; l = t[0]
 &gt;&gt;&gt; l is t[0]
 True
 &gt;&gt;&gt;
 </code></pre>
 <p>І тепер змінюємо список, який міститься у кортежі: </p>
-<pre><code>:::python
-&gt;&gt;&gt; l[0] = 7
+<pre><code>&gt;&gt;&gt; l[0] = 7
 &gt;&gt;&gt; t
 ([7, 1],)
 &gt;&gt;&gt;
@@ -726,27 +937,24 @@ True
 Змінився об'єкт, на який вказує одне з посилань, яке міститься в кортежі. </p>
 <p>Ще приклад. 
 Створимо список, який містить у собі ще один список з трьох об'єктів: </p>
-<pre><code>:::python
-&gt;&gt;&gt; l = [[0, 0, 0]]
-&gt;&gt;&gt; inner_list = l[0]
-&gt;&gt;&gt; inner_list
+<pre><code>&gt;&gt;&gt; one_row_matrix = [[0, 0, 0]]
+&gt;&gt;&gt; row = one_row_matrix[0]
+&gt;&gt;&gt; row
 [0, 0, 0]
-&gt;&gt;&gt; inner_list is l[0]
+&gt;&gt;&gt; row is one_row_matrix[0]
 True
 &gt;&gt;&gt;
 </code></pre>
-<p>А тепер спробуємо зі списка <code>l</code> зробити матрицю три на три. 
+<p>А тепер спробуємо зі списка <code>row</code> зробити матрицю три на три. 
 Для цього скористаємось мультиплікацією послідовностей: </p>
-<pre><code>:::python
-&gt;&gt;&gt; matrix = l * 3
+<pre><code>&gt;&gt;&gt; matrix = one_row_matrix * 3
 &gt;&gt;&gt; matrix
 [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 &gt;&gt;&gt;
 </code></pre>
 <p>Начебто отримали те, що хотіли. 
 Спробуємо змінити елемент матриці у першому стовпчику першого ряда: </p>
-<pre><code>:::python
-&gt;&gt;&gt; matrix[0][0] = 7
+<pre><code>&gt;&gt;&gt; matrix[0][0] = 7
 &gt;&gt;&gt; matrix
 [[7, 0, 0], [7, 0, 0], [7, 0, 0]]
 &gt;&gt;&gt;
@@ -755,37 +963,35 @@ True
 <p>Уся справа у тому, що операція мультиплікації 
 "розмножує" не самі об'єкти у послідовності, 
 а посилання на них. </p>
-<p>Стовримо список <code>l</code> трошки інакше: </p>
-<pre><code>:::python
-&gt;&gt;&gt; inner_list = [0, 0, 0]
-&gt;&gt;&gt; l = [inner_list]
-&gt;&gt;&gt; l
+<p>Поглянемо на задачу трошки інакше: </p>
+<pre><code>&gt;&gt;&gt; row = [0, 0, 0]
+&gt;&gt;&gt; oen_row_matrix = [row]
+&gt;&gt;&gt; oen_row_matrix
 [[0, 0, 0]]
-&gt;&gt;&gt; l[0] is inner_list
+&gt;&gt;&gt; oen_row_matrix[0] is row
 True
 &gt;&gt;&gt;
 </code></pre>
 <p>І коли ми використовуємо мультиплікацію, то вираз:</p>
-<pre><code>matrix = l * 3
+<pre><code>matrix = one_row_matrix * 3
 </code></pre>
 <p>фактично означає:</p>
-<pre><code>matrix = [inner_list] * 3
+<pre><code>matrix = [row] * 3
 </code></pre>
 <p>В результаті отримуємо список у якому тричі повторюється посилання <code>inner_list</code> на один і той самий об'єкт:</p>
-<pre><code>[inner_list, inner_list, inner_list]
+<pre><code>[row, row, row]
 </code></pre>
 <p>Отже вираз:</p>
 <pre><code>matrix[0][0] = 7
 </code></pre>
 <p>фактично означає:</p>
-<pre><code>inner_list[0] = 7
+<pre><code>row[0] = 7
 </code></pre>
 <p>Так що створити матрицю 
 використовуючи мультиплікацію послідовностей 
 як наведено у прикладі нижче 
 нажаль не вийде:</p>
-<pre><code>:::python
-n = 5
+<pre><code>n = 5
 matrix = [[0] * n] * n # так повноцінної матриці не отримати!
 </code></pre>
 
@@ -804,6 +1010,44 @@ matrix = [[0] * n] * n # так повноцінної матриці не от�
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="immutable_exceptions.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Немутабельні винятки">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Немутабельні винятки
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../loop_for/for.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Цикл for">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Цикл for
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

@@ -9,26 +9,18 @@
 Реалізуйте функцію fibo(n) яка повертає число Фібоначчі з порядковим номером n.
 '''
 def fibo(n):
-	# ваш код
-	if n < 3:
-		return 1
-	a = b = 1
-	while n > 2:
-		a, b = b, a + b
-		n -= 1
-	return b
-	
-def fibo(n):
-	# ваш код
-	a, b = 0, 1
-	while n > 1:
-		next = a + b
-		a = b
-		b = next
-		# a, b = b, a + b
-		n -= 1
-	return b
-	
+    # ваш код
+    if n <= 2:
+        return 1
+    a = b = 1
+    while n > 2:
+        next = a + b
+        a = b
+        b = next
+        n -= 1
+    return b
+    
+    
 assert fibo(1) == 1
 assert fibo(2) == 1
 assert fibo(3) == 2

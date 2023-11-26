@@ -612,6 +612,117 @@
         
   
   
+    <a href="../objects/objects_and_vars.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Об'єкти в Python
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="for.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Цикли 2
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../methods/methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Методи
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../modules/modules.html" class="md-nav__link">
       
   
@@ -743,8 +854,7 @@
 <p>Розглянемо на прикладі: є список чисел, 
 треба вивести усі числа з цього списку 
 які лежать у діапазоні від 50 до 100. </p>
-<pre><code>:::python
-numbers = [33, 57, 81, 976, 65, 710, 82, 98, 774, 6]
+<pre><code>numbers = [33, 57, 81, 976, 65, 710, 82, 98, 774, 6]
 for number in numbers:
     if number &lt; 50 or number &gt; 100:
         continue
@@ -754,8 +864,7 @@ for number in numbers:
 <p>Інструкція break перериває виконання циклу. 
 Керування переходить до наступної після тіла цикла інструкцї. </p>
 <p>Приклад: у списку чисел знайти індекс елемента зі значенням 7:</p>
-<pre><code>:::python
-numbers = [33, 57, 81, 976, 65, 710, 82, 98, 7, 66]
+<pre><code>numbers = [33, 57, 81, 976, 65, 710, 82, 98, 7, 66]
 index = 0
 while index &lt; len(numbers):
     if numbers[index] == 7:
@@ -771,8 +880,7 @@ print('Індекс елемента зі значенням 7:', index)
 і присвоїти його змінній index.
 Якщо це число не знайдено у списку,
 тоді змінній index присвоїти значення -1.</p>
-<pre><code>:::python
-numbers = list(range(10, 100))
+<pre><code>numbers = list(range(10, 100))
 for index in range(len(numbers)):
     if numbers[index] == 7:
         break
@@ -782,8 +890,7 @@ print('Індекс елемента зі значенням 7:', index)
 </code></pre>
 <p>Вважається що використання <code>while-else</code> та <code>for-else</code> заплутує логіку виконання програми. 
 Вищенаведений код ми можемо реалізувати як функцію:</p>
-<pre><code>:::python
-def find_seven(numbers):
+<pre><code>def find_seven(numbers):
     for i in range(len(numbers)):
         if numbers[i] == 7:
             return i
