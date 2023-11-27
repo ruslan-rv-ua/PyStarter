@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/modules/random_module.html">
       
       
+        <link rel="prev" href="random_module.html">
+      
+      
+        <link rel="next" href="../zen.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -746,6 +750,146 @@
       
   
   
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Батарейки
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            Батарейки
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Модуль random
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="random_module.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Модуль random
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#random_1" class="md-nav__link">
+    random()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randinta-b" class="md-nav__link">
+    randint(a, b)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choiceseq" class="md-nav__link">
+    choice(seq)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shufflex" class="md-nav__link">
+    shuffle(x)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
     <li class="md-nav__item">
       <a href="../zen.html" class="md-nav__link">
@@ -859,13 +1003,12 @@
 
 
 <h1 id="random">Модуль random</h1>
-<p>Замість епіфграфа: <strong><em>«Генерація випадкових чисел занадто важлива, щоб залишати її на волю випадка»</em></strong> —  Роберт Кав'ю</p>
+<p>Замість епіграфа: <strong><em>«Генерація випадкових чисел занадто важлива, щоб залишати її на волю випадка»</em></strong> —  Роберт Кав'ю</p>
 <p>Модуль random дозволяє генерувати випадкові числа. 
-Зауважте, що Python генерує випадкові числа на основі формули, так що вони не насправді випадкові, а, як кажуть, псевдовипадкові. Але цей спосіб отримання випадкових чисел зручний для більшості задач (крім онлайн-казино).</p>
+Зауважте, що Python генерує випадкові числа на основі формули, так що вони не насправді випадкові, а, як кажуть, псевдовипадкові. Але цей спосіб отримання випадкових чисел зручний для більшості задач.</p>
 <h3 id="random_1">random()</h3>
 <p>Повертає псевдовипадкове число у діапазоні [0.0, 1.0)</p>
-<pre><code>:::python
-&gt;&gt;&gt; from random import *
+<pre><code>&gt;&gt;&gt; from random import *
 &gt;&gt;&gt; random()
 0.7211406063548313
 &gt;&gt;&gt; random()
@@ -888,15 +1031,13 @@
 
 <h3 id="randinta-b">randint(a, b)</h3>
 <p>Повертає ціле випадкове число N, a &lt;= N &lt;= b.</p>
-<pre><code>:::python
-&gt;&gt;&gt; randint(-10,10)
+<pre><code>&gt;&gt;&gt; randint(-10,10)
 -1
 &gt;&gt;&gt;
 </code></pre>
 <h3 id="choiceseq">choice(seq)</h3>
 <p>Повертає випадковий елемент з непустої послідовності <code>seq</code>. </p>
-<pre><code>:::python
-&gt;&gt;&gt; choice([1,2,3])
+<pre><code>&gt;&gt;&gt; choice([1,2,3])
 3
 &gt;&gt;&gt; choice('абабагаламага')
 'а'
@@ -904,8 +1045,7 @@
 </code></pre>
 <h3 id="shufflex">shuffle(x)</h3>
 <p>Перемішує елементи послідовності <code>x</code>. </p>
-<pre><code>:::python
-&gt;&gt;&gt; List = [1,2,3,4,5,6,7,8,9]
+<pre><code>&gt;&gt;&gt; List = [1,2,3,4,5,6,7,8,9]
 &gt;&gt;&gt; shuffle(List)
 &gt;&gt;&gt; List
 [8, 4, 1, 9, 2, 7, 3, 5, 6]
@@ -946,6 +1086,46 @@
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="random_module.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Модуль random">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Модуль random
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../zen.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Дзен">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Дзен
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
