@@ -23,3 +23,5 @@ assert has_equal([1], []) == False
 assert has_equal([1], [1]) == True
 assert has_equal([[1]], [1]) == False
 assert has_equal([1], [3, 2, 1]) == True
+assert has_equal([1, 2, 3], [5, 4, 3]) == True
+assert has_equal([1, 2, 3], [1]) == True

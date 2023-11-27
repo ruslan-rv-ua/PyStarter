@@ -11,13 +11,11 @@ hide:
 Створіть файл "mymodule.py",
 у якому визначимо одну функцію:
 
-	:::python
 	def hello():
 		print('Hi there!')
 
 Тепер у цій же теці створимо новий файл, наприклад "main.py":
 
-	:::python
 	import mymodule
 
 	mymodule.hello()

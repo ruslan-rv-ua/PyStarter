@@ -154,18 +154,18 @@ nav:
     - Тип даних tuple: sequences/tuple.md
     - Вкладені структури даних: sequences/complex_structures.md
     - Послідовності в Python: sequences/sequences.md
-  # - 11. Об'єкти в Python:
-  #   - Об'єкти і змінні: objects/objects_and_vars.md
-  #   - Мутабельність: objects/mutability.md
-  #   - Немутабельні винятки: objects/immutable_exceptions.md
-  #   - Посилання у контейнерах: objects/containers_bindings.md
-  # - 12. Цикли 2:
-  #   - Цикл for: loop_for/for.md
-  #   - Тип даних range: loop_for/range.md
-  #   - Прийоми використання for: loop_for/usage.md
-  #   - Керування циклами: loop_for/loop_flow.md
-  # - 13. Методи:
-  #   - Методи в Python: methods/methods.md
+  - 11. Об'єкти в Python:
+    - Об'єкти і змінні: objects/objects_and_vars.md
+    - Мутабельність: objects/mutability.md
+    - Немутабельні винятки: objects/immutable_exceptions.md
+    - Посилання у контейнерах: objects/containers_bindings.md
+  - 12. Цикли 2:
+    - Цикл for: loop_for/for.md
+    - Тип даних range: loop_for/range.md
+    - Прийоми використання for: loop_for/usage.md
+    - Керування циклами: loop_for/loop_flow.md
+  - 13. Методи:
+    - Методи в Python: methods/methods.md
   #   - Методи символьних рядків: methods_str/str_methods.md
   #   - Форматування символьних рядків: methods_str/str_format.md
   # - 14. Методи списків: 
@@ -181,11 +181,13 @@ nav:
   #   - Читання і запис текстових файлів: text_files/read_write.md
   - 17. Модулі:
     - Модулі в Python: modules/modules.md
-    # - Використання модулів: modules/module_usage.md
-    # - Створення модулів: modules/module_composing.md
-    # # - math: modules/math_module.md
-    # - Модуль random: modules/random_module.md
+    - Використання модулів: modules/module_usage.md
+    - Створення модулів: modules/module_composing.md
+    # - math: modules/math_module.md
+    - Модуль random: modules/random_module.md
     # - Модуль pprint: modules/pprint_module.md
+  - Батарейки:
+    - Модуль random: modules/random_module.md
   - Дзен: zen.md
   - Корисні ресурси: resources.md
   # - "Що далі?": next_steps.md

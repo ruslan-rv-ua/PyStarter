@@ -19,7 +19,6 @@ hide:
 треба вивести усі числа з цього списку 
 які лежать у діапазоні від 50 до 100. 
 
-	:::python
 	numbers = [33, 57, 81, 976, 65, 710, 82, 98, 774, 6]
 	for number in numbers:
 		if number < 50 or number > 100:
@@ -33,7 +32,6 @@ hide:
 
 Приклад: у списку чисел знайти індекс елемента зі значенням 7:
 
-	:::python
 	numbers = [33, 57, 81, 976, 65, 710, 82, 98, 7, 66]
 	index = 0
 	while index < len(numbers):
@@ -53,7 +51,6 @@ hide:
 Якщо це число не знайдено у списку,
 тоді змінній index присвоїти значення -1.
 
-	:::python
 	numbers = list(range(10, 100))
 	for index in range(len(numbers)):
 		if numbers[index] == 7:
@@ -65,7 +62,6 @@ hide:
 Вважається що використання `while-else` та `for-else` заплутує логіку виконання програми. 
 Вищенаведений код ми можемо реалізувати як функцію:
 
-	:::python
 	def find_seven(numbers):
 		for i in range(len(numbers)):
 			if numbers[i] == 7:
