@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/methods_str/str_format.html">
       
       
+        <link rel="prev" href="str_methods.html">
+      
+      
+        <link rel="next" href="../modules/modules.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -672,34 +676,112 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="../methods/methods.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     13. Методи
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            13. Методи
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methods/methods.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Методи в Python
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="str_methods.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Методи символьних рядків
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="str_format.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Форматування символьних рядків
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -854,23 +936,7 @@
 
 <h1 id="_1">Форматування символьних рядків</h1>
 <p>Припустимо маємо дві змінні:</p>
-<pre><code>:::python
-&gt;&gt;&gt; name = 'Даринка'
-&gt;&gt;&gt; age = 25
-</code></pre>
-<p>Використовуючи значення цих змінних нам треба сформувати наступний текст:</p>
-<blockquote>
-<p>Мене звати Даринка і мені 25 років.</p>
-</blockquote>
-<p>Скористаємось конкатенацією. Не забуваємо приводити числа до <code>str</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; s = 'Мене звати ' + name + ' і мені ' + str(age) + ' років.'
-&gt;&gt;&gt; s
-'Мене звати Даринка і мені 25 років.'
-&gt;&gt;&gt;
-</code></pre>
-<p>Що ми зробили? Використовуючи дані сформували певним чином символьний рядок. 
-Так само можна сформувати інший рядок використавши інші дані. 
+<p>Так само можна сформувати інший рядок використавши інші дані. 
 Говорять, що ми "відформатували дані у символьному рядкові". 
 Спосіб зрозуміли, але трохи громіздкий. 
 В Python для формування символьних рядків є більш зручний механізм — 
@@ -878,13 +944,11 @@
 <p>Суть у тому, що використовуючи літерал символьного рядка ми одразу ж вказуємо дані, 
 які треба підставити у цей символьний рядок. </p>
 <p>Для вказівки, що рядок не простий, а форматований, перед літералом ставлять букву "f":</p>
-<pre><code>:::python
-s = f'Це форматований рядок'
+<pre><code>s = f'Це форматований рядок'
 </code></pre>
 <p>Дані, які треба включити в рядок, 
 вказують у фігурних дужках:</p>
-<pre><code>:::python
-&gt;&gt;&gt; name = 'Даринка'
+<pre><code>&gt;&gt;&gt; name = 'Даринка'
 &gt;&gt;&gt; age = 25
 &gt;&gt;&gt; s = f'Мене звати {name} і мені {age} років.'
 &gt;&gt;&gt; s
@@ -893,16 +957,14 @@ s = f'Це форматований рядок'
 </code></pre>
 <p>Такий спосіб форматування рядків набагато читабельніший, зрозуміліший. </p>
 <p>Використовувати можна лише вже існуючі у програмі дані:</p>
-<pre><code>:::python
-&gt;&gt;&gt; f'{unknown_variable}'
+<pre><code>&gt;&gt;&gt; f'{unknown_variable}'
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 NameError: name 'unknown_variable' is not defined
 &gt;&gt;&gt;
 </code></pre>
 <p>Можна використовувати навіть вирази:</p>
-<pre><code>:::python
-&gt;&gt;&gt; a = 2
+<pre><code>&gt;&gt;&gt; a = 2
 &gt;&gt;&gt; b = 3
 &gt;&gt;&gt; f'{a}+{b}={a+b}'
 '2+3=5'
@@ -910,12 +972,10 @@ NameError: name 'unknown_variable' is not defined
 </code></pre>
 <p>Часто, коли треба діяти швидко, при зневадженні програм виводять значення змінних за допомогою <code>print()</code>. 
 Виглядає це приблизно так:</p>
-<pre><code>:::python
-print('total=', total)
+<pre><code>print('total=', total)
 </code></pre>
 <p>Використовуючи f-strings робити це можна простіше:</p>
-<pre><code>:::python
-print(f'{total=}')
+<pre><code>print(f'{total=}')
 </code></pre>
 
 
@@ -935,6 +995,46 @@ print(f'{total=}')
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="str_methods.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Методи символьних рядків">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Методи символьних рядків
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../modules/modules.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Модулі в Python">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Модулі в Python
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
