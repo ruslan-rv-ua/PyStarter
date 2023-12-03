@@ -17,7 +17,6 @@ song_text='''вадап гінс ан гіроп
 # ваш код тут
 
 for line in song_text.split('\n'):
-	new_line = ''
 	words = line.split()
 	for i in range(len(words)):
 		words[i] = words[i][::-1]

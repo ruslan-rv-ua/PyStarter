@@ -166,13 +166,13 @@ nav:
     - Керування циклами: loop_for/loop_flow.md
   - 13. Методи:
     - Методи в Python: methods/methods.md
-  #   - Методи символьних рядків: methods_str/str_methods.md
-  #   - Форматування символьних рядків: methods_str/str_format.md
-  # - 14. Методи списків: 
-  #   - Методи списків: methods_list/list_methods.md
+    - Методи символьних рядків: methods_str/str_methods.md
+    - Форматування символьних рядків: methods_str/str_format.md
+  - 14. Методи списків: 
+    - Методи списків: methods_list/list_methods.md
   #   - Структура даних "стек": methods_list/stack.md
-  # - 15. Словники:
-  #   - Тип даних dict: dict/dict.md
+  - 15. Словники:
+    - Тип даних dict: dict/dict.md
   #   - Методи словників: dict/dict_methods.md
   #   - Обхід словників: dict/dict_traversal.md
   # - 16. Файли:
