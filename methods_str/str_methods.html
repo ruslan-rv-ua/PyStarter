@@ -952,6 +952,80 @@
         
   
   
+    <a href="../methods_list/list_methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Методи списків
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../dict/dict.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. Словники
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../modules/modules.html" class="md-nav__link">
       
   
@@ -1056,7 +1130,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1261,6 +1335,32 @@ New Year 2018
 ['to', 'be', 'or', 'not', 'to', 'be']
 &gt;&gt;&gt;
 </code></pre>
+<p>Особливість використання метода <code>split()</code> без аргументів:</p>
+<ol>
+<li>Усі пробільні символи спочатку як би "зклеюються" в один.</li>
+<li>Усі пробільні символи, які знаходяться на початку та на кінці рядка відкидаються.</li>
+<li>
+<p>Вже після цього і відбувається власне розбиття по пробільнлому символу.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>'  Готель \t "Україна"  \n'.split()
+['Готель', '"Україна"']
+</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<p>Порівняйте:</p>
+<pre><code>&gt;&gt;&gt; '  Готель \t "Україна"  \n'.split(' ')
+['', '', 'Готель', '\t', '"Україна"', '', '\n']
+&gt;&gt;&gt; '  Готель \t "Україна"  \n'.split('\t')
+['  Готель ', ' "Україна"  \n']
+&gt;&gt;&gt; '  Готель \t "Україна"  \n'.split('\n')
+['  Готель \t "Україна"  ', '']
+&gt;&gt;&gt;
+</code></pre>
 <p>Розглянемо ще декілька прикладів використання метода <code>split()</code>:</p>
 <pre><code>&gt;&gt;&gt; date = '2017-12-31'
 &gt;&gt;&gt; sep_date = date.split('-')
@@ -1404,7 +1504,7 @@ True
 <pre><code>&gt;&gt;&gt; s = 'to be or not to be'
 &gt;&gt;&gt; s.replace('be', 'beat')
 'to beat or not to beat'
-&gt;&gt;&gt; s.replace('beat', 'eat')
+&gt;&gt;&gt; s.replace('beat', 'eat') # 'beat' не знайдено в s
 'to be or not to be'
 &gt;&gt;&gt; 'Без Пробілів'.replace(' ', '')
 'БезПробілів'
@@ -1480,15 +1580,15 @@ True
 </tr>
 <tr>
 <td><code>isalpha()</code></td>
-<td>буква</td>
+<td>букви</td>
 </tr>
 <tr>
 <td><code>islower()</code></td>
-<td>нижній регістр</td>
+<td>у нижньому регістрі</td>
 </tr>
 <tr>
 <td><code>isupper()</code></td>
-<td>верхній регістр</td>
+<td>у верхньому регістрі</td>
 </tr>
 <tr>
 <td><code>isidentifier()</code></td>
@@ -1500,11 +1600,11 @@ True
 <thead>
 <tr>
 <th>метод</th>
-<th>[ !#$%…]</th>
-<th>[a-zA-Z]</th>
-<th>[¼½¾]</th>
-<th>[²³¹]</th>
-<th>[0-9]</th>
+<th>!#$%…</th>
+<th>a-zA-Z</th>
+<th>¼½¾</th>
+<th>²³¹</th>
+<th>0-9</th>
 </tr>
 </thead>
 <tbody>

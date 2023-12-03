@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/dict/dict.html">
       
       
+        <link rel="prev" href="../methods_list/list_methods.html">
+      
+      
+        <link rel="next" href="../modules/modules.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -723,6 +727,118 @@
         
   
   
+    <a href="../methods_list/list_methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Методи списків
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    15. Словники
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            15. Словники
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="dict.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Тип даних dict
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../modules/modules.html" class="md-nav__link">
       
   
@@ -859,22 +975,19 @@
 <p>Щоб створити словник, треба у фігурних дужках перерахувати пари "ключ - значення". 
 У парі ключ від значення відділяють двокрапкою.
 Якщо таких пар більше однієї, їх розділяють комою.</p>
-<pre><code>:::python
-&gt;&gt;&gt; person = {'name': 'Сидоренко', 'age': 21}
+<pre><code>&gt;&gt;&gt; person = {'name': 'Сидоренко', 'age': 21}
 &gt;&gt;&gt; person
 {'name': 'Сидоренко', 'age': 21}
 &gt;&gt;&gt;
 </code></pre>
 <p>'age' — це ключ, а пов'язане з цим ключем значення буде 21. </p>
 <p>Щоб отримати зі словника значення по його ключу вказують словник і у квадратних дужках ключ:</p>
-<pre><code>:::python
-&gt;&gt;&gt; person['age']
+<pre><code>&gt;&gt;&gt; person['age']
 21
 &gt;&gt;&gt;
 </code></pre>
 <p>Можна використовувати тільки ті ключі, які вже містяться у словнику:</p>
-<pre><code>:::python
-&gt;&gt;&gt; person[21]
+<pre><code>&gt;&gt;&gt; person[21]
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 KeyError: 21
@@ -885,8 +998,7 @@ KeyError: 21
 <p>Словники не мають попередньо заданого обмеження в розмірі. 
 Ви в будь-який час можете додавати до словника нові пари "ключ-значення" чи змінювати значення чинної пари. 
 Розвиваючи попередній приклад:</p>
-<pre><code>:::python
-&gt;&gt;&gt; person
+<pre><code>&gt;&gt;&gt; person
 {'name': 'Сидоренко', 'age': 21}
 &gt;&gt;&gt; person['age'] = 31
 &gt;&gt;&gt; person['phone'] = '+380971234567'
@@ -895,8 +1007,7 @@ KeyError: 21
 &gt;&gt;&gt;
 </code></pre>
 <p>Ключами словника можуть бути лише об'єкти немутабельних типів:</p>
-<pre><code>:::python
-&gt;&gt;&gt; floors_heights = {[0, 1]:145 }
+<pre><code>&gt;&gt;&gt; floors_heights = {[0, 1]:145 }
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 TypeError: unhashable type: 'list'
@@ -906,15 +1017,13 @@ TypeError: unhashable type: 'list'
 &gt;&gt;&gt;
 </code></pre>
 <p>Значеннями можуть бути будь-які об'єкти:</p>
-<pre><code>:::python
-&gt;&gt;&gt; marks = {'Сидоренко': [3, 4, 5], 'Петренко': None}
+<pre><code>&gt;&gt;&gt; marks = {'Сидоренко': [3, 4, 5], 'Петренко': None}
 &gt;&gt;&gt; marks
 {'Сидоренко': [3, 4, 5], 'Петренко': None}
 &gt;&gt;&gt;
 </code></pre>
 <p>З'ясувати наявність ключа у словнику можна за допомогою операторів <code>in</code>, <code>not in</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; d = {1:11, 'str': 'У бобра добра багато!'}
+<pre><code>&gt;&gt;&gt; d = {1:11, 'str': 'У бобра добра багато!'}
 &gt;&gt;&gt; 1 in d
 True
 &gt;&gt;&gt; 'int' not in d
@@ -924,22 +1033,19 @@ True
 &gt;&gt;&gt;
 </code></pre>
 <p>Дізнатись кількість пар ключ-значення у словнику:</p>
-<pre><code>:::python
-&gt;&gt;&gt; d={1:None, None:1}
+<pre><code>&gt;&gt;&gt; d={1:None, None:1}
 &gt;&gt;&gt; len(d)
 2
 &gt;&gt;&gt;
 </code></pre>
-<p>Отримати список з відсортованими ключами словнка:</p>
-<pre><code>:::python
-&gt;&gt;&gt; d = {2:22, 3:33, 1:11}
+<p>Отримати список з відсортованими ключами словника:</p>
+<pre><code>&gt;&gt;&gt; d = {2:22, 3:33, 1:11}
 &gt;&gt;&gt; sorted(d)
 [1, 2, 3]
 &gt;&gt;&gt;
 </code></pre>
 <p>Створити пустий словник:</p>
-<pre><code>:::python
-&gt;&gt;&gt; d = {}
+<pre><code>&gt;&gt;&gt; d = {}
 &gt;&gt;&gt; d
 {}
 &gt;&gt;&gt; dict()
@@ -964,6 +1070,46 @@ True
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="../methods_list/list_methods.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Методи списків">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Методи списків
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../modules/modules.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Модулі в Python">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Модулі в Python
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
