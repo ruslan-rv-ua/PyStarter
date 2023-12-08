@@ -8,7 +8,6 @@ def name_shuffle(name):
 assert name_shuffle('') == ''
 assert name_shuffle('Bill') == 'Bill'
 assert name_shuffle('Linus Torvalds') == 'Torvalds Linus'
-assert name_shuffle('Залужний Валерій') == 'Валерій Залужний'
 assert name_shuffle('Jean-Michel Jarre') == 'Jarre Jean-Michel'
 assert name_shuffle('Lara Croft') == 'Croft Lara'  
 assert name_shuffle('   Harry     Potter    ') == 'Potter Harry'

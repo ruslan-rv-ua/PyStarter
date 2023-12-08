@@ -15,8 +15,8 @@ incrementer([4,6,9,1,3]) == [5,8,2,5,8]
 # ваш код починається тут
 def incrementer(array):
 	res = []
-	for pos, number in enumerate(array):
-		res.append((array[pos] + pos + 1) % 10)
+	for index, number in enumerate(array):
+		res.append((array[index] + index + 1) % 10)
 	return res
 
 # не міняйте наступний код

@@ -170,13 +170,13 @@ nav:
     - Форматування символьних рядків: methods_str/str_format.md
   - 14. Методи списків: 
     - Методи списків: methods_list/list_methods.md
-  #   - Структура даних "стек": methods_list/stack.md
+    - Структура даних "стек": methods_list/stack.md
   - 15. Словники:
     - Тип даних dict: dict/dict.md
   #   - Методи словників: dict/dict_methods.md
   #   - Обхід словників: dict/dict_traversal.md
-  # - 16. Файли:
-  #   - Кодування текстової інформації: text_files/unicode.md
+  - 16. Файли:
+    - Кодування текстової інформації: text_files/unicode.md
   #   - Текстові файли: text_files/open_close_flush.md
   #   - Читання і запис текстових файлів: text_files/read_write.md
   - 17. Модулі:
