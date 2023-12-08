@@ -825,6 +825,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    count()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#startswith" class="md-nav__link">
     startswith()
   </a>
@@ -1026,6 +1033,43 @@
         
   
   
+    <a href="../text_files/unicode.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. Файли
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../modules/modules.html" class="md-nav__link">
       
   
@@ -1187,6 +1231,13 @@
           <li class="md-nav__item">
   <a href="#index" class="md-nav__link">
     index()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    count()
   </a>
   
 </li>
@@ -1472,6 +1523,21 @@ TypeError: sequence item 0: expected str instance, int found
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 ValueError: substring not found
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="count">count()</h3>
+<pre><code>string.count(substring)
+</code></pre>
+<p>Повертає кількість входжень підрядка <code>substring</code> в рядку <code>string</code>.</p>
+<pre><code>&gt;&gt;&gt; 'абабагаламага'.count('а')
+7
+&gt;&gt;&gt; 'абабагаламага'.count('ба')
+2
+&gt;&gt;&gt;
+</code></pre>
+<p>Враховуються лише підрядки, які "не перетинаються":</p>
+<pre><code>&gt;&gt;&gt; 'абабагаламага'.count('аба') # в 'абаба' рядки 'аба' перетинаються
+1
 &gt;&gt;&gt;
 </code></pre>
 <h3 id="startswith">startswith()</h3>

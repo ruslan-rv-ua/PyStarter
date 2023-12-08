@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/methods_list/stack.html">
       
       
+        <link rel="prev" href="list_methods.html">
+      
+      
+        <link rel="next" href="../dict/dict.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -707,6 +711,101 @@
       
   
   
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    14. Методи списків
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            14. Методи списків
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="list_methods.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Методи списків
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="stack.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Структура даних "стек"
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
     
     
@@ -721,11 +820,11 @@
         
   
   
-    <a href="list_methods.html" class="md-nav__link">
+    <a href="../dict/dict.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    14. Методи списків
+    15. Словники
   </span>
   
 
@@ -758,11 +857,11 @@
         
   
   
-    <a href="../dict/dict.html" class="md-nav__link">
+    <a href="../text_files/unicode.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    15. Словники
+    16. Файли
   </span>
   
 
@@ -937,14 +1036,13 @@
 <ul>
 <li><code>push(item)</code> —  додати елемент <code>item</code> на верхівку стека</li>
 <li><code>pop()</code> — видалити елемент з верхівки стека і повернути його</li>
-<li><code>peek()</code> — дізнатись (повернути) елемент з верхівку стека</li>
+<li><code>peek()</code> — дізнатись (повернути) елемент з верхівки стека</li>
 </ul>
 <p>В Python немає спеціального типу даних або ж готової структури яка б реалізовувала стек. 
 Але за допомогою списків можна легко реалізувати стек самостійно. </p>
 <p>Будемо вважати останній елемент списка вершиною стека. 
 Тоді щоб додати елемент на стек достатньо виконати:</p>
-<pre><code>:::python
-&gt;&gt;&gt; stack = []
+<pre><code>&gt;&gt;&gt; stack = []
 &gt;&gt;&gt; stack.append(1)
 &gt;&gt;&gt; stack.append(2)
 &gt;&gt;&gt; stack.append('top')
@@ -953,8 +1051,7 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>Дізнатись елемент на верхівці стека:</p>
-<pre><code>:::python
-&gt;&gt;&gt; on_top = stack[-1]
+<pre><code>&gt;&gt;&gt; on_top = stack[-1]
 &gt;&gt;&gt; on_top
 'top'
 &gt;&gt;&gt; stack
@@ -962,8 +1059,7 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>Щоб видалити значення з верхівки стека скористаємось методом <code>pop()</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; val = stack.pop()
+<pre><code>&gt;&gt;&gt; val = stack.pop()
 &gt;&gt;&gt; val
 'top'
 &gt;&gt;&gt; stack.pop()
@@ -1005,6 +1101,44 @@ IndexError: pop from empty list
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="list_methods.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Методи списків">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Методи списків
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../dict/dict.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Тип даних dict">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Тип даних dict
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

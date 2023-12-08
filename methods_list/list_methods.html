@@ -18,7 +18,7 @@
         <link rel="prev" href="../methods_str/str_format.html">
       
       
-        <link rel="next" href="../dict/dict.html">
+        <link rel="next" href="stack.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -855,15 +855,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#clear" class="md-nav__link">
-    clear()
+  <a href="#reverse" class="md-nav__link">
+    reverse()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reverse" class="md-nav__link">
-    reverse()
+  <a href="#copy" class="md-nav__link">
+    copy()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clear" class="md-nav__link">
+    clear()
   </a>
   
 </li>
@@ -872,6 +879,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stack.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Структура даних "стек"
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -907,6 +934,43 @@
   
   <span class="md-ellipsis">
     15. Словники
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../text_files/unicode.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. Файли
   </span>
   
 
@@ -1118,15 +1182,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#clear" class="md-nav__link">
-    clear()
+  <a href="#reverse" class="md-nav__link">
+    reverse()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reverse" class="md-nav__link">
-    reverse()
+  <a href="#copy" class="md-nav__link">
+    copy()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clear" class="md-nav__link">
+    clear()
   </a>
   
 </li>
@@ -1268,17 +1339,6 @@ ValueError: 777 is not in list
 &gt;&gt;&gt;
 </code></pre>
 <p>Повертає <code>None</code>.</p>
-<h2 id="clear">clear()</h2>
-<pre><code>lst.clear()
-</code></pre>
-<p>Видаляє усі елементи зі списку "lst".</p>
-<pre><code>&gt;&gt;&gt; l = [1, 7, 2, 6, 3, 5, 4]
-&gt;&gt;&gt; l.clear()
-&gt;&gt;&gt; l
-[]
-&gt;&gt;&gt;
-</code></pre>
-<p>Повертає <code>None</code>.</p>
 <h2 id="reverse">reverse()</h2>
 <pre><code>lst.reverse()
 </code></pre>
@@ -1287,6 +1347,43 @@ ValueError: 777 is not in list
 &gt;&gt;&gt; l.reverse()
 &gt;&gt;&gt; l
 [5, 10, 1]
+&gt;&gt;&gt;
+</code></pre>
+<p>Повертає <code>None</code>.</p>
+<h2 id="copy">copy()</h2>
+<pre><code>lst.copy()
+</code></pre>
+<p>Повертає новий список, який є копією списку <code>lst</code>:</p>
+<pre><code>&gt;&gt;&gt; original_list = [1, 2, 3]
+&gt;&gt;&gt; copied_list = original_list.copy()
+&gt;&gt;&gt; copied_list is original_list
+False
+&gt;&gt;&gt;
+</code></pre>
+<p>Слід зауважити, що повертається так звана <strong><em>поверхнева копія</em></strong> (shallow copy). </p>
+<p>Поверхнева копія об'єкта в Python є копією, яка містить посилання на внутрішні об'єкти оригіналу, тобто вона копіює лише зовнішню структуру об'єкта, але не його внутрішній зміст. При поверхневому копіюванні зміни в внутрішніх об'єктах копії можуть впливати на оригінал, оскільки вони вказують на ті ж самі об'єкти. </p>
+<pre><code>&gt;&gt;&gt; matrix = [[0] * 2] *2
+&gt;&gt;&gt; new_matrix = matrix.copy()
+&gt;&gt;&gt; new_matrix
+[[0, 0], [0, 0]]
+&gt;&gt;&gt; new_matrix[0][0] = 7
+&gt;&gt;&gt; new_matrix
+[[7, 0], [7, 0]]
+&gt;&gt;&gt; matrix
+[[7, 0], [7, 0]]
+&gt;&gt;&gt; new_matrix[0] is matrix[0]
+True
+&gt;&gt;&gt;
+</code></pre>
+<p>Копіювання списків за допомогою зрізання та <code>list()</code> також повертають поверхневу копію оригінального списка.</p>
+<h2 id="clear">clear()</h2>
+<pre><code>lst.clear()
+</code></pre>
+<p>Видаляє усі елементи зі списку "lst".</p>
+<pre><code>&gt;&gt;&gt; l = [1, 7, 2, 6, 3, 5, 4]
+&gt;&gt;&gt; l.clear()
+&gt;&gt;&gt; l
+[]
 &gt;&gt;&gt;
 </code></pre>
 <p>Повертає <code>None</code>.</p>
@@ -1332,13 +1429,13 @@ ValueError: 777 is not in list
         
         
           
-          <a href="../dict/dict.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Тип даних dict">
+          <a href="stack.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Структура даних &#34;стек&#34;">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Тип даних dict
+                Структура даних "стек"
               </div>
             </div>
             <div class="md-footer__button md-icon">
