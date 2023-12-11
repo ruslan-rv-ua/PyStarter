@@ -173,12 +173,12 @@ nav:
     - Структура даних "стек": methods_list/stack.md
   - 15. Словники:
     - Тип даних dict: dict/dict.md
-  #   - Методи словників: dict/dict_methods.md
-  #   - Обхід словників: dict/dict_traversal.md
+    - Методи словників: dict/dict_methods.md
+    - Обхід словників: dict/dict_traversal.md
   - 16. Файли:
     - Кодування текстової інформації: text_files/unicode.md
-  #   - Текстові файли: text_files/open_close_flush.md
-  #   - Читання і запис текстових файлів: text_files/read_write.md
+    - Текстові файли: text_files/open_close_flush.md
+    # - Читання і запис текстових файлів: text_files/read_write.md
   - 17. Модулі:
     - Модулі в Python: modules/modules.md
     - Використання модулів: modules/module_usage.md
@@ -190,4 +190,3 @@ nav:
     - Модуль random: modules/random_module.md
   - Дзен: zen.md
   - Корисні ресурси: resources.md
-  # - "Що далі?": next_steps.md
