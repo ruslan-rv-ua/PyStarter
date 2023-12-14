@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/dict/dict_traversal.html">
       
       
+        <link rel="prev" href="dict_methods.html">
+      
+      
+        <link rel="next" href="../text_files/unicode.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -746,34 +750,163 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="dict.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     15. Словники
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            15. Словники
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dict.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Тип даних dict
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dict_methods.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Методи словників
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Обхід словників
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="dict_traversal.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Обхід словників
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#keys" class="md-nav__link">
+    keys()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    values()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#items" class="md-nav__link">
+    items()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -996,8 +1129,7 @@
 <p>Словники можна обходити циклом <code>for</code>. 
 Відбувається перебір ключів словника, 
 отже циклом <code>for</code> фактично ми ітеруємось саме по ключам словника. </p>
-<pre><code>:::python
-&gt;&gt;&gt; d = {1:11, '2':'двадцять два', None: None}
+<pre><code>&gt;&gt;&gt; d = {1:11, '2':'двадцять два', None: None}
 &gt;&gt;&gt; for key in d:
 ...     print(key, d[key])
 ...
@@ -1006,12 +1138,11 @@
 None None
 &gt;&gt;&gt;
 </code></pre>
-<p>Зауважте: словник — структура невпорядкована. Тому при ітерації по словнику порядок ключів залишається випадковим. </p>
+<p>Ключі у словнику представлено у порядку, у якому їх було додано у словник.</p>
 <h2 id="keys">keys()</h2>
 <p>Словник має метод <code>keys()</code>, за допомогою якого можна отримати усі ключі словника. 
 Метод повертає об'єкт спеціального типу (класу) 'dict_keys' який містить усі ключі словника. </p>
-<pre><code>:::python
-&gt;&gt;&gt; d = {1:11, 2:22}
+<pre><code>&gt;&gt;&gt; d = {1:11, 2:22}
 &gt;&gt;&gt; keys = d.keys()
 &gt;&gt;&gt; keys
 dict_keys([1, 2])
@@ -1021,8 +1152,7 @@ dict_keys([1, 2])
 </code></pre>
 <p>Здається що <code>dict_keys</code> — це послідовність. Але це не так. 
 Ми не можемо отримати доступ до довільного елемента за допомогою індексації:</p>
-<pre><code>:::python
-&gt;&gt;&gt; keys
+<pre><code>&gt;&gt;&gt; keys
 dict_keys([1, 2])
 &gt;&gt;&gt; keys[0]
 Traceback (most recent call last):
@@ -1031,15 +1161,13 @@ TypeError: 'dict_keys' object is not subscriptable
 &gt;&gt;&gt;
 </code></pre>
 <p>Але <code>dict_keys</code> можна привести до послідовності, наприклад до списку:</p>
-<pre><code>:::python
-&gt;&gt;&gt; keys_list = list(keys)
+<pre><code>&gt;&gt;&gt; keys_list = list(keys)
 &gt;&gt;&gt; keys_list
 [1, 2]
 &gt;&gt;&gt;
 </code></pre>
 <p>Також по <code>dict_keys</code> можна ітеруватись циклом <code>for</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; for key in keys:
+<pre><code>&gt;&gt;&gt; for key in keys:
 ...     print(key)
 ...
 1
@@ -1049,8 +1177,7 @@ TypeError: 'dict_keys' object is not subscriptable
 <h2 id="values">values()</h2>
 <p>Ще один метод словника — <code>values()</code>. 
 Повертає об'єкт класу 'dict_values' який містить усі значення словника. </p>
-<pre><code>:::python
-&gt;&gt;&gt; d
+<pre><code>&gt;&gt;&gt; d
 {1: 11, 2: 22}
 &gt;&gt;&gt; values = d.values()
 &gt;&gt;&gt; values
@@ -1060,15 +1187,13 @@ dict_values([11, 22])
 &gt;&gt;&gt;
 </code></pre>
 <p>Щоб отримати послідовність усіх значень словника — можна привести наприклад до списку:</p>
-<pre><code>:::python
-&gt;&gt;&gt; values_list = list(values)
+<pre><code>&gt;&gt;&gt; values_list = list(values)
 &gt;&gt;&gt; values_list
 [11, 22]
 &gt;&gt;&gt;
 </code></pre>
 <p>По об'єкту типу <code>dict_values</code> можна ітеруватись:</p>
-<pre><code>:::python
-&gt;&gt;&gt; for value in d.values():
+<pre><code>&gt;&gt;&gt; for value in d.values():
 ...     print(value)
 ...
 11
@@ -1079,8 +1204,7 @@ dict_values([11, 22])
 <p>Ще один метод словника — <code>items()</code>. 
 Повертає об'єкт класу 'dict_items' який містить пари "ключ-значення". 
 Кожна пара "ключ-значення" представлена кортежем, перший елемент кортежа — це ключ, другий — відповідне йому значення зі словника:</p>
-<pre><code>:::python
-&gt;&gt;&gt; d
+<pre><code>&gt;&gt;&gt; d
 {1: 11, 2: 22}
 &gt;&gt;&gt; items = d.items()
 &gt;&gt;&gt; items
@@ -1090,16 +1214,14 @@ dict_items([(1, 11), (2, 22)])
 &gt;&gt;&gt;
 </code></pre>
 <p>Отримаємо список усіх пар словника:</p>
-<pre><code>:::python
-&gt;&gt;&gt; list(d.items())
+<pre><code>&gt;&gt;&gt; list(d.items())
 [(1, 11), (2, 22)]
 &gt;&gt;&gt; list(d.items())[-1]
 (2, 22)
 &gt;&gt;&gt;
 </code></pre>
 <p>Ітеруватись циклом <code>for</code> по елементам (парам) словника теж можна:</p>
-<pre><code>:::python
-&gt;&gt;&gt; for item in d.items():
+<pre><code>&gt;&gt;&gt; for item in d.items():
 ...     print(item)
 ...
 (1, 11)
@@ -1121,8 +1243,7 @@ dict_items([(1, 11), (2, 22)])
 Просто замість однієї змінної цикла достатньо вказати дві. 
 І тоді у першу змінну при черговій ітерації цикла буде попадати елемент кортежа з індексом 0, 
 у другу — відповдно елемент кортежа з індексом 1. </p>
-<pre><code>:::python
-&gt;&gt;&gt; d
+<pre><code>&gt;&gt;&gt; d
 {1: 11, 2: 22}
 &gt;&gt;&gt; for key, value in d.items():
 ...     print(key, '-', value)
@@ -1149,6 +1270,46 @@ dict_items([(1, 11), (2, 22)])
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="dict_methods.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Методи словників">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Методи словників
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../text_files/unicode.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Кодування текстової інформації">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Кодування текстової інформації
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

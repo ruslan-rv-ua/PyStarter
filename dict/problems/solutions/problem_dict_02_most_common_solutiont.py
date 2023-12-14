@@ -4,9 +4,9 @@ def most_common_char(string):
 	for char in string:
 		counter[char] = counter.get(char, 0) + 1
 	max_count = max(counter.values())
-	for char, count in counter.items():
-		if count == max_count:
-			return char
+	for char in string:
+        if counter[char] == max_count:
+            return char
 
 
 '''

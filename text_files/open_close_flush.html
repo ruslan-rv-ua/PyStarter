@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/text_files/open_close_flush.html">
       
       
+        <link rel="prev" href="unicode.html">
+      
+      
+        <link rel="next" href="../modules/modules.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -783,34 +787,143 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="unicode.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     16. Файли
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            16. Файли
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unicode.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Кодування текстової інформації
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Текстові файли
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="open_close_flush.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Текстові файли
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#open" class="md-nav__link">
+    open()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#close" class="md-nav__link">
+    close()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flush" class="md-nav__link">
+    flush()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1006,8 +1119,7 @@
 </ol>
 <h2 id="open">open()</h2>
 <p>Щоб почати роботу з файлом, його треба відкрити за допомогою функції open():</p>
-<pre><code>:::python
-open(file, mode)
+<pre><code>open(file, mode)
 </code></pre>
 <p>Перший параметр — це шлях до файлу у файловій системі.
 Шлях до файлу може бути абсолютним, або ж відносним щодо запущеної програми на Python.</p>
@@ -1028,17 +1140,15 @@ open(file, mode)
 </blockquote>
 <p><em>&lt;кодування&gt;</em> — це об'єкт типу <em>str</em>, у якому у символьному вигляді представлена назва кодування тексту. Дуже зручно!</p>
 <p>Наприклад, якщо ми хочемо читати з текстового файла який був записаний у кодуванні utf-8, то відкривати ми цей файл будемо наступним чином:</p>
-<pre><code>:::python
-text_file = open('btc_rates.csv', 'r', encoding='UTF-8')
+<pre><code>text_file = open('btc_rates.csv', 'r', encoding='UTF-8')
 </code></pre>
 <p>open() повертає нам об'єкт спеціального типу "файл".
 Надалі з файлом взаємодіють через методи цього об'єкту.</p>
 <h2 id="close">close()</h2>
-<p>Метод close() закриває файл. 
+<p>Функція close() закриває файл. 
 Після цього ми вже не маємо змоги робити щось з файлом.</p>
 <p>Після закриття файлу звільняються усі ресурси операційної системи, які були виділені для відкриття файлу.</p>
-<pre><code>:::python
-text_file = open('btc_rates.csv', 'r', encoding='UTF-8')
+<pre><code>text_file = open('btc_rates.csv', 'r', encoding='UTF-8')
 # тут робота з файлом
 text_file.close()
 </code></pre>
@@ -1053,13 +1163,12 @@ text_file.close()
 вони не опиняються одразу ж на фізичному носії,
 а попадають у спеціальний буфер, тобто розміщуються в оперативній пам'яті.
 Щоб дані фізично записались, треба виконати певні дії.</p>
-<p>Метод flush() якраз і виконує цю функцію, 
+<p>Метод <code>flush()</code> якраз і виконує цю функцію, 
 тобто усі дані які знаходяться у буфері
 і призначені для запису,
 попадають на фізичний носій.</p>
-<p>Те ж саме відбувається коли ми викликаємо метод close().</p>
-<pre><code>:::python
-text_file = open('btc_rates.csv', 'r', encoding='UTF-8')
+<p>Те ж саме відбувається коли ми викликаємо функцію close().</p>
+<pre><code>text_file = open('btc_rates.csv', 'r', encoding='UTF-8')
 # тут щось записуємо у файл, можливо (частина) буде лише у буфері
 text_file.flush() # буде гарантовано записано на носій
 # тут щось записуємо у файл, можливо буде лише у буфері
@@ -1083,6 +1192,46 @@ text_file.close() # буде гарантовано записано на нос
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="unicode.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Кодування текстової інформації">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Кодування текстової інформації
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../modules/modules.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Модулі в Python">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Модулі в Python
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

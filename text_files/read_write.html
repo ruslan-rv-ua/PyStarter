@@ -1018,8 +1018,7 @@
 <p>write() приймає у якості аргумента символьний рядок,
 який, власне, і записується у файл.</p>
 <p>Розглянемо приклад:</p>
-<pre><code>:::python
-f = open('myfile.txt', 'w')
+<pre><code>f = open('myfile.txt', 'w')
 f.write('Hello!\n')
 f.write('and goodbye')
 f.close()
@@ -1031,8 +1030,7 @@ f.close()
 <p>Writelines() отримує в якості аргумента
 послідовність символьних рядків (список, кортеж, ...)
 і записує усі елементи послідовності у файл:</p>
-<pre><code>:::python
-a = ['Hi','there!']
+<pre><code>a = ['Hi','there!']
 f = open('myfile.txt', 'w')
 f.writelines(a)
 f.close()
@@ -1070,8 +1068,7 @@ f.close()
 <h2 id="_2">Файл як послідовність</h2>
 <p>Якщо текст у файлі розбитий на окремі рядки, то його можна вважати за послідовність символьних рядків.</p>
 <p>Напишемо програму яка зчитує з текстового файлу рядок за рядком і виводить їх:</p>
-<pre><code>:::python
-file = open('readme.txt', 'r')
+<pre><code>file = open('readme.txt', 'r')
 for line in file:
     print(line)
 file.close()

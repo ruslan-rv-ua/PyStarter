@@ -4,14 +4,15 @@ l.append([4, 5])
 l.append('text')
 
 l = [1, 2, 3]
-l.extend('text')
 l.extend([4, 5])
+l.extend('text')
 
 l = [1, 2, 3]
 l.insert(0, 0)
-l.insert(-1, 2.5)
+l.insert(-2, 'oops')
 l.insert(1000, 1000)
 l.insert(-1000, -1000)
+
 
 l = [1, 2, 3]
 l.remove(1)
@@ -43,3 +44,6 @@ l.reverse()
 stack.push(x)
 r = stack.pop()
 v = stack.peek()
+
+
+print(sorted(l) == l.sort())
