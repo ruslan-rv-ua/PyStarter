@@ -5,7 +5,6 @@ def reversed_dict(d):
 		result[value] = key
 	return result
 
-
 '''
 "Перевернути словник"
 
