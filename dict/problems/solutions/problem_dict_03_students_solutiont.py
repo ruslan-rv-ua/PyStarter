@@ -5,13 +5,13 @@ STUDENTS = [
     {"name": "Шевченко Світлана Борисівна", "marks": [5, 4, 3, 2, 1]},
     {"name": "Шинкаренко Ігор Михайлович", "marks": [5, 5, 1, 5, 5]},
 ]
+
 # ваш код з наступного рядка, умова задачі далі
 students_marks = {}
 for student in STUDENTS:
     last_name, first_name, middle_name = student["name"].split()
     short_name = f"{last_name} {first_name[0]}.{middle_name[0]}."
-    marks = sum(student["marks"]) / len(student["marks"])
-    students_marks[short_name] = marks
+    students_marks[short_name] = sum(student["marks"]) / len(student["marks"])
 
 for short_name in sorted(students_marks):
     print(f"{short_name} - {students_marks[short_name]:.1f}")
