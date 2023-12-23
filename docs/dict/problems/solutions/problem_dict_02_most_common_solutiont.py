@@ -5,8 +5,8 @@ def most_common_char(string):
 		counter[char] = counter.get(char, 0) + 1
 	max_count = max(counter.values())
 	for char in string:
-        if counter[char] == max_count:
-            return char
+		if counter[char] == max_count:
+			return char
 
 
 '''
@@ -19,6 +19,7 @@ def most_common_char(string):
 '''
 # не міняйте наступний код, це тести
 assert most_common_char('1') == '1'
+assert most_common_char('1  2') == ' '
 assert most_common_char('12') == '1'
 assert most_common_char('122') == '2'
 assert most_common_char('1223') == '2'

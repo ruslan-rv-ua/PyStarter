@@ -125,6 +125,7 @@ nav:
     - Екрановані послідовності: strings/escapes.md
     - Операції над символьними рядками: strings/strings_operations.md
     - Індексація: strings/indexing.md
+    - Форматування символьних рядків: strings/fstrings.md
   - 05. Функції:
     - Виклик функцій: functions/functions.md
     - Функції та вирази: functions/functions_exprs.md
@@ -137,7 +138,7 @@ nav:
     - Інструкція else: if/else_statement.md
     - Інструкція elif: if/elif_statement.md
     - Тернарний умовний оператор: if/ternar_if.md
-  - 08. Створення функцій:
+  - 08. Функції 2:
     - Функції у програмуванні: functions_def/functions_explained.md
     - Визначення функцій: functions_def/functions_def.md
     - Параметри і аргументи: functions_def/functions_params.md
@@ -149,7 +150,7 @@ nav:
     - Інструкція while: loop_while/while.md
     - Синтаксичний цукор: loop_while/syntax_sugar.md
     - Прийоми використання циклів: loop_while/usage.md
-  - 10. Послідовності:
+  - 10. Списки і кортежі:
     - Тип даних list: sequences/list.md
     - Тип даних tuple: sequences/tuple.md
     - Вкладені структури даних: sequences/complex_structures.md
@@ -159,6 +160,8 @@ nav:
     - Мутабельність: objects/mutability.md
     - Немутабельні винятки: objects/immutable_exceptions.md
     - Посилання у контейнерах: objects/containers_bindings.md
+    - Життєвий цикл об'єкта: objects/object_lifecycle.md
+    - Знищення посилань на об'єкт: objects/del.md
   - 12. Цикли 2:
     - Цикл for: loop_for/for.md
     - Тип даних range: loop_for/range.md
@@ -167,7 +170,6 @@ nav:
   - 13. Методи:
     - Методи в Python: methods/methods.md
     - Методи символьних рядків: methods_str/str_methods.md
-    - Форматування символьних рядків: methods_str/str_format.md
   - 14. Методи списків: 
     - Методи списків: methods_list/list_methods.md
     - Структура даних "стек": methods_list/stack.md
@@ -178,14 +180,24 @@ nav:
   - 16. Файли:
     - Кодування текстової інформації: text_files/unicode.md
     - Текстові файли: text_files/open_close_flush.md
-    # - Читання і запис текстових файлів: text_files/read_write.md
+    - Читання і запис текстових файлів: text_files/read_write.md
   - 17. Модулі:
     - Модулі в Python: modules/modules.md
     - Використання модулів: modules/module_usage.md
     - Створення модулів: modules/module_composing.md
     # - math: modules/math_module.md
-    - Модуль random: modules/random_module.md
+    # - Модуль random: modules/random_module.md
     # - Модуль pprint: modules/pprint_module.md
+  - 18. Функції 3:
+    # - Параметри і аргументи: functions3/params_args.md
+    # - Стратегії обчислення: functions3/strategies.md
+    - Документування функцій: functions3/docstrings.md
+  - 19. Парадигми програмування:
+    - Основні парадигми програмування: paradigmas/paradigmas.md
+    - Імперативне програмування: paradigmas/imperative.md
+    - Об'єктно-орієнтоване програмування: paradigmas/oop.md
+    - Декларативне програмування: paradigmas/declarative.md
+    - Резюме: paradigmas/resume.md
   - Батарейки:
     - Модуль random: modules/random_module.md
   - Дзен: zen.md
