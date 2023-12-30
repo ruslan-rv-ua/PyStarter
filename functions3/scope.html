@@ -22,7 +22,7 @@
     
     
       
-        <title>Простори імен - PyStarter</title>
+        <title>Області видимості - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Простори імен
+              Області видимості
             
           </span>
         </div>
@@ -871,7 +871,7 @@
         
   
   
-    <a href="docstrings.html" class="md-nav__link">
+    <a href="strategies.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -923,6 +923,62 @@
   
 
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/basics/basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    20. Об'єктно-орієнтоване програмування
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comming_soon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21. Інкапсуляція
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1039,8 +1095,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#built-in" class="md-nav__link">
-    Built-in
+  <a href="#built-ins" class="md-nav__link">
+    Built-ins
   </a>
   
 </li>
@@ -1059,13 +1115,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#enclosing" class="md-nav__link">
-    Enclosing
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1075,6 +1124,26 @@
   <a href="#_2" class="md-nav__link">
     Область видимості
   </a>
+  
+    <nav class="md-nav" aria-label="Область видимості">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eenclosing-scope" class="md-nav__link">
+    Eenclosing scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legb" class="md-nav__link">
+    Правило LEGB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1141,7 +1210,7 @@
                   
 
 
-<h1 id="_1">Простори імен</h1>
+<h1 id="_1">Області видимості</h1>
 <p>Спочатку трошки теорії:</p>
 <blockquote>
 <p><strong>Простір імен</strong>, також <em>про́стір назв</em> або <em>іменний про́стір</em> (англ. namespace) — концепція у програмуванні, призначена для розмежування різних множин ідентифікаторів і попередження конфліктів між їхніми іменами</p>
@@ -1151,32 +1220,40 @@
 у якому ключі є іменами, 
 а значення — самими сутностями. </p>
 <h2 id="python">Простори імен в Python</h2>
-<p>В Python розрізяють 4 простори імен: </p>
+<p>В Python розрізняють наступні простори імен: </p>
 <ul>
-<li>Local — локальний (всередині функції)</li>
-<li>Enclosing — охоплюючий (локальний простір функцій-обгорток, які у свою чергу містять інші функції)</li>
-<li>Global — глобальний (основний модуль)</li>
-<li>Built-in — вбудований (зарезервовані значення Python)</li>
+<li>built-ins — вбудований (зарезервовані значення Python)</li>
+<li>global — глобальний (простір імен модуля)</li>
+<li>local — локальний (всередині функції або класа)</li>
 </ul>
 <p>Простори імен мають різні життєві цикли. 
 По мірі виконання програми інтерпретатор Python створює необхідні простори імен 
 і видаляє їх коли потреба в них зникає. </p>
-<h3 id="built-in">Built-in</h3>
-<p>Вбудований простір імен містить імена усіх вбудованих об'єктів Python. 
-Наприклад функції <code>len()</code> та <code>print()</code>, типи даних <code>int</code> та <code>list</code>. 
-Коли інтерпретатор запускається він автоматично створює вбудований простір імен 
+<p>Різні простори імен ізольовані. Тому, наприклад, однакові імена, які можуть існувати в різних функціях, не призводять до конфліктів імен в програмі. </p>
+<h3 id="built-ins">Built-ins</h3>
+<p>Вбудований простір імен містить імена усіх вбудованих об'єктів Python, 
+наприклад функції <code>len()</code> та <code>print()</code>, типи даних <code>int</code> та <code>list</code>. </p>
+<p>Коли інтерпретатор запускається він автоматично створює вбудований простір імен 
 і знищує його по завершенні своєї роботи. </p>
+<p>Усі імена з цього простору Python як би "зберігає" у спеціальному модулі <code>builtins</code> і при кожному запуску автоматично імпортує їх. 
+Подивитись список імен з цього модуля можна за допомогою функції <code>dir()</code>:</p>
+<pre><code>&gt;&gt;&gt; import builtins
+&gt;&gt;&gt; dir(builtins)
+['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BaseExceptionGroup', 'BlockingIOError', 
+...
+'super', 'tuple', 'type', 'vars', 'zip']
+&gt;&gt;&gt;
+</code></pre>
 <h3 id="global">Global</h3>
 <p>Глобальний простір імен містить імена, 
-які визначаються на рівні основної програми (основного модуля програми) 
-або імпортуються в основний модуль з інших модулів. 
-Створюється одразу ж після завантаження основного модуля програми 
+які визначаються на рівні поточного модуля програми 
+або імпортуються в поточний модуль з інших модулів та пакетів. 
+Простір імен створюється одразу ж після завантаження відповідного модуля програми 
 і існує до завершення роботи інтерпретатора. </p>
 <p>Вбудована функція <code>globals()</code> повертає словник, 
 який містить усі імена з глобального простору і відповідні їм об'єкти. 
 Давайте подивимось які імена вже є у цьому просторі одразу після запуска інтерпретатора: </p>
-<pre><code>:::python
-&gt;&gt;&gt; type(globals())
+<pre><code>&gt;&gt;&gt; type(globals())
 &lt;class 'dict'&gt;
 &gt;&gt;&gt; globals()
 {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': &lt;_frozen_importlib_external.SourceFileLoader object at 0x000001F0441E0AF0&gt;, '__spec__': None, '__annotations__': {}, '__builtins__': &lt;module 'builtins' (built-in)&gt;}
@@ -1184,34 +1261,32 @@
 dict_keys(['__name__', '__doc__', '__package__', '__loader__', '__spec__', '__annotations__', '__builtins__'])
 &gt;&gt;&gt;
 </code></pre>
-<p>В глобальлному просторі вже є декілька імен. 
-Виглядають вони трохи дивно, але поки що не звертайте на це уваги, 
-у подальшому розберемось з цими іменами. </p>
+<p>У глобальному просторі вже є декілька імен. </p>
+<!-- Виглядають вони трохи дивно, але поки що не звертайте на це уваги, 
+у подальшому розберемось з цими іменами.  
+-->
+
 <p>Додамо ще одне ім'я у простір:</p>
-<pre><code>:::python
-&gt;&gt;&gt; my_variable = 'text'
+<pre><code>&gt;&gt;&gt; my_variable = 'text'
 &gt;&gt;&gt; globals().keys()
 dict_keys(['__name__', '__doc__', '__package__', '__loader__', '__spec__', '__annotations__', '__builtins__', 'my_variable'])
 &gt;&gt;&gt;
 </code></pre>
 <p>І одразу усі імена з модуля <code>random</code>: </p>
-<pre><code>:::python
-&gt;&gt;&gt; from random import *
+<pre><code>&gt;&gt;&gt; from random import *
 &gt;&gt;&gt; globals().keys()
 dict_keys(['__name__', '__doc__', '__package__', '__loader__', '__spec__', '__annotations__', '__builtins__', 'my_variable', 'Random', 'seed', 'random', 'uniform', 'randint', 'choice', 'sample', 'randrange', 'shuffle', 'normalvariate', 'lognormvariate', 'expovariate', 'vonmisesvariate', 'gammavariate', 'triangular', 'gauss', 'betavariate', 'paretovariate', 'weibullvariate', 'getstate', 'setstate', 'getrandbits', 'choices', 'SystemRandom'])
 &gt;&gt;&gt;
 </code></pre>
 <p>Функція <code>globals()</code> повертає посилання на активний словник з іменами і значеннями.<br />
 Отже через цей словник можна додавати в глобальний простір імен нові імена і відповідні їм значення: </p>
-<pre><code>:::python
-&gt;&gt;&gt; globals()['new_var'] = 'Hi!'
+<pre><code>&gt;&gt;&gt; globals()['new_var'] = 'Hi!'
 &gt;&gt;&gt; globals().keys()
 dict_keys(['__name__', '__doc__', '__package__', '__loader__', '__spec__', '__annotations__', '__builtins__', 'my_variable', 'Random', 'seed', 'random', 'uniform', 'randint', 'choice', 'sample', 'randrange', 'shuffle', 'normalvariate', 'lognormvariate', 'expovariate', 'vonmisesvariate', 'gammavariate', 'triangular', 'gauss', 'betavariate', 'paretovariate', 'weibullvariate', 'getstate', 'setstate', 'getrandbits', 'choices', 'SystemRandom', 'new_var'])
 &gt;&gt;&gt;
 </code></pre>
 <p>Останнє є еквівалентним наступному: </p>
-<pre><code>:::python
-new_var = 'Hi!'
+<pre><code>new_var = 'Hi!'
 </code></pre>
 <h3 id="local">Local</h3>
 <p>Кожного разу при виклику функції інтерпретатор створює новий простір імен. 
@@ -1220,8 +1295,7 @@ new_var = 'Hi!'
 <p>Імена, які ініціалізуються всередині функції, попадають у локальний простір імен. </p>
 <p>Аналогічно функції <code>global()</code> вбудована функція <code>local()</code> повертає словник 
 з іменами з локального простору імен і відповідними значеннями: </p>
-<pre><code>:::python
-&gt;&gt;&gt; def add_two(arg):
+<pre><code>&gt;&gt;&gt; def add_two(arg):
 ...     var = 2
 ...     print(locals().keys())
 ...     return arg + var
@@ -1234,19 +1308,39 @@ dict_keys(['arg', 'var'])
 <p>Вище у локальному просторі імен функції <code>add_two</code> міститься два імені. 
 Змінна <code>arg</code> отримує значення при передачі аргумента під час виклику функції. 
 Змінній <code>var</code> значення присвоюється під час виконання функції. </p>
-<p>Зауважте: на відміну від <code>globals()</code> функція <code>locals()</code> повертає не активний словник, 
+<div class="admonition warning">
+<p class="admonition-title">Зауважте:</p>
+<p>на відміну від <code>globals()</code> функція <code>locals()</code> повертає не активний словник, 
 а його копію. 
-Отже змінити через цей словинк локальний простір імен не вийде. 
-Ця відмінність між двома функціями може завдати клопоту у майбутньому, 
-отже добре запам'ятайте її! </p>
+Отже змінити через цей словник локальний простір імен не вийде. </p>
+</div>
+<!--Ця відмінність між двома функціями може завдати клопоту у майбутньому, 
+отже добре запам'ятайте її! 
+-->
+
 <p>Якщо функцію <code>locals()</code> викликати поза межами функції, 
 в основному модулі програми, 
 то її поведінка буде така сама, як у функції <code>globals()</code></p>
-<h3 id="enclosing">Enclosing</h3>
+<h2 id="_2">Область видимості</h2>
+<p>Наявність декількох окремих просторів імен означає, що в процесі виконання програми 
+одночасно можуть існувати однакові імена, кожне у своєму просторі. 
+Але як же інтерпретатор розрізняє яке саме ім'я ви маєте на увазі в певний момент часу, 
+тобто у якому просторі імен його шукати? </p>
+<blockquote>
+<p>Область видимості (scope) — частина програми, у межах якої ідентифікатор деякої сутності залишається зв'язаними з цією сутністю.</p>
+</blockquote>
+<p>Іншими словами область видимості — це частина програми, з якої можна отримати доступ до певного простору імен.</p>
+<p>В Python є наступні області видимості:</p>
+<ul>
+<li>локальна область видимості (lLocal Scope): імена визначаються всередині функцій. Імена, що належать до локальної області видимості, можуть бути використані тільки всередині цієї функції.</li>
+<li>нелокальна (або ж охоплююча) область видимості (Nonlocal Scope, enclosing scope): імена визначаються у функціях-обгортках. Використовується, коли функція визначена всередині іншої функції і потрібно звертатися до змінних вищого рівня.</li>
+<li>глобальна область видимості (Global Scope): імена визначаються на рівні модуля. Імена з глобальної області видимості можуть бути в межах всього модуля.</li>
+<li>Вбудована область видимості (built-in scope): імена, які "вбудовано" в інтерпретатор. Ці імена можна використовувати без необхідності їхнього окремого визначення чи імпортування.</li>
+</ul>
+<h3 id="eenclosing-scope">Eenclosing scope</h3>
 <p>Коли ми оголошуємо функцію, в її тілі ми можемо використовувати будь-які інструкції, 
 у тому числі і оголошення іншої функції. </p>
-<pre><code>:::python
-&gt;&gt;&gt; def outer():
+<pre><code>&gt;&gt;&gt; def outer():
 ...     print('Start outer()')
 ...     def inner():
 ...         print('Start inner()')
@@ -1263,21 +1357,21 @@ End inner()
 End outer()
 &gt;&gt;&gt;
 </code></pre>
-<p>У наведеному прикладі всередині функції <code>outer()</code> оголошується функція <code>inner()</code>. 
-Функція <code>inner()</code> є локальною по відношенню до <code>outer()</code>. 
-У свою чергу <code>outer()</code> є охоплючою функцією для <code>inner()</code>. </p>
 <p>Коли основна програма викликає функцію <code>outer()</code>, 
 Python створює для неї новий простір імен. 
-Аналогічно коли <code>outer()</code> викликає функцію <code>inner()</code>, 
+Аналогічно коли у функції <code>outer()</code> викликається функція <code>inner()</code>, 
 остання отримує свій власний окремий простір імен. 
-Простір, створений для функції <code>inner()</code>, є локальним, 
-а простір, створений для функції <code>outer()</code> — охоплюючим. </p>
-<p>Обидва простори існують до повернення з відповідної їм функції. </p>
-<h2 id="_2">Область видимості</h2>
-<p>Наявність декількох окремих просторів імен означає, що в процесі виконання програми 
-одночасно можуть існувати однакові імена, кожне у своєму просторі. 
-Але як же інтерпретатор розрізняє яке саме ім'я ви маєте на увазі в певний момент часу, 
-тобто у якому просторі імен його шукати? </p>
+Обидва простори існують до повернення з відповідної їм функції. </p>
+<!--Простір, створений для функції `inner()`, є локальним, 
+а простір, створений для функції `outer()` — охоплюючим. 
+-->
+
+<p>У наведеному вище прикладі всередині функції <code>outer()</code> оголошується функція <code>inner()</code>. 
+Функція <code>inner()</code> є "вкладеною" (локальною) по відношенню до <code>outer()</code>. 
+У свою чергу <code>outer()</code> є як би охоплючою функцією для <code>inner()</code>. </p>
+<p>Змінні з локального простору імен охоплюючої функції утворюють нелокальну (охоплюючу, enclosing) область видимості.
+Імена доступні як у охоплюючій функції, так і у всіх вкладених функціях.</p>
+<h3 id="legb">Правило LEGB</h3>
 <p>В Python є правило LEGB, яким він користується при пошуці змінних. 
 Якщо  всередині функції виконується звернення до змінної, 
 Python шукає її ім'я по просторам імен у такому порядку (до першого співпадіння): </p>
@@ -1287,8 +1381,7 @@ Python шукає її ім'я по просторам імен у такому 
 інтерпретатор видасть помилку. </p>
 <p>Розглянемо декілька прикладів. 
 У наступному ім'я <code>len</code> буде знайдено в локальному просторі імен функції <code>inner()</code>: </p>
-<pre><code>:::python
-&gt;&gt;&gt; len = 'global'
+<pre><code>&gt;&gt;&gt; len = 'global'
 &gt;&gt;&gt; def outer():
 ...     len = 'enclosing'
 ...     def inner():
@@ -1302,8 +1395,7 @@ local
 </code></pre>
 <p>Якщо ім'я <code>len</code> не буде визначено у функції <code>inner()</code>, 
 тоді його буде знайдено у просторі імен <code>enclosing</code>: </p>
-<pre><code>:::python
-&gt;&gt;&gt; len = 'global'
+<pre><code>&gt;&gt;&gt; len = 'global'
 &gt;&gt;&gt; def outer():
 ...     len = 'enclosing'
 ...     def inner():
@@ -1316,8 +1408,7 @@ enclosing
 </code></pre>
 <p>Якщо ж ім'я <code>len</code> не буде визначено і в функції <code>outer()</code>, 
 його буде знайдено у просторі імен <code>global</code>: </p>
-<pre><code>:::python
-&gt;&gt;&gt; len = 'global'
+<pre><code>&gt;&gt;&gt; len = 'global'
 &gt;&gt;&gt; def outer():
 ...     def inner():
 ...         print(len)
@@ -1329,8 +1420,7 @@ global
 </code></pre>
 <p>Ну і якщо не визначено ніде в нашій програмі, 
 тоді знайдеться в <code>builtins</code>: </p>
-<pre><code>:::python
-&gt;&gt;&gt; def outer():
+<pre><code>&gt;&gt;&gt; def outer():
 ...     def inner():
 ...         print(len)
 ...     inner()
@@ -1340,8 +1430,7 @@ global
 &gt;&gt;&gt;
 </code></pre>
 <p>А ось ім'я <code>unknown</code> немає ніде: </p>
-<pre><code>:::python
-&gt;&gt;&gt; def outer():
+<pre><code>&gt;&gt;&gt; def outer():
 ...     def inner():
 ...         print(unknown)
 ...     inner()

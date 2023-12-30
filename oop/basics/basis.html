@@ -12,28 +12,28 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/paradigmas/imperative.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/basics/basis.html">
       
       
-        <link rel="prev" href="paradigmas.html">
+        <link rel="prev" href="../../paradigmas/resume.html">
       
       
-        <link rel="next" href="oop.html">
+        <link rel="next" href="../../comming_soon.html">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>Імперативне програмування - PyStarter</title>
+        <title>Парадигма ООП - PyStarter</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -54,13 +54,13 @@
       
     
     
-      <link rel="stylesheet" href="../_stylesheets/dark_theme.css">
+      <link rel="stylesheet" href="../../_stylesheets/dark_theme.css">
     
-      <link rel="stylesheet" href="../_stylesheets/codehilite.css">
+      <link rel="stylesheet" href="../../_stylesheets/codehilite.css">
     
-      <link rel="stylesheet" href="../_stylesheets/fixes.css">
+      <link rel="stylesheet" href="../../_stylesheets/fixes.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#-" class="md-skip">
           Перейти до змісту
         </a>
       
@@ -101,7 +101,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Хедер">
-    <a href="../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
+    <a href="../../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg>
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Імперативне програмування
+              Парадигма ООП
             
           </span>
         </div>
@@ -149,8 +149,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -160,7 +158,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Навігація" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
+    <a href="../../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg>
@@ -177,7 +175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -196,7 +194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../miths_about_education.html" class="md-nav__link">
+      <a href="../../miths_about_education.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -215,7 +213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_python.html" class="md-nav__link">
+      <a href="../../about_python.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -246,7 +244,7 @@
         
   
   
-    <a href="../preparations/os.html" class="md-nav__link">
+    <a href="../../preparations/os.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -283,7 +281,7 @@
         
   
   
-    <a href="../vars_and_types/types.html" class="md-nav__link">
+    <a href="../../vars_and_types/types.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -320,7 +318,7 @@
         
   
   
-    <a href="../source_code/source_code.html" class="md-nav__link">
+    <a href="../../source_code/source_code.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -357,7 +355,7 @@
         
   
   
-    <a href="../strings/strings.html" class="md-nav__link">
+    <a href="../../strings/strings.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -394,7 +392,7 @@
         
   
   
-    <a href="../functions/functions.html" class="md-nav__link">
+    <a href="../../functions/functions.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -431,7 +429,7 @@
         
   
   
-    <a href="../bool_logic/bool.html" class="md-nav__link">
+    <a href="../../bool_logic/bool.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -468,7 +466,7 @@
         
   
   
-    <a href="../if/if_statement.html" class="md-nav__link">
+    <a href="../../if/if_statement.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -505,7 +503,7 @@
         
   
   
-    <a href="../functions_def/functions_explained.html" class="md-nav__link">
+    <a href="../../functions_def/functions_explained.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -542,7 +540,7 @@
         
   
   
-    <a href="../loop_while/loops.html" class="md-nav__link">
+    <a href="../../loop_while/loops.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -579,7 +577,7 @@
         
   
   
-    <a href="../sequences/list.html" class="md-nav__link">
+    <a href="../../sequences/list.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -616,7 +614,7 @@
         
   
   
-    <a href="../objects/objects_and_vars.html" class="md-nav__link">
+    <a href="../../objects/objects_and_vars.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -653,7 +651,7 @@
         
   
   
-    <a href="../loop_for/for.html" class="md-nav__link">
+    <a href="../../loop_for/for.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -690,7 +688,7 @@
         
   
   
-    <a href="../methods/methods.html" class="md-nav__link">
+    <a href="../../methods/methods.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -727,7 +725,7 @@
         
   
   
-    <a href="../methods_list/list_methods.html" class="md-nav__link">
+    <a href="../../methods_list/list_methods.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -764,7 +762,7 @@
         
   
   
-    <a href="../dict/dict.html" class="md-nav__link">
+    <a href="../../dict/dict.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -801,7 +799,7 @@
         
   
   
-    <a href="../text_files/unicode.html" class="md-nav__link">
+    <a href="../../text_files/unicode.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -838,7 +836,7 @@
         
   
   
-    <a href="../modules/modules.html" class="md-nav__link">
+    <a href="../../modules/modules.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -875,11 +873,48 @@
         
   
   
-    <a href="../functions3/strategies.html" class="md-nav__link">
+    <a href="../../functions3/strategies.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
     18. Функції 3
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../paradigmas/paradigmas.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    19. Парадигми програмування
   </span>
   
 
@@ -911,46 +946,26 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" checked>
         
           
-          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    19. Парадигми програмування
+    20. Об'єктно-орієнтоване програмування
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_22">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_23">
             <span class="md-nav__icon md-icon"></span>
-            19. Парадигми програмування
+            20. Об'єктно-орієнтоване програмування
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="paradigmas.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Основні парадигми програмування
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -971,18 +986,18 @@
           
   
   <span class="md-ellipsis">
-    Імперативне програмування
+    Парадигма ООП
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="imperative.html" class="md-nav__link md-nav__link--active">
+      <a href="basis.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Імперативне програмування
+    Парадигма ООП
   </span>
   
 
@@ -1004,22 +1019,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Процедурне програмування
-  </a>
-  
-    <nav class="md-nav" aria-label="Процедурне програмування">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Додаткові матеріали
+  <a href="#_1" class="md-nav__link">
+    Поняття ООП
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    ООП в Python
+  </a>
   
 </li>
       
@@ -1038,51 +1047,11 @@
   
   
     <li class="md-nav__item">
-      <a href="oop.html" class="md-nav__link">
+      <a href="../../comming_soon.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Об'єктно-орієнтоване програмування
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="declarative.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Декларативне програмування
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="resume.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Резюме
+    Класи і екземпляри класів
   </span>
   
 
@@ -1104,45 +1073,8 @@
   
   
   
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../oop/basics/basis.html" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    20. Об'єктно-орієнтоване програмування
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../comming_soon.html" class="md-nav__link">
+      <a href="../../comming_soon.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1173,7 +1105,7 @@
         
   
   
-    <a href="../modules/random_module.html" class="md-nav__link">
+    <a href="../../modules/random_module.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1198,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zen.html" class="md-nav__link">
+      <a href="../../zen.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1217,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resources.html" class="md-nav__link">
+      <a href="../../resources.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1238,9 +1170,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1259,22 +1189,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Процедурне програмування
-  </a>
-  
-    <nav class="md-nav" aria-label="Процедурне програмування">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Додаткові матеріали
+  <a href="#_1" class="md-nav__link">
+    Поняття ООП
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    ООП в Python
+  </a>
   
 </li>
       
@@ -1293,57 +1217,53 @@
                   
 
 
-<h1 id="_1">Імперативне програмування</h1>
+<h1 id="-">Об'єктно-орієнтоване програмування</h1>
+<p>Цикли, розгалуження і функції — все це елементи процедурного програмування. Його можливостей цілком достатньо для написання невеликих, простих програм. Однак великі проекти часто реалізують, використовуючи парадигму об'єктно-орієнтованого програмування (ООП).</p>
+<p>Слід зауважити, не усі сучасні мови підтримують ООП. Але в Python ООП грає ключову роль. Навіть програмуючи в рамках структурної парадигми, ви усе одно користуєтесь об'єктами і класами, нехай навіть вбудованими в мову, а не створенними особисто вами.</p>
+<p>Отже, що ж таке об'єктно-орієнтоване програмування? Судячи з назви, ключову роль тут відіграють якісь об'єкти, на які орієнтується весь процес програмування.</p>
+<p>Якщо подивитись на реальний світ під тим кутом, під яким звикли на нього дивитись, то для нас він предстане у вигляді багатьох об'єктів, яким притаманні певні властивості, які взаємодіють між собою и внаслідок цього змінюються. Ця звична для погляду людини картина світу була перенесена у програмування. 
+Вона вимагала більш високого рівня абстракції від того, як обчислювальна машина зберігає і обробляє дані, вимагала від програмістів вміння конструювати свого роду "віртуальі світи", розподілювати між собою задачі. Однак дала можливість більш легкої і продуктивної розробки великих програм.</p>
+<p>Припустимо, команда програмістів займається розробкою гри. Програму-гру можна представити якк систему, яка складається з цифрових героїв і середовища їх існування, яке включає багато предметів. Кожен воїн, зброя, дерево, будинок — це цифровий об'єкт, в якому "упаковано" його властивості і дії, за допомогою яких він може змінювати свої властивості і властивості інших об'єктів. </p>
+<p>Кожен програміст може розробляти свою групу об'єктів. Розробникам достатньо домовитись між собою тільки про те, якк об'єкти будуть взаємодіяти між собою.</p>
+<p>Ключову різницю між програмою, написаною в структурному стилі, і об'єктно-орієнтованою програмою можна висловити так: у першому випадку на перший план виходить логіка, розуміння послідовності виконання дій для досягнення поставленої цілі. У другому — важливіше представити програму як систему об'єктів, які взаємодіють.</p>
+<h2 id="_1">Поняття ООП</h2>
 <blockquote>
-<p><strong><em>Імперативне програмування</em></strong> — це підхід до побудови програм, що використовує алгоритмічну декомпозицію задачі, при якій програма представляється як послідовність дій (команд), які повинен виконати комп'ютер покроковим чином. Оскільки імперативна програма дуже схожа на накази комп'ютеру, то імперативне програмування іноді називають наказовим.</p>
+<p><strong><em>Об'є́ктно-орієнто́ване програмува́ння</em></strong> (ООП) — одна з парадигм програмування, яка розглядає програму як множину «об'єктів», що взаємодіють між собою. </p>
 </blockquote>
-<p>Концептуальною ідеєю імперативного підходу до розробки програм є алгоритмічна структура програмного коду, яка передбачає роз'єднання у програмах даних і дій, що виконуються над ними. Активним суб’єктом у імперативних програмах вважається алгоритм, який повинен виконати всі необхідні для досягнення потрібного результату дії над пасивними даними. Таким чином, наголос у імперативному програмуванні робиться на верховенстві алгоритму над даними. </p>
-<p>Імперативна парадигма програмування є відображенням архітектури традиційних ЕОМ, яка була запропонована фон Нейманом. Теоретичною основою імперативногопрограмування служить алгоритмічна система під назвою «машина Т’юринга» — абстрактнийобчислювальнийпристрій, що виконує послідовність команд програми, яка, таким чином, переходить з одного стану в інший. Відповідно програма в імперативному програмуванні розглядається як послідовність дій, які змінюють стан компьютера. </p>
-<p>Якщо розглядати стан комп'ютера як стан пам'яті, тобто значень комірок пам'яті, то імперативна програма — це послідовність операторів, які перетворюють початковий стан пам'яті, тобто значення вихідних даних, у заключний, тобто у результати. Концепції пам'яті як сховища значень, поточного кроку виконання і поточного стану, що змінюється у часі, є фундаментальними в імперативному програмуванні.</p>
-<p>Моделлю обробки даних при імперативному підході є послідовне виконання команд, які задають алгоритм вирішення задачі. Коротко це можна представити наступною нотацією:</p>
-<blockquote>
-<p>програма = послідовність дій.</p>
-</blockquote>
-<p>Базовими поняттями імперативної парадигми програмування є поняття оператора (команди), що задає дію по обробці даних, та поняття змінної, якій може бути присвоєно значення, що зберігається в памяті комп'ютера; базовою операцією є операція присвоєння, що служить для зміни вмісту областей пам'яті. </p>
-<p>Основна задача програміста при написанні імперативної програми — звести рішення задачі до послідовності операторів, які вміє виконувати процесор комп'ютера.</p>
-<p>Кожна парадигма програмування має відповідну інструментальну підтримку. Найбільш відомі і поширені імперативні мови програмування:</p>
+<p>Основу ООП складають наступні принципи: </p>
 <ul>
-<li>Fortran (1954)</li>
-<li>Algol (1960)</li>
-<li>C (1972)</li>
+<li>інкапсуляція</li>
+<li>успадкування</li>
+<li>поліморфізм</li>
+<li>абстракція</li>
 </ul>
-<p>Оскільки практично всі сучасні комп'ютери орієнтовані на послідовні обчислення, імперативне програмування явно виграє в ефективності реалізації прикладних задач, для яких важлива швидкість виконання. Окрім цього, робота із зовнішніми пристроями, як правило, описується в термінах послідовного виконання операцій, що робить такі задачі ідеальними для імперативної реалізації.</p>
-<h2 id="_2">Процедурне програмування</h2>
-<blockquote>
-<p><strong><em>Процедурне програмування</em></strong> — це програмування в імперативному стилі, при якому оператори які виконуються послідовно можна зібрати у підпрограми, тобто більш крупні цілістні одиниці кода за допомогою механізмів самої мови програмування.</p>
-</blockquote>
-<p>Процедурне програмування засноване на концепції виклику процедури. Процедури, також відомі як підпрограми, методи, або функції (це не математичні функції, але функції, подібні до тих, які використовуються в функціональному програмуванні). Процедури містять певну послідовність кроків для виконання. В ході виконання програми будь-яка процедура може бути викликана з будь-якого місця програми, включно з самої процедури, яка викликається (рекурсивний виклик). </p>
-<p>Процедурна парадигма була хронологічно першої і довгий час превалювала. В даний час вона поступово поступається своїм місцем об'єктно-орієнтованій парадигмі, хоча все ще займає близько половини ринку розробки програмного забезпечення. Вона застосовується на всіх рівнях розробки програмного забезпечення.</p>
-<p>Декомпозиція при процедурному підході полягає в тому, що завдання, що реалізується програмою, ділиться на підзадачі, а вони в свою чергу — на більш дрібні етапи, тобто виконується покрокова деталізація алгоритму розв'язання задачі.</p>
-<p>Виконання процедур природно назвати процесом, причому з одного процесу може активізуватися інший, що є головним способом управління загальним процесом. У момент активізації може проводитися передача даних, які носять в такому випадку назву "параметрів". Закінчення виконання процедури пов'язано з поверненням результату і функції управління в викликаючу програму.</p>
-<p>Можливі переваги:</p>
-<ul>
-<li>Можливість повторного використання одного і того ж коду з різних місць програми без його копіювання</li>
-<li>Легше відстежити потік виконання програми, ніж у випадку використання операторів GOTO або JUMP (перехід на конкретно вказану точку програми), що можуть зробити з складної програми так званий «спагетті-код».</li>
-<li>Можливість підтримки модульності і структурності.</li>
-</ul>
-<p>До процедурних мов програмування можна віднести наступні:</p>
-<ul>
-<li>C</li>
-<li>Pascal</li>
-<li>Python</li>
-</ul>
-<h3 id="_3">Додаткові матеріали</h3>
-<ol>
-<li><a href="https://uk.wikipedia.org/wiki/%D0%86%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F">Вікіпедія: імперативне програмування</a></li>
-<li><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%B0_%D0%A2%D1%8C%D1%8E%D1%80%D0%B8%D0%BD%D0%B3%D0%B0">Вікіпедія: Машина Т'юрінга</a></li>
-</ol>
-<!-- 1. [Спагетти-статья о спагетти-коде](https://habr.com/post/187154/)
--->
+<p>Основними поняттями в ООП є класс та об'єкт. </p>
+<p>Що таке клас? 
+Проведемо аналогію з реальним світом. 
+Якщо ми візьмем конкретний стіл, то це об'єкт, але не клас. 
+А ось загальне уявлення про столи, їх призначення — це клас. 
+Йому належать усі реальні об'єкти столів, якими б вони не були. 
+Клас столів дає загальну характеристику усім столам в світі, він їх узагальнює.</p>
+<p>Те ж саме з цілими числами в Python. 
+Тип <code>int</code> — це клас цілих чисел. 
+Числа 5, 100500, -10 і т. д. — це конкретні об'єкти цього класа.</p>
+<p>Наступне по важливості поняття ООП — успадкування. Повернемось до столів. Нехай є клас столів, який описує загальні властивості усіх столів. Однак можна розділити усі столи на письмові, обіді і журнальні і для кожної групи створити свій клас, який буде спадкоємцем загального класа, але також вносити ряд своїх особливостей. Таким чином, загальний клас будет батьківським, а класи груп — дочірніми.</p>
+<p>Дочірні класи успадковують особливості батьківських, однак доповнюють або у деякій мірі модифікують їх характеристики. Коли ми створюємо конкретний екземпляр стола, то повинні обрати, до якого класу столів він буде належати. Якщо він належить класу журнальних столів, то отримає усі характеристики загального класа столів і класа журнальних столів. Але не особливості письмових і обідніх.</p>
+<p>Інкапсуляцію в ООП розуміють двояко. У багатьох мовах цей термін означає приховування даних, тобто неможливість напряму отримати доступ до внутрішньої структури об'єкта, так як це небезпечно. В Python немає такої інкапсуляції, хоча вона є одним з стандартів ООП. В Python можна отримати доступ до будь-якої властивості об'єкта і змінити його. Однак є механізм, який дозволяє імітувати приховування даних, якщо це так необхідно.</p>
+<p>Інший смисл інкапсуляції — об'єднання властивостей і поведінки в одне ціле, тобто в клас.</p>
+<p>Поліморфізм — це множина форм. Однак в поняттях ООП мається на увазі скоріш зворотнє. Об'єкти різних класів, з різною внутрішньою реалізацією можуть мати однакові інтерфейси. Наприклад, для чисел є операція додавання, яка позначається знаком +. Однак ми можемо визначити клас, об'єкти котрого також будуть підтримувати операцію, яка позначається цим знаком. Але це зовсім не означає, щоо об'єкти повинні бути числами, і буде отримуватись якась сума. Операція + для об'єктів нашого класа може означати щось інше. Але інтерфейс, в даному випадку це знак +, у чисел і нашего класа буде однаковим. Поліморфність же проявляється у внутрішній реалізації і результаті операції.</p>
+<p>Ми вже стикались з поліморфізмом операції +. Для чисел вона означає додавання, а для рядків — конкатенацію. Внутрішня реалізація кода для цієї операції у чисел відрізняється від реалізації такої для рядків.</p>
+<h2 id="python">ООП в Python</h2>
+<p>В термінології Python об'єкти також прийнято називати екземплярами (instance) певного класа. </p>
+<!-- Це пов'язано з тим, що в ньому усі класи самі є об'єктами класа type.-->
+
+<p>В Python усе є об'єкт! 
+Навіть класи — це теж об'єкти, екземпляри метакласів. 
+Головним метакласом є клас <code>type</code>, 
+який і є абстракцією поняття типа даних. 
+Отже в Python клас рівносильний поняттю тип даних. </p>
 
 
-
-  
 
 
 
@@ -1360,12 +1280,10 @@
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Футер" >
         
           
-          <a href="paradigmas.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Основні парадигми програмування">
+          <a href="../../paradigmas/resume.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Резюме">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1375,20 +1293,20 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                Основні парадигми програмування
+                Резюме
               </div>
             </div>
           </a>
         
         
           
-          <a href="oop.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Об&#39;єктно-орієнтоване програмування">
+          <a href="../../comming_soon.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Класи і екземпляри класів">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Об'єктно-орієнтоване програмування
+                Класи і екземпляри класів
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1436,10 +1354,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>

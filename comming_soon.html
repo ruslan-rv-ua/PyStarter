@@ -12,28 +12,28 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/methods_list/stack.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/comming_soon.html">
       
       
-        <link rel="prev" href="list_methods.html">
+        <link rel="prev" href="comming_soon.html">
       
       
-        <link rel="next" href="../dict/dict.html">
+        <link rel="next" href="modules/random_module.html">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>Структура даних "стек" - PyStarter</title>
+        <title>21. Інкапсуляція - PyStarter</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.35e1ed30.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -54,13 +54,13 @@
       
     
     
-      <link rel="stylesheet" href="../_stylesheets/dark_theme.css">
+      <link rel="stylesheet" href="_stylesheets/dark_theme.css">
     
-      <link rel="stylesheet" href="../_stylesheets/codehilite.css">
+      <link rel="stylesheet" href="_stylesheets/codehilite.css">
     
-      <link rel="stylesheet" href="../_stylesheets/fixes.css">
+      <link rel="stylesheet" href="_stylesheets/fixes.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -101,7 +101,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Хедер">
-    <a href="../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
+    <a href="index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg>
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Структура даних "стек"
+              21. Інкапсуляція
             
           </span>
         </div>
@@ -158,7 +158,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Навігація" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
+    <a href="index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg>
@@ -175,7 +175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -194,7 +194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../miths_about_education.html" class="md-nav__link">
+      <a href="miths_about_education.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -213,7 +213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_python.html" class="md-nav__link">
+      <a href="about_python.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -244,7 +244,7 @@
         
   
   
-    <a href="../preparations/os.html" class="md-nav__link">
+    <a href="preparations/os.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -281,7 +281,7 @@
         
   
   
-    <a href="../vars_and_types/types.html" class="md-nav__link">
+    <a href="vars_and_types/types.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -318,7 +318,7 @@
         
   
   
-    <a href="../source_code/source_code.html" class="md-nav__link">
+    <a href="source_code/source_code.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -355,7 +355,7 @@
         
   
   
-    <a href="../strings/strings.html" class="md-nav__link">
+    <a href="strings/strings.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -392,7 +392,7 @@
         
   
   
-    <a href="../functions/functions.html" class="md-nav__link">
+    <a href="functions/functions.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -429,7 +429,7 @@
         
   
   
-    <a href="../bool_logic/bool.html" class="md-nav__link">
+    <a href="bool_logic/bool.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -466,7 +466,7 @@
         
   
   
-    <a href="../if/if_statement.html" class="md-nav__link">
+    <a href="if/if_statement.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -503,7 +503,7 @@
         
   
   
-    <a href="../functions_def/functions_explained.html" class="md-nav__link">
+    <a href="functions_def/functions_explained.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -540,7 +540,7 @@
         
   
   
-    <a href="../loop_while/loops.html" class="md-nav__link">
+    <a href="loop_while/loops.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -577,7 +577,7 @@
         
   
   
-    <a href="../sequences/list.html" class="md-nav__link">
+    <a href="sequences/list.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -614,7 +614,7 @@
         
   
   
-    <a href="../objects/objects_and_vars.html" class="md-nav__link">
+    <a href="objects/objects_and_vars.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -651,7 +651,7 @@
         
   
   
-    <a href="../loop_for/for.html" class="md-nav__link">
+    <a href="loop_for/for.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -688,7 +688,7 @@
         
   
   
-    <a href="../methods/methods.html" class="md-nav__link">
+    <a href="methods/methods.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -702,101 +702,6 @@
     </a>
   
 
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    14. Методи списків
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_17">
-            <span class="md-nav__icon md-icon"></span>
-            14. Методи списків
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="list_methods.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Методи списків
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="stack.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Структура даних "стек"
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -820,7 +725,44 @@
         
   
   
-    <a href="../dict/dict.html" class="md-nav__link">
+    <a href="methods_list/list_methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Методи списків
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="dict/dict.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -857,7 +799,7 @@
         
   
   
-    <a href="../text_files/unicode.html" class="md-nav__link">
+    <a href="text_files/unicode.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -894,7 +836,7 @@
         
   
   
-    <a href="../modules/modules.html" class="md-nav__link">
+    <a href="modules/modules.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -931,7 +873,7 @@
         
   
   
-    <a href="../functions3/strategies.html" class="md-nav__link">
+    <a href="functions3/strategies.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -968,7 +910,7 @@
         
   
   
-    <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+    <a href="paradigmas/paradigmas.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1005,7 +947,7 @@
         
   
   
-    <a href="../oop/basics/basis.html" class="md-nav__link">
+    <a href="oop/basics/basis.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1028,9 +970,18 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../comming_soon.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="comming_soon.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1039,6 +990,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1061,7 +1013,7 @@
         
   
   
-    <a href="../modules/random_module.html" class="md-nav__link">
+    <a href="modules/random_module.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1086,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zen.html" class="md-nav__link">
+      <a href="zen.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1105,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resources.html" class="md-nav__link">
+      <a href="resources.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1151,70 +1103,8 @@
                   
 
 
-<h1 id="_1">Структура даних "стек"</h1>
-<blockquote>
-<p>Стек (<code>stack</code>) – це послідовність, елементи якої отримують за принципом “останній увійшов, перший вийшов” (LIFO, Last In First Out). Це означає, що ми матимемо доступ тільки до останнього доданого елемента.</p>
-</blockquote>
-<p>На відміну від списків, ми не можемо отримати доступ до довільного елемента стека. 
-Ми можемо тільки додавати або видаляти елементи за допомогою спеціальних методів. 
-Ми не можемо дізнатись про належність певного об'єкта до стека, як у списків. 
-Крім того, по стеку не можна ітеруватись. 
-Для того щоб розуміти, чому на стек накладаються такі обмеження, давайте подивимося на те, як він працює і як використовується.</p>
-<p>Аналогія, що найчастіше зустрічається, для пояснення стека — стос тарілок. Незалежно від того, скільки тарілок у стосі, ми завжди можемо зняти верхню. Чисті тарілки так само кладуться на верх стопки, і ми завжди будемо першими брати ту тарілку, яка була покладена останньою.</p>
-<p>Якщо ми покладемо, наприклад, червону тарілку, потім синю, а потім зелену, то спочатку потрібно буде зняти зелену, потім синю, і, нарешті, червону. Головне, що потрібно запам’ятати – тарілки завжди ставляться і на верх стопки. Коли хтось бере тарілку, він також знімає її згори. Виходить, що тарілки розбираються в порядку, зворотному тому, в якому ставилися.</p>
-<p>Тепер, коли ми розуміємо, як працює стек, розглянемо основні операції зі стеком.</p>
-<ul>
-<li><code>push(item)</code> —  додати елемент <code>item</code> на верхівку стека</li>
-<li><code>pop()</code> — видалити елемент з верхівки стека і повернути його</li>
-<li><code>peek()</code> — дізнатись (повернути) елемент з верхівки стека</li>
-</ul>
-<p>В Python немає спеціального типу даних або ж готової структури яка б реалізовувала стек. 
-Але за допомогою списків можна легко реалізувати стек самостійно. </p>
-<p>Будемо вважати останній елемент списка вершиною стека. 
-Тоді щоб додати елемент на стек достатньо виконати:</p>
-<pre><code>&gt;&gt;&gt; stack = []
-&gt;&gt;&gt; stack.append(1)
-&gt;&gt;&gt; stack.append(2)
-&gt;&gt;&gt; stack.append('top')
-&gt;&gt;&gt; stack
-[1, 2, 'top']
-&gt;&gt;&gt;
-</code></pre>
-<p>Дізнатись елемент на верхівці стека:</p>
-<pre><code>&gt;&gt;&gt; on_top = stack[-1]
-&gt;&gt;&gt; on_top
-'top'
-&gt;&gt;&gt; stack
-[1, 2, 'top']
-&gt;&gt;&gt;
-</code></pre>
-<p>Щоб видалити значення з верхівки стека скористаємось методом <code>pop()</code>:</p>
-<pre><code>&gt;&gt;&gt; val = stack.pop()
-&gt;&gt;&gt; val
-'top'
-&gt;&gt;&gt; stack.pop()
-2
-&gt;&gt;&gt; stack.pop()
-1
-&gt;&gt;&gt; stack.pop()
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-IndexError: pop from empty list
-&gt;&gt;&gt;
-</code></pre>
-<!--
-### Черга
-
-> Черга — динамічна структура даних, що працює за принципом «перший прийшов – перший пішов» (FIFO, First In First Out).
-
-Черги дуже схожі на стеки. Вони також не дають доступу до довільного елемента, але, на відміну від стека, елементи кладуться (enqueue) і забираються (dequeue) з різних кінців. Забирати елементи з черги ми будемо в тому ж порядку, що і клали. Подібно до реальної черги або конвеєра.
-
-Черги часто використовуються в програмах для реалізації буфера, в який можна покласти елемент для подальшої обробки, зберігаючи порядок вступу. Наприклад, якщо база даних підтримує тільки одне з’єднання, можна використати чергу потоків, які будуть, як не дивно, чекати своєї черги на доступ до БД.
-
-***Двостороння черга*** (double-ended queue), або ***дек*** (deque), розширює поведінку черги. У дек можна додавати або видаляти елементи як з початку, так і з кінця черги. Така поведінка корисна у багатьох задачах, наприклад, планування виконання потоків або реалізація інших структур даних. 
-
-***Черга з пріоритетом*** (priority queue) — це модифікована версія черги, яка із списку видаляє елемент з найвищим пріоритетом. При видаленні елементів з однаковими пріоритетами спочатку видаляється елемент, що надійшов раніше.
--->
+<h1 id="_1">У розробці.</h1>
+<p>Залишайтесь з нами, буде цікаво!</p>
 
 
 
@@ -1236,7 +1126,7 @@ IndexError: pop from empty list
       <nav class="md-footer__inner md-grid" aria-label="Футер" >
         
           
-          <a href="list_methods.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Методи списків">
+          <a href="comming_soon.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Класи і екземпляри класів">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1246,20 +1136,20 @@ IndexError: pop from empty list
                 Назад
               </span>
               <div class="md-ellipsis">
-                Методи списків
+                Класи і екземпляри класів
               </div>
             </div>
           </a>
         
         
           
-          <a href="../dict/dict.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Тип даних dict">
+          <a href="modules/random_module.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Модуль random">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Тип даних dict
+                Модуль random
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1307,10 +1197,10 @@ IndexError: pop from empty list
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>

@@ -12,7 +12,7 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/functions3/args/pos_and_kw.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/basics/classes.html">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Параметри і аргументи функцій - PyStarter</title>
+        <title>Класи і екземпляри класів - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Параметри і аргументи функцій
+              Класи і екземпляри класів
             
           </span>
         </div>
@@ -144,8 +144,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -871,7 +869,7 @@
         
   
   
-    <a href="../strategies.html" class="md-nav__link">
+    <a href="../../functions3/strategies.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -945,7 +943,7 @@
         
   
   
-    <a href="../../oop/basics/basis.html" class="md-nav__link">
+    <a href="basis.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1066,9 +1064,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1088,15 +1084,56 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Позиційні аргументи
+    Створення класів
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    Іменовані аргументи
+    Клас як модуль
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Клас як створювач екземплярів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Атрибути екземплярів
+  </a>
+  
+    <nav class="md-nav" aria-label="Атрибути екземплярів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Поля екземплярів
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Методи
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    Зміна полів об'єкта
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1115,64 +1152,218 @@
                   
 
 
-<h1 id="_1">Параметри і аргументи функцій</h1>
-<p>Викликаючи функцію, ми можемо передавати їй наступні типи аргументів:</p>
-<ul>
-<li>позиційні аргументи (positional arguments)</li>
-<li>іменовані аргументи (keyword arguments)</li>
-<li>опціональні аргументи (default arguments)</li>
-<li>аргумети довільної довжини (variable-length argumens)</li>
-</ul>
-<h2 id="_2">Позиційні аргументи</h2>
-<p>Коли викликаємо функцію фактичні параметри заміщують формальні у тому порядку, у якому їх вказано.</p>
+<h1 id="_1">Класи і екземпляри класів</h1>
+<p>Насамперед зауважимо, що в Python існує дві реалізації класів: так звані "класи старого типу" і "класи нового типу". Цей "розподіл" починається з Python версії 2.2. В класи нового типу було внесено відносно суттєві зміни задля покращення реалізації ООП. В Python починаючи з версії 3.0 підтримуються лише класи нового типу, класи старого типу не підтримуються як застарілі. 
+В даному курсі ми розглядаємо лише класи нового типу.</p>
+<h2 id="_2">Створення класів</h2>
+<p>В мові програмування Python класи створюють за допомогою інструкції <code>class</code>, 
+після якої вказують им'я класа, 
+потім ставиться двокрапка, 
+далі з нового рядка і з відступом реалізується тіло класа:</p>
 <pre><code>:::python
-&gt;&gt;&gt; def product_info(name, color, price):
-...     print('Product:', name)
-...     print('Color:', color)
-...     print('Price:', price)
+class NameOfClass:
+    pass
+</code></pre>
+<p>Імена класів прийнято записувати в <code>PascalCase</code>. </p>
+<p>Тіло класа може містити будь-який валідний код Python. 
+Тіло буде виконано при створенні класа: </p>
+<pre><code>:::python
+&gt;&gt;&gt; class Printer:
+...     print('Це клас Printer!')
 ...
-&gt;&gt;&gt; product_info('Pen', 'blue', 2)
-Product: Pen
-Color: blue
-Price: 2
-&gt;&gt;&gt;
-&gt;&gt;&gt; product_info(2, 'Pen', 'blue')
-Product: 2
-Color: Pen
-Price: blue
+Це клас Printer!
 &gt;&gt;&gt;
 </code></pre>
-<h2 id="_3">Іменовані аргументи</h2>
-<p>Ми маємо можливість змінити порядок слідування аргументів. Для цього при вказанні значень аргументів необхідно вказувати також ї імена відповідних параметрів функції у вигляді:</p>
-<p><code>параметр=значення</code></p>
-<p>Подивимось як можна викликати попередньо написану функцію:</p>
+<p>Так само як для функцій, 
+для класа можна створити документацію. 
+Docstring розміщується одразу після заголовка класа: </p>
 <pre><code>:::python
-&gt;&gt;&gt; product_info(price=2, name='Pen', color='blue')
-Product: Pen
-Color: blue
-Price: 2
+&gt;&gt;&gt; class POI:
+...     '''Point of Interest.
+...
+...     Attributes:
+...         lon: float - longtitude
+...         lat: float - latitude
+...         title: str - ...
+...     '''
+...     pass
+...
+&gt;&gt;&gt; help(POI)
+Help on class POI in module __main__:
+
+class POI(builtins.object)
+ |  Point of Interest.
+ |
+ |  Attributes:
+ |      lon: float - longtitude
+ |      lat: float - latitude
+ |      title: str - ...
+ |
+ |  Data descriptors defined here:
+...
+</code></pre>
+<h2 id="_3">Клас як модуль</h2>
+<p>В Python клас можна представити подібно модулю. 
+Так само як у модулі у ньому можуть бути свої дані (змінні зі значеннями) і функції. 
+Однак у випадку класів використовується дещо інша термінологія. 
+Імена, визначені в класі, називаються атрибутами (attribute) цього класа. 
+Атрибути-дані часто називають полями і деколи властивостями (property). 
+Атрибути-функції називаються методами (method). 
+Кількість полів і методів у класі може бути довільною.</p>
+<p>Так само як у модулі у класа є власний простір імен. 
+Доступ до атрибутів класа здійснюється через ім'я класа. 
+Після імені класа ставлять крапку і далі ім'я атрибута:</p>
+<pre><code>&gt;&gt;&gt; class Adder:
+...     n = 5
+...     def add(value):
+...             return value + Adder.n
+...
+&gt;&gt;&gt; Adder.n
+5
+&gt;&gt;&gt; Adder.add(4)
+9
 &gt;&gt;&gt;
 </code></pre>
-<p>При викликах функцій можна одночасно використовувати як позиційні, так і іменовані аргументи. Спочатку треба вказати певну кількість позиційних аргументів, які будуть заміщати відповідні їм по порядку параметри, а потім для усіх аргументів, що залишились, вказуємо іменовані аргументи у довільному порядку:</p>
-<pre><code>:::python
-&gt;&gt;&gt; product_info('Pen', price=2, color='blue')
-Product: Pen
-Color: blue
-Price: 2
+<p>У вищенаведеному прикладі імена <code>n</code> і <code>add</code> — це атрибути клас Adder. </p>
+<h2 id="_4">Клас як створювач екземплярів</h2>
+<p>Створення екземпляра класа називають інстанціюванням (instantiation). </p>
+<p>Екземпляр створюється шляхом виклику класа за його именем. 
+Оскільки у програмному коді важливо не згубити посилання на щойно створений об'єкт, 
+то зазвичай його пов'язують зі змінною. Отже створення об'єкта найчастіше виглядає так:</p>
+<pre><code>&gt;&gt;&gt; a = Adder()
+&gt;&gt;&gt; a
+&lt;__main__.Adder object at 0x0000018D3207ECD0&gt;
+&gt;&gt;&gt; type(a)
+&lt;class '__main__.Adder'&gt;
+&gt;&gt;&gt; some_another_instance = Adder()
 &gt;&gt;&gt;
 </code></pre>
-<p>У прикладі вище перший аргумент буде відповідати параметру функції <code>name</code>, інші ж аргументи ми вказали з іменами параметрів.</p>
-<p>Спроба вказати позиційний аргумент після іменованих призведе до відповідної помилки:</p>
-<pre><code>:::python
-&gt;&gt;&gt; product_info(price=2, color='blue', 'Pen')
-  File "&lt;stdin&gt;", line 1
-SyntaxError: positional argument follows keyword argument
+<h2 id="_5">Атрибути екземплярів</h2>
+<p>Так само як класи екземпляри можуть мати власні атрибути. </p>
+<p>Клас створює екземпляри, які у певному сенсі можна назвати його спадкоємцями. 
+Це означає, що якщо у екземпляра немає власного атрибута, 
+то інтерпретатор шукає його на один рівень вище, тобто у класі. </p>
+<h3 id="_6">Поля екземплярів</h3>
+<p>Створимо клас:</p>
+<pre><code>&gt;&gt;&gt; class Adder:
+...     n = 5
+...     def add(value):
+...             return value + Adder.n
+...
 &gt;&gt;&gt;
 </code></pre>
+<p>Створимо екземпляр цього класа:</p>
+<pre><code>&gt;&gt;&gt; a = Adder()
+&gt;&gt;&gt;
+</code></pre>
+<p>Спробуємо отримати доступ до атрибута <code>n</code> екземпляра <code>a</code>:</p>
+<pre><code>&gt;&gt;&gt; a.n
+5
+&gt;&gt;&gt;
+</code></pre>
+<p>Але якщо ми присвоюємо екземпляру класа поле з таким самим ім'ям як у класі, 
+то воно перевизначає (як би "перекриває") поле класа:</p>
+<pre><code>&gt;&gt;&gt; a.n = 'Some number'
+&gt;&gt;&gt; a.n
+'Some number'
+&gt;&gt;&gt; Adder.n
+5
+&gt;&gt;&gt;
+</code></pre>
+<p>Тут змінні <code>a.n</code> і <code>Adder.n</code> — це дві різні змінні. 
+Перша знаходиться у просторі імен екземпляра класа <code>Adder</code>, 
+друга — у просторі імен самого класа <code>Adder</code>. </p>
+<h3 id="_7">Методи</h3>
+<p>Щодо методів, то вони також наслідуються екземплярами класа. 
+У вищенаведеному прикладі у екземпляра <code>a</code> немає власного метода <code>add</code>, 
+отже інтерпретатор шукає його в класі <code>Adder</code>. 
+Спробуємо:</p>
+<pre><code>&gt;&gt;&gt; a.add(4)
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: add() takes 1 positional argument but 2 were given
+&gt;&gt;&gt;
+</code></pre>
+<p>Інтерпретатор повідомляє нам, що <code>add()</code> приймає тільки один аргумент, а було передано два. 
+Звідки ж взявся другий аргумент, якщо методу <code>add()</code> було передано тільки одне число 4?</p>
+<p>Від кожного класа може бути породжено багато його екземплярів. 
+Методи класа найчастіше призначаються для обробки вже конкретних екземплярів класа. 
+Таким чином, коли викликається метод, йому треба передати конкретний екземпляр класа, 
+який він буде опрацьовувати.</p>
+<p>Зрозуміло, що екземпляр, що передається — це об'єкт, до якого застосовується метод. 
+Вираз <code>a.add()</code> інтерпретатор виконує наступним чином:</p>
+<ol>
+<li>Шукаю атрибут <code>add()</code> в екземплярі <code>a</code>. Не знайшов.</li>
+<li>Тоді йду шукати у клас <code>Adder</code>, так як він створив екземпляр <code>a</code>.</li>
+<li>Тут знайшов метод. Передаю йому екземпляр, до якого цей метод треба застосувати, 
+а також аргумент, що вказано у дужках.</li>
+</ol>
+<p>Іншими словами, вираз</p>
+<pre><code>a.add(4)
+</code></pre>
+<p>перетворюється у вираз</p>
+<pre><code>Adder.add(a, 4)
+</code></pre>
+<p>Таким чином інтерпретатор спробував передати у метод <code>add()</code> класа <code>Adder</code> два аргумента — 
+екземпляр <code>a</code> і число <code>4</code>. 
+Але ми запрограмували метод <code>add()</code> так, 
+щоо він приймає тільки один параметр. 
+В Python визначення методів не передбачається прийняття об'єкта як зрозуміле за замовчуванням. 
+Об'єкт що приймається треба вказувати явно при оголошенні метода.</p>
+<p>За згодою у Python для посилання на об'єкт використовується ім'я <code>self</code>. 
+Ось так повинен виглядати метод <code>add()</code>, якщо ми плануємо викликати його через екземпляри класа:</p>
+<pre><code>&gt;&gt;&gt; class Adder:
+...     n = 5
+...     def add(self, value):
+...             return value + self.n
+...
+&gt;&gt;&gt;
+</code></pre>
+<p>Змінна <code>self</code> зв'язується з об'єктом, до якого було застосовано даний метод, 
+і через цю змінну ми отримуємо доступ до атрибутів екземпляра. 
+Коли цей же метод застосовується до іншого екземпляра, 
+то <code>self</code> зв'яжеться вже з саме цим іншим екземпляром, і через цю змінну будуть вилучатись тільки його поля.</p>
+<p>Приклад:</p>
+<pre><code>&gt;&gt;&gt; class Adder:
+...     n = 5
+...     def add(self, v):
+...             return v + self.n
+...
+&gt;&gt;&gt; a = Adder()
+&gt;&gt;&gt; b = Adder()
+&gt;&gt;&gt; a.n = 10
+&gt;&gt;&gt; a.add(3)
+13
+&gt;&gt;&gt; b.add(4)
+9
+&gt;&gt;&gt;
+</code></pre>
+<p>Тут від класа <code>Adder</code> створюється два екземпляра – <code>a</code> та <code>b</code>. 
+Для екземпляра <code>a</code> створюється власне поле <code>n</code>. 
+Екземпляр <code>b</code>, не має такого поля, отже успадковує його від класа <code>Adder</code>. 
+Переконаємось у цьому: </p>
+<pre><code>&gt;&gt;&gt; a.n is Adder.n
+False
+&gt;&gt;&gt; b.n is Adder.n
+True
+&gt;&gt;&gt;
+</code></pre>
+<p>У методі <code>add()</code> вираз <code>self.n</code> – це звернення до поля <code>n</code> 
+переданого об'єкта, і не важливо, на якому рівні його буде знайдено — у екземплярі чи у класі.</p>
+<h3 id="_8">Зміна полів об'єкта</h3>
+<p>В Python об'єкту можна не тільки перевизначати поля і методи, успадковані від класа, але можна додавати нові, яких немає у класі:</p>
+<pre><code>&gt;&gt;&gt; a.test = 'Hi'
+&gt;&gt;&gt; a.test
+'Hi'
+&gt;&gt;&gt; Adder.test
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+AttributeError: type object 'Adder' has no attribute 'test'
+&gt;&gt;&gt;
+</code></pre>
+<p>Однак у програмуванні так не прийнято, тому що тоді об'єкти одного класа будуть відрізнятись між собою по набору атрибутів. Це затруднить автоматизацію їх обробки, внесе у програму хаос.</p>
 
 
-
-  
 
 
 
