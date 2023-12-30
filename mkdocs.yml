@@ -189,8 +189,9 @@ nav:
     # - Модуль random: modules/random_module.md
     # - Модуль pprint: modules/pprint_module.md
   - 18. Функції 3:
-    # - Параметри і аргументи: functions3/params_args.md
-    # - Стратегії обчислення: functions3/strategies.md
+    - Стратегії обчислення: functions3/strategies.md
+    - Параметри і аргументи: functions3/params_args.md
+    - Області видимості: comming_soon.md # functions3/scope.md
     - Документування функцій: functions3/docstrings.md
   - 19. Парадигми програмування:
     - Основні парадигми програмування: paradigmas/paradigmas.md
@@ -198,6 +199,10 @@ nav:
     - Об'єктно-орієнтоване програмування: paradigmas/oop.md
     - Декларативне програмування: paradigmas/declarative.md
     - Резюме: paradigmas/resume.md
+  - 20. Об'єктно-орієнтоване програмування:
+    - Парадигма ООП: oop/basics/basis.md
+    - Класи і екземпляри класів: comming_soon.md # oop/basics/classes.md
+  - 21. Інкапсуляція: comming_soon.md
   - Батарейки:
     - Модуль random: modules/random_module.md
   - Дзен: zen.md
