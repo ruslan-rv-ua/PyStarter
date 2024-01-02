@@ -1196,16 +1196,34 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../comming_soon.html" class="md-nav__link">
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
+  
+  
+    <a href="../comming_soon.html" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     21. Інкапсуляція
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1567,7 +1585,7 @@ Traceback (most recent call last):
 TypeError: pos_only_arg() got an unexpected keyword argument 'arg'
 &gt;&gt;&gt;
 </code></pre>
-<p>Функції <code>kwd_only_arg</code> можна передавати лише позиційні аргументи:</p>
+<p>Функції <code>kwd_only_arg</code> можна передавати лише іменовані аргументи:</p>
 <pre><code>&gt;&gt;&gt; def kwd_only_arg(*, arg):
 ...     print(arg)
 &gt;&gt;&gt; kwd_only_arg(3)
