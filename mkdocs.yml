@@ -202,7 +202,8 @@ nav:
   - 20. Об'єктно-орієнтоване програмування:
     - Парадигма ООП: oop/basics/basis.md
     - Класи і екземпляри класів: comming_soon.md # oop/basics/classes.md
-  - 21. Інкапсуляція: comming_soon.md
+  - 21. Інкапсуляція:
+    - Інкапсуляція в ООП: comming_soon.md
   - Батарейки:
     - Модуль random: modules/random_module.md
   - Дзен: zen.md

@@ -169,7 +169,7 @@ hide:
 	TypeError: pos_only_arg() got an unexpected keyword argument 'arg'
 	>>>
 	
-Функції `kwd_only_arg` можна передавати лише позиційні аргументи:
+Функції `kwd_only_arg` можна передавати лише іменовані аргументи:
 	
 	>>> def kwd_only_arg(*, arg):
 	...     print(arg)
