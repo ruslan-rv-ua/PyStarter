@@ -199,12 +199,29 @@ nav:
     - Об'єктно-орієнтоване програмування: paradigmas/oop.md
     - Декларативне програмування: paradigmas/declarative.md
     - Резюме: paradigmas/resume.md
-  - 20. Об'єктно-орієнтоване програмування:
+  - 20. ООП:
     - Парадигма ООП: oop/basics/basis.md
-    - Класи і екземпляри класів: comming_soon.md # oop/basics/classes.md
+    - Класи і екземпляри класів: oop/basics/classes.md
+    # - Життєвий цикл об'єкта: oop/basics/object_lifecycle.md
+    # - Ініціалізація об'єктів: oop/basics/init.md
+    # - Статичні та класові методи: oop/basics/static_and_class_methods.md
   - 21. Інкапсуляція:
-    - Інкапсуляція в ООП: comming_soon.md
+    - Інкапсуляція в ООП: oop/encapsulation/encapsulation_basis.md
+  - 22. Успадкування:
+    - Успадкування в ООП: oop/inheritance/inheritance_basis.md
+  - 23. Поліморфізм:
+    - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
+  - xx. Виняткові ситуації: comming_soon.md
+  - xx. Ітератори та генератори: comming_soon.md
+  - xx. Елементи функційного програмування: comming_soon.md
+  - xx. Типи та структури даних: comming_soon.md
+  - xx. Ввід та вивід: comming_soon.md
+  - xx. Модулі і пакети: comming_soon.md
+  - xx. Виконання програм: comming_soon.md
+  - xx. Сторонні бібліотеки: comming_soon.md
   - Батарейки:
-    - Модуль random: modules/random_module.md
+    - Модуль random: batteries/random.md
+    - Модуль datetime: batteries/datetime.md
+    - Модуль enum: comming_soon.md
   - Дзен: zen.md
   - Корисні ресурси: resources.md
