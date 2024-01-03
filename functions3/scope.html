@@ -949,7 +949,7 @@
       
   
   <span class="md-ellipsis">
-    20. Об'єктно-орієнтоване програмування
+    20. ООП
   </span>
   
 
@@ -982,7 +982,7 @@
         
   
   
-    <a href="../comming_soon.html" class="md-nav__link">
+    <a href="../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1019,7 +1019,233 @@
         
   
   
-    <a href="../modules/random_module.html" class="md-nav__link">
+    <a href="../oop/inheritance/inheritance_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    22. Успадкування
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/polymorphism/polymorphism_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    23. Поліморфізм
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comming_soon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xx. Виняткові ситуації
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comming_soon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xx. Ітератори та генератори
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comming_soon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xx. Елементи функційного програмування
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comming_soon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xx. Типи та структури даних
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comming_soon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xx. Ввід та вивід
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comming_soon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xx. Модулі і пакети
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comming_soon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xx. Виконання програм
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comming_soon.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    xx. Сторонні бібліотеки
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../batteries/random.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1279,8 +1505,8 @@
 dict_keys(['__name__', '__doc__', '__package__', '__loader__', '__spec__', '__annotations__', '__builtins__'])
 &gt;&gt;&gt;
 </code></pre>
-<p>У глобальному просторі вже є декілька імен. </p>
-<!-- Виглядають вони трохи дивно, але поки що не звертайте на це уваги, 
+<!-- У глобальному просторі вже є декілька імен. 
+Виглядають вони трохи дивно, але поки що не звертайте на це уваги, 
 у подальшому розберемось з цими іменами.  
 -->
 
@@ -1412,7 +1638,7 @@ local
 &gt;&gt;&gt;
 </code></pre>
 <p>Якщо ім'я <code>len</code> не буде визначено у функції <code>inner()</code>, 
-тоді його буде знайдено у просторі імен <code>enclosing</code>: </p>
+тоді його буде знайдено у просторі імен функції <code>outer()</code>: </p>
 <pre><code>&gt;&gt;&gt; len = 'global'
 &gt;&gt;&gt; def outer():
 ...     len = 'enclosing'
@@ -1425,7 +1651,7 @@ enclosing
 &gt;&gt;&gt;
 </code></pre>
 <p>Якщо ж ім'я <code>len</code> не буде визначено і в функції <code>outer()</code>, 
-його буде знайдено у просторі імен <code>global</code>: </p>
+його буде знайдено у глобальному просторі імен: </p>
 <pre><code>&gt;&gt;&gt; len = 'global'
 &gt;&gt;&gt; def outer():
 ...     def inner():
@@ -1436,8 +1662,8 @@ enclosing
 global
 &gt;&gt;&gt;
 </code></pre>
-<p>Ну і якщо не визначено ніде в нашій програмі, 
-тоді знайдеться в <code>builtins</code>: </p>
+<p>І нарешті якщо ім'я <code>len</code> не визначено ніде в нашій програмі, 
+тоді знайдеться в просторі імен <code>builtins</code>: </p>
 <pre><code>&gt;&gt;&gt; def outer():
 ...     def inner():
 ...         print(len)
@@ -1468,8 +1694,7 @@ NameError: name 'unknown' is not defined
 А що, якщо нам знадобиться присвоїти значення імені з іншого простору? </p>
 <h3 id="global_1">Інструкція <code>global</code></h3>
 <p>Існує можливість змінити значення глобальної змінної за допомогою інструкції 'global':</p>
-<pre><code>:::python
-&gt;&gt;&gt; def function():
+<pre><code>&gt;&gt;&gt; def function():
 ...     global x
 ...     x = 'global assigned inside function'
 ...     print (x)
@@ -1480,17 +1705,13 @@ global assigned inside function
 'global assigned inside function'
 &gt;&gt;&gt;
 </code></pre>
-<p>Інструкція <code>global</code> змушує інтерпретатор починати пошук імен з глобального простору 
-і дозволяє присвоювати змінним нові значення. 
-Область пошуку простирається аж до простору імен Built-in якщо потрібне ім'я не буде знайдено у модулі, 
-при цьому операція присвоєння значень глобальним іменам завжди буде створювати або змінювати змінні в глобальному просторі імен. </p>
+<p>Інструкція <code>global</code> змушує інтерпретатор починати пошук імен з глобального простору. 
+Операція присвоєння значень глобальним іменам завжди буде створювати або змінювати змінні в глобальному просторі імен. </p>
 <p>Можна оголошувати одразу декілька глобальних імен: </p>
-<pre><code>:::python
-global a, b, text
+<pre><code>global a, b, text
 </code></pre>
 <p>Ім'я оголошене як глобальне не може використовуватись раніше самого оголошення: </p>
-<pre><code>:::python
-&gt;&gt;&gt; def function():
+<pre><code>&gt;&gt;&gt; def function():
 ...     x = 'global assigned inside function'
 ...     global x
 ...     print (x)
@@ -1500,8 +1721,7 @@ SyntaxError: name 'x' is assigned to before global declaration
 &gt;&gt;&gt;
 </code></pre>
 <p>Параметри функцій не можуть бути глобальними: </p>
-<pre><code>:::python
-&gt;&gt;&gt; def f(arg):
+<pre><code>&gt;&gt;&gt; def f(arg):
 ...     global arg
 ...     arg = 7
 ...
@@ -1510,8 +1730,7 @@ SyntaxError: name 'arg' is parameter and global
 &gt;&gt;&gt;
 </code></pre>
 <h3 id="nonlocal">Інструкція <code>nonlocal</code></h3>
-<pre><code>:::python
-&gt;&gt;&gt; def outer():
+<pre><code>&gt;&gt;&gt; def outer():
 ...     x = "x assigned inside outer"
 ...     def inner():
 ...         x = "x assigned inside inner"
@@ -1527,8 +1746,7 @@ outer(): x assigned inside outer
 <p>Функції <code>outer()</code> та <code>inner()</code> кожна мають свої локальні змінні <code>x</code>.</p>
 <p>Всередині вкладеної функції ми маємо можливість вказати, що певна змінна не є локальною для цієї вкладеної функції, а є локальною для функції-обгортки. 
 Робиться це за допомогою інструкції <code>nonlocal</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; def outer():
+<pre><code>&gt;&gt;&gt; def outer():
 ...     x = "x assigned inside outer"
 ...     def inner():
 ...         nonlocal x
@@ -1549,8 +1767,7 @@ outer(): x assigned inside inner
 <p><code>nonlocal</code> обмежує пошук простором імен функцій-обгорток. 
 В область пошуку не входять глобальний та вбудований простори імен. </p>
 <p>Інструкція <code>nonlocal</code> вимагає, щоб перераховані імена вже існували: </p>
-<pre><code>:::python
-&gt;&gt;&gt; def outer():
+<pre><code>&gt;&gt;&gt; def outer():
 ...     x = "x assigned inside outer"
 ...     def inner():
 ...         nonlocal x, unknown
