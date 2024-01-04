@@ -207,6 +207,7 @@ hide:
 ## Додаткові матеріали
 
 - [Документація: модуль datetime](https://docs.python.org/3/library/datetime.html)
-- [Arrow](https://pypi.org/project/arrow/)
-- [Pendulum ](https://pypi.org/project/pendulum/)
-- [Delorean](https://pypi.org/project/Delorean/)
+- [Arrow: Better dates & times for Python](https://pypi.org/project/arrow/)
+- [Pendulum: Python datetimes made easy.](https://pypi.org/project/pendulum/)
+- [dateutil - powerful extensions to datetime](https://pypi.org/project/python-dateutil/)
+- [Delorean: Time Travel Made Easy](https://pypi.org/project/Delorean/)

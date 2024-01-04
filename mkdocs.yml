@@ -191,7 +191,7 @@ nav:
   - 18. Функції 3:
     - Стратегії обчислення: functions3/strategies.md
     - Параметри і аргументи: functions3/params_args.md
-    - Області видимості: comming_soon.md # functions3/scope.md
+    - Області видимості: functions3/scope.md
     - Документування функцій: functions3/docstrings.md
   - 19. Парадигми програмування:
     - Основні парадигми програмування: paradigmas/paradigmas.md
