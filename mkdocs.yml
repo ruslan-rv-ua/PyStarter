@@ -201,10 +201,11 @@ nav:
     - Резюме: paradigmas/resume.md
   - 20. ООП:
     - Парадигма ООП: oop/basics/basis.md
-    - Класи і екземпляри класів: oop/basics/classes.md
-    # - Життєвий цикл об'єкта: oop/basics/object_lifecycle.md
-    # - Ініціалізація об'єктів: oop/basics/init.md
+    - Класи і об'єкти: oop/basics/classes.md
+    - Життєвий цикл об'єкта: oop/basics/object_lifecycle.md
+    - Ініціалізація об'єктів: oop/basics/init.md
     # - Статичні та класові методи: oop/basics/static_and_class_methods.md
+    - Представлення об'єктів: oop/basics/object_presentation.md
   - 21. Інкапсуляція:
     - Інкапсуляція в ООП: oop/encapsulation/encapsulation_basis.md
   - 22. Успадкування:

@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Статичні та класові методи
 
 Згідно [моделі даних](https://docs.python.org/3.6/), 

@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Представлення екземпляра класа
 
 Часто буває корисним представлення екземпляра класа у вигляді символьного рядка. 
@@ -24,7 +30,6 @@
 
 Створимо клас і визначимо представлення екземпляра:
 
-	:::python
 	class Person:
 		def __init__(self, name, email):
 			self.name = name
@@ -36,7 +41,6 @@
 
 Створимо екземпляр класа і подивимось як він тепер "виглядає":
 			
-	:::python
 	>>> p = Person('Alice', 'alice@in.wonderland')
 	>>> repr(p)
 	"Person('Alice', 'alice@in.wonderland')"
