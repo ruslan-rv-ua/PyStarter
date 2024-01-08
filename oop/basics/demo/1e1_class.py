@@ -15,7 +15,7 @@ p = Person()
 
 #### attrs
 
-s=p.name
+r=p.name
 
 p.name = 'Jane'
 r=p.name

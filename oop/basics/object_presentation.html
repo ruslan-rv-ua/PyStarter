@@ -1470,6 +1470,10 @@
 'text'
 &gt;&gt;&gt; repr('text')
 "'text'"
+&gt;&gt;&gt; print(str('test'))
+test
+&gt;&gt;&gt; print(repr('test'))
+'test'
 &gt;&gt;&gt;
 </code></pre>
 <p>В Python кожен клас має спеціальні методи, 
@@ -1492,18 +1496,18 @@
     def __str__(self):
         return f'{self.name} &lt;{self.email}&gt;'
     def __repr__(self):
-        return f'Person({self.name}, {self.email})'
+        return f'Person(name={repr(self.name)}, email={repr(self.email)})'
 </code></pre>
 <p>Створимо екземпляр класа і подивимось як він тепер "виглядає":</p>
-<pre><code>&gt;&gt;&gt; p = Person('Alice', 'alice@in.wonderland')
+<pre><code>&gt;&gt;&gt; p = Person('Alice', 'alice@wonderland.org')
 &gt;&gt;&gt; repr(p)
-"Person('Alice', 'alice@in.wonderland')"
+"Person(name='Alice', email='alice@wonderland.org')"
 &gt;&gt;&gt; p
-Person('Alice', 'alice@in.wonderland')
+Person(name='Alice', email='alice@wonderland.org')
 &gt;&gt;&gt; str(p)
-'Alice &lt;alice@in.wonderland&gt;'
-&gt;&gt;&gt; print('User:', p)
-User: Alice &lt;alice@in.wonderland&gt;
+'Alice &lt;alice@wonderland.org&gt;'
+&gt;&gt;&gt; print(p)
+Alice &lt;alice@wonderland.org&gt;
 &gt;&gt;&gt;
 </code></pre>
 
