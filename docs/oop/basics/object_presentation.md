@@ -17,6 +17,10 @@ hide:
 	'text'
 	>>> repr('text')
 	"'text'"
+	>>> print(str('test'))
+	test
+	>>> print(repr('test'))
+	'test'
 	>>>
 
 В Python кожен клас має спеціальні методи, 
@@ -37,17 +41,17 @@ hide:
 		def __str__(self):
 			return f'{self.name} <{self.email}>'
 		def __repr__(self):
-			return f'Person({self.name}, {self.email})'
+			return f'Person(name={repr(self.name)}, email={repr(self.email)})'
 
 Створимо екземпляр класа і подивимось як він тепер "виглядає":
 			
-	>>> p = Person('Alice', 'alice@in.wonderland')
+	>>> p = Person('Alice', 'alice@wonderland.org')
 	>>> repr(p)
-	"Person('Alice', 'alice@in.wonderland')"
+	"Person(name='Alice', email='alice@wonderland.org')"
 	>>> p
-	Person('Alice', 'alice@in.wonderland')
+	Person(name='Alice', email='alice@wonderland.org')
 	>>> str(p)
-	'Alice <alice@in.wonderland>'
-	>>> print('User:', p)
-	User: Alice <alice@in.wonderland>
+	'Alice <alice@wonderland.org>'
+	>>> print(p)
+	Alice <alice@wonderland.org>
 	>>>

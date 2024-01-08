@@ -34,6 +34,7 @@ class Person:
 		self.age = age
 	@property
 	def age(self):
+		"""Age, full years"""
 		return self._age
 	@age.setter
 	def age(self, age):
