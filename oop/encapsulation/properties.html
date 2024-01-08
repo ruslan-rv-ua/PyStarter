@@ -145,6 +145,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1308,7 +1310,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1336,7 +1340,7 @@
 <h1 id="_1">Властивості</h1>
 <p>Значення, які характерезують стан об'єкта (атрибути), доступ до яких відбувається за допомогою сетерів і гетерів, називають <strong>властивостями</strong> (property). </p>
 <p>Для створення властивості використовують функцію: </p>
-<pre><code> property(fget, fset, fdel, doc)
+<pre><code>property(fget, fset, fdel, doc)
 </code></pre>
 <p>де:</p>
 <ul>
@@ -1346,8 +1350,7 @@
 <li><code>doc</code> — рядок документації для властивості. Якщо не задано, то береться від <code>fget</code></li>
 </ul>
 <p>Усі параметри необов'язкові. </p>
-<pre><code>:::python
-&gt;&gt;&gt; class Person:
+<pre><code>&gt;&gt;&gt; class Person:
 ...     def __init__(self, age):
 ...             self.set_age(age)
 ...     def get_age(self):
@@ -1382,8 +1385,7 @@ Help on property:
 <pre><code>@&lt;властивість-гетер&gt;.setter
 </code></pre>
 <p>Перепишемо клас Person: </p>
-<pre><code>:::python
-&gt;&gt;&gt; class Person:
+<pre><code>&gt;&gt;&gt; class Person:
 ...     def __init__(self, age):
 ...             self.__age = 0
 ...             self.age = age
@@ -1414,6 +1416,8 @@ Help on property:
 </ul>
 
 
+
+  
 
 
 

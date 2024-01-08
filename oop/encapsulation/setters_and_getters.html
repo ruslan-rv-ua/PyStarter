@@ -145,6 +145,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1308,7 +1310,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1338,8 +1342,7 @@
 домовились що таке поле не чіпатимемо. 
 Але як же отримати його значення? 
 Зробити це можна реалізувавши відповідний метод: </p>
-<pre><code>:::python
-&gt;&gt;&gt; class Person:
+<pre><code>&gt;&gt;&gt; class Person:
 ...     def __init__(self, age):
 ...             self.__age = age
 ...     def get_age(self):
@@ -1351,8 +1354,7 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>Так само за допомогою методів можна реалізувати присвоєння значень прихованим атрибутам класа: </p>
-<pre><code>:::python
-&gt;&gt;&gt; class Person:
+<pre><code>&gt;&gt;&gt; class Person:
 ...     def __init__(self, age):
 ...         self.set_age(age)
 ...     def get_age(self):
@@ -1370,14 +1372,16 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>В об'єктно-орієнтованому програмуванні прийнято 
-імена методів для вилучення даних починати зі слова <code>get</code> ("взяти"), 
-а імена методів, в яких полям присвоюються певні значення — зі слова <code>set</code> ("встановити2). 
+імена методів для отриманя даних починати зі слова <code>get</code> ("взяти"), 
+а імена методів, в яких полям присвоюються певні значення — зі слова <code>set</code> ("встановити"). 
 А самі методи часто називають відповідно <strong>сетерами</strong> і <strong>гетерами</strong>. 
 Існують також <strong>делетери</strong> — методи для видалення (<code>delete</code>) полів класа. </p>
 <p>У вищенаведеному прикладі <code>get_age</code> — це гетер, а <code>set_age</code> — сетер. 
 Зауважте що для встановлення значення для прихованого атрибута в конструкторі ми скористались сетером.</p>
 
 
+
+  
 
 
 

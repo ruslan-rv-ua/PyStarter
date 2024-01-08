@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/basics/static_and_class_methods.html">
       
       
+        <link rel="prev" href="init.html">
+      
+      
+        <link rel="next" href="object_presentation.html">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -931,34 +935,237 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="basis.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     20. ООП
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_23">
+            <span class="md-nav__icon md-icon"></span>
+            20. ООП
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="basis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Парадигма ООП
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Класи і об'єкти
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="object_lifecycle.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Життєвий цикл об'єкта
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="init.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ініціалізація об'єктів
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Статичні та класові методи
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="static_and_class_methods.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Статичні та класові методи
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Методи екземпляра класа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Класові методи
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Статичні методи
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    До практики
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Резюме
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="object_presentation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Представлення об'єктів
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1360,13 +1567,6 @@
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    Практики використання
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
     Резюме
   </a>
   
@@ -1452,15 +1652,16 @@ Python пропонує три види методів:
 &gt;&gt;&gt; obj = ToyClass()
 &gt;&gt;&gt;
 </code></pre>
-<p>Розберемось з роботиою методів. 
+<p>Розберемось з роботою методів. 
 Спочатку метод екземпляра: </p>
 <pre><code>&gt;&gt;&gt; obj.instance_method()
 ('instance method called', &lt;__main__.ToyClass object at 0x00000179B2FF4CA0&gt;)
 &gt;&gt;&gt;
 </code></pre>
 <p>Приклад вище підтверджує те, 
-що метод <code>instance_method</code> має доступ до об<code>єкта класа</code>ToyClass<code>через аргумент</code>self<code>. 
-Зауважте: метод</code>obj.instance_method()` можна викоикати і так: </p>
+що метод <code>instance_method</code> має доступ до об'єкта класа <code>ToyClass</code> 
+через аргумент <code>self</code>. 
+Зауважте: метод <code>obj.instance_method()</code> можна викликати і так: </p>
 <pre><code>ToyClass.instance_method(obj)
 </code></pre>
 <p>Тепер скористаємось методом класа: </p>
@@ -1479,9 +1680,8 @@ Python пропонує три види методів:
 'static method called'
 &gt;&gt;&gt;
 </code></pre>
-<p>Це може здатися дивним, 
-але статичні методи можна викликати через об'єкт класа. 
-Насправді статичному методу ніякі спеціальні аргументи (<code>self</code> чи <code>cls</code>) не передаються. 
+<p>Статичні методи можна викликати через об'єкт класа. 
+Статичному методу ніякі спеціальні аргументи (екземпляр чи клас) не передаються. 
 Тобто статичні методи не можуть отримати доступ до параметрів класа чи об'єкта. 
 Вони працюють тільки з тими даними, які їм передаються як аргументи. </p>
 <p>Тепер давайте викличемо ті ж самі методи, але на самому класі.</p>
@@ -1494,8 +1694,7 @@ Traceback (most recent call last):
 TypeError: instance_method() missing 1 required positional argument: 'self'
 &gt;&gt;&gt;
 </code></pre>
-<p>Виклик метода екземпляра класа видає <code>TypeError</code>. 
-Сталося це через те, що метод очікував екземпляр класа, а було передано клас. </p>
+<p>Помилка виникає тому, що <code>instance_method()</code> визначений з аргументом <code>self</code>, але викликаючи його безпосередньо на класі <code>ToyClass</code> без екземпляра, не передається необхідний аргумент для параметра <code>self</code>. </p>
 <p>Зі статичним методом нічого неочікуваного: </p>
 <pre><code>&gt;&gt;&gt; ToyClass.static_method()
 'static method called'
@@ -1509,12 +1708,15 @@ TypeError: instance_method() missing 1 required positional argument: 'self'
         <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_birth_year</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">year</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">from_string</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+        <span class="n">name_str</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">age_str</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name_str</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">age_str</span><span class="p">))</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">is_adult</span><span class="p">(</span><span class="n">age</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">18</span>
+        <span class="k">return</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span>
 </code></pre></div>
 <p>Спробуємо створити об'єкт:</p>
 <pre><code>&gt;&gt;&gt; p = Person('Jane', 25)
@@ -1523,29 +1725,34 @@ TypeError: instance_method() missing 1 required positional argument: 'self'
 &gt;&gt;&gt;
 </code></pre>
 <p>Тепер викликаємо метод класа, який у свою чергу створить об'єкт цього ж класа і поверне його:</p>
-<pre><code>&gt;&gt;&gt; p = Person.from_birth_year('John', 1989)
-&gt;&gt;&gt; p
-&lt;__main__.Person object at 0x000001D1A0D6ACA0&gt;
-&gt;&gt;&gt; p.age
-30
+<pre><code>&gt;&gt;&gt; p2 = Person.from_string('Alice, 35')
+&gt;&gt;&gt; p2.age
+35
+&gt;&gt;&gt; p2
+&lt;__main__.Person object at 0x000002DBFA880A10&gt;
 &gt;&gt;&gt;
 </code></pre>
 <p>І, нарешті, статичний метод класа <code>Person</code>: </p>
-<pre><code>&gt;&gt;&gt; Person.is_adult(25)
+<pre><code>&gt;&gt;&gt; Person.is_adult(age=19)
 True
 &gt;&gt;&gt;
 </code></pre>
-<h2 id="_6">Практики використання</h2>
-<p>Вибір того, який з методів використовувати, може здатись доволі складним. 
-З набутим досвідом цей вибір зробити буде простіше. </p>
-<p>Найчастіше метод класа використовується тоді, коли потрібен генеруючий метод, 
-який повертає об'єкт класа. 
-Статичні методи в основному використовуються як допоміжні функції і працюють з даними, які їм передаються.</p>
-<h2 id="_7">Резюме</h2>
+<p>Поширеною практикою використання класових методів є використання їх як "альтернативних конструкторів". 
+У вищенаведеному прикладі ми створювали екземпляр класа <code>Person</code> двома способами:</p>
+<pre><code>&gt;&gt;&gt; p = Person('Jane', 25)
+&gt;&gt;&gt; p2 = Person.from_string('Alice, 35')
+</code></pre>
+<p>А ось як можна створити словник використовуючи класовий метод <code>fromkeys()</code> класа <code>dict</code>:</p>
+<pre><code>&gt;&gt;&gt; d=dict.fromkeys('abc', 42)
+&gt;&gt;&gt; d
+{'a': 42, 'b': 42, 'c': 42}
+&gt;&gt;&gt;
+</code></pre>
+<h2 id="_6">Резюме</h2>
 <ul>
-<li>Методи екземпляра класа отримують доступ до об'єкт класа через параметр <code>self</code> і до класа через <code>self.__class__</code></li>
-<li>Методи класа не можуть отримати доступ до певного екземпляра класа, але мають доступ до самого класа через <code>cls</code></li>
-<li>Статичні методи працюють як звичайні функції, але належать до простору імен класа. Вони не мають доступа ні до самого класа, ні до його екземплярів</li>
+<li>Статичні методи (staticmethod) використовуються для функціональності, яка не потребує доступу до данних класу чи екземпляра. Наприклад, утиліти та функції обробки.</li>
+<li>Класові методи (classmethod) використовуються для створення альтернативних конструкторів чи функціональності, пов'язаної тільки з класом, а не з екземпляром.</li>
+<li>Методи екземплярів використовуються для функціональності, яка працює з даними та станом конкретного екземпляра класу. Це найпоширеніший тип методу.</li>
 </ul>
 
 
@@ -1565,6 +1772,46 @@ True
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="init.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Ініціалізація об&#39;єктів">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Ініціалізація об'єктів
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="object_presentation.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Представлення об&#39;єктів">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Представлення об'єктів
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

@@ -1,13 +1,13 @@
 class Person:
-    def __init__(self, name, email):
+    def __init__(self, name, age):
         self.name = name
-        self.email = email
-    def __str__(self):
-        return f'{self.name} <{self.email}>'
-    def __repr__(self):
-        return f'Person(name={repr(self.name)}, email={repr(self.email)})'
-        # return f'Person(name={self.name!r}, email={self.email!r})'
+        self.age = age
+    #def __repr__(self):
+        #return f'Person(name={repr(self.name)}, age={self.age})'
+        # return f'Person(name={self.name!r}, age={self.age!r})'
+    #def __str__(self):
+        #return f'{self.name}, {self.age} years old.'
 
-p = Person('Alice', 'alice@wonderland.org')
+p = Person('Alice', 25)
 print(p)
 print(repr(p))

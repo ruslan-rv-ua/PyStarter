@@ -149,6 +149,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1350,7 +1352,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1392,31 +1396,30 @@
 <p><strong><em>Інкапсуляція</em></strong> (encapsulation) — це механізм, який об'єднує дані і код, який маніпулює цими даними, а також захищає і те, і інше від зовнішнього втручання або неправильного використання.</p>
 </blockquote>
 <p>Розглянемо приклад:</p>
-<!---
-    :::python
-    >>> class Person:
-    ...     def __init__(self, age):
-    ...             self.age = age
-    ...
-    >>> p = Person(age=-35)
-    >>> p.age
-    -35
-    >>> p.age = '35'
-    >>> p.age
-    '35'
-    >>>
-
-Поле `age` класа `Person` — це вік людини. 
+<pre><code>&gt;&gt;&gt; class Person:
+...     def __init__(self, age):
+...             self.age = age
+...
+&gt;&gt;&gt; p = Person(age=-35)
+&gt;&gt;&gt; p.age
+-35
+&gt;&gt;&gt; p.age = '35'
+&gt;&gt;&gt; p.age
+'35'
+&gt;&gt;&gt;
+</code></pre>
+<p>Поле <code>age</code> класа <code>Person</code> — це вік людини. 
 У вищенаведеному прикладі ми двічі присвоїли некоректне значення цьому полю: 
 при створенні об'єкта через конструктор та вказавши значення поля "напряму". 
-Варто було б зробити дві речі: 
+Варто було б зробити дві речі: </p>
+<ul>
+<li>в ініціалізаторі перевіряти значення на коректність</li>
+<li>заборонити зміну поля у об'єкта або ж перевіряти дані на коректність при зміні поля</li>
+</ul>
 
-- в ініціалізаторі перевіряти значення на коректність
-- заборонити зміну поля у об'єкта або ж перевіряти дані на коректність при зміні поля
-
--->
 
 
+  
 
 
 
@@ -1432,6 +1435,8 @@
         <footer class="md-footer">
   
     
+      
+        
       
       <nav class="md-footer__inner md-grid" aria-label="Футер" >
         

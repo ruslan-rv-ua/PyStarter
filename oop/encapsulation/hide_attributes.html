@@ -12,7 +12,7 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/encapsulation/hiding_attrs.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/encapsulation/hide_attributes.html">
       
       
       
@@ -144,6 +144,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1308,7 +1310,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1340,16 +1344,14 @@
 Для імітації приховування атрибутів в Python використовується домовленість 
 згідно якої якщо ідентифікатор атрибута починається з знака підкреслення, 
 то цей атрибут призначено виключно для внутрішнього використання. </p>
-<pre><code>:::python
-&gt;&gt;&gt; class Person:
+<pre><code>&gt;&gt;&gt; class Person:
 ...     def __init__(self, age):
 ...             self._age = age
 ...
 &gt;&gt;&gt;
 </code></pre>
 <p>Але домовленість — це не синтаксичне правило мови програмування, і при великому бажанні її можна порушити:</p>
-<pre><code>:::python
-&gt;&gt;&gt; p = Person(35)
+<pre><code>&gt;&gt;&gt; p = Person(35)
 &gt;&gt;&gt; p._age
 35
 &gt;&gt;&gt;
@@ -1357,8 +1359,7 @@
 <p>Звісно, що порушувати домовленості — річ погана.</p>
 <p>Можна ще більше приховати атрибут класа. 
 Для цього його ідентифікатор має починатись не з одного, а з двох знаків підкреслення: </p>
-<pre><code>:::python
-&gt;&gt;&gt; class Person:
+<pre><code>&gt;&gt;&gt; class Person:
 ...     def __init__(self, age):
 ...             self.__age = age
 ...
@@ -1378,8 +1379,7 @@ AttributeError: 'Person' object has no attribute '__age'
 <li>ім'я атрибута як у класі, тобто з двома підкресленнями на початку</li>
 </ol>
 <p>Отже для вищенаведеного прикладу: </p>
-<pre><code>:::python
-&gt;&gt;&gt; p._Person__age
+<pre><code>&gt;&gt;&gt; p._Person__age
 35
 &gt;&gt;&gt;
 </code></pre>
@@ -1390,6 +1390,8 @@ AttributeError: 'Person' object has no attribute '__age'
 що чіпати його поза класом не слід взагалі. </p>
 
 
+
+  
 
 
 
