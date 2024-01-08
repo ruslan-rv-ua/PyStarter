@@ -1,10 +1,16 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Властивості
 
 Значення, які характерезують стан об'єкта (атрибути), доступ до яких відбувається за допомогою сетерів і гетерів, називають **властивостями** (property). 
 
 Для створення властивості використовують функцію: 
 
-	 property(fget, fset, fdel, doc)
+	property(fget, fset, fdel, doc)
 	 
 де:
 
@@ -15,7 +21,6 @@
 
 Усі параметри необов'язкові. 
 
-	:::python
 	>>> class Person:
 	...     def __init__(self, age):
 	...             self.set_age(age)
@@ -54,7 +59,6 @@
 	
 Перепишемо клас Person: 
 
-	:::python
 	>>> class Person:
 	...     def __init__(self, age):
 	...             self.__age = 0
