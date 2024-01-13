@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/encapsulation/computed_properties.html">
       
       
+        <link rel="prev" href="properties.html">
+      
+      
+        <link rel="next" href="../inheritance/inheritance_basis.html">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -144,6 +148,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -966,34 +972,189 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="encapsulation_basis.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     21. Інкапсуляція
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            21. Інкапсуляція
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="encapsulation_basis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Інкапсуляція в ООП
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hide_attributes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Приховування атрибутів
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setters_and_getters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Сетери і гетери
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="properties.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Властивості
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Обчислювані властивості
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="computed_properties.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Обчислювані властивості
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Приклад: конвертер температур
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1308,7 +1469,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1319,6 +1482,21 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Приклад: конвертер температур
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1334,60 +1512,97 @@
 
 
 <h1 id="_1">Обчислювані властивості</h1>
+<p><strong>Обчислювані властивості</strong> — це властивості, які можуть бути обчислені. Вони відрізняються від звичайних властивостей тим, що їх не потрібно ініціалізувати, і їх значення може змінюватися протягом життя об’єкта.</p>
+<p>Обчислювані властивості зазвичай використовуються для зберігання інформації, яка залежить від інших властивостей об’єкта. 
+Наприклад, можна використовувати обчислювану властивість для отримання площі прямокутника:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+</code></pre></div>
+<p>Тепер щоб дізнатись площу прямокутника можна використовувати властивість:</p>
+<pre><code>&gt;&gt;&gt; r = Rectangle(7, 9)
+&gt;&gt;&gt; r.area
+63
+&gt;&gt;&gt;
+</code></pre>
+<h2 id="_2">Приклад: конвертер температур</h2>
 <p>Давайте створимо клас у якому будемо зберігати значення температури, наприклад температури повітря. 
 У різних країнах температуру повітря вимірюють по різних шкалах: 
 в Україні — за Цельсієм, у, наприклад, США — за шкалою Фаренгейта. 
 Спроектуємо наш клас таким чином, щоб з температурою можна було б працювати одразу у двох системах. </p>
 <p>Перше що зробимо, це з'ясуємо як перевести температуру з градусів Цельсія у градуси Фаренгейта і навпаки:</p>
-<pre><code>f = c *  9/5 + 32
-c = (f -32)* 5/9
+<pre><code>fahrenheit = celsius *  9/5 + 32
+celsius = (fahrenheit -32)* 5/9
 </code></pre>
 <p>Спроектуємо наш клас наступним чином:</p>
 <ul>
-<li>температуру будемо зберігати у градусах цельсія у властивості <code>c</code></li>
-<li>якщо нам треба дізнатись температуру по Фаренгейту, ми звертатимемось до властивості <code>f</code>. Гетер автоматично переводитиме значення у градуси Фаренгейта використовуючи значення атрибута <code>c</code></li>
-<li>сеттер властивості <code>f</code> буде встановлювати значення властивості <code>c</code></li>
-<li>у конструкторі передбачимо спосіб вказати у якій шкалі ми задаємо температуру</li>
+<li>температуру будемо зберігати у градусах цельсія у властивості <code>celsius</code></li>
+<li>якщо нам треба дізнатись температуру по Фаренгейту, ми звертатимемось до властивості <code>fahrenheit</code>. 
+Гетер автоматично переводитиме значення у градуси Фаренгейта використовуючи значення атрибута <code>celsius</code>.</li>
+<li>сеттер властивості <code>fahrenheit</code> буде встановлювати значення властивості <code>celsius</code></li>
 </ul>
 <p>Клас спроектовано, залишається, як завжди, записати це мовою Python:</p>
-<pre><code>:::python
-&gt;&gt;&gt; class T:
-...     CELSIUS = 1
-...     FAHRENHEIT = 2
-...     def __init__(self, t, scale=CELSIUS):
-...             if scale == T.CELSIUS:
-...                     self.c = t
-...             else:
-...                     self.f = t
-...     @property
-...     def f(self):
-...             return (self.c * 9/5) + 32
-...     @f.setter
-...     def f(self, f):
-...             self.c = (5/9) * (f - 32)
-...     def __str__(self):
-...             return str(self.c) + 'C'
-...     def __repr__(self):
-...             return f"T({self.c}C)"
-...
-&gt;&gt;&gt; t1 = T(32, T.FAHRENHEIT)
-&gt;&gt;&gt; t1
-T(0.0C)
-&gt;&gt;&gt; t1.f
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TemperatureConverter</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">celsius</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">celsius</span> <span class="o">=</span> <span class="n">celsius</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">celsius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span>
+
+    <span class="nd">@celsius</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">celsius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">273.15</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Temperature below -273.15°C is not possible&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">fahrenheit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">celsius</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span>
+
+    <span class="nd">@fahrenheit</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">fahrenheit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;TemperatureConverter(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">celsius</span><span class="si">}</span><span class="s1">)&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">celsius</span><span class="si">}</span><span class="s1">°C&#39;</span>
+</code></pre></div>
+<p>Скористаємось:</p>
+<pre><code>&gt;&gt;&gt; t = TemperatureConverter()
+&gt;&gt;&gt; t
+TemperatureConverter(0)
+&gt;&gt;&gt; print(t)
+0°C
+&gt;&gt;&gt; t.fahrenheit
 32.0
-&gt;&gt;&gt; t1.c
-0.0
-&gt;&gt;&gt; t2 = T(0)
-&gt;&gt;&gt; t2.f
-32.0
-&gt;&gt;&gt; t2.c
-0
-&gt;&gt;&gt; t2
-T(0C)
+&gt;&gt;&gt; t.fahrenheit = 451
+&gt;&gt;&gt; t
+TemperatureConverter(232.77777777777777)
+&gt;&gt;&gt; t.celsius
+232.77777777777777
+&gt;&gt;&gt; t = TemperatureConverter(-1000)
+Traceback (most recent call last):
+File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+File "e:\dev\PyStarter\docs\oop\encapsulation\demo\5e_computed_props.py", line 15, in __init__
+    self.celsius = celsius
+    ^^^^^^^^^^^^
+File "e:\dev\PyStarter\docs\oop\encapsulation\demo\5e_computed_props.py", line 24, in celsius
+    raise ValueError('Temperature below -273.15°C is not possible')
+ValueError: Temperature below -273.15°C is not possible
 &gt;&gt;&gt;
 </code></pre>
 
 
+
+  
 
 
 
@@ -1402,6 +1617,46 @@ T(0C)
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="properties.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Властивості">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Властивості
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../inheritance/inheritance_basis.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Успадкування в ООП">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Успадкування в ООП
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

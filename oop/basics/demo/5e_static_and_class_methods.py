@@ -35,6 +35,7 @@ p2 = Point.from_tuple((3,4))
 
 class Person:
 	def __init__(self, name, age):
+		self.validate_name(name)
 		self.name = name
 		self.age = age
 
@@ -48,11 +49,17 @@ class Person:
 	@staticmethod
 	def is_adult(age):
 		return age >= 18
+		
+	@staticmethod
+	def validate_name(name):
+		cleaned_name = ''.join(name.split())
+		if not cleaned_name.isalpha():
+			raise ValueError(f'Incorrect name: {name!r}')
 
-p = Person('Jane', 25)
+p = Person('Jane Doe', 25)
 p = Person.from_string('Jane, 35')
 r = Person.is_adult(age=25)
-
+# Person.validate_name('jane1')
 
 #########
 

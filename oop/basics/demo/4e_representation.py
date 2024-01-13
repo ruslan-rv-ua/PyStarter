@@ -1,3 +1,9 @@
+s = 'string'
+print(s)
+print(repr(s))
+print(str(s))
+print(f'{s!r}')
+
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -7,7 +13,10 @@ class Person:
         # return f'Person(name={self.name!r}, age={self.age!r})'
     #def __str__(self):
         #return f'{self.name}, {self.age} years old.'
+             
 
 p = Person('Alice', 25)
 print(p)
 print(repr(p))
+
+####print(f'{p:%N}')

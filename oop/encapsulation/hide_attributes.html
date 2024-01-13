@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/encapsulation/hide_attributes.html">
       
       
+        <link rel="prev" href="encapsulation_basis.html">
+      
+      
+        <link rel="next" href="setters_and_getters.html">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -968,34 +972,152 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="encapsulation_basis.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     21. Інкапсуляція
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_24">
+            <span class="md-nav__icon md-icon"></span>
+            21. Інкапсуляція
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="encapsulation_basis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Інкапсуляція в ООП
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="hide_attributes.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Приховування атрибутів
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setters_and_getters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Сетери і гетери
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="properties.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Властивості
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="computed_properties.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Обчислювані властивості
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1344,14 +1466,15 @@
 Для імітації приховування атрибутів в Python використовується домовленість 
 згідно якої якщо ідентифікатор атрибута починається з знака підкреслення, 
 то цей атрибут призначено виключно для внутрішнього використання. </p>
-<pre><code>&gt;&gt;&gt; class Person:
-...     def __init__(self, age):
-...             self._age = age
-...
-&gt;&gt;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_age</span> <span class="o">=</span> <span class="n">age</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Person(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_age</span><span class="si">}</span><span class="s1">)&#39;</span>
+</code></pre></div>
 <p>Але домовленість — це не синтаксичне правило мови програмування, і при великому бажанні її можна порушити:</p>
-<pre><code>&gt;&gt;&gt; p = Person(35)
+<pre><code>&gt;&gt;&gt; p = Person('Alice', 35)
 &gt;&gt;&gt; p._age
 35
 &gt;&gt;&gt;
@@ -1359,17 +1482,13 @@
 <p>Звісно, що порушувати домовленості — річ погана.</p>
 <p>Можна ще більше приховати атрибут класа. 
 Для цього його ідентифікатор має починатись не з одного, а з двох знаків підкреслення: </p>
-<pre><code>&gt;&gt;&gt; class Person:
-...     def __init__(self, age):
-...             self.__age = age
-...
-&gt;&gt;&gt; p = Person(35)
-&gt;&gt;&gt; p.__age
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-AttributeError: 'Person' object has no attribute '__age'
-&gt;&gt;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__age</span> <span class="o">=</span> <span class="n">age</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Person(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__name</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__age</span><span class="si">}</span><span class="s1">)&#39;</span>
+</code></pre></div>
 <p>Невже якщо ідентифікатор атрибута починається з символів <code>__</code>, то до нього не можна отримати доступ ззовні класа? 
 Насправді можна, але вже трохи важче. 
 Необхідно вказати атрибут класа таким чином:</p>
@@ -1378,15 +1497,32 @@ AttributeError: 'Person' object has no attribute '__age'
 <li>ім'я класа</li>
 <li>ім'я атрибута як у класі, тобто з двома підкресленнями на початку</li>
 </ol>
-<p>Отже для вищенаведеного прикладу: </p>
-<pre><code>&gt;&gt;&gt; p._Person__age
+<p>Такий механізм приховування імен в Python називається "спотворення імен" (name mangling). </p>
+<p>Отже для вищенаведеного прикладу щоб таки дістатись до атрибута <code>__age</code>: </p>
+<pre><code>&gt;&gt;&gt; p = Person('Alice', 35)
+&gt;&gt;&gt; p._Person__age
 35
 &gt;&gt;&gt;
 </code></pre>
 <p>Зауважте, що це знову ж таки домовленість. 
 В результаті "атрибут як він є" стає  замаскованим. 
-Ззовні класа такого атрибута просто не існує. 
-Для програміста ж наявність двох символів підкреслення перед іменем атрибута повинно сигналізувати, 
+Ззовні класа такого атрибута просто не існує. </p>
+<pre><code>&gt;&gt;&gt; p
+Person(Alice, 35)
+&gt;&gt;&gt; p.__age
+Traceback (most recent call last):
+File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+AttributeError: 'Person' object has no attribute '__age'
+&gt;&gt;&gt; p.__age = 'twenty two'
+&gt;&gt;&gt; p.__age
+'twenty two'
+&gt;&gt;&gt; p
+Person(Alice, 35)
+&gt;&gt;&gt; dir(p)
+['_Person__age', '_Person__name', ....]
+&gt;&gt;&gt;
+</code></pre>
+<p>Для програміста наявність двох символів підкреслення перед іменем атрибута повинно сигналізувати, 
 що чіпати його поза класом не слід взагалі. </p>
 
 
@@ -1406,6 +1542,46 @@ AttributeError: 'Person' object has no attribute '__age'
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="encapsulation_basis.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Інкапсуляція в ООП">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Інкапсуляція в ООП
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="setters_and_getters.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Сетери і гетери">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Сетери і гетери
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
