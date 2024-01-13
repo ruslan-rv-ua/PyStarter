@@ -208,10 +208,10 @@ nav:
     - Представлення об'єктів: oop/basics/object_presentation.md
   - 21. Інкапсуляція:
     - Інкапсуляція в ООП: oop/encapsulation/encapsulation_basis.md
-    # - Приховування атрибутів: oop/encapsulation/hide_attributes.md
-    # - Сетери і гетери: oop/encapsulation/setters_and_getters.md
-    # - Властивості: oop/encapsulation/properties.md
-    # # - Обчислювані властивості: oop/encapsulation/computed_properties.md
+    - Приховування атрибутів: oop/encapsulation/hide_attributes.md
+    - Сетери і гетери: oop/encapsulation/setters_and_getters.md
+    - Властивості: oop/encapsulation/properties.md
+    - Обчислювані властивості: oop/encapsulation/computed_properties.md
   - 22. Успадкування:
     - Успадкування в ООП: oop/inheritance/inheritance_basis.md
   - 23. Поліморфізм:
