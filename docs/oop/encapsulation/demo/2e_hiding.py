@@ -6,7 +6,7 @@ class Person:
         return f'Person({self._name}, {self._age})'
         
 p = Person('Alice', 35)
-print(p._age)
+age = p._age
 
 class Person:
     def __init__(self, name, age):
@@ -16,9 +16,8 @@ class Person:
         return f'Person({self.__name}, {self.__age})'
         
 p = Person('Alice', 35)
-p._Person__age
+age = p._Person__age
 
-p.__age
+# age = p.__age
 p.__age = 'twenty two'
-p.__age
-
+age = p.__age

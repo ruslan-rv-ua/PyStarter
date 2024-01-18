@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Резюме
 
 - усі класи в Python неявно успадковуються від вбудованого класа `object`

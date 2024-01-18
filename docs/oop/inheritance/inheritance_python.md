@@ -1,14 +1,21 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Успадкування в Python
 
 В Python синтаксис для наслідування класів виглядає наступним чином: 
 при створенні класа після його імені в круглих дужках можна вказати імена одного або декількох суперкласів. 
 
-	:::python
-	class Base:
-		pass
-	
-	class Child(Base):
-		pass
+```python
+class Base:
+	pass
+
+class Child(Base):
+	pass
+```
 		
 У вищенаведеному коді: 
 
@@ -22,16 +29,16 @@
 то неявним чином ваш клас буде успадковано від `object`. 
 Отже наступні оголошення класа рівносильні: 
 
-	:::python
-	class Base:
-		pass
-		
-	class Base():
-		pass
-		
-	class Base(object):
-		pass
-		
+```python
+class Base:
+	pass
+	
+class Base():
+	pass
+	
+class Base(object):
+	pass
+```		
 		
 ## Ієрархія успадкування
 
@@ -42,23 +49,22 @@
 
 Розглянемо наступну ієрархію класів: 
 
-	:::python
-	>>> class SuperBase:
-	...     pass
-	...
-	>>> class Base(SuperBase):
-	...     pass
-	...
-	>>> class Child(Base):
-	...     pass
-	...
-	>>>
-	
+```python
+class Person:
+	pass
+
+class Employee(Person):
+	pass
+
+class Manager(Employee):
+	pass
+```	
+
 У вищенаведеному прикладі: 
 
-- клас `SuperBase` успадковано від `object`
-- клас `Base` успадковано від `SuperBase`
-- клас `Child` успадковано від `Base`
+- клас `Person` успадковано від `object`
+- клас `Employee` успадковано від `Person`
+- клас `Manager` успадковано від `Employee`
 
 Дізнатись, чи є певний клас підкласом іншого класа по всій ієрархії успадкування, 
 можна за допомогою вбудованої функції: 
@@ -69,18 +75,20 @@
 
 Розвиваючи вищенаведений приклад: 
 
-	:::python
-	>>> issubclass(Child, Base)
+	>>> issubclass(Manager, Employee)
 	True
-	>>> issubclass(Child, SuperBase)
+	>>> issubclass(Manager, Person)
 	True
-	>>> issubclass(Child, object)
+	>>> issubclass(Manager, object)
 	True
-	>>> issubclass(Child, Child)
+	>>> issubclass(Manager, Manager)
 	True
-	>>> issubclass(SuperBase, object)
+	>>>
+	>>> issubclass(Employee, Manager)
+	False
+	>>> issubclass(Employee, Person)
 	True
-	>>> issubclass(SuperBase, Base)
+	>>> issubclass(Person, Employee)
 	False
 	>>> issubclass(str, object)
 	True
@@ -89,13 +97,15 @@
 Функції `issubclass` другим аргументом можна передати одразу декілька класів об'єднаних у кортеж. 
 У такому разі функція поверне `True` якщо вказаний клас є дочірнім хоча б одному з перерахованих: 
 
-	:::python
-	>>> issubclass(Base, (Child, SuperBase))
+	>>> issubclass(Manager, (Person,Employee))
 	True
-	>>> issubclass(Base, (Child, str))
+	>>> issubclass(Manager, (Employee,object))
+	True
+	>>> issubclass(Employee, (object, Manager))
+	True
+	>>> issubclass(Person, (Employee, Manager))
 	False
-	>>> issubclass(Base, (object, str))
-	True
+	>>>
 	>>>
 
 А тепер вкотре згадаємо що "в Python усе є об'єкт". 
@@ -106,9 +116,8 @@
 у якому міститься базовий клас, точніше кортеж який містить усі базові класи 
 (чому їх може бути декілька — дізнаємось у подальшому): 
 
-	:::python
-	>>> Child.__bases__
-	(<class '__main__.Base'>,)
-	>>> SuperBase.__bases__
+	>>> Manager.__bases__
+	(<class '__main__.Employee'>,)
+	>>> Person.__bases__
 	(<class 'object'>,)
 	>>>

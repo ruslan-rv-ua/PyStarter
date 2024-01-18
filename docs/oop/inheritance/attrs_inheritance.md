@@ -1,44 +1,50 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Успадкування атрибутів класа
 
 Дочірній клас успадковує атрибути базового класа. 
 
 Розглянемо на прикладі: 
 
-	:::python
-	>>> class Base:
-	...     def __init__(self):
-	...         self.attr = 'Атрибут базового класа'
-	...     def method(self):
-	...         print('Це метод з класа Base')
-	...         print(f'У екземпляра класа Base є атрибут {self.attr=}')
-	...
-	>>> class Child(Base):
-	...     def child_method(self):
-	...         print('Це метод з класа Child')
-	...         print(f'У екземпляра класа Child є атрибут {self.attr=}')
-	...
-	>>>
+```python
+class Person:
+    def __init__(self, name):
+        print('Виклик ініціалізатора класа Person')
+        self.name = name
+    def person_method(self):
+        print('Це метод з класа Person')
+        print(f'У екземпляра класа Person є атрибут {self.name=}')
+
+class Employee(Person):
+	def employee_method(self):
+		print('Це метод з класа Employee')
+		print(f'У екземпляра класа Employee є атрибут {self.name=}')
+```
 
 Подивимось що тут відбувається: 
 
-1. Клас `Child` не має власного ініціалізатора, отже він успадкує його від класа `Base`
-1. Клас `Child` успадкує від класа `Base` метод `method()`
-1. Клас `Child` має свій власний метод: `child_method()`
-1. При створенні екземпляра класа `Child` буде викликано успадкований ініціалізатор
-1. В ініціалізаторі буде для екземпляра буде створено атрибут `attr`
+1. Клас `Employee` не має власного ініціалізатора, отже він успадкує його від класа `Person`
+1. При створенні екземпляра класа `Employee` буде викликано успадкований ініціалізатор
+1. В ініціалізаторі для екземпляра буде створено атрибут `name`
+1. Клас `Employee` успадкує від класа `Person` метод `person_method()`
+1. Клас `Employee` має свій власний метод: `employee_method()`
 
 Перевіримо на практиці: 
 
-	:::python
-	>>> object_of_child = Child()
-	>>> object_of_child.method()
-	Це метод з класа Base
-	У екземпляра класа Base є атрибут self.attr='Атрибут базового класа'
-	>>> object_of_child.child_method()
-	Це метод з класа Child
-	У екземпляра класа Child є атрибут self.attr='Атрибут базового класа'
-	>>> object_of_child.attr
-	'Атрибут базового класа'
+	>>> e = Employee('Bob')
+	Виклик ініціалізатора класа Person
+	>>> e.person_method()
+	Це метод з класа Person
+	У екземпляра класа Person є атрибут self.name='Bob'
+	>>> e.employee_method()
+	Це метод з класа Employee
+	У екземпляра класа Employee є атрибут self.name='Bob'
+	>>> e.name
+	'Bob'
 	>>>
 
 ## Успадкування і приватні атрибути
@@ -54,35 +60,41 @@
 для дочірніх класів. 
 Тобто у дочірньому класі приватні атрибути базового класа не успадковуються: 
 
-	:::python
-	>>> class Base:
-	...     def __init__(self):
-	...         self.__attr = 'Атрибут базового класа'
-	...     def method(self):
-	...         print('Це метод з класа Base')
-	...         print(f'У екземпляра класа Base є атрибут {self.__attr=}')
-	...
-	>>> class Child(Base):
-	...     def child_method(self):
-	...         print('Це метод з класа Child')
-	...         print(f'У екземпляра класа Child є атрибут {self.__attr=}')
-	...
-	>>> object_of_child = Child()
-	>>> object_of_child.method()
-	Це метод з класа Base
-	У екземпляра класа Base є атрибут self.__attr='Атрибут базового класа'
-	>>> object_of_child.child_method()
-	Це метод з класа Child
+```python
+class Person:
+    def __init__(self, name):
+        print('Виклик ініціалізатора класа Person')
+        self.__name = name
+    def person_method(self):
+        print('Це метод з класа Person')
+        print(f'У екземпляра класа Person є атрибут {self.__name=}')
+
+class Employee(Person):
+    def employee_method(self):
+        print('Це метод з класа Employee')
+        print(f'У екземпляра класа Employee є атрибут {self.__name=}')
+```
+
+Перевіримо:
+
+	>>> e = Employee('Bob')
+	Виклик ініціалізатора класа Person
+	>>> e.person_method()
+	Це метод з класа Person
+	У екземпляра класа Person є атрибут self.__name='Bob'
+	>>> e.employee_method()
+	Це метод з класа Employee
 	Traceback (most recent call last):
-	  File "<stdin>", line 1, in <module>
-	  File "<stdin>", line 4, in child_method
-	AttributeError: 'Child' object has no attribute '_Child__attr'
+	File "<stdin>", line 1, in <module>
+	File "e:\dev\PyStarter\docs\oop\inheritance\demo\2e_attrs_inheritance.py", line 39, in employee_method
+		print(f'У екземпляра класа Employee є атрибут {self.__name=}')
+													^^^^^^^^^^^
+	AttributeError: 'Employee' object has no attribute '_Employee__name'
 	>>>
 
-З метода `method()` "видно" атрибут `__attr` тому що вони знаходяться в одному класі `Base`. 
-"Розгорнуте" ім'я атрибута буде `_Base__attr`. 
+З метода `person_method()` "видно" атрибут `__name` тому що вони знаходяться в одному класі `Person`. 
+"Розгорнуте" ім'я атрибута буде `_Person__name`. 
 
-Якщо ж ми звертаємось до атрибута `__attr` у методі `child_method()`, 
-то тоді "розгорнуте" ім'я такого атрибута буде `_Child__attr`. 
-А клас `Child` не має свого власного приватного атрибута `__attr`. 
-
+Якщо ж ми звертаємось до атрибута `__name` у методі `employee_method()`, 
+то тоді "розгорнуте" ім'я такого атрибута буде `_Employee__name`. 
+А клас `Employee` не має свого власного приватного атрибута `__name`. 

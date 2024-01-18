@@ -34,3 +34,17 @@ td = now - d
 #print(f'{td.days}-й день війни.')
 print(td.days)
 
+#####################
+
+import datetime as dt
+from zoneinfo import ZoneInfo
+
+n = dt.datetime.now()
+r = n.tzinfo
+# n = dt.datetime.now(tz=ZoneInfo('Europe/Kyiv'))
+r = n.tzinfo
+# n = dt.datetime.now(tz=dt.UTC)
+r = n.tzinfo
+
+
+o = dt.datetime.utcoffset(n)#.seconds / 3600

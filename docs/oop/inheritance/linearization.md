@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Лінеаризація
 
 Як ми вже з'ясували, дочірній клас може не мати певного атрибута, але він може успадкувати його від базового класа. 
@@ -9,45 +15,45 @@
 При простому успадкуванні алгоритм пошуку атрибутів виглядає наступним чином: 
 
 - якщо атрибут, до якого відбувається доступ, не знайдено в поточному класі, то виконується його пошук в базовому класі
-* якщо атрибут не знайдено і в базовому класі, то виконується його пошук в базовому класі базового класа
-* пошук відбувається рекурсивно аж до класа `object`
-* якщо атрибут не знайдено і в класі `object`, то отримуємо вийняткову ситуацію
+- якщо атрибут не знайдено і в базовому класі, то виконується його пошук в базовому класі базового класа
+- пошук відбувається рекурсивно аж до класа `object`
+- якщо атрибут не знайдено і в класі `object`, то отримуємо вийняткову ситуацію
 
 Приклад:
 
-	:::python
-	>>> class SuperBase:
-	...     def f1(self):
-	...         print('Метод f1() класа SuperBase')
-	...
-	>>> class Base(SuperBase):
-	...     def f2(self):
-	...         print('Метод f2() класа Base')
-	...
-	>>> class Child(Base):
-	...     def f2(self):
-	...         print('Метод f2() класа Child')
-	...     def f3(self):
-	...         print('Метод f3() класа Child')
-	...
-	>>>
-		
-У вищенаведеному прикладі клас `Child`: 
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+    def hello(self):
+        print(f'Я — {self.name}')
 
-- від класа `SuperBase` успадкував метод `f1()`
-- з батьківського класа метод `f2()` не успадковується, клас має власний метод `f2()`
-- має власний метод `f3()`
+class Employee(Person):
+    def salary(self):
+        print('Я отримую зарплатню')
+
+class Manager(Employee):
+    def salary(self):
+        print('Я отримую підвищену зарплатню')
+    def info(self):
+        print('Я можу керувати іншими')
+```		
+
+У вищенаведеному прикладі клас `Manager`: 
+
+- від класа `Person` успадкував метод `hello()`
+- від класа `Employee` метод `salary()` не успадковується, клас має власний метод `salary()`
+- має власний метод `info()`
 
 Перевіримо на практиці: 
 
-	:::python
-	>>> child_object = Child()
-	>>> child_object.f1()
-	Метод f1() класа SuperBase
-	>>> child_object.f2()
-	Метод f2() класа Child
-	>>> child_object.f3()
-	Метод f3() класа Child
+	>>> m = Manager('Дмитро')
+	>>> m.hello()
+	Я — Дмитро
+	>>> m.info()
+	Я можу керувати іншими
+	>>> m.salary()
+	Я отримую підвищену зарплатню
 	>>>
 
 ## Порядок вирішення методів
@@ -59,16 +65,14 @@
 	
 Лінеаризація для певного класа знаходиться в його спеціальному атрибуті `__mro__`:
 	
-	:::python
-	>>> Child.__mro__
-	(<class '__main__.Child'>, <class '__main__.Base'>, <class '__main__.SuperBase'>, <class 'object'>)
+	>>> Manager.__mro__
+	(<class '__main__.Manager'>, <class '__main__.Employee'>, <class '__main__.Person'>, <class 'object'>)
 	>>>
-	
+
 Але частіше користуються методом класа, який повертає не кортеж, а одразу список:
 
-	:::python
-	>>> Child.mro()
-	[<class '__main__.Child'>, <class '__main__.Base'>, <class '__main__.SuperBase'>, <class 'object'>]
+	>>> Manager.mro()
+	[<class '__main__.Manager'>, <class '__main__.Employee'>, <class '__main__.Person'>, <class 'object'>]
 	>>>
 
 Ми отримали всю ієрархію успадкування, аж до класа `object`. 
@@ -82,43 +86,27 @@
 Повертає `True` якщо об'єкт `obj` є екземпляром класа `cls` або його суперкласів. 
 Тобто перевірка відбувається по усій ієрархії успадкування: 
 
-	:::python
-	>>> child_object = Child()
-	>>> isinstance(child_object, Child)
+	>>> isinstance(m, Manager)
 	True
-	>>> isinstance(child_object, Base)
+	>>> isinstance(m, Employee)
 	True
-	>>> isinstance(child_object, SuperBase)
+	>>> isinstance(m, object)
 	True
-	>>> isinstance(child_object, object)
-	True
-	>>> isinstance(child_object, list)
+	>>> isinstance(m, str)
+	False
+	>>> isinstance(Person('Bob'), Manager)
 	False
 	>>>
 
 Другим аргументом можна передати одразу декілька класів об'єднавши їх у кортеж. 
 У цьому разі відбуватиметься перевірка належності об'єкта до ієрархій одразу декількох класів: 
 
-	:::python
-	>>> isinstance(child_object, (Child, Base))
+	>>> isinstance(m, (Employee, Person))
 	True
-	>>> isinstance(child_object, (Child, list))
+	>>> isinstance(m, (Employee, object))
 	True
-	>>> isinstance(child_object, (str, list))
+	>>> isinstance(m, (Employee, list))
+	True
+	>>> isinstance(m, (dict, list))
 	False
-	>>> isinstance('text', (str, list))
-	True
-	>>> isinstance('text', (object, list))
-	True
 	>>>
-	
-Зауважте: функція `isinstance()` використовує лінеаризацію. 
-Аналогічну перевірку можна виконати і так: 
-
-	:::python
-	>>> type(child_object)
-	<class '__main__.Child'>
-	>>> type(child_object) in Child.mro()
-	True
-	>>>
-	

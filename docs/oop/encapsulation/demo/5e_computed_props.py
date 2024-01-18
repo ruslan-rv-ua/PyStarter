@@ -45,8 +45,19 @@ class TemperatureConverter:
     
     def __str__(self) -> str:
         return f'{self.celsius}°C'
+        
+    def __format__(self, format):
+        if format.lower() == 'f':
+            return f'{self.fahrenheit}°F'
+        if format.lower() == 'k':
+            return f'{self.kelvin}K'
+        return self.__str__()
     
 t = TemperatureConverter()
 k=t.kelvin
 f=t.fahrenheit
 # t = TemperatureConverter(-1000)
+
+print(t)
+print(f'{t:F}')
+print(f'{t:K}')

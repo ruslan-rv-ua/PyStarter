@@ -214,8 +214,17 @@ nav:
     - Обчислювані властивості: oop/encapsulation/computed_properties.md
   - 22. Успадкування:
     - Успадкування в ООП: oop/inheritance/inheritance_basis.md
+    - Успадкування в Python: oop/inheritance/inheritance_python.md
+    - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
+    - Лінеаризація: oop/inheritance/linearization.md
+    # - Множинне успадкування: oop/inheritance/multiple_inheritance.md
+    # - Атрибути базового класа: oop/inheritance/call_overrided.md
+    # - Резюме: oop/inheritance/recap.md
   - 23. Поліморфізм:
     - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
+  - 24. Магічні методи:
+    - Магія Python: oop/dunder/magic_method.md
+    - Контроль доступу до атрибутів: comming_soon.md
   - xx. Виняткові ситуації: comming_soon.md
   - xx. Ітератори та генератори: comming_soon.md
   - xx. Елементи функційного програмування: comming_soon.md
@@ -227,6 +236,7 @@ nav:
   - Батарейки:
     - Модуль random: batteries/random.md
     - Модуль datetime: batteries/datetime.md
-    - Модуль enum: comming_soon.md
+    - Модуль collections: batteries/collections.md
+    - Модуль enum: batteries/enum.md
   - Дзен: zen.md
   - Корисні ресурси: resources.md

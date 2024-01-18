@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Модуль collections
 
 <!-- https://realpython.com/python-collections-module/ -->
@@ -47,7 +53,6 @@
 	
 Приклади:
 
-	:::python
 	>>> from collections import namedtuple
 	>>> Point = namedtuple('Point', ['x', 'y'])
 	>>> p = Point(2, 5)
@@ -94,9 +99,8 @@
 
 ## defaultdict
 
-Спроба отрлимати значення зі словника по неіснуючому ключу призводить до відповідної помилки: 
+Спроба отримати значення зі словника по неіснуючому ключу призводить до відповідної помилки: 
 
-	:::python
 	>>> favorites = {'fruit': 'apple'}
 	>>> favorites['language']
 	Traceback (most recent call last):
@@ -107,7 +111,6 @@
 Можна скористатись методом `get()`, але після цього словник не змінюється, 
 тобто нова пара ключ-значення не додається: 
 
-	:::python
 	>>> favorites.get('language', 'Python')
 	'Python'
 	>>> favorites
@@ -120,7 +123,6 @@
 вказана функція викликається без аргументів, 
 вона має повернути дефолтне значення. 
 
-	:::python
 	>>> from collections import defaultdict
 	>>> counter = defaultdict(int)
 	>>> counter
@@ -144,7 +146,6 @@
 Ітерування по такому словнику буде відбуватись у тому порядку, 
 у якому елементи додавались в нього. 
 
-	:::python
 	>>> from collections import OrderedDict
 	>>> life_stages = OrderedDict()
 	>>> life_stages["childhood"] = "0-9"
@@ -174,7 +175,6 @@
 
 Приклади:
 
-	:::python
 	>>> letters = OrderedDict(b=2, d=4, a=1, c=3)
 	>>> letters
 	OrderedDict([('b', 2), ('d', 4), ('a', 1), ('c', 3)])
@@ -196,7 +196,6 @@
 	
 Ще однією відмінністю `OrderedDict` від "звичайних" словників є спосіб порівняння двох об'єктів на рівність: 
 
-	:::python
 	>>> # в dict порівнюється лише вміст:
 	>>> letters_0 = dict(a=1, b=2, c=3, d=4)
 	>>> letters_1 = dict(b=2, a=1, d=4, c=3)
@@ -218,7 +217,6 @@
 Зручно робити це дозволяє клас `Counter`. 
 Достатньо передати йому будь-який ітерабельний об'єкт: 
 
-	:::python
 	>>> c = Counter('абракадабра')
 	>>> c
 	Counter({'а': 5, 'б': 2, 'р': 2, 'к': 1, 'д': 1})
@@ -239,7 +237,6 @@
 
 Отримати "найчастіші" об'єкти:
 
-	:::python
 	>>> n.most_common()
 	[(1, 11), (4, 4), (2, 3), (3, 2)]
 	>>> n.most_common(2)
@@ -248,7 +245,6 @@
 	
 Зауважте: підраховувати можна лише об'єкти, що хешуються:
 
-	:::python
 	>>> Counter([[1], [2]])
 	Traceback (most recent call last):
 	  File "<stdin>", line 1, in <module>
@@ -261,4 +257,3 @@
 	
 Клас `Counter` має ще багато корисних можливостей. 
 Ознайомитись з усіма можна у відповідній документації.
-
