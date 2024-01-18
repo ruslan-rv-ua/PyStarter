@@ -12,7 +12,7 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/inheritance/hierarchy.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/dunder/attributes.html">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Hierarchy - PyStarter</title>
+        <title>Контроль доступу до атрибутів - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hierarchy
+              Контроль доступу до атрибутів
             
           </span>
         </div>
@@ -1017,7 +1017,7 @@
         
   
   
-    <a href="inheritance_basis.html" class="md-nav__link">
+    <a href="../inheritance/inheritance_basis.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1059,6 +1059,43 @@
   
   <span class="md-ellipsis">
     23. Поліморфізм
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="magic_method.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    24. Магічні методи
   </span>
   
 
@@ -1317,6 +1354,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1325,8 +1364,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Ієрархія успадкування
+  <a href="#__getattr__self-name" class="md-nav__link">
+    __getattr__(self, name)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#__setattr__self-name-value" class="md-nav__link">
+    __setattr__(self, name, value)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#__delattr__" class="md-nav__link">
+    __delattr__
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#__getattribute__self-name" class="md-nav__link">
+    __getattribute__(self, name)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Обережно!
   </a>
   
 </li>
@@ -1346,79 +1413,33 @@
                   
 
 
-  <h1>Hierarchy</h1>
-
-<h3 id="_1">Ієрархія успадкування</h3>
-<p>Клас може бути успадкованим від класа, який у свою чергу було успадковано від іншого класа. Коли розглядають увесь ланцюжок успадкованих і базових класів, говорять про <strong>ієрархію успадкування</strong>.</p>
-<p>В Python є вбудований клас який має назву <code>object</code>. 
-Від цього класа явно чи неявно успадковуються усі інші класи, 
-як вбудовані, так і ті, що створююте ви. 
-Якщо при створенні класа ви не вказуєте базовий клас, 
-то неявним чином ваш клас буде успадковано від <code>object</code>. 
-Отже наступні оголошення класа рівносильні:</p>
+<h1 id="_1">Контроль доступу до атрибутів</h1>
+<h3 id="__getattr__self-name"><code>__getattr__(self, name)</code></h3>
+<p>За допомогою цього магічного метода можна визначити поведінку для випадків, коли є  спроба звернутись до атрибута, якого не існує (зовсім чи поки що). Це може бути використано, наприклад, для перехвата і попередження про використання застарілих атрибутів (при цьому можна все ж таки обчислити і повернути цей атрибут). Зауважте: цей метод буде викликано тільки коли намагаються отримати доступ до неіснуючого атрибута.</p>
+<h3 id="__setattr__self-name-value"><code>__setattr__(self, name, value)</code></h3>
+<p>Цей метод дозволяє визначити поведінку для присвоєння значення атрибуту, незалежно від того існує атрибут чи ні. Тобто, можна визначити будь-які правила для будь-яких змін значення атрибутів.</p>
+<h3 id="__delattr__"><code>__delattr__</code></h3>
+<p>Видалення атрибутів </p>
+<h3 id="__getattribute__self-name"><code>__getattribute__(self, name)</code></h3>
+<p>Цей метод дозволяє визначити поведінку для кожного випадка доступу до атрибутів (не тільки до неіснуючих, як <code>__getattr__</code>). 
+Не рекомендується використовувати цей метод, оскільки випадків, коли він дійсно корисний дуже мало (набагато рідше потрібно перевизначати поведінку при отриманні, а не при встановленні значення) і реалізувати його без можливих помилок важко.</p>
+<h3 id="_2">Обережно!</h3>
+<p>Можна дуже легко отримати проблеми при визначенні будь-якого метода, які керують доступом до атрибутів:</p>
 <pre><code>:::python
-class A:
-    pass
-
-class A():
-    pass
-
-class A(object):
-    pass
+&gt;&gt;&gt; class A:
+...     def __setattr__(self, name, value):
+...             self.name = value
 </code></pre>
-<p>Розглянемо наступну ієрархію класів:</p>
+<p>Вищенаведений приклад приведе до нескінченної рекурсії! Кожного разу, коли в методі <code>__setattr__()</code> буде виконуватись 'self.name = value', знову буде викликано метод <code>методі</code><strong>setattr</strong>()` і так до тих пір, поки усе не "впаде". </p>
+<p>Як же бути? </p>
+<p>У кожного класа є спеціальний атрибут <code>__dict__</code>. Це словник, в якому містяться усі атрибути і їх значення. Отже можна скористатись цим "спеціальним" атрибутом:</p>
 <pre><code>:::python
-&gt;&gt;&gt; class A: pass
+...     def __setattr__(self, name, value):
+...             self.__dict__[name] = value
 ...
-&gt;&gt;&gt; class B(A): pass
-...
-&gt;&gt;&gt; class C(B): pass
-...
-&gt;&gt;&gt; c_obj = C()
-&gt;&gt;&gt; c
-&lt;__main__.Child object at 0x00000151150290F0&gt;
 &gt;&gt;&gt;
 </code></pre>
-<p>Дізнатись, чи є певний клас підкласом іншого класа по всій ієрархії успадкування, 
-можна за допомогою вбудованої функції <code>issubclass()</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; issubclass(C, B)
-True
-&gt;&gt;&gt; issubclass(C, A)
-True
-&gt;&gt;&gt; issubclass(C, object)
-True
-&gt;&gt;&gt; issubclass(B, C)
-False
-&gt;&gt;&gt;
-</code></pre>
-<p>Також можна дізнатись чи є певний об'єкт екземпляром класа враховуючи всю ієрархію успадкування:</p>
-<pre><code>:::python
-&gt;&gt;&gt; isinstance(c_obj, C)
-True
-&gt;&gt;&gt; isinstance(c_obj, B)
-True
-&gt;&gt;&gt; isinstance(c_obj, object)
-True
-&gt;&gt;&gt; isinstance('some striing', C)
-False
-&gt;&gt;&gt; isinstance('some striing', object)
-True
-&gt;&gt;&gt;
-</code></pre>
-<p>А тепер вкотре згадаємо що "в Python усе є об'єкт". 
-І класи тут теж не виключення, тобто класи — це теж об'єкти. 
-І як об'єкти вони мають свої атрибути. </p>
-<p>У кожного класа є спеціальний атрибут, в якому міститься базовий клас, точніше кортеж який містить базові класи (чому саме так — трохи далі):</p>
-<pre><code>:::python
-&gt;&gt;&gt; C.__bases__
-(&lt;class '__main__.B'&gt;,)
-&gt;&gt;&gt; B.__bases__
-(&lt;class '__main__.A'&gt;,)
-&gt;&gt;&gt; A.__bases__
-(&lt;class 'object'&gt;,)
-&gt;&gt;&gt;
-</code></pre>
+<p>Сила можливостей магічних методів в Python надзвичайно велика, а з більшою силою настає і велика відповідальність. Важливо знати як правильно використовувати магічні методи. В Python, як правило, нічого не забороняється, а лише ускладнюється використання. Свобода понад усе! Тому, насправді, можна робити майже усе, що нам захочеться. </p>
 
 
 

@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/inheritance/linearization.html">
       
       
+        <link rel="prev" href="attrs_inheritance.html">
+      
+      
+        <link rel="next" href="../polymorphism/polymorphism_basis.html">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -144,6 +148,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1003,6 +1009,185 @@
       
   
   
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    22. Успадкування
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_25">
+            <span class="md-nav__icon md-icon"></span>
+            22. Успадкування
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inheritance_basis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Успадкування в ООП
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inheritance_python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Успадкування в Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="attrs_inheritance.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Успадкування атрибутів
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Лінеаризація
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="linearization.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Лінеаризація
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Порядок вирішення методів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Перевірка об'єкта на належність класу
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
     
     
@@ -1017,11 +1202,11 @@
         
   
   
-    <a href="inheritance_basis.html" class="md-nav__link">
+    <a href="../polymorphism/polymorphism_basis.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    22. Успадкування
+    23. Поліморфізм
   </span>
   
 
@@ -1054,11 +1239,11 @@
         
   
   
-    <a href="../polymorphism/polymorphism_basis.html" class="md-nav__link">
+    <a href="../dunder/magic_method.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    23. Поліморфізм
+    24. Магічні методи
   </span>
   
 
@@ -1308,7 +1493,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1370,38 +1557,36 @@
 <li>якщо атрибут не знайдено і в класі <code>object</code>, то отримуємо вийняткову ситуацію</li>
 </ul>
 <p>Приклад:</p>
-<pre><code>:::python
-&gt;&gt;&gt; class SuperBase:
-...     def f1(self):
-...         print('Метод f1() класа SuperBase')
-...
-&gt;&gt;&gt; class Base(SuperBase):
-...     def f2(self):
-...         print('Метод f2() класа Base')
-...
-&gt;&gt;&gt; class Child(Base):
-...     def f2(self):
-...         print('Метод f2() класа Child')
-...     def f3(self):
-...         print('Метод f3() класа Child')
-...
-&gt;&gt;&gt;
-</code></pre>
-<p>У вищенаведеному прикладі клас <code>Child</code>: </p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Я — </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Employee</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">salary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Я отримую зарплатню&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Manager</span><span class="p">(</span><span class="n">Employee</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">salary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Я отримую підвищену зарплатню&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Я можу керувати іншими&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>У вищенаведеному прикладі клас <code>Manager</code>: </p>
 <ul>
-<li>від класа <code>SuperBase</code> успадкував метод <code>f1()</code></li>
-<li>з батьківського класа метод <code>f2()</code> не успадковується, клас має власний метод <code>f2()</code></li>
-<li>має власний метод <code>f3()</code></li>
+<li>від класа <code>Person</code> успадкував метод <code>hello()</code></li>
+<li>від класа <code>Employee</code> метод <code>salary()</code> не успадковується, клас має власний метод <code>salary()</code></li>
+<li>має власний метод <code>info()</code></li>
 </ul>
 <p>Перевіримо на практиці: </p>
-<pre><code>:::python
-&gt;&gt;&gt; child_object = Child()
-&gt;&gt;&gt; child_object.f1()
-Метод f1() класа SuperBase
-&gt;&gt;&gt; child_object.f2()
-Метод f2() класа Child
-&gt;&gt;&gt; child_object.f3()
-Метод f3() класа Child
+<pre><code>&gt;&gt;&gt; m = Manager('Дмитро')
+&gt;&gt;&gt; m.hello()
+Я — Дмитро
+&gt;&gt;&gt; m.info()
+Я можу керувати іншими
+&gt;&gt;&gt; m.salary()
+Я отримую підвищену зарплатню
 &gt;&gt;&gt;
 </code></pre>
 <h2 id="_2">Порядок вирішення методів</h2>
@@ -1410,15 +1595,13 @@
 Назва може трошки вводити в оману, 
 тому що таким чином відбувається пошук не тільки методів, а й будь-яких атрибутів. </p>
 <p>Лінеаризація для певного класа знаходиться в його спеціальному атрибуті <code>__mro__</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; Child.__mro__
-(&lt;class '__main__.Child'&gt;, &lt;class '__main__.Base'&gt;, &lt;class '__main__.SuperBase'&gt;, &lt;class 'object'&gt;)
+<pre><code>&gt;&gt;&gt; Manager.__mro__
+(&lt;class '__main__.Manager'&gt;, &lt;class '__main__.Employee'&gt;, &lt;class '__main__.Person'&gt;, &lt;class 'object'&gt;)
 &gt;&gt;&gt;
 </code></pre>
 <p>Але частіше користуються методом класа, який повертає не кортеж, а одразу список:</p>
-<pre><code>:::python
-&gt;&gt;&gt; Child.mro()
-[&lt;class '__main__.Child'&gt;, &lt;class '__main__.Base'&gt;, &lt;class '__main__.SuperBase'&gt;, &lt;class 'object'&gt;]
+<pre><code>&gt;&gt;&gt; Manager.mro()
+[&lt;class '__main__.Manager'&gt;, &lt;class '__main__.Employee'&gt;, &lt;class '__main__.Person'&gt;, &lt;class 'object'&gt;]
 &gt;&gt;&gt;
 </code></pre>
 <p>Ми отримали всю ієрархію успадкування, аж до класа <code>object</code>. </p>
@@ -1428,46 +1611,34 @@
 </code></pre>
 <p>Повертає <code>True</code> якщо об'єкт <code>obj</code> є екземпляром класа <code>cls</code> або його суперкласів. 
 Тобто перевірка відбувається по усій ієрархії успадкування: </p>
-<pre><code>:::python
-&gt;&gt;&gt; child_object = Child()
-&gt;&gt;&gt; isinstance(child_object, Child)
+<pre><code>&gt;&gt;&gt; isinstance(m, Manager)
 True
-&gt;&gt;&gt; isinstance(child_object, Base)
+&gt;&gt;&gt; isinstance(m, Employee)
 True
-&gt;&gt;&gt; isinstance(child_object, SuperBase)
+&gt;&gt;&gt; isinstance(m, object)
 True
-&gt;&gt;&gt; isinstance(child_object, object)
-True
-&gt;&gt;&gt; isinstance(child_object, list)
+&gt;&gt;&gt; isinstance(m, str)
+False
+&gt;&gt;&gt; isinstance(Person('Bob'), Manager)
 False
 &gt;&gt;&gt;
 </code></pre>
 <p>Другим аргументом можна передати одразу декілька класів об'єднавши їх у кортеж. 
 У цьому разі відбуватиметься перевірка належності об'єкта до ієрархій одразу декількох класів: </p>
-<pre><code>:::python
-&gt;&gt;&gt; isinstance(child_object, (Child, Base))
+<pre><code>&gt;&gt;&gt; isinstance(m, (Employee, Person))
 True
-&gt;&gt;&gt; isinstance(child_object, (Child, list))
+&gt;&gt;&gt; isinstance(m, (Employee, object))
 True
-&gt;&gt;&gt; isinstance(child_object, (str, list))
+&gt;&gt;&gt; isinstance(m, (Employee, list))
+True
+&gt;&gt;&gt; isinstance(m, (dict, list))
 False
-&gt;&gt;&gt; isinstance('text', (str, list))
-True
-&gt;&gt;&gt; isinstance('text', (object, list))
-True
-&gt;&gt;&gt;
-</code></pre>
-<p>Зауважте: функція <code>isinstance()</code> використовує лінеаризацію. 
-Аналогічну перевірку можна виконати і так: </p>
-<pre><code>:::python
-&gt;&gt;&gt; type(child_object)
-&lt;class '__main__.Child'&gt;
-&gt;&gt;&gt; type(child_object) in Child.mro()
-True
 &gt;&gt;&gt;
 </code></pre>
 
 
+
+  
 
 
 
@@ -1482,6 +1653,46 @@ True
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="attrs_inheritance.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Успадкування атрибутів">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Успадкування атрибутів
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../polymorphism/polymorphism_basis.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Поліморфізм в ООП">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Поліморфізм в ООП
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
