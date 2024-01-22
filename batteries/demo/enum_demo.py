@@ -7,6 +7,11 @@ class OrderStatus(Enum):
     DELIVERED = 4 # доставлено
     CANCELLED = 5 # скасовано
 
+    WAITING = 1 # те ж, що і PENDING
+
+status = OrderStatus.WAITING
+status is OrderStatus.PENDING
+
 from enum import Enum, auto
 
 class OrderStatus(Enum):
@@ -39,10 +44,6 @@ class OrderStatus(Enum):
     DELIVERED = 4 # доставлено
     CANCELLED = 5 # скасовано
 
-    WAITING = 1 # те ж, що і PENDING
-
-status = OrderStatus.WAITING
-status is OrderStatus.PENDING
 
 import enum
 
@@ -60,3 +61,16 @@ class Priority(enum.IntEnum):
     CRITICAL = 4
 
 Priority.CRITICAL > Priority.LOW
+
+print('-----------------------------')
+
+class Color(enum.StrEnum):
+    BLACK = 'чорний'
+    WHITE = 'білий'
+
+c = Color.BLACK
+c.value
+print(f'Колір: {c}')
+
+
+

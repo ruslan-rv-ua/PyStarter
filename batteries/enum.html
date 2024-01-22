@@ -1432,6 +1432,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#strenum" class="md-nav__link">
+    StrEnum
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Додаткові матеріали
   </a>
@@ -1535,6 +1542,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#strenum" class="md-nav__link">
+    StrEnum
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Додаткові матеріали
   </a>
@@ -1589,35 +1603,7 @@
 
 <span class="n">OrderStatus</span> <span class="o">=</span> <span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">(</span><span class="s1">&#39;OrderStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;PENDING PROCESSING SHIPPED DELIVERED CANCELLED&#39;</span><span class="p">)</span>
 </code></pre></div>
-<p>Елементи з однаковими значеннями вказують на один об'єкт:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">auto</span>
-
-<span class="k">class</span> <span class="nc">OrderStatus</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-    <span class="n">PENDING</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># в очікуванні обробки</span>
-    <span class="n">PROCESSING</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># обробка</span>
-    <span class="n">SHIPPED</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># відправлено</span>
-    <span class="n">DELIVERED</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># доставлено</span>
-    <span class="n">CANCELLED</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># скасовано</span>
-</code></pre></div>
-<p>Дослідимо:</p>
-<pre><code>&gt;&gt;&gt; status = OrderStatus.PENDING
-&gt;&gt;&gt; type(status)
-&lt;enum 'OrderStatus'&gt;
-&gt;&gt;&gt; status
-&lt;OrderStatus.PENDING: 1&gt;
-&gt;&gt;&gt; print(status)
-OrderStatus.PENDING
-&gt;&gt;&gt; status.name
-'PENDING'
-&gt;&gt;&gt; status.value
-1
-&gt;&gt;&gt; OrderStatus['SHIPPED']
-&lt;OrderStatus.SHIPPED: 3&gt;
-&gt;&gt;&gt; OrderStatus(3)
-&lt;OrderStatus.SHIPPED: 3&gt;
-&gt;&gt;&gt;
-</code></pre>
-<p>Ітерування відбувається по атрибутам класа. 
+<p>По перелікам можна ітеруватись. Ітерування відбувається по атрибутам класа. 
 Цикл буде йти по елементам у тому порядку, у якому їх вказано при створенні класа. </p>
 <pre><code>&gt;&gt;&gt; for s in OrderStatus:
 ...     print(s.name, s.value)
@@ -1669,7 +1655,7 @@ True
     <span class="n">BLACK</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">WHITE</span> <span class="o">=</span> <span class="mi">1</span>
 </code></pre></div>
-<p>При сробі виконати вищенаведений код отримаємо <code>ValueError</code>:</p>
+<p>При спробі виконати вищенаведений код отримаємо <code>ValueError</code>:</p>
 <pre><code>@enum.unique
  ^^^^^^^^^^^
 File "C:\Python312\Lib\enum.py", line 1594, in unique
@@ -1692,10 +1678,34 @@ ValueError: duplicate values found in &lt;enum 'Color'&gt;: WHITE -&gt; BLACK
 True
 &gt;&gt;&gt;
 </code></pre>
+<h3 id="strenum">StrEnum</h3>
+<p>Переліки, значеннями елементів якого є символьні рядки. </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">enum</span>
+
+<span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">StrEnum</span><span class="p">):</span>
+    <span class="n">BLACK</span> <span class="o">=</span> <span class="s1">&#39;чорний&#39;</span>
+    <span class="n">WHITE</span> <span class="o">=</span> <span class="s1">&#39;білий&#39;</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="n">BLACK</span>
+</code></pre></div>
+<p>Самі ж елементи "поводяться" теж як символьні рядки:</p>
+<pre><code>&gt;&gt;&gt; c
+&lt;Color.BLACK: 'чорний'&gt;
+&gt;&gt;&gt; c.name
+'BLACK'
+&gt;&gt;&gt; c.value
+'чорний'
+&gt;&gt;&gt; str(c)
+'чорний'
+&gt;&gt;&gt; print(f'Колір: {c}')
+Колір: чорний
+&gt;&gt;&gt;
+</code></pre>
 <h2 id="_1">Додаткові матеріали</h2>
 <ul>
 <li><a href="https://docs.python.org/3/library/enum.html">Документація: enum — Support for enumerations</a></li>
 <li><a href="https://docs.python.org/3/howto/enum.html#enum-basic-tutorial">Документація: Enum HOWTO</a></li>
+<li><a href="https://realpython.com/python-enum/#extending-enumerations-with-new-behavior">Стаття: Build Enumerations of Constants With Python's Enum</a></li>
 </ul>
 
 

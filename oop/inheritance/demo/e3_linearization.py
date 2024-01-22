@@ -15,7 +15,7 @@ class Manager(Employee):
         print('Я можу керувати іншими')
 
 
-m = Manager('Дмитро')
+m = Manager('Bob')
 m.hello()
 m.salary()
 m.info()

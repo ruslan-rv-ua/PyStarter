@@ -1,3 +1,5 @@
+# subclass is a class
+
 class Person:
 	pass
 
