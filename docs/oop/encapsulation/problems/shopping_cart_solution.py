@@ -19,33 +19,16 @@
 # ваш код починається з наступного рядка
 
 class Item:
-    """Class to describe item"""
     def __init__(self, name, price):
-        """Initializer.
-        
-        Args:
-            name (str): Item's name
-            price (float): Item's price
-        """
         self._name = name
         self.price = price
 
     @property
     def name(self):
-        """Item's name.
-        
-        Returns:
-            str: Item's name
-        """
         return self._name
 
     @property
     def price(self):
-        """Item's price.
-        
-        Returns:
-            float: Item's price
-        """
         return self._price
     
     @price.setter
@@ -61,43 +44,22 @@ class Item:
         return f"Item({self.name!r}, {self.price!r})"
 
 class ShoppingCart:
-    """Class to describe shopping cart"""
     def __init__(self):
         self._items = []
 
     def add_item(self, item, count=1):
-        """Add item to cart
-        
-        Args:
-            item (Item): item to add
-            count (int, optional): number of items. Defaults to 1.
-        """
         self._items.extend([item] * count)
 
     @property
     def total_price(self):
-        """total price of all items.
-        
-        Returns:
-            float: total price"""
         return sum(item.price for item in self._items)
 
     @property
     def items_count(self):
-        """total number of items.
-        
-        Returns:
-            int: total number of items
-        """
         return len(self._items)
     
     @property
     def items_names(self):
-        """sorted list of items names.
-        
-        Returns:
-            list: sorted list of items names
-        """
         return sorted(set(item.name for item in self._items))
     
     def __str__(self):

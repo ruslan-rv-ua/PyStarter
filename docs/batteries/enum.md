@@ -51,40 +51,7 @@ import enum
 OrderStatus = enum.Enum('OrderStatus', 'PENDING PROCESSING SHIPPED DELIVERED CANCELLED')
 ```
 
-Елементи з однаковими значеннями вказують на один об'єкт:
-
-```python
-from enum import Enum, auto
-
-class OrderStatus(Enum):
-    PENDING = 1 # в очікуванні обробки
-    PROCESSING = 2 # обробка
-    SHIPPED = 3 # відправлено
-    DELIVERED = 4 # доставлено
-    CANCELLED = 5 # скасовано
-```
-
-
-Дослідимо:
-
-    >>> status = OrderStatus.PENDING
-    >>> type(status)
-    <enum 'OrderStatus'>
-    >>> status
-    <OrderStatus.PENDING: 1>
-    >>> print(status)
-    OrderStatus.PENDING
-    >>> status.name
-    'PENDING'
-    >>> status.value
-    1
-    >>> OrderStatus['SHIPPED']
-    <OrderStatus.SHIPPED: 3>
-    >>> OrderStatus(3)
-    <OrderStatus.SHIPPED: 3>
-    >>>
-
-Ітерування відбувається по атрибутам класа. 
+По перелікам можна ітеруватись. Ітерування відбувається по атрибутам класа. 
 Цикл буде йти по елементам у тому порядку, у якому їх вказано при створенні класа. 
 
     >>> for s in OrderStatus:
@@ -145,7 +112,7 @@ class Color(enum.Enum):
     WHITE = 1
 ```
 
-При сробі виконати вищенаведений код отримаємо `ValueError`:
+При спробі виконати вищенаведений код отримаємо `ValueError`:
 
     @enum.unique
      ^^^^^^^^^^^
@@ -174,7 +141,39 @@ class Priority(enum.IntEnum):
     True
     >>>
 
+
+### StrEnum
+
+Переліки, значеннями елементів якого є символьні рядки. 
+
+```python
+import enum
+
+class Color(enum.StrEnum):
+    BLACK = 'чорний'
+    WHITE = 'білий'
+
+c = Color.BLACK
+```
+
+Самі ж елементи "поводяться" теж як символьні рядки:
+
+    >>> c
+    <Color.BLACK: 'чорний'>
+    >>> c.name
+    'BLACK'
+    >>> c.value
+    'чорний'
+    >>> str(c)
+    'чорний'
+    >>> print(f'Колір: {c}')
+    Колір: чорний
+    >>>
+
+
+
 ## Додаткові матеріали
 
 - [Документація: enum — Support for enumerations](https://docs.python.org/3/library/enum.html)
 - [Документація: Enum HOWTO](https://docs.python.org/3/howto/enum.html#enum-basic-tutorial)
+- [Стаття: Build Enumerations of Constants With Python's Enum](https://realpython.com/python-enum/#extending-enumerations-with-new-behavior)
