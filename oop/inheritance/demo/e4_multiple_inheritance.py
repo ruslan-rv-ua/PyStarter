@@ -22,6 +22,12 @@ p = Pegasus()
 # p.run()
 # p.fly()
 
-
-
 p.say_hello()
+
+
+class LogMixin:
+    def log(self, message):
+        print(f'{self.__class__.__name__}: {message}')
+        
+class Person:
+    
