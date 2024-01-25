@@ -20,23 +20,21 @@ hide:
 а потрібен доступ до відповідного атрибута базового класа, 
 в Python це можна зробити двома способами. 
 
-Один з них полягає у тому, 
+### Явний виклик метода класа
+
+Один зі способів полягає у тому, 
 що ми явно вказуємо базовий клас, 
 відповідний атрибут і, при необхідності, передаємо екземпляр дочірнього класа (параметр `self`).
 
 Розглянемо приклад.
 
-	:::python
-	>>> class Person:
-	...     def __init__(self, name):
-	...         self.name = name.title()
-	...     def say_hello(self):
-	...         print('Hi, I am', self.name)
-	...
-	>>> p = Person('john')
-	>>> p.say_hello()
-	Hi, I am John
-	>>>
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name.title()
+    def say_hello(self):
+        print(f'Я {self.name}.')
+```
 	
 Зауважимо, що в конструкторі класа відбувається певна маніпуляція зі вхідними даними.
 
@@ -46,20 +44,15 @@ hide:
 тому логічно успадкуватись від класа Person. 
 Крім того співробітник має ще й заробітню плату. 
 
-	:::python
-	>>> class Employee(Person):
-	...     def __init__(self, name, salary):
-	...         Person.__init__(self, name)
-	...         self.salary = salary
-	...     def say_hello(self):
-	...         Person.say_hello(self)
-	...         print('My salary is', self.salary)
-	...
-	>>> e = Employee('JANE', 120)
-	>>> e.say_hello()
-	Hi, I am Jane
-	My salary is 120
-	>>>
+```python
+class Employee(Person):
+    def __init__(self, name, salary):
+        Person.__init__(self, name)
+        self.salary = salary
+    def say_hello(self):
+        Person.say_hello(self)
+        print('My salary is', self.salary)
+```
 
 В конструкторі дочірнього класа ми викликаємо конструктор базового класа, 
 при цьому передаючи йому екземпляр дочірнього класа і необхідні дані для ініціалізації атрибутів. 
@@ -69,12 +62,18 @@ hide:
 
 Аналогічно з метода `say_hello()` дочірнього класа викликається відповідний метод базового класа.
 
+	>>> e = Employee('Дмитро', salary=100500)
+	>>> e.say_hello()
+	Я Дмитро.
+	Маю зарплату 100500 грн.
+	>>>
+
 Недоліки такого підхода:
 
 - ускладнюється підтримка кода якщо нам треба щось поміняти в ієрархії класів
 - логіка кода чітко прив'язана до ієрархії успадкування класів і схильна до помилок, особливо при використанні множинного успадкування.
 
-## super()
+### super()
 
 Існує ще один спосіб доступу до атрибутів базового класа, 
 який позбавлений недоліків попереднього. 
@@ -82,7 +81,6 @@ hide:
 В Python є спеціальний вбудований клас `super`, 
 екземпляри якого є спеціальними проксі-об'єктами (об'єктами-посередниками). 
 
-	:::python
 	super(type)
 
 Такі об'єкти надають доступ до атрибутів наступного класа 
@@ -91,7 +89,6 @@ hide:
 Якщо з базовим класом треба зв'язати і екземпляр, 
 його передають другим аргументом при інстанціюванні `super`: 
 
-	:::python
 	super(type, obj)
 
 Але якщо екземпляр `super` створюється всередині метода класа, 
@@ -104,71 +101,70 @@ Python сам "знайде" необхідне.
 
 Перепишемо попередній приклад використовуючи клас `super`: 
 
-	:::python
-	>>> class Person:
-	...     def __init__(self, name):
-	...             self.name = name.title()
-	...     def say_hello(self):
-	...             print('Hi, I am', self.name)
-	...
-	>>>
-	... class Employee(Person):
-	...     def __init__(self, name, salary):
-	...             super().__init__(name)
-	...             self.salary = salary
-	...     def say_hello(self):
-	...             super().say_hello()
-	...             print('My salary is', self.salary)
-	...
-	>>>
-	>>> e = Employee('janE', 120)
-	>>> e.say_hello()
-	Hi, I am Jane
-	My salary is 120
-	>>>
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name.title()
+    def say_hello(self):
+        print(f'Я {self.name}.')
+
+class Employee(Person):
+    def __init__(self, name, salary):
+        super().__init__(name)
+        self.salary = salary
+    def say_hello(self):
+        super().say_hello()
+        print(f'Маю зарплату {self.salary} грн.')
+```
 
 З класа `Employee` ми отримуємо доступ до атрибутів класа `Person` 
 за допомогою `super()`. 
 Зауважте: нам тепер не треба вказувати навіть поточний екземпляр класа. 
 
+	>>> e = Employee('Дмитро', salary=100500)
+	>>> e.say_hello()
+	Я Дмитро.
+	Маю зарплату 100500 грн.
+	>>>
+
+### `super()` і множинна спадковість
+
 Тепер звернемось до множинної спадковості: 
 
-	:::python
-	>>> class Animal:
-	...     def __init__(self):
-	...             self.can_run = False
-	...             self.can_fly = False
-	...
-	>>>
-	>>> class Horse(Animal):
-	...     def __init__(self):
-	...             super().__init__()
-	...             self.can_run = True
-	...
-	>>>
-	>>> class Eagle(Animal):
-	...     def __init__(self):
-	...             super().__init__()
-	...             self.can_fly = True
-	...
-	>>>
-	>>> class Pegasus(Horse, Eagle):
-	...     pass
-	...
-	>>> p = Pegasus()
-	>>> p.can_run
+```python
+class Animal:
+	def __init__(self):
+		self.can_run = False
+		self.can_fly = False
+
+class Horse(Animal):
+	def __init__(self):
+		super().__init__()
+		self.can_run = True
+
+class Eagle(Animal):
+	def __init__(self):
+		super().__init__()
+		self.can_fly = True
+
+class Pegasus(Horse, Eagle):
+	pass
+```
+
+Перевіримо можливості нашого Пегаса:
+
+	>>> Pegasus().can_run
 	True
-	>>> p.can_fly
+	>>> Pegasus().can_fly
 	True
-	>>>
-	
+	>>>	
+
 Щоб краще зрозуміти, як це працює, давайте спочатку вивчимо лінеаризацію класа `Pegasus`:
 	
-	:::python
 	>>> Pegasus.mro()
 	[<class '__main__.Pegasus'>, <class '__main__.Horse'>, <class '__main__.Eagle'>, <class '__main__.Animal'>, <class 'object'>]
 	>>>
-	
+
 Тепер покроково:
 
 1. В класі `Pegasus` конструктора не оголошено, отже згідно лінеаризації викликаємо конструктор класа `Horse`
@@ -177,3 +173,7 @@ Python сам "знайде" необхідне.
 
 
 
+## Додаткові матеріали
+
+- [Документація: super()](https://docs.python.org/3/library/functions.html#super)
+- [Стаття: Supercharge Your Classes With Python super()](https://realpython.com/python-super/)

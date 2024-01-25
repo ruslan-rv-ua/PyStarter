@@ -213,30 +213,37 @@ nav:
     - Властивості: oop/encapsulation/properties.md
     - Обчислювані властивості: oop/encapsulation/computed_properties.md
   - 22. Успадкування:
-    - Успадкування в ООП: oop/inheritance/inheritance_basis.md
-    - Успадкування в Python: oop/inheritance/inheritance_python.md
+    - Успадкування: oop/inheritance/inheritance_basis.md
     - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
     - Лінеаризація: oop/inheritance/linearization.md
-    # - Множинне успадкування: oop/inheritance/multiple_inheritance.md
-    # - Атрибути базового класа: oop/inheritance/call_overrided.md
-    # - Резюме: oop/inheritance/recap.md
+    - Множинне успадкування: oop/inheritance/multiple_inheritance.md
+    - Атрибути базового класа: oop/inheritance/call_overrided.md
   - 23. Поліморфізм:
     - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
-  - 24. Магічні методи:
-    - Магія Python: oop/dunder/magic_method.md
-    - Контроль доступу до атрибутів: comming_soon.md
-  - xx. Виняткові ситуації: comming_soon.md
-  - xx. Ітератори та генератори: comming_soon.md
-  - xx. Елементи функційного програмування: comming_soon.md
-  - xx. Типи та структури даних: comming_soon.md
-  - xx. Ввід та вивід: comming_soon.md
-  - xx. Модулі і пакети: comming_soon.md
-  - xx. Виконання програм: comming_soon.md
-  - xx. Сторонні бібліотеки: comming_soon.md
+  - 24. Атрибути:
+    - Доступ до атрибутів: oop/attributes/attributes.md
+    - Слоти: oop/attributes/slots.md
+    # - Контроль доступу до атрибутів: oop/attributes/access_control.md
+    # - Дескриптори: oop/attributes/descriptors.md
+  - 25. Виняткові ситуації:
+    - Винятки: exceptions/exceptions.md
+  - 26. Ітератори та генератори:
+    - Ітерабельні об'єкти: iterable/iterable.md
+  - 27. Елементи функційного програмування:
+    - Парадигма ФП: functional_programming/intro.md
+  # - 28. Типи та структури даних: comming_soon.md
+  # - xx. Ввід та вивід: comming_soon.md
+  # - xx. Модулі і пакети: comming_soon.md
+  # - xx. Виконання програм: comming_soon.md
+  # - xx. Сторонні бібліотеки: comming_soon.md
   - Батарейки:
     - Модуль random: batteries/random.md
     - Модуль datetime: batteries/datetime.md
     - Модуль collections: batteries/collections.md
     - Модуль enum: batteries/enum.md
+    - Модуль pathlib: comming_soon.md # batteries/pathlib.md
+    - Модуль re: comming_soon.md # batteries/re.md
+    - Модуль contextlib: comming_soon.md # batteries/contextlib.md
+    - Модуль itertools: comming_soon.md # batteries/itertools.md
   - Дзен: zen.md
   - Корисні ресурси: resources.md

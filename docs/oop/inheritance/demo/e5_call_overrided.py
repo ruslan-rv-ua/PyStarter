@@ -1,24 +1,27 @@
 class Person:
-	def __init__(self, name):
-		self.name = name
-	def say_hello(self):
-		print('Привіт! Я ', self.name)
+    def __init__(self, name):
+        self.name = name
+    def say_hello(self):
+        print(f'Привіт! Я {self.name}.')
 
-obj = Person('Дмитро')
-obj.say_hello()
-	
+p = Person('Дмитро')
+p.say_hello()
+    
 class Citizen(Person):
-	def say_hello(self):
-		Person.say_hello()
-		print('Я громадянин України')
-	
+    def say_hello(self):
+        Person.say_hello(self)
+        print('Я громадянин України')
+        
+c = Citizen('Дмитро')
+c.say_hello()
+    
 class Employee(Person):
-	def __init__(self, name, salary):
-		self.name = name
-		self.salary = salary
-	def say_hello(self):
-		print('Привіт! Я ', self.name)
-		print('Моя зарплата', self.salary)
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+    def say_hello(self):
+        Person.say_hello(self)
+        print('Моя зарплата', self.salary)
 
 e = Employee('Дмитро', 120)
 e.say_hello()
@@ -26,24 +29,34 @@ e.say_hello()
 
 
 class Animal:
-	def __init__(self):
-		self.can_run = False
-		self.can_fly = False
+    def __init__(self):
+        print('Конструктор Animal')
+        self.can_run = False
+        self.can_fly = False
 
 class Horse(Animal):
-	def __init__(self):
-		super().__init__()
-		self.can_run = True
+    def __init__(self):
+        print('Конструктор Horse')
+        super().__init__()
+        self.can_run = True
 
 class Eagle(Animal):
-	def __init__(self):
-		super().__init__()
-		self.can_fly = True
+    def __init__(self):
+        print('Конструктор Eagle')
+        super().__init__()
+        self.can_fly = True
 
 class Pegasus(Horse, Eagle):
-	pass
+# class Pegasus(Eagle, Horse):
+    pass
 
-p = Pegasus()
-p.can_run
-p.can_fly
+
+print('---------------')
+r = Pegasus()
+print('---------------')
+class_ = Animal
+# class_ = Horse
+class_ = Pegasus
+r = class_().can_run
+f = class_().can_fly
 
