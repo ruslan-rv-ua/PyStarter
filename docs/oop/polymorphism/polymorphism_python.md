@@ -47,30 +47,28 @@
 
 Наприклад:
 
-	:::python
-	def method(obj):
-	   obj.start()
-	
-При качиній типизації ми не піклуємось про тип об'єкта `obj`, 
+```python
+def func(obj):
+	obj.start()
+```	
+При качиній типізації ми не піклуємось про тип об'єкта `obj`, 
 нам лише важливо, що у нього є метод `start`. 
 Якщо ж такого метода немає, то отримаємо виняток. 
 
 Ще приклад:
 
-	:::python
-	>>> class Duck:
-	...     def quack(self):
-	...         print('Кря!')
-	...
-	>>> class Person:
-	...     def __init__(self, name):
-	...         self._name = name
-	...     def quack(self):
-	...         print('Людина імітує крякання: "Кря!"')
-	...     @property
-	...     def name(self):
-	...         return self._name
-	...
+```python
+class Duck:
+	def quack(self):
+		print('Кря!')
+
+class Person:
+	def __init__(self, name):
+		self.name = name
+	def quack(self):
+		print('Людина імітує крякання: "Кря!"')
+```
+
 	>>> donald = Duck()
 	>>> john = Person('Іван')
 	>>> donald.quack()
@@ -81,7 +79,6 @@
 	'Іван'
 	>>>
 
-<!--
 ## "Перегруз" методів
 
 В мовах програмування зі статичною типізацією є прийом, 
@@ -91,7 +88,6 @@
 
 Оскільки в Python типізація качина, 
 перевантаження методів не підтримується. 
-Щось подібне до перегрузу методів можна отримати використовуючи 
+Імітувати перегруз методів можна використовуючи 
 [singledispatch](https://docs.python.org/3/library/functools.html#functools.singledispatch) 
 з вбудованого модуля `functools`. 
--->

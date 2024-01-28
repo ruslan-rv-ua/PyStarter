@@ -1,15 +1,10 @@
 # ваш код починається з наступного рядка. Юніт-тести знаходяться у кінці файла, використовуйте їх як підказку..
-from collections import Counter
-from abc import ABC, abstractmethod, abstractproperty
-
-class Tesla(ABC):
-    _models_counter = Counter()
-
-    model = NotImplemented
+class Tesla():
+    _counter = 0
 
     def __init__(self):
-        self._models_counter[self.model] += 1
-        self._serial = f'{self.model}{self._models_counter[self.model]:06}'
+        self.__class__._counter += 1
+        self._serial = f'{self.model}{self._counter:06}'
         
     @property
     def serial(self):
@@ -83,4 +78,3 @@ class TeslaRoadster(Tesla):
 for _ in range(5):
     t = TeslaRoadster()
 
-t=Tesla()

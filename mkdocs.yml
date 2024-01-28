@@ -220,6 +220,7 @@ nav:
     - Атрибути базового класа: oop/inheritance/call_overrided.md
   - 23. Поліморфізм:
     - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
+    - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
   - 24. Атрибути:
     - Доступ до атрибутів: oop/attributes/attributes.md
     - Слоти: oop/attributes/slots.md
