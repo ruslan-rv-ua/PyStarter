@@ -15,7 +15,7 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/attributes/attributes.html">
       
       
-        <link rel="prev" href="../polymorphism/polymorphism_basis.html">
+        <link rel="prev" href="../polymorphism/polymorphism_python.html">
       
       
         <link rel="next" href="slots.html">
@@ -1531,10 +1531,12 @@
 <li><code>attr_name</code> — символьний рядок, ім'я атрибута значення якого треба отримати.</li>
 <li><code>default_value</code> — необов'язковий, значення яке буде повернуто в разі відсутності атрибута зі вказаним ім'ям.</li>
 </ul>
-<p><strong>Повертає:</strong>
-- значення атрибута зі вказаним іменем якщо такий існує
-- задане значення за замовчуванням якщо атрибут зі вказаним іменем у об'єкта відсутній
-- в інших випадках — помилка <code>AttributeError</code>.</p>
+<p><strong>Повертає:</strong></p>
+<ul>
+<li>значення атрибута зі вказаним іменем якщо такий існує</li>
+<li>задане значення за замовчуванням якщо атрибут зі вказаним іменем у об'єкта відсутній</li>
+<li>в інших випадках — помилка <code>AttributeError</code>.</li>
+</ul>
 <p><strong>Приклад використання:</strong></p>
 <pre><code>&gt;&gt;&gt; getattr(p, 'name')
 'Jane'
@@ -1690,7 +1692,7 @@ TypeError: 'mappingproxy' object does not support item assignment
       <nav class="md-footer__inner md-grid" aria-label="Футер" >
         
           
-          <a href="../polymorphism/polymorphism_basis.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Поліморфізм в ООП">
+          <a href="../polymorphism/polymorphism_python.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Поліморфізм в Python">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1700,7 +1702,7 @@ TypeError: 'mappingproxy' object does not support item assignment
                 Назад
               </span>
               <div class="md-ellipsis">
-                Поліморфізм в ООП
+                Поліморфізм в Python
               </div>
             </div>
           </a>

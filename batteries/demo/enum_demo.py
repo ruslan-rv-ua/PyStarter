@@ -8,10 +8,12 @@ class OrderStatus(Enum):
     CANCELLED = 5 # скасовано
 
     WAITING = 1 # те ж, що і PENDING
+    
 
 status = OrderStatus.WAITING
 status is OrderStatus.PENDING
 
+exit()
 from enum import Enum, auto
 
 class OrderStatus(Enum):
@@ -26,7 +28,7 @@ OrderStatus = Enum('OrderStatus', 'PENDING PROCESSING SHIPPED DELIVERED CANCELLE
 
 
 status = OrderStatus.PENDING
-r=type(status) 
+r=type(status)
 r = status.name, status.value
 
 for s in OrderStatus:
@@ -64,9 +66,13 @@ Priority.CRITICAL > Priority.LOW
 
 print('-----------------------------')
 
+
 class Color(enum.StrEnum):
     BLACK = 'чорний'
     WHITE = 'білий'
+    
+    def __str__(self):
+        return self.value.title()
 
 c = Color.BLACK
 c.value

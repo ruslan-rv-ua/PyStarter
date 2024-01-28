@@ -49,13 +49,6 @@ class C(B1, B2):
     pass
 '''
 
-#######################
-
-class B:
-    __slots__ = 'attr'
-class C:
-    __slots__ = 'attr'
-c = C()
 
 
     
