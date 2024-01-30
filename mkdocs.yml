@@ -228,6 +228,11 @@ nav:
     # - Дескриптори: oop/attributes/descriptors.md
   - 25. Виняткові ситуації:
     - Винятки: exceptions/exceptions.md
+    - Створення виняткових ситуацій: exceptions/raising_exceptions.md
+    - Обробка винятків: exceptions/handling_exceptions.md
+    - Попередження: exceptions/warnings.md
+    - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
+    - Менеджери контекста: exceptions/context_managers.md
   - 26. Ітератори та генератори:
     - Ітерабельні об'єкти: iterable/iterable.md
   - 27. Елементи функційного програмування:
@@ -239,12 +244,13 @@ nav:
   # - xx. Сторонні бібліотеки: comming_soon.md
   - Батарейки:
     - Модуль random: batteries/random.md
+    - Модуль pprint: batteries/pprint.md
     - Модуль datetime: batteries/datetime.md
     - Модуль collections: batteries/collections.md
     - Модуль enum: batteries/enum.md
     - Модуль pathlib: comming_soon.md # batteries/pathlib.md
     - Модуль re: comming_soon.md # batteries/re.md
-    - Модуль contextlib: comming_soon.md # batteries/contextlib.md
+    - Модуль contextlib: batteries/contextlib.md
     - Модуль itertools: comming_soon.md # batteries/itertools.md
   - Дзен: zen.md
   - Корисні ресурси: resources.md

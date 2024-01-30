@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Модуль contextlib
 
 Вбудований модуль `contextlib` 
@@ -7,19 +13,20 @@
 
 ## `contextmanager(func)`
 
-	`func` — функція-генероатор
+	`func` — функція-генератор
 	
 Декоратор, який створює менеджер контекста з функції-генератора. Використання наступне:
 
-	:::python
-	@contextmanager
-	def foo(args):
-		statements
-		try:
-			yield value
-		except Exception as e:
-			error handling (if any)
-		statements
+```python
+@contextmanager
+def foo(args):
+	statements
+	try:
+		yield value
+	except Exception as e:
+		error handling (if any)
+	statements
+```
 
 Коли інтерпретатор зустрічає інструкцію `with foo(args) as value`, він викликає функцію-генератор з вказаними аргументами. Ця функція виконується до першої інструкції `yield`. Значення, яке повертає інструкциія `yield`, пов'язується зі змінною `value`. Після цього починається виконання тіла інструкції `with`. По закінченню виконання тіла інструкції `with` відновлюється робота функції-генератора. Якщо всередині тіла інструкції `with` виникає виняткова ситуація, виняток буде передано функції-генератору, де його можна обробити. Якщо помилка не може бути оброблена функциєю-генератором, вона повинна повторно підняти виняток.
 

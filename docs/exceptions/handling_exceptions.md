@@ -1,6 +1,12 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Обробка винятків
 
-> ***Обробка виняткових ситуацій*** (exception handling) або ***обрабка винятків*** — механізм мов програмування, призначений для опису реакції 
+> ***Обробка виняткових ситуацій*** (exception handling) або ***обробка винятків*** — механізм мов програмування, призначений для опису реакції 
 програми на помилки часу виконання та інші можливі проблеми
 (винятки), які можуть виникнути при виконанні програми і призводять до 
 неможливості (або ж безглуздості) подальшого відпрацювання програмою її базового 
@@ -10,23 +16,19 @@
 
 Для обробки виняткових ситуацій в Python використовують спеціальну конструкцію: 
 
-	:::python
-	try:
-		# область дії обробника
-		pass
-	except Exception1: 
-		# обробник винятка Exception1
-		pass
-	except (Exception2, Exception3):
-		# обробник винятків Exception2 і Exception3
-		pass
-	except Exception4 as exception: 
-		# обробник винятка Exception4
-		# екземпляр винятка доступний під іменем exception
-		pass
-	except:
-		# стандартний обробник, перехоплює усі винятки
-		pass
+```python
+try:
+	# область дії обробника
+except Exception1: 
+	# обробник винятка Exception1
+except (Exception2, Exception3):
+	# обробник винятків Exception2 і Exception3
+except Exception4 as exception: 
+	# обробник винятка Exception4
+	# екземпляр винятка доступний під іменем exception
+except:
+	# стандартний обробник, перехоплює усі винятки
+```
 
 Блок `try` задає область дії обробника винятків. 
 Якщо при виконанні інструкцій в даному блоці було піднято виняток, 
@@ -34,7 +36,6 @@
 і керування переходить до одного з обробників. 
 Якщо не виникло жодного винятка, блоки `except` пропускаються. 
 
-	:::python
 	>>> try:
 	...     x = 2 / 0
 	... except ZeroDivisionError:
@@ -51,7 +52,6 @@
 При перехопленні винятка створюється екземпляр відповідного класа, 
 і ми маємо можливість отримати його: 
 
-	:::python
 	>>> try:
 	...     1/0
 	... except Exception as e:
@@ -76,7 +76,6 @@
 
 Приклад. У наступному коді ми ніколи не перехопимо ділення на нуль:
 
-	:::python
 	>>> try:
 	...     1/0
 	... except Exception:
@@ -94,7 +93,6 @@
 то інтерпретатор завершує виконання програми і виводить 
 інформацію про виняткову ситуацію в стандартний потік помилок `sys.stderr`. 
 
-	:::python
 	>>> try:
 	...     raise ValueError
 	... except ZeroDivisionError:
@@ -112,23 +110,22 @@
 	
 Приклад. Наступний код:
 	
-	:::python
-	class MyClass(object):
-		def __del__(self):
-			raise ZeroDivisionError
+```python
+class MyClass(object):
+	def __del__(self):
+		raise ZeroDivisionError
 
 
-	print('Creating object')
-	obj = MyClass()
+print('Creating object')
+obj = MyClass()
 
-	print('Deleting object')
-	del obj
+print('Deleting object')
+del obj
 
-	print('Done')
-
+print('Done')
+```
 дасть наступний результат:
 
-	:::python
 	Creating object
 	Deleting object
 	Exception ignored in: <bound method MyClass.__del__ of <__main__.MyClass object at 0x000001AD476A97F0>>
@@ -146,12 +143,17 @@
 на один рівень обробників вище (тобто, викинути той самий виняток ще раз), 
 використовується  інструкція `raise` без параметрів: 
 
-	:::python
-	try:
-		do_some_actions() # дії, які можуть призвести до винятка
-	except Exception as exception: # обробник винятка
-		handle_exception(exception) # певні дії з перехопленим винятком
-		raise
+	>>> try:
+	...     1/0
+	... except ZeroDivisionError:
+	...     print('начебто обробили помилку')
+	...     raise
+	...
+	начебто обробили помилку
+	Traceback (most recent call last):
+	File "<stdin>", line 2, in <module>
+	ZeroDivisionError: division by zero
+	>>>
 
 ## Блок else
 
@@ -163,7 +165,6 @@
 Також  конструкції `try...except...` може бути присутнім необов'язковий блок `finally`. 
 Оператори всередині блока `finally` виконуються незалежно від того, чи виникла виняткова ситуація чи ні. 
 
-	:::python
 	>>> try:
 	...     2 / 0
 	... finally:
@@ -179,10 +180,9 @@
 тобто дій, направлених на звільнення ресурсів: 
 закриття файлів, видалення тимчасових об'єктів, тощо. 
 
-Блок `finally` виконується перед виходом з оператора `try/except` завжди, 
+Блок `finally` виконується перед виходом з інструкції `try/except` завжди, 
 навіть якщо одне з його відгалужень містить оператор `return` (коли оператор `try/except` знаходиться всередині функції), `break` чи `continue` (коли оператор `try/except` знаходиться всередині цикла) або ж виник інший необроблений виняток при обробці даного винятка.
 
-	:::python
 	>>> def f():
 	...     try:
 	...             2 / 0

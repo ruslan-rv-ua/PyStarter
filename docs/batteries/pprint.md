@@ -19,7 +19,6 @@ students = [{'name':'Johnson John', 'adress': 'Chicago, West ave',  'group': 'A1
 {'name':'Jamson Jane', 'adress': 'London, Baker street, 221B', 'group': 'A2', 'age': 21, 'marks':[3, 5, 4, 5]},
 {'name':'Willson Will', 'adress': 'Kyyiv, Khreschatyk, 26',  'group': 'B2', 'age': 33, 'marks':[5, 3, 4, 5]}]
 
-	:::python
 	>>> students = [{'name':'Johnson John', 'adress': 'Chicago, West ave',  'group': 'A1', 'age': 27, 'marks':[5, 5, 4, 5]},
 	... {'name':'Jamson Jane', 'adress': 'London, Baker street, 221B', 'group': 'A2', 'age': 21, 'marks':[3, 5, 4, 5]},
 	... {'name':'Willson Will', 'adress': 'Kyyiv, Khreschatyk, 26',  'group': 'B2', 'age': 33, 'marks':[5, 3, 4, 5]}]
