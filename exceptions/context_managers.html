@@ -12,9 +12,13 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/exceptions/recap.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/exceptions/context_managers.html">
       
       
+        <link rel="prev" href="eafp_vs_lbyl.html">
+      
+      
+        <link rel="next" href="../iterable/iterable.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Резюме - PyStarter</title>
+        <title>Менеджери контекста - PyStarter</title>
       
     
     
@@ -80,11 +84,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Перейти до змісту
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -117,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Резюме
+              Менеджери контекста
             
           </span>
         </div>
@@ -144,6 +143,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1114,34 +1115,170 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="exceptions.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_28" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_28" id="__nav_28_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     25. Виняткові ситуації
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_28_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_28">
+            <span class="md-nav__icon md-icon"></span>
+            25. Виняткові ситуації
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Винятки
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="raising_exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Створення виняткових ситуацій
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="handling_exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Обробка винятків
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="warnings.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Попередження
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="eafp_vs_lbyl.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EAFP vs LBYL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="context_managers.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Менеджери контекста
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1304,7 +1441,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1313,23 +1452,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Додаткові матеріали:
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1344,13 +1466,139 @@
                   
 
 
-<h1 id="_1">Резюме</h1>
-<h2 id="_2">Додаткові матеріали:</h2>
-<ul>
-<li><a href="https://docs.python.org/3.6/library/exceptions.html">Документація: вбудовані винятки</a></li>
-</ul>
+  <h1>Менеджери контекста</h1>
+
+<!---
+Менеджери контекста дозволяють виділяти та звільняти ресурси суто по необхідності. 
+Самим популярним прикладом менеджера контекста — використання оператора `with`.
+-->
+
+<!-- > ***Менеджер контекста*** (context manager) – об'єкт, який створює контекст виконання всередині оператора `with` і реалізує два методи: `_enter_` та `_exit_`.  -->
+
+<p>Менеджери контекста використовуються для збереження і відновлення глобального стану, 
+блокування і розблокування ресурсів, 
+автоматичного закрыття файлів та інше. </p>
+<!-- Припустимо, у вас є дві пов'язані операції, 
+які ви хочете виконати у парі, 
+помістивши між ними блок кода. 
+Менеджери контекста дозволяють зробити саме це. 
+Наприклад: 
+
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;some_file&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">opened_file</span><span class="p">:</span>
+    <span class="n">opened_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello!&#39;</span><span class="p">)</span>
+</code></pre></div>
+Цей код відкриває файл, 
+записує в нього дані і закриває після цього файл. 
+При виникненні помилки при запису даних в файл менеджер контекста спробує його закрити. 
+Цей код є еквівалентним наступному: 
+
+<div class="highlight"><pre><span></span><code><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;some_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello!&#39;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+Порівнявши з попереднім блоком кода можна зауважити заміну шаблоного кода на використання `with`. 
+
+Синтаксис інструкції `with ... as` виглядає так: 
+
+    with <вираз> as <змінна>:
+        <блок коду>
+
+Частина `as ...` є необов'язковою. 
+
+Якщо в інструкції `with ... as` було декілька виразів, 
+то це еквівалентно декільком вкладеним інструкціям. 
+Наприклад: 
+
+    with A() as a, B() as b:
+        # some code
+
+еквівалентно наступному:
+
+    with A() as a:
+        with B() as b:
+            # some code     
+
+Розглянемо як можна створити власний менеджер контекста. 
+
+## Контекст-менеджер як клас
+
+Щоб об'єкт став менеджером контекста він має реалізовувати два спеціальних метода:
+
+- `__enter__()`
+- `__exit__()`
+
+Нагадаємо собі ще раз інструкцію `with`:
+
+    with <вираз> as <змінна>:
+        <блок коду>
+
+При виконанні даного блока відбувається наступне: 
+
+1. Виконується вираз в інструкції `with ... as`.
+1. Завантажується спеціальний метод `__exit__` для подальшого використання. 
+1. Виконується спеціальний метод `__enter__`. Якщо інструкція `with` включає в себе `as`, то значення,  яке повертається методом `__enter__` пов'язується зі вказаною змінною.
+1. Виконується блок коду.
+1. Викликається метод `__exit__`, незалежно чи виконався блок коду чи під час його виконання сталась виняткова ситуація. 
+
+Метод `__enter__()` має повертати ресурс, над яким виконуються дії в рамках даного контекста. 
+
+У методі `__exit__()` можна обробити виняткові ситуації, які виникли під час виконання блока коду. Йому передаються три параметри: 
+
+- exception_class — клас винятка
+- exception_value — екземпляр винятка
+- traceback — інформація про виняток
+
+Якщо під час виконання блока жодного винятка не було піднято, усім цим параметрам передається значення `None`. 
+
+Якщо метод `__exit__()` повертає `True` — вважається, 
+що винятки оброблено у цьому методі і нагору вони не піднімаються. 
+
+Давайте спробуємо створити власний контекст-менеджер. 
+
+Припустимо нам треба виконати певні дії 
+помінявши перед цим поточну робочу директорію нашої програми у файловій системі, 
+а потім встановити поточну директорію такою, як була раніше. 
+Нам знадобляться дві функції з модуля `os`: 
+
+- `os.chdir()` — встановлює поточну директорію
+- `os.getcwd()` — повертає поточну директорію
+
+Наш менеджер контекста може виглядати так: 
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">class</span> <span class="nc">cd</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">old_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">old_path</span><span class="p">)</span>
+</code></pre></div>
+
+Спробуємо скористатись щойно створеним менеджером контекста (у вас результат буде іншим):
+
+    >>> print(getcwd())
+    c:\\dev\with
+    >>> with cd("/"):
+    ...     print(getcwd())
+    ...
+    c:\
+    >>> print(getcwd())
+    c:\\dev\with
+    >>>
+
+## Додаткові матеріали
+
+1. [Документація Python: оператор `with`](https://docs.python.org/3/reference/compound_stmts.html#with)
+ -->
 
 
+
+  
 
 
 
@@ -1365,6 +1613,46 @@
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="eafp_vs_lbyl.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: EAFP vs LBYL">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                EAFP vs LBYL
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../iterable/iterable.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Ітерабельні об&#39;єкти">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Ітерабельні об'єкти
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

@@ -13,7 +13,6 @@ class OrderStatus(Enum):
 status = OrderStatus.WAITING
 status is OrderStatus.PENDING
 
-exit()
 from enum import Enum, auto
 
 class OrderStatus(Enum):

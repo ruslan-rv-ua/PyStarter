@@ -12,9 +12,13 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/exceptions/exceptions_raising.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/exceptions/handling_exceptions.html">
       
       
+        <link rel="prev" href="raising_exceptions.html">
+      
+      
+        <link rel="next" href="warnings.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>"Підйом" винятків - PyStarter</title>
+        <title>Обробка винятків - PyStarter</title>
       
     
     
@@ -117,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              "Підйом" винятків
+              Обробка винятків
             
           </span>
         </div>
@@ -144,6 +148,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1114,34 +1120,230 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="exceptions.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_28" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_28" id="__nav_28_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     25. Виняткові ситуації
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_28_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_28">
+            <span class="md-nav__icon md-icon"></span>
+            25. Виняткові ситуації
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Винятки
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="raising_exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Створення виняткових ситуацій
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Обробка винятків
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="handling_exceptions.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Обробка винятків
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Обробка винятків в Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Передача винятка на один рівень вгору
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#else" class="md-nav__link">
+    Блок else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finally" class="md-nav__link">
+    Блок finally
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="warnings.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Попередження
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="eafp_vs_lbyl.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EAFP vs LBYL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="context_managers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Менеджери контекста
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1304,7 +1506,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1323,8 +1527,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Обробка винятків в Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Створення власних винятків
+    Передача винятка на один рівень вгору
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#else" class="md-nav__link">
+    Блок else
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finally" class="md-nav__link">
+    Блок finally
   </a>
   
 </li>
@@ -1344,53 +1569,179 @@
                   
 
 
-<h1 id="_1">"Підйом" винятків</h1>
-<p>Python автоматично генерує винятки при виникненні помилки під час виконання. 
-Але також є можливість сгенерувати виняток програмно. 
-Робиться це за допомогою ключового слова <code>raise</code>. 
-Після нього вказують об'єкт винятка. 
-При конструюванні екземпляра винятка зазвичай вказують повідомлення, 
-яке більш детально описує проблему, 
-а також деколи інші аргументи: </p>
-<pre><code>:::python
-&gt;&gt;&gt; raise ZeroDivisionError('Вчіть математику!')
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-ZeroDivisionError: Вчіть математику!
+<h1 id="_1">Обробка винятків</h1>
+<blockquote>
+<p><strong><em>Обробка виняткових ситуацій</em></strong> (exception handling) або <strong><em>обробка винятків</em></strong> — механізм мов програмування, призначений для опису реакції 
+програми на помилки часу виконання та інші можливі проблеми
+(винятки), які можуть виникнути при виконанні програми і призводять до 
+неможливості (або ж безглуздості) подальшого відпрацювання програмою її базового 
+алгоритма. </p>
+</blockquote>
+<h2 id="python">Обробка винятків в Python</h2>
+<p>Для обробки виняткових ситуацій в Python використовують спеціальну конструкцію: </p>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># область дії обробника</span>
+<span class="k">except</span> <span class="n">Exception1</span><span class="p">:</span> 
+    <span class="c1"># обробник винятка Exception1</span>
+<span class="k">except</span> <span class="p">(</span><span class="n">Exception2</span><span class="p">,</span> <span class="n">Exception3</span><span class="p">):</span>
+    <span class="c1"># обробник винятків Exception2 і Exception3</span>
+<span class="k">except</span> <span class="n">Exception4</span> <span class="k">as</span> <span class="n">exception</span><span class="p">:</span> 
+    <span class="c1"># обробник винятка Exception4</span>
+    <span class="c1"># екземпляр винятка доступний під іменем exception</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="c1"># стандартний обробник, перехоплює усі винятки</span>
+</code></pre></div>
+<p>Блок <code>try</code> задає область дії обробника винятків. 
+Якщо при виконанні інструкцій в даному блоці було піднято виняток, 
+їх виконання переривається 
+і керування переходить до одного з обробників. 
+Якщо не виникло жодного винятка, блоки <code>except</code> пропускаються. </p>
+<pre><code>&gt;&gt;&gt; try:
+...     x = 2 / 0
+... except ZeroDivisionError:
+...     print('Division by zero detected')
+...
+Division by zero detected
 &gt;&gt;&gt;
 </code></pre>
-<p>Також можна вказати клас винятка, 
-у цьому разі Python автоматично створить екземпляр класа викликавши відповідний конструктор без параметрів. </p>
-<pre><code>:::python
-&gt;&gt;&gt; raise ZeroDivisionError
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-ZeroDivisionError
+<p>Після <code>except</code> можна вказати клас винятка, 
+який ми плануємо перехопити, 
+або ж одразу декілька класів, 
+об'єднавши їх у кортеж. </p>
+<p>При перехопленні винятка створюється екземпляр відповідного класа, 
+і ми маємо можливість отримати його: </p>
+<pre><code>&gt;&gt;&gt; try:
+...     1/0
+... except Exception as e:
+...     print('oops!', e)
+...     catched = e
+...
+oops! division by zero
+&gt;&gt;&gt; catched
+ZeroDivisionError('division by zero',)
 &gt;&gt;&gt;
 </code></pre>
-<p>Зауважте, що <code>raise</code> може викидати у якості винятків тільки екземпляри класа <code>BaseException</code> 
-і його похідних класів. </p>
-<h2 id="_2">Створення власних винятків</h2>
-<p>При розробці програмного забезпечення, 
-особливо якщо ви створюєте програмний продукт, 
-який можуть використовувати інші розробники, 
-може виникнути потреба створити власні винятки, 
-які будуть обробляти якісь специфічні помилки. 
-Хорошою практикою є створити базовий клас успадкувавши його від <code>Exception</code> або іншого стандартного, 
-а вже потім від цього базового класа успадкувати класи для конкретних помилок чи ситуацій. </p>
-<p>Приклад визначення власних винятків і їх використання:</p>
-<pre><code>:::python
-class CoolFrameworkException(Exception):
-    pass
+<p>Якщо ж після <code>except</code> нічого не вказати, 
+то будуть перехоплені усі винятки які ми не перехопили раніше. 
+Бажано уникати такого перехоплення винятків, треба перехоплювати конкретні винятки. </p>
+<p>Блоки <code>except</code> обробляються від гори до низу і керування передається не більше, ніж одному обробнику. 
+Тому при необхідності по-різному обробляти винятки, 
+які знаходяться в ієрархії успадкування, 
+спочатку треба вказувати обробники меньш загальних винятків, 
+а потім — більш загальних. 
+Саме тому стандартний блок <code>except</code> може бути тільки останнім. </p>
+<p>Приклад. У наступному коді ми ніколи не перехопимо ділення на нуль:</p>
+<pre><code>&gt;&gt;&gt; try:
+...     1/0
+... except Exception:
+...     print('Some exception catched')
+... except ZeroDivisionError:
+...     print('Zero division catched')
+...
+Some exception catched
+&gt;&gt;&gt;
+</code></pre>
+<p>Якщо жоден з заданих блоків <code>except</code> не перехопив виняток, 
+то його буде перехоплено найближчим зовнішнім блоком <code>try/except</code>, 
+у якому є відповідний обробник. 
+Якщо ж програма зовсім не перехопила виняток, 
+то інтерпретатор завершує виконання програми і виводить 
+інформацію про виняткову ситуацію в стандартний потік помилок <code>sys.stderr</code>. </p>
+<pre><code>&gt;&gt;&gt; try:
+...     raise ValueError
+... except ZeroDivisionError:
+...     print('Division by zero')
+...
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 2, in &lt;module&gt;
+ValueError
+&gt;&gt;&gt;
+</code></pre>
+<p>Але у цього правила є винятки: 
+якщо виняток виник в деструкторі об'єкта, 
+виконання програми не завершується, 
+а в стандартний потік помилок виводиться попередження <code>"Exception ignored"</code> з інформацією про сам виняток. </p>
+<p>Приклад. Наступний код:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ZeroDivisionError</span>
 
-class VeryRareError(CoolFrameworkException):
-    pass
 
-class SomeStrangeError(CoolFrameworkException):
-    pass
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Creating object&#39;</span><span class="p">)</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Deleting object&#39;</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">obj</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done&#39;</span><span class="p">)</span>
+</code></pre></div>
+дасть наступний результат:</p>
+<pre><code>Creating object
+Deleting object
+Exception ignored in: &lt;bound method MyClass.__del__ of &lt;__main__.MyClass object at 0x000001AD476A97F0&gt;&gt;
+Traceback (most recent call last):
+  File "d:\PythonEssential2019\exception_in_destructor.py", line 3, in __del__
+    raise ZeroDivisionError
+ZeroDivisionError:
+Done
+&gt;&gt;&gt;
+</code></pre>
+<h2 id="_2">Передача винятка на один рівень вгору</h2>
+<p>Для того, щоб в обробнику винятка виконати певні дії, 
+а потім передати виняток далі, 
+на один рівень обробників вище (тобто, викинути той самий виняток ще раз), 
+використовується  інструкція <code>raise</code> без параметрів: </p>
+<pre><code>&gt;&gt;&gt; try:
+...     1/0
+... except ZeroDivisionError:
+...     print('начебто обробили помилку')
+...     raise
+...
+начебто обробили помилку
+Traceback (most recent call last):
+File "&lt;stdin&gt;", line 2, in &lt;module&gt;
+ZeroDivisionError: division by zero
+&gt;&gt;&gt;
+</code></pre>
+<h2 id="else">Блок else</h2>
+<p>В конструкції <code>try...except...</code> може бути присутнім необов'язковий блок <code>else</code>. 
+Оператори всередині нього виконуються, якщо не виникло жодного винятка.</p>
+<h2 id="finally">Блок finally</h2>
+<p>Також  конструкції <code>try...except...</code> може бути присутнім необов'язковий блок <code>finally</code>. 
+Оператори всередині блока <code>finally</code> виконуються незалежно від того, чи виникла виняткова ситуація чи ні. </p>
+<pre><code>&gt;&gt;&gt; try:
+...     2 / 0
+... finally:
+...     print('Finally block is always executed')
+...
+Finally block is always executed
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 2, in &lt;module&gt;
+ZeroDivisionError: division by zero
+&gt;&gt;&gt;
+</code></pre>
+<p>Блок <code>finally</code> використовується для виконання так званих "дій по очистці" (cleanup actions), 
+тобто дій, направлених на звільнення ресурсів: 
+закриття файлів, видалення тимчасових об'єктів, тощо. </p>
+<p>Блок <code>finally</code> виконується перед виходом з інструкції <code>try/except</code> завжди, 
+навіть якщо одне з його відгалужень містить оператор <code>return</code> (коли оператор <code>try/except</code> знаходиться всередині функції), <code>break</code> чи <code>continue</code> (коли оператор <code>try/except</code> знаходиться всередині цикла) або ж виник інший необроблений виняток при обробці даного винятка.</p>
+<pre><code>&gt;&gt;&gt; def f():
+...     try:
+...             2 / 0
+...     except Exception as e:
+...             return 'We have catched: ' + str(e)
+...     finally:
+...             print('Finally block is always executed')
+...
+&gt;&gt;&gt; print(f())
+Finally block is always executed
+We have catched: division by zero
+&gt;&gt;&gt;
 </code></pre>
 
 
+
+  
 
 
 
@@ -1405,6 +1756,46 @@ class SomeStrangeError(CoolFrameworkException):
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="raising_exceptions.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Створення виняткових ситуацій">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Створення виняткових ситуацій
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="warnings.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Попередження">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Попередження
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

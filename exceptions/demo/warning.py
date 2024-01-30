@@ -17,4 +17,17 @@ class Person:
 		return self._name
 		
 		
-p = Person('Остап Сулейман Берта Мария Бендер')
+p = Person('Остап Сулейман Берта Марія Бендер')
+
+#############################
+
+from warnings import warn
+
+class Depricated(UserWarning): pass
+
+def f():
+	# warn(f"Function 'f()' depricated", Depricated, stacklevel=2)
+	warn(f"Function 'f()' depricated")
+	
+for _ in range(5):
+	f()

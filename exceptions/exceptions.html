@@ -18,7 +18,7 @@
         <link rel="prev" href="../oop/attributes/slots.html">
       
       
-        <link rel="next" href="../iterable/iterable.html">
+        <link rel="next" href="raising_exceptions.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -148,6 +148,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1237,10 +1239,117 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Додаткові матеріали:
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="raising_exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Створення виняткових ситуацій
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="handling_exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Обробка винятків
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="warnings.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Попередження
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="eafp_vs_lbyl.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EAFP vs LBYL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="context_managers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Менеджери контекста
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1410,7 +1519,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1458,6 +1569,13 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     Винятки як класи
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Додаткові матеріали:
   </a>
   
 </li>
@@ -1515,8 +1633,7 @@
 <h2 id="_5">Винятки як класи</h2>
 <p>Винятки в Python — це насправді не що інше, як класи. 
 Давайте переконаємось: </p>
-<pre><code>:::python
-&gt;&gt;&gt; 1/0
+<pre><code>&gt;&gt;&gt; 1/0
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 ZeroDivisionError: division by zero
@@ -1542,8 +1659,14 @@ ZeroDivisionError: division by zero
 <p>Також при необхідності ми можемо створити власні винятки, 
 у цьому разі нам треба успадковуватись від класа <code>Exception</code> 
 або його дочірніх класів. </p>
+<h2 id="_6">Додаткові матеріали:</h2>
+<ul>
+<li><a href="https://docs.python.org/3.6/library/exceptions.html">Документація: вбудовані винятки</a></li>
+</ul>
 
 
+
+  
 
 
 
@@ -1559,6 +1682,8 @@ ZeroDivisionError: division by zero
         <footer class="md-footer">
   
     
+      
+        
       
       <nav class="md-footer__inner md-grid" aria-label="Футер" >
         
@@ -1580,13 +1705,13 @@ ZeroDivisionError: division by zero
         
         
           
-          <a href="../iterable/iterable.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Ітерабельні об&#39;єкти">
+          <a href="raising_exceptions.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Створення виняткових ситуацій">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Ітерабельні об'єкти
+                Створення виняткових ситуацій
               </div>
             </div>
             <div class="md-footer__button md-icon">

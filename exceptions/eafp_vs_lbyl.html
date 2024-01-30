@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/exceptions/eafp_vs_lbyl.html">
       
       
+        <link rel="prev" href="warnings.html">
+      
+      
+        <link rel="next" href="context_managers.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Обробка винятків як керування ходом виконання програми - PyStarter</title>
+        <title>EAFP vs LBYL - PyStarter</title>
       
     
     
@@ -117,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Обробка винятків як керування ходом виконання програми
+              EAFP vs LBYL
             
           </span>
         </div>
@@ -144,6 +148,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1114,34 +1120,172 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="exceptions.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_28" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_28" id="__nav_28_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     25. Виняткові ситуації
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_28_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_28">
+            <span class="md-nav__icon md-icon"></span>
+            25. Виняткові ситуації
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Винятки
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="raising_exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Створення виняткових ситуацій
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="handling_exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Обробка винятків
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="warnings.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Попередження
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="eafp_vs_lbyl.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    EAFP vs LBYL
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="context_managers.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Менеджери контекста
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1304,7 +1448,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1315,21 +1461,6 @@
   
     
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lbyl-vs-eafp" class="md-nav__link">
-    LBYL vs EAFP
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1350,135 +1481,152 @@
 екземпляром якого є певний об'єкт, 
 певний інтерфейс. 
 При динамічній качиній типізації відповідальність за це лежить на програмісті. </p>
-<p>Як же можна з'ясувати, 
+<!-- Як же можна з'ясувати, 
 чи реалізує якийсь клас певний інтерфейс (наприклад, метод)? 
-Існує два протилежних підходи до реалізації таких перевірок. </p>
-<p>Перший полягає у тому, що ми маємо можливість дійсно перевірити, 
+Існує два протилежних підходи до реалізації таких перевірок. 
+
+Перший полягає у тому, що ми маємо можливість дійсно перевірити, 
 чи реалізує клас певний інтерфейс, 
 тобто чи має він певний атрибут. 
-Зробити це можна за допомогою функції: </p>
-<pre><code>:::python
-hasattr(object, name)
-</code></pre>
-<p>Функція повертає <code>True</code> якщо <code>object</code> має атрибут з ідентифікатором <code>name</code> і <code>False</code> в інших випадках.</p>
-<p>Отже перевірка наявності інтерфейса і подальше його використання можуть виглядати так:</p>
-<pre><code>:::python
-p = Person('John Doe')
-if hasattr(p, show_info):
-    p.show_info()
-else:
-    print('No information')
-</code></pre>
-<p>Інший спосіб полягає у тому, 
+Зробити це можна за допомогою функції: 
+
+    hasattr(object, name)
+
+Функція повертає `True` якщо `object` має атрибут з ідентифікатором `name` і `False` в інших випадках.
+
+Отже перевірка наявності інтерфейса і подальше його використання можуть виглядати так:
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">show_info</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">show_info</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No information&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+Інший спосіб полягає у тому, 
 що ми не перевіряємо наявність певного інтерфейса, 
 а одразу ж пробуємо його використовувати. 
 Якщо інтерфейс не реалізовано, 
 то, звісна річ, виникне виняткова ситуація. 
-Але ми можемо перехопити виняток і обробити його так як нам потрібно! </p>
-<p>Повертаючись до попереднього прикладу: </p>
-<pre><code>:::python
-p = Person('John Doe')
-try:
-    p.show_info()
-except AttributeError:
-    print('No information')
-</code></pre>
-<p>Отже ми маємо два різних підходи (стилі) написання коду, вони навіть мають свої назви: </p>
-<ul>
-<li>Look Before You Leap (LBYL, "Не спитавши броду не лізь у воду"). Стиль, який характеризується наявністю багатьох перевірок і умовних операторів. В контексті качиної типізації може означати перевірку наявності необхідних атрибутів за допомогою функції <code>hasattr</code>.</li>
-<li>Easier to Ask for Forgiveness than Permission (EAFP, "простіше попросити вибачення, ніж
-дозволу").  Стиль, який характеризується наявністю блоків <code>try/except</code>. В контексті качиної
-типізації — написання кода виходячи з припущення, що певний об'єкт реалізує необхідний інтерфейс, і обробка винятка <code>AttributeError</code> в іншому випадку.</li>
-</ul>
-<p><code>LBYL</code> і <code>EAFP</code> — це доволі загальні стилі написання кода на динамічних мовах програмування, 
-які стосуються не тільки качиної типізації. Наприклад: </p>
-<ul>
-<li>перевірка існування ключа у словнику (LBYL) або обробка винятка <code>KeyError</code> (EAFP)</li>
-<li>перевірка існування файла (LBYL) або обробка винятка <code>IOError</code> (EAFP)</li>
-</ul>
-<p>Давайте напишемо рішення однієї і тої ж задачі використовуючи обидва стилі.</p>
-<p>Задача: попросити користувача ввести два цілих числа, 
+Але ми можемо перехопити виняток і обробити його так як нам потрібно! 
+
+Повертаючись до попереднього прикладу: 
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">show_info</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No information&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+Отже ми маємо два різних підходи (стилі) написання коду, вони навіть мають свої назви: 
+
+* Look Before You Leap (LBYL, "Не спитавши броду не лізь у воду"). Стиль, який характеризується наявністю багатьох перевірок і умовних операторів. В контексті качиної типізації може означати перевірку наявності необхідних атрибутів за допомогою функції `hasattr`.
+* Easier to Ask for Forgiveness than Permission (EAFP, "простіше попросити вибачення, ніж
+дозволу").  Стиль, який характеризується наявністю блоків `try/except`. В контексті качиної
+типізації — написання кода виходячи з припущення, що певний об'єкт реалізує необхідний інтерфейс, і обробка винятка `AttributeError` в іншому випадку.
+
+`LBYL` і `EAFP` — це доволі загальні стилі написання кода на динамічних мовах програмування, 
+які стосуються не тільки качиної типізації. Наприклад: 
+
+* перевірка існування ключа у словнику (LBYL) або обробка винятка `KeyError` (EAFP)
+* перевірка існування файла (LBYL) або обробка винятка `IOError` (EAFP)
+
+Давайте напишемо рішення однієї і тої ж задачі використовуючи обидва стилі.
+
+Задача: попросити користувача ввести два цілих числа, 
 кожне окремо, 
 і вивести результат ділення першого на друге. 
 Користувач робить ввод даних поки введені дані не будуть коректними, 
 тобто користувач має ввести саме цілі числа, 
-крім того друге з них не повинно дорівнювати 0. </p>
-<p>Спочатку напишемо "звичайним" для нас на даний момент способом:</p>
-<pre><code>:::python
-while True:
-    s = input('Enter first integer: ')
-    if s.strip().isdigit():
-        n1 = int(s)
-        break
-    else:
-        print('Not integer number!')
-while True:
-    s = input('Enter second integer: ')
-    if s.strip().isdigit():
-        n2 = int(s)
-        if n2 != 0:
+крім того друге з них не повинно дорівнювати 0. 
+
+Спочатку напишемо "звичайним" для нас на даний момент способом:
+
+    :::python
+    while True:
+        s = input('Enter first integer: ')
+        if s.strip().isdigit():
+            n1 = int(s)
             break
         else:
-            print('Can not divide by zero!')
-    else:
-        print('Not integer number!')
-print(n1/n2)
-</code></pre>
-<p>Зауважте, що цей код ще зовсім не досконалий: 
+            print('Not integer number!')
+    while True:
+        s = input('Enter second integer: ')
+        if s.strip().isdigit():
+            n2 = int(s)
+            if n2 != 0:
+                break
+            else:
+                print('Can not divide by zero!')
+        else:
+            print('Not integer number!')
+    print(n1/n2)
+
+Зауважте, що цей код ще зовсім не досконалий: 
 ми, наприклад, не враховуємо, 
 що користувач може вводити від'ємні цілі числа, 
 для цього нам треба обробляти можливий знак мінус. 
-Спробуйте зробити це самостійно і оцінити код який отримаєте. </p>
-<p>А тепер давайте вирішимо цю ж саму задачу дещо іншим способом:</p>
-<pre><code>:::python
-while True:
-    try:
-        n1 = int(input('Enter first integer: '))
-        break
-    except ValueError:
-        print('Not a valid number!')
+Спробуйте зробити це самостійно і оцінити код який отримаєте. 
 
-while True:
-    try:
-        n2 = int(input('Enter second integer: '))
-        print(n1/n2)
-        break
-    except ValueError:
-        print('Not a valid number!')
-    except ZeroDivisionError:
-        print('Can not divide by zero!')
-</code></pre>
-<p>Тут ми не робимо ніяких перевірок даних, 
+А тепер давайте вирішимо цю ж саму задачу дещо іншим способом:
+
+    :::python
+    while True:
+        try:
+            n1 = int(input('Enter first integer: '))
+            break
+        except ValueError:
+            print('Not a valid number!')
+
+    while True:
+        try:
+            n2 = int(input('Enter second integer: '))
+            print(n1/n2)
+            break
+        except ValueError:
+            print('Not a valid number!')
+        except ZeroDivisionError:
+            print('Can not divide by zero!')
+
+Тут ми не робимо ніяких перевірок даних, 
 які ввів користувач. 
 Ми просто перетворюємо символьний рядок на ціле число, 
 і якщо нам це не вдалося, 
 то робимо висновок, 
 що введені користувачем дані не є цілим числом. 
-Тепер ми можемо вводити і від'ємні цілі числа, і усе працюватиме як слід! </p>
-<p>І, наприклад, якщо ми захочемо, 
+Тепер ми можемо вводити і від'ємні цілі числа, і усе працюватиме як слід! 
+
+І, наприклад, якщо ми захочемо, 
 щоб користувач мав змогу вводити не тільки цілі числа, 
 а й дійсні, 
-ми просто будемо перетворювати введені користувачем дані до типа <code>float</code>. 
+ми просто будемо перетворювати введені користувачем дані до типа `float`. 
 Уявіть (а краще спробуйте реалізувати) 
 перевірку введених даних на відповідність дійсним числам без використання обробки винятків 
-і оцініть складність і читабельність такого кода. </p>
-<p>Аналогічно відбувається і перевірка — чи є друге введене користувачем число нулем.</p>
-<p>Порівняйте другий варіант з першим по читабельності кода.</p>
-<h2 id="lbyl-vs-eafp"><code>LBYL</code> vs <code>EAFP</code></h2>
-<p>В Python деколи надають перевагу другому стилю — EAFP. </p>
-<ul>
-<li>код простіше читається дякуючи відсутності зайвих перевірок;</li>
-<li>винятки в Python працюють відносно швидко;</li>
-<li>позбавляємось ризику виникнення стану перегонів у багатопоточних середовищах, що деколи 
-трапляється при використанні підхода LBYL.</li>
-</ul>
-<p>Однак користуватись винятками і їх обробкою для керуванням ходу виконання програми треба обережно 
+і оцініть складність і читабельність такого кода. 
+
+Аналогічно відбувається і перевірка — чи є друге введене користувачем число нулем.
+
+Порівняйте другий варіант з першим по читабельності кода.
+
+## `LBYL` vs `EAFP`
+
+В Python деколи надають перевагу другому стилю — EAFP. 
+
+* код простіше читається дякуючи відсутності зайвих перевірок;
+* винятки в Python працюють відносно швидко;
+* позбавляємось ризику виникнення стану перегонів у багатопоточних середовищах, що деколи 
+трапляється при використанні підхода LBYL.
+
+Однак користуватись винятками і їх обробкою для керуванням ходу виконання програми треба обережно 
 і вдумливо, якщо це дійсно є виправданим. 
 Необережне і невміле використання цього методу може призвести до серйозних помилок в реалізації алгоритму 
 які, зазвичай, ще й важко виявити. 
-Не зловживайте <code>EAFP</code> і по можливості уникайте. </p>
+Не зловживайте `EAFP` і по можливості уникайте.  -->
 
 
+
+  
 
 
 
@@ -1493,6 +1641,46 @@ while True:
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="warnings.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Попередження">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Попередження
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="context_managers.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Менеджери контекста">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Менеджери контекста
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

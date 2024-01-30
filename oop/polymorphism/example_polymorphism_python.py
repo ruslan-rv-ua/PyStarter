@@ -1,4 +1,6 @@
-''' спеціальний (ad hoc)
+# спеціальний (ad hoc)
+
+'''
 int increment(int x) {
     return x + 1;
 }
