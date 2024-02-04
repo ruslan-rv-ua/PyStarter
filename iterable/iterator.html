@@ -1239,6 +1239,43 @@
         
   
   
+    <a href="../types_and_structures/typing/typing.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    28. Типи та структури даних
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../batteries/random.html" class="md-nav__link">
       
   
@@ -1377,8 +1414,7 @@
 І, відповідно, такий об'єкт ми можемо використовувати у циклі <code>for</code>, 
 передавати функціям які очікують послідовності, тощо. </p>
 <p>Давайте спробуємо отримати ітератори для деяких сутностей Python:</p>
-<pre><code>:::python
-&gt;&gt;&gt; i = iter('hello')
+<pre><code>&gt;&gt;&gt; i = iter('hello')
 &gt;&gt;&gt; i
 &lt;str_iterator object at 0x0000020BDD63F198&gt;
 &gt;&gt;&gt; i = iter([1,3,5,7])
@@ -1407,8 +1443,7 @@
 при черговому і кожному наступному виклику <code>__next__()</code> 
 цей метод має викинути один з винятків — 
 <code>StopIteration</code> або <code>IndexError</code>: </p>
-<pre><code>:::python
-&gt;&gt;&gt; i = iter('bye')
+<pre><code>&gt;&gt;&gt; i = iter('bye')
 &gt;&gt;&gt; next(i)
 'b'
 &gt;&gt;&gt; next(i)
@@ -1424,10 +1459,9 @@ StopIteration
 <p>Крім того кожен ітератор має реалізовувати магічний метод <code>__iter__()</code> 
 (так само, як і сам ітерабельний об'єкт). 
 Цей метод має повертати сам ітератор, зазвичай він виглядає так: </p>
-<pre><code>:::python
-def __iter__(self):
-    return self
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div>
 <p>Можна зробити висновок, 
 що ітератор і сам є ітерабельним об'єктом 
 і може бути використаним всюди, 
@@ -1446,8 +1480,7 @@ def __iter__(self):
 доки не виникне виняток <code>StopIteration</code></li>
 </ul>
 <p>Ми навіть можемо самостійно реалізувати такий цикл: </p>
-<pre><code>:::python
-&gt;&gt;&gt; def my_for(iterable, callback_func):
+<pre><code>&gt;&gt;&gt; def my_for(iterable, callback_func):
 ...     iterator = iter(iterable)
 ...     while True:
 ...             try:

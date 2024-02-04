@@ -1,47 +1,34 @@
-'''
-# LBYL
-while True:
-	s = input('Enter first integer: ')
-	if s.strip().isdigit():
-		n1 = int(s)
-		break
-	else:
-		print('Not integer number!')
-while True:
-	s = input('Enter second integer: ')
-	if s.strip().isdigit():
-		n2 = int(s)
-		if n2 != 0:
-			break
-		else:
-			print('Can not divide by zero!')
-	else:
-		print('Not integer number!')
-print(n1/n2)			
-'''
+def f(string):
+    if string[0] == '-':
+        string = string[1:]
+    if string.replace('.', '', 1).isdigit():
+        return True
+    return False
+    
+r = f('-42.3.2')
 
-	
-	
-	
-	
-	
-# EAFP
-while True:
+def f(string):
 	try:
-		n1 = int(input('Enter first integer: '))
-		break
+		float(string)
+		return True
 	except ValueError:
-		print('Not number!')
-	
-while True:
-	try:
-		n2 = int(input('Enter second integer: '))
-		print(n1/n2)
-		break
-	except ValueError:
-		print('Not number!')
-	except ZeroDivisionError:
-		print('Can not divide by zero!')
-		
+		return False
 
+r = f('-42.3')
+
+#############################
+      
+from pathlib import Path
+
+file = Path.home() / 'some_file.txt'
+if file.exists():
+	text = file.read_text()
+else:
+	print('File does not exist')
+      
+
+try:
+	text = file.read_text()
+except FileNotFoundError:
+	print('File does not exist')
 	

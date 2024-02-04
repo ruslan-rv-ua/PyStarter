@@ -1441,6 +1441,43 @@
         
   
   
+    <a href="../types_and_structures/typing/typing.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    28. Типи та структури даних
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../batteries/random.html" class="md-nav__link">
       
   
@@ -1568,6 +1605,10 @@
                 
                   
 
+
+<!--
+https://ru.stackoverflow.com/questions/1485541/Что-за-конструкция-raise-from-в-python
+-->
 
 <h1 id="_1">Обробка винятків</h1>
 <blockquote>
@@ -1704,10 +1745,28 @@ ZeroDivisionError: division by zero
 &gt;&gt;&gt;
 </code></pre>
 <h2 id="else">Блок else</h2>
-<p>В конструкції <code>try...except...</code> може бути присутнім необов'язковий блок <code>else</code>. 
+<p>В іннструкції <code>try</code> може бути присутнім необов'язковий блок <code>else</code>. 
 Оператори всередині нього виконуються, якщо не виникло жодного винятка.</p>
+<p>Приклад:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">div10</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">x</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+<p>У цьому прикладі функція намагається поділити 10 на передане їй число. 
+Якщо відбувається ділення на нуль, відповідний виняток обробляється в блоці <code>except</code>. 
+Інакше виконується блок <code>else</code>, і функція повертає результат ділення.</p>
+<pre><code>&gt;&gt;&gt; div10(2)
+5.0
+&gt;&gt;&gt; div10(0)
+inf
+&gt;&gt;&gt;
+</code></pre>
 <h2 id="finally">Блок finally</h2>
-<p>Також  конструкції <code>try...except...</code> може бути присутнім необов'язковий блок <code>finally</code>. 
+<p>Також в іннструкції <code>try</code> може бути присутнім необов'язковий блок <code>finally</code>. 
 Оператори всередині блока <code>finally</code> виконуються незалежно від того, чи виникла виняткова ситуація чи ні. </p>
 <pre><code>&gt;&gt;&gt; try:
 ...     2 / 0
@@ -1720,24 +1779,28 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 &gt;&gt;&gt;
 </code></pre>
-<p>Блок <code>finally</code> використовується для виконання так званих "дій по очистці" (cleanup actions), 
-тобто дій, направлених на звільнення ресурсів: 
-закриття файлів, видалення тимчасових об'єктів, тощо. </p>
 <p>Блок <code>finally</code> виконується перед виходом з інструкції <code>try/except</code> завжди, 
 навіть якщо одне з його відгалужень містить оператор <code>return</code> (коли оператор <code>try/except</code> знаходиться всередині функції), <code>break</code> чи <code>continue</code> (коли оператор <code>try/except</code> знаходиться всередині цикла) або ж виник інший необроблений виняток при обробці даного винятка.</p>
-<pre><code>&gt;&gt;&gt; def f():
-...     try:
-...             2 / 0
-...     except Exception as e:
-...             return 'We have catched: ' + str(e)
-...     finally:
-...             print('Finally block is always executed')
-...
-&gt;&gt;&gt; print(f())
-Finally block is always executed
-We have catched: division by zero
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">div10</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">x</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Це повідомлення виводиться завжди!&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>Переконаємось:</p>
+<pre><code>&gt;&gt;&gt; div10(2)
+Це повідомлення виводиться завжди!
+5.0
+&gt;&gt;&gt; div10(0)
+Це повідомлення виводиться завжди!
+inf
 &gt;&gt;&gt;
 </code></pre>
+<p>Блок <code>finally</code> часто використовується для виконання так званих "дій по очистці" (cleanup actions), 
+тобто дій, направлених на звільнення ресурсів: 
+закриття файлів, видалення тимчасових об'єктів, тощо. </p>
 
 
 

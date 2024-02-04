@@ -1249,6 +1249,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    EAFP vs LBYL
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="eafp_vs_lbyl.html" class="md-nav__link md-nav__link--active">
         
   
@@ -1258,6 +1269,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lbyl-vs-eafp" class="md-nav__link">
+    LBYL vs EAFP
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1383,6 +1420,43 @@
         
   
   
+    <a href="../types_and_structures/typing/typing.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    28. Типи та структури даних
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../batteries/random.html" class="md-nav__link">
       
   
@@ -1462,6 +1536,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lbyl-vs-eafp" class="md-nav__link">
+    LBYL vs EAFP
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1481,148 +1570,88 @@
 екземпляром якого є певний об'єкт, 
 певний інтерфейс. 
 При динамічній качиній типізації відповідальність за це лежить на програмісті. </p>
-<!-- Як же можна з'ясувати, 
+<p>Як же можна з'ясувати, 
 чи реалізує якийсь клас певний інтерфейс (наприклад, метод)? 
-Існує два протилежних підходи до реалізації таких перевірок. 
-
-Перший полягає у тому, що ми маємо можливість дійсно перевірити, 
+Існує два протилежних підходи до реалізації таких перевірок. </p>
+<p>Перший полягає у тому, що ми маємо можливість дійсно перевірити, 
 чи реалізує клас певний інтерфейс, 
 тобто чи має він певний атрибут. 
-Зробити це можна за допомогою функції: 
-
-    hasattr(object, name)
-
-Функція повертає `True` якщо `object` має атрибут з ідентифікатором `name` і `False` в інших випадках.
-
-Отже перевірка наявності інтерфейса і подальше його використання можуть виглядати так:
-
+Зробити це можна за допомогою функції: </p>
+<pre><code>hasattr(object, name)
+</code></pre>
+<p>Функція повертає <code>True</code> якщо <code>object</code> має атрибут з ідентифікатором <code>name</code> і <code>False</code> в інших випадках.</p>
+<p>Отже перевірка наявності інтерфейса і подальше його використання можуть виглядати так:</p>
 <div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">show_info</span><span class="p">):</span>
     <span class="n">p</span><span class="o">.</span><span class="n">show_info</span><span class="p">()</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No information&#39;</span><span class="p">)</span>
 </code></pre></div>
-
-Інший спосіб полягає у тому, 
+<p>Інший спосіб полягає у тому, 
 що ми не перевіряємо наявність певного інтерфейса, 
 а одразу ж пробуємо його використовувати. 
 Якщо інтерфейс не реалізовано, 
 то, звісна річ, виникне виняткова ситуація. 
-Але ми можемо перехопити виняток і обробити його так як нам потрібно! 
-
-Повертаючись до попереднього прикладу: 
-
+Але ми можемо перехопити виняток і обробити його так як нам потрібно! </p>
+<p>Повертаючись до попереднього прикладу: </p>
 <div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;John Doe&#39;</span><span class="p">)</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">p</span><span class="o">.</span><span class="n">show_info</span><span class="p">()</span>
 <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No information&#39;</span><span class="p">)</span>
 </code></pre></div>
-
-Отже ми маємо два різних підходи (стилі) написання коду, вони навіть мають свої назви: 
-
-* Look Before You Leap (LBYL, "Не спитавши броду не лізь у воду"). Стиль, який характеризується наявністю багатьох перевірок і умовних операторів. В контексті качиної типізації може означати перевірку наявності необхідних атрибутів за допомогою функції `hasattr`.
-* Easier to Ask for Forgiveness than Permission (EAFP, "простіше попросити вибачення, ніж
-дозволу").  Стиль, який характеризується наявністю блоків `try/except`. В контексті качиної
-типізації — написання кода виходячи з припущення, що певний об'єкт реалізує необхідний інтерфейс, і обробка винятка `AttributeError` в іншому випадку.
-
-`LBYL` і `EAFP` — це доволі загальні стилі написання кода на динамічних мовах програмування, 
-які стосуються не тільки качиної типізації. Наприклад: 
-
-* перевірка існування ключа у словнику (LBYL) або обробка винятка `KeyError` (EAFP)
-* перевірка існування файла (LBYL) або обробка винятка `IOError` (EAFP)
-
-Давайте напишемо рішення однієї і тої ж задачі використовуючи обидва стилі.
-
-Задача: попросити користувача ввести два цілих числа, 
-кожне окремо, 
-і вивести результат ділення першого на друге. 
-Користувач робить ввод даних поки введені дані не будуть коректними, 
-тобто користувач має ввести саме цілі числа, 
-крім того друге з них не повинно дорівнювати 0. 
-
-Спочатку напишемо "звичайним" для нас на даний момент способом:
-
-    :::python
-    while True:
-        s = input('Enter first integer: ')
-        if s.strip().isdigit():
-            n1 = int(s)
-            break
-        else:
-            print('Not integer number!')
-    while True:
-        s = input('Enter second integer: ')
-        if s.strip().isdigit():
-            n2 = int(s)
-            if n2 != 0:
-                break
-            else:
-                print('Can not divide by zero!')
-        else:
-            print('Not integer number!')
-    print(n1/n2)
-
-Зауважте, що цей код ще зовсім не досконалий: 
-ми, наприклад, не враховуємо, 
-що користувач може вводити від'ємні цілі числа, 
-для цього нам треба обробляти можливий знак мінус. 
-Спробуйте зробити це самостійно і оцінити код який отримаєте. 
-
-А тепер давайте вирішимо цю ж саму задачу дещо іншим способом:
-
-    :::python
-    while True:
-        try:
-            n1 = int(input('Enter first integer: '))
-            break
-        except ValueError:
-            print('Not a valid number!')
-
-    while True:
-        try:
-            n2 = int(input('Enter second integer: '))
-            print(n1/n2)
-            break
-        except ValueError:
-            print('Not a valid number!')
-        except ZeroDivisionError:
-            print('Can not divide by zero!')
-
-Тут ми не робимо ніяких перевірок даних, 
-які ввів користувач. 
-Ми просто перетворюємо символьний рядок на ціле число, 
+<p>Отже ми маємо два різних підходи (стилі) написання коду, вони навіть мають свої назви: </p>
+<ul>
+<li>Look Before You Leap (LBYL, "Не спитавши броду не лізь у воду"). Стиль, який характеризується наявністю багатьох перевірок і умовних операторів. В контексті качиної типізації може означати перевірку наявності необхідних атрибутів за допомогою функції <code>hasattr</code>.</li>
+<li>Easier to Ask for Forgiveness than Permission (EAFP, "простіше попросити вибачення, ніж
+дозволу").  Стиль, який характеризується наявністю блоків <code>try/except</code>. В контексті качиної
+типізації — написання кода виходячи з припущення, що певний об'єкт реалізує необхідний інтерфейс, і обробка винятка <code>AttributeError</code> в іншому випадку.</li>
+</ul>
+<p><code>LBYL</code> і <code>EAFP</code> — це доволі загальні стилі написання кода на динамічних мовах програмування, 
+які стосуються не тільки качиної типізації. Наприклад: </p>
+<ul>
+<li>перевірка існування ключа у словнику (LBYL) або обробка винятка <code>KeyError</code> (EAFP)</li>
+<li>перевірка існування файла (LBYL) або обробка винятка <code>IOError</code> (EAFP)</li>
+</ul>
+<p>Давайте напишемо рішення однієї і тої ж задачі використовуючи обидва стилі.</p>
+<p>Задача: створити функцію <code>is_float(string)</code> яка перевіряє чи є рядок <code>string</code> представленням числа типу <code>float</code>.
+Спочатку напишемо "звичайним" для нас на даний момент способом:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_float</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="k">if</span> <span class="n">string</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">string</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+<p>А тепер давайте вирішимо цю ж саму задачу дещо іншим способом:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_float</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+<p>Тут ми не робимо ніяких перевірок даних. 
+Ми просто перетворюємо символьний рядок на дійсне число, 
 і якщо нам це не вдалося, 
-то робимо висновок, 
-що введені користувачем дані не є цілим числом. 
-Тепер ми можемо вводити і від'ємні цілі числа, і усе працюватиме як слід! 
-
-І, наприклад, якщо ми захочемо, 
-щоб користувач мав змогу вводити не тільки цілі числа, 
-а й дійсні, 
-ми просто будемо перетворювати введені користувачем дані до типа `float`. 
-Уявіть (а краще спробуйте реалізувати) 
-перевірку введених даних на відповідність дійсним числам без використання обробки винятків 
-і оцініть складність і читабельність такого кода. 
-
-Аналогічно відбувається і перевірка — чи є друге введене користувачем число нулем.
-
-Порівняйте другий варіант з першим по читабельності кода.
-
-## `LBYL` vs `EAFP`
-
-В Python деколи надають перевагу другому стилю — EAFP. 
-
-* код простіше читається дякуючи відсутності зайвих перевірок;
-* винятки в Python працюють відносно швидко;
-* позбавляємось ризику виникнення стану перегонів у багатопоточних середовищах, що деколи 
-трапляється при використанні підхода LBYL.
-
-Однак користуватись винятками і їх обробкою для керуванням ходу виконання програми треба обережно 
+то повертаємо відповідний результат.</p>
+<p>Порівняйте другий варіант з першим по читабельності кода.</p>
+<h2 id="lbyl-vs-eafp"><code>LBYL</code> vs <code>EAFP</code></h2>
+<p>В Python деколи надають перевагу другому стилю — EAFP. </p>
+<ul>
+<li>код простіше читається дякуючи відсутності зайвих перевірок;</li>
+<li>винятки в Python працюють відносно швидко;</li>
+<li>позбавляємось ризику виникнення стану перегонів у багатопоточних середовищах, що деколи 
+трапляється при використанні підхода LBYL.</li>
+</ul>
+<p>Однак користуватись винятками і їх обробкою для керуванням ходу виконання програми треба обережно 
 і вдумливо, якщо це дійсно є виправданим. 
 Необережне і невміле використання цього методу може призвести до серйозних помилок в реалізації алгоритму 
 які, зазвичай, ще й важко виявити. 
-Не зловживайте `EAFP` і по можливості уникайте.  -->
+Не зловживайте <code>EAFP</code> і по можливості уникайте. </p>
 
 
 

@@ -20,16 +20,8 @@ except ZeroDivisionError:
 #######################
 
 l = [2,1,0]
-index = 2
+#index = 2
 try:
-    1/l[index]
+    r = 1/l[index]
 except Exception:
-    print("Сталось ділення на нуль!")
-
-    
-l = [2,1,0]
-index = 2
-try:
-    1/l[index]
-except Exception:
-    print("Сталось ділення на нуль!")
+    r = float('inf')
