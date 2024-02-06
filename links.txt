@@ -1,0 +1,75 @@
+----
+https://tushar.lol/post/builtins/
+----
+
+
+# for site
+
+functions
+https://habr.com/ru/articles/710186/#habracut
+
+float numbers
+https://habr.com/ru/post/658277/?utm_campaign=658277&utm_source=habrahabr&utm_medium=rss
+
+​Wtfpython – Забавный проект, пытающийся объяснить, что именно происходит под капотом у некоторых нелогичных фрагментов и менее известных функций в Python.
+
+walrus operator
+https://habr.com/ru/companies/skillfactory/articles/683418/
+
+pattern matching
+https://mathspp.com/blog/pydonts/structural-pattern-matching-tutorial
+https://mathspp.com/blog/pydonts/structural-pattern-matching-anti-patterns
+https://habr.com/ru/articles/585518/
+https://www.inspiredpython.com/course/pattern-matching/python-pattern-matching-examples-etl-and-dataclasses?r=rss
+https://telegra.ph/Jonathan-Hartley-Structured-Pattern-Matching-in-Python-07-31
+
+decorators
+https://habr.com/ru/articles/587066/
+https://habr.com/ru/articles/710654/
+https://habr.com/ru/articles/724852/
+https://habr.com/ru/articles/750312/
+
+exceptions
+https://habr.com/ru/companies/wunderfund/articles/736526/?utm_campaign=736526&utm_medium=rss
+
+venv
+poetry https://habr.com/ru/articles/740376/
+
+modules
+https://realpython.com/python-import/
+
+
+
+
+
+# builtin modules
+
+Python Shutil Module: 10 Methods You Should Know
+https://www.pythonpool.com/python-shutil/
+
+RE
+https://habr.com/ru/companies/skillbox/articles/552360/
+https://pythonist.ru/regulyarnoe-vyrazhenie-dlya-proverki-rimskih-chisel-na-python/?utm_source=telegram&utm_medium=pythonist
+https://habr.com/ru/articles/349860/
+
+dataclasses
+Дэвид Бизли сделал свой вариант датаклассов - dabeaz/dataklasses. Зачем он это сделал? Как он пишет, модуль dataclasses из стандартной библиотеки очень сложный и медленный. Его же модуль состоит из менее 100 строк кода и в 15-20 раз быстрее.
+
+pathlib
+https://habr.com/ru/companies/otus/articles/700830/
+
+
+# app ideas
+
+4. Приложение для уведомлений на рабочем столе - Уведомление на рабочем столе - это простое приложение, которое выдает уведомление в форме всплывающего сообщения на рабочем столе.
+
+Погода бот на python
+https://habr.com/ru/articles/584134/
+
+
+# tasks
+
+recursive
+Сумма трех, четырех и так далее чисел — на Python
+https://pythonist.ru/summa-treh-chetyreh-i-tak-dalee-chisel-na-python/?utm_source=telegram&utm_medium=pythonist
+

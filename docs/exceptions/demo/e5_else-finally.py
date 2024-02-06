@@ -11,7 +11,7 @@ def div(numbers):
         print('Піймали', e)
         return
     print(result)
-# div([1,0])
+# div((1,0))
 # div([1])
 # div(1)
 
@@ -46,9 +46,11 @@ def div(numbers):
         print('Піймали', e)
         return
     else:
-        print('Нічого не піймали')
+        print(result)
     finally:
         print('Функція відпрацювала')
-    print(result)
+    print('end')
+    
 
 div([1,2])
+div('aa')

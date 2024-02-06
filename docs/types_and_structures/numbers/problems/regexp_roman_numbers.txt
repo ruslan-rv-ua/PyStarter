@@ -1,0 +1,7 @@
+Ruslan Iskov, [?15?.?05?.?2021 ?23?:?51]
+[Переслане повідомлення]
+[Від Python Skills ??]
+?Топ. Регулярное выражение для проверки римских чисел
+
+На Codewars есть задачка: нужно написать функцию для конвертации римских чисел в арабские. В этой статье мы сосредоточились на одном из этапов решения: проверке, ввел ли пользователь валидное римское число.
+https://pythonist.ru/regulyarnoe-vyrazhenie-dlya-proverki-rimskih-chisel-na-python/?utm_source=telegram&utm_medium=pythonist

@@ -1,13 +1,14 @@
+'''
 file = open('some_file.txt', 'w')
 try:
-	file.write(...)
+    file.write(...)
 finally:
-	file.close()
+    file.close()
 
 with open('some_file.txt', 'w') as file:
-	file.write(...)
-
-	
+    file.write(...)
+'''
+    
 # __enter__(self)
 
 # __exit__(self, exception_class, exception_obj, exception_traceback)
@@ -15,15 +16,36 @@ with open('some_file.txt', 'w') as file:
 import os
 
 class cd:
-	def __init__(self, path):
-		self.path = path
-	def __enter__(self):
-		self.old_path = os.getcwd()
-		os.chdir(self.path)
-	def __exit__(self, c, e, t):
-		os.chdir(self.old_path)
+    def __init__(self, path):
+        self.path = path
+    def __enter__(self):
+        self.old_path = os.getcwd()
+        os.chdir(self.path)
+        return self
+    def __exit__(self, exc_type, exc_value, traceback):
+        os.chdir(self.old_path)
+    def __repr__(self):
+        return f"cd {self.path}"
 
 print(os.getcwd())
-with cd("\\"):
+with cd("\\") as dir1:
     print(os.getcwd())
 print(os.getcwd())
+
+################################
+
+import time
+
+class MeasureTime:
+    def __enter__(self):
+        self.start_time = time.time()
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print(f"{time.time() - self.start_time} секунд")
+
+with MeasureTime():
+    for _ in range(1000000):
+        pass
+
+

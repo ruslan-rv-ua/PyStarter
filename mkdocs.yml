@@ -224,7 +224,7 @@ nav:
   - 24. Атрибути:
     - Доступ до атрибутів: oop/attributes/attributes.md
     - Слоти: oop/attributes/slots.md
-    # - Контроль доступу до атрибутів: oop/attributes/access_control.md
+    - Контроль доступу до атрибутів: oop/attributes/access_control.md
     # - Дескриптори: oop/attributes/descriptors.md
   - 25. Виняткові ситуації:
     - Винятки: exceptions/exceptions.md
@@ -233,11 +233,25 @@ nav:
     - Попередження: exceptions/warnings.md
     - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
     - Менеджери контекста: exceptions/context_managers.md
-  - 26. Ітератори та генератори:
-    - Ітерабельні об'єкти: iterable/iterable.md
-  - 27. Елементи функційного програмування:
-    - Парадигма ФП: functional_programming/intro.md
-  # - 28. Типи та структури даних: comming_soon.md
+  - 26. Типи та структури даних:
+    - Типізація у програмуванні: types_and_structures/typing/typing.md
+    - Типи даних в Python: types_and_structures/typing/data_types.md
+    - Підказки типів: types_and_structures/typing/type_hinting.md
+  - 27. Числові типи:
+    - Системи числення: types_and_structures/numbers/number_system.md
+    - Цілі числа: types_and_structures/numbers/int.md
+    - Дійсні числа: types_and_structures/numbers/float.md
+    - Комплексні числа: types_and_structures/numbers/complex.md
+    - Булевий тип даних: types_and_structures/numbers/bool.md
+  # - 26. Ітератори та генератори:
+  #   - Ітерабельні об'єкти: iterable/iterable.md
+  #   - Ітератори: iterable/iterator.md
+  #   - Реалізація за допомогою __iter__: iterable/iterable_using_iter.md
+  #   - Реалізація за допомогою __getitem__: iterable/iterable_using_getitem.md
+  #   - Генератори: iterable/generator.md
+  #   - Генератори-вирази: iterable/generator_expression.md
+  # - 27. Елементи функційного програмування:
+  #   - Парадигма ФП: functional_programming/intro.md
   # - xx. Ввід та вивід: comming_soon.md
   # - xx. Модулі і пакети: comming_soon.md
   # - xx. Виконання програм: comming_soon.md
