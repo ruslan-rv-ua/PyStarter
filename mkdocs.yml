@@ -242,7 +242,7 @@ nav:
     - Цілі числа: types_and_structures/numbers/int.md
     - Дійсні числа: types_and_structures/numbers/float.md
     - Комплексні числа: types_and_structures/numbers/complex.md
-    - Булевий тип даних: types_and_structures/numbers/bool.md
+    # - Булевий тип даних: types_and_structures/numbers/bool.md
   # - 26. Ітератори та генератори:
   #   - Ітерабельні об'єкти: iterable/iterable.md
   #   - Ітератори: iterable/iterator.md

@@ -9,7 +9,7 @@ def double_number(x:int|float) -> int | float:
     
 i = double_number(2)
 f = double_number(2.0)
-# s = double_number("2")
+s = double_number("2")
 
 n = input('Введіть ціле число: ')
 print(1 + double_number(n))

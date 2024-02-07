@@ -33,19 +33,3 @@ with cd("\\") as dir1:
 print(os.getcwd())
 
 ################################
-
-import time
-
-class MeasureTime:
-    def __enter__(self):
-        self.start_time = time.time()
-        return self
-
-    def __exit__(self, exc_type, exc_value, traceback):
-        print(f"{time.time() - self.start_time} секунд")
-
-with MeasureTime():
-    for _ in range(1000000):
-        pass
-
-

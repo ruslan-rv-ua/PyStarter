@@ -155,3 +155,5 @@ hide:
 ## Додаткові матеріали
 
 - [Документація Python: бітові операції](https://docs.python.org/3/library/stdtypes.html#bitwise-operations-on-integer-types)
+- [Документація Python: перевизначення числових операцій](https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types)
+- [Документація Python: абстрактні числові типи](https://docs.python.org/3/library/numbers.html)
