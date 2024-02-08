@@ -12,7 +12,7 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/magic_iter.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/generator_expression.html">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Magic iter - PyStarter</title>
+        <title>Generator expression - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Magic iter
+              Generator expression
             
           </span>
         </div>
@@ -1165,85 +1165,48 @@
         
   
   
-    <a href="iterable.html" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    26. Ітератори та генератори
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../functional_programming/intro.html" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    27. Елементи функційного програмування
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
     <a href="../types_and_structures/typing/typing.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    28. Типи та структури даних
+    26. Типи та структури даних
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../types_and_structures/numbers/number_system.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    27. Числові типи
   </span>
   
 
@@ -1359,14 +1322,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    Лічилочка
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Знову Фібоначчі!
+    Шахівниця
   </a>
   
 </li>
@@ -1386,110 +1342,84 @@
                   
 
 
-  <h1>Magic iter</h1>
+  <h1>Generator expression</h1>
 
-<p>Один з способів реалізувати ітератор полягає у визначенні магічних методів <code>__iter__()</code> і <code>__next__</code>.</p>
-<p>Як вже зазначалось ітератор має реалізовувати магічний метод <code>__iter__()</code>, який має повертати сам ітератор. Зазвичай він виглядає так:</p>
+<p>Деякі прості генератори можна записати у вигляді виразів. Такі вирази виглядають так:</p>
+<ol>
+<li>Вираз з деякими змінними.</li>
+<li>Одне чи декілька ключових слів <code>for</code>. Задається які значення будуть приймати вищезгадані змінні. Синтаксис відповідає заголовку цикла <code>for</code>.</li>
+<li>Нуль або більше умов, які фільтрують значення змінних. Синтаксис відповідає заголовку оператора <code>if</code>. </li>
+</ol>
+<p>Такі вирази називають <strong><em>виразами-генераторами</em></strong> (generator expressions).</p>
+<p>Приклад. Необхідно отримати послідовність парних ступеней числа 2 від 0 до 10 включно. Напишемо спочатку "звичайний" генератор:</p>
 <pre><code>:::python
-def __iter__(self):
-    return self
-</code></pre>
-<p>Магічний метод <code>__next__</code> при кожному виклику має повертати чергове значення. Коли усі значення закінчаться, то при черговому і усіх наступних викликах цей метод має "піднімати" виняток <code>StopIteration</code></p>
-<h3 id="_1">Лічилочка</h3>
-<p>Розглянемо на прикладі. Напишемо простий ітератор який реалізує "лічилочку", тобто перебирає усі цілі числа від 1 до вказаного значення включно.</p>
-<pre><code>:::python
-class CountingOUt:
-    def __init__(self, count_to):
-        self.current = 1
-        self.count_to = count_to
-    def __iter__(self):
-        return self
-    def __next__(self):
-        if self.current &lt;= self.count_to:
-            current = self.current
-            self.current += 1
-            return current
-        else:
-            raise StopIteration
-</code></pre>
-<p>Як це працює:</p>
-<ul>
-<li>у конструкторі ми запам'ятовуємо значення, до якого будемо рахувати, а також встановлюємо "поточне" значення, тобто починаємо з 1</li>
-<li>у магічному методі <code>__next__</code> повертаємо поточне значення лічилочки, якщо ми звісно ще не вийшли за межі лічби, і збільшуємо поточне значення на 1. У всіх інших випадках "піднімаємо" виняток <code>StopIteration</code>, що буде сигналізувати що лічити вже більше нічого.</li>
-</ul>
-<p>Ну і спробуємо скористатись нашою лічилочкою:</p>
-<pre><code>:::python
-&gt;&gt;&gt; c = CountingOUt(5)
-&gt;&gt;&gt; for n in c:
-...     print(n)
+&gt;&gt;&gt; def pow2_gen():
+...     for x in range(11):
+...             if x % 2 == 0:
+...                     yield 2 ** x
 ...
-1
-2
-3
-4
-5
 &gt;&gt;&gt;
 </code></pre>
-<h3 id="_2">Знову Фібоначчі!</h3>
-<p>Давайте реалізуємо генерацію чисел Фібоначчі за допомогою ітераторів. </p>
-<p>Задача: отримати послідовність з <code>N</code> чисел Фібоначчі:</p>
+<p>Спробуємо знайти суму цих чисел. Функція <code>sum()</code> приймає ітерабельний об'єкт (переконайтесь у цьому самостійно), отже ми сміливо можемо передати їй генератор:</p>
 <pre><code>:::python
-class Fibo:
-    def __init__(self, max_count):
-        self.max_count = max_count
-        self.count = 0
-        self.first, self.second = 1, 1
-    def __iter__(self):
-        return self
-    def __next__(self):
-        self.count += 1
-        if self.count &gt; self.max_count:
-            raise StopIteration
-        elif self.count &gt; 2:
-            self.first, self.second = self.second, self.first + self.second
-            return self.second
-        else:
-            return 1
+&gt;&gt;&gt; print(sum(pow2_gen()))
+1365
+&gt;&gt;&gt;
 </code></pre>
-<p>Тепер можему зручно ітеруватись по послідовності Фібоначчі:</p>
+<p>А тепер напишемо генератор-вираз:</p>
 <pre><code>:::python
-&gt;&gt;&gt; for f in Fibo(8):
-...     print(f)
+&gt;&gt;&gt; g = (2**x for x in range(11) if x%2==0)
+&gt;&gt;&gt; g
+&lt;generator object &lt;genexpr&gt; at 0x0000029D8FF1FFC0&gt;
+&gt;&gt;&gt; sum(g)
+1365
+&gt;&gt;&gt;
+</code></pre>
+<p>Зауважте: вираз для генератора ми включили у круглі дужки. Якщо цього не зробити, виникає неоднозначність і Python не може точно інтрерпретувати такий вираз.</p>
+<h3 id="_1">Шахівниця</h3>
+<p>Спробуємо за допомогою генератор-вираза отримати усі клітинки шахівниці білого кольору:</p>
+<pre><code>:::python
+&gt;&gt;&gt; columns = 'ABCDEFGH'
+&gt;&gt;&gt; rows = '12345678'
+&gt;&gt;&gt; white_fields_generator = (
+...     column + row
+...     for column in columns
+...     for row in rows
+...     if (columns.index(column)+rows.index(row)) % 2 == 1
+... )
+&gt;&gt;&gt;
+</code></pre>
+<p>Давайте отримаємо усі білі клітинки одним символьним рядком:</p>
+<pre><code>:::python
+&gt;&gt;&gt; print(' '.join(white_fields_generator))
+A2 A4 A6 A8 B1 B3 B5 B7 C2 C4 C6 C8 D1 D3 D5 D7 E2 E4 E6 E8 F1 F3 F5 F7 G2 G4 G6 G8 H1 H3 H5 H7
+&gt;&gt;&gt;
+</code></pre>
+<p>Метод <code>str.join()</code> приймає ітерабельний об'єкт (переконайтесь у цьому самостійно), а  генератор і є ітерабельним об'єктом.</p>
+<p>А давайте отримаємо усі білі клітинки перших двох рядів шахівниці. Будемо використовувати генератор як звичайний ітератор самим "примітивним" способом — використовуючи функцію <code>next()</code>:</p>
+<pre><code>:::python
+&gt;&gt;&gt; white_fields_generator = (column + row for column in columns for row in rows if (columns.index(column)+rows.index(row)) % 2 == 1)
+&gt;&gt;&gt; for _ in range(8):
+...     print(next(white_fields_generator))
 ...
-1
-1
-2
-3
-5
-8
-13
-21
+A2
+A4
+A6
+A8
+B1
+B3
+B5
+B7
 &gt;&gt;&gt;
 </code></pre>
-<p>Створити список з послідовності Фібоначчі? Просто!:</p>
+<p>Зауважте: перед використанням генератор треба створити знову.</p>
+<p>Можна і по-іншому, подумайте який спосіб краще:</p>
 <pre><code>:::python
-&gt;&gt;&gt; f = list(Fibo(7))
-&gt;&gt;&gt; f
-[1, 1, 2, 3, 5, 8, 13]
+&gt;&gt;&gt; white_fields_generator = (column + row for column in columns for row in rows if (columns.index(column)+rows.index(row)) % 2 == 1)
+&gt;&gt;&gt; print(list(white_fields_generator)[:8])
+['A2', 'A4', 'A6', 'A8', 'B1', 'B3', 'B5', 'B7']
 &gt;&gt;&gt;
 </code></pre>
-<p>Щоб зрозуміти як це працює, давайте подивимось клас <code>list</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; help(list)
-Help on class list in module builtins:
-
-class list(object)
- |  list() -&gt; new empty list
- |  list(iterable) -&gt; new list initialized from iterable's items
- |
- ...
- ...
-</code></pre>
-<p>Тут для нас цікаве наступне:</p>
-<blockquote>
-<p>list(iterable) -&gt; new list initialized from iterable's items</p>
-</blockquote>
-<p>тобто якщо конструктору передати ітерабельний об'єкт, то буде створено список з елементів цього ітерабельного об'єкта.</p>
 
 
 

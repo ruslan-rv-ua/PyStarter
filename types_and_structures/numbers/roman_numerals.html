@@ -12,24 +12,24 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/generator_expressions.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/roman_numerals.html">
       
       
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>Generator expressions - PyStarter</title>
+        <title>Римська система числення - PyStarter</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -50,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="../_stylesheets/dark_theme.css">
+      <link rel="stylesheet" href="../../_stylesheets/dark_theme.css">
     
-      <link rel="stylesheet" href="../_stylesheets/codehilite.css">
+      <link rel="stylesheet" href="../../_stylesheets/codehilite.css">
     
-      <link rel="stylesheet" href="../_stylesheets/fixes.css">
+      <link rel="stylesheet" href="../../_stylesheets/fixes.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -97,7 +97,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Хедер">
-    <a href="../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
+    <a href="../../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg>
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Generator expressions
+              Римська система числення
             
           </span>
         </div>
@@ -145,6 +145,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -154,7 +156,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Навігація" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
+    <a href="../../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89Z"/></svg>
@@ -171,7 +173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -190,7 +192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../miths_about_education.html" class="md-nav__link">
+      <a href="../../miths_about_education.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -209,7 +211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about_python.html" class="md-nav__link">
+      <a href="../../about_python.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -240,7 +242,7 @@
         
   
   
-    <a href="../preparations/os.html" class="md-nav__link">
+    <a href="../../preparations/os.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -277,7 +279,7 @@
         
   
   
-    <a href="../vars_and_types/types.html" class="md-nav__link">
+    <a href="../../vars_and_types/types.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -314,7 +316,7 @@
         
   
   
-    <a href="../source_code/source_code.html" class="md-nav__link">
+    <a href="../../source_code/source_code.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -351,7 +353,7 @@
         
   
   
-    <a href="../strings/strings.html" class="md-nav__link">
+    <a href="../../strings/strings.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -388,7 +390,7 @@
         
   
   
-    <a href="../functions/functions.html" class="md-nav__link">
+    <a href="../../functions/functions.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -425,7 +427,7 @@
         
   
   
-    <a href="../bool_logic/bool.html" class="md-nav__link">
+    <a href="../../bool_logic/bool.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -462,7 +464,7 @@
         
   
   
-    <a href="../if/if_statement.html" class="md-nav__link">
+    <a href="../../if/if_statement.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -499,7 +501,7 @@
         
   
   
-    <a href="../functions_def/functions_explained.html" class="md-nav__link">
+    <a href="../../functions_def/functions_explained.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -536,7 +538,7 @@
         
   
   
-    <a href="../loop_while/loops.html" class="md-nav__link">
+    <a href="../../loop_while/loops.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -573,7 +575,7 @@
         
   
   
-    <a href="../sequences/list.html" class="md-nav__link">
+    <a href="../../sequences/list.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -610,7 +612,7 @@
         
   
   
-    <a href="../objects/objects_and_vars.html" class="md-nav__link">
+    <a href="../../objects/objects_and_vars.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -647,7 +649,7 @@
         
   
   
-    <a href="../loop_for/for.html" class="md-nav__link">
+    <a href="../../loop_for/for.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -684,7 +686,7 @@
         
   
   
-    <a href="../methods/methods.html" class="md-nav__link">
+    <a href="../../methods/methods.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -721,7 +723,7 @@
         
   
   
-    <a href="../methods_list/list_methods.html" class="md-nav__link">
+    <a href="../../methods_list/list_methods.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -758,7 +760,7 @@
         
   
   
-    <a href="../dict/dict.html" class="md-nav__link">
+    <a href="../../dict/dict.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -795,7 +797,7 @@
         
   
   
-    <a href="../text_files/unicode.html" class="md-nav__link">
+    <a href="../../text_files/unicode.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -832,7 +834,7 @@
         
   
   
-    <a href="../modules/modules.html" class="md-nav__link">
+    <a href="../../modules/modules.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -869,7 +871,7 @@
         
   
   
-    <a href="../functions3/strategies.html" class="md-nav__link">
+    <a href="../../functions3/strategies.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -906,7 +908,7 @@
         
   
   
-    <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+    <a href="../../paradigmas/paradigmas.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -943,7 +945,7 @@
         
   
   
-    <a href="../oop/basics/basis.html" class="md-nav__link">
+    <a href="../../oop/basics/basis.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -980,7 +982,7 @@
         
   
   
-    <a href="../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
+    <a href="../../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1017,7 +1019,7 @@
         
   
   
-    <a href="../oop/inheritance/inheritance_basis.html" class="md-nav__link">
+    <a href="../../oop/inheritance/inheritance_basis.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1054,7 +1056,7 @@
         
   
   
-    <a href="../oop/polymorphism/polymorphism_basis.html" class="md-nav__link">
+    <a href="../../oop/polymorphism/polymorphism_basis.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1091,7 +1093,7 @@
         
   
   
-    <a href="../oop/attributes/attributes.html" class="md-nav__link">
+    <a href="../../oop/attributes/attributes.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1128,7 +1130,7 @@
         
   
   
-    <a href="../exceptions/exceptions.html" class="md-nav__link">
+    <a href="../../exceptions/exceptions.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1165,11 +1167,11 @@
         
   
   
-    <a href="iterable.html" class="md-nav__link">
+    <a href="../typing/typing.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    26. Ітератори та генератори
+    26. Типи та структури даних
   </span>
   
 
@@ -1202,11 +1204,11 @@
         
   
   
-    <a href="../functional_programming/intro.html" class="md-nav__link">
+    <a href="number_system.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    27. Елементи функційного програмування
+    27. Числові типи
   </span>
   
 
@@ -1239,44 +1241,7 @@
         
   
   
-    <a href="../types_and_structures/typing/typing.html" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    28. Типи та структури даних
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../batteries/random.html" class="md-nav__link">
+    <a href="../../batteries/random.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1301,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zen.html" class="md-nav__link">
+      <a href="../../zen.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1320,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resources.html" class="md-nav__link">
+      <a href="../../resources.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1341,7 +1306,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1349,6 +1316,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Зміст">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1358,8 +1327,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Шахівниця
+  <a href="#_2" class="md-nav__link">
+    Додаткові матеріали
   </a>
   
 </li>
@@ -1379,86 +1348,82 @@
                   
 
 
-  <h1>Generator expressions</h1>
-
-<p>Деякі прості генератори можна записати у вигляді виразів. Такі вирази виглядають так:</p>
-<ol>
-<li>Вираз з деякими змінними.</li>
-<li>Одне чи декілька ключових слів <code>for</code>. Задається які значення будуть приймати вищезгадані змінні. Синтаксис відповідає заголовку цикла <code>for</code>.</li>
-<li>Нуль або більше умов, які фільтрують значення змінних. Синтаксис відповідає заголовку оператора <code>if</code>. </li>
-</ol>
-<p>Такі вирази називають <strong><em>виразами-генераторами</em></strong> (generator expressions).</p>
-<p>Приклад. Необхідно отримати послідовність парних ступеней числа 2 від 0 до 10 включно. Напишемо спочатку "звичайний" генератор:</p>
-<pre><code>:::python
-&gt;&gt;&gt; def pow2_gen():
-...     for x in range(11):
-...             if x % 2 == 0:
-...                     yield 2 ** x
-...
-&gt;&gt;&gt;
-</code></pre>
-<p>Спробуємо знайти суму цих чисел. Функція <code>sum()</code> приймає ітерабельний об'єкт (переконайтесь у цьому самостійно), отже ми сміливо можемо передати їй генератор:</p>
-<pre><code>:::python
-&gt;&gt;&gt; print(sum(pow2_gen()))
-1365
-&gt;&gt;&gt;
-</code></pre>
-<p>А тепер напишемо генератор-вираз:</p>
-<pre><code>:::python
-&gt;&gt;&gt; g = (2**x for x in range(11) if x%2==0)
-&gt;&gt;&gt; g
-&lt;generator object &lt;genexpr&gt; at 0x0000029D8FF1FFC0&gt;
-&gt;&gt;&gt; sum(g)
-1365
-&gt;&gt;&gt;
-</code></pre>
-<p>Зауважте: вираз для генератора ми включили у круглі дужки. Якщо цього не зробити, виникає неоднозначність і Python не може точно інтрерпретувати такий вираз.</p>
-<h3 id="_1">Шахівниця</h3>
-<p>Спробуємо за допомогою генератор-вираза отримати усі клітинки шахівниці білого кольору:</p>
-<pre><code>:::python
-&gt;&gt;&gt; columns = 'ABCDEFGH'
-&gt;&gt;&gt; rows = '12345678'
-&gt;&gt;&gt; white_fields_generator = (
-...     column + row
-...     for column in columns
-...     for row in rows
-...     if (columns.index(column)+rows.index(row)) % 2 == 1
-... )
-&gt;&gt;&gt;
-</code></pre>
-<p>Давайте отримаємо усі білі клітинки одним символьним рядком:</p>
-<pre><code>:::python
-&gt;&gt;&gt; print(' '.join(white_fields_generator))
-A2 A4 A6 A8 B1 B3 B5 B7 C2 C4 C6 C8 D1 D3 D5 D7 E2 E4 E6 E8 F1 F3 F5 F7 G2 G4 G6 G8 H1 H3 H5 H7
-&gt;&gt;&gt;
-</code></pre>
-<p>Метод <code>str.join()</code> приймає ітерабельний об'єкт (переконайтесь у цьому самостійно), а  генератор і є ітерабельним об'єктом.</p>
-<p>А давайте отримаємо усі білі клітинки перших двох рядів шахівниці. Будемо використовувати генератор як звичайний ітератор самим "примітивним" способом — використовуючи функцію <code>next()</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; white_fields_generator = (column + row for column in columns for row in rows if (columns.index(column)+rows.index(row)) % 2 == 1)
-&gt;&gt;&gt; for _ in range(8):
-...     print(next(white_fields_generator))
-...
-A2
-A4
-A6
-A8
-B1
-B3
-B5
-B7
-&gt;&gt;&gt;
-</code></pre>
-<p>Зауважте: перед використанням генератор треба створити знову.</p>
-<p>Можна і по-іншому, подумайте який спосіб краще:</p>
-<pre><code>:::python
-&gt;&gt;&gt; white_fields_generator = (column + row for column in columns for row in rows if (columns.index(column)+rows.index(row)) % 2 == 1)
-&gt;&gt;&gt; print(list(white_fields_generator)[:8])
-['A2', 'A4', 'A6', 'A8', 'B1', 'B3', 'B5', 'B7']
-&gt;&gt;&gt;
-</code></pre>
+<h1 id="_1">Римська система числення</h1>
+<p>Римська система числення, або Римські цифри — 
+непозиційна система числення, 
+що використовувалися стародавніми римлянами. </p>
+<p>Дана система базується на використанні особливих знаків (літер латинської абетки) для десяткових розрядів <!-- I = 1, X = 10, С = 100, М = 1000 -->
+та їх половин. <!-- V = 5, L = 50, D = 500 -->
+Натуральні числа записуються за допомогою повторення цих цифр. 
+При цьому, якщо більша цифра стоїть перед меншою, 
+то вони додаються (принцип додавання), 
+якщо ж менша перед більшою, то менша віднімається від більшої (принцип віднімання). 
+Останнє правило застосовується тільки для уникнення чотириразового повторення однієї цифри. 
+Наприклад, I, X, С ставляться відповідно перед X, С, М для позначення 9, 90, 900 
+або перед V, L, D для позначення 4, 40, 400. 
+Наприклад: </p>
+<ul>
+<li>VI = 5+1 = 6</li>
+<li>IV = 5 — 1 = 4 (замість IIII)</li>
+<li>XIX = 10 + 10 — 1 = 19 (замість XVIIII)</li>
+<li>XL = 50 — 10 = 40 (замість XXXX)</li>
+<li>XXXIII = 10 + 10 + 10 + 1 + 1 + 1 = 33</li>
+</ul>
+<p>Ця система числення на сьогодні майже не застосовується, бо виконання арифметичних дій над багатозначними числами в цій системі дуже незручне. 
+Тим не менш, її використовують для позначення розділів і частин законів, томів видань, століть, 
+інколи років, днів тижня, місяців у датах (1.V.1975), 
+на циферблатах деяких годинників, 
+порядкових числівників, 
+а також з естетичною метою. </p>
+<p>Римські цифри, які позначають</p>
+<table>
+<thead>
+<tr>
+<th>Арабські цифри</th>
+<th>Римскі цифри</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>I</td>
+</tr>
+<tr>
+<td>5</td>
+<td>V</td>
+</tr>
+<tr>
+<td>10</td>
+<td>X</td>
+</tr>
+<tr>
+<td>50</td>
+<td>L</td>
+</tr>
+<tr>
+<td>100</td>
+<td>C</td>
+</tr>
+<tr>
+<td>500</td>
+<td>D</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>M</td>
+</tr>
+</tbody>
+</table>
+<p>Максимальне число, яке можна записати у цій системі числення — 
+це 3999 = MMMCMXCIX.</p>
+<h2 id="_2">Додаткові матеріали</h2>
+<ul>
+<li><a href="https://uk.wikipedia.org/wiki/Римська_система_числення">Вікіпедія: Римська система числення</a></li>
+</ul>
 
 
+
+  
 
 
 
@@ -1511,10 +1476,10 @@ B7
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>

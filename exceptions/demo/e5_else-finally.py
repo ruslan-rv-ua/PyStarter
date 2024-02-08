@@ -11,7 +11,7 @@ def div(numbers):
         print('Піймали', e)
         return
     print(result)
-# div([1,0])
+# div((1,0))
 # div([1])
 # div(1)
 

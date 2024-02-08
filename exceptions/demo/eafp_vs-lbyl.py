@@ -5,7 +5,7 @@ def f(string):
         return True
     return False
     
-r = f('-42.3.2')
+r = f('-42.3')
 
 def f(string):
 	try:

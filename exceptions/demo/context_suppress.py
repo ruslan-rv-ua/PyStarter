@@ -1,7 +1,17 @@
-class ErrorsSuppressor:
+from contextlib import suppress, redirect_stdout
+
+with suppress(ZeroDivisionError, AttributeError):
+    1/0
+    print('done')
+    
+
+
+
+class NoErrors:
     def __init__(self, *args, log=True):
-        self.log = log
         self.exceptions = args
+        self.log = log
+        
         
     def __enter__(self):
         pass
@@ -13,20 +23,12 @@ class ErrorsSuppressor:
             return True
         return False
             
-with ErrorsSuppressor(ZeroDivisionError):
-with ErrorsSuppressor(IndexError, ZeroDivisionError):
+with NoErrors(IndexError, ZeroDivisionError):
+# with NoErrors(ZeroDivisionError):
     1/0
     [][0]
     print('done')
 
 
 
-
-from contextlib import suppress
-
-with suppress(ZeroDivisionError, AttributeError):
-    print('start')
-    1/0
-    print('end')
-    
 

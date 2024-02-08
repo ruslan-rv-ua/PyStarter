@@ -19,9 +19,20 @@ except ZeroDivisionError:
 
 #######################
 
-l = [2,1,0]
-#index = 2
+def f():
+    1/0
+    
+try:
+    1 / f()
+except ZeroDivisionError:
+    print('Zero division catched')
+
+#######################
+
+l = [1,0]
+index = 2
 try:
     r = 1/l[index]
-except Exception:
+except Exception as e:
+    print(e)
     r = float('inf')
