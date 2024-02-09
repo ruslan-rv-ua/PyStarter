@@ -14,9 +14,16 @@ with open('help.txt', 'w') as f:
         
 with open('help.txt', 'w') as f:
     with redirect_stdout(f):
-        for i in range(10):
-            print(i)
+        print('PyStarter')
+    
 
 ###########
 # contextlib.chdir
+
+from contextlib import chdir
+
+print(os.getcwd())
+with chdir('\\'):
+    print(os.getcwd())
+print(os.getcwd())
 

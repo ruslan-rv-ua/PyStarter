@@ -19,6 +19,6 @@ class POI:
     name: str
     x=1
     
-p = POI(name='WC', lat=1.1, lon=2.2)
+p = POI(name='cafe', lat=1.1, lon=2.2)
 p.lat = 3
-    
+p.x

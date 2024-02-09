@@ -12,7 +12,7 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/bool.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/range.html">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Булевий тип даних - PyStarter</title>
+        <title>Range - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Булевий тип даних
+              Range
             
           </span>
         </div>
@@ -144,8 +144,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1204,7 +1202,7 @@
         
   
   
-    <a href="number_system.html" class="md-nav__link">
+    <a href="../numbers/number_system.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1306,9 +1304,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1316,8 +1312,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Зміст">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1327,57 +1321,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Створення об'єктів
+  <a href="#_1" class="md-nav__link">
+    Створення діапазонів:
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bool" class="md-nav__link">
-    Приведення інших типів до bool
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Булевий контекст
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Логічні операції
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    "Ліниві" логічні обчислення
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Операції порівняння
-  </a>
-  
-    <nav class="md-nav" aria-label="Операції порівняння">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    Згортання операцій порівняння
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1396,314 +1342,49 @@
                   
 
 
-<h1 id="_1">Булевий тип даних</h1>
-<p>Має усього два значення: <code>False</code> та <code>True</code>. </p>
-<p>Тип <code>bool</code> успадковано від <code>int</code>: </p>
-<pre><code>&gt;&gt;&gt; bool.mro()
-[&lt;class 'bool'&gt;, &lt;class 'int'&gt;, &lt;class 'object'&gt;]
-&gt;&gt;&gt;
-</code></pre>
-<p>Успадковуватись від <code>bool</code> не можна: </p>
-<pre><code>&gt;&gt;&gt; class A(bool):pass
-...
-Traceback (most recent call last):
-File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-TypeError: type 'bool' is not an acceptable base type
-&gt;&gt;&gt;
-</code></pre>
-<p>Літералам <code>False</code> та <code>True</code> відповідають цілі числа <code>0</code> і <code>1</code>. </p>
-<pre><code>&gt;&gt;&gt; True == 1
-True
-&gt;&gt;&gt; True is 1
-&lt;stdin&gt;:1: SyntaxWarning: "is" with a literal. Did you mean "=="?
-False
-&gt;&gt;&gt; True * 7
-7
-&gt;&gt;&gt;
-</code></pre>
-<h3 id="_2">Створення об'єктів</h3>
-<ul>
-<li>за допомогою літералів</li>
-<li>bool() без аргументів повертає <code>False</code></li>
-</ul>
-<h3 id="bool">Приведення інших типів до <code>bool</code></h3>
-<pre><code>bool(x)
-</code></pre>
-<p>Функція повертає <code>False</code> у наступних випадках: </p>
-<ul>
-<li>якщо у об'єкта <code>x</code> визначено метод <code>__bool__()</code> і він повертає <code>False</code></li>
-<li>якщо у об'єкта <code>x</code> визначено метод <code>__len__()</code> і він повертає <code>0</code></li>
-<li>якщо значення <code>x</code> числового типу дорівнює нулю (0, 0.0, 0j, ...)</li>
-<li>якщо об'єкт <code>x</code> — пустий контейнер (list, str, tuple, dict, ...)</li>
-<li>якщо значення об'єкта <code>x</code> — одне з <code>None</code> чи <code>False</code></li>
-</ul>
-<p>У всіх інших випадках результатом функції буде <code>True</code>.</p>
-<pre><code>&gt;&gt; bool(0)
-False
-&gt;&gt;&gt; bool(1)
-True
-&gt;&gt;&gt; bool('string')
-True
-&gt;&gt;&gt; bool('')
-False
-&gt;&gt;&gt; bool()
-False
-&gt;&gt;&gt;
-</code></pre>
-<h3 id="_3">Булевий контекст</h3>
-<p>Значення об'єктів можна розглядати як 
-істиноподібні (truthy) і хибоподібні (falsy). </p>
-<ul>
-<li><code>x</code> є falsy, якщо <code>bool(x)==False</code></li>
-<li><code>x</code> є truthy, якщо <code>bool(x)==True</code></li>
-</ul>
-<p>Коли ми використовуємо значення у логічних виразах 
-або при перевірці умов в інструкціях <code>if</code> та <code>while</code>, 
-ми використовуємо їх у <strong><em>булевому контексті</em></strong>. </p>
-<p>Приклад. Функції передається непустий список цілих чисел. 
-Функція виводить лише парні числа з цього списка. </p>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">print_even</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span> <span class="c1"># if len(data) == 0:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The argument data cannot be empty&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># if value % 2 == 0:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</code></pre></div>
-Класи можуть визначати власний метод <code>__bool__()</code> для визначення поведінки екземплярів у булевому контексті:</p>
-<pre><code>&gt;&gt;&gt; class MyClass:          f):
-...     def __bool__(self):
-...         return False
-...
-&gt;&gt;&gt; c = MyClass()
-&gt;&gt;&gt; bool(c)
-False
-&gt;&gt;&gt; class AlwaysTrue: pass
-...
-&gt;&gt;&gt; c = AlwaysTrue()
-&gt;&gt;&gt; bool(c)
-True
-&gt;&gt;&gt;
-</code></pre>
-<h3 id="_4">Логічні операції</h3>
-<p>Оператори у порядку збільшення пріорітету: </p>
+  <h1>Range</h1>
+
+<blockquote>
+<p><strong><em>Діапазон</em></strong> — немутабельна послідовність цілих чисел, яка задається початковим значенням, кінцевим значенням і кроком. </p>
+</blockquote>
+<p>Кортежі представлені класом <code>range</code>. Кортежі підтримуєть усі загальні для усіх послідовностей операції, крім конкатенації та повторення. </p>
+<h3 id="_1">Створення діапазонів:</h3>
 <table>
 <thead>
 <tr>
-<th>Операція</th>
-<th>Результат</th>
+<th>спосіб</th>
+<th>приклад</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>x or y</code></td>
-<td><code>y</code> якщо <code>bool(x) is False</code>, інакше <code>x</code></td>
+<td>вказуємо тільки кінцеве значення</td>
+<td>range(10)</td>
 </tr>
 <tr>
-<td><code>x and y</code></td>
-<td><code>x</code> якщо <code>bool(x) is False</code>, інакше <code>y</code></td>
+<td>вказуємо початкове та кінцеве значення</td>
+<td>range(1,11)</td>
 </tr>
 <tr>
-<td><code>not x</code></td>
-<td><code>True</code> якщо <code>bool(x) is False</code>, інакше <code>False</code></td>
+<td>вказуємо початкове, кінцеве значення та крок</td>
+<td>range(1,11,2)</td>
 </tr>
 </tbody>
 </table>
-<p>Приклади: </p>
-<pre><code>&gt;&gt;&gt; 7 or 5
-7
-&gt;&gt;&gt; 'string' or None
-'string'
-&gt;&gt;&gt; None or 'string'
-'string'
-&gt;&gt;&gt; def f(list_=None): # аргумент з дефолтним значенням [] мутабельного типу — не найкраща ідея, тому None
-...     new_list = list_ or []
-...     return new_list
-...
-&gt;&gt;&gt; f()
-[]
-&gt;&gt;&gt; f([1,2])
-[1, 2]
-&gt;&gt;&gt;
-&gt;&gt;&gt; 7 and 5
-5
-&gt;&gt;&gt; 'string' and False
-False
-&gt;&gt;&gt; False and 'string'
-False
-&gt;&gt;&gt;
+<p>Початкове значення за замовчуванням дорівнює нулю, крок – одиниці. Якщо задати нульовий крок — буде піднято виняток <code>ValueError</code>.</p>
+<p>Параметри конструктора мають бути цілими числами (або екземплярами класа <code>int</code>, або 
+будь-який об'єкт з методом <code>__index__</code>).</p>
+<p>Елементи діапазона <code>r</code> визначаються за формулою:</p>
+<pre><code>r[i] = start + step * i
 </code></pre>
-<p>Оператор <code>not</code> має нижчий пріорітет ніж інші "нелогічні" оператори. 
-Тому вираз </p>
-<pre><code>not a == b
-</code></pre>
-<p>інтерпретується як</p>
-<pre><code>not (a == b)
-</code></pre>
-<p>Наступний вираз: </p>
-<pre><code>a == not b
-</code></pre>
-<p>не є коректним і призведе до <code>SyntaxError</code>. </p>
-<h3 id="_5">"Ліниві" логічні обчислення</h3>
-<p>Операція <code>or</code> є "лінивою". 
-Значення другого операнда обчислюється лише тоді, коли перший операнд є falsy: </p>
-<pre><code>&gt;&gt;&gt; l = [1, 2]
-&gt;&gt;&gt; l.pop() or l.pop()
-2
-&gt;&gt;&gt; l
-[1]
-&gt;&gt;&gt; l = [1, 0]
-&gt;&gt;&gt; l.pop() or l.pop()
-1
-&gt;&gt;&gt; l
-[]
-&gt;&gt;&gt;
-</code></pre>
-<p>Операція <code>and</code> є "лінивою". 
-Значення другого операнда обчислюється лише тоді, коли перший операнд є truthy: </p>
-<pre><code>&gt;&gt;&gt; l = [1, 0]
-&gt;&gt;&gt; l.pop() and l.pop()
-0
-&gt;&gt;&gt; l
-[1]
-&gt;&gt;&gt; l = [1, 2]
-&gt;&gt;&gt; l.pop() and l.pop()
-1
-&gt;&gt;&gt; l
-[]
-&gt;&gt;&gt;
-</code></pre>
-<h3 id="_6">Операції порівняння</h3>
-<p>Усього в Python є вісім операцій порівняння. 
-Усі операції порівняння мають однаковий пріорітет. 
-У операцій порівняння пріорітет вищий ніж у логічних операцій. </p>
-<table>
-<thead>
-<tr>
-<th>Операція</th>
-<th>Що означає</th>
-<th>Спеціальний метод</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&lt;</td>
-<td>строго меньше</td>
-<td><code>__lt__()</code></td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>меньше або дорівнює</td>
-<td><code>__le__()</code></td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>строго більше</td>
-<td><code>__gt__()</code></td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>більше або дорівнює</td>
-<td><code>__ge__()</code></td>
-</tr>
-<tr>
-<td>==</td>
-<td>дорівнює</td>
-<td><code>__eq__()</code></td>
-</tr>
-<tr>
-<td>!=</td>
-<td>не дорівнює</td>
-<td></td>
-</tr>
-<tr>
-<td>is</td>
-<td>ідентичне</td>
-<td></td>
-</tr>
-<tr>
-<td>is not</td>
-<td>неідентичне</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Об'єкти різних типів, за винятком числових, при порівнянні на рівність завжди дають <code>False</code>. </p>
-<pre><code>&gt;&gt;&gt; [1,2] == '12'
-False
-&gt;&gt;&gt; 1 == 1.0
-True
-&gt;&gt;&gt;
-</code></pre>
-<p>Об'єкти одного класа за замовчуванням не рівні між собою: </p>
-<pre><code>&gt;&gt;&gt; class MyClass:
-...     def __init__(self, value):
-...             self.value = value
-...
-&gt;&gt;&gt; c1 = MyClass(1)
-&gt;&gt;&gt; c2 = MyClass(1)
-&gt;&gt;&gt; c1 == c2
-False
-&gt;&gt;&gt;
-</code></pre>
-<p>Для порівняння на рівність клас має реалізувати відповідний магічний метод: </p>
-<pre><code>&gt;&gt;&gt; class MyClass:
-...     def __init__(self, value):
-...             self.value = value
-...     def __eq__(self, other):
-...             return self.value == other.value
-...
-&gt;&gt;&gt; c1 = MyClass(1)
-&gt;&gt;&gt; c2 = MyClass(1)
-&gt;&gt;&gt; c1 == c2
-True
-&gt;&gt;&gt;
-</code></pre>
-<p>Щоб об'єкти одного класа можна було впорядкувати (наприклад, відсортувати), 
-клас має реалізувати відповідні магічні методи: 
-<code>__lt__(), __le__(), __gt__() і __ge__()</code>. 
-Але, як правило, достатньо щоб клас реалізував <code>__lt__()</code> та <code>__eq__</code>. </p>
-<pre><code>&gt;&gt;&gt; class V:
-...     def __init__(self, value):
-...         self.value = value
-...     def __eq__(self, other):
-...         return self.value == other.value
-...     def __lt__(self, other):
-...         return self.value &lt; other.value
-...     def __repr__(self):
-...         return f'{self.__class__.__name__}({self.value})'
-...
-&gt;&gt;&gt;
-&gt;&gt;&gt; v1 = V(1)
-&gt;&gt;&gt; v2 = V(1)
-&gt;&gt;&gt; v3 = V(2)
-&gt;&gt;&gt; l = [V(777), v3, v2, v1, v3]
-&gt;&gt;&gt; l
-[V(777), V(2), V(1), V(1), V(2)]
-&gt;&gt;&gt; l.sort()
-&gt;&gt;&gt; l
-[V(1), V(1), V(2), V(2), V(777)]
-&gt;&gt;&gt;
-</code></pre>
-<p>Поведінка <code>is</code> та <code>is not</code> не може бути перевизначена. 
-Ця операція працює з об'єктами будь-яких класів і ніколи не піднімає винятків. </p>
-<pre><code>&gt;&gt;&gt; a=1
-&gt;&gt;&gt; s='s'
-&gt;&gt;&gt; a is s
-False
-&gt;&gt;&gt;
-</code></pre>
-<h4 id="_7">Згортання операцій порівняння</h4>
-<p>Наступний вираз:</p>
-<pre><code>x &lt; y &lt;= z
-</code></pre>
-<p>є еквівалентом виразу:</p>
-<pre><code>x &lt; y and y &lt;= z
-</code></pre>
-<p>Зауважте: значення <code>y</code> обчислюється лише один раз. </p>
+<p>де:</p>
+<ul>
+<li><code>i &gt;= 0</code></li>
+<li><code>r[i] &lt; stop</code> для <code>step &gt; 0</code></li>
+<li><code>r[i] &gt; stop</code> для <code>step &lt; 0</code></li>
+</ul>
 
 
-
-  
 
 
 
