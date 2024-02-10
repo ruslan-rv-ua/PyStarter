@@ -69,7 +69,7 @@ hide:
 ### Булевий контекст
 
 Значення об'єктів можна розглядати як 
-істині (truthy) і хибні (falsy). 
+істиноподібні (truthy) і хибоподібні (falsy). 
 
 - `x` є falsy, якщо `bool(x)==False`
 - `x` є truthy, якщо `bool(x)==True`
@@ -81,13 +81,14 @@ hide:
 Приклад. Функції передається непустий список цілих чисел. 
 Функція виводить лише парні числа з цього списка. 
 
-    def print_even(data):
-        if not data: # if len(data) == 0:
-            raise ValueError("The argument data cannot be empty")
-        for value in data:
-            if not value % 2: # if value % 2 == 0:
-                print(value)
-
+```python
+def print_even(data):
+    if not data: # if len(data) == 0:
+        raise ValueError("The argument data cannot be empty")
+    for value in data:
+        if not value % 2: # if value % 2 == 0:
+            print(value)
+```
 Класи можуть визначати власний метод `__bool__()` для визначення поведінки екземплярів у булевому контексті:
 
     >>> class MyClass:          f):

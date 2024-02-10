@@ -1,9 +1,16 @@
 class EvenNumbers:
-    def __init__(self, limit):
-        self.even_range = range(0, limit, 2)
+    _instance = None
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
     def __contains__(self, item):
-        return isinstance(item, int) and item in self.even_range
+        if not isinstance(item, int):
+            raise ValueError()
+        return item % 2 == 0
     
-even_numbers = EvenNumbers(10)
+r = 2 in EvenNumbers()
 
-r = 10 in even_numbers
+e1 = EvenNumbers()
+e2 = EvenNumbers()
+r = e1 is e2

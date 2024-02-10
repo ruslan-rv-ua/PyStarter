@@ -21,6 +21,6 @@ class MeasureTime:
         print(f"Час виконання: {monotonic() - self.start_time:.2f} секунд")
 
 # Заміряємо 10 мільйонів ітерацій:
-with MeasureTime():
+with MeasureTime() as t:
     for _ in range(10000000):
         pass

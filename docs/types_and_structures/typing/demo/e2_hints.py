@@ -1,6 +1,6 @@
 from typing import Union
 
-# type number = int | float
+type number = int | float
 
 def double_number(x:int|float) -> int | float:
 # def double_number(x:Union[int, float]) -> Union[int, float]:

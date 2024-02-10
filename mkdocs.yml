@@ -242,8 +242,20 @@ nav:
     - Цілі числа: types_and_structures/numbers/int.md
     - Дійсні числа: types_and_structures/numbers/float.md
     - Комплексні числа: types_and_structures/numbers/complex.md
-    # - Булевий тип даних: types_and_structures/numbers/bool.md
-  # - 26. Ітератори та генератори:
+    - Булевий тип даних: types_and_structures/numbers/bool.md
+  - 28. Послідовності:
+    - Послідовності в Python: types_and_structures/sequences/sequences.md
+    # - Списки: types_and_structures/sequences/list.md
+    # - Кортежі: types_and_structures/sequences/tuple.md
+    - Діапазони: types_and_structures/sequences/range.md
+    - Символьні рядки: types_and_structures/sequences/string.md
+    - Бінарні послідовності: types_and_structures/sequences/binary.md
+  # - 29. Відображення та множини:
+  #   - Хешування даних: types_and_structures/mappings_and_sets/hash.md
+  #   - Об'єкти, що хешуються: types_and_structures/mappings_and_sets/hashable.md
+  #   - Відображення в Python: types_and_structures/mappings_and_sets/mappings.md
+  #   - Множини в Python: types_and_structures/mappings_and_sets/sets.md
+  # - 30. Ітератори та генератори:
   #   - Ітерабельні об'єкти: iterable/iterable.md
   #   - Ітератори: iterable/iterator.md
   #   - Реалізація за допомогою __iter__: iterable/iterable_using_iter.md

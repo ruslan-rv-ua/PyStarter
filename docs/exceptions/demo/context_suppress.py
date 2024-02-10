@@ -1,3 +1,12 @@
+from contextlib import suppress, redirect_stdout
+
+with suppress(ZeroDivisionError, AttributeError):
+    1/0
+    print('done')
+    
+
+
+
 class NoErrors:
     def __init__(self, *args, log=True):
         self.exceptions = args
@@ -22,11 +31,4 @@ with NoErrors(IndexError, ZeroDivisionError):
 
 
 
-
-from contextlib import suppress
-
-with suppress(ZeroDivisionError, AttributeError):
-    1/0
-    print('done')
-    
 
