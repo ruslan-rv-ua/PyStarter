@@ -1,6 +1,0 @@
-https://medium.com/the-algorysts-corner/become-fluent-in-pythonic-ways-d84d38ff6ba4
-https://scribe.rip/the-algorysts-corner/become-fluent-in-pythonic-ways-d84d38ff6ba4
-
-https://stackoverflow.com/questions/66874287/python-data-model-type-protocols-magic-methods
-
-https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/ch01.html

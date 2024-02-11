@@ -22,7 +22,7 @@
     
     
       
-        <title>Tuple - PyStarter</title>
+        <title>Кортеж - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tuple
+              Кортеж
             
           </span>
         </div>
@@ -144,6 +144,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1239,6 +1241,43 @@
         
   
   
+    <a href="sequences.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    28. Послідовності
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../../batteries/random.html" class="md-nav__link">
       
   
@@ -1304,7 +1343,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1312,6 +1353,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Зміст">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1321,14 +1364,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     Створення кортежів:
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     Розпаковування кортежів
   </a>
   
@@ -1349,17 +1392,14 @@
                   
 
 
-  <h1>Tuple</h1>
-
+<h1 id="_1">Кортеж</h1>
 <blockquote>
-<p><strong><em>Кортеж</em></strong> — немутабельна впорядкована послідовність</p>
+<p><strong><em>Кортеж</em></strong> — немутабельна послідовність елементів довільних типів.</p>
 </blockquote>
-<p>Зазвичай кортежі використовуються для 
-зберігання різнотипних даних 
-(або однотипних, але які логічно представляють різні сутності). </p>
+<p>Зазвичай кортежі використовуються для зберігання різнотипних даних. </p>
 <p>Кортежі представлені класом <code>tuple</code>. 
 Кортежі підтримуєть усі загальні для усіх послідовностей операції. </p>
-<h3 id="_1">Створення кортежів:</h3>
+<h3 id="_2">Створення кортежів:</h3>
 <table>
 <thead>
 <tr>
@@ -1386,12 +1426,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_2">Розпаковування кортежів</h3>
+<h3 id="_3">Розпаковування кортежів</h3>
 <p>Змінні, які об'єднано в кортеж, 
 можуть стояти ліворуч операції присвоєння. 
 Тоді їм присвоюються відповідні значення ітерабельного об'єкта. </p>
-<pre><code>:::python
-&gt;&gt;&gt; a, b, c = 1, 2, 3
+<pre><code>&gt;&gt;&gt; a, b, c = 1, 2, 3
 &gt;&gt;&gt; a
 1
 &gt;&gt;&gt; b
@@ -1401,8 +1440,7 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>Поміняти місцями значення двох змінних:</p>
-<pre><code>:::python
-&gt;&gt;&gt; a, b = 7, 15
+<pre><code>&gt;&gt;&gt; a, b = 7, 15
 &gt;&gt;&gt; a, b = b, a
 &gt;&gt;&gt; a
 15
@@ -1411,8 +1449,7 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>Використовуючи спеціальний синтаксис — змінна, перед якою стоїть зірочка, — можна в цю змінну "запакувати" у вигляді списка "зайві" значення:</p>
-<pre><code>:::python
-&gt;&gt;&gt; a, b, *rest = range(10)
+<pre><code>&gt;&gt;&gt; a, b, *rest = range(10)
 &gt;&gt;&gt; a
 0
 &gt;&gt;&gt; b
@@ -1431,8 +1468,7 @@
 </code></pre>
 <p>Змінні, які об'єднано в кортеж, також можуть стояти в заголовку цикла <code>for</code>. 
 Створимо список кортежів кожен з двох елементів: </p>
-<pre><code>:::python
-&gt;&gt;&gt; tuples = [(x, y) for x in range(3) for y in range(3)]
+<pre><code>&gt;&gt;&gt; tuples = [(x, y) for x in range(3) for y in range(3)]
 &gt;&gt;&gt; tuples
 [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
 &gt;&gt;&gt; for x, y in tuples:
@@ -1451,6 +1487,8 @@
 </code></pre>
 
 
+
+  
 
 
 

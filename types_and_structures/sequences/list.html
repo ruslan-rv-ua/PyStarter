@@ -22,7 +22,7 @@
     
     
       
-        <title>List - PyStarter</title>
+        <title>Список - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              List
+              Список
             
           </span>
         </div>
@@ -144,6 +144,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1239,6 +1241,43 @@
         
   
   
+    <a href="sequences.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    28. Послідовності
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../../batteries/random.html" class="md-nav__link">
       
   
@@ -1304,7 +1343,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1312,6 +1353,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Зміст">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1321,28 +1364,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     Створення списків:
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     Спискові включення
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     Сортування списків
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     Копіювання списків
   </a>
   
@@ -1363,19 +1406,16 @@
                   
 
 
-  <h1>List</h1>
-
+<h1 id="_1">Список</h1>
 <blockquote>
-<p><strong><em>Список</em></strong> — мутабельна послідовність</p>
+<p><strong><em>Список</em></strong> — мутабельна послідовність елементів довільних типів.</p>
 </blockquote>
-<p>Зазвичай списки використовуються для 
-зберігання однотипних даних 
-(хоча Python не забороняє зберігати в них 
-дані різних типів). </p>
+<p>Зазвичай списки використовуються для зберігання однотипних даних, 
+хоча Python не забороняє зберігати в них дані різних типів. </p>
 <p>Списки представлені класом <code>list</code>. 
-Списки підтримуєть усі загальні для усіх та мутабельних послідовностей операції. 
+Списки підтримуєть усі загальні для послідовностей операції. 
 Крім того списки реалізують один додатковий метод: <code>sort()</code>. </p>
-<h3 id="_1">Створення списків:</h3>
+<h3 id="_2">Створення списків:</h3>
 <table>
 <thead>
 <tr>
@@ -1411,50 +1451,46 @@ class list(object)
 's items
 ...
 </code></pre>
-<h3 id="_2">Спискові включення</h3>
+<h3 id="_3">Спискові включення</h3>
 <p>Спискові включення  (спискові вирази, list comprehension) дозволяють лаконічно описувати списки, які будуються по певним виразам, фільтровати їх і застосовувати функції до їх елементів. 
 Синтаксис аналогичний синтаксису генераторів-виразів, але вирлаз заключається 
 у квадратні дужки (хоча коректніше сказати, що синтаксис 
 виразів-генераторів аналогічний синтаксису спискових включень, оскільки 
 вони з'явились в Python значно пізніше спискових включень).</p>
 <p>Приклад: отримати список квадратів цілих чисел від 0 до 10:</p>
-<pre><code>:::python
-&gt;&gt;&gt; [x**2 for x in range(11)]
+<pre><code>&gt;&gt;&gt; [x**2 for x in range(11)]
 [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 &gt;&gt;&gt;
 </code></pre>
 <p>Зауважте: спискове включення повертає об'єкти типу <code>list</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; l = [int(x) for x in 'James Bond 007' if x.isdigit()]
+<pre><code>&gt;&gt;&gt; l = [int(x) for x in 'James Bond 007' if x.isdigit()]
 &gt;&gt;&gt; l
 [0, 0, 7]
 &gt;&gt;&gt; type(l)
 &lt;class 'list'&gt;
 &gt;&gt;&gt;
 </code></pre>
-<p>Дуже часто спискові вирази називають "генератори списків". Автор вважає таке формулювання некорректним.</p>
-<h3 id="_3">Сортування списків</h3>
+<p>Дуже часто спискові вирази називають "генератори списків". Таке формулювання вважається некоректним.</p>
+<h3 id="_4">Сортування списків</h3>
 <p>Списки можна сортувати за допомогою метода:</p>
 <pre><code>sort(*, key=None, reverse=None)
 </code></pre>
 <p>Метод сортує список модифікуючи його за допомогою операції "&lt;" за зростанням. </p>
 <ul>
-<li>Опціональний параметр <code>key</code> — це функція від одного аргумента, яка надає ключ для сортування.  </li>
+<li>Опційний параметр <code>key</code> — це функція від одного аргумента, яка надає ключ для сортування.  </li>
 <li><code>reverse</code> — якщо True, то сортування відбувається у зворотньому порядку.</li>
 </ul>
 <p>Можна відсортувати список з будь-яких елементів які можна порівняти між собою.</p>
-<h3 id="_4">Копіювання списків</h3>
+<h3 id="_5">Копіювання списків</h3>
 <p>Операція множення часто використовується зі списками для ініціалізації списка заданою  кількістю однакових елементів:</p>
-<pre><code>:::python
-&gt;&gt;&gt; l = [0] * 10
+<pre><code>&gt;&gt;&gt; l = [0] * 10
 &gt;&gt;&gt; l
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 &gt;&gt;&gt;
 </code></pre>
 <p>Операція '*' конкатенує неповні копії списків, тобто об'єкти всередині копій не  копирюються, а зберігаються посилання на них. Завжди пам'ятайте про це, коли в списку  знаходяться мутабельні об'єкти, наприклад, інші списки.</p>
 <p>Початківці на Python часто припускаються подібної помилки, намагаючись ініціалізувати двовимірну матрицю за допомогою списків списків.</p>
-<pre><code>:::python
-&gt;&gt;&gt; def print_matrix(matrix):
+<pre><code>&gt;&gt;&gt; def print_matrix(matrix):
 ...     """Функція вивода матриці"""
 ...     for row in matrix:
 ...         print(' '.join(str(element) for element in row))
@@ -1479,8 +1515,7 @@ class list(object)
 &gt;&gt;&gt; # а змінились відповідні елементи в усіх рядках!
 </code></pre>
 <p>Відбулось таке через те, що список зберігає в себі посилання на об'єкти. Другий оператор <code>*</code> створив список з посилань на один і той самий список. </p>
-<pre><code>:::python
-&gt;&gt;&gt; matrix_done_wrong[0]
+<pre><code>&gt;&gt;&gt; matrix_done_wrong[0]
 [0, 0, 0, 8, 0]
 &gt;&gt;&gt; matrix_done_wrong[4]
 [0, 0, 0, 8, 0]
@@ -1490,8 +1525,7 @@ True
 </code></pre>
 <p>Що ж робити? </p>
 <p>Нам необхідно створювати кожен рядок матриці окремо, наприклад скориставшись методом <code>append()</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; matrix = []
+<pre><code>&gt;&gt;&gt; matrix = []
 &gt;&gt;&gt; for _ in range(5):
 ...     matrix.append([0]*5)
 ...
@@ -1511,8 +1545,7 @@ True
 &gt;&gt;&gt;
 </code></pre>
 <p>Але простіше і лаконічніше можна це зробити за допомогою спискового включення:</p>
-<pre><code>:::python
-&gt;&gt;&gt; matrix_done_right = [[0] * 5 for _ in range(5)]
+<pre><code>&gt;&gt;&gt; matrix_done_right = [[0] * 5 for _ in range(5)]
 &gt;&gt;&gt; print_matrix(matrix_done_right)
 0 0 0 0 0
 0 0 0 0 0
@@ -1531,6 +1564,8 @@ True
 <p>Для отримання глибоких копій об'єктів можна також скористатись функцією <code>deepcopy</code> модуля <code>copy</code>.</p>
 
 
+
+  
 
 
 

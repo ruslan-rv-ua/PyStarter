@@ -1331,6 +1331,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Ітерабельні типи даних
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callable" class="md-nav__link">
+    Callable
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1390,6 +1404,43 @@
   
   <span class="md-ellipsis">
     27. Числові типи
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sequences/sequences.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    28. Послідовності
   </span>
   
 
@@ -1576,6 +1627,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Ітерабельні типи даних
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callable" class="md-nav__link">
+    Callable
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1612,7 +1677,6 @@
 <p>По своїй сутності типи даних в Python можна розглядати як:</p>
 <ul>
 <li><strong><em>Число (Number)</em></strong> — незмінювана величина, що підтримує числові операції;</li>
-<li><strong><em>Контейнер</em></strong> — об'єкти містять у собі посилання на інші об'єкти;</li>
 <li><strong><em>Послідовність (Sequence)</em></strong> — кінцевий упорядкований контейнер об'єктів, індексованих невід'ємними числами;</li>
 <li><strong><em>Відображення (Mapping)</em></strong> — кінцевий контейнер об'єктів, індексованих довільними індексами;</li>
 <li><strong><em>Викликане (Callable)</em></strong> — типи, до яких можна застосовувати операцію виклику функції;</li>
@@ -1658,15 +1722,14 @@ True
 </code></pre>
 <h3 id="_1">Колекції</h3>
 <blockquote>
-<p>Колекція в Python — це програмний об'єкт (контейнер), який використовується для зберігання набору значень одного або різних типів. 
-Ці значення можуть будь-якими типами даних, доступними в Python.</p>
+<p>Колекція в Python — це програмний об'єкт (контейнер), який використовується для зберігання набору значень одного або різних типів. </p>
 </blockquote>
 <p>Розглянемо основні магічні методи, які використовують при реалізації колекцій:</p>
 <h4 id="__getitem__self-key"><code>__getitem__(self, key)</code></h4>
 <p>Визначає поведінку при доступі до елемента використовуючи наступний синтаксис: </p>
 <pre><code>self[key]`
 </code></pre>
-<p>Стосується протоколу змінних і протоколу незмінних контейнерів. </p>
+<p>Стосується протоколу мутабельних і протоколу немутабельних контейнерів. </p>
 <p>Для послідовностей <code>key</code> має бути цілим або зрізанням. При цьому в методі може бути реалізована інтерпретація від'ємних індексів. </p>
 <p>Метод має піднімати відповідний виняток: </p>
 <ul>
@@ -1735,7 +1798,107 @@ True
 </tr>
 </tbody>
 </table>
-<h1 id="_2">Додаткові матеріали</h1>
+<h3 id="_2">Ітерабельні типи даних</h3>
+<p>Пригадаємо цикл <code>for ... in</code>. 
+Давайте за допомогою цього цикла переберемо усі елементи списка: </p>
+<pre><code>&gt;&gt;&gt; for i in [1,3,5,7]: print(i)
+...
+1
+3
+5
+7
+&gt;&gt;&gt;
+</code></pre>
+<p>Зі списком усе зрозуміло: 
+при черговому проході, або ж іншими словами — при кожній ітерації, 
+ми отримуємо один черговий елемент списка (контейнера). </p>
+<p>Тепер спробуємо так: </p>
+<pre><code>&gt;&gt;&gt; for i in range(4): print(i)
+...
+0
+1
+2
+3
+&gt;&gt;&gt;
+</code></pre>
+<p>Результат для нас вже очікуваний. 
+Але <code>range</code> не є контейнером, 
+він не містить у собі чисел які ми перебираємо циклом! </p>
+<p>А ще, як нам вже відомо, 
+за допомогою цикла <code>for</code> можна "пройтись" по символьним рядкам, словникам, навіть текстовим файлам. 
+Тобто одна інструкція <code>for...in</code> виконує над об'єктами різних типів дуже схожі дії, 
+а саме "перебирає" по одному значенню вміст цього об'єкта. </p>
+<blockquote>
+<p><strong><em>Ітерабельний об'єкт</em></strong> (в оригінальній термінології — іменник <em>iterable</em>) — це об'єкт, 
+який може повертати значення по одному за раз. </p>
+</blockquote>
+<p>А давайте подивимось довідку до функції <code>sum()</code>:</p>
+<pre><code>&gt;&gt;&gt; help(sum)
+Help on built-in function sum in module builtins:
+
+sum(iterable, /, start=0)
+    Return the sum of a 'start' value (default: 0) plus an iterable of numbers
+
+    When the iterable is empty, return the start value.
+    This function is intended specifically for use with numeric values and may
+    reject non-numeric types.
+
+&gt;&gt;&gt;
+</code></pre>
+<p>Саме цікаве зараз для нас наступне:</p>
+<pre><code>sum(iterable, /, start=0)
+    Return the sum of a 'start' value (default: 0) plus an iterable of numbers
+</code></pre>
+<p>Першим параметром функції може бути <strong><em>ітерабельний об'єкт чисел</em></strong>. </p>
+<p>А чи є тип даних <code>dict</code> ітерабельним? Так, тому що ми можемо проітеруватись по словнику циклом <code>for</code>. 
+І якщо ключами словника будуть числа, то ми можемо дізнатись суму всіх ключів словника:</p>
+<pre><code>&gt;&gt;&gt; sum({11:1, 22:2, 44:'hello'})
+77
+&gt;&gt;&gt;
+</code></pre>
+<p>Так само і конструктор класа <code>list</code> приймає ітерабельний об'єкт:</p>
+<pre><code>&gt;&gt;&gt; list({11:1, 22:2, 44:'hello'})
+[11, 22, 44]
+&gt;&gt;&gt; list(range(1, 10, 2))
+[1, 3, 5, 7, 9]
+&gt;&gt;&gt; list('UFO')
+['U', 'F', 'O']
+&gt;&gt;&gt;
+</code></pre>
+<p>Щоб тип даних став ітерабельним він повинен реалізувати спеціальний метод <code>__iter__()</code>. 
+Цей метод має повернути <strong><em>ітератор</em></strong> — об'єкт, за допомогою якого і здійснюється ітерування, 
+тобто перебір елементів ітерабельного об'єкта по одному.</p>
+<h3 id="callable">Callable</h3>
+<p>У Python термін "callable" (іменник) використовується для опису об'єктів, які можна викликати як функції. 
+Такі об'єкти повинні реалізувати метод <code>__call__()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Multiplier</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">factor</span> <span class="o">=</span> <span class="n">factor</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">factor</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="n">Multiplier</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">Multiplier</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<p>Тепер екземпляри класа <code>Multiplier</code> можна використовувати як функції:</p>
+<pre><code>&gt;&gt;&gt; x2(5)
+10
+&gt;&gt;&gt; x3(5)
+15
+&gt;&gt;&gt;
+</code></pre>
+<p>В Python є вбудована функція <code>callable()</code>, яка приймає об'єкт в якості аргументу і повертає <code>True</code>, 
+якщо об'єкт може бути викликаним як функція, і <code>False</code> в іншому випадку.</p>
+<pre><code>&gt;&gt;&gt; callable(x2)
+True
+&gt;&gt;&gt; callable(Multiplier)
+True
+&gt;&gt;&gt; callable(list)
+True
+&gt;&gt;&gt;
+</code></pre>
+<h1 id="_3">Додаткові матеріали</h1>
 <ul>
 <li><a href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Container">Документація: модуль <code>collections.abc</code> — абстрактні класи колекцій</a></li>
 </ul>

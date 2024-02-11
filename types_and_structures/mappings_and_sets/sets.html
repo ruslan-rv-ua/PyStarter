@@ -12,7 +12,7 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/bin_seq.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/types_and_structures/mappings_and_sets/sets.html">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Послідовності бінарних даних - PyStarter</title>
+        <title>Sets - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Послідовності бінарних даних
+              Sets
             
           </span>
         </div>
@@ -144,6 +144,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1239,6 +1241,43 @@
         
   
   
+    <a href="../sequences/sequences.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    28. Послідовності
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../../batteries/random.html" class="md-nav__link">
       
   
@@ -1304,7 +1343,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1312,8 +1353,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Зміст">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1323,22 +1362,70 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bytes" class="md-nav__link">
-    bytes
+  <a href="#_1" class="md-nav__link">
+    Створення множин
+  </a>
+  
+    <nav class="md-nav" aria-label="Створення множин">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    Перерахування елементів (тільки set)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#bytearray" class="md-nav__link">
-    bytearray
+        
+          <li class="md-nav__item">
+  <a href="#set_1" class="md-nav__link">
+    Включення множин (тільки set)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Додаткові матеріали:
+    Створення за допомогою конструктора класа
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Операції з множинами
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Зміна множини
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Видалення елементів з множини
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    Теоретико-множинні операції
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Множини в булевому контексті
   </a>
   
 </li>
@@ -1358,127 +1445,322 @@
                   
 
 
-<h1 id="_1">Послідовності бінарних даних</h1>
-<p>Основні вбудовані класи для роботи з послідовностями бінарних даних в Python — це <code>bytes</code> і <code>bytearray</code>.</p>
-<h3 id="bytes"><code>bytes</code></h3>
+  <h1>Sets</h1>
+
 <blockquote>
-<p><strong><em>Байти</em></strong> — немутабельна послідовність окремих байт (чисел у діапазоні від 0 до 255). </p>
+<p><strong><em>Множина</em></strong> – невпорядкована колекція об'єктів, що хешуються, які не повторюються.</p>
 </blockquote>
-<p>Оскільки більшість основних бінарних протоколів базуються на кодуванні тексту ASCII, об'єкти байтів працюють з ASCII-сумісними символами і це нагадує роботу з символьними рядками. Синтаксис для літералів байтів в значній мірі такий же, як і для літералів символьного рядка, за винятком того, що додається префікс <code>b</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; b = b'Hi there!'
-&gt;&gt;&gt; b
-b'Hi there!'
-&gt;&gt;&gt;
-</code></pre>
-<p>Допускаються лише ASCII-символи, тобто значення до 127 включно:</p>
-<pre><code>:::python
-&gt;&gt;&gt; b = b'Привіт!'
-  File "&lt;stdin&gt;", line 1
-SyntaxError: bytes can only contain ASCII literal characters.
-&gt;&gt;&gt;
-</code></pre>
-<p>Інші значення задаються у шістнадцятковій системі числення, до значення додається префікс <code>\x</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; b = b'\x00\xff'
-&gt;&gt;&gt; b
-b'\x00\xff'
-&gt;&gt;&gt; b[0]
-0
-&gt;&gt;&gt; b[1]
-255
-&gt;&gt;&gt;
-</code></pre>
-<p>"Сирі" байти (аналогічно "сирим" рядкам) теж допускаються:</p>
-<pre><code>:::python
-&gt;&gt;&gt; b = rb'\n'
-&gt;&gt;&gt; b
-b'\\n'
-&gt;&gt;&gt;
-</code></pre>
-<p>Створити байтову послідовність можна за допомогою конструктора класа вказавши її довжину, при цьому створена послідовність буде заповнена значенням <code>0</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; b = bytes(5)
-&gt;&gt;&gt; b
-b'\x00\x00\x00\x00\x00'
-&gt;&gt;&gt;
-</code></pre>
-<p>Також можна передати конструктору ітерабельний об'єкт цілих чисел:</p>
-<pre><code>:::python
-&gt;&gt;&gt; b = bytes(range(5))
-&gt;&gt;&gt; b
-b'\x00\x01\x02\x03\x04'
-&gt;&gt;&gt;
-</code></pre>
-<p>Можна створити послідовність байт з символьного рядка, для цього треба вказати кодування, в якому ми хочемо отримати наш рядок:</p>
-<pre><code>:::python
-&gt;&gt;&gt; b = bytes('ї', encoding='UTF-8')
-&gt;&gt;&gt; b
-b'\xd1\x97'
-&gt;&gt;&gt;
-</code></pre>
-<p>Клас <code>bytes</code> має метод <code>fromhex()</code> який дозволяє створити об'єкт з символьного рядка. Рядок повинен складатись з пар шістнадцяткових цифр, пробіли ігноруються:</p>
-<pre><code>:::python
-&gt;&gt;&gt; bytes.fromhex('41f0 F1f2  ')
-b'A\xf0\xf1\xf2'
-&gt;&gt;&gt;
-</code></pre>
-<p>Є також метод який виконує "зворотню дію" — повертає шістнадцяткове представленя байтового об'єкта як символьний рядок:</p>
-<pre><code>:::python
-&gt;&gt;&gt; b'A\xf0\xf1\xf2'.hex()
-'41f0f1f2'
-&gt;&gt;&gt;
-</code></pre>
-<p>Ще один важливий метод класа <code>bytes</code>:</p>
-<pre><code> decode(encoding="utf-8", errors="strict")
-</code></pre>
-<p>Метод декодує послідовність байт з вказаного кодування у символьний рядок:</p>
-<pre><code>:::python
-&gt;&gt;&gt; b = b'\xd0\x92\xd1\x96\xd1\x82\xd0\xb0\xd1\x8e!'
-&gt;&gt;&gt; b.decode()
-'Вітаю!'
-&gt;&gt;&gt;
-</code></pre>
-<p>Другий параметр цього метода вказує, що робити якщо під час декодування відбувається помилка. Значення за замовчуванням <code>strict</code> означає, що у разі виникнення помилки буде піднято виняток <code>UnicodeError</code>. Також за допомогою цього параметра можна вказати, що усі помилки декодування будуть ігноруватись, замінятись на певний символ, інше (докладніше — читайте у документації Python). </p>
-<p>Як ви могли вже зауважити, 
-в залежності від значення кожного байта застосовуються різні способи відображення:</p>
+<p>Типове використання множин — перевірка певного елемента на входження в множину та видалення повторів елементів і виконання таких операцій, як об'єднання, пересічення, різниця і симетрична різниця. </p>
+<p>В множинах немає поняття позиції елемента. Відповідно, вони не підтримують індексацію і зрізання. </p>
+<p>Вбудованими в Python класами множин є:</p>
 <ul>
-<li>для байтів з діапазона символів ASCII, які мають графічне відображення — від пробіла до <code>~</code> — выводится сам символ ASCII. </li>
-<li>для байтів, які відповідають символам табуляції, нового рядка, бекслеш та інших виводяться відповідні ескейп-послідовності.</li>
-<li>для решти байтів виводиться шістнадцяткове представлення, наприклад <code>\x00</code>.</li>
+<li>set (мутабельна множина).</li>
+<li>frozenset (немутабельна множина)</li>
 </ul>
-<hr />
-<p><code>bytes</code> підтримує усі методи <code>str</code> крім тих, що стосуються форматування (format, format_map), і ще декількох, які напряму залежать від особливостей Unicode, у тому числі casefold, isdecimal, isidentifier, isnumeric, isprintable і encode. 
-Це означає, що при работі з бінарними послідовностями ми можемо користуватись знайомими методами символьних рядків, наприклад endswith, replace, strip, upper і десятками інших, тільки аргументи мають бути типу <code>bytes</code>, а не <code>str</code>.</p>
-<h3 id="bytearray"><code>bytearray</code></h3>
-<blockquote>
-<p><strong><em>Масив байтів</em></strong> — мутабельна послідовність окремих байт (чисел у діапазоні від 0 до 255). </p>
-</blockquote>
-<p>Головна відмінність масива байтів від байт — це те, що перша є мутабельною послідовністю. Отже ми можемо використовувати усі методи, які властиві мутабельним послідовностям:</p>
+<h3 id="_1">Створення множин</h3>
+<p>Створити множини в Python можна декількома способами.</p>
+<h4 id="set">Перерахування елементів (тільки <code>set</code>)</h4>
+<p>Найпростіший спосіб — просто перерахувати елементи, які будуть складати множину. Елементи розділяються знаком коми і заключаються у фігурні дужки:</p>
 <pre><code>:::python
-&gt;&gt;&gt; b = bytearray(3)
-&gt;&gt;&gt; b.insert(0,65)
-&gt;&gt;&gt; b
-bytearray(b'A\x00\x00\x00')
-&gt;&gt;&gt; b.append(65)
-&gt;&gt;&gt; b
-bytearray(b'A\x00\x00\x00A')
-&gt;&gt;&gt; b.pop()
-65
-&gt;&gt;&gt; b
-bytearray(b'A\x00\x00\x00')
-&gt;&gt;&gt; b.reverse()
-&gt;&gt;&gt; b
-bytearray(b'\x00\x00\x00A')
-&gt;&gt;&gt; b.remove(65)
-&gt;&gt;&gt; b
-bytearray(b'\x00\x00\x00')
+&gt;&gt;&gt; my_set = {1, 5, 3, 9}  # множина цілих чисел
+&gt;&gt;&gt; my_set
+{1, 3, 5, 9}
+&gt;&gt;&gt; fruits = {'apple', 'orange', 'apple', 'orange', 'banana'}  # множина символьних рядків, тільки унікальні елементи
+&gt;&gt;&gt; fruits
+{'orange', 'banana', 'apple'}
 &gt;&gt;&gt;
 </code></pre>
-<h3 id="_2">Додаткові матеріали:</h3>
-<p><a href="https://docs.python.org/3/library/stdtypes.html#bytearray-objects">Python docs: послідовності бінарних даних</a></p>
+<p>Зауважте: таким способом можна створити тільки об'єкти класа <code>set</code>!</p>
+<h4 id="set_1">Включення множин (тільки <code>set</code>)</h4>
+<p>Множину можна створити за допомогою включень множин. Синтаксис дуже схожий на спискові включенні, різниця тільки у тому, що вираз заключається у фігурні дужки:</p>
+<pre><code>:::python
+&gt;&gt;&gt; number_set = {x*x for x in range(10) if x%2}
+&gt;&gt;&gt; number_set
+{1, 9, 81, 49, 25}
+&gt;&gt;&gt;
+&gt;&gt;&gt; number_set = {i * j for i in range(3) for j in range(3)}
+&gt;&gt;&gt; number_set
+{0, 1, 2, 4}
+&gt;&gt;&gt;
+</code></pre>
+<p>Зауважте: таким способом можна створити тільки об'єкти класа <code>set</code>!</p>
+<h4 id="_2">Створення за допомогою конструктора класа</h4>
+<p>Для початку створимо пусту множину, тобто таку, 
+яка не містить жодного об'єкта: </p>
+<pre><code>:::python
+&gt;&gt;&gt; empty_set = set()
+&gt;&gt;&gt; empty_set
+set()
+&gt;&gt;&gt; empty_frozenset = frozenset()
+&gt;&gt;&gt; empty_frozenset
+frozenset()
+&gt;&gt;&gt;
+</code></pre>
+<p>Конструктору множини можна передати ітерабельний об'єкт:</p>
+<pre><code>:::python
+&gt;&gt;&gt; my_frozenset = frozenset([4, 1, 4, 3, 8])
+&gt;&gt;&gt; my_frozenset
+frozenset({8, 1, 3, 4})
+&gt;&gt;&gt;
+&gt;&gt;&gt; letters = set('abrakadabra')
+&gt;&gt;&gt; letters
+{'b', 'd', 'r', 'k', 'a'}
+&gt;&gt;&gt;
+</code></pre>
+<p>Множини у свою чергу теж є ітерабельними об'єктами:</p>
+<pre><code>:::python
+&gt;&gt;&gt; my_set = set(my_frozenset)
+&gt;&gt;&gt; my_set
+{8, 1, 3, 4}
+&gt;&gt;&gt;
+</code></pre>
+<p>Давайте спробуємо створити множину передавши в конструктор генератор:</p>
+<pre><code>:::python
+&gt;&gt;&gt; def get_ints(n):
+...     for i in range(n):
+...         yield i
+...         yield i + 1
+...
+&gt;&gt;&gt; list(get_ints(10))  # усі числа, які повертає генератор
+[0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10]
+&gt;&gt;&gt; set(get_ints(10))   # множина містить тільки унікальні значенння
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="_3">Операції з множинами</h3>
+<table>
+<thead>
+<tr>
+<th>Операція</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>len(s)</code></td>
+<td>Кількість елементів множини</td>
+</tr>
+<tr>
+<td><code>x in s</code><br><code>x not in s</code></td>
+<td>Перевірка чи входить об'єкт у множину</td>
+</tr>
+<tr>
+<td><code>s.isdisjoint(t)</code></td>
+<td>Перевірка того, що множина <code>s</code> не має спільних елементів з множиною <code>t</code></td>
+</tr>
+<tr>
+<td><code>s.issubset(t)</code><br><code>s &lt;= t</code></td>
+<td>Перевірка того, що усі елементи множини <code>s</code> є елементами множини <code>t</code></td>
+</tr>
+<tr>
+<td><code>s &lt; t</code></td>
+<td>Перевірка того, що <code>s&lt;=t</code> і <code>s!=t</code></td>
+</tr>
+<tr>
+<td><code>s.isuperset(t)</code><br><code>s &gt;= t</code></td>
+<td>Перевірка того, що усі елементи множини <code>t</code> є елементами множини <code>s</code></td>
+</tr>
+<tr>
+<td><code>s &gt; t</code></td>
+<td>Перевірка того, що <code>s&gt;=t</code> і `s!=t</td>
+</tr>
+<tr>
+<td><code>s.union(t, …)</code><br><code>s | t | …</code></td>
+<td>створення нової множини, яка є об'єднанням даних множин</td>
+</tr>
+<tr>
+<td><code>s.intersection(t, …)</code><br><code>s &amp; t &amp; …</code></td>
+<td>створення нової множини, яка є перетином даних множин</td>
+</tr>
+<tr>
+<td><code>s.difference(t, …)</code><br><code>s - t - …</code></td>
+<td>створення нової множини, яка є різницею даних множин</td>
+</tr>
+<tr>
+<td><code>s.symmetric_difference(t)</code><br><code>s ^ t</code></td>
+<td>створення нової множини, яка є симетричною різницею даних множин</td>
+</tr>
+<tr>
+<td><code>s.copy()</code></td>
+<td>Неповна копія множини <code>s</code></td>
+</tr>
+</tbody>
+</table>
+<p>Як ви могли зауважити, що одні й ті ж операції можна викликати як бінарний оператор, так і як метод класа. Різниця полягає у наступному:</p>
+<ul>
+<li>операції над множинами, що є методами, приймають у якості аргументів будь-які ітерабельні  об'єкти</li>
+<li>операції, які записані у вигляді бінарних операцій, потребують щоб другий операнд теж був множиною, і повертає множину того типу, якою була перша множина</li>
+</ul>
+<p>Наступні операції використовуються тільки з мутабельними множинами:</p>
+<table>
+<thead>
+<tr>
+<th>Операція</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.update(t, …)</code><br><code>s |= t | …</code></td>
+<td>додати до даної множини елементи з інших множин</td>
+</tr>
+<tr>
+<td><code>s.intersection_update(t, …)</code><br><code>s &amp;= t &amp; …</code></td>
+<td>залишити у даній множині тільки ті елементи, що є і в  інших множинах</td>
+</tr>
+<tr>
+<td><code>s.difference_update(t, …)</code><br><code>s -= t | …</code></td>
+<td>видалити з даної множини ті елементи, що є в інших множинах</td>
+</tr>
+<tr>
+<td><code>s.symmetric_difference_update(t)</code><br><code>s ^= t</code></td>
+<td>залишити або додати в <code>s</code> елементи, що є або в <code>s</code>,  або в <code>t</code>, але не в обох множинах</td>
+</tr>
+<tr>
+<td><code>s.add(element)</code></td>
+<td>додати новий елемент у множину</td>
+</tr>
+<tr>
+<td><code>s.remove(element)</code></td>
+<td>Видалити елемент з множини. Якщо елемента у множині немає, піднімається виняток <code>KeyError</code></td>
+</tr>
+<tr>
+<td><code>s.discard(element)</code></td>
+<td>Видалити елемент з множини якщо він належить цій множині</td>
+</tr>
+<tr>
+<td><code>s.pop()</code></td>
+<td>Видалити з множини і повернути довільний елемент. Якщо множина пуста, піднімається виняток <code>KeyError</code></td>
+</tr>
+<tr>
+<td><code>s.clear()</code></td>
+<td>Видалити усі елементи з множини</td>
+</tr>
+</tbody>
+</table>
+<p>Розглянемо деякі операції з множинами.</p>
+<h3 id="_4">Зміна множини</h3>
+<p>Метод <code>add()</code> приймає один аргумент будь-якого немутабельного типу і додає його в множину.</p>
+<pre><code>:::python
+&gt;&gt;&gt; a_set = {1, 2} 
+&gt;&gt;&gt; a_set.add(4) 
+&gt;&gt;&gt; a_set
+{1, 2, 4}
+&gt;&gt;&gt; len(a_set) # Тепер множина містить три елементи. 
+3
+</code></pre>
+<p>Якщо ви спробуєте додати до множини елемент, який там вже був, нічого не станеться. Не відбудеться ніякої помилки, і нічого не зміниться. Множина і далі міститиме три елементи. </p>
+<p>Метод <code>update()</code> приймає множину і додає всі елементи цієї множини до нашої. Це те ж саме, що викликати <code>add()</code> для кожного елемента множини-параметра:</p>
+<pre><code>:::python
+&gt;&gt;&gt; a_set = {1, 2, 3} 
+&gt;&gt;&gt; a_set
+{1, 2, 3} 
+&gt;&gt;&gt; a_set.update({2, 4, 6})
+</code></pre>
+<p>Також <code>update()</code> можна викликати з довільним числом параметрів, це те ж саме, що викликати цей метод послідовно для кожного з них окремо:</p>
+<pre><code>:::python
+&gt;&gt;&gt; a_set.update({3, 6, 9}, {1, 2, 3, 5, 8, 13}) 
+&gt;&gt;&gt; a_set
+{1, 2, 3, 4, 5, 6, 8, 9, 13}
+</code></pre>
+<p>Окрім множин, <code>update()</code> можна передати ітерабельний об'єкт:</p>
+<pre><code>:::python
+&gt;&gt;&gt; a_set.update([10, 20, 30]) 
+&gt;&gt;&gt; a_set
+{1, 2, 3, 4, 5, 6, 8, 9, 10, 13, 20, 30}
+</code></pre>
+<h3 id="_5">Видалення елементів з множини</h3>
+<p>Метод <code>discard()</code> приймає єдине значення як параметр, і видаляє це значення з множини. 
+Якщо викликати discard() для значення, якого немає в множині, в ній нічого не зміниться. Не згенерується жодного винятку:</p>
+<pre><code>:::python
+&gt;&gt;&gt; a_set = {1, 3, 6, 10, 15, 21, 28, 36, 45} 
+&gt;&gt;&gt; a_set
+{1, 3, 36, 6, 10, 45, 15, 21, 28} 
+&gt;&gt;&gt; a_set.discard(10) 
+&gt;&gt;&gt; a_set
+{1, 3, 36, 6, 45, 15, 21, 28}
+&gt;&gt;&gt; a_set.discard(10) 
+&gt;&gt;&gt; a_set
+{1, 3, 36, 6, 45, 15, 21, 28}
+</code></pre>
+<p>Метод <code>remove()</code> також приймає єдине значення як аргумент, і також видаляє це значення з множини. 
+Якщо значення немає в множині, метод <code>remove()</code> кидає виняток <code>KeyError</code>:</p>
+<pre><code>:::python
+&gt;&gt;&gt; a_set.remove(21) 
+&gt;&gt;&gt; a_set
+{1, 3, 36, 6, 45, 15, 28}
+&gt;&gt;&gt; a_set.remove(21)
+Traceback (most recent call last):
+ File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+KeyError: 21
+</code></pre>
+<p>Метод <code>pop()</code> видаляє одне значення з множини і повертає його. Щоправда, оскільки множини - це невпорядковані набори, то "останнього" немає елемента — важко передбачити, який елемент буде повернуто. 
+Спроба виклику <code>pop()</code> для порожньої множини створить виняток <code>KeyError</code>:</p>
+<pre><code>:::python
+&gt;&gt;&gt; a_set = {1, 3, 6, 10, 15, 21, 28, 36, 45} 
+&gt;&gt;&gt; a_set.pop()
+1 
+&gt;&gt;&gt; a_set.pop()
+3 
+&gt;&gt;&gt; a_set.pop()
+36 
+&gt;&gt;&gt; a_set
+{6, 10, 45, 15, 21, 28}
+&gt;&gt;&gt; a_set.pop()
+Traceback (most recent call last):
+ File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+KeyError: 'pop from an empty set'
+</code></pre>
+<p>Метод <code>clear()</code> видаляє всі значення множини, роблячи її порожньою: </p>
+<pre><code>:::python
+&gt;&gt;&gt; a_set.clear() 
+&gt;&gt;&gt; a_set
+set()
+</code></pre>
+<h3 id="-">Теоретико-множинні операції</h3>
+<p>Розділ названо так тому, що зараз ми розглянемо ті дії з множинами, які вивчає відповідний розділ математики. </p>
+<p>Щоб визначити, чи належить множині елемент, використовуйте оператор <code>in/not in</code>: </p>
+<pre><code>:::python
+&gt;&gt;&gt; a_set = {2, 4, 5, 9, 12, 21, 30, 51, 76, 127, 195} 
+&gt;&gt;&gt; 30 in a_set
+True 
+&gt;&gt;&gt; 31 in a_set
+False
+</code></pre>
+<p>Метод <code>union()</code> (об’єднання) повертає множину, що складається з елементів, які належать хоча б одній з двох множин: </p>
+<pre><code>:::python
+&gt;&gt;&gt; {1,2,3}.union([3,4,5])
+{1, 2, 3, 4, 5}
+&gt;&gt;&gt;
+</code></pre>
+<p>Метод <code>intersection()</code> (перетин) повертає множину, що складається з елементів, які належать одночасно двом множинам: </p>
+<pre><code>:::python
+&gt;&gt;&gt; {1,2,3}.intersection([2,3,4])
+{2, 3}
+&gt;&gt;&gt;
+</code></pre>
+<p>Метод <code>difference()</code> (різниця) повертає множину з тих елементів, які не належать переданій множині: </p>
+<pre><code>:::python
+&gt;&gt;&gt; {1,2,3,4,5}.difference([2,3,11])
+{1, 4, 5}
+&gt;&gt;&gt;
+</code></pre>
+<p>Метод <code>symmetric_difference</code> (симетрична різниця) повертає множину з тих елементів, які належать рівно одній з множин: </p>
+<pre><code>:::python
+&gt;&gt;&gt; {1,2,3,4,5}.symmetric_difference([2,3,11])
+{1, 4, 5, 11}
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="_6">Множини в булевому контексті</h3>
+<p>Тут, як завжди, все просто: порожня множина — False, а непорожня, не залежно від вмісту елементів — True. </p>
+<!-- 
+https://python-scripts.com/sets 
+https://uk.wikibooks.org/wiki/%D0%9F%D0%BE%D1%80%D0%B8%D0%BD%D1%8C%D1%82%D0%B5_%D1%83_Python_3/%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D1%96_%D1%82%D0%B8%D0%BF%D0%B8_%D0%B4%D0%B0%D0%BD%D0%B8%D1%85#%D0%A1%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F_%D0%BC%D0%BD%D0%BE%D0%B6%D0%B8%D0%BD%D0%B8
+-->
 
 
+
+  
 
 
 
