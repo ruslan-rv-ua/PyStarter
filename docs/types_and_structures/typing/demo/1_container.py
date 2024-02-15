@@ -1,4 +1,14 @@
 class EvenNumbers:
+    def __contains__(self, item):
+        if not isinstance(item, int):
+            raise ValueError()
+        return item % 2 == 0
+    
+r = 2 in EvenNumbers()
+
+
+
+class EvenNumbers:
     _instance = None
     def __new__(cls):
         if cls._instance is None:
@@ -8,8 +18,6 @@ class EvenNumbers:
         if not isinstance(item, int):
             raise ValueError()
         return item % 2 == 0
-    
-r = 2 in EvenNumbers()
 
 e1 = EvenNumbers()
 e2 = EvenNumbers()

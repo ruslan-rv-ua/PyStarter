@@ -44,7 +44,6 @@ hide:
 	
 Словникові включення (вирази):
 
-	:::python
 	>>> people = ['John', 'Jane', 'Mary', 'Bob', 'Alice']
 	>>> d = {key:value for key, value in enumerate(people, start=1)}
 	>>> d
@@ -53,7 +52,6 @@ hide:
 	
 Використовуючи конструктор класа:
 
-	:::python
 	# dict(**kwargs)
 	>>> d=dict(john=22, jane=18)
 	>>> d
