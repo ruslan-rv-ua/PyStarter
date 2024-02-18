@@ -1,9 +1,7 @@
-class A:
+class C:
     def __getitem__(self, index):
         print(index)
-a=A()
-a[1]
-
+C()['може тут є індекс?']
 ########################
 
 s = slice(2, 8, 3)

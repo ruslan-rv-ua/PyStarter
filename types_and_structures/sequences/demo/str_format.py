@@ -4,3 +4,9 @@ class C:
 		
 o=C()
 print(f'{o:%h:%m}')
+
+b='Привіт'.encode(encoding='utf8')
+s=b.decode(encoding='utf8')
+
+
+s='\N{GRINNING FACE}'
