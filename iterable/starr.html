@@ -145,6 +145,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1313,6 +1315,43 @@
         
   
   
+    <a href="iterator.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    30. Ітератори
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../batteries/random.html" class="md-nav__link">
       
   
@@ -1378,7 +1417,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1481,32 +1522,28 @@
 то він "збере" усі передані іменовані аргументи у словник. </p>
 <h2 id="_3">Розпаковка в аргументи функцій</h2>
 <p>При виклику функцій можна використовувати оператор <code>*</code> для "розпаковки" ітерабельного об'єкта в аргументи: </p>
-<pre><code>:::python
-&gt;&gt;&gt; items = [1, 2, 'string', None]
+<pre><code>&gt;&gt;&gt; items = [1, 2, 'string', None]
 &gt;&gt;&gt; print(*items)
 1 2 string None
 &gt;&gt;&gt;
 </code></pre>
 <p>Конструкція <code>*items</code> передає усі елементи списка <code>items</code> як окремі аргументи. </p>
 <p>Таку розпаковку можна використовувати декілька раз при виклику функції: </p>
-<pre><code>:::python
-&gt;&gt;&gt; numbers = [1, 2, 3]
+<pre><code>&gt;&gt;&gt; numbers = [1, 2, 3]
 &gt;&gt;&gt; names = ['Alice', 'Bob']
 &gt;&gt;&gt; print(*names, *numbers)
 Alice Bob 1 2 3
 &gt;&gt;&gt;
 </code></pre>
 <p>Аналогічно можна розпакувати словник у іменовані аргументи: </p>
-<pre><code>:::python
-&gt;&gt;&gt; format = {'sep': '-', 'end': '| '}
+<pre><code>&gt;&gt;&gt; format = {'sep': '-', 'end': '| '}
 &gt;&gt;&gt; print(*'line', **format)
 l-i-n-e| &gt;&gt;&gt;
 </code></pre>
 <p>Розпаковку словників можна використовувати декілька раз, 
 але треба слідкувати щоб ключі словників не повторювались, 
 інакше у функцію буде передано декілька іменованих аргументів з однаковими іменами: </p>
-<pre><code>:::python
-&gt;&gt;&gt; f1 = {'sep': '-', 'end': '|'}
+<pre><code>&gt;&gt;&gt; f1 = {'sep': '-', 'end': '|'}
 &gt;&gt;&gt; f2 = {'end': '~ '}
 &gt;&gt;&gt; print(1, 2, 3, **f1, **f2)
 Traceback (most recent call last):
@@ -1520,8 +1557,7 @@ TypeError: print() got multiple values for keyword argument 'end'
 <h2 id="_4">Упаковка при присвоєнні</h2>
 <p>Ітерабельний об'єкт можна "розпакувати" і присвоїти його частинки окремим змінним. 
 При цьому у змінну перед якою буде стояти зірочка усі значення, кількість яких перевищує кількість змінних, знову буде упаковано: </p>
-<pre><code>:::python
-&gt;&gt;&gt; first, *other = 'string'
+<pre><code>&gt;&gt;&gt; first, *other = 'string'
 &gt;&gt;&gt; first
 's'
 &gt;&gt;&gt; other
@@ -1535,29 +1571,25 @@ TypeError: print() got multiple values for keyword argument 'end'
 &gt;&gt;&gt;
 </code></pre>
 <p>Така розпаковка може бути навіть вкладеною: </p>
-<pre><code>:::python
-&gt;&gt;&gt; (first_letter, *_), *_ = ['Alice', 'Bob']
+<pre><code>&gt;&gt;&gt; (first_letter, *_), *_ = ['Alice', 'Bob']
 &gt;&gt;&gt; first_letter
 'A'
 &gt;&gt;&gt;
 </code></pre>
 <h2 id="_5">Розпаковка в літералах послідовностей</h2>
 <p>При створенні списків, кортежів та множин за допомогою літералів для розпаковки ітерабельних об'єктів також можна використовувати зірочку:  </p>
-<pre><code>:::python
-&gt;&gt;&gt; numbers = [1, 2, 3]
+<pre><code>&gt;&gt;&gt; numbers = [1, 2, 3]
 &gt;&gt;&gt; names = ['Alice', 'Bob']
 &gt;&gt;&gt;
 </code></pre>
 <p>У списку переставимо перший елемент у кінець і сформуємо кортеж: </p>
-<pre><code>:::python
-&gt;&gt;&gt; new_tuple = (*numbers[1:], numbers[0])
+<pre><code>&gt;&gt;&gt; new_tuple = (*numbers[1:], numbers[0])
 &gt;&gt;&gt; new_tuple
 (2, 3, 1)
 &gt;&gt;&gt;
 </code></pre>
 <p>Створимо множину розпакувавши список і генератор: </p>
-<pre><code>:::python
-&gt;&gt;&gt; uppercase_names = (name.upper() for name in names)
+<pre><code>&gt;&gt;&gt; uppercase_names = (name.upper() for name in names)
 &gt;&gt;&gt; uppercase_names
 &lt;generator object &lt;genexpr&gt; at 0x000001387353ABA0&gt;
 &gt;&gt;&gt; all_names = {*names, *uppercase_names, *names}
@@ -1568,8 +1600,7 @@ TypeError: print() got multiple values for keyword argument 'end'
 <h2 id="_6">Розпаковка в літералах словників</h2>
 <p>При створенні словників за допомогою літерала можна використовувати <code>**</code>. 
 Найчастіше застосування — об'єднання двох словників в один: </p>
-<pre><code>:::python
-&gt;&gt;&gt; d1 = dict(a=1, b=2)
+<pre><code>&gt;&gt;&gt; d1 = dict(a=1, b=2)
 &gt;&gt;&gt; d2 = dict(b=22, c=33)
 &gt;&gt;&gt; {**d1, **d2}
 {'a': 1, 'b': 22, 'c': 33}
@@ -1578,21 +1609,19 @@ TypeError: print() got multiple values for keyword argument 'end'
 &gt;&gt;&gt;
 </code></pre>
 <p>Можна отримати копію словника паралельно додаючи нові ключ-значення і перезаписуючи вже існуючі ключі: </p>
-<pre><code>:::python
-&gt;&gt;&gt; date = dict(year=2035, month=1)
+<pre><code>&gt;&gt;&gt; date = dict(year=2035, month=1)
 &gt;&gt;&gt; birthday = {**date, 'year':2021, 'day':17}
 &gt;&gt;&gt; birthday
 {'year': 2021, 'month': 1, 'day': 17}
 &gt;&gt;&gt;
 </code></pre>
 <h2 id="_7">Повернення функцією декількох значень</h2>
-<p>Якщо функція має повернути не одне значення, а декількіка, 
+<p>Якщо функція має повернути не одне значення, а декілька, 
 ми можемо об'єднати ці значення у кортеж. 
 Відповідно функція буде повертати кортеж. 
 А оскільки кортеж — структура даних ітерабельна, 
 при присвоєнні значень ми можемо розпакувати такий кортеж на складові. </p>
-<pre><code>:::python
-def fetch_data():
+<pre><code>def fetch_data():
     ...
     return data, error
 
@@ -1607,8 +1636,7 @@ if error is not None:
 В якості аргументу вона приймає послідовність, 
 і повертає теж послідовність, послідовність з кортежів. 
 Кортеж на кожній ітерації містить індекс елемента і його значення: </p>
-<pre><code>:::python
-&gt;&gt;&gt; for i in enumerate('abcdef'):
+<pre><code>&gt;&gt;&gt; for i in enumerate('abcdef'):
 ...   print(i)
 ...
 (0, 'a')
@@ -1621,9 +1649,8 @@ if error is not None:
 </code></pre>
 <p>Оскільки ми чітко знаємо кількість елементів кожного кортежу, 
 а саме 2 (індекс і елемент), 
-то кортеж можемо розкласти прямо у заголовку циклу:</p>
-<pre><code>:::python
-&gt;&gt;&gt; for index, value in enumerate('abcdef'):
+то кортеж можемо розкласти прямо у заголовку цикла:</p>
+<pre><code>&gt;&gt;&gt; for index, value in enumerate('abcdef'):
 ...   print(index, '-', value)
 ...
 0 - a
@@ -1635,8 +1662,7 @@ if error is not None:
 &gt;&gt;&gt;
 </code></pre>
 <p>Функція <code>enumerate()</code> повертає послідовність спеціального типу: </p>
-<pre><code>:::python
-&gt;&gt;&gt; a = enumerate('abcde')
+<pre><code>&gt;&gt;&gt; a = enumerate('abcde')
 &gt;&gt;&gt; a
 &lt;enumerate object at 0x000002A9776A1E10&gt;
 &gt;&gt;&gt; type(a)
@@ -1647,10 +1673,9 @@ if error is not None:
 &gt;&gt;&gt;
 </code></pre>
 <p>Розглянемо на прикладі. 
-У списку цілих чисел треба усі елменти 
+У списку цілих чисел треба усі елементи 
 які менше ніж 5 помножити на 10. </p>
-<pre><code>:::python
-&gt;&gt;&gt; numbers = list(range(10))
+<pre><code>&gt;&gt;&gt; numbers = list(range(10))
 &gt;&gt;&gt; numbers
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 &gt;&gt;&gt; for index, number in enumerate(numbers):
@@ -1663,6 +1688,8 @@ if error is not None:
 </code></pre>
 
 
+
+  
 
 
 

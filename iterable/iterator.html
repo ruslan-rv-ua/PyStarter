@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/iterator.html">
       
       
+        <link rel="prev" href="../types_and_structures/mappings_and_sets/sets.html">
+      
+      
+        <link rel="next" href="../batteries/random.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -144,6 +148,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1299,6 +1305,125 @@
       
   
   
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_33" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_33" id="__nav_33_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    30. Ітератори
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_33_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_33">
+            <span class="md-nav__icon md-icon"></span>
+            30. Ітератори
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Ітератори
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="iterator.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Ітератори
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Отримання значень ітерабельних об'єктів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for" class="md-nav__link">
+    Як працює for
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
     
     
@@ -1378,7 +1503,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1468,7 +1595,7 @@
 &lt;dict_itemiterator object at 0x0000020BDD32A3B8&gt;
 &gt;&gt;&gt;
 </code></pre>
-<h2 id="_2">Отримання значень ітерабельних об'єктів</h2>
+<h3 id="_2">Отримання значень ітерабельних об'єктів</h3>
 <p>Щоб отримати від ітератора чергове значення ітерабельного об'єкта, 
 починаючи з першого, 
 використовують функцію <code>next()</code>. 
@@ -1479,7 +1606,7 @@
 Коли ж усі значення вичерпано, 
 при черговому і кожному наступному виклику <code>__next__()</code> 
 цей метод має викинути один з винятків — 
-<code>StopIteration</code> або <code>IndexError</code>: </p>
+<code>StopIteration</code>: </p>
 <pre><code>&gt;&gt;&gt; i = iter('bye')
 &gt;&gt;&gt; next(i)
 'b'
@@ -1495,7 +1622,8 @@ StopIteration
 </code></pre>
 <p>Крім того кожен ітератор має реалізовувати магічний метод <code>__iter__()</code> 
 (так само, як і сам ітерабельний об'єкт). 
-Цей метод має повертати сам ітератор, зазвичай він виглядає так: </p>
+Цей метод має повертати сам ітератор. 
+Зазвичай цей метод виглядає так: </p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">self</span>
 </code></pre></div>
@@ -1508,7 +1636,7 @@ StopIteration
 Але треба пам'ятати, 
 що по самому ітерабельному об'єкту ми можемо ітеруватись багато раз, 
 а по його ітератору лише один раз. </p>
-<h2 id="for">Як працює <code>for</code></h2>
+<h3 id="for">Як працює <code>for</code></h3>
 <p>По усім вищенаведеним правилам працює і вже добре відомий нам цикл <code>for</code>:</p>
 <ul>
 <li>створює для ітерабельного об'єкта ітератор</li>
@@ -1516,29 +1644,37 @@ StopIteration
 до тих пір, 
 доки не виникне виняток <code>StopIteration</code></li>
 </ul>
-<p>Ми навіть можемо самостійно реалізувати такий цикл: </p>
-<pre><code>&gt;&gt;&gt; def my_for(iterable, callback_func):
-...     iterator = iter(iterable)
-...     while True:
-...             try:
-...                     value = next(iterator)
-...                     callback_func(value)
-...             except StopIteration:
-...                     break
+<p>Ми навіть можемо самостійно реалізувати такий цикл. 
+Для прикладу: маємо список чисел і треба вивести квадрати цих чисел. 
+Проітеруємось по списку циклом <code>for</code>:</p>
+<pre><code>&gt;&gt;&gt; numbers = [1,2,3]
+&gt;&gt;&gt; for n in numbers:
+...     print(n*n)
 ...
-&gt;&gt;&gt; def loop_body(value):
-...     print(value)
-...
-&gt;&gt;&gt; my_for('bye', loop_body)
-b
-y
-e
+1
+4
+9
 &gt;&gt;&gt;
 </code></pre>
-<p>Просто, і ніякої магії! 
-Така сама логіка реалізована для цикла <code>for</code>. </p>
+<p>А тепер реалізуємо логіку цикла <code>for</code>:</p>
+<pre><code>&gt;&gt;&gt; numbers = [1,2,3]
+&gt;&gt;&gt; iterator = iter(numbers)
+&gt;&gt;&gt; while True:
+...     try:
+...         n = next(iterator)
+...     except StopIteration:
+...         break
+...     print(n*n)
+...
+1
+4
+9
+&gt;&gt;&gt;
+</code></pre>
 
 
+
+  
 
 
 
@@ -1553,6 +1689,46 @@ e
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="../types_and_structures/mappings_and_sets/sets.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Множини в Python">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Множини в Python
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../batteries/random.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Модуль random">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Модуль random
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

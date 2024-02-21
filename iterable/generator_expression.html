@@ -22,7 +22,7 @@
     
     
       
-        <title>Generator expression - PyStarter</title>
+        <title>Генераторні вирази - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Generator expression
+              Генераторні вирази
             
           </span>
         </div>
@@ -144,6 +144,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1313,6 +1315,43 @@
         
   
   
+    <a href="iterator.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    30. Ітератори
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../batteries/random.html" class="md-nav__link">
       
   
@@ -1378,7 +1417,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1386,6 +1427,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Зміст">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1395,7 +1438,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     Шахівниця
   </a>
   
@@ -1416,8 +1459,7 @@
                   
 
 
-  <h1>Generator expression</h1>
-
+<h1 id="_1">Генераторні вирази</h1>
 <p>Деякі прості генератори можна записати у вигляді виразів. Такі вирази виглядають так:</p>
 <ol>
 <li>Вираз з деякими змінними.</li>
@@ -1425,35 +1467,30 @@
 <li>Нуль або більше умов, які фільтрують значення змінних. Синтаксис відповідає заголовку оператора <code>if</code>. </li>
 </ol>
 <p>Такі вирази називають <strong><em>виразами-генераторами</em></strong> (generator expressions).</p>
-<p>Приклад. Необхідно отримати послідовність парних ступеней числа 2 від 0 до 10 включно. Напишемо спочатку "звичайний" генератор:</p>
-<pre><code>:::python
-&gt;&gt;&gt; def pow2_gen():
-...     for x in range(11):
-...             if x % 2 == 0:
-...                     yield 2 ** x
-...
-&gt;&gt;&gt;
-</code></pre>
-<p>Спробуємо знайти суму цих чисел. Функція <code>sum()</code> приймає ітерабельний об'єкт (переконайтесь у цьому самостійно), отже ми сміливо можемо передати їй генератор:</p>
-<pre><code>:::python
-&gt;&gt;&gt; print(sum(pow2_gen()))
-1365
+<p>Взагалі синтаксис генераторних виразів повторює синтаксис спискових включень, з тією відмінністю, 
+що замість квадратних дужок використовуються круглі. </p>
+<p>Приклад. Необхідно отримати послідовність непарних ступеней числа 2 від 0 до 10 включно. Напишемо спочатку "звичайний" генератор:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pow2_gen</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="mi">2</span><span class="o">**</span><span class="n">n</span>
+</code></pre></div>
+<p>Спробуємо знайти суму цих чисел. Функція <code>sum()</code> приймає ітерабельний об'єкт, отже ми сміливо можемо передати їй генератор:</p>
+<pre><code>&gt;&gt;&gt; sum(pow2_gen())
+682
 &gt;&gt;&gt;
 </code></pre>
 <p>А тепер напишемо генератор-вираз:</p>
-<pre><code>:::python
-&gt;&gt;&gt; g = (2**x for x in range(11) if x%2==0)
+<pre><code>&gt;&gt;&gt; g = (2**x for x in range(11) if x%2)
 &gt;&gt;&gt; g
-&lt;generator object &lt;genexpr&gt; at 0x0000029D8FF1FFC0&gt;
+&lt;generator object &lt;genexpr&gt; at 0x0000026146FEE0C0&gt;
 &gt;&gt;&gt; sum(g)
-1365
+682
 &gt;&gt;&gt;
 </code></pre>
-<p>Зауважте: вираз для генератора ми включили у круглі дужки. Якщо цього не зробити, виникає неоднозначність і Python не може точно інтрерпретувати такий вираз.</p>
-<h3 id="_1">Шахівниця</h3>
+<h4 id="_2">Шахівниця</h4>
 <p>Спробуємо за допомогою генератор-вираза отримати усі клітинки шахівниці білого кольору:</p>
-<pre><code>:::python
-&gt;&gt;&gt; columns = 'ABCDEFGH'
+<pre><code>&gt;&gt;&gt; columns = 'ABCDEFGH'
 &gt;&gt;&gt; rows = '12345678'
 &gt;&gt;&gt; white_fields_generator = (
 ...     column + row
@@ -1463,16 +1500,14 @@
 ... )
 &gt;&gt;&gt;
 </code></pre>
-<p>Давайте отримаємо усі білі клітинки одним символьним рядком:</p>
-<pre><code>:::python
-&gt;&gt;&gt; print(' '.join(white_fields_generator))
+<p>Давайте отримаємо усі білі клітинки одним символьним рядком. 
+Метод <code>str.join()</code> приймає ітерабельний об'єкт, а генератор і є ітерабельним об'єктом:</p>
+<pre><code>&gt;&gt;&gt; print(' '.join(white_fields_generator))
 A2 A4 A6 A8 B1 B3 B5 B7 C2 C4 C6 C8 D1 D3 D5 D7 E2 E4 E6 E8 F1 F3 F5 F7 G2 G4 G6 G8 H1 H3 H5 H7
 &gt;&gt;&gt;
 </code></pre>
-<p>Метод <code>str.join()</code> приймає ітерабельний об'єкт (переконайтесь у цьому самостійно), а  генератор і є ітерабельним об'єктом.</p>
 <p>А давайте отримаємо усі білі клітинки перших двох рядів шахівниці. Будемо використовувати генератор як звичайний ітератор самим "примітивним" способом — використовуючи функцію <code>next()</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; white_fields_generator = (column + row for column in columns for row in rows if (columns.index(column)+rows.index(row)) % 2 == 1)
+<pre><code>&gt;&gt;&gt; white_fields_generator = (column + row for column in columns for row in rows if (columns.index(column)+rows.index(row)) % 2 == 1)
 &gt;&gt;&gt; for _ in range(8):
 ...     print(next(white_fields_generator))
 ...
@@ -1487,15 +1522,10 @@ B7
 &gt;&gt;&gt;
 </code></pre>
 <p>Зауважте: перед використанням генератор треба створити знову.</p>
-<p>Можна і по-іншому, подумайте який спосіб краще:</p>
-<pre><code>:::python
-&gt;&gt;&gt; white_fields_generator = (column + row for column in columns for row in rows if (columns.index(column)+rows.index(row)) % 2 == 1)
-&gt;&gt;&gt; print(list(white_fields_generator)[:8])
-['A2', 'A4', 'A6', 'A8', 'B1', 'B3', 'B5', 'B7']
-&gt;&gt;&gt;
-</code></pre>
 
 
+
+  
 
 
 

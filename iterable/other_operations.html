@@ -12,7 +12,7 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/iterable_using_iter.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/other_operations.html">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Iterable using iter - PyStarter</title>
+        <title>Агрегація даних - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Iterable using iter
+              Агрегація даних
             
           </span>
         </div>
@@ -144,6 +144,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1313,6 +1315,43 @@
         
   
   
+    <a href="iterator.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    30. Ітератори
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../batteries/random.html" class="md-nav__link">
       
   
@@ -1378,7 +1417,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1386,6 +1427,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Зміст">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1395,15 +1438,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Лічилочка
+  <a href="#sum" class="md-nav__link">
+    sum()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Знову Фібоначчі!
+  <a href="#min" class="md-nav__link">
+    min()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max" class="md-nav__link">
+    max()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#any" class="md-nav__link">
+    any()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    all()
   </a>
   
 </li>
@@ -1423,112 +1487,118 @@
                   
 
 
-  <h1>Iterable using iter</h1>
-
-<p>Один з способів реалізувати ітератор полягає у визначенні магічних методів <code>__iter__()</code> і <code>__next__</code>.</p>
-<p>Як вже зазначалось ітератор має реалізовувати магічний метод <code>__iter__()</code>, який має повертати сам ітератор. Зазвичай він виглядає так:</p>
-<pre><code>:::python
-def __iter__(self):
-    return self
+<h1 id="_1">Агрегація даних</h1>
+<p>аааааааааааааааааааааааааааа</p>
+<p>Розглянемо деякі інструменти для агрегування даних.</p>
+<h3 id="sum"><code>sum()</code></h3>
+<p>Функція <code>sum()</code> використовується для обчислення суми значень у вхідному ітерабельному об'єкті. </p>
+<pre><code>sum(iterable, start=0)
 </code></pre>
-<p>Магічний метод <code>__next__</code> при кожному виклику має повертати чергове значення. Коли усі значення закінчаться, то при черговому і усіх наступних викликах цей метод має "піднімати" виняток <code>StopIteration</code></p>
-<h3 id="_1">Лічилочка</h3>
-<p>Розглянемо на прикладі. Напишемо простий ітератор який реалізує "лічилочку", тобто перебирає усі цілі числа від 1 до вказаного значення включно.</p>
-<pre><code>:::python
-class CountingOUt:
-    def __init__(self, count_to):
-        self.current = 1
-        self.count_to = count_to
-    def __iter__(self):
-        return self
-    def __next__(self):
-        if self.current &lt;= self.count_to:
-            current = self.current
-            self.current += 1
-            return current
-        else:
-            raise StopIteration
-</code></pre>
-<p>Як це працює:</p>
+<p>Аргументи:</p>
 <ul>
-<li>у конструкторі ми запам'ятовуємо значення, до якого будемо рахувати, а також встановлюємо "поточне" значення, тобто починаємо з 1</li>
-<li>у магічному методі <code>__next__</code> повертаємо поточне значення лічилочки, якщо ми звісно ще не вийшли за межі лічби, і збільшуємо поточне значення на 1. У всіх інших випадках "піднімаємо" виняток <code>StopIteration</code>, що буде сигналізувати що лічити вже більше нічого.</li>
+<li><code>iterable</code> — ітерабельний об'єкт;</li>
+<li><code>start</code> (опційно) — початкове значення суми. </li>
 </ul>
-<p>Ну і спробуємо скористатись нашою лічилочкою:</p>
-<pre><code>:::python
-&gt;&gt;&gt; c = CountingOUt(5)
-&gt;&gt;&gt; for n in c:
-...     print(n)
-...
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; sum([1, 2, 3, 4, 5])
+15
+&gt;&gt;&gt; sum([1, 2, 3, 4, 5], start=10)
+25
+&gt;&gt;&gt; sum(x ** 2 for x in range(1, 6))
+55
+&gt;&gt;&gt;
+</code></pre></div>
+<h3 id="min"><code>min()</code></h3>
+<p>Функція <code>min()</code> використовується для знаходження найменшого значення у вхідному ітерабельному об'єкті.</p>
+<pre><code>min(iterable, default=None, *args, key=None)
+</code></pre>
+<p>Аргументи:</p>
+<ul>
+<li><code>iterable</code> — ітерабельний об'єкт;</li>
+<li><code>default</code> (опційно) — значення, що повертається, якщо ітерабельний об'єкт порожній;</li>
+<li><code>*args</code> (опційно) — додаткові ітерабельні об'єкти;</li>
+<li><code>key</code> (опційно) — функція, яка визначає ключ для порівняння елементів.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; min([3, 1, 4, 2, 5])
 1
-2
-3
-4
+&gt;&gt;&gt; min(&quot;hello&quot;)
+&#39;e&#39;
+&gt;&gt;&gt; min([], default=&quot;No data available&quot;)
+&#39;No data available&#39;
+&gt;&gt;&gt; min(1, 3, 2, 4, 5)
+1
+&gt;&gt;&gt; min(&quot;hello&quot;, &quot;world&quot;)
+&#39;hello&#39;
+&gt;&gt;&gt;
+</code></pre></div>
+<h3 id="max"><code>max()</code></h3>
+<p>Функція <code>max()</code> використовується для знаходження найбільшого значення у вхідному ітерабельному об'єкті.</p>
+<pre><code>max(iterable, default=None, *args, key=None)
+</code></pre>
+<p>Аргументи:</p>
+<ul>
+<li><code>iterable</code> — ітерабельний об'єкт;</li>
+<li><code>default</code> (опційно) — значення, що повертається, якщо ітерабельний об'єкт порожній;</li>
+<li><code>*args</code> (опційно) — додаткові ітерабельні об'єкти;</li>
+<li><code>key</code> (опційно) — функція, яка визначає ключ для порівняння елементів.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; max([3, 1, 4, 2, 5])
+5
+&gt;&gt;&gt; max(&quot;hello&quot;)
+&#39;o&#39;
+&gt;&gt;&gt; max([], default=&quot;No data available&quot;)
+&#39;No data available&#39;
+&gt;&gt;&gt; max(1, 3, 2, 4, 5)
 5
 &gt;&gt;&gt;
+</code></pre></div>
+<h3 id="any"><code>any()</code></h3>
+<p>Функція <code>any()</code> перевіряє, чи хоча б один елемент у вхідному ітерабельному об'єкті є істинним (має значення <code>True</code>).</p>
+<pre><code>any(iterable)
 </code></pre>
-<h3 id="_2">Знову Фібоначчі!</h3>
-<p>Давайте реалізуємо генерацію чисел Фібоначчі за допомогою ітераторів. </p>
-<p>Задача: отримати послідовність з <code>N</code> чисел Фібоначчі:</p>
-<pre><code>:::python
-class Fibo:
-    def __init__(self, max_count):
-        self.max_count = max_count
-        self.count = 0
-        self.first, self.second = 1, 1
-    def __iter__(self):
-        return self
-    def __next__(self):
-        self.count += 1
-        if self.count &gt; self.max_count:
-            raise StopIteration
-        elif self.count &gt; 2:
-            self.first, self.second = self.second, self.first + self.second
-            return self.second
-        else:
-            return 1
-</code></pre>
-<p>Тепер можему зручно ітеруватись по послідовності Фібоначчі:</p>
-<pre><code>:::python
-&gt;&gt;&gt; for f in Fibo(8):
-...     print(f)
-...
-1
-1
-2
-3
-5
-8
-13
-21
+<p>Аргумент:</p>
+<ul>
+<li><code>iterable</code> — ітерабельний об'єкт, що перевіряється.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; any([False, False, True])
+True
+&gt;&gt;&gt; any([0, 0, 0])
+False
+&gt;&gt;&gt; any([])
+False
+&gt;&gt;&gt; any([False, 0, None, &quot;&quot;, 5])
+True
+&gt;&gt;&gt; any(char.isdigit() for char in &quot;hello123&quot;)
+True
+&gt;&gt;&gt; any(char.isalpha() for char in &quot;12345&quot;)
+False
 &gt;&gt;&gt;
+</code></pre></div>
+<h3 id="all"><code>all()</code></h3>
+<p>Функція <code>all()</code> перевіряє, чи всі елементи у вхідному ітерабельному об'єкті є істинними (мають значення <code>True</code>).</p>
+<pre><code>all(iterable)
 </code></pre>
-<p>Створити список з послідовності Фібоначчі? Просто!:</p>
-<pre><code>:::python
-&gt;&gt;&gt; f = list(Fibo(7))
-&gt;&gt;&gt; f
-[1, 1, 2, 3, 5, 8, 13]
+<p>Аргумент:</p>
+<ul>
+<li><code>iterable</code> — ітерабельний об'єкт, що перевіряється.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; all([True, True, True])
+True
+&gt;&gt;&gt; all([True, False, True])
+False
+&gt;&gt;&gt; all([])
+True
+&gt;&gt;&gt; all([1, 2, 3, 4, 5])
+True
+&gt;&gt;&gt; all(char.isdigit() for char in &quot;12345&quot;)
+True
+&gt;&gt;&gt; all(char.isalpha() for char in &quot;hello123&quot;)
+False
 &gt;&gt;&gt;
-</code></pre>
-<p>Щоб зрозуміти як це працює, давайте подивимось клас <code>list</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; help(list)
-Help on class list in module builtins:
-
-class list(object)
- |  list() -&gt; new empty list
- |  list(iterable) -&gt; new list initialized from iterable's items
- |
- ...
- ...
-</code></pre>
-<p>Тут для нас цікаве наступне:</p>
-<blockquote>
-<p>list(iterable) -&gt; new list initialized from iterable's items</p>
-</blockquote>
-<p>тобто якщо конструктору передати ітерабельний об'єкт, то буде створено список з елементів цього ітерабельного об'єкта.</p>
+</code></pre></div>
 
 
+
+  
 
 
 

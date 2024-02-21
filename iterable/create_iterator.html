@@ -12,7 +12,7 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/iterable.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/create_iterator.html">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Ітерабельні об'єкти - PyStarter</title>
+        <title>Створення ітераторів - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ітерабельні об'єкти
+              Створення ітераторів
             
           </span>
         </div>
@@ -144,6 +144,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1313,6 +1315,43 @@
         
   
   
+    <a href="iterator.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    30. Ітератори
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../batteries/random.html" class="md-nav__link">
       
   
@@ -1378,7 +1417,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1389,6 +1430,28 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Лічилочка
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Знову Фібоначчі!
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1403,55 +1466,141 @@
                   
 
 
-<h1 id="_1">Ітерабельні об'єкти</h1>
-<p>Пригадаємо цикл <code>for ... in</code>. 
-Давайте за допомогою цього цикла переберемо усі елементи списка: </p>
-<pre><code>&gt;&gt;&gt; for i in [1,3,5,7]: print(i)
+<h1 id="_1">Створення ітераторів</h1>
+<p>Як вже зазначалось ітератор має реалізовувати магічні методи <code>__iter__()</code> та <code>__next__</code>.</p>
+<p>Метод <code>__iter__()</code> має повертати сам ітератор. Зазвичай він виглядає так:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div>
+<p>Магічний метод <code>__next__</code> при кожному виклику має повертати чергове значення. 
+Коли усі значення закінчаться, то при черговому і усіх наступних викликах цей метод має "піднімати" виняток <code>StopIteration</code></p>
+<h3 id="_2">Лічилочка</h3>
+<p>Розглянемо на прикладі. 
+Напишемо простий ітератор який реалізує "лічилочку", 
+тобто перебирає усі цілі числа від 1 до вказаного значення включно.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CountingOut</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count_to</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count_to</span> <span class="o">=</span> <span class="n">count_to</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count_to</span><span class="p">:</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">current</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+</code></pre></div>
+<p>Як це працює:</p>
+<ul>
+<li>у конструкторі ми запам'ятовуємо значення, до якого будемо рахувати, а також встановлюємо "поточне" значення, тобто починаємо з 1</li>
+<li>у магічному методі <code>__next__</code> повертаємо поточне значення лічилочки, якщо ми звісно ще не вийшли за межі лічби, і збільшуємо поточне значення на 1. У всіх інших випадках "піднімаємо" виняток <code>StopIteration</code>, що буде сигналізувати що лічити вже більше нічого.</li>
+</ul>
+<p>Ну і спробуємо скористатись нашою лічилочкою:</p>
+<pre><code>&gt;&gt;&gt; c = CountingOut(5)
+&gt;&gt;&gt; for n in c:
+...     print(n)
 ...
-1
-3
-5
-7
-&gt;&gt;&gt;
-</code></pre>
-<p>Зі списком усе зрозуміло: 
-при черговому проході, або ж іншими словами — при кожній ітерації, 
-ми отримуємо один черговий елемент списка. 
-Доречі, список є контейнером. </p>
-<blockquote>
-<p><strong><em>Контейнер</em></strong> — це тип даних, який інкапсулює в себе значення інших типів.</p>
-</blockquote>
-<p>Тепер спробуємо так: </p>
-<pre><code>&gt;&gt;&gt; for i in range(4): print(i)
-...
-0
 1
 2
 3
+4
+5
 &gt;&gt;&gt;
 </code></pre>
-<p>Результат для нас вже очікуваний. 
-Але <code>range</code> не є контейнером, 
-він не містить у собі чисел які ми перебираємо циклом! </p>
-<p>А ще, як нам вже відомо, 
-за допомогою цикла <code>for</code> можна "пройтись" по символьним рядкам, словникам, навіть текстовим файлам. 
-Тобто одна інструкція <code>for...in</code> виконує над об'єктами різних типів дуже схожі дії, 
-а саме "перебирає" по одному значенню вміст цього об'єкта. </p>
-<p>З цього виникає декілька питань: </p>
+<h3 id="_3">Знову Фібоначчі!</h3>
+<p>Давайте реалізуємо генерацію чисел Фібоначчі за допомогою ітераторів. </p>
+<p>Задача: отримати послідовність з <code>N</code> чисел Фібоначчі:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Fibonacci</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">=</span> <span class="n">count</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_b</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">item</span>
+</code></pre></div>
+<p>Тепер можему зручно ітеруватись по ряду Фібоначчі:</p>
+<pre><code>&gt;&gt;&gt; for f in Fibonacci(10):
+...     print(f)
+...
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+&gt;&gt;&gt;
+</code></pre>
+<p>Треба створити список з чисел Фібоначчі? Не є питань:</p>
+<pre><code>&gt;&gt;&gt; list(Fibonacci(10))
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+&gt;&gt;&gt;
+</code></pre>
+<p>Клас <code>Fibonacci</code> є:</p>
 <ul>
-<li>що спільного є у об'єктів які можна перебирати за допомогою цикла <code>for</code>?</li>
-<li>чи можемо ми якось це використати, наприклад створити свій тип даних по якому теж можна буде ітеруватись?</li>
-<li>чи можна використати ці властивості ще якимось чином?</li>
+<li>ітератором, тому що реалізує методи <code>__iter__()</code> та <code>__next__()</code>;</li>
+<li>ітерабельним, тому що реалізує метод <code>__iter__()</code> який повертає ітератор.</li>
 </ul>
-<blockquote>
-<p><strong><em>Ітерабельний об'єкт</em></strong> (в оригіналій термінології — іменник <em>iterable</em>) — це об'єкт, 
-який може повертати значення по одному за раз. </p>
-</blockquote>
-<p>Ітерабельні об'єкти можуть бути використані всередині цикла <code>for</code>, 
-а також у багатьох інших випадках, 
-коли очікується послідовність, наприклад як аргумент для функції <code>sum()</code>. </p>
+<p>Проітеруватись по такому ряду чисел Фібоначчі можна лише один раз:</p>
+<pre><code>&gt;&gt;&gt; fibo5 = Fibonacci(5)
+&gt;&gt;&gt; list(fibo5)
+[1, 1, 2, 3, 5]
+&gt;&gt;&gt; list(fibo5)
+[]
+&gt;&gt;&gt;
+</code></pre>
+<p>Виправимо цей "недолік": створимо окремо клас, який буде представляти ряд чисел Фібоначчі, і окремо ітератор по ньому.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">FibonacciIterator</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">=</span> <span class="n">count</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_b</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_b</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">item</span>
 
 
+<span class="k">class</span> <span class="nc">Fibonacci</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">=</span> <span class="n">count</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">FibonacciIterator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_count</span><span class="p">)</span>
+</code></pre></div>
+<p>Тепер можна створити ряд чисел Фібоначчі необхідної довжини та ітеруватись по ньому скільки завгодно:</p>
+<pre><code>&gt;&gt;&gt; fibo5 = Fibonacci(5)
+&gt;&gt;&gt; list(fibo5)
+[1, 1, 2, 3, 5]
+&gt;&gt;&gt; list(fibo5)
+[1, 1, 2, 3, 5]
+&gt;&gt;&gt;
+</code></pre>
+
+
+
+  
 
 
 

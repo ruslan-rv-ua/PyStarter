@@ -10,6 +10,6 @@ class Person:
 # p2 = Person('Alice', 25)
 # p2 = Person('Alice', 30)
 # e = p1 == p2
-e = Person('Alice', 25) == Person('Alice', 25)
+r = Person('Alice', 25) == Person('Alice', 25)
 # students = [p1, p2]
-i = Person('Alice', 25) in [Person('Alice', 25)]
+r = Person('Alice', 25) in [Person('Alice', 25)]

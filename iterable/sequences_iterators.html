@@ -12,7 +12,7 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/iterable_using_getitem.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/sequences_iterators.html">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Iterable using getitem - PyStarter</title>
+        <title>Ітератори послідовностей - PyStarter</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Iterable using getitem
+              Ітератори послідовностей
             
           </span>
         </div>
@@ -144,6 +144,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1313,6 +1315,43 @@
         
   
   
+    <a href="iterator.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    30. Ітератори
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../batteries/random.html" class="md-nav__link">
       
   
@@ -1378,7 +1417,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1387,21 +1428,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Ступені двійки
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1416,85 +1444,41 @@
                   
 
 
-  <h1>Iterable using getitem</h1>
-
-<p>В Python коли ми отримуємо доступ до елементів контейнера конструкцією:</p>
-<pre><code>obj[key]
-</code></pre>
-<p>завжди викликається магічний метод:</p>
-<pre><code>__getitem__(obj, key)
-</code></pre>
-<p>Реалізуючи цей магічний метод ми і задаємо поведінку для екземплярів певних класів. Наприклад, для списків — це доступ до його елементів по індексу, в цьому випадку індексом може бути ціле число або зрізання, а для словників — це ключ елемента.</p>
-<p>Пригадаємо: щоб об'єкт був ітерабельним, функція <code>iter()</code> має повернути ітератор для цього об'єкта. У свою чергу якщо функція <code>iter()</code> знаходить у потенційно ітерабельного об'єкта магічний метод <code>__getitem__()</code>, тоді Python спробує побудувати ітератор самостійно. </p>
+<h1 id="_1">Ітератори послідовностей</h1>
+<p>Пригадаємо: щоб об'єкт був ітерабельним, функція <code>iter()</code> має повернути ітератор для цього об'єкта. 
+У свою чергу якщо функція <code>iter()</code> знаходить у потенційно ітерабельного об'єкта магічний метод <code>__getitem__()</code>, тоді Python спробує побудувати ітератор самостійно. </p>
 <p>Методу <code>__getitem__()</code> будуть передаватись цілі невід'ємні числа, тобто як індекси для списків, але які більше або дорівнюють нулю. 
-Ми ж у свою чергу повинні реалізувати повернення необхідного значення, яке начебто відповідає переданому індексу. </p>
-<p>Якщо переданий "індекс" виходить за межі, атже нам треба ж якимось чином обмежити довжину послідовності, то ми маємо "підняти" виняток IndexError</p>
-<h3 id="_1">Ступені двійки</h3>
-<p>Створимо ітерабельний об'єкт, щоб можна було б отримувати послідовність із ступенів числа 2:</p>
-<pre><code>:::python
-&gt;&gt;&gt; class Pow2:
-...     def __init__(self, max_len):
-...         self.max_len = max_len
-...     def __getitem__(self, index):
-...         if 0 &lt;= index &lt;= self.max_len:
-...             return 2 ** index
-...         else:
-...             raise IndexError
-...
-</code></pre>
-<p>Створимо екземпляр нашого ітерабельного об'єкта, і спочатку спробуємо звертатись до його елементів "традиційним" способом, тобто за допомогою індексування:</p>
-<pre><code>:::python
-&gt;&gt;&gt; p2 = Pow2(4)
-&gt;&gt;&gt; p2[0]
+Ми ж у свою чергу повинні реалізувати повернення необхідного значення, яке відповідає вказаному індексу. 
+Якщо переданий "індекс" виходить за межі, атже нам треба ж якимось чином обмежити довжину послідовності, то ми маємо "підняти" виняток IndexError</p>
+<p>Створимо просту послідовність — квадрати перших 100 невід'ємних чисел:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Quads</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">index</span> <span class="o">*</span> <span class="n">index</span>
+        <span class="k">raise</span> <span class="ne">IndexError</span>
+</code></pre></div>
+<p>Тепер спробуємо отримати ітератор цієї послідовності:</p>
+<pre><code>&gt;&gt;&gt; quads_iterator = iter(Quads())
+&gt;&gt;&gt; next(quads_iterator)
+0
+&gt;&gt;&gt; next(quads_iterator)
 1
-&gt;&gt;&gt; p2[4]
-16
-&gt;&gt;&gt; p2[5]
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-  File "&lt;stdin&gt;", line 8, in __getitem__
-IndexError
-&gt;&gt;&gt;
-</code></pre>
-<p>А тепер давайте спробуємо отримати ітератор для створеного ітерабельного об'єкта:</p>
-<pre><code>:::python
-&gt;&gt;&gt; it = iter(p2)
-&gt;&gt;&gt; it
-&lt;iterator object at 0x000001F7396AF240&gt;
-&gt;&gt;&gt;
-</code></pre>
-<p>Python сам створив ітератор. Спробуємо за допомогою цього ітератора отримувати значення послідовності:</p>
-<pre><code>:::python
-&gt;&gt;&gt; next(it)
-1
-&gt;&gt;&gt; next(it)
-2
-&gt;&gt;&gt; next(it)
+&gt;&gt;&gt; next(quads_iterator)
 4
-&gt;&gt;&gt; next(it)
-8
-&gt;&gt;&gt; next(it)
-16
-&gt;&gt;&gt; next(it)
+&gt;&gt;&gt; next(quads_iterator)
+9
+&gt;&gt;&gt; while True: n = next(quads_iterator)
+...
 Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 StopIteration
 &gt;&gt;&gt;
 </code></pre>
-<p>Зауважте: ітератор при досягненні кінця послідовності "піднімає" виняток <code>StopIteration</code>, власне як і має робити ітератор. 
-Отже і цикл <code>for</code> буде працювати як і очікується:</p>
-<pre><code>:::python
-&gt;&gt;&gt; for n in p2: print(n)
-...
-1
-2
-4
-8
-16
-&gt;&gt;&gt;
-</code></pre>
+<p>Ітератор при досягненні кінця послідовності "піднімає" виняток <code>StopIteration</code>, власне як і має робити ітератор. </p>
 
 
+
+  
 
 
 
