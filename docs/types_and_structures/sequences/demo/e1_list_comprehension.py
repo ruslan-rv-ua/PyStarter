@@ -26,7 +26,7 @@ l=[n*n for n in range(5) if n%2]
 
 text = 'Скільки буде 2 помножити на 2?'
 # порахувати суму усіх цифр у тексті
-s = sum([int(char) for char in text if char.isdigit()])
+s = sum([int(char) for char in text     ])
 
 ###########################
 
