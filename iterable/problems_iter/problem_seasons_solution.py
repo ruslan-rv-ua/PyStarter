@@ -15,21 +15,19 @@ class Seasons(str, Enum):
 
     @classmethod
     def iter(self, start: "Seasons", count: int):
-        return iter(SeasonsIterator(start, count))
+        return SeasonsIterator(start, count)
 
     @classmethod
     def now(self):
         month = date.today().month
-        if month < 3:
+        if month in {12,1,2}:
             return Seasons.WINTER
-        elif month < 6:
+        elif month in {3,4,5}:
             return Seasons.SPRING
-        elif month < 9:
+        elif month in {6,7,8}:
             return Seasons.SUMMER
-        elif month < 12:
+        elif month in {9,10,11}:
             return Seasons.FALL
-        else:
-            return Seasons.WINTER
 
     def __str__(self) -> str:
         return self.value
@@ -58,3 +56,4 @@ assert (
     ", ".join([str(season) for season in Seasons.iter(Seasons.now(), 5)])
     == "зима, весна, літо, осінь, зима"
 )
+assert list(Seasons.iter(Seasons.now(), 0)) == []
