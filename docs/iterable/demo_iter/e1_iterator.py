@@ -6,10 +6,10 @@ i = iter([1,2,3])
 i = iter('abc')
 
 i = iter(range(1, 4))
-print(next(i))
-print(next(i))
-print(next(i))
-# print(next(i))
+r1=next(i)
+r2=next(i)
+r3=next(i)
+# r4=next(i)
 
 ###################
 
@@ -25,3 +25,8 @@ while True:
     except StopIteration:
         break
     print(n*n)
+
+###################
+
+iter() __iter__
+next() __next__

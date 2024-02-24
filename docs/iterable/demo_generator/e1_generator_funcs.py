@@ -1,9 +1,9 @@
 def generator_function():
-    print('* start')
-    yield "Hello"
-    print('* middle')
-    yield "PyStarter"
-    print('* finish')
+    print('* почали')
+    yield "перше"
+    print('* продовжуємо')
+    yield "друге"
+    print('* закінчили')
     
     
 # generator_function

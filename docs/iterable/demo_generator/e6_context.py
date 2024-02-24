@@ -28,3 +28,15 @@ def temp_file(mode='w', dir=None):
     finally:
         file.close()
         file.unlink()
+    
+########################
+
+@contextmanager    
+def suppress(*exceptions):
+    try:
+        yield
+    except exceptions:
+        pass
+        
+with suppress(ZeroDivisionError):
+    1/0

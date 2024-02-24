@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Функції та вирази
 
 Функції повертають значення. Отже виклик функції можна вважати виразом. 

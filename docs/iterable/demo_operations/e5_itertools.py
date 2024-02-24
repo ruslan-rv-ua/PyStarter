@@ -8,6 +8,8 @@ keys = list(combinations('0123456789', 2))
 # itertools.compress(data, selectors)
 from itertools import compress
 names = ['Alice', 'Bob', 'Eric', 'Jane']
-grades = [1, 0, None, 5]
+grades = [1, 0, None, 25]
 r = list(compress(names, grades))
+
+#################
 

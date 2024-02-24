@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Анонімні функції
 
 Крім визначення функції за допомогою `def` в Python є можливість використання анонімних **(lambda)** функцій.

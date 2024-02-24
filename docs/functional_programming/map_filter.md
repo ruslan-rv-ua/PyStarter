@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Класичні функції вищого порядка
 
 Розглянемо класичні функції вищого порядка, 

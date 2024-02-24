@@ -1,10 +1,15 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Чисті функції
 
 > ***Детермінована функція*** — функція яка для одного й того ж набору вхідних значень завжди повертає однаковий результат. 
 
 Приклад детермінованої функції: 
 
-	:::python
 	def sum(a, b):
 		return a + b
 	  
@@ -12,7 +17,6 @@
 
 І приклад недетермінованої функції: 
 
-	:::python
 	from random import randint
 	def roll_dice():
 		return randint(1, 6)
@@ -39,7 +43,6 @@
 
 Приклад функції з побічним ефектом: 
 
-	:::python
 	def sort_by_sort(some_list):
 		some_list.sort()
 		print(some_list)
@@ -51,7 +54,6 @@
 
 А ось функція без побічних ефектів: 
 
-	:::python
 	def sort_by_sorted(some_list):
 		return sorted(some_list)
 		

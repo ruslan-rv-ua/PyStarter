@@ -258,16 +258,18 @@ nav:
     - Множини в Python: types_and_structures/mappings_and_sets/sets.md
   - 30. Ітератори:
     - Ітератори: iterable/iterator.md
-    # - Створення ітераторів: iterable/create_iterator.md
-    # - Ітератори послідовностей: iterable/sequences_iterators.md
-  # - 31. Генератори:
-  #   - Генератори: iterable/generator.md
-  #   - Генераторні вирази: iterable/generator_expression.md
-  # - 32. Операції з ітерабельними об'єктами:
-  #   - Упаковка та розпаковка: iterable/starr.md
-  #   - Агрегація: iterable/iterable_aggregation.md
-  # - 27. Елементи функційного програмування:
-  #   - Парадигма ФП: functional_programming/intro.md
+    - Створення ітераторів: iterable/create_iterator.md
+    - Ітератори послідовностей: iterable/sequences_iterators.md
+  - 31. Генератори:
+    - Генератори: iterable/generator.md
+    - Генераторні вирази: iterable/generator_expression.md
+  - 32. Операції з ітерабельними об'єктами:
+    - Упаковка та розпаковка: iterable/iterable_pack_unpack.md
+    - Агрегація даних: iterable/iterable_aggregation.md
+    - Інші функції: iterable/iterable_functions.md
+  - 33. Елементи функційного програмування:
+    - Парадигма ФП: functional_programming/intro.md
+    - Чисті функції: functional_programming/pure_functions.md
   # - xx. Ввід та вивід: comming_soon.md
   # - xx. Модулі і пакети: comming_soon.md
   # - xx. Виконання програм: comming_soon.md

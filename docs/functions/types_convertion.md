@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 В Python типи даних ще називають *класами*.
 
 	s = 'string'
