@@ -12,9 +12,13 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/other_operations.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/iterable/iterable_pack_unpack.html">
       
       
+        <link rel="prev" href="generator_expression.html">
+      
+      
+        <link rel="next" href="iterable_aggregation.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Агрегація даних - PyStarter</title>
+        <title>Упаковка та розпаковка - PyStarter</title>
       
     
     
@@ -117,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Агрегація даних
+              Упаковка та розпаковка
             
           </span>
         </div>
@@ -1352,6 +1356,280 @@
         
   
   
+    <a href="generator.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    31. Генератори
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_35" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_35" id="__nav_35_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    32. Операції з ітерабельними об'єктами
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_35_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_35">
+            <span class="md-nav__icon md-icon"></span>
+            32. Операції з ітерабельними об'єктами
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Упаковка та розпаковка
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="iterable_pack_unpack.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Упаковка та розпаковка
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Упаковка переданих у функцію аргументів
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Розпаковка в аргументи функцій
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Упаковка при присвоєнні
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Розпаковка в літералах послідовностей
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Розпаковка в літералах словників
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Повернення функцією декількох значень
+  </a>
+  
+    <nav class="md-nav" aria-label="Повернення функцією декількох значень">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumerate" class="md-nav__link">
+    enumerate()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="iterable_aggregation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Агрегація даних
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="iterable_functions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Інші функції
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functional_programming/intro.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    33. Елементи функційного програмування
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../batteries/random.html" class="md-nav__link">
       
   
@@ -1438,37 +1716,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sum" class="md-nav__link">
-    sum()
+  <a href="#_2" class="md-nav__link">
+    Упаковка переданих у функцію аргументів
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#min" class="md-nav__link">
-    min()
+  <a href="#_3" class="md-nav__link">
+    Розпаковка в аргументи функцій
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#max" class="md-nav__link">
-    max()
+  <a href="#_4" class="md-nav__link">
+    Упаковка при присвоєнні
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#any" class="md-nav__link">
-    any()
+  <a href="#_5" class="md-nav__link">
+    Розпаковка в літералах послідовностей
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#all" class="md-nav__link">
-    all()
+  <a href="#_6" class="md-nav__link">
+    Розпаковка в літералах словників
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Повернення функцією декількох значень
+  </a>
+  
+    <nav class="md-nav" aria-label="Повернення функцією декількох значень">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enumerate" class="md-nav__link">
+    enumerate()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1487,114 +1785,185 @@
                   
 
 
-<h1 id="_1">Агрегація даних</h1>
-<p>аааааааааааааааааааааааааааа</p>
-<p>Розглянемо деякі інструменти для агрегування даних.</p>
-<h3 id="sum"><code>sum()</code></h3>
-<p>Функція <code>sum()</code> використовується для обчислення суми значень у вхідному ітерабельному об'єкті. </p>
-<pre><code>sum(iterable, start=0)
-</code></pre>
-<p>Аргументи:</p>
-<ul>
-<li><code>iterable</code> — ітерабельний об'єкт;</li>
-<li><code>start</code> (опційно) — початкове значення суми. </li>
-</ul>
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; sum([1, 2, 3, 4, 5])
-15
-&gt;&gt;&gt; sum([1, 2, 3, 4, 5], start=10)
-25
-&gt;&gt;&gt; sum(x ** 2 for x in range(1, 6))
-55
+<h1 id="_1">Упаковка та розпаковка ітерабельних об'єктів</h1>
+<p>Символ <code>*</code> (зірочка) в Python використовується у інфіксних операторах множення та підведення у ступінь. 
+Але це не єдині способи застосування цього символа, 
+його також використовують у префіксних операторах. </p>
+<h2 id="_2">Упаковка переданих у функцію аргументів</h2>
+<p>Як нам вже відомо, при визначенні функції за допомогою зірочки можна вказати змінну, 
+у яку при виклику функції буде "збиратись" довільна кількість позиційних аргументів. 
+Усі аргументи буде "упаковано" в кортеж. 
+Так працюють багато функцій, наприклад <code>print()</code> — 
+цій функції ми можемо передати довільну кількість аргументів для виводу. </p>
+<p>Схоже використовується і <code>**</code>: 
+якщо використовувати цей оператор у оголошенні функції, 
+то він "збере" усі передані іменовані аргументи у словник. </p>
+<h2 id="_3">Розпаковка в аргументи функцій</h2>
+<p>При виклику функцій можна використовувати оператор <code>*</code> для "розпаковки" ітерабельного об'єкта в аргументи: </p>
+<pre><code>&gt;&gt;&gt; items = [1, 2, 'string', None]
+&gt;&gt;&gt; print(*items)
+1 2 string None
 &gt;&gt;&gt;
-</code></pre></div>
-<h3 id="min"><code>min()</code></h3>
-<p>Функція <code>min()</code> використовується для знаходження найменшого значення у вхідному ітерабельному об'єкті.</p>
-<pre><code>min(iterable, default=None, *args, key=None)
 </code></pre>
-<p>Аргументи:</p>
-<ul>
-<li><code>iterable</code> — ітерабельний об'єкт;</li>
-<li><code>default</code> (опційно) — значення, що повертається, якщо ітерабельний об'єкт порожній;</li>
-<li><code>*args</code> (опційно) — додаткові ітерабельні об'єкти;</li>
-<li><code>key</code> (опційно) — функція, яка визначає ключ для порівняння елементів.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; min([3, 1, 4, 2, 5])
-1
-&gt;&gt;&gt; min(&quot;hello&quot;)
-&#39;e&#39;
-&gt;&gt;&gt; min([], default=&quot;No data available&quot;)
-&#39;No data available&#39;
-&gt;&gt;&gt; min(1, 3, 2, 4, 5)
-1
-&gt;&gt;&gt; min(&quot;hello&quot;, &quot;world&quot;)
-&#39;hello&#39;
+<p>Конструкція <code>*items</code> передає усі елементи списка <code>items</code> як окремі аргументи. </p>
+<p>Таку розпаковку можна використовувати декілька раз при виклику функції: </p>
+<pre><code>&gt;&gt;&gt; numbers = [1, 2, 3]
+&gt;&gt;&gt; names = ['Alice', 'Bob']
+&gt;&gt;&gt; print(*names, *numbers)
+Alice Bob 1 2 3
 &gt;&gt;&gt;
-</code></pre></div>
-<h3 id="max"><code>max()</code></h3>
-<p>Функція <code>max()</code> використовується для знаходження найбільшого значення у вхідному ітерабельному об'єкті.</p>
-<pre><code>max(iterable, default=None, *args, key=None)
 </code></pre>
-<p>Аргументи:</p>
-<ul>
-<li><code>iterable</code> — ітерабельний об'єкт;</li>
-<li><code>default</code> (опційно) — значення, що повертається, якщо ітерабельний об'єкт порожній;</li>
-<li><code>*args</code> (опційно) — додаткові ітерабельні об'єкти;</li>
-<li><code>key</code> (опційно) — функція, яка визначає ключ для порівняння елементів.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; max([3, 1, 4, 2, 5])
-5
-&gt;&gt;&gt; max(&quot;hello&quot;)
-&#39;o&#39;
-&gt;&gt;&gt; max([], default=&quot;No data available&quot;)
-&#39;No data available&#39;
-&gt;&gt;&gt; max(1, 3, 2, 4, 5)
-5
-&gt;&gt;&gt;
-</code></pre></div>
-<h3 id="any"><code>any()</code></h3>
-<p>Функція <code>any()</code> перевіряє, чи хоча б один елемент у вхідному ітерабельному об'єкті є істинним (має значення <code>True</code>).</p>
-<pre><code>any(iterable)
+<p>Аналогічно можна розпакувати словник у іменовані аргументи: </p>
+<pre><code>&gt;&gt;&gt; format = {'sep': '-', 'end': '| '}
+&gt;&gt;&gt; print(*'line', **format)
+l-i-n-e| &gt;&gt;&gt;
 </code></pre>
-<p>Аргумент:</p>
-<ul>
-<li><code>iterable</code> — ітерабельний об'єкт, що перевіряється.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; any([False, False, True])
-True
-&gt;&gt;&gt; any([0, 0, 0])
-False
-&gt;&gt;&gt; any([])
-False
-&gt;&gt;&gt; any([False, 0, None, &quot;&quot;, 5])
-True
-&gt;&gt;&gt; any(char.isdigit() for char in &quot;hello123&quot;)
-True
-&gt;&gt;&gt; any(char.isalpha() for char in &quot;12345&quot;)
-False
-&gt;&gt;&gt;
-</code></pre></div>
-<h3 id="all"><code>all()</code></h3>
-<p>Функція <code>all()</code> перевіряє, чи всі елементи у вхідному ітерабельному об'єкті є істинними (мають значення <code>True</code>).</p>
-<pre><code>all(iterable)
+<p>Розпаковку словників можна використовувати декілька раз, 
+але треба слідкувати щоб ключі словників не повторювались, 
+інакше у функцію буде передано декілька іменованих аргументів з однаковими іменами: </p>
+<pre><code>&gt;&gt;&gt; f1 = {'sep': '-', 'end': '|'}
+&gt;&gt;&gt; f2 = {'end': '~ '}
+&gt;&gt;&gt; print(1, 2, 3, **f1, **f2)
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: print() got multiple values for keyword argument 'end'
+&gt;&gt;&gt; f1 = {'sep': '-'}
+&gt;&gt;&gt; f2 = {'end': '~ '}
+&gt;&gt;&gt; print(1, 2, 3, **f1, **f2)
+1-2-3~ &gt;&gt;&gt;
 </code></pre>
-<p>Аргумент:</p>
-<ul>
-<li><code>iterable</code> — ітерабельний об'єкт, що перевіряється.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; all([True, True, True])
-True
-&gt;&gt;&gt; all([True, False, True])
-False
-&gt;&gt;&gt; all([])
-True
-&gt;&gt;&gt; all([1, 2, 3, 4, 5])
-True
-&gt;&gt;&gt; all(char.isdigit() for char in &quot;12345&quot;)
-True
-&gt;&gt;&gt; all(char.isalpha() for char in &quot;hello123&quot;)
-False
+<h2 id="_4">Упаковка при присвоєнні</h2>
+<p>Ітерабельний об'єкт можна "розпакувати" і присвоїти його частинки окремим змінним. 
+При цьому у змінну перед якою буде стояти зірочка усі значення, кількість яких перевищує кількість змінних, знову буде упаковано: </p>
+<pre><code>&gt;&gt;&gt; first, *other = 'string'
+&gt;&gt;&gt; first
+'s'
+&gt;&gt;&gt; other
+['t', 'r', 'i', 'n', 'g']
+&gt;&gt;&gt; first, second, *other = 'string'
+&gt;&gt;&gt; first, second, other
+('s', 't', ['r', 'i', 'n', 'g'])
+&gt;&gt;&gt; first, *_, last = 'string'
+&gt;&gt;&gt; first, last
+('s', 'g')
 &gt;&gt;&gt;
-</code></pre></div>
+</code></pre>
+<p>Така розпаковка може бути навіть вкладеною: </p>
+<pre><code>&gt;&gt;&gt; (first_letter, *_), *_ = ['Alice', 'Bob']
+&gt;&gt;&gt; first_letter
+'A'
+&gt;&gt;&gt;
+</code></pre>
+<h2 id="_5">Розпаковка в літералах послідовностей</h2>
+<p>При створенні списків, кортежів та множин за допомогою літералів для розпаковки ітерабельних об'єктів також можна використовувати зірочку:  </p>
+<pre><code>&gt;&gt;&gt; numbers = [1, 2, 3]
+&gt;&gt;&gt; names = ['Alice', 'Bob']
+&gt;&gt;&gt;
+</code></pre>
+<p>У списку переставимо перший елемент у кінець і сформуємо кортеж: </p>
+<pre><code>&gt;&gt;&gt; new_tuple = (*numbers[1:], numbers[0])
+&gt;&gt;&gt; new_tuple
+(2, 3, 1)
+&gt;&gt;&gt;
+</code></pre>
+<p>Створимо множину розпакувавши список і генератор: </p>
+<pre><code>&gt;&gt;&gt; uppercase_names = (name.upper() for name in names)
+&gt;&gt;&gt; uppercase_names
+&lt;generator object &lt;genexpr&gt; at 0x000001387353ABA0&gt;
+&gt;&gt;&gt; all_names = {*names, *uppercase_names, *names}
+&gt;&gt;&gt; all_names
+{'Bob', 'BOB', 'ALICE', 'Alice'}
+&gt;&gt;&gt;
+</code></pre>
+<h2 id="_6">Розпаковка в літералах словників</h2>
+<p>При створенні словників за допомогою літерала можна використовувати <code>**</code>. 
+Найчастіше застосування — об'єднання двох словників в один: </p>
+<pre><code>&gt;&gt;&gt; d1 = dict(a=1, b=2)
+&gt;&gt;&gt; d2 = dict(b=22, c=33)
+&gt;&gt;&gt; {**d1, **d2}
+{'a': 1, 'b': 22, 'c': 33}
+&gt;&gt;&gt; {**d2, **d1}
+{'b': 2, 'c': 33, 'a': 1}
+&gt;&gt;&gt;
+</code></pre>
+<p>Можна отримати копію словника паралельно додаючи нові ключ-значення і перезаписуючи вже існуючі ключі: </p>
+<pre><code>&gt;&gt;&gt; date = dict(year=2035, month=1)
+&gt;&gt;&gt; birthday = {**date, 'year':2021, 'day':17}
+&gt;&gt;&gt; birthday
+{'year': 2021, 'month': 1, 'day': 17}
+&gt;&gt;&gt;
+</code></pre>
+<h2 id="_7">Повернення функцією декількох значень</h2>
+<p>Якщо функція має повернути не одне значення, а декілька, 
+ми можемо об'єднати ці значення у кортеж. 
+Відповідно функція буде повертати кортеж. 
+А оскільки кортеж — структура даних ітерабельна, 
+при присвоєнні значень ми можемо розпакувати такий кортеж на складові. </p>
+<pre><code>def fetch_data():
+    ...
+    return data, error
+
+data, error = fetch_data()
+if error is not None:
+    process_data(data)
+</code></pre>
+<h3 id="enumerate">enumerate()</h3>
+<p>А от було б непогано якби у циклі ми могли б 
+отримати одразу і черговий елемент послідовності, і його індекс? </p>
+<p>На допомогу приходить функція <code>enumerate()</code>. 
+В якості аргументу вона приймає послідовність, 
+і повертає теж послідовність, послідовність з кортежів. 
+Кортеж на кожній ітерації містить індекс елемента і його значення: </p>
+<pre><code>&gt;&gt;&gt; for i in enumerate('abcdef'):
+...   print(i)
+...
+(0, 'a')
+(1, 'b')
+(2, 'c')
+(3, 'd')
+(4, 'e')
+(5, 'f')
+&gt;&gt;&gt;
+</code></pre>
+<p>Оскільки ми чітко знаємо кількість елементів кожного кортежу, 
+а саме 2 (індекс і елемент), 
+то кортеж можемо розкласти прямо у заголовку цикла:</p>
+<pre><code>&gt;&gt;&gt; for index, value in enumerate('abcdef'):
+...   print(index, '-', value)
+...
+0 - a
+1 - b
+2 - c
+3 - d
+4 - e
+5 - f
+&gt;&gt;&gt;
+</code></pre>
+<p>Функція <code>enumerate()</code> повертає послідовність спеціального типу: </p>
+<pre><code>&gt;&gt;&gt; a = enumerate('abcde')
+&gt;&gt;&gt; a
+&lt;enumerate object at 0x000002A9776A1E10&gt;
+&gt;&gt;&gt; type(a)
+&lt;class 'enumerate'&gt;
+&gt;&gt;&gt; tpl = tuple(enumerate('abcde'))
+&gt;&gt;&gt; tpl
+((0, 'a'), (1, 'b'), (2, 'c'), (3, 'd'), (4, 'e'))
+&gt;&gt;&gt;
+</code></pre>
+<p>Розглянемо на прикладі. 
+У списку цілих чисел треба усі елементи 
+які менше ніж 5 помножити на 10. </p>
+<pre><code>&gt;&gt;&gt; numbers = list(range(10))
+&gt;&gt;&gt; numbers
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+&gt;&gt;&gt; for index, number in enumerate(numbers):
+...     if number &lt; 5:
+...             numbers[index] = number * 10
+...
+&gt;&gt;&gt; numbers
+[0, 10, 20, 30, 40, 5, 6, 7, 8, 9]
+&gt;&gt;&gt;
+</code></pre>
 
 
 
@@ -1613,6 +1982,46 @@ False
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="generator_expression.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Генераторні вирази">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Генераторні вирази
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="iterable_aggregation.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Агрегація даних">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Агрегація даних
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

@@ -6,3 +6,4 @@ from typing import Iterable
 assert tuple(Enumerate("abc", 1)) == tuple(enumerate("abc", 1))
 assert tuple(Enumerate("abc")) == tuple(enumerate("abc"))
 assert list(Enumerate(range(10, 15), start=20)) == list(enumerate(range(10, 15), 20))
+assert tuple(Enumerate(dict())) == tuple(enumerate(dict()))
