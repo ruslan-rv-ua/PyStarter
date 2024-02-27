@@ -16,7 +16,7 @@ from datetime import date
 from itertools import cycle, islice
 
 
-class Seasons(str, Enum):
+class Seasons(StrEnum):
     WINTER = "зима"
     SPRING = "весна"
     SUMMER = "літо"
@@ -24,13 +24,6 @@ class Seasons(str, Enum):
 
     @classmethod
     def iter(self, start: "Seasons", count: int):
-        if not isinstance(start, Seasons):
-            raise TypeError("start must be an instance of Seasons")
-        if not isinstance(count, int):
-            raise TypeError("count must be an instance of int")
-        if count < 0:
-            raise ValueError("count must be positive")
-        
         seasons_iterator = cycle(Seasons)
         start_index = list(Seasons).index(start)
         yield from islice(seasons_iterator, start_index, start_index+count)
@@ -47,8 +40,10 @@ class Seasons(str, Enum):
         elif month in {9, 10, 11}:
             return Seasons.FALL
 
+    '''
     def __str__(self) -> str:
         return self.value
+    '''
 
 
 # юніт-тести, використовуйте як підказку
@@ -60,24 +55,6 @@ try:
 except ImportError:
     from collections import Iterator
 
-
-def test_iter_start_type():
-    with pytest.raises(TypeError):
-        list(Seasons.iter("зима", 5))
-    with pytest.raises(TypeError):
-        list(Seasons.iter(5, 5))
-
-
-def test_iter_count_type():
-    with pytest.raises(TypeError):
-        list(Seasons.iter(Seasons.now(), 3.0))
-    with pytest.raises(TypeError):
-        list(Seasons.iter(Seasons.now(), None))
-
-
-def test_iter_couont_negative():
-    with pytest.raises(ValueError):
-        list(Seasons.iter(Seasons.now(), -1))
 
 
 def test_seasons():

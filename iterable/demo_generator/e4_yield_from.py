@@ -12,7 +12,7 @@ def chain_iterables(*iterables):
     for iterable in iterables:
         yield from iterable
         
-r = list(chain_iterables(
+l = list(chain_iterables(
     [42, 'Hello'],
     'abc',
     range(1,5)

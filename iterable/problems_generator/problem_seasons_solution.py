@@ -11,12 +11,15 @@ pip install pytest
 Результати тестування будуть у файлі test_results.txt.
 """
 
-from enum import Enum
+from enum import Enum, StrEnum
 from datetime import date
-from itertools import cycle
+from itertools import cycle, islice
 
 
 class Seasons(str, Enum):
+    def __str__(self) -> str:
+        return self.value
+
     WINTER = "зима"
     SPRING = "весна"
     SUMMER = "літо"
@@ -29,14 +32,11 @@ class Seasons(str, Enum):
         if not isinstance(count, int):
             raise TypeError("count must be an instance of int")
         if count < 0:
-            raise ValueError("count must be greater than 0 or equal to 0")
+            raise ValueError("count must be positive")
         
-        seasons_list = list(Seasons)
         seasons_iterator = cycle(Seasons)
-        for _ in range(seasons_list.index(start)):
-            next(seasons_iterator)
-        for _ in range(count):
-            yield next(seasons_iterator)
+        start_index = list(Seasons).index(start)
+        yield from islice(seasons_iterator, start_index, start_index+count)
 
     @classmethod
     def now(self):
@@ -50,8 +50,6 @@ class Seasons(str, Enum):
         elif month in {9, 10, 11}:
             return Seasons.FALL
 
-    def __str__(self) -> str:
-        return self.value
 
 
 # юніт-тести, використовуйте як підказку
