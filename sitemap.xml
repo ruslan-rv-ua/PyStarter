@@ -2,837 +2,842 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/index.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/about_python.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/comming_soon.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/miths_about_education.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/resources.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/zen.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/batteries/_ftplib.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/batteries/collections.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/batteries/contextlib.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/batteries/datetime.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/batteries/enum.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/batteries/functools.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/batteries/itertools.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/batteries/os_path.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/batteries/pprint.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/batteries/random.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/bool_logic/bool.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/bool_logic/bool_expressions.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/dict/dict.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/dict/dict_methods.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/dict/dict_traversal.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/exceptions/context_managers.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/exceptions/eafp_vs_lbyl.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/exceptions/exceptions.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/exceptions/handling_exceptions.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/exceptions/raising_exceptions.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/exceptions/warnings.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functional_programming/closure.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functional_programming/decorator.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://ruslan.rv.ua/PyStarter/functional_programming/functions_as_objects.html</loc>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functional_programming/higher_order_functions.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functional_programming/intro.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functional_programming/lambda.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functional_programming/map_filter.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functional_programming/pure_functions.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functional_programming/recursion.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions/functions.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions/functions_exprs.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions/types_convertion.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions3/call_stack.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions3/docstrings.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions3/params_args.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions3/scope.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions3/strategies.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions3/args/args_kwargs.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions3/args/default.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions3/args/pos_and_kw.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions3/args/pos_and_kw_only.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions_def/functions_def.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions_def/functions_explained.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions_def/functions_naming.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions_def/functions_params.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions_def/functions_return.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/functions_def/local_global_vars.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/if/elif_statement.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/if/else_statement.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/if/if_statement.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/if/ternar_if.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/iterable/create_iterator.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/iterable/generator.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/iterable/generator_expression.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/iterable/iterable_aggregation.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/iterable/iterable_functions.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/iterable/iterable_pack_unpack.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/iterable/iterator.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/iterable/sequences_iterators.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/loop_for/for.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/loop_for/loop_flow.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/loop_for/range.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/loop_for/usage.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/loop_while/loops.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/loop_while/syntax_sugar.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/loop_while/usage.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/loop_while/while.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/methods/methods.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/methods_list/list_methods.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/methods_list/stack.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/methods_str/str_methods.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/modules/module_composing.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/modules/module_usage.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/modules/modules.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/objects/containers_bindings.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/objects/del.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/objects/immutable_exceptions.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/objects/mutability.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/objects/object_lifecycle.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/objects/objects_and_vars.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/attributes/access_control.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/attributes/attributes.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/attributes/descriptors.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/attributes/slots.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/basics/basis.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/basics/classes.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/basics/init.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/basics/object_lifecycle.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/basics/object_presentation.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/basics/static_and_class_methods.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/dunder/2.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/dunder/compare.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/dunder/functor.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/dunder/magic_method.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/dunder/numberic.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/encapsulation/computed_properties.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/encapsulation/encapsulation_basis.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/encapsulation/hide_attributes.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/encapsulation/properties.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/encapsulation/setters_and_getters.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/inheritance/attrs_inheritance.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/inheritance/call_overrided.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/inheritance/inheritance_basis.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/inheritance/linearization.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/inheritance/multiple_inheritance.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/polymorphism/polymorphism_basis.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/oop/polymorphism/polymorphism_python.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/paradigmas/declarative.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/paradigmas/imperative.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/paradigmas/oop.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/paradigmas/paradigmas.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/paradigmas/resume.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/preparations/console.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/preparations/editor.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/preparations/interpreter.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/preparations/os.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/preparations/screenreader.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/preparations/telecode.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/sequences/complex_structures.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/sequences/list.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/sequences/sequences.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/sequences/tuple.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/source_code/comments.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/source_code/print.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/source_code/run_program.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/source_code/source_code.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/strings/escapes.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/strings/fstrings.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/strings/indexing.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/strings/strings.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/strings/strings_operations.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/text_files/open_close_flush.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/text_files/read_write.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/text_files/unicode.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/mappings_and_sets/hash.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/mappings_and_sets/hashable.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/mappings_and_sets/mappings.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/mappings_and_sets/sets.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/bool.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/complex.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/float.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/int.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/number_system.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/roman_numerals.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/binary.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/create_sequence.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/creating_sequences.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/list.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/range.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/seq_compare.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/sequences.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/string.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/tuple.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/typing/data_types.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/typing/type_hinting.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/types_and_structures/typing/typing.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/vars_and_types/numbers.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/vars_and_types/problems.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/vars_and_types/statement_and_expression.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/vars_and_types/types.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://ruslan.rv.ua/PyStarter/vars_and_types/vars.html</loc>
-         <lastmod>2024-02-27</lastmod>
+         <lastmod>2024-02-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

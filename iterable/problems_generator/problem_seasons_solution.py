@@ -15,7 +15,6 @@ from enum import Enum, StrEnum
 from datetime import date
 from itertools import cycle, islice
 
-
 class Seasons(str, Enum):
     def __str__(self) -> str:
         return self.value
@@ -26,30 +25,21 @@ class Seasons(str, Enum):
     FALL = "осінь"
 
     @classmethod
-    def iter(self, start: "Seasons", count: int):
-        if not isinstance(start, Seasons):
+    def iter(cls, start_season: "Seasons", count: int):
+        if not isinstance(start_season, Seasons):
             raise TypeError("start must be an instance of Seasons")
         if not isinstance(count, int):
             raise TypeError("count must be an instance of int")
         if count < 0:
             raise ValueError("count must be positive")
         
-        seasons_iterator = cycle(Seasons)
-        start_index = list(Seasons).index(start)
+        seasons_iterator = cycle(cls)
+        start_index = list(cls).index(start_season)
         yield from islice(seasons_iterator, start_index, start_index+count)
 
     @classmethod
-    def now(self):
-        month = date.today().month
-        if month in {12, 1, 2}:
-            return Seasons.WINTER
-        elif month in {3, 4, 5}:
-            return Seasons.SPRING
-        elif month in {6, 7, 8}:
-            return Seasons.SUMMER
-        elif month in {9, 10, 11}:
-            return Seasons.FALL
-
+    def now(cls):
+        return list(cls)[date.today().month % 12 // 3]
 
 
 # юніт-тести, використовуйте як підказку
@@ -116,6 +106,8 @@ def test_iter_1():
 
 def test_iter_0():
     assert list(Seasons.iter(Seasons.now(), 0)) == []
+def test_fall():
+    assert list(Seasons.iter(Seasons.FALL, 1)) == [Seasons.FALL]
 
 
 pytest.main(["-q", __file__])

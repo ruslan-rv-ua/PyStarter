@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/functional_programming/higher_order_functions.html">
       
       
+        <link rel="prev" href="functions_as_objects.html">
+      
+      
+        <link rel="next" href="../batteries/random.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Функції вищого порядку - PyStarter</title>
+        <title>Функції вищого порядка - PyStarter</title>
       
     
     
@@ -117,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Функції вищого порядку
+              Функції вищого порядка
             
           </span>
         </div>
@@ -1412,34 +1416,176 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="intro.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_36" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_36" id="__nav_36_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     33. Елементи функційного програмування
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_36_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_36">
+            <span class="md-nav__icon md-icon"></span>
+            33. Елементи функційного програмування
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intro.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Парадигма ФП
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pure_functions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Чисті функції
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions_as_objects.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Функції як об'єкти
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Функції вищого порядка
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="higher_order_functions.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Функції вищого порядка
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Функції як аргументи
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Додаткові матеріали
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1550,47 +1696,13 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Функції як об'єкти
+    Функції як аргументи
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    Об'єкт першого класу
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Посилання на функції
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Функції вищого порядку
-  </a>
-  
-    <nav class="md-nav" aria-label="Функції вищого порядку">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Функції як аргументи
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
     Додаткові матеріали
   </a>
   
@@ -1611,122 +1723,35 @@
                   
 
 
-<h1 id="_1">Функції вищого порядку</h1>
-<p>Ще одним принциповим положенням функційного програмування є функції вищого порядку. </p>
-<h2 id="_2">Функції як об'єкти</h2>
-<p>Вже не раз згадувалось, 
-що "в Python усе є об'єкт". 
-І функції тут не вийняток. </p>
-<pre><code>:::python
-&gt;&gt;&gt; def f():
-...     pass
-...
-&gt;&gt;&gt; f
-&lt;function f at 0x000002877927F0D0&gt;
-&gt;&gt;&gt; type(f)
-&lt;class 'function'&gt;
-&gt;&gt;&gt;
-</code></pre>
-<p>Тобто функції — це об'єкти, які належать до класу <code>function</code>. </p>
-<h2 id="_3">Об'єкт першого класу</h2>
-<p>Об'єкт називають «об'єктом першого класу», якщо: </p>
-<ul>
-<li>його може бути збережено у змінній або інших структурах даних;</li>
-<li>його може бути передано в функцію як аргумент;</li>
-<li>його може бути поверненим з функції як результат;</li>
-<li>його може бути створено під час виконання програми;</li>
-<li>він внутрішньо самоідентифікується (не залежить від іменування).</li>
-</ul>
-<p>Зауважте що термін «об'єкт» використовується тут у загальному розумінні 
-і не обмежується об'єктами мови програмування. </p>
-<p>В Python функції — об'єкти першого класу. </p>
-<h2 id="_4">Посилання на функції</h2>
-<p>При оголошенні функції створюється об'єкт класу <code>function</code>, 
-і паралельно створються змінна з іменем, 
-вказаним після <code>def</code>. 
-Пам'ятаючи, що змінні в Python — не що інше, як посилання на об'єкти, 
-ми легко можемо посилатися на функцію за допомогою іншого імені: </p>
-<pre><code>:::python
-&gt;&gt;&gt; def original():
-...     print("It work's")
-...
-&gt;&gt;&gt; original()
-It work's
-&gt;&gt;&gt; copy = original
-&gt;&gt;&gt; copy
-&lt;function original at 0x000002877927F158&gt;
-&gt;&gt;&gt; copy()
-It work's
-&gt;&gt;&gt;
-</code></pre>
-<p>Зауважте що об'єкт класу <code>function</code> має своє ім'я. </p>
-<p>Давайте напишемо примітивний калькулятор 
-який буде підтримувати усього чотири арифметичні операції. 
-Нехай користувач вводить два операнди і операцію над ними, 
-а програма виводить результат. </p>
-<pre><code>:::python
-def add(a, b):
-    return a + b
-
-def sub(a, b):
-    return a - b
-
-def mul(a, b):
-    return a * b
-
-def div(a, b):
-    return a / b
-
-operators = {
-    '+': add,
-    '-': sub,
-    '*': mul,
-    '/': div,
-}
-
-n1 = float(input('Enter first operand: '))
-op = input('Enter operator: ')
-n2 = float(input('Enter second operand: '))
-
-res = operators[op](n1, n2)
-
-print('Result', res)
-</code></pre>
-<h2 id="_5">Функції вищого порядку</h2>
+<h1 id="_1">Функції вищого порядка</h1>
 <blockquote>
-<p><strong><em>Функція вищого порядку</em></strong> — це така функція, яка приймає іншу функцію в якості аргумента та/або повертає іншу функцію. </p>
+<p><strong><em>Функція вищого порядка</em></strong> — це така функція, яка приймає іншу функцію в якості аргумента та/або повертає іншу функцію. </p>
 </blockquote>
-<pre><code>&gt;&gt;&gt; def f(x):
-...     return x + 3
-...
-&gt;&gt;&gt; def g(function, x):
-...     return function(x) * function(x)
-...
-&gt;&gt;&gt; g(f, 7)
-100
-&gt;&gt;&gt;
-</code></pre>
-<p>У наведеному вище прикладі <code>g()</code> — функція вищого порядку.</p>
-<h3 id="_6">Функції як аргументи</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+<p>У наведеному вище прикладі <code>g()</code> — функція вищого порядку оскільки першим параметром вона отримує іншу функцію.</p>
+<h3 id="_2">Функції як аргументи</h3>
 <p>Для початку давайте розглянемо ще одну вбудовану функцію Python: </p>
-<pre><code>:::python
-sorted(iterable, key=None, reverse=False)
+<pre><code>sorted(iterable, key=None, reverse=False)
 </code></pre>
-<p>Функція повертає список який складається з відсортованих елементів послідовності <code>iterable</code>.</p>
+<p>Функція повертає список який складається з відсортованих елементів ітерабельного об'єкта <code>iterable</code>.</p>
 <p>Необов'язкові аргументи: </p>
 <ul>
 <li><code>key</code> — функція з одним параметром. Цій функції будуть передаватись елементи <code>iterable</code>. Функція має повертати "ключ" сортування, тобто ті значення, по яким буде відбуватись порівняння елементів <code>iterable</code>. За замовчуванням дорівнює <code>None</code>, тобто усі елементи порівнюються "напряму".</li>
-<li><code>reverse</code> — типу <code>bool</code>. Якщо <code>True</code>, то елементи послідовності будуть відсортовані у зворотньому порядку.</li>
+<li><code>reverse</code> — <code>bool</code>. Якщо <code>True</code>, то елементи послідовності будуть відсортовані у зворотньому порядку.</li>
 </ul>
 <p>Простий приклад: маємо список символьних рядків, який треба відсортувати.</p>
-<pre><code>:::python
-&gt;&gt;&gt; l = ['John', 'jam', 'Jane', 'job']
+<pre><code>&gt;&gt;&gt; l = ['John', 'jam', 'Jane', 'job']
 &gt;&gt;&gt; sorted(l)
 ['Jane', 'John', 'jam', 'job']
 &gt;&gt;&gt;
 </code></pre>
 <p>Отримали відсортований список рядків. 
-Зауважте, що символьні рядки відсортовані у лексиграфічному порядку, 
+Зауважте, що символьні рядки відсортовані у лексикографічному порядку, 
 тобто при порівнюванні рядкків між собою враховувався регістр букв (верхній чи нижній). </p>
 <p>А тепер припустимо, 
 що нам потрібно відсортувати список символьних рядків 
@@ -1736,21 +1761,18 @@ sorted(iterable, key=None, reverse=False)
 <p>Отже функції <code>sorted()</code> можна передати як аргумент ще одну функцію, 
 яка у свою чергу буде трошки "змінювати" наші символьні рядки. 
 Визначимо останню: </p>
-<pre><code>:::python
-&gt;&gt;&gt; def to_lower(string):
+<pre><code>&gt;&gt;&gt; def to_lower(string):
 ...     return string.lower()
 ...
 &gt;&gt;&gt;
 </code></pre>
 <p>І тепер передаємо її у якості аргументу:</p>
-<pre><code>:::python
-&gt;&gt;&gt; sorted(l, key=to_lower)
+<pre><code>&gt;&gt;&gt; sorted(l, key=to_lower)
 ['jam', 'Jane', 'job', 'John']
 &gt;&gt;&gt;
 </code></pre>
-<h2 id="_7">Додаткові матеріали</h2>
+<h2 id="_3">Додаткові матеріали</h2>
 <ul>
-<li><a href="https://uk.wikipedia.org/wiki/Об%27єкт_першого_класу">Вікіпедія — Об'єкт першого класу</a></li>
 <li><a href="https://uk.wikipedia.org/wiki/Функція_вищого_порядку">Вікіпедія — Функція вищого порядку</a></li>
 </ul>
 
@@ -1771,6 +1793,46 @@ sorted(iterable, key=None, reverse=False)
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="functions_as_objects.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Функції як об&#39;єкти">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Функції як об'єкти
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../batteries/random.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Модуль random">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Модуль random
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

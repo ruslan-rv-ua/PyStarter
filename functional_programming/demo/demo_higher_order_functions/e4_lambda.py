@@ -5,7 +5,7 @@ add = lambda x, y: x + y
 
 (lambda x, y: x + y)(5, 7)
 
-hello = lambda name, time='morning': 'Good ' + time + ', ' + name
+hello = lambda name, time='morning': f'Good {time}, {name}'
 hello('Jane')
 hello('Jane', 'afternoon')
 
@@ -15,7 +15,7 @@ func(1, 2, 3, 4)
 mymin = lambda x, y: x if x < y else y
 mymin(1,3)
 
----
+##################################
 
 authors = [
 	"Edgar Allan Poe",
@@ -27,7 +27,7 @@ authors = [
 authors = sorted(authors, key=lambda a: a.split()[-1])	
 print('\n'.join(authors))
 
----
+#####################################
 
 functions = [
 	lambda x: x**2,
