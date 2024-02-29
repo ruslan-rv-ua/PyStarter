@@ -270,6 +270,8 @@ nav:
   - 33. Елементи функційного програмування:
     - Парадигма ФП: functional_programming/intro.md
     - Чисті функції: functional_programming/pure_functions.md
+    - Функції як об'єкти: functional_programming/functions_as_objects.md
+    - Функції вищого порядка: functional_programming/higher_order_functions.md
   # - xx. Ввід та вивід: comming_soon.md
   # - xx. Модулі і пакети: comming_soon.md
   # - xx. Виконання програм: comming_soon.md
@@ -284,5 +286,6 @@ nav:
     - Модуль re: comming_soon.md # batteries/re.md
     - Модуль contextlib: batteries/contextlib.md
     - Модуль itertools: batteries/itertools.md
+    - Модуль functools: batteries/functools.md
   - Дзен: zen.md
   - Корисні ресурси: resources.md
