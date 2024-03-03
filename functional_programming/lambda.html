@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/functional_programming/lambda.html">
       
       
+        <link rel="prev" href="higher_order_functions.html">
+      
+      
+        <link rel="next" href="map_filter.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -1412,6 +1416,218 @@
       
   
   
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_36" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_36" id="__nav_36_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    33. Функційне програмування
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_36_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_36">
+            <span class="md-nav__icon md-icon"></span>
+            33. Функційне програмування
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intro.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Парадигма ФП
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pure_functions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Чисті функції
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions_as_objects.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Функції як об'єкти
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="higher_order_functions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Функції вищого порядка
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Анонімні функції
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="lambda.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Анонімні функції
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lambda-" class="md-nav__link">
+    Використання lambda-функцій
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="map_filter.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    "Класика" вищого порядка
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
     
     
@@ -1426,11 +1642,11 @@
         
   
   
-    <a href="intro.html" class="md-nav__link">
+    <a href="closures1.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    33. Елементи функційного програмування
+    34. Замикання
   </span>
   
 
@@ -1555,13 +1771,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Резюме
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1584,8 +1793,7 @@
 <pre><code>lambda argument1, argument2,... argumentN : &lt;вираз з аргументами&gt;
 </code></pre>
 <p>Розглянемо найпростіший приклад і порівняємо зі "звичайною" функцією Python:</p>
-<pre><code>:::python
-&gt;&gt;&gt; def func(x, y):
+<pre><code>&gt;&gt;&gt; def func(x, y):
 ...     return x + y
 ...
 &gt;&gt;&gt; func(5,7)
@@ -1593,23 +1801,21 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>А тепер те ж саме, але за допомогою <code>lambda</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; func = lambda x, y: x + y
+<pre><code>&gt;&gt;&gt; func = lambda x, y: x + y
 &gt;&gt;&gt; func(5, 7)
 12
 &gt;&gt;&gt; func('a', 'b')
 'ab'
 </code></pre>
-<p>Анонімні функції не обов'язково присвоювати змінній.</p>
+<p>Анонімні функції не обов'язково присвоювати змінній:</p>
 <pre><code>&gt;&gt;&gt; (lambda x, y: x + y)(5, 7)
 12
 &gt;&gt;&gt; (lambda x, y: x + y)('a', 'b')
 'ab'
 </code></pre>
-<p>lambda-функції, на відміну від звичайних, не потребують інструкції return, а в решті випадків поводить себе так само.</p>
+<p>lambda-функції, на відміну від звичайних, не потребують інструкції return, а в решті випадків поводять себе так само.</p>
 <p>Наприклад, можна задати значення за замовчуванням для параметрів:</p>
-<pre><code>:::python
-&gt;&gt;&gt; hello = lambda name, time='morning': 'Good ' + time + ', ' + name
+<pre><code>&gt;&gt;&gt; hello = lambda name, time='morning': 'Good ' + time + ', ' + name
 &gt;&gt;&gt; hello('Jane')
 'Good morning, Jane'
 &gt;&gt;&gt; hello('Jane', 'afternoon')
@@ -1617,15 +1823,13 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>Змінна кількість аргументів:</p>
-<pre><code>:::python
-&gt;&gt;&gt; func = lambda *args: args[1:-1]
+<pre><code>&gt;&gt;&gt; func = lambda *args: args[1:-1]
 &gt;&gt;&gt; func(1,2,3,4,5)
 (2, 3, 4)
 &gt;&gt;&gt;
 </code></pre>
 <p>Використовуємо <code>if/else</code>:</p>
-<pre><code>:::python
-&gt;&gt;&gt; mymin = lambda x, y: x if x &lt; y else y
+<pre><code>&gt;&gt;&gt; mymin = lambda x, y: x if x &lt; y else y
 &gt;&gt;&gt; mymin(1,3)
 1
 &gt;&gt;&gt; mymin(5,3)
@@ -1633,16 +1837,14 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>Ну і переконаємось, що lambda-функції дійсно є анонімними, тобто об'єкт такої функції не має імені:</p>
-<pre><code>:::python
-&gt;&gt;&gt; f = lambda x: x
+<pre><code>&gt;&gt;&gt; f = lambda x: x
 &gt;&gt;&gt; f
 &lt;function &lt;lambda&gt; at 0x000001D894D9F0D0&gt;
 &gt;&gt;&gt;
 </code></pre>
 <h3 id="lambda-">Використання lambda-функцій</h3>
 <p>lambda зручно використовувати коли треба передати функцію як аргумент іншій функції. Наприклад, маємо список письменників. Треба відсортувати список по прізвищам:</p>
-<pre><code>:::python
-&gt;&gt;&gt; authors = [
+<pre><code>&gt;&gt;&gt; authors = [
 ...     "Edgar Allan Poe",
 ...     "Arthur Conan Doyle",
 ...     "Agatha Christie",
@@ -1659,8 +1861,7 @@ Edgar Allan Poe
 &gt;&gt;&gt;
 </code></pre>
 <p>Також lambda-функції часто використовуються при створенні так званих "таблиць переходів". Таблиці переходів — це, у більшості випадків, послідовності або словники, які містять дії. Приклад зі списком дій:</p>
-<pre><code>:::python
-&gt;&gt;&gt; functions = [
+<pre><code>&gt;&gt;&gt; functions = [
 ...     lambda x: x**2,
 ...     lambda x: x**3,
 ...     lambda x: x**4,
@@ -1676,8 +1877,7 @@ Edgar Allan Poe
 &gt;&gt;&gt;
 </code></pre>
 <p>Анонімні функції як значення у словниках:</p>
-<pre><code>:::python
-&gt;&gt;&gt; d = {
+<pre><code>&gt;&gt;&gt; d = {
 ...     'add': lambda x, y: x + y,
 ...     'mul': lambda x, y: x * y
 ... }
@@ -1687,12 +1887,11 @@ Edgar Allan Poe
 25
 &gt;&gt;&gt;
 </code></pre>
-<h3 id="_2">Резюме</h3>
-<ul>
-<li>lambda – це вираз, а не інструкція. Тому ключове слово lambda можна  використовувати там, де синтаксис Python не дозволяє використовувати інструкцию <code>def</code>, наприклад у викликах функцій.</li>
-<li>Тіло  lambda – це не блок інструкцій, а один вираз. Тіло lambda-виразу схоже на те, що ви розміщуєте в інструкції <code>return</code> всередині визначення <code>def</code>.</li>
-<li>об'єкт lambda-функції не має імені</li>
-</ul>
+<!-- ### Резюме
+
+* lambda – це вираз, а не інструкція. Тому ключове слово lambda можна  використовувати там, де синтаксис Python не дозволяє використовувати інструкцію `def`.
+* Тіло  lambda – це не блок інструкцій, а один вираз. Тіло lambda-виразу схоже на те, що ви розміщуєте в інструкції `return` всередині визначення `def`.
+* об'єкт lambda-функції не має імені. -->
 
 
 
@@ -1711,6 +1910,46 @@ Edgar Allan Poe
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="higher_order_functions.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Функції вищого порядка">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Функції вищого порядка
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="map_filter.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: &#34;Класика&#34; вищого порядка">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                "Класика" вищого порядка
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

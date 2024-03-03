@@ -7,9 +7,6 @@ def g(function, x):
 print(g(f, 7))
 
 
-
-
-
 ###############################################
 
 l = ['a', 'e', 'B', 'C']
@@ -36,15 +33,30 @@ r = sorted(l, key=len, reverse=True)
 
 #########################
 
+from typing import NamedTuple
+
+class Person(NamedTuple):
+    name: str
+    age: int
+    
+
+
 students = [
-    {"name": "Аліса", "age": 20},
-    {"name": "Дмитро", "age": 18},
-    {"name": "Петро", "age": 22},
+    Person(name='Alice', age=30),
+    Person(name='Bob', age=25),
+    Person(name='Charlie', age=35),
+    Person(name='David', age=28),
+    Person(name='Eve', age=22),
+    Person(name='Frank', age=45),
+    Person(name='Grace', age=29),
+    Person(name='Heather', age=32),
+    Person(name='Isaac', age=40),
+    Person(name='Judy', age=37),
 ]
 
 # список імен по віку
 
 def get_age(student):
-    return student['age']
-r = [student['name'] for student in sorted(students, key=get_age)]
+    return student.age
+r = [student.name for student in sorted(students, key=get_age)]
 

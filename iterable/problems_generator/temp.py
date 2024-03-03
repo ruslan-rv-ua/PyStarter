@@ -1,6 +1,6 @@
-from enum import StrEnum
+from typing import NamedTuple
 
-class C(StrEnum):
-    A = 'aa'
-    B = 'bb'
+class Person(NamedTuple):
+    name: str
+    age: int
     

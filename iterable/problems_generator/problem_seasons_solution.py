@@ -11,14 +11,11 @@ pip install pytest
 Результати тестування будуть у файлі test_results.txt.
 """
 
-from enum import Enum, StrEnum
+from enum import Enum
 from datetime import date
 from itertools import cycle, islice
 
 class Seasons(str, Enum):
-    def __str__(self) -> str:
-        return self.value
-
     WINTER = "зима"
     SPRING = "весна"
     SUMMER = "літо"
@@ -34,8 +31,8 @@ class Seasons(str, Enum):
             raise ValueError("count must be positive")
         
         seasons_iterator = cycle(cls)
-        start_index = list(cls).index(start_season)
-        yield from islice(seasons_iterator, start_index, start_index+count)
+        start_season_index = list(cls).index(start_season)
+        yield from islice(seasons_iterator, start_season_index, start_season_index+count)
 
     @classmethod
     def now(cls):
@@ -111,5 +108,7 @@ def test_fall():
 
 
 pytest.main(["-q", __file__])
+'''
 with open("test_results.txt", "w") as f, redirect_stdout(f):
     pytest.main(["-q", __file__])
+'''

@@ -1434,7 +1434,44 @@
       
   
   <span class="md-ellipsis">
-    33. Елементи функційного програмування
+    33. Функційне програмування
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functional_programming/closures1.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    34. Замикання
   </span>
   
 
@@ -1466,10 +1503,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_37" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_38" checked>
         
           
-          <label class="md-nav__link" for="__nav_37" id="__nav_37_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_38" id="__nav_38_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1480,8 +1517,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_37_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_37">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_38_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_38">
             <span class="md-nav__icon md-icon"></span>
             Батарейки
           </label>
@@ -1873,20 +1910,18 @@
 
 <h1 id="functools">Модуль <code>functools</code></h1>
 <h3 id="reduce"><code>reduce()</code></h3>
-<p>Приймає функцію від двох аргументів, послідовность і опціональне початкове значення. 
-Обчислює згортання (fold) послідовності як результат послідовного застосування даної функції до поточного значення (так званому акумулятору) і наступному елементу послідовності. Міститься в модулі <code>functools</code>. </p>
-<p>Трохи незрозуміло? Розберемось. </p>
-<p>Отже функція <code>reduce()</code> приймає три параметри:</p>
+<p>Використовується для послідовного застосування заданої функції до всіх елементів ітерабельного об'єкта, зводячи їх до одного значення.</p>
+<pre><code>reduce(function, iterable[, initializer])
+</code></pre>
+<p>Аргументи:</p>
 <ul>
-<li>функцію</li>
-<li>ітерабельний об'єкт</li>
-<li>акумулятор</li>
+<li><code>function</code> — бінарна функція, яка приймає два аргументи і повертає результат;</li>
+<li><code>iterable</code> — ітерабельний об'єкт;</li>
+<li><code>initializer</code> (опційно) — початкове значення аккумулятора. Якщо не задано, то береться перший елемент ітерабельного об'єкта.</li>
 </ul>
-<p>Останній параметр необов'язковий. 
-Якщо він відсутній, то в якості акумулятора береться перший елемент послідовності. </p>
-<p>Далі для акумулятора і для кожного наступного елемента послідовності викликається передана функція. 
-Результат її дії записується в акумулятор. 
-Процес повторюється поки не буде "пройдено" всю послідовність. </p>
+<p>Якщо задано значення акумулятора, тоді для акумулятора і для першого елемента послідовності викликається задана функція. Якщо ж значення акумулятора не задано, функція викликається для перших двох елементів. 
+Результат дії заданої функції записується в акумулятор. 
+Далі процес повторюється для усіх елементів ітерабельного об'єкта.</p>
 <p>Приклад. 
 Є список чисел, треба отримати їх добуток. </p>
 <pre><code>&gt;&gt;&gt; from functools import reduce
