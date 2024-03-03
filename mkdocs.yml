@@ -267,11 +267,15 @@ nav:
     - Упаковка та розпаковка: iterable/iterable_pack_unpack.md
     - Агрегація даних: iterable/iterable_aggregation.md
     - Інші функції: iterable/iterable_functions.md
-  - 33. Елементи функційного програмування:
+  - 33. Функційне програмування:
     - Парадигма ФП: functional_programming/intro.md
     - Чисті функції: functional_programming/pure_functions.md
     - Функції як об'єкти: functional_programming/functions_as_objects.md
     - Функції вищого порядка: functional_programming/higher_order_functions.md
+    - Анонімні функції: functional_programming/lambda.md
+    - '"Класика" вищого порядка': functional_programming/map_filter.md
+  - 34. Замикання:
+    - Функції як результат функцій: functional_programming/closures1.md
   # - xx. Ввід та вивід: comming_soon.md
   # - xx. Модулі і пакети: comming_soon.md
   # - xx. Виконання програм: comming_soon.md
