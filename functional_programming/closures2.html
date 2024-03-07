@@ -12,9 +12,13 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/functional_programming/closure.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/functional_programming/closures2.html">
       
       
+        <link rel="prev" href="closures1.html">
+      
+      
+        <link rel="next" href="../batteries/random.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -1449,34 +1453,143 @@
       
   
   
+    
+  
   
     
     
     
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="closures1.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_37" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_37" id="__nav_37_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     34. Замикання
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_37_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_37">
+            <span class="md-nav__icon md-icon"></span>
+            34. Замикання
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="closures1.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Функції як результат функцій
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Замикання
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="closures2.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Замикання
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Замикання з параметрами
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Фабрика функцій
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Модифікація вільних змінних
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1587,35 +1700,21 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Час життя об'єктів
+    Замикання з параметрами
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    Подовжуємо життя локальним змінним
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
     Фабрика функцій
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Функції "на замовлення"
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Резюме
+  <a href="#_4" class="md-nav__link">
+    Модифікація вільних змінних
   </a>
   
 </li>
@@ -1636,139 +1735,135 @@
 
 
 <h1 id="_1">Замикання</h1>
-<!--
-Замыкания позволяют избежать использования глобальных (global) значений 
-и обеспечивают некоторую форму сокрытия данных. 
-Для этого также может использоваться объектно-ориентированный подход.
-
-Если в классе необходимо реализовать небольшое количество методов (в большинстве случаев один метод), 
-замыкания могут обеспечить альтернативное и более элегантное решение.
--->
-
-<h3 id="_2">Час життя об'єктів</h3>
-<p>Для знищення об'єктів Python використовує алгоритм підрахунку посилань. Об'єкти видаляються як тільки на них більше немає посилань.</p>
-<p>В Python, змінні не зберігають значення, а виступають в ролі посилань на об'єкти. Тобто коли ви присвоюєте значення новій змінній, то спочатку створюється об'єкт з цим значенням, а вже потім змінна починає посилатись на нього. На один об'єкт може посилатись багато змінних.</p>
-<p>Кожен об'єкт в Python містить додаткове поле (лічильник посилань), в якому зберігається кількість посилань на нього. Як тільки хтось посилається на об'єкт, це поле збільшується на 1. Якщо з будь-якої причини посилання пропадає, то це поле зменшується на 1.</p>
-<p>Приклади, коли кількість посилань збільшується:</p>
-<ul>
-<li>оператор присвоєння</li>
-<li>передача аргументів</li>
-<li>вставка нового об'єкта в <code>list</code> (збільшується кількість посиланль для об'єкта)</li>
-<li>присвоєння вида <code>foo = bar</code> (<code>foo</code> починає посилатись на той самий обєкт, що і <code>bar</code>)</li>
-</ul>
-<p>Як тільки лічильник посилань для певного об'єкта досягає нуля 
-інтерпретатор запускає процес знищення об'єкта. 
-Якщо видалений об'єкт містив посилання на інші об'єкти, 
-то ці посилання також видаляються. 
-Таким чином, видалення одного об'єкта може спричинити видалення інших. </p>
-<p>Наприклад, якщо видаляється список, 
-то лічильник посилань у всіх його элементах зміншується на 1. 
-Якщо усі об'єкти всередині списка більше ніде не використовуються, 
-то їх також будеь видалено. </p>
-<!---
-Змінні, які оголошено поза функціями, 
-називаются глобальными. 
-Як правило, життєвий цикл таких змінних дорівнює життю Python-процеса. Таким чином, кількість посилань на об'єкти на котрі посилаються глобальні змінні ніколи не падає до 0.
-
-Змінні, котрі оголошено всередині функції, мають локальну видимість. Як тільки інтерпретатор виходить з функції івн знищує усі посилання створені локальними змінними всередині неї. 
-
-Кількість посилань можна перевірити за допомогою функції `getrefcount()` з вбудованого модуля `sys`.
--->
-
-<h3 id="_3">Подовжуємо життя локальним змінним</h3>
-<p>Кожного разу, коли ми викликаємо функцію, 
-у неї створюються локальні змінні (якщо, звичайно, вони у неї є), 
-а після завершення — знищуються, 
-при черговому виклику ця процедура повторюється. 
-А чи можна зробити так, 
-щоб після завершення роботи функції, 
-частина локальних змінних не знищувалась, 
-а зберігала б свої значення до наступного запуска? 
-Відповідь — так, можна.  </p>
-<p>Локальна змінна не буде знищена, 
-якщо на неї десь залишиться “живе” посилання 
-після завершення роботи функції. 
-Це посилання може зберігати вкладена функція. 
-Функції побудовані по такому принципу 
-можуть використовуватись для побудови спеціалізованих функцій, 
-тобто є як би фабриками функцій. 
-Далі розглянемо створення і використання так званих "замикань", 
-які якраз і використовують цю ідею. </p>
 <blockquote>
-<p>Замикання (closure) — функція, в тілі якої є посилання на змінні, які було оголошено поза тіла цієї функції в оточуючому коді і які не є її параметрами. </p>
+<p><strong><em>Замикання</em></strong> (closure) — це функція, яка зберігає посилання на змінні з охоплюючої функції, 
+в якії вона була визначена. При цьому змінні охоплюючої функції не передаються як аргументи в функцію-замикання, але все одно доступні для неї. Це дозволяє функції-замиканню використовувати ці змінні навіть після завершення роботи охоплюючої функції.</p>
 </blockquote>
 <p>Розглянемо приклад:</p>
-<pre><code>:::python
-&gt;&gt;&gt; def outer():
-...     message = 'Hi there!'
-...     def inner():
-...             print(message)
-...     return inner
-...
-&gt;&gt;&gt; f = outer()
-&gt;&gt;&gt; f()
-Hi there!
-&gt;&gt;&gt;
-</code></pre>
-<p>Що тут відбувається?</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Python rocks!&#39;</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">inner</span>
+</code></pre></div>
+<p>Подивимось що відбувається коли ми викликаємо функцію <code>outer</code>:</p>
 <ol>
-<li>Функція <code>inner</code> "бачить" змінну <code>message</code> функції <code>outer</code>, вона знайшла її в області видимості <code>enclosing</code>.</li>
-<li>Функція <code>outer</code> повертає об'єкт функції <code>inner</code>, результат ми присвоїли змінній <code>f</code>.</li>
-<li>Змінна <code>f</code> вказує на об'єкт функції <code>inner</code>, яка, у свою чергу, "пам'ятає" змінну <code>message</code>. Об'єкт функції <code>inner</code> не знищено, отже і не знищено усі його об'єкти, зокрема змінну <code>message</code>.</li>
+<li>Створюється локальна змінна <code>message</code>.</li>
+<li>Створюється локальна функція <code>inner</code>:<ol>
+<li>Всередині функції <code>inner</code> "згадується" змінна <code>message</code>.</li>
+<li>Оскільки функція <code>inner</code> не має локальної змінної <code>message</code>, Python знаходить цю змінну в області видимості <code>enclosure</code>, тобто в функції <code>outer</code>. </li>
+<li>Змінну <code>message</code> в функції <code>inner</code> називають "вільною змінною" (free variable).</li>
+<li>Функція <code>inner()</code> як би "замикається" на змінну <code>message</code> з функції <code>outer</code>.</li>
 </ol>
-<h3 id="_4">Фабрика функцій</h3>
-<p>Зробимо трохи цікавіше — зовнішній функції будемо передавати параметри:</p>
-<pre><code>:::python
-&gt;&gt;&gt; def outer(message):
-...     def inner():
-...         print(message)
-...     return inner
-...
-&gt;&gt;&gt; hello_func = outer('Hello')
-&gt;&gt;&gt; bye_func = outer('Bye')
-&gt;&gt;&gt;
-&gt;&gt;&gt; hello_func()
-Hello
-&gt;&gt;&gt; bye_func()
-Bye
+</li>
+<li>Як результат функції <code>outer</code> повертається замикання, тобто функція <code>inner</code> разом з вільною змінною <code>message</code>.</li>
+</ol>
+<p>У наведеному вище прикладі <code>outer</code> — охоплююча функція, 
+а <code>inner</code> — функція-замикання. 
+<code>inner</code> використовує змінну <code>message</code> з охоплюючої функції, яка не передається функії <code>inner</code> як аргумент.
+Таким чином, <code>inner</code> стає замиканням, яке зберігає посилання на <code>message</code> і може використовувати його навіть після завершення роботи <code>outer</code>.</p>
+<div class="admonition attention">
+<p class="admonition-title">Зауважте:</p>
+<p>Замикання створюється коли виконується охоплююча функція <code>outer</code>, інакше кажучи коли створюється функція <code>inner</code>.</p>
+</div>
+<p>Створимо замикання:</p>
+<pre><code>&gt;&gt;&gt; closure = outer()
+&gt;&gt;&gt; closure
+&lt;function outer.&lt;locals&gt;.inner at 0x000001D684439080&gt;
+&gt;&gt;&gt; closure.__code__.co_freevars # вільні змінні
+('message',)
+&gt;&gt;&gt; closure.__closure__ # замикання
+(&lt;cell at 0x0000022631DF9E40: str object at 0x0000022631E05AF0&gt;,)
+&gt;&gt;&gt; closure.__closure__[0].cell_contents # значення вільної змінної
+'Python rocks!'
 &gt;&gt;&gt;
 </code></pre>
-<p>У цьому прикладі функція <code>inner</code> "побачила" змінну <code>message</code> в облаісті видимості <code>enclosing</code> функції <code>outer</code> яка, у свою чергу, є параметром останньої.</p>
+<h3 id="_2">Замикання з параметрами</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;rocks!&#39;</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">who</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">who</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">inner</span>
+</code></pre></div>
+<p>У наведеному прикладі замикання <code>inner</code> має параметр. 
+Тепер замиканню можемо передавати певні значення:</p>
+<pre><code>&gt;&gt;&gt; closure = outer()
+&gt;&gt;&gt; closure('Python')
+Python rocks!
+&gt;&gt;&gt; outer()('Rust')
+Rust rocks!
+&gt;&gt;&gt;
+</code></pre>
+<h3 id="_3">Фабрика функцій</h3>
+<p>Зробимо ще цікавіше — охоплюючу функцію зробимо з параметрами:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">outer</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">who</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">who</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">inner</span>
+</code></pre></div>
+<p>У цьому прикладі функція <code>inner</code> "замикається" на змінну <code>message</code> функції <code>outer</code> яка у свою чергу є параметром останньої.</p>
 <p>Функція <code>outer</code> є як би "фабрикою" інших функцій, при цьому функції вона може "виробляти" з різними властивостями.</p>
-<h3 id="_5">Функції "на замовлення"</h3>
-<p>Внутрішня функція також може приймати якісь значення. Розглянемо наступну задачу.</p>
-<p>Є квадратична функція:</p>
+<pre><code>rocks = outer('rocks')
+&gt;&gt;&gt; rocks('Python')
+Python rocks!
+&gt;&gt;&gt; sucks = outer('sucks')
+&gt;&gt;&gt; sucks('Java')
+Java sucks!
+&gt;&gt;&gt; rocks('Rust')
+Rust rocks!
+&gt;&gt;&gt;
+</code></pre>
+<p>Розглянемо ще один приклад "функцій на замовлення". Є квадратична функція:</p>
 <blockquote>
-<p><em>f(x)=ax<sup>2</sup>+bx+c</em></p>
+<p><em>f(x)=ax²+bx+c</em></p>
 </blockquote>
-<p>Тут <code>a</code>, <code>b</code> та <code>c</code> — це якісь константи, а <code>x</code> є параметром функції.</p>
-<p>Давайте напишемо "фабрику" квадратичних функцій. "Фабриці" ми будемо передавати константи <code>a</code>, <code>b</code>, 'c', а "вироблятиме" вона квадратичні функції з цими заданими параметрами:</p>
-<pre><code>:::python
-&gt;&gt;&gt; def make_quadratic(a, b, c):
-...     def quadratic(x):
-...             return a*x*x + b*x + c
-...     return quadratic
-...
-&gt;&gt;&gt; f1 = make_quadratic(1, 0, 0) # f(x) = x*x
+<p>Тут <code>a</code>, <code>b</code> та <code>c</code> — це константи, а <code>x</code> є параметром функції.</p>
+<p>Давайте напишемо "фабрику" квадратичних функцій. 
+"Фабриці" ми будемо передавати константи <code>a</code>, <code>b</code>, 'c', 
+а "вироблятиме" вона квадратичні функції з цими заданими параметрами:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">quadratic_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
+    <span class="k">return</span> <span class="n">f</span>
+</code></pre></div>
+<p>Тепер можемо "виробити" стільки квадратичних функцій, скільки нам треба:</p>
+<pre><code>&gt;&gt;&gt; f1 = quadratic_function(1, 0, 0) # f(x) = x²
 &gt;&gt;&gt; f1(5)
 25
-&gt;&gt;&gt; f1(7)
-49
+&gt;&gt;&gt; f1(9)
+81
 &gt;&gt;&gt;
-&gt;&gt;&gt; f2 = make_quadratic(2, 2, 2) # f(x) = 2*x*x + 2*x + 2
+&gt;&gt;&gt; f2 = quadratic_function(2, 2, 2) # f(x) = 2x² + 2x + 2
 &gt;&gt;&gt; f2(1)
 6
-&gt;&gt;&gt; f2(2)
-14
 &gt;&gt;&gt;
 </code></pre>
-<p>Зауважимо, що в Python є інші інструменти щоб реалізувати описані вище речі. Їх використання є трохи зручнішим і зрозумілішим ніж замикання. Ми їх розглянемо пізніше, але про замикання варто знати і пам'ятати.</p>
-<h3 id="_6">Резюме</h3>
-<ul>
-<li>Одним з механізмів визначення часу життя об'єктів є підрахунок посилань на них.</li>
-<li>Доки об'єкт не знищено, не знищується й усі об'єкти пов'язані з ним тим чи іншим способом.</li>
-<li>За допомогою замикань можна робити своєрідні "фабрики" функцій.</li>
-</ul>
+<h3 id="_4">Модифікація вільних змінних</h3>
+<p>Ми можемо модифікувати значення Змінних, на які "замикається" внутрішня функція. 
+Треба лише вказати що змінні нзаходяться в області видимості зовнішньої функції:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">counter</span><span class="p">():</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">def</span> <span class="nf">inc</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">count</span>
+    <span class="k">return</span> <span class="n">inc</span>
+</code></pre></div>
+<p>Функція <code>counter</code> "виготовляє" лічильники — функції-замикання, які при кожному виклику повертають кожного разу збільшене на 1 число починаючи з 1:</p>
+<pre><code>&gt;&gt;&gt; c1 = counter()
+&gt;&gt;&gt; c2 = counter()
+&gt;&gt;&gt; c1()
+1
+&gt;&gt;&gt; c1()
+2
+&gt;&gt;&gt; c1()
+3
+&gt;&gt;&gt; c2()
+1
+&gt;&gt;&gt; c2()
+2
+&gt;&gt;&gt;
+</code></pre>
 
 
 
@@ -1787,6 +1882,46 @@ Bye
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="closures1.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Функції як результат функцій">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Функції як результат функцій
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../batteries/random.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Модуль random">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Модуль random
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

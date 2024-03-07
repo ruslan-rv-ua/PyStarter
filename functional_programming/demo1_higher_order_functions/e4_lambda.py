@@ -12,9 +12,8 @@ r=hello('Jane', 'afternoon')
 func = lambda *args: args
 r=func(1, 2, 3, 4)
 
-mymin = lambda x, y: x if x < y else y
-mymin(1,3)
-
+m = lambda x, y: x if x < y else y
+r=m(1,3)
 
 #####################################
 
@@ -31,13 +30,13 @@ d = {
 	'add': lambda x, y: x + y,
 	'mul': lambda x, y: x * y
 }
-d = dict(
+op = dict(
     add = lambda x, y: x + y,
     mul = lambda x, y: x * y
 )
 
-r1 = d['add'](5, 5)
-r2 = d['mul'](5, 5)
+r1 = op['add'](5, 5)
+r2 = op['mul'](5, 5)
 
 ##################################
 

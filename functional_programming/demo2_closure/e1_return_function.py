@@ -2,7 +2,6 @@ def outer():
     def inner():
         message = 'Hello!'
         print(message)
-    # print(inner)
     inner()
 outer()
 
@@ -18,3 +17,4 @@ def outer():
         print(message)
     return inner
 f = outer()
+f('Python')
