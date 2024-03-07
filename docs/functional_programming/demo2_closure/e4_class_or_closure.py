@@ -1,12 +1,12 @@
 class Averager:
     def __init__(self):
-        self.count = 0
-        self.total = 0
+        self._count = 0
+        self._total = 0
 
     def __call__(self, value):
-        self.count += 1
-        self.total += value
-        return self.total / self.count
+        self._count += 1
+        self._total += value
+        return self._total / self._count
     
 
 a = Averager()

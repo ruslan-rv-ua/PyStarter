@@ -2,11 +2,19 @@ def outer():
     message = 'Python rocks!'
     def inner():
         print(message)
+    inner()
+
+
+def outer():
+    message = 'Python rocks!'
+    def inner():
+        print(message)
     return inner
 
 closure = outer()
 closure()
 
+exit()
 ##############
 
 def outer():
@@ -41,11 +49,11 @@ def quadratic_function(a, b, c):
     return f
     
 f1 = quadratic_function(1, 0, 0) # f(x) = x²
-f1(5)
-f1(9)
+r=f1(5)
+r=f1(9)
 
 f2 = quadratic_function(2, 2, 2) # f(x) = 2x² + 2x + 2
-f2(1)
+r=f2(1)
 
 
 
