@@ -277,9 +277,14 @@ nav:
   - 34. Замикання:
     - Функції як результат функцій: functional_programming/closures1.md
     - Замикання: functional_programming/closures2.md
-  # - 35. Декоратори:
-  #   - Декоратори в Python: functional_programming/decorators1.md
-  #   - Приклади використання: functional_programming/decorators2.md
+  - 35. Декоратори:
+    - Декоратори в Python: functional_programming/decorators1.md
+    - Практики використання: functional_programming/decorators2.md
+    - Декоратори з параметрами: functional_programming/decorators3.md
+    - '"Ввічливі" декоратори': functional_programming/decorators5.md
+  - 36. Рекурсія:
+    - Стек викликів: functional_programming/recursion1.md
+    # - Рекурсія: functional_programming/recursion2.md
   # - xx. Ввід та вивід: comming_soon.md
   # - xx. Модулі і пакети: comming_soon.md
   # - xx. Виконання програм: comming_soon.md

@@ -1,38 +1,38 @@
 def gift():
-	print('Айфон')
+	print('Подарунок.')
 
 gift()
 
-'''
-def wrap(gift_to_wrap):
+def wrapper():
 	print('Я — святкова обгортка! Я обгорну подарунок.')
-	gift_to_wrap()
+	gift()
 	print('Подарунок обгорнуто!')
 
-wrap(gift)
+wrapper()
 
-'''
+print()
 
-def decorator(gift_to_wrap):
-	def wrap():
+
+def decorator(gift):
+	def wrapper():
 		print('Я — святкова обгортка! Я обгорну подарунок.')
-		gift_to_wrap()
+		gift()
 		print('Подарунок обгорнуто!')	
-	return wrap
+	return wrapper
 
-decorated_gift = decorator(gift)
-
-decorated_gift()
-gift()
+# decorated_gift = decorator(gift)
+# decorated_gift()
+# gift()
 
 gift = decorator(gift)
-gift()
+# gift()
+
+print()
 
 ###############
 
 @decorator
-def gift():
+def iphone():
 	print('Айфон')
 	
 gift()
-			

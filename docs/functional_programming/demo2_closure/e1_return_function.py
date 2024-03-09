@@ -7,7 +7,7 @@ outer()
 
 def outer():
     def inner():
-        message = 'Hello!'
+        message = 'Python rocks!'
         print(message)
     return inner
 f = outer()

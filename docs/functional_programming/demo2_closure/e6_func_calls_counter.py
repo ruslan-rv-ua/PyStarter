@@ -7,7 +7,7 @@ def counter(function):
         function(*args, **kwargs)
     return f
     
-cprint = counter(print)
+p = counter(print)
 
 cprint('hello', sep=' ')
 cprint(*'hello', sep=' ')
