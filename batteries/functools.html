@@ -1490,6 +1490,80 @@
       
   
   
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functional_programming/decorators1.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    35. Декоратори
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functional_programming/recursion1.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    36. Рекурсія
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -1503,10 +1577,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_38" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_40" checked>
         
           
-          <label class="md-nav__link" for="__nav_38" id="__nav_38_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_40" id="__nav_40_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1517,8 +1591,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_38_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_38">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_40_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_40">
             <span class="md-nav__icon md-icon"></span>
             Батарейки
           </label>
@@ -1762,27 +1836,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    "Ввічливі" декоратори
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Шаблони декораторів
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#go" class="md-nav__link">
-    go!
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1872,27 +1925,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    "Ввічливі" декоратори
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Шаблони декораторів
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#go" class="md-nav__link">
-    go!
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1954,111 +1986,6 @@
 [1, 2, 3, 4, 5, 6, 7, 8]
 &gt;&gt;&gt;
 </code></pre>
-<h3 id="_1">"Ввічливі" декоратори</h3>
-<p>Розглянемо нас  тупний приклад:</p>
-<pre><code>&gt;&gt;&gt; def decorator(func):
-...     def wrapper():
-...             func()
-...     return wrapper
-...
-&gt;&gt;&gt; @decorator
-... def some_func():
-...     "This is docstring for some_func() function"
-...
-&gt;&gt;&gt; some_func
-&lt;function decorator.&lt;locals&gt;.wrapper at 0x000002167F6DF2F0&gt;
-&gt;&gt;&gt; some_func.__name__
-'wrapper'
-&gt;&gt;&gt; help(some_func)
-Help on function wrapper in module __main__:
-
-wrapper()
-
-&gt;&gt;&gt;
-</code></pre>
-<p>Упс... Після декорування функція <code>some_func</code> не тільки "забула як її звати", але ще й втратила докстрінги! Це не є добре. Давайте виправимо ситуацію:</p>
-<pre><code>&gt;&gt;&gt; def decorator(func):
-...     def wrapper():
-...             func()
-...     wrapper.__name__ = func.__name__
-...     wrapper.__doc__ = func.__doc__
-...     wrapper.__module__ = func.__module__
-...     return wrapper
-...
-&gt;&gt;&gt; @decorator
-... def some_func():
-...     "This is docstring for some_func() function"
-...
-&gt;&gt;&gt; some_func
-&lt;function decorator.&lt;locals&gt;.wrapper at 0x000002167FAB5C80&gt;
-&gt;&gt;&gt; some_func.__name__
-'some_func'
-&gt;&gt;&gt; help(some_func)
-Help on function some_func in module __main__:
-
-some_func()
-    This is docstring for some_func() function
-
-&gt;&gt;&gt;
-</code></pre>
-<p>Чудово! А щоб при створенні чергового декоратора уникнути рутини можна скористатись вже готовою функцією <code>wraps</code> з вбудованого модуля <code>functools</code>. І що тут цікаво, що <code>wraps</code> теж є декоратором!</p>
-<pre><code>&gt;&gt;&gt; from functools import wraps
-&gt;&gt;&gt; def decorator(func):
-...     @wraps(func)
-...     def wrapper():
-...             func()
-...     return wrapper
-...
-&gt;&gt;&gt; def some_func():
-...     "This is docstring for some_func() function"
-...
-&gt;&gt;&gt; some_func.__name__
-'some_func'
-&gt;&gt;&gt; help(some_func)
-Help on function some_func in module __main__:
-
-some_func()
-    This is docstring for some_func() function
-
-&gt;&gt;&gt;
-</code></pre>
-<h3 id="_2">Шаблони декораторів</h3>
-<p>Декоратор без параметрів:</p>
-<pre><code>from functools import wraps
-def назва_декоратора(функція_що_декорується):
-    @wraps(функція_що_декорується)
-    def inner(параметри_функції_що_декорується):
-        ...
-        функція_що_декорується(параметри_функції_що_декорується)
-        ...
-    return inner
-</code></pre>
-<p>Декоратор з параметрами:</p>
-<pre><code>from functools import wraps
-def назва_декоратора(параметри_декоратора):
-    def decorator(функція_що_декорується):
-        @wraps(функція_що_декорується)
-        def inner(параметри_функції_що_декорується):
-            ...
-            функція_що_декорується(параметри_функції_що_декорується)
-            ...
-        return inner
-    return decorator
-</code></pre>
-<h3 id="go">go!</h3>
-<!-- 
-https://habr.com/ru/company/otus/blog/573164/
-https://habr.com/ru/company/otus/blog/573164/
-Кэшированные атрибуты
-
-Во встроенном пакете functools есть классный декоратор @cached_property, который позволяет кэшировать результат метода и загнать его в атрибут.
-
-Таким образом, при первом обращении к атрибуту производятся вычисления в методе, а при дальнейших берется уже кэшированное значение.
-
-Подобное кэшеирование полезно в случаях, когда в методе производятся вычисления, которые нагружают систему и занимают много времени.
-
-По сути, @cached_property можно сравнить с комбинацией декораторов @property (про это был пост) и @functools.lru_cache (и про это тоже).
--->
 
 
 

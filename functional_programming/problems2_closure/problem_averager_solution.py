@@ -5,6 +5,7 @@
 Залишити лише ваше пояснення, ваш код та юніт-тесты.
 """
 
+'''
 class Averager:
     def __init__(self):
         self._count = 0
@@ -14,7 +15,7 @@ class Averager:
         self._count += 1
         self._total += value
         return self._total / self._count
-
+'''
 
 def Averager(): # noqa
     count = 0

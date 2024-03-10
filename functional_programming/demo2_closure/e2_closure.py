@@ -14,7 +14,6 @@ def outer():
 closure = outer()
 closure()
 
-exit()
 ##############
 
 def outer():
