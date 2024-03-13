@@ -7,6 +7,6 @@ def log_params(func):
 
 @log_params
 def f(a, b, c):
-	print(a, b, c)
+	pass
 
-f(1, 2, 3)
+f(1, c=2, b=3)

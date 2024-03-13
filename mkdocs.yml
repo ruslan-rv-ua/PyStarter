@@ -177,7 +177,7 @@ nav:
     - Тип даних dict: dict/dict.md
     - Методи словників: dict/dict_methods.md
     - Обхід словників: dict/dict_traversal.md
-  - 16. Файли:
+  - 16. Текстові файли:
     - Кодування текстової інформації: text_files/unicode.md
     - Текстові файли: text_files/open_close_flush.md
     - Читання і запис текстових файлів: text_files/read_write.md
@@ -284,8 +284,12 @@ nav:
     - '"Ввічливі" декоратори': functional_programming/decorators5.md
   - 36. Рекурсія:
     - Стек викликів: functional_programming/recursion1.md
-    # - Рекурсія: functional_programming/recursion2.md
-  # - xx. Ввід та вивід: comming_soon.md
+    - Рекурсія: functional_programming/recursion2.md
+  - 37. Ввід та вивід:
+    - Файли і потоки: io/files_and_streams.md
+    - Відкриття та закриття файлів: io/open_close.md
+    - Читання і запис: io/read_write.md
+    # - Серіалізація даних: io/serialization.md
   # - xx. Модулі і пакети: comming_soon.md
   # - xx. Виконання програм: comming_soon.md
   # - xx. Сторонні бібліотеки: comming_soon.md
@@ -299,6 +303,5 @@ nav:
     - Модуль re: comming_soon.md # batteries/re.md
     - Модуль contextlib: batteries/contextlib.md
     - Модуль itertools: batteries/itertools.md
-    - Модуль functools: batteries/functools.md
   - Дзен: zen.md
   - Корисні ресурси: resources.md
