@@ -5,6 +5,7 @@ def timeit(func):
 		t = perf_counter()
 		func()
 		print(f"{func.__name__}: {perf_counter()-t:.8f}")
+	wrapper.__name__ = func.__name__
 	return wrapper
 
 def memoize(func):
@@ -14,6 +15,7 @@ def memoize(func):
 		if key not in cache:
 			cache[key] = func(*args, **kwargs)
 		return cache[key]
+	wrapper.__name__ = func.__name__
 	return wrapper
 
 @timeit

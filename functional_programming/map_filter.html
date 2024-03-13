@@ -805,7 +805,7 @@
       
   
   <span class="md-ellipsis">
-    16. Файли
+    16. Текстові файли
   </span>
   
 
@@ -1615,6 +1615,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reduce" class="md-nav__link">
+    reduce()
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1760,6 +1767,43 @@
         
   
   
+    <a href="../io/files_and_streams.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    37. Ввід та вивід
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../batteries/random.html" class="md-nav__link">
       
   
@@ -1859,6 +1903,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reduce" class="md-nav__link">
+    reduce()
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1920,6 +1971,57 @@
 &gt;&gt;&gt; list(filter(lambda s: len(s) &gt; 3, [&#39;apple&#39;, &#39;banana&#39;, &#39;kiwi&#39;, &#39;orange&#39;]))
 [&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;]
 </code></pre></div>
+<h3 id="reduce"><code>reduce()</code></h3>
+<p>Використовується для послідовного застосування заданої функції до всіх елементів ітерабельного об'єкта, зводячи їх до одного значення.</p>
+<pre><code>reduce(function, iterable[, initializer])
+</code></pre>
+<p>Аргументи:</p>
+<ul>
+<li><code>function</code> — бінарна функція, яка приймає два аргументи і повертає результат;</li>
+<li><code>iterable</code> — ітерабельний об'єкт;</li>
+<li><code>initializer</code> (опційно) — початкове значення аккумулятора. Якщо не задано, то береться перший елемент ітерабельного об'єкта.</li>
+</ul>
+<p>Якщо задано значення акумулятора, тоді для акумулятора і для першого елемента послідовності викликається задана функція. Якщо ж значення акумулятора не задано, функція викликається для перших двох елементів. 
+Результат дії заданої функції записується в акумулятор. 
+Далі процес повторюється для усіх елементів ітерабельного об'єкта.</p>
+<p>Приклад: є список чисел, треба отримати їх добуток. </p>
+<pre><code>&gt;&gt;&gt; from functools import reduce
+&gt;&gt;&gt; numbers = [1, 2, 3, 4, 5]
+&gt;&gt;&gt; product = reduce(lambda a, x: a*x, numbers)
+&gt;&gt;&gt; product
+120
+</code></pre>
+<p>Функції <code>reduce()</code> ми передали анонімну функцію, яка повертає добуток двох чисел. 
+Ця функція застосовується спершу до чисел 1 і 2, в результаті отримуємо 2. 
+Потім до чисел 2 (попередній результат) і 3 (наступний елемент списка), вийде 6. 
+Потім до чисел 6 і 4, і врешті решт до чисел 24 і 5. </p>
+<p>Ще один приклад. 
+Є список списків чисел:</p>
+<pre><code>[[1, 2, 3], [4, 5], [6, 7, 8]]
+</code></pre>
+<p>Треба отримати один список який міститиме усі числа: </p>
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre>
+<p>За допомогою <code>reduce()</code> це можна зробити просто і елегантно: </p>
+<pre><code>&gt;&gt;&gt; nums = [[1, 2, 3], [4, 5], [6, 7, 8]]
+&gt;&gt;&gt; l = reduce(lambda x,y: x+y, nums)
+&gt;&gt;&gt; l
+[1, 2, 3, 4, 5, 6, 7, 8]
+&gt;&gt;&gt;
+</code></pre>
+<p>Ще можна замість анонімної функції використати магічний метод класа <code>list</code>:</p>
+<pre><code>&gt;&gt;&gt; l = reduce(list.__add__, nums)
+&gt;&gt;&gt; l
+[1, 2, 3, 4, 5, 6, 7, 8]
+&gt;&gt;&gt;
+</code></pre>
+<p>Функція <code>reduce()</code> — це "класика" агрегування даних. 
+Ось як наприклад можна реалізувати функцію <code>sum()</code>:</p>
+<pre><code>reduce(lambda x, y: x + y, iterable)
+</code></pre>
+<p>А ось реалізація <code>max()</code>:</p>
+<pre><code>reduce(lambda x, y: x if x &gt; y else y, iterable)
+</code></pre>
 
 
 
