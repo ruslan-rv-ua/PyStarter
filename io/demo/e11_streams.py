@@ -12,8 +12,8 @@ o.write('Привіт!')
 
 from time import sleep
 
-print('hello ', end='', flush=True)
-sleep(5)
+print('hello ', end='', flush=False)
+sleep(3)
 print('world')
 
 ##################
