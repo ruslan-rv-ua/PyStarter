@@ -1,0 +1,3 @@
+from subfolder import *
+
+hello()

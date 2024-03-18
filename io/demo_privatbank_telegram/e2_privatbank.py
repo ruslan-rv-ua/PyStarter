@@ -18,12 +18,12 @@ response = requests.get(URL)
 print(f'{response.status_code=}')
 print(f'{response.headers['content-type']=}')
 print(f'{response.encoding=}')
-# print(f'{response.content=}')
+print(f'{response.content=}')
 # print(f'{response.text=}')
 # print(response.json())
 text = response.content.decode(response.encoding)
 data = json.loads(text)
-
+data = response.json()
 
 
 
