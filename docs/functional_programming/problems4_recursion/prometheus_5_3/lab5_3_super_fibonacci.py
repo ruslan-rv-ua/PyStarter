@@ -16,8 +16,6 @@
 Виклик функції: super_fibonacci(9, 3)
 Повертає: 57
 """
-from functools import cache
-@cache
 def super_fibonacci(n, m):
 	if n <= m:
 		return 1

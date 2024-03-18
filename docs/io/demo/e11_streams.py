@@ -7,20 +7,20 @@ e = sys.stderr
 
 # a = i.read()
 o.write('Привіт!')
-
+# o.flush()
 ###################
 
 from time import sleep
 
-print('hello ', end='', flush=True)
-sleep(5)
+print('hello ', end='', flush=False)
+sleep(3)
 print('world')
 
 ##################
 
 # low level
 import os
-print(os.open)
+# print(os.open)
 # file descriptor
 
 #######################

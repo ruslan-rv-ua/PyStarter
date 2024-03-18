@@ -1,6 +1,3 @@
-# pip install pytelegrambotapi
-
-
 import zipfile
 from datetime import datetime
 from io import BytesIO
@@ -32,17 +29,18 @@ def zip_rates(rates: dict, file_name: str) -> BytesIO:
 
 @bot.message_handler(content_types=["text"])
 def send_zip_to_telegram(message):
-    print("Sending rates to telegram...")
     rates = get_currency_rates()
-    file_name = f"{datetime.now():%Y-%m-%d_%H-%M-%S}"
+    file_name = f"privatbank_{datetime.now():%Y-%m-%d_%H-%M-%S}"
     zip_file = zip_rates(rates, file_name)
-    send_zip_to_telegram(zip_file)
-    bot.send_message(message.chat.id, message.text)
-    # bot.send_document(message.chat.id, zip_file)
-    print("Done")
+    help(bot.send_document)
+    bot.send_document(
+        message.chat.id, 
+        zip_file, 
+        visible_file_name=f'{file_name}.zip',
+        reply_to_message_id=message.id
+    )
 
 
 if __name__ == "__main__":
-    print("Starting bot...")
     # bot.infinity_polling()
     bot.polling()

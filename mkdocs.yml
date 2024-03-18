@@ -289,9 +289,16 @@ nav:
     - Файли і потоки: io/files_and_streams.md
     - Відкриття та закриття файлів: io/open_close.md
     - Читання і запис: io/read_write.md
-    # - Серіалізація даних: io/serialization.md
-  # - xx. Модулі і пакети: comming_soon.md
-  # - xx. Виконання програм: comming_soon.md
+    - Серіалізація даних: io/serialization.md
+  - 38. Модулі і пакети:
+    - Модулі у програмуванні: modules_and_packages/modules_in_programming.md
+    - Модулі в Python: modules_and_packages/modules_in_python.md
+    - Модулі як об'єкти: modules_and_packages/module_as_object.md
+    - Пакети: modules_and_packages/packages.md
+  - 39. Виконання програм:
+    - Інтерпретатор Python: interpreter/interpreter.md
+  #   - Виконання модулів і пакетів: interpreter/exec_modules_and_packages.md
+  #   - Передача аргументів скрипту: interpreter/script_arguments.md
   # - xx. Сторонні бібліотеки: comming_soon.md
   - Батарейки:
     - Модуль random: batteries/random.md
