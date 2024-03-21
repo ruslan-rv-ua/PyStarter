@@ -1,0 +1,11 @@
+Windows 7
+[HKEY_CLASSES_ROOT\Applications\python.exe\shell\open\command]
+@="\"C:\\Python27\\python.exe\" \"%1\" %*"
+
+win10
+Computer\HKEY_CLASSES_ROOT\Applications\python.exe
+Computer\HKEY_CLASSES_ROOT\py_auto_file\shell\open\command
+	was:
+		"C:\Python36\python.exe" "%1"
+	new:
+		"C:\Python36\python.exe" "%1" "%*"

@@ -67,8 +67,8 @@ if __name__ == "__main__":
 
 - [sys — System-specific parameters and functions](https://docs.python.org/3/library/sys.html)
 - [argparse — Parser for command-line options, arguments and sub-commands](https://docs.python.org/3/library/argparse.html)
-	
-	
+- [click — Composable command line interface toolkit](https://click.palletsprojects.com/en/8.1.x/)
+
 	
 <!--
 Windows 7
