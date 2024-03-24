@@ -10,5 +10,5 @@ class Person(object):
         return f'Person({self.name!r}, {self.age!r})'
 
 with open('people.bin', 'rb') as file:
-	data = pickle.load(file)
+    data = pickle.load(file)
 
