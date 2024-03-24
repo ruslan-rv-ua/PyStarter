@@ -14,4 +14,4 @@ mary = Person('Марійка', 21, peter)
 peter.sibling = mary
 
 with open('people.bin', 'wb') as file:  # 'wb' - записуємо бінарний файл!
-	pickle.dump([peter, mary], file)
+    pickle.dump([peter, mary], file)

@@ -1,1 +1,0 @@
-print('p1 __init__')

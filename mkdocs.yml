@@ -297,9 +297,12 @@ nav:
     - Пакети: modules_and_packages/packages.md
   - 39. Виконання програм:
     - Інтерпретатор Python: interpreter/interpreter.md
-    # - Виконання модулів і пакетів: interpreter/exec_modules_and_packages.md
-    # - Передача аргументів скрипту: interpreter/script_arguments.md
-  # - xx. Сторонні бібліотеки: comming_soon.md
+    - Виконання модулів і пакетів: interpreter/exec_modules_and_packages.md
+    - Передача аргументів скрипту: interpreter/script_arguments.md
+  - 40. Сторонні бібліотеки:
+    - Джерела бібліотек: libs_3rd_party/libs_sources.md
+    - Менеджер пакетів: libs_3rd_party/pip.md
+    # - Віртуальні оточення: libs_3rd_party/venv.md
   - Батарейки:
     - Модуль random: batteries/random.md
     - Модуль pprint: batteries/pprint.md
