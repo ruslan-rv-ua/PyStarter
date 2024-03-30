@@ -1,9 +1,8 @@
-#! path/to/interpreter
-# hash bang
+#!path/to/interpreter
 # shebang
+# hash bang
 
-# -*- coding: utf8 -*-
-print('hello')
+# -*- coding: utf-8 -*-
 
 python -h
 python --help
