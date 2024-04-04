@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "md-converter"
+version = "0.1.0"
+description = ""
+authors = ["Ruslan Iskov <ruslan.rv.ua@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+markdown-it-pyrs = "^0.3.0"
+click = "^8.1.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+mdc = "md_converter:convert"
