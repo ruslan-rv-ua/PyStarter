@@ -1,4 +1,3 @@
-pip
 hatch
 pipenv
 pdm

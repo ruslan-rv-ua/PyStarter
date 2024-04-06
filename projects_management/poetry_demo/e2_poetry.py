@@ -1,6 +1,11 @@
 install 
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 
+uninstall
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -  --uninstall
+
+poetry --version
+
 poetry config virtualenvs.in-project true
 
 poetry new md-converter

@@ -1,6 +1,6 @@
 import click
 from pathlib import Path
-from markdown_it_pyrs.markdown_it_pyrs import MarkdownIt
+from markdown_it_py.markdown_it_py import MarkdownIt
 
 TEMPLATE_PATH = Path(__file__).parent / "template.html"
 TEMPLATE = TEMPLATE_PATH.read_text(encoding="utf-8")
