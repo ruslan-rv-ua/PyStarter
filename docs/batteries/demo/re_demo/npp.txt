@@ -1,0 +1,12 @@
+Add to NVDA dictionary as regex:
+
+	.*Ln : (\d+).*?(\d+).*
+	ряд\1поз\2
+	
+In Notepad++ press nvda + end
+
+
+	.*Ln : (\d+)\s+(\d+).*
+	
+	
+------------

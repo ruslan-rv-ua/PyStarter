@@ -1,0 +1,2334 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://learnxinyminutes.com/docs/toml/
+Subject: Learn toml in Y Minutes
+Date: Sat, 30 Mar 2024 10:10:12 +0200
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----"
+
+
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/html
+Content-ID: <frame-5705D32F7215A81532207344518FF874@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://learnxinyminutes.com/docs/toml/
+
+<!DOCTYPE html><!--[if lt IE 7]>      <html class=3D"no-js lt-ie9 lt-ie8 lt=
+-ie7"> <![endif]--><!--[if IE 7]>         <html class=3D"no-js lt-ie9 lt-ie=
+8"> <![endif]--><!--[if IE 8]>         <html class=3D"no-js lt-ie9"> <![end=
+if]--><!--[if gt IE 8]><!--><html class=3D"no-js"><link type=3D"text/css" r=
+el=3D"stylesheet" id=3D"dark-mode-general-link" href=3D"chrome-extension://=
+jabpfojepndedlelamfloejfoopkogcf/data/content_script/general/dark_3.css"><!=
+--<![endif]--><head><meta http-equiv=3D"Content-Type" content=3D"text/html;=
+ charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:cs=
+s-a3b17062-c8a0-4406-b60a-227f616105bc@mhtml.blink" /><link rel=3D"styleshe=
+et" type=3D"text/css" href=3D"cid:css-afb10184-d381-477a-8c2c-b63973a22f36@=
+mhtml.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-6=
+706f536-dd8c-457b-ad05-c5a929b4517b@mhtml.blink" /><link rel=3D"stylesheet"=
+ type=3D"text/css" href=3D"cid:css-393234f0-ec64-487a-98a8-8d5189cb646f@mht=
+ml.blink" /><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-2aa6=
+c383-9ecb-4461-a0a9-040d96a508f3@mhtml.blink" />
+       =20
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge,chrome=3D=
+1">
+        <meta http-equiv=3D"Content-Language" content=3D"en-us">
+        <!-- Use title if it's in the page YAML frontmatter -->
+        <title>Learn toml in Y Minutes</title>
+        <meta name=3D"description" content=3D"">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directo=
+ry -->
+
+        <link rel=3D"stylesheet" href=3D"https://learnxinyminutes.com/css/i=
+ndex.css">
+
+        <link rel=3D"canonical" href=3D"https://learnxinyminutes.com/docs/t=
+oml/">
+       =20
+    </head>
+    <body style=3D"">
+        <!--[if lt IE 7]>
+            <p class=3D"chromeframe">You are using an outdated browser. <a =
+href=3D"http://browsehappy.com/">Upgrade your browser today</a> or <a href=
+=3D"http://www.google.com/chromeframe/?redirect=3Dtrue">install Google Chro=
+me Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class=3D"container">
+            <div class=3D"share">
+    <span class=3D"sharemsg">
+      <a href=3D"https://twitter.com/intent/tweet?url=3Dhttps%3A%2F%2Flearn=
+xinyminutes.com%2Fdocs%2Ftoml%2F&amp;text=3DLearn+X+in+Y+minutes%2C+where+X=
+%3Dtoml">
+        Share this page
+      </a></span>
+
+      <span class=3D"st_facebook_large" displaytext=3D"Facebook"></span>
+      <span class=3D"st_twitter_large" displaytext=3D"Tweet"></span>
+  </div>
+  <div class=3D"theme-choice">
+    <label id=3D"theme-label">Select theme:</label>
+    <button type=3D"button" aria-labelledby=3D"theme-label">light</button>
+    <button type=3D"button" aria-labelledby=3D"theme-label">dark</button>
+  </div>
+  <h1><a href=3D"https://learnxinyminutes.com/">Learn X in Y minutes</a></h=
+1>
+  <h2>Where X=3Dtoml</h2>
+    <p class=3D"filelink">
+    Get the code:
+    <a href=3D"https://learnxinyminutes.com/docs/files/learntoml.toml">lear=
+ntoml.toml</a>
+    </p>
+  <div id=3D"doc">
+    <p>TOML stands for Tom=E2=80=99s Obvious, Minimal Language. It is a dat=
+a serialisation language designed to be a minimal configuration file format=
+ that=E2=80=99s easy to read due to obvious semantics.</p>
+
+<p>It is an alternative to YAML and JSON. It aims to be more human friendly=
+ than JSON and simpler that YAML. TOML is designed to map unambiguously to =
+a hash table. TOML should be easy to parse into data structures in a wide v=
+ariety of languages.</p>
+
+<p>Be warned, TOML=E2=80=99s spec is still changing a lot. Until it=E2=80=
+=99s marked as 1.0, you
+should assume that it is unstable and act accordingly. This document follow=
+s TOML v0.4.0. </p>
+<div class=3D"highlight"><pre><span></span><span class=3D"c1"># Comments in=
+ TOML look like this.</span>
+
+<span class=3D"c1">################</span>
+<span class=3D"c1"># SCALAR TYPES #</span>
+<span class=3D"c1">################</span>
+
+<span class=3D"c1"># Our root object (which continues for the entire docume=
+nt) will be a map,</span>
+<span class=3D"c1"># which is equivalent to a dictionary, hash or object in=
+ other languages.</span>
+
+<span class=3D"c1"># The key, equals sign, and value must be on the same li=
+ne</span>
+<span class=3D"c1"># (though some values can be broken over multiple lines)=
+.</span>
+<span class=3D"n">key</span> <span class=3D"o">=3D</span> <span class=3D"s"=
+>"value"</span>
+<span class=3D"n">string</span> <span class=3D"o">=3D</span> <span class=3D=
+"s">"hello"</span>
+<span class=3D"n">number</span> <span class=3D"o">=3D</span> <span class=3D=
+"mi">42</span>
+<span class=3D"n">float</span> <span class=3D"o">=3D</span> <span class=3D"=
+mf">3.14</span>
+<span class=3D"n">boolean</span> <span class=3D"o">=3D</span> <span class=
+=3D"kc">true</span>
+<span class=3D"n">dateTime</span> <span class=3D"o">=3D</span> <span class=
+=3D"mi">1979-05-27</span><span class=3D"n">T07</span><span class=3D"p">:</s=
+pan><span class=3D"mi">32</span><span class=3D"p">:</span><span class=3D"mi=
+">00-08</span><span class=3D"p">:</span><span class=3D"mi">00</span>
+<span class=3D"n">scientificNotation</span> <span class=3D"o">=3D</span> <s=
+pan class=3D"mf">1e+12</span>
+<span class=3D"s">"key can be quoted"</span> <span class=3D"o">=3D</span> <=
+span class=3D"n">true</span> <span class=3D"c1"># Both " and ' are fine</sp=
+an>
+<span class=3D"s">"key may contain"</span> <span class=3D"o">=3D</span> <sp=
+an class=3D"s">"letters, numbers, underscores, and dashes"</span>
+
+<span class=3D"c1"># A bare key must be non-empty, but an empty quoted key =
+is allowed</span>
+<span class=3D"s">""</span> <span class=3D"o">=3D</span> <span class=3D"s">=
+"blank"</span>     <span class=3D"c1"># VALID but discouraged</span>
+<span class=3D"err">''</span> <span class=3D"o">=3D</span> <span class=3D"e=
+rr">'</span><span class=3D"n">blank</span><span class=3D"err">'</span>     =
+<span class=3D"c1"># VALID but discouraged</span>
+
+<span class=3D"c1">##########</span>
+<span class=3D"c1"># String #</span>
+<span class=3D"c1">##########</span>
+
+<span class=3D"c1"># All strings must contain only valid UTF-8 characters.<=
+/span>
+<span class=3D"c1"># We can escape characters and some of them have a compa=
+ct escape sequence.</span>
+<span class=3D"c1"># For example, \t add a tabulation. Refers to the spec t=
+o get all of them.</span>
+<span class=3D"n">basicString</span> <span class=3D"o">=3D</span> <span cla=
+ss=3D"s">"are surrounded by quotation marks. \"I'm quotable\". Name\tJos"</=
+span>
+
+<span class=3D"n">multiLineString</span> <span class=3D"o">=3D</span> <span=
+ class=3D"s">"""</span>
+<span class=3D"s">are surrounded by three quotation marks</span>
+<span class=3D"s">on each side and allow newlines."""</span>
+
+<span class=3D"n">literalString</span> <span class=3D"o">=3D</span> <span c=
+lass=3D"err">'</span><span class=3D"n">are</span> <span class=3D"n">surroun=
+ded</span> <span class=3D"n">by</span> <span class=3D"n">single</span> <spa=
+n class=3D"n">quotes</span><span class=3D"p">.</span> <span class=3D"n">Esc=
+aping</span> <span class=3D"n">are</span> <span class=3D"n">not</span> <spa=
+n class=3D"n">allowed</span><span class=3D"p">.</span><span class=3D"err">'=
+</span>
+
+<span class=3D"n">multiLineLiteralString</span> <span class=3D"o">=3D</span=
+> <span class=3D"err">'''</span>
+<span class=3D"n">are</span> <span class=3D"n">surrounded</span> <span clas=
+s=3D"n">by</span> <span class=3D"n">three</span> <span class=3D"n">single</=
+span> <span class=3D"n">quotes</span> <span class=3D"n">on</span> <span cla=
+ss=3D"n">each</span> <span class=3D"n">side</span>
+<span class=3D"n">and</span> <span class=3D"n">allow</span> <span class=3D"=
+n">newlines</span><span class=3D"p">.</span> <span class=3D"n">Still</span>=
+ <span class=3D"n">no</span> <span class=3D"n">escaping</span><span class=
+=3D"p">.</span>
+<span class=3D"n">The</span> <span class=3D"n">first</span> <span class=3D"=
+n">newline</span> <span class=3D"n">is</span> <span class=3D"n">trimmed</sp=
+an> <span class=3D"n">in</span> <span class=3D"n">raw</span> <span class=3D=
+"n">strings</span><span class=3D"p">.</span>
+   <span class=3D"n">All</span> <span class=3D"n">other</span> <span class=
+=3D"n">whitespace</span>
+   <span class=3D"n">is</span> <span class=3D"n">preserved</span><span clas=
+s=3D"p">.</span> <span class=3D"c1">#! are preserved?</span>
+<span class=3D"err">'''</span>
+
+<span class=3D"c1"># For binary data it is recommended that you use Base64,=
+ another ASCII or UTF8</span>
+<span class=3D"c1"># encoding. The handling of that encoding will be applic=
+ation specific.</span>
+
+<span class=3D"c1">###########</span>
+<span class=3D"c1"># Integer #</span>
+<span class=3D"c1">###########</span>
+
+<span class=3D"c1">## Integers can start with a +, a - or nothing.</span>
+<span class=3D"c1">## Leading zeros are not allowed.</span>
+<span class=3D"c1">## Hex, octal, and binary forms are allowed.</span>
+<span class=3D"c1">## Values that cannot be expressed as a series of digits=
+ are not allowed.</span>
+<span class=3D"n">int1</span> <span class=3D"o">=3D</span> <span class=3D"e=
+rr">+</span><span class=3D"mi">42</span>
+<span class=3D"n">int2</span> <span class=3D"o">=3D</span> <span class=3D"m=
+i">0</span>
+<span class=3D"n">int3</span> <span class=3D"o">=3D</span> <span class=3D"m=
+i">-21</span>
+<span class=3D"n">int4</span> <span class=3D"o">=3D</span> <span class=3D"m=
+i">0</span><span class=3D"n">xdeadbeef</span>
+<span class=3D"n">int5</span> <span class=3D"o">=3D</span> <span class=3D"m=
+i">0</span><span class=3D"n">o755</span>
+<span class=3D"n">int6</span> <span class=3D"o">=3D</span> <span class=3D"m=
+i">0</span><span class=3D"n">b11011100</span>
+<span class=3D"n">integerRange</span> <span class=3D"o">=3D</span> <span cl=
+ass=3D"mi">64</span>
+
+<span class=3D"c1">## You can use underscores to enhance readability. Each<=
+/span>
+<span class=3D"c1">## underscore must be surrounded by at least one digit.<=
+/span>
+<span class=3D"n">int4</span> <span class=3D"o">=3D</span> <span class=3D"m=
+i">5</span><span class=3D"n">_349_221</span>
+<span class=3D"n">int5</span> <span class=3D"o">=3D</span> <span class=3D"m=
+i">1</span><span class=3D"n">_2_3_4_5</span>     <span class=3D"c1"># VALID=
+ but discouraged</span>
+
+<span class=3D"c1">#########</span>
+<span class=3D"c1"># Float #</span>
+<span class=3D"c1">#########</span>
+
+<span class=3D"c1"># Floats are an integer followed by a fractional and/or =
+an exponent part.</span>
+<span class=3D"n">flt1</span> <span class=3D"o">=3D</span> <span class=3D"m=
+f">3.1415</span>
+<span class=3D"n">flt2</span> <span class=3D"o">=3D</span> <span class=3D"m=
+i">-5</span><span class=3D"n">e6</span>
+<span class=3D"n">flt3</span> <span class=3D"o">=3D</span> <span class=3D"m=
+f">6.626E-34</span>
+
+<span class=3D"c1">###########</span>
+<span class=3D"c1"># Boolean #</span>
+<span class=3D"c1">###########</span>
+
+<span class=3D"n">bool1</span> <span class=3D"o">=3D</span> <span class=3D"=
+kc">true</span>
+<span class=3D"n">bool2</span> <span class=3D"o">=3D</span> <span class=3D"=
+kc">false</span>
+<span class=3D"n">boolMustBeLowercase</span> <span class=3D"o">=3D</span> <=
+span class=3D"kc">true</span>
+
+<span class=3D"c1">############</span>
+<span class=3D"c1"># Datetime #</span>
+<span class=3D"c1">############</span>
+
+<span class=3D"n">date1</span> <span class=3D"o">=3D</span> <span class=3D"=
+mi">1979-05-27T07:32:00Z</span> <span class=3D"c1"># UTC time, following RF=
+C 3339/ISO 8601 spec</span>
+<span class=3D"n">date2</span> <span class=3D"o">=3D</span> <span class=3D"=
+mi">1979-05-26</span><span class=3D"n">T15</span><span class=3D"p">:</span>=
+<span class=3D"mi">32</span><span class=3D"p">:</span><span class=3D"mi">00=
+</span><span class=3D"err">+</span><span class=3D"mi">08</span><span class=
+=3D"p">:</span><span class=3D"mi">00</span> <span class=3D"c1"># with RFC 3=
+339/ISO 8601 offset</span>
+<span class=3D"n">date3</span> <span class=3D"o">=3D</span> <span class=3D"=
+mi">1979-05-27</span><span class=3D"n">T07</span><span class=3D"p">:</span>=
+<span class=3D"mi">32</span><span class=3D"p">:</span><span class=3D"mi">00=
+</span> <span class=3D"c1"># without offset</span>
+<span class=3D"n">date4</span> <span class=3D"o">=3D</span> <span class=3D"=
+mi">1979-05-27</span> <span class=3D"c1"># without offset or time</span>
+
+<span class=3D"c1">####################</span>
+<span class=3D"c1"># COLLECTION TYPES #</span>
+<span class=3D"c1">####################</span>
+
+<span class=3D"c1">#########</span>
+<span class=3D"c1"># Array #</span>
+<span class=3D"c1">#########</span>
+
+<span class=3D"n">array1</span> <span class=3D"o">=3D</span> <span class=3D=
+"p">[</span> <span class=3D"mi">1</span><span class=3D"p">,</span> <span cl=
+ass=3D"mi">2</span><span class=3D"p">,</span> <span class=3D"mi">3</span> <=
+span class=3D"p">]</span>
+<span class=3D"n">array2</span> <span class=3D"o">=3D</span> <span class=3D=
+"p">[</span> <span class=3D"s">"Commas"</span><span class=3D"p">,</span> <s=
+pan class=3D"s">"are"</span><span class=3D"p">,</span> <span class=3D"s">"d=
+elimiters"</span> <span class=3D"p">]</span>
+<span class=3D"n">array3</span> <span class=3D"o">=3D</span> <span class=3D=
+"p">[</span> <span class=3D"s">"Don't mix"</span><span class=3D"p">,</span>=
+ <span class=3D"s">"different"</span><span class=3D"p">,</span> <span class=
+=3D"s">"types"</span> <span class=3D"p">]</span>
+<span class=3D"n">array4</span> <span class=3D"o">=3D</span> <span class=3D=
+"p">[</span> <span class=3D"p">[</span> <span class=3D"mf">1.2</span><span =
+class=3D"p">,</span> <span class=3D"mf">2.4</span> <span class=3D"p">],</sp=
+an> <span class=3D"p">[</span><span class=3D"s">"all"</span><span class=3D"=
+p">,</span> <span class=3D"err">'</span><span class=3D"n">strings</span><sp=
+an class=3D"err">'</span><span class=3D"p">,</span> <span class=3D"s">"""ar=
+e the same"""</span><span class=3D"p">,</span> <span class=3D"err">'''</spa=
+n><span class=3D"n">type</span><span class=3D"err">'''</span><span class=3D=
+"p">]</span> <span class=3D"p">]</span>
+<span class=3D"n">array5</span> <span class=3D"o">=3D</span> <span class=3D=
+"p">[</span>
+  <span class=3D"s">"Whitespace"</span><span class=3D"p">,</span> <span cla=
+ss=3D"s">"is"</span><span class=3D"p">,</span> <span class=3D"s">"ignored"<=
+/span>
+<span class=3D"p">]</span>
+
+<span class=3D"c1">#########</span>
+<span class=3D"c1"># Table #</span>
+<span class=3D"c1">#########</span>
+
+<span class=3D"c1"># Tables (or hash tables or dictionaries) are collection=
+s of key/value</span>
+<span class=3D"c1"># pairs. They appear in square brackets on a line by the=
+mselves.</span>
+<span class=3D"c1"># Empty tables are allowed and simply have no key/value =
+pairs within them.</span>
+<span class=3D"p">[</span><span class=3D"n">table</span><span class=3D"p">]=
+</span>
+
+<span class=3D"c1"># Under that, and until the next table or EOF are the ke=
+y/values of that table.</span>
+<span class=3D"c1"># Key/value pairs within tables are not guaranteed to be=
+ in any specific order.</span>
+<span class=3D"p">[</span><span class=3D"n">table-1</span><span class=3D"p"=
+>]</span>
+<span class=3D"n">key1</span> <span class=3D"o">=3D</span> <span class=3D"s=
+">"some string"</span>
+<span class=3D"n">key2</span> <span class=3D"o">=3D</span> <span class=3D"m=
+i">123</span>
+
+<span class=3D"p">[</span><span class=3D"n">table-2</span><span class=3D"p"=
+>]</span>
+<span class=3D"n">key1</span> <span class=3D"o">=3D</span> <span class=3D"s=
+">"another string"</span>
+<span class=3D"n">key2</span> <span class=3D"o">=3D</span> <span class=3D"m=
+i">456</span>
+
+<span class=3D"c1"># Dots are prohibited in bare keys because dots are used=
+ to signify nested tables.</span>
+<span class=3D"c1"># Naming rules for each dot separated part are the same =
+as for keys.</span>
+<span class=3D"p">[</span><span class=3D"n">dog</span><span class=3D"p">.</=
+span><span class=3D"s">"tater.man"</span><span class=3D"p">]</span>
+<span class=3D"n">type</span> <span class=3D"o">=3D</span> <span class=3D"s=
+">"pug"</span>
+
+<span class=3D"c1"># In JSON land, that would give you the following struct=
+ure:</span>
+<span class=3D"c1"># { "dog": { "tater.man": { "type": "pug" } } }</span>
+
+<span class=3D"c1"># Whitespace around dot-separated parts is ignored, howe=
+ver, best practice is to</span>
+<span class=3D"c1"># not use any extraneous whitespace.</span>
+<span class=3D"p">[</span><span class=3D"n">a</span><span class=3D"p">.</sp=
+an><span class=3D"n">b</span><span class=3D"p">.</span><span class=3D"n">c<=
+/span><span class=3D"p">]</span>            <span class=3D"c1"># this is be=
+st practice</span>
+<span class=3D"p">[</span> <span class=3D"n">d</span><span class=3D"p">.</s=
+pan><span class=3D"n">e</span><span class=3D"p">.</span><span class=3D"n">f=
+</span> <span class=3D"p">]</span>          <span class=3D"c1"># same as [d=
+.e.f]</span>
+<span class=3D"p">[</span> <span class=3D"n">j</span> <span class=3D"p">.</=
+span> <span class=3D"s">"=CA=9E"</span> <span class=3D"p">.</span> <span cl=
+ass=3D"err">'</span><span class=3D"n">l</span><span class=3D"err">'</span> =
+<span class=3D"p">]</span>  <span class=3D"c1"># same as [j."=CA=9E".'l']</=
+span>
+
+<span class=3D"c1"># You don't need to specify all the super-tables if you =
+don't want to. TOML knows</span>
+<span class=3D"c1"># how to do it for you.</span>
+<span class=3D"c1"># [x] you</span>
+<span class=3D"c1"># [x.y] don't</span>
+<span class=3D"c1"># [x.y.z] need these</span>
+<span class=3D"p">[</span><span class=3D"n">x</span><span class=3D"p">.</sp=
+an><span class=3D"n">y</span><span class=3D"p">.</span><span class=3D"n">z<=
+/span><span class=3D"p">.</span><span class=3D"n">w</span><span class=3D"p"=
+>]</span> <span class=3D"c1"># for this to work</span>
+
+<span class=3D"c1"># As long as a super-table hasn't been directly defined =
+and hasn't defined a</span>
+<span class=3D"c1"># specific key, you may still write to it.</span>
+<span class=3D"p">[</span><span class=3D"n">a</span><span class=3D"p">.</sp=
+an><span class=3D"n">b</span><span class=3D"p">]</span>
+<span class=3D"n">c</span> <span class=3D"o">=3D</span> <span class=3D"mi">=
+1</span>
+
+<span class=3D"p">[</span><span class=3D"n">a</span><span class=3D"p">]</sp=
+an>
+<span class=3D"n">d</span> <span class=3D"o">=3D</span> <span class=3D"mi">=
+2</span>
+
+<span class=3D"c1"># Will generate the following in JSON:</span>
+<span class=3D"c1"># { "a": {"b": {"c": 1}, "d": 2 } }</span>
+
+<span class=3D"c1"># You cannot define any key or table more than once. Doi=
+ng so is invalid.</span>
+
+<span class=3D"c1"># DO NOT DO THIS</span>
+<span class=3D"p">[</span><span class=3D"n">a</span><span class=3D"p">]</sp=
+an>
+<span class=3D"n">b</span> <span class=3D"o">=3D</span> <span class=3D"mi">=
+1</span>
+
+<span class=3D"p">[</span><span class=3D"n">a</span><span class=3D"p">]</sp=
+an>
+<span class=3D"n">c</span> <span class=3D"o">=3D</span> <span class=3D"mi">=
+2</span>
+
+<span class=3D"c1"># DO NOT DO THIS EITHER</span>
+<span class=3D"p">[</span><span class=3D"n">a</span><span class=3D"p">]</sp=
+an>
+<span class=3D"n">b</span> <span class=3D"o">=3D</span> <span class=3D"mi">=
+1</span>
+
+<span class=3D"p">[</span><span class=3D"n">a</span><span class=3D"p">.</sp=
+an><span class=3D"n">b</span><span class=3D"p">]</span>
+<span class=3D"n">c</span> <span class=3D"o">=3D</span> <span class=3D"mi">=
+2</span>
+
+<span class=3D"c1"># All table names must be non-empty.</span>
+<span class=3D"p">[]</span>     <span class=3D"c1"># INVALID</span>
+<span class=3D"p">[</span><span class=3D"n">a</span><span class=3D"p">.]</s=
+pan>   <span class=3D"c1"># INVALID</span>
+<span class=3D"p">[</span><span class=3D"n">a</span><span class=3D"p">..</s=
+pan><span class=3D"n">b</span><span class=3D"p">]</span> <span class=3D"c1"=
+># INVALID</span>
+<span class=3D"p">[.</span><span class=3D"n">b</span><span class=3D"p">]</s=
+pan>   <span class=3D"c1"># INVALID</span>
+<span class=3D"p">[.]</span>    <span class=3D"c1"># INVALID</span>
+
+<span class=3D"c1">################</span>
+<span class=3D"c1"># Inline table #</span>
+<span class=3D"c1">################</span>
+
+<span class=3D"n">inlineTables</span> <span class=3D"o">=3D</span> <span cl=
+ass=3D"p">{</span> <span class=3D"n">areEnclosedWith</span> <span class=3D"=
+o">=3D</span> <span class=3D"s">"{ and }"</span><span class=3D"p">,</span> =
+<span class=3D"n">mustBeInline</span> <span class=3D"o">=3D</span> <span cl=
+ass=3D"n">true</span> <span class=3D"p">}</span>
+<span class=3D"n">point</span> <span class=3D"o">=3D</span> <span class=3D"=
+p">{</span> <span class=3D"n">x</span> <span class=3D"o">=3D</span> <span c=
+lass=3D"mi">1</span><span class=3D"p">,</span> <span class=3D"n">y</span> <=
+span class=3D"o">=3D</span> <span class=3D"mi">2</span> <span class=3D"p">}=
+</span>
+
+<span class=3D"c1">###################</span>
+<span class=3D"c1"># Array of Tables #</span>
+<span class=3D"c1">###################</span>
+
+<span class=3D"c1"># An array of tables can be expressed by using a table n=
+ame in double brackets.</span>
+<span class=3D"c1"># Each table with the same double bracketed name will be=
+ an item in the array.</span>
+<span class=3D"c1"># The tables are inserted in the order encountered.</spa=
+n>
+
+<span class=3D"p">[[</span><span class=3D"n">products</span><span class=3D"=
+p">]]</span>
+<span class=3D"n">name</span> <span class=3D"o">=3D</span> <span class=3D"s=
+">"array of table"</span>
+<span class=3D"n">sku</span> <span class=3D"o">=3D</span> <span class=3D"mi=
+">738594937</span>
+<span class=3D"n">emptyTableAreAllowed</span> <span class=3D"o">=3D</span> =
+<span class=3D"kc">true</span>
+
+<span class=3D"p">[[</span><span class=3D"n">products</span><span class=3D"=
+p">]]</span>
+
+<span class=3D"p">[[</span><span class=3D"n">products</span><span class=3D"=
+p">]]</span>
+<span class=3D"n">name</span> <span class=3D"o">=3D</span> <span class=3D"s=
+">"Nail"</span>
+<span class=3D"n">sku</span> <span class=3D"o">=3D</span> <span class=3D"mi=
+">284758393</span>
+<span class=3D"n">color</span> <span class=3D"o">=3D</span> <span class=3D"=
+s">"gray"</span>
+</pre></div>
+<p>The equivalent in JSON would be:</p>
+<div class=3D"highlight"><pre><span></span><span class=3D"p">{</span>=20
+  <span class=3D"nt">"products"</span><span class=3D"p">:</span> <span clas=
+s=3D"p">[</span>
+    <span class=3D"p">{</span>
+      <span class=3D"nt">"name"</span><span class=3D"p">:</span> <span clas=
+s=3D"s2">"array of table"</span><span class=3D"p">,</span>
+      <span class=3D"nt">"sku"</span><span class=3D"p">:</span> <span class=
+=3D"mi">7385594937</span><span class=3D"p">,</span>
+      <span class=3D"nt">"emptyTableAreAllowed"</span><span class=3D"p">:</=
+span> <span class=3D"kc">true</span>
+    <span class=3D"p">},</span>
+    <span class=3D"p">{},</span>
+    <span class=3D"p">{</span>
+      <span class=3D"nt">"name"</span><span class=3D"p">:</span> <span clas=
+s=3D"s2">"Nail"</span><span class=3D"p">,</span>
+      <span class=3D"nt">"sku"</span><span class=3D"p">:</span> <span class=
+=3D"mi">284758393</span><span class=3D"p">,</span>
+      <span class=3D"nt">"color"</span><span class=3D"p">:</span> <span cla=
+ss=3D"s2">"gray"</span>
+    <span class=3D"p">}</span>
+  <span class=3D"p">]</span>
+<span class=3D"p">}</span>
+</pre></div><div class=3D"highlight"><pre><span></span><span class=3D"c1">#=
+ You can create nested arrays of tables as well. Each double-bracketed</spa=
+n>
+<span class=3D"c1"># sub-table will belong to the nearest table element abo=
+ve it.</span>
+
+<span class=3D"p">[[</span><span class=3D"n">fruit</span><span class=3D"p">=
+]]</span>
+  <span class=3D"n">name</span> <span class=3D"o">=3D</span> <span class=3D=
+"s">"apple"</span> <span class=3D"c1"># I am a property in fruit table/map<=
+/span>
+
+  <span class=3D"p">[</span><span class=3D"n">fruit</span><span class=3D"p"=
+>.</span><span class=3D"n">geometry</span><span class=3D"p">]</span>
+    <span class=3D"n">shape</span> <span class=3D"o">=3D</span> <span class=
+=3D"s">"round"</span>
+    <span class=3D"n">note</span> <span class=3D"o">=3D</span> <span class=
+=3D"s">"I am a property in geometry table/map"</span>
+
+  <span class=3D"p">[[</span><span class=3D"n">fruit</span><span class=3D"p=
+">.</span><span class=3D"n">color</span><span class=3D"p">]]</span>
+    <span class=3D"n">name</span> <span class=3D"o">=3D</span> <span class=
+=3D"s">"red"</span>
+    <span class=3D"n">note</span> <span class=3D"o">=3D</span> <span class=
+=3D"s">"I am an array item in apple fruit's table/map"</span>
+
+  <span class=3D"p">[[</span><span class=3D"n">fruit</span><span class=3D"p=
+">.</span><span class=3D"n">color</span><span class=3D"p">]]</span>
+    <span class=3D"n">name</span> <span class=3D"o">=3D</span> <span class=
+=3D"s">"green"</span>
+    <span class=3D"n">note</span> <span class=3D"o">=3D</span> <span class=
+=3D"s">"I am in the same array as red"</span>
+
+<span class=3D"p">[[</span><span class=3D"n">fruit</span><span class=3D"p">=
+]]</span>
+  <span class=3D"n">name</span> <span class=3D"o">=3D</span> <span class=3D=
+"s">"banana"</span>
+
+  <span class=3D"p">[[</span><span class=3D"n">fruit</span><span class=3D"p=
+">.</span><span class=3D"n">color</span><span class=3D"p">]]</span>
+    <span class=3D"n">name</span> <span class=3D"o">=3D</span> <span class=
+=3D"s">"yellow"</span>
+    <span class=3D"n">note</span> <span class=3D"o">=3D</span> <span class=
+=3D"s">"I am an array item in banana fruit's table/map"</span>
+</pre></div>
+<p>The equivalent in JSON would be:</p>
+<div class=3D"highlight"><pre><span></span>{
+  "fruit": [
+    {
+      "name": "apple",
+      "geometry": { "shape": "round", "note": "..."},
+      "color": [
+        { "name": "red", "note": "..." },
+        { "name": "green", "note": "..." }
+      ]
+    },
+    {
+      "name": "banana",
+      "color": [
+        { "name": "yellow", "note": "..." }
+      ]
+    }
+  ]
+}
+</pre></div>
+<h3>More Resources</h3>
+
+<ul>
+<li><a href=3D"https://github.com/toml-lang/toml">TOML official repository<=
+/a></li>
+</ul>
+
+    <hr>
+    <p>Got a suggestion? A correction, perhaps? <a href=3D"https://github.c=
+om/adambard/learnxinyminutes-docs/issues/new">Open an Issue</a> on the Gith=
+ub Repo, or make a <a href=3D"https://github.com/adambard/learnxinyminutes-=
+docs/edit/master/toml.html.markdown">pull request</a> yourself!
+    </p>
+    <p class=3D"contributed">
+    Originally contributed by Alois de Gouvello, and updated by <a href=3D"=
+https://github.com/adambard/learnxinyminutes-docs/blame/master/toml.html.ma=
+rkdown">7 contributor(s)</a>.
+    </p>
+
+    <footer>
+    <a style=3D"float: left" rel=3D"license" href=3D"https://creativecommon=
+s.org/licenses/by-sa/3.0/deed.en_US"><img alt=3D"Creative Commons License" =
+style=3D"border-width:0" src=3D"https://i.creativecommons.org/l/by-sa/3.0/8=
+8x31.png"></a>
+    <p>
+    =C2=A9 2024
+        <a href=3D"https://github.com/aloisdg">Alois de Gouvello</a>
+    </p>
+
+    <p>
+
+    </p></footer>
+  </div>
+
+        </div>
+
+       =20
+       =20
+
+       =20
+   =20
+
+<div id=3D"screenity-ui"><div class=3D"screenity-shadow-dom"><div><div clas=
+s=3D"screenity-scrollbar"></div><div class=3D"screenity-scrollbar"></div></=
+div></div></div></body></html>
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: chrome-extension://jabpfojepndedlelamfloejfoopkogcf/data/content_script/general/dark_3.css
+
+@charset "utf-8";
+
+* { border-color: rgb(37, 37, 37) !important; }
+
+html, body, body > div { background-color: rgb(0, 0, 0) !important; }
+
+div[style*=3D"transparent"] :not(img) { opacity: 0 !important; }
+
+browser[type=3D"content-primary"] { background-color: rgb(0, 0, 0) !importa=
+nt; }
+
+body :not([background]):not(input) { background-color: rgb(0, 0, 0) !import=
+ant; }
+
+body * { text-shadow: none !important; color: rgb(255, 255, 255) !important=
+; }
+
+body a, body a:link, body a :not(img), body a:link :not(img) { color: rgb(4=
+8, 197, 255) !important; background-color: rgba(60, 60, 60, 0) !important; =
+}
+
+body a:hover, body a:active, body a:hover :not(img), body a:active :not(img=
+) { color: rgb(64, 224, 255) !important; background-image: none !important;=
+ background-color: rgba(60, 60, 60, 0) !important; }
+
+body a:visited, body a:visited :not(img) { color: rgb(145, 130, 255) !impor=
+tant; background-image: none !important; background-color: rgba(60, 60, 60,=
+ 0) !important; }
+
+body input, body textarea { color: rgb(240, 240, 240) !important; border-co=
+lor: rgb(51, 51, 51) !important; background-image: none !important; backgro=
+und-color: rgb(34, 34, 34) !important; }
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-a3b17062-c8a0-4406-b60a-227f616105bc@mhtml.blink
+
+@charset "utf-8";
+=0A
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-afb10184-d381-477a-8c2c-b63973a22f36@mhtml.blink
+
+@charset "utf-8";
+=0A
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-6706f536-dd8c-457b-ad05-c5a929b4517b@mhtml.blink
+
+@charset "utf-8";
+=0A
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-393234f0-ec64-487a-98a8-8d5189cb646f@mhtml.blink
+
+@charset "utf-8";
+
+:root [href^=3D"//mage98rquewz.com/"], :root div[id*=3D"ScriptRoot"]:not(.e=
+yeo), :root img[style*=3D"//counter.yadro.ru/"], :root img[src^=3D"/stat/"]=
+[width=3D"88"][height=3D"31"], :root img[src*=3D"://c.bigmir.net/"], :root =
+a[href^=3D"http://hitcounter.ru/top/stat.php"], :root a[href*=3D"/rating/"]=
+ > img[width=3D"88"][height=3D"31"], :root a[href*=3D"//top.mail.ru/jump?"]=
+, :root a#mobtop[title^=3D"=D0=A0=D0=B5=D0=B9=D1=82=D0=B8=D0=BD=D0=B3 =D0=
+=BC=D0=BE=D0=B1=D0=B8=D0=BB=D1=8C=D0=BD=D1=8B=D1=85 =D1=81=D0=B0=D0=B9=D1=
+=82=D0=BE=D0=B2"], :root [title=3D"uWeb Counter"], :root [title=3D"uCoz Cou=
+nter"], :root .min-width-normal > #popup_container ~ #fade, :root .min-widt=
+h-normal > #popup_container, :root body > div[class^=3D"_"][class*=3D" _"][=
+class$=3D"_stBig"], :root body > div[style=3D"position: fixed; z-index: 999=
+999; width: 400px; height: 308px; right: 5px; bottom: 5px;"], :root body > =
+div[style=3D"background-color: #FFF;height: 100px;position: fixed;bottom: 0=
+px;width: 100%;max-width: 1200px;left: 50%;transform: translateX(-50%);z-in=
+dex:2147483647"], :root .flex-promo-series > .left-col > :not(#players):not=
+(.serial-series-info), :root a[href*=3D"://news.mirtesen.ru/newdata/"], :ro=
+ot .app.blog-post-page #blog-post-item-video-ad, :root #root > .app .sportr=
+ecs, :root #root > .app #very-right-column, :root body.has-brand .b-content=
+__main > div[id]:not([class]):empty, :root body.has-brand .b-content__main =
+.b-player a[href*=3D"aHR0c"], :root div[style=3D"width: 252px; height: 450p=
+x; position: fixed; right: 0px; top: 0px; overflow: hidden; z-index: 10000;=
+"], :root thetruestory-widget-top, :root object[data^=3D"blob"], :root img[=
+width=3D"728"][height=3D"90"], :root img[width=3D"160"][height=3D"600"], :r=
+oot img[width=3D"120"][height=3D"600"], :root iframe[src*=3D"trafic-media.r=
+u"], :root iframe[src*=3D"hd.gg33.top/"], :root iframe[src*=3D"ads.exosrv.c=
+om"], :root iframe[src*=3D"://vidroll.ru/"], :root iframe[src*=3D"://promo-=
+bc.com/"], :root iframe[src*=3D"://partner-widget.vsesdal.com/"], :root ifr=
+ame[src*=3D"://mark-media.com.ua"], :root iframe[src*=3D"://ab.adpro.com.ua=
+/"], :root iframe[src*=3D"/mixadv_"], :root iframe[src*=3D"/carta.ua/ajax/w=
+idget."], :root iframe[src*=3D"/3647.tech"], :root iframe[id^=3D"republer"]=
+, :root iframe[data-src*=3D"fwdcdn.com/frame/partners/"], :root div[id^=3D"=
+yandex_rtb"], :root div[id^=3D"trafmag_"], :root div[id^=3D"tizerws_"], :ro=
+ot div[id^=3D"rtn4p"], :root div[id^=3D"republer_"], :root div[id^=3D"news_=
+nest_net_ru"], :root div[id^=3D"news_2xclick_ru_"], :root div[id^=3D"join_i=
+nformer_"], :root div[id^=3D"itizergroup_"], :root div[id^=3D"gnezdo_ru_"],=
+ :root div[id^=3D"cpa_rotator_block"], :root div[id^=3D"beroll_rotator"], :=
+root div[id^=3D"b_tz_"], :root div[id^=3D"admixer_"], :root div[id^=3D"admi=
+xer-"], :root div[id^=3D"DIV_DA_"], :root div[id^=3D"Crt-"][style], :root d=
+iv[data-server-rendered=3D"true"] > div[id^=3D"la-"], :root iframe[src^=3D"=
+https://a.adtng.com/"], :root div[class^=3D"da-ya-widget"], :root div[class=
+^=3D"da-widget-"], :root div[class^=3D"block_fortress"], :root div[class^=
+=3D"bidvol-widget-"], :root div[class*=3D"td-a-rec-id-"], :root a[onclick*=
+=3D"trtkp.ru"], :root a[onclick*=3D"offergate-amigo"], :root a[onclick*=3D"=
+/link-fes.ru"], :root iframe[src*=3D"litres.ru/static/widgets"], :root a[hr=
+ef^=3D"https://www.juicer.io?referrer=3D"], :root a[href^=3D"https://relap.=
+io/"][href*=3D"promo_ad_link"], :root a[href^=3D"https://msetup.pro"], :roo=
+t a[href^=3D"https://bongacams"][href*=3D"com/track?"], :root a[href^=3D"ht=
+tp://trafmaster.com"], :root a[href^=3D"http://traderstart.mirtesen.ru"], :=
+root a[href^=3D"http://tds-2.ru"], :root a[href^=3D"http://glprt.ru/affilia=
+te/"], :root a[href^=3D"http://datxxx.com"], :root a[href^=3D"http://browse=
+rload.info/"], :root img[data-src=3D"https://catalog.orbita.co.il/orbita.gi=
+f"], :root a[href^=3D"/images/obmen/"][href$=3D".php"][target=3D"_blank"], =
+:root a[href^=3D"/go/ufiler?"], :root a[href^=3D"/go/ubar?"], :root a[href=
+=3D"http://advert.mirtesen.ru/"], :root a[href*=3D"webdiana.ru/click"], :ro=
+ot a[href*=3D"tvroff.net"], :root a[href*=3D"tvks.ru"], :root a[href*=3D"tr=
+klp.ru"], :root a[href*=3D"traflabs.xyz"], :root div[id^=3D"CGCandy"], :roo=
+t a[href*=3D"tptrk.ru"], :root a[href*=3D"top.24smi.info"], :root a[href*=
+=3D"thor-media.ru/click/"], :root a[href*=3D"shakesclick.com"], :root a[hre=
+f*=3D"shakescash.com"], :root a[href*=3D"shakes.pro"], :root a[href*=3D"sap=
+media.ru"], :root a[href*=3D"sandratand.ru"], :root a[href*=3D"rexchange.be=
+gun.ru/rclick?"], :root a[href*=3D"retagapp.com"], :root a[href*=3D"refpazu=
+s.top"], :root a[href*=3D"problogrus.ru"], :root a[href^=3D"https://homyanu=
+s.com"], :root a[href*=3D"please-direct.me"], :root a[href*=3D"please-direc=
+t.com"], :root a[href*=3D"sviruniversal.com/"], :root a[href*=3D"octoclick.=
+net"], :root a[href*=3D"nhebd.xyz"], :root a[href*=3D"media-rotate.com"], :=
+root a[href*=3D"makegreat.website"], :root a[href*=3D"m1cpl.ru"], :root a[h=
+ref*=3D"litewebbusiness.com"], :root a[href*=3D"linkmyc.com"], :root a[href=
+*=3D"navaxudoru.com"], :root a[href*=3D"lifebloggersz.ru"], :root a[href*=
+=3D"kshop2.biz"], :root a[href*=3D"kma1.biz"], :root a[href*=3D"kinqon.ru"]=
+, :root #root > .app .adfox-top, :root a[href*=3D"joycasino.com/?partner=3D=
+"], :root a[href*=3D"idealmedia.io"], :root a[href*=3D"herrabjec.pro"], :ro=
+ot a[href*=3D"goodtrack.ru"], :root a[href*=3D"gocdn.ru"], :root a[href*=3D=
+"go.ad2up.com"], :root a[href*=3D"ftpglst.com"], :root a[href*=3D"fortedrow=
+.pro"], :root a[href*=3D"cpl11.ru"], :root a[href*=3D"cpl1.ru"], :root a[hr=
+ef*=3D"cmsmodnews.com"], :root a[href*=3D"muz-loader.site"], :root a[href*=
+=3D"clickscloud.net"], :root a[href*=3D"browser-ru.site"], :root a[href*=3D=
+"shakesin.com"], :root a[href*=3D"bgrndi.com"], :root a[href*=3D"beauty-lis=
+t.ru"], :root a[href*=3D"awesomeredirector"], :root a[href*=3D"ads2-adnow.c=
+om"], :root a[href*=3D"adpool.bet/"], :root a[href*=3D"://z.cdn.traffic"][h=
+ref*=3D"/load"], :root a[href*=3D"://yasearchcdn.ru/r/"], :root a[href*=3D"=
+://yadistr.ru/"], :root a[href*=3D"://ya-distrib.ru/r/"], :root a[href*=3D"=
+://ya-cdn.ru/r/"], :root a[href*=3D"://ya-browser.ru/r/"], :root a[href*=3D=
+"://www.meendoru.net/?partner=3D"], :root a[href*=3D"://vse-sdal.com/promo/=
+"], :root a[href*=3D"://viewfilesup.ru/"], :root a[href*=3D"://ufiler-downl=
+oad.ru/"], :root a[href*=3D"://topsofto.ru/"], :root a[href*=3D"://topclick=
+s.club/"], :root a[href*=3D"://tlmnt"][href*=3D"/tracker/?partner=3D"], :ro=
+ot a[href*=3D"://telamon"][href*=3D"/tracker/?partner=3D"], :root a[title=
+=3D"TopTracker.Ru - =D0=A0=D0=B5=D0=B9=D1=82=D0=B8=D0=BD=D0=B3 =D1=82=D1=80=
+=D0=B5=D0=BA=D0=B5=D1=80=D0=BE=D0=B2."], :root a[href*=3D"://clickstats.fun=
+/"], :root a[href*=3D"://techdmn.com/"], :root a[href*=3D"://sugisatomi.com=
+/"], :root a[href*=3D"://softperehod.ru/"], :root a[href*=3D"://segodnia.cl=
+ub/"], :root a[href*=3D"cpagetti1.com"], :root [href*=3D"driverpack.io/"], =
+:root a[href*=3D"://search-cdn.ru/r/"], :root a[href^=3D"http://www.onclick=
+mega.com/jump/next.php?"], :root a[href^=3D"https://newbinotracs.com/"], :r=
+oot a[href*=3D"://ruprivate.club/"], :root a[href^=3D"https://kshop"][href*=
+=3D".com/"], :root a[href*=3D"://ruonline.bar/"], :root a[href^=3D"http://e=
+aplay.ru/"], :root amp-connatix-player, :root a[href*=3D"://riaccaw.com/"],=
+ :root [href^=3D"https://join.playboyplus.com/track/"], :root a[href*=3D":/=
+/hypmag.ru/search/pereh.php"], :root a[href*=3D"://reidancis.com/"], :root =
+a[href*=3D"://refpamjeql.top/"], :root [data-mobile-ad-id], :root a[href*=
+=3D"://ref.studwork.ru/"], :root a[href*=3D"://r.advg.agency/"], :root a[hr=
+ef*=3D"/onvix.tv/promo/"][target=3D"_blank"], :root a[href*=3D"://premiumre=
+dir.ru/"], :root a[href^=3D"https://bc.game/"], :root a[href*=3D"://manysof=
+tlink.ru/"], :root a[href*=3D"://lobar.site/r/"], :root div[id^=3D"advertur=
+_"], :root .trc_related_container div[data-item-syndicated=3D"true"], :root=
+ a[href*=3D"://lapina.xyz/"], :root a[href*=3D"://lapina.best/"], :root a[h=
+ref*=3D"/rlink/simptizer/"], :root a[href*=3D"://gopremiumsoft.com/"], :roo=
+t a[href*=3D"://go.click2bit.net/"], :root a[href*=3D"://go.bundlebyte.net/=
+r/"], :root a[href*=3D"://getbrauzer.ru/"], :root a[href*=3D"://newbrowserm=
+e.ru/"], :root a[href*=3D"://gertadv.ru/"], :root a[href*=3D"torrentum.ru"]=
+, :root a[href*=3D"://filesmytop.ru/"], :root [href^=3D"https://www.mypillo=
+w.com/"] > img, :root a[href*=3D"://fast2click.ru/"], :root a[href*=3D"tvkw=
+.ru"], :root a[href^=3D"http://www.mrskin.com/tour"], :root a[href*=3D"://e=
+tcodes.com/"], :root a[href*=3D".cfm?fp=3D"][href*=3D"&maxads=3D"], :root a=
+[href*=3D"://et-cod.com/"], :root a[href^=3D"https://go.xxxjmp.com"], :root=
+ a[href*=3D"://elgrur.com/"], :root a[href*=3D"://doxod24.online/"], :root =
+a[href*=3D"://clickrpk.com/"], :root a[href*=3D"://clickfrm.com/"], :root a=
+[href*=3D"://chikidiki.ru"], :root a[href*=3D"://bubblevard.com/"], :root d=
+iv[id^=3D"adfox_"], :root a[href*=3D"://bestnewsoft.ru/"], :root a[href*=3D=
+"://analyticsq.com"], :root a[href^=3D"http://fly-shops.ru"], :root a[href*=
+=3D"/universal-lnk.net/"], :root a[href*=3D"://vpnbrowser.ru/"], :root .nya=
+-slot[style], :root a[href*=3D"/uni-lnk.com/"], :root a[href*=3D"://getyour=
+soft.ru/"], :root a[href*=3D"/sb/clk/"], :root a[href^=3D"https://go.247tra=
+ffic.com/"], :root a[href*=3D"://extlinka.ru/"], :root a[href*=3D"/rapidtor=
+.ru"], :root a[href*=3D"/onvix.me/promo/"][target=3D"_blank"], :root a[href=
+*=3D"/myuniversalnk.com/"], :root a[href*=3D"/mosday.ru/ad/"], :root a[href=
+*=3D"/loaderu.ru/"], :root a[href^=3D"https://prime.rambler.ru/promo/"], :r=
+oot a[href*=3D"/installpack.net"], :root a[href*=3D"/fastvk.com"], :root ob=
+ject[data*=3D"ads.com/clk.swf"], :root a[href*=3D"/eversaree.bid"], :root a=
+[href*=3D"://r.advmusic.com/"], :root a[href*=3D"/clubleads.ru"], :root a[h=
+ref*=3D"/afftraf.co/"], :root a[href*=3D"/advjump.com"], :root a[href*=3D"/=
+/yojlf.com"], :root a[href^=3D"https://taghaugh.com/"], :root a[href*=3D":/=
+/installpack.ru"], :root a[href*=3D"//viruniversal.com/"], :root a[href*=3D=
+"//universalut.info/"], :root a[href*=3D"//universalini.info/"], :root a[hr=
+ef*=3D"//ubar.pro"], :root a[href*=3D"//ubar-pro"], :root a[href*=3D"/u-loa=
+ds.ru/"], :root [href^=3D"http://www.mypillow.com/"] > img, :root a[href^=
+=3D"//go.eabids.com/"], :root a[href*=3D"//tranqvilius.com/"], :root a[href=
+*=3D"//tiruniversal.com/"], :root [href^=3D"https://optimizedelite.com/"] >=
+ img, :root a[href*=3D"//tdsrotate.ru/"], :root a[href^=3D"http://d2.zedo.c=
+om/"], :root a[href*=3D"//rotatemysoft.ru/"], :root a[href^=3D"https://go.g=
+oasrv.com/"], :root a[href*=3D"//restofarian.com"], :root a[href*=3D"//port=
+akamus.com/"], :root a[href^=3D"https://go.nordvpn.net/aff"] > img, :root a=
+[href*=3D"//offergate.pro/"], :root a[href*=3D"//newbrowser.me/"], :root a[=
+href^=3D"https://bongacams10.com/track?"], :root a[href*=3D"//loderna.ru"],=
+ :root a[href^=3D"https://tour.mrskin.com/"], :root #BlWrapper > .b-temp_rb=
+c, :root a[href*=3D"//historategory.com/"], :root a[href*=3D"//getmybrowser=
+.ru/"], :root a[href*=3D"//clickdome.online/"], :root [href^=3D"https://www=
+.hostg.xyz/"] > img, :root a[href*=3D"//gerocenius.com/"], :root a[href*=3D=
+"//givemysoft.ru/"], :root a[href*=3D"//febrare.ru/"], :root a[href*=3D"adv=
+ertwebgid.ru"], :root [id^=3D"ad_slider"], :root a[href*=3D"//ext-load.net"=
+], :root a[href*=3D"://click2soft.ru/"], :root a[href*=3D"//do-rod.com/"], =
+:root a[href*=3D"/universalsrc.com/"], :root a[href^=3D"https://azpresearch=
+.club/"], :root a[href*=3D"//bestonewos.com/"], :root a[href*=3D"//avertise=
+.ru/"], :root div[id^=3D"traffim-widget"], :root a[href^=3D"https://m.do.co=
+/c/"] > img, :root a[href*=3D"//24smi."][href*=3D"/top/"], :root a[href^=3D=
+"https://s.zlinkd.com/"], :root a[href*=3D".ufiler.pro/"], :root a[href^=3D=
+"https://trk.nfl-online-streams.club/"], :root a[href*=3D".pokupkins.ru"], =
+:root [src^=3D"//am15.net/?"], :root a[href^=3D"https://tracker.loropartner=
+s.com/"], :root a[href*=3D"://tatarkoresh.ru"], :root [onclick*=3D"traffic-=
+media.co"], :root a[href*=3D"://rendersaveron.com"], :root [id^=3D"unit_"] =
+> a[href*=3D"://vrf.ru"], :root a[href^=3D"https://www.onlineusershielder.c=
+om/"], :root a[href*=3D"/ber-ter.com"], :root [id^=3D"newPortal_informer_"]=
+, :root #root > .app > .sticky-button, :root [href^=3D"https://download.cdn=
+.yandex.net/yandex-tag/weboffer/"], :root [href*=3D"pigiuqproxy.com"], :roo=
+t a[href^=3D"https://pb-imc.com/"], :root a[href*=3D".braun634.com/"], :roo=
+t [href*=3D"driftawayforfun.com"], :root a[href^=3D"http://deskfrontfreely.=
+com/"], :root a[href^=3D"https://t.hrtye.com/"], :root [href*=3D"://morelnk=
+.ru/"], :root a[href*=3D"mixadvert.com"], :root .card-captioned.crd > .crd-=
+-cnt > .s2nPlayer, :root a[href*=3D"/ogclick.com/api/redirect"], :root [dat=
+a-link*=3D"://topclicks.club/"], :root [href*=3D"://edgrmtracking.com/"], :=
+root [href*=3D"://clickpzk.com/"], :root [href*=3D"://click.1k3web.com/"], =
+:root [href*=3D"/uni-tds.com/"], :root a[href^=3D"http://go.xtbaffiliates.c=
+om/"], :root [data-link*=3D"://ubar-pro"], :root .header-banner > #moneybac=
+k[target=3D"_blank"], :root [data-link*=3D"/sb/clk/"], :root body > div[id^=
+=3D"dV"][style^=3D"width"][style*=3D"height"][style*=3D"position"][style*=
+=3D"fixed"][style*=3D"overflow"][style*=3D"z-index"][style*=3D"background"]=
+, :root [data-link*=3D"//sub"][data-link*=3D"bubblesmedia."], :root [data-l=
+a-show-id], :root div[id^=3D"zcbclk"], :root [data-la-custom-block], :root =
+[data-la-block], :root a[href*=3D"films.ws"], :root [data-la-block-show-id]=
+, :root a[href^=3D"https://fourwhenstatistics.com/"], :root [href*=3D".drp.=
+su/"], :root div[id^=3D"ad-div-"], :root [class^=3D"flat_"][class*=3D"_moda=
+l"], :root div[id^=3D"adpartner-jsunit-"], :root a[href*=3D"/yfiles1.ru"], =
+:root a[href*=3D"wow-partners.com/click.php"], :root [class^=3D"flat_"][cla=
+ss*=3D"_cross"], :root .content_rb[id^=3D"content_rb_"], :root .base-page_c=
+enter > .banerBottom, :root a[href^=3D"https://buqkrzbrucz.com/"], :root #a=
+dv_unisound ~ #main > #slidercontentContainer, :root a[href^=3D"https://ad.=
+zanox.com/ppc/"] > img, :root #MT_overroll ~ div[class][style=3D"left:0px;t=
+op:0px;height:480px;width:650px;"], :root a[href*=3D"//appt12mn.com/"], :ro=
+ot img[src*=3D"://cp.beget.com/promo_data/"], :root zeus-ad, :root a[href*=
+=3D"://tracker.partnersmelbet.ru/"], :root topadblock, :root a[href*=3D"://=
+offergate-apps-phkr.com/"], :root span[id^=3D"ezoic-pub-ad-placeholder-"], =
+:root guj-ad, :root gpt-ad, :root a[href^=3D"http://m.hue2m.com/"], :root a=
+[href*=3D"//refpaewsbc.top/"], :root img[src*=3D"//i.i.ua/r/"], :root [href=
+=3D"https://www.masstortfinancing.com/"] > img, :root div[id^=3D"zergnet-wi=
+dget"], :root div[id^=3D"smi_teaser_"], :root div[id^=3D"vuukle-ad-"], :roo=
+t [href^=3D"https://go.xlrdr.com"], :root [href=3D"//jjgirls.com/sex/Chatur=
+bateCams"], :root div[id^=3D"sticky_ad_"], :root div[id^=3D"rc-widget-"], :=
+root [href^=3D"https://goldcometals.com/clk.trk"], :root a[href^=3D"https:/=
+/cams.imagetwist.com/in/?track=3D"], :root div[id^=3D"gpt_ad_"], :root div[=
+id^=3D"ezoic-pub-ad-"], :root div[id^=3D"div-gpt-"], :root a[href^=3D"//a.b=
+estcontentfare.top/"], :root div[id^=3D"dfp-ad-"], :root #root > .app .bran=
+d-widget__right-cl, :root div[id^=3D"adspot-"], :root [class^=3D"fpm_"][cla=
+ss*=3D"_crss"], :root [href^=3D"https://noqreport.com/"] > img, :root a[hre=
+f*=3D"://superiortds.ru/"], :root div[id^=3D"ads300_250-widget-"], :root di=
+v[id^=3D"ads300_100-widget-"], :root div[id^=3D"ads250_250-widget-"], :root=
+ a[href*=3D"trk-1.com"], :root div[id^=3D"adrotate_widgets-"], :root div[id=
+^=3D"_vdo_ads_player_ai_"], :root #adv_kod_frame ~ #gotimer, :root a[href*=
+=3D"/get-torrent.ru"], :root img[title=3D"bigmir)net TOP 100"], :root div[i=
+d*=3D"ScriptRoot"], :root div[id*=3D"MarketGid"], :root div[data-native_ad]=
+, :root div[data-mini-ad-unit], :root div[data-insertion], :root a[href^=3D=
+"https://s.optzsrv.com/"], :root div[data-id-advertdfpconf], :root a[href^=
+=3D"https://mediaserver.entainpartners.com/renderBanner.do?"], :root div[da=
+ta-google-query-id], :root hl-adsense, :root div[data-contentexchange-widge=
+t], :root div[data-id^=3D"div-gpt-ad-"], :root a[href*=3D"//tekaners.com/"]=
+, :root div[data-content=3D"Advertisement"], :root div[data-alias=3D"300x25=
+0 Ad 2"], :root div[data-alias=3D"300x250 Ad 1"], :root a[href*=3D"://tele.=
+gg/"], :root div[data-adzone], :root div[data-adunit], :root div[data-aduni=
+t-path], :root div[data-ad-wrapper], :root [data-wpas-zoneid], :root div[da=
+ta-ad-placeholder], :root a[href*=3D"/go.1k3.net/"], :root div[class^=3D"na=
+tive-ad-"], :root a[href*=3D"://shusnarmuk.com/"], :root div[data-dfp-id], =
+:root div[class^=3D"kiwi-ad-wrapper"], :root a[href^=3D"https://adultfriend=
+finder.com/go/"], :root div[class^=3D"Adstyled__AdWrapper-"], :root a[href^=
+=3D"https://trk.sportsflix4k.club/"], :root div[aria-label=3D"Ads"], :root =
+display-ads, :root display-ad-component, :root a[href^=3D"http://putanapart=
+ners.com/go."], :root atf-ad-slot, :root [id^=3D"relap-custom-iframe-rec"],=
+ :root aside[id^=3D"adrotate_widgets-"], :root a[href*=3D"//spishi.vip/"], =
+:root article.ad, :root .resultsList > div > div > div > div.G-5c[role=3D"t=
+ab"][tabindex=3D"0"] > .yuAt-pres-rounded, :root [data-name=3D"adaptiveCons=
+tructorAd"], :root a[href^=3D"https://wirewar.website/"], :root ark-top-ad,=
+ :root a[href^=3D"https://ad.doubleclick.net/"], :root app-advertisement, :=
+root [href^=3D"https://shrugartisticelder.com"], :root [href^=3D"http://glo=
+bsads.com/"], :root a[href*=3D"://folltiz.site/"], :root body > div[style=
+=3D"position: fixed; z-index: 999999; width: 400px; height: 308px; left: 5p=
+x; bottom: 5px;"], :root app-ad, :root noindex > .search_result[class*=3D"s=
+earch_result_"], :root a[href^=3D"https://go.xlvirdr.com"], :root amp-fx-fl=
+ying-carpet, :root [href^=3D"https://r.kraken.com/"], :root #PopWin[onmouse=
+move], :root a[href*=3D"//1xbetlk.site/"], :root amp-embed[type=3D"taboola"=
+], :root a[href*=3D"://gridsiali.com/"], :root a[href*=3D".twkv.ru"], :root=
+ a[href*=3D"//dagamah.com/"], :root [href^=3D"https://antiagingbed.com/disc=
+ount/"] > img, :root amp-ad-custom, :root [data-url*=3D"://installpack.net"=
+], :root amp-ad, :root a[href*=3D"//universalie.info/"], :root [href*=3D":/=
+/drp.su/"], :root a[style=3D"width:100%;height:100%;z-index:100000000000000=
+00;position:absolute;top:0;left:0;"], :root div[id^=3D"div-ads-"], :root a[=
+href*=3D"://downloadbrowsernew.com/"], :root a[onmousedown^=3D"this.href=3D=
+'https://paid.outbrain.com/network/redir?"][target=3D"_blank"] + .ob_source=
+, :root a[href*=3D"://gonewfiles.ru/"], :root a[data-redirect^=3D"https://p=
+aid.outbrain.com/network/redir?"], :root a[href*=3D"//12traffic.ru/"], :roo=
+t a[href^=3D"https://www.infowarsstore.com/"] > img, :root a[onmousedown^=
+=3D"this.href=3D'http://paid.outbrain.com/network/redir?"][target=3D"_blank=
+"] + .ob_source, :root ad-triple-box, :root a[href^=3D"https://yogacomplyfu=
+el.com/"], :root a[href^=3D"https://www.sugarinstant.com/?partner_id=3D"], =
+:root a[href^=3D"https://t.ajump1.com/"], :root a[href^=3D"https://www.priv=
+ateinternetaccess.com/"] > img, :root iframe[src*=3D"laim.tv/rotator/"], :r=
+oot a[href*=3D"/advertisesimple.info"], :root a[href^=3D"https://www.nutaku=
+.net/signup/landing/"], :root iframe[src*=3D"://rstbtmd.com/"], :root a[hre=
+f^=3D"http://www.onwebcam.com/random?t_link=3D"], :root a[href*=3D"://101pa=
+rtners-stat2.com/"], :root a[href^=3D"https://www.nudeidols.com/cams/"], :r=
+oot [href^=3D"https://safer-redirection.com"], :root a[href^=3D"https://www=
+.mypornstarcams.com/landing/click/"], :root a[href^=3D"https://www.kingsoff=
+etish.com/tour?partner_id=3D"], :root a[href*=3D"ex.24smi.info"], :root a[h=
+ref^=3D"https://www.highcpmrevenuenetwork.com/"], :root a[href^=3D"https://=
+www.googleadservices.com/pagead/aclk?"], :root .base-page_center > .banerTo=
+p, :root a[href^=3D"https://fastestvpn.com/lifetime-special-deal?a_aid=3D"]=
+, :root a[href^=3D"https://www.goldenfrog.com/vyprvpn?offer_id=3D"][href*=
+=3D"&aff_id=3D"], :root a[class*=3D"button"][href^=3D"/go/"][href*=3D"visit=
+id"][onclick*=3D"dnl"], :root a[href^=3D"https://www.get-express-vpn.com/of=
+fer/"], :root a[href^=3D"http://www.friendlyduck.com/AF_"], :root a[href^=
+=3D"https://www.financeads.net/tc.php?"], :root .mywidget__col > .mywidget_=
+_link_advert, :root a[href^=3D"https://www.brazzersnetwork.com/landing/"], =
+:root div[class^=3D"Display_displayAd"], :root [href^=3D"https://mypillow.c=
+om/"] > img, :root a[href^=3D"https://www.sheetmusicplus.com/?aff_id=3D"], =
+:root a[href^=3D"https://www.bang.com/?aff=3D"], :root a[href*=3D"://clicks=
+tats.online/"], :root [href^=3D"https://www.targetingpartner.com/"], :root =
+a[href^=3D"https://www.adxsrve.com/"], :root div[class^=3D"adfinity_block_"=
+], :root a[href^=3D"https://visit-website.com/"], :root a[href*=3D"://go.bt=
+raffic.net/"], :root div[class^=3D"cnt32_"][id^=3D"cnt_rb_"], :root a[href^=
+=3D"https://twinrdsyn.com/"], :root a[href^=3D"https://twinrdsrv.com/"], :r=
+oot [class^=3D"fpm_"][class*=3D"_out"], :root a[href^=3D"https://tsartech.g=
+2afse.com/"], :root [href*=3D"://simpalsid.com/ad/click?id"], :root a[href^=
+=3D"https://traffdaq.com/"], :root [href^=3D"https://turtlebids.irauctions.=
+com/"] img, :root a[href^=3D"https://tracking.avapartner.com/"], :root a[hr=
+ef^=3D"http://reals-story.ru/"], :root a[href^=3D"https://track.wg-aff.com"=
+], :root div[data-type=3D"_mgwidget"]:not(.eyeo), :root a[href^=3D"https://=
+track.ultravpn.com/"], :root [href^=3D"https://wct.link/"], :root a[href^=
+=3D"https://track.totalav.com/"], :root a[href^=3D"https://track.afcpatrk.c=
+om/"], :root a[href^=3D"https://track.adform.net/"], :root a[href^=3D"https=
+://torguard.net/aff.php"] > img, :root a[href^=3D"https://thefacux.com/"], =
+:root div[data-adname], :root a[href^=3D"https://thechleads.pro/"], :root a=
+[href*=3D"//universalies.info/"], :root a[href^=3D"https://tc.tradetracker.=
+net/"] > img, :root a[href^=3D"https://www.highperformancecpmgate.com/"], :=
+root a[href^=3D"https://wittered-mainging.com/"], :root a[href^=3D"https://=
+t.grtyi.com/"], :root a[href^=3D"https://t.adating.link/"], :root a[href^=
+=3D"https://go.trackitalltheway.com/"], :root [data-template-type=3D"native=
+ad"], :root [href^=3D"https://track.fiverr.com/visit/"] > img, :root a[href=
+^=3D"https://financeads.net/tc.php?"], :root a[href^=3D"https://syndication=
+.exoclick.com/"], :root iframe[src*=3D"tureckiy-serial.ru/"][src$=3D".php"]=
+, :root a[href^=3D"https://syndication.dynsrvtbg.com/"], :root a[href*=3D"/=
+newbrowser.club/"], :root a[href^=3D"https://streamate.com/landing/click/"]=
+, :root div[class*=3D"relap"][class*=3D"-rec-item"], :root a[href^=3D"https=
+://spo-play.live/"], :root a[href^=3D"https://static.fleshlight.com/images/=
+banners/"], :root a[href^=3D"https://slkmis.com/"], :root a[href*=3D"//advt=
+ise.ru/"], :root a[href^=3D"https://sTaRtGAMing.net/tienda/"], :root iframe=
+[src*=3D"://goodgame.ru/html/embed-player/dist/index.html?partner=3D"], :ro=
+ot citrus-ad-wrapper, :root img[src*=3D"//counter.yadro.ru/"], :root [href^=
+=3D"https://awbbjmp.com/"], :root a[onmousedown^=3D"this.href=3D'https://pa=
+id.outbrain.com/network/redir?"][target=3D"_blank"], :root a[href^=3D"https=
+://sTaRTgamInG.net/tienda/"], :root a[href*=3D"filebase.me"], :root [data-a=
+dblockkey], :root a[href^=3D"https://sTARtgamIng.net/tienda/"], :root a[hre=
+f^=3D"https://go.xlivrdr.com"], :root bottomadblock, :root a[href^=3D"https=
+://itubego.com/video-downloader/?affid=3D"], :root a[href^=3D"https://awept=
+jmp.com/"], :root a[href^=3D"https://s.zlinkc.com/"], :root div[id^=3D"crit=
+eo-"][style], :root a[href*=3D"://edugrampromo.com/"], :root a[href*=3D"://=
+cozibaneco.com/"], :root a[href^=3D"https://www.mrskin.com/account/"], :roo=
+t a[href*=3D"lifenews24x7.ru"], :root .base-page_container > .banerRight, :=
+root a[data-obtrack^=3D"http://paid.outbrain.com/network/redir?"], :root a[=
+href*=3D"//lkstrck2.com/"], :root a[href^=3D"https://reinstandpointdumbest.=
+com/"], :root [src*=3D"mixadvert.com"], :root [onclick*=3D"msetup"][onclick=
+*=3D"partner"][onclick*=3D"utm_"], :root a[href^=3D"https://go.strpjmp.com/=
+"], :root a[href^=3D"https://refpa4903566.top/"], :root a[href^=3D"https://=
+pubads.g.doubleclick.net/"], :root div[id^=3D"ads_games_"], :root a[href^=
+=3D"https://prf.hn/click/"][href*=3D"/camref:"] > img, :root a[href^=3D"htt=
+ps://serve.awmdelivery.com/"], :root a[href^=3D"https://prf.hn/click/"][hre=
+f*=3D"/adref:"] > img, :root iframe[id^=3D"marketgid_"], :root a[onclick*=
+=3D"n284adserv.com"], :root a[href^=3D"https://pb-track.com/"], :root a[hre=
+f^=3D"https://paid.outbrain.com/network/redir?"], :root ps-connatix-module,=
+ :root div[id^=3D"ad_position_"], :root a[href^=3D"https://ovb.im/"], :root=
+ a[href^=3D"http://eighteenderived.com/"], :root .OUTBRAIN[data-widget-id^=
+=3D"FMS_REELD_"], :root a[href^=3D"https://natour.naughtyamerica.com/track/=
+"], :root a[href*=3D"//adoffer.pro/"], :root [href^=3D"https://stvkr.com/"]=
+, :root a[href^=3D"https://loboclick.com"], :root .trc_rbox .syndicatedItem=
+, :root a[href^=3D"https://a.bestcontentweb.top/"], :root [data-type=3D"ad-=
+vertical"], :root a[href^=3D"https://lobimax.com/"], :root a[href^=3D"https=
+://go.xxxijmp.com"], :root a[href^=3D"https://lead1.pl/"], :root a[href*=3D=
+"katuhus.com"], :root a[data-href*=3D"recreativ.ru"], :root iframe[src*=3D"=
+zhitomir.info/price"], :root a[href^=3D"https://refpa.top/"], :root a[href^=
+=3D"https://landing.brazzersnetwork.com/"], :root a[href^=3D"https://safesu=
+rfingtoday.com/"][href*=3D"?skip=3D"], :root ad-slot, :root a[href^=3D"http=
+s://t.acam.link/"], :root a[href^=3D"https://ads.leovegas.com/redirect.aspx=
+?"], :root [class^=3D"fpm_"][class*=3D"_modal"], :root a[href^=3D"https://l=
+and.brazzersnetwork.com/landing/"], :root a[href^=3D"https://go.xlviiirdr.c=
+om"], :root [data-css-class=3D"dfp-inarticle"], :root a[href*=3D"://ufiler-=
+pro.ru/"], :root [id^=3D"ad-wrap-"], :root a[href^=3D"https://go.tmrjmp.com=
+"], :root a[href^=3D"https://startgamIng.Net/tienda/"], :root a[href^=3D"ht=
+tps://oackoubs.com/"], :root a[href^=3D"https://l.hyenadata.com/"], :root a=
+[href^=3D"https://yourperfectdating.life/"], :root a[href^=3D"https://join.=
+virtuallust3d.com/"], :root a[href^=3D"https://kiksajex.com/"], :root a[hre=
+f^=3D"https://juicyads.in/"], :root [data-ad-name], :root a[href^=3D"https:=
+//mediaserver.gvcaffiliates.com/renderBanner.do?"], :root [href*=3D"://clic=
+k.1k3pub.com/"], :root a[href^=3D"https://join.dreamsexworld.com/"], :root =
+[href*=3D"://click.1k3web.net/"], :root a[href^=3D"https://iqbroker.com/"][=
+href*=3D"?aff=3D"], :root a[href*=3D"trtkp.ru"], :root a[href*=3D"//fofuvip=
+ibo.com/"], :root [href^=3D"http://join.shemalepornstar.com/"], :root [id^=
+=3D"ad_sky"], :root a[href^=3D"https://incisivetrk.cvtr.io/click?"], :root =
+a[href*=3D"//adretarget.net/"], :root a[href^=3D"https://hot-growngames.lif=
+e/"], :root [data-revive-zoneid], :root a[href^=3D"https://googleads.g.doub=
+leclick.net/pcs/click"], :root a[href*=3D"//universalse.info/"], :root a[hr=
+ef^=3D"http://click.hotlog.ru/"], :root a[href^=3D"https://clk.wrenchsound.=
+store/"], :root a[href^=3D"https://go.zybrdr.com"], :root [id^=3D"unit_"] >=
+ a[href*=3D"://mirtesen.ru"], :root [href^=3D"http://join.michelle-austin.c=
+om/"], :root a[href*=3D"re-directme.com"], :root [class^=3D"tile-picker__Ci=
+trusBannerContainer-sc-"], :root div[style*=3D"am15.net/img/player_skins"],=
+ :root a[href^=3D"https://go.xxxiijmp.com"], :root a[href^=3D"https://mityn=
+eedn.com/"], :root a[href*=3D"://softclicks.ru/"], :root a[href^=3D"https:/=
+/go.xtbaffiliates.com/"], :root a[href^=3D"https://thaudray.com/"], :root [=
+data-role=3D"tile-ads-module"], :root a[href^=3D"https://adsrv4k.com/"], :r=
+oot a[href^=3D"https://go.xlviirdr.com"], :root [alt=3D"Rambler's Top100"],=
+ :root a[href^=3D"https://ismlks.com/"], :root a[href^=3D"https://go.xlirdr=
+.com"], :root a[href*=3D"://getfiletds.ru/"], :root a[href^=3D"https://go.s=
+kinstrip.net"][href*=3D"?campaignId=3D"], :root a[href^=3D"https://go.marke=
+ts.com/visit/?bta=3D"], :root a[href^=3D"https://billing.purevpn.com/aff.ph=
+p"] > img, :root a[href^=3D"https://go.hpyrdr.com/"], :root a[href^=3D"http=
+s://go.goaserv.com/"], :root a[href^=3D"https://go.dmzjmp.com"], :root body=
+.has-brand .b-content__main > div[style^=3D"height: 250px; overflow: hidden=
+;"], :root a[href^=3D"https://go.admjmp.com/"], :root [href^=3D"https://kin=
+gered-banctours.com/"], :root a[href^=3D"https://get.surfshark.net/aff_c?"]=
+[href*=3D"&aff_id=3D"] > img, :root [href^=3D"https://affiliate.fastcomet.c=
+om/"] > img, :root a[href*=3D"//universalice.info/"], :root a-ad, :root a[h=
+ref^=3D"http://amigodistr.ru/"], :root a[href^=3D"https://affiliate.rusvpn.=
+com/click.php?"], :root a[href^=3D"https://geniusdexchange.com/"], :root a[=
+href^=3D"https://www.mrskin.com/tour"], :root a[href^=3D"https://frameworkd=
+eserve.com/"], :root a[href^=3D"https://flirtandsweets.life/"], :root [href=
+^=3D"https://traffserve.com/"], :root [data-href^=3D"https://download.cdn.y=
+andex.net/yandex-tag/weboffer/"], :root a[href^=3D"https://click.hoolig.app=
+/"], :root div[data-native-ad], :root a[href^=3D"https://engine.trackingdes=
+ks.com/"], :root a[href^=3D"https://bongacams2.com/track?"], :root [href^=
+=3D"https://www.reimageplus.com/"], :root a[href^=3D"https://ak.hauchiwu.co=
+m/"], :root a[href*=3D"tdstrk.ru"], :root a[href^=3D"https://engine.phn.dou=
+blepimp.com/"], :root a[href^=3D"https://engine.blueistheneworanges.com/"],=
+ :root a[href^=3D"https://dl-protect.net/"], :root a[href^=3D"https://datin=
+goffers30.info/"], :root a[href^=3D"https://ctosrd.com/"], :root [onclick*=
+=3D"content.ad/"], :root a[href^=3D"https://clixtrac.com/"], :root a[href^=
+=3D"https://click.linksynergy.com/fs-bin/"] > img, :root ad-shield-ads, :ro=
+ot a[href^=3D"https://sTartGAMinG.net/tienda/"], :root img[src^=3D"https://=
+images.purevpnaffiliates.com"], :root a[href^=3D"https://porntubemate.com/"=
+], :root a[href^=3D"http://www.gfrevenge.com/landing/"], :root body > ifram=
+e[style^=3D"position"][style*=3D"fixed"][id^=3D"iFb"][src^=3D"/?"], :root .=
+ob_container .item-container-obpd, :root a[href^=3D"https://clickadilla.com=
+/"], :root div[class^=3D"yandex_rtb"], :root a[href*=3D"://searchlnk.ru/r/"=
+], :root a[href^=3D"https://click.dtiserv2.com/"], :root a[href*=3D"/vkout.=
+ru"], :root a[href^=3D"http://www.iyalc.com/"], :root a[href^=3D"https://cl=
+aring-loccelkin.com/"], :root a[href^=3D"https://chaturbate.com/in/?track=
+=3D"], :root a[href*=3D"//loderla.online"], :root .base-page_center > .bane=
+rTopOver, :root a[href^=3D"https://chaturbate.com/in/?tour=3D"], :root ifra=
+me[title=3D"mixAd"], :root a[href^=3D"https://syndication.optimizesrv.com/"=
+], :root div[id^=3D"DIV_NNN_"], :root a[href^=3D"https://adnetwrk.com/"], :=
+root a[href^=3D"https://go.gldrdr.com/"], :root a[href^=3D"https://affcpatr=
+k.com/"], :root a[class*=3D"button"][href^=3D"//"][href*=3D"yandex"][onclic=
+k*=3D"dnl"][onclick*=3D"knopka"], :root a[href^=3D"https://www.sheetmusicpl=
+us.com/"][href*=3D"?aff_id=3D"], :root a[href^=3D"https://bngpt.com/"], :ro=
+ot a[href^=3D"https://cam4com.go2cloud.org/"], :root a[href^=3D"https://blu=
+edelivery.pro/"], :root a[href^=3D"https://black77854.com/"], :root a[href^=
+=3D"https://ndt5.net/"], :root [href*=3D"postlnk.com"], :root a[href^=3D"ht=
+tps://a2.adform.net/"], :root a[href^=3D"https://batheunits.com/"], :root i=
+frame[src*=3D"fwdcdn.com/frame/partners/"], :root a[target=3D"_blank"][onmo=
+usedown=3D"this.href^=3D'http://paid.outbrain.com/network/redir?"], :root [=
+data-dynamic-ads], :root a[href^=3D"https://banners.livepartners.com/"], :r=
+oot a[href^=3D"//whulsaux.com/"], :root a[href*=3D"/uloads.ru/"], :root #ro=
+ot > .app .adfox, :root [class^=3D"s2nPlayer"], :root iframe[src*=3D"//refp=
+akglscpj."], :root a[href^=3D"http://olivka.biz/"], :root [data-ad-cls], :r=
+oot a[href^=3D"https://chaturbate.jjgirls.com/?track=3D"], :root .app.blog-=
+post-page .secondary-header-ad-block, :root a[href^=3D"https://ausoafab.net=
+/"], :root a[href^=3D"https://t.ajrkm1.com/"], :root [href=3D"https://masst=
+ortfinancing.com"] img, :root a[href^=3D"http://luckiestclick.com/goto."], =
+:root [class^=3D"fpm_"][class*=3D"_cross"], :root a[href^=3D"https://albion=
+softwares.com/"], :root a[href^=3D"https://fleshlight.sjv.io/"], :root a[hr=
+ef^=3D"https://go.etoro.com/"] > img, :root a[href*=3D".orgsales.ru"], :roo=
+t a[href*=3D"twtn.ru/"], :root [data-d-ad-id], :root a[href^=3D"https://con=
+vertmb.com/"], :root a[href*=3D"offhealth.ru"], :root [data-link*=3D"//ufil=
+er-pro2.ru"], :root a[href*=3D"://landingtracker.com/"], :root a[href*=3D"/=
+universalsrc.net/"], :root [href=3D"https://ourgoldguy.com/contact/"] img, =
+:root a[href^=3D"https://join.sexworld3d.com/track/"], :root img[onclick*=
+=3D"clustrmaps.com/counter/"], :root div[id*=3D"Teaser_Block"], :root a[hre=
+f^=3D"https://intenseaffiliates.com/redirect/"], :root a[href^=3D"https://a=
+ds.ad4game.com/"], :root a[href*=3D"/rapidtor.site"], :root a[href^=3D"http=
+://partners.etoro.com/"], :root [id^=3D"google_ads_iframe"], :root a[href^=
+=3D"https://affpa.top/"], :root [href*=3D"//takenewsofts.ru/"], :root a[hre=
+f^=3D"https://adjoincomprise.com/"], :root a[href*=3D"xxxrevpushclcdu.com"]=
+, :root [href^=3D"http://misslinkvocation.com/"], :root a[href^=3D"https://=
+adclick.g.doubleclick.net/"], :root a[href^=3D"https://www.bet365.com/"][hr=
+ef*=3D"affiliate=3D"], :root div[id^=3D"M"][id*=3D"Composite"], :root a[hre=
+f^=3D"https://mmwebhandler.aff-online.com/"], :root a[href*=3D"://clickstat=
+s.pw/"], :root [href^=3D"http://clicks.totemcash.com/"], :root div[data-adv=
+-type=3D"dfp"], :root a[href^=3D"https://misspkl.com/"], :root a[href^=3D"h=
+ttps://ad.kubiccomps.icu/"], :root a[href*=3D"://sdertjnbv.xyz/"], :root a[=
+href^=3D"https://ab.advertiserurl.com/aff/"], :root a[href^=3D"https://iact=
+rivago.ampxdirect.com/"], :root a[href^=3D"https://a.medfoodhome.com/"], :r=
+oot a[href^=3D"https://landing1.brazzersnetwork.com"], :root a[href^=3D"htt=
+ps://a.bestcontentoperation.top/"], :root a[href*=3D"://loderkkis.ru"], :ro=
+ot a[href^=3D"http://static.fleshlight.com/images/banners/"], :root a[href^=
+=3D"https://a.adtng.com/"], :root div[id^=3D"bidvol-widget-"], :root a[href=
+^=3D"https://maymooth-stopic.com/"], :root [href^=3D"http://go.cm-trk2.com/=
+"], :root a[href*=3D"://kinobud.site/"], :root div[id^=3D"smi2adblock_"], :=
+root [data-m-ad-id], :root a[href^=3D"https://sTartgAminG.net/tienda/"], :r=
+oot a[href^=3D"https://a-ads.com/"], :root iframe[src*=3D"utraff.com"], :ro=
+ot a[href^=3D"https://join.virtualtaboo.com/track/"], :root a[href^=3D"http=
+s://StarTGAminG.net/tienda/"], :root a[href^=3D"https://STaRTgamINg.net/tie=
+nda/"], :root a[href*=3D"//utimg.ru/"], :root a[href^=3D"https://agacelebir=
+.com/"], :root a[href^=3D"https://spygasm.com/track?"], :root a[href^=3D"ht=
+tps://kshop"][href*=3D".pro/"], :root ins.adsbygoogle, :root a[href^=3D"htt=
+ps://1startfiledownload1.com/"], :root a[href^=3D"https://s.zlinkb.com/"], =
+:root a[href^=3D"http://cam4com.go2cloud.org/aff_c?"], :root #adv_unisound =
+~ #ad_module_cont > [id^=3D"ad_module"], :root [data-desktop-ad-id], :root =
+a[href*=3D"/kshop3.biz"], :root a[href^=3D"https://k2s.cc/pr/"], :root a[hr=
+ef^=3D"http://trk.globwo.online/"], :root a[href^=3D"https://1betandgonow.c=
+om/"], :root a[href^=3D"https://prf.hn/click/"][href*=3D"/creativeref:"] > =
+img, :root div[id^=3D"optidigital-adslot"], :root a[href^=3D"http://www.adu=
+ltempire.com/unlimited/promo?"][href*=3D"&partner_id=3D"], :root a[href^=3D=
+"http://traffic.tc-clicks.com/"], :root a[href^=3D"http://tour.mrskin.com/"=
+], :root [onclick*=3D"mixadvert.com"], :root .novelty-banner ~ .dle_b_help =
+> a[target=3D"_blank"], :root a[href^=3D"https://www.purevpn.com/"][href*=
+=3D"&utm_source=3Daff-"], :root a[href^=3D"https://funkydaters.com/"], :roo=
+t a[href^=3D"http://https://www.get-express-vpn.com/offer/"], :root [href^=
+=3D"https://glersakr.com/"], :root a[href*=3D"://tdsrotations.ru/"], :root =
+div[id^=3D"google_dfp_"], :root a[href^=3D"http://googleads.g.doubleclick.n=
+et/pcs/click"], :root a[href^=3D"http://click.payserve.com/"], :root #mgb-c=
+ontainer > #mgb, :root a[href^=3D"https://porngames.adult/?SID=3D"], :root =
+#slashboxes > .deals-rail, :root a[href*=3D"trafgid.xyz"], :root a[href*=3D=
+"://getyousoft.ru/"], :root [onclick*=3D"/sb/clk/"], :root [href^=3D"https:=
+//www.brighteonstore.com/products/"] img, :root a[href^=3D"http://bc.vc/?r=
+=3D"], :root a[href*=3D"://dmtech05.com/"], :root [href^=3D"http://homemovi=
+estube.com/"], :root a[href^=3D"http://ad.doubleclick.net/"], :root a[href^=
+=3D"//zunsoach.com/"], :root a[href*=3D"turbotraf.com"], :root [href^=3D"ht=
+tps://affect3dnetwork.com/track/"], :root a[href^=3D"//s.st1net.com/splash.=
+php"], :root a[href^=3D"//pubads.g.doubleclick.net/"], :root a[href^=3D"htt=
+ps://femglobal.app/"], :root a[href*=3D"//loderlx.ru"], :root [id^=3D"div-g=
+pt-ad"], :root img[src*=3D"://r.i.ua/"], :root div[id^=3D"yandex_ad"], :roo=
+t a[href*=3D"://adv-views.com"], :root a[data-url^=3D"http://paid.outbrain.=
+com/network/redir?"] + .author, :root a[href*=3D"https://relap.io/r?"], :ro=
+ot a[href^=3D"//ardslediana.com/"], :root a[href*=3D".engine.adglare.net/"]=
+, :root a[href^=3D"https://camfapr.com/landing/click/"], :root a[href^=3D"h=
+ttp://bongacams.com/track?"], :root #kt_player > a[target=3D"_blank"], :roo=
+t a[href*=3D"://new.torrent-pack.ru/"], :root [href*=3D"//loadbrowser.ru/"]=
+, :root [data-rc-widget], :root [data-ad-width], :root [href^=3D"https://cp=
+a.10kfreesilver.com/"], :root a[href^=3D"https://a.bestcontentfood.top/"], =
+:root img[src*=3D"top.mail.ru/counter?"], :root a[href^=3D"http://wct.link/=
+"], :root div[id^=3D"ad-position-"], :root [href^=3D"https://goldforyourfut=
+ure.com/clk.trk"] img, :root [onclick*=3D"//msetup.pro/"], :root [onclick^=
+=3D"location.href=3D'http://www.reimageplus.com"], :root [id^=3D"section-ad=
+-banner"], :root a[href^=3D"https://t.aslnk.link/"], :root a[href^=3D"https=
+://click.candyoffers.com/"], :root [href^=3D"https://zstacklife.com/"] img,=
+ :root a[href^=3D"https://go.julrdr.com/"], :root [href^=3D"https://totlnkc=
+l.com/"], :root .trc_rbox_div .syndicatedItemUB, :root [href^=3D"https://zo=
+ne.gotrackier.com/"], :root a[href*=3D"://clickbytes.ru/"], :root a[href*=
+=3D".adsbid.ru"], :root [href^=3D"https://detachedbates.com/"], :root a[hre=
+f*=3D"kodielinktrust.ru"], :root a[href*=3D"//universalin.info/"], :root a[=
+href*=3D"feellights.ru"], :root .section-subheader > .section-hotel-prices-=
+header, :root [href^=3D"https://go.affiliatexe.com/"], :root a[href^=3D"htt=
+p://adultfriendfinder.com/go/"], :root [href^=3D"https://freecourseweb.com/=
+"] > .sitefriend, :root [href^=3D"https://www.herbanomic.com/"] > img, :roo=
+t a[href^=3D"http://affiliate.glbtracker.com/"], :root a[href^=3D"https://l=
+eg.xyz/?track=3D"], :root div[id^=3D"crt-"][style], :root a[href*=3D"homewo=
+rk.ru/?partnerId=3D"], :root a[href^=3D"http://adultgames.xxx/"], :root a[h=
+ref*=3D"://ourbrowser.net"], :root a[href*=3D"amigo-biz.ru/ads/click"], :ro=
+ot a[href*=3D"amgfile.ru"], :root .player-wrap > #kt_player ~ .spot-box, :r=
+oot a[href^=3D"https://bngprm.com/"], :root [href^=3D"https://shiftnetwork.=
+infusionsoft.com/go/"] > img, :root a[href^=3D"https://trk.softonixs.xyz/"]=
+, :root [href^=3D"https://www.mypatriotsupply.com/"] > img, :root a[onmouse=
+down^=3D"this.href=3D'http://paid.outbrain.com/network/redir?"][target=3D"_=
+blank"], :root [href^=3D"https://secure.bmtmicro.com/servlets/"], :root div=
+[id^=3D"news_nest_msk_ru"], :root a[href^=3D"https://brightadnetwork.com/"]=
+, :root [href^=3D"//x4pollyxxpush.com/"], :root .base-page_left-side > #lef=
+t_ban, :root [href^=3D"https://www.avantlink.com/click.php"] img, :root a[h=
+ref*=3D"//webbrowser.club/"], :root .pip-video-wrapper > .pip-video-label, =
+:root iframe[src*=3D"traffic-media.co"], :root a[href^=3D"https://losingold=
+fry.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root [href^=3D=
+"https://routewebtk.com/"], :root iframe[src*=3D"://partner-widget.vse-sdal=
+.com/"], :root [href^=3D"https://mylead.global/stl/"] > img, :root a[href^=
+=3D"https://ak.psaltauw.net/"], :root a[href^=3D"https://tm-offers.gamingad=
+ult.com/"], :root a[href^=3D"https://go.cmtaffiliates.com/"], :root [onclic=
+k*=3D".twkv.ru"], :root a[href^=3D"https://awptjmp.com/"], :root [href^=3D"=
+https://gmxvmvptfm.com/"], :root [href^=3D"http://mypillow.com/"] > img, :r=
+oot [data-ad-manager-id], :root a[href^=3D"https://promo-bc.com/"], :root a=
+[href^=3D"https://clicks.pipaffiliates.com/"], :root [href^=3D"https://mypa=
+triotsupply.com/"] > img, :root [data-freestar-ad], :root a[href^=3D"https:=
+//fc.lc/ref/"], :root .vid-present > .van_vid_carousel__padding, :root a[hr=
+ef*=3D"gpclick.ru"], :root span[data-ez-ph-id], :root [href^=3D"https://tra=
+ck.aftrk1.com/"], :root div[id^=3D"adngin-"], :root a[href^=3D"https://lnkx=
+t.bannerator.com/"], :root a[href*=3D"://filetaker.ru/"], :root a[href*=3D"=
+//sub"][href*=3D"bubblesmedia."], :root [href^=3D"https://istlnkcl.com/"], =
+:root a[href^=3D"https://staRTgaming.net/tienda/"], :root a[href*=3D"slovos=
+il.com"], :root a[href*=3D"ads-provider.com"], :root [class^=3D"adDisplay-m=
+odule"], :root a[href^=3D"https://consali.com/"], :root a[href^=3D"https://=
+STaRtgAmInG.net/tienda/"], :root [href^=3D"https://ilovemyfreedoms.com/land=
+ing-"], :root a[href*=3D"://rotationlinks.ru/"], :root [href^=3D"https://go=
+.4rabettraff.com/"], :root a[href^=3D"http://kshop.biz/"], :root [href^=3D"=
+https://charmingdatings.life/"], :root a[href^=3D"https://italarizege.xyz/"=
+], :root [href^=3D"https://engine.gettopple.com/"], :root [data-id^=3D"div-=
+gpt-ad"], :root [href=3D"//sexcams.plus/"], :root a[href*=3D"://go.progfile=
+.space/r/"], :root a[href^=3D"https://ggbetpromo.com/"], :root a[href^=3D"h=
+ttps://go.currency.com/"], :root div[id^=3D"advads_ad_"], :root .resultsLis=
+t > div > div > div > div[data-resultid$=3D"-sponsored"], :root a[href^=3D"=
+https://adserver.adreactor.com/"], :root a[href*=3D"//go.webredir.net/r/"],=
+ :root [href^=3D"http://join.shemalesfromhell.com/"], :root a[href^=3D"http=
+s://ads.betfair.com/redirect.aspx?"], :root [data-testid=3D"ad_testID"], :r=
+oot [href^=3D"http://www.fleshlightgirls.com/"], :root [href^=3D"http://joi=
+n.trannies-fuck.com/"], :root [href^=3D"https://www.restoro.com/"], :root a=
+[href*=3D"//loderls.ru"], :root a[href^=3D"https://cpmspace.com/"], :root a=
+[href^=3D"https://ads.planetwin365affiliate.com/redirect.aspx?"], :root div=
+[class^=3D"mixadvert"], :root [href^=3D"http://join.rodneymoore.com/"], :ro=
+ot [href*=3D"/vaigowoa.com"], :root a[href^=3D"https://staRTgamIng.net/tien=
+da/"], :root a[href*=3D"land-gooods.ru"], :root div[id^=3D"lazyad-"], :root=
+ a[href*=3D"://betahit.click/"], :root a[href^=3D"http://com-1.pro/"], :roo=
+t a[href*=3D"news-sphere.com"], :root a[href*=3D"goext.info"], :root [name^=
+=3D"google_ads_iframe"], :root a[href^=3D"http://bodelen.com/"], :root a[hr=
+ef*=3D"cosmolot.me/"][href*=3D"banner"], :root a[href*=3D"://parandaya.com"=
+], :root a[href^=3D"https://www.geekbuying.com/dynamic-ads/"], :root [href=
+=3D"https://jdrucker.com/gold"] > img, :root [href^=3D"https://v.investolog=
+ic.co.uk/"], :root [href^=3D"https://cipledecline.buzz/"], :root #leader-co=
+mpanion > a[href], :root a[href^=3D"https://jaxofuna.com/"], :root div[reci=
+rculation-ad-container], :root a[href*=3D"zdravo-med.ru"], :root [data-adbr=
+idg-ad-class], :root .plistaList > .itemLinkPET, :root a[href^=3D"http://ww=
+w.adultdvdempire.com/?partner_id=3D"][href*=3D"&utm_"], :root #root > .app =
+.partner-block-wrapper, :root div[class*=3D"spklw"][data-type=3D"ad"], :roo=
+t [href^=3D"http://join.shemale.xxx/"], :root [onclick*=3D"trklp.ru"], :roo=
+t [href^=3D"https://rapidgator.net/article/premium/ref/"], :root [href^=3D"=
+https://join3.bannedsextapes.com"], :root div[data-spotim-slot], :root [cla=
+ss^=3D"flat_"][class*=3D"_out"], :root a[href^=3D"http://apytrc.com/click/"=
+], :root [href^=3D"https://join.girlsoutwest.com/"], :root a[href*=3D"://do=
+wnloadcontent2.ru/"], :root [href^=3D"http://trafficare.net/"], :root a[hre=
+f*=3D"//reruniversal.com/"], :root [data-advadstrackid], :root a[href^=3D"h=
+ttps://u.expresstech.io/"], :root [href^=3D"https://ad.admitad.com/"], :roo=
+t a[href^=3D"https://bodelen.com/"], :root a[href*=3D"//ufiler-pro2.ru"] { =
+display: none !important; }
+
+:root a[href*=3D".g2afse.com/"], :root [href*=3D"://browseit.ru/"], :root a=
+[href^=3D"https://go.hpyjmp.com"], :root [href^=3D"https://mystore.com/"] >=
+ img, :root a[href*=3D"://mysoftrotate.ru/"], :root [id^=3D"unit_"] > a[hre=
+f*=3D"smi2."], :root [data-ez-name], :root a[href*=3D"ultrabit.ws"], :root =
+a[data-widget-outbrain-redirect^=3D"http://paid.outbrain.com/network/redir?=
+"], :root .grid > .container > #aside-promotion, :root dfp-ad, :root a[href=
+*=3D"netcrys.com"], :root [class^=3D"flat_"][class*=3D"_crss"], :root amp-a=
+d, :root a[href^=3D"https://sTartGAMiNG.net/tienda/"], :root a[href*=3D"://=
+dafeb.ru/"], :root div[id^=3D"taboola-stream-"], :root [href^=3D"https://go=
+.astutelinks.com/"], :root a[href^=3D"http://tc.tradetracker.net/"] > img, =
+:root a[href^=3D"http://affiliates.thrixxx.com/"], :root a[href*=3D"/myuniv=
+ersalnk.net/"], :root a[href^=3D"https://www.adultempire.com/"][href*=3D"?p=
+artner_id=3D"], :root [class^=3D"amp-ad-"], :root a[href*=3D"/api/redirect?=
+offerid=3D"], :root a[href*=3D"/universallnk.net/"], :root a[href*=3D"//par=
+andeya.com/"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root a[hr=
+ef*=3D"intovarro.ru"], :root a[href^=3D"https://www.liquidfire.mobi/"], :ro=
+ot [href^=3D"https://click2cvs.com/"], :root img[src*=3D"cycounter"][width=
+=3D"88"][height=3D"31"], :root .trc_rbox_div .syndicatedItem, :root app-lar=
+ge-ad, :root a[href*=3D"/onvix.co/promo/"][target=3D"_blank"], :root a[href=
+*=3D"bestforexplmdb.com"], :root a[href^=3D"https://www.adskeeper.com"], :r=
+oot [data-ad-module], :root a[data-oburl^=3D"https://paid.outbrain.com/netw=
+ork/redir?"], :root a[href*=3D"//partners.house/"], :root div[data-ad-targe=
+ting], :root a[href^=3D"https://hotplaystime.life/"], :root [id^=3D"n4p_"],=
+ :root a[href^=3D"http://www.h4trck.com/"], :root [href^=3D"https://trackfi=
+n.asia/"], :root .plistaList > .plista_widget_underArticle_item[data-type=
+=3D"pet"], :root a[href*=3D"//refpabjgth.top/"], :root a[href*=3D"://womens=
+-journal.ru/"], :root a[href^=3D"https://bs.serving-sys.com"], :root [href^=
+=3D"http://residenceseeingstanding.com/"], :root a[href*=3D"shakespoint.com=
+"], :root div[id^=3D"pa_sticky_ad_box_middle_"], :root [data-la-show-block-=
+id], :root .trc_rbox_border_elm .syndicatedItem, :root [data-la-refresh-tim=
+eout], :root [class^=3D"div-gpt-ad"], :root a[href^=3D"https://refpazkjixes=
+.top/"], :root a[href*=3D"://takenewsoft.ru/"], :root [href^=3D"https://www=
+.cloudways.com/en/?id"], :root a[href^=3D"https://startgAming.net/tienda/"]=
+, :root a[href^=3D"https://tweakostensibleinstaller.com/"], :root a[href*=
+=3D"flylinks.pw"], :root a[href*=3D"//softboxik1.ru/"], :root a[href^=3D"ht=
+tp://li.blogtrottr.com/click?"], :root a[href^=3D"https://webroutetrk.com/"=
+], :root a[href^=3D"https://mercurybest.com/"], :root a[href*=3D"/sarimsolu=
+s.com/"] { display: none !important; }
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-2aa6c383-9ecb-4461-a0a9-040d96a508f3@mhtml.blink
+
+@charset "utf-8";
+
+#screenity-ui, #screenity-ui div { background-color: unset; padding: unset;=
+ width: unset; box-shadow: unset; display: unset; margin: unset; border-rad=
+ius: unset; }
+
+.screenity-outline { position: absolute; z-index: 2147483647; border: 2px s=
+olid rgb(48, 128, 248); outline-offset: -2px; pointer-events: none; border-=
+radius: 5px !important; }
+
+.screenity-blur { filter: blur(10px) !important; }
+
+.screenity-shadow-dom * { transition: unset; }
+
+.screenity-shadow-dom .TooltipContent { font-size: 12px; bottom: 100px; lin=
+e-height: 1; font-family: Satoshi-Medium, sans-serif; color: rgb(255, 255, =
+255); user-select: none; animation-duration: 400ms; animation-timing-functi=
+on: cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; border-=
+radius: 30px !important; background-color: rgb(41, 41, 47) !important; padd=
+ing: 10px 15px !important; margin-bottom: 10px !important; z-index: 9999999=
+9 !important; box-shadow: rgba(14, 18, 22, 0.35) 0px 10px 38px -10px, rgba(=
+14, 18, 22, 0.2) 0px 10px 20px -15px !important; }
+
+.screenity-shadow-dom .hide-tooltip { display: none !important; }
+
+.screenity-shadow-dom .tooltip-tall { margin-bottom: 20px; }
+
+.screenity-shadow-dom .tooltip-small { margin-bottom: 5px; }
+
+.screenity-shadow-dom .TooltipContent[data-state=3D"delayed-open"][data-sid=
+e=3D"top"] { animation-name: slideDownAndFade; }
+
+.screenity-shadow-dom .TooltipContent[data-state=3D"delayed-open"][data-sid=
+e=3D"right"] { animation-name: slideLeftAndFade; }
+
+.screenity-shadow-dom.TooltipContent[data-state=3D"delayed-open"][data-side=
+=3D"bottom"] { animation-name: slideUpAndFade; }
+
+.screenity-shadow-dom.TooltipContent[data-state=3D"delayed-open"][data-side=
+=3D"left"] { animation-name: slideRightAndFade; }
+
+@keyframes slideUpAndFade {=20
+  0% { opacity: 0; transform: translateY(2px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes slideRightAndFade {=20
+  0% { opacity: 0; transform: translateX(-2px); }
+  100% { opacity: 1; transform: translateX(0px); }
+}
+
+@keyframes slideDownAndFade {=20
+  0% { opacity: 0; transform: translateY(-2px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes slideLeftAndFade {=20
+  0% { opacity: 0; transform: translateX(2px); }
+  100% { opacity: 1; transform: translateX(0px); }
+}
+
+#screenity-ui [data-radix-popper-content-wrapper] { z-index: 2147483647 !im=
+portant; }
+
+.screenity-shadow-dom .CanvasContainer { position: fixed; pointer-events: a=
+ll !important; top: 0px !important; left: 0px !important; z-index: 21474836=
+47 !important; }
+
+.screenity-shadow-dom .canvas { position: fixed; top: 0px !important; left:=
+ 0px !important; z-index: 2147483647 !important; background: transparent !i=
+mportant; }
+
+.screenity-shadow-dom .canvas-container { z-index: 2147483647; top: 0px !im=
+portant; left: 0px !important; position: fixed !important; background: tran=
+sparent !important; }
+
+.ScreenityDropdownMenuContent { min-width: 200px; background-color: white; =
+margin-top: 4px; margin-right: 8px; padding-top: 12px; padding-bottom: 12px=
+; border-radius: 15px; font-family: Satoshi-Medium, sans-serif; color: rgb(=
+41, 41, 47); box-shadow: rgba(22, 23, 24, 0.35) 0px 10px 38px -10px, rgba(2=
+2, 23, 24, 0.2) 0px 10px 20px -15px; animation-duration: 400ms; animation-t=
+iming-function: cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opac=
+ity; z-index: 2147483647 !important; }
+
+.ScreenityDropdownMenuContent[data-side=3D"top"] { animation-name: slideDow=
+nAndFade; }
+
+.ScreenityDropdownMenuContent[data-side=3D"right"] { animation-name: slideL=
+eftAndFade; }
+
+.ScreenityDropdownMenuContent[data-side=3D"bottom"] { animation-name: slide=
+UpAndFade; }
+
+.ScreenityDropdownMenuContent[data-side=3D"left"] { animation-name: slideRi=
+ghtAndFade; }
+
+.ScreenityItemIndicator { position: absolute; right: 12px; width: 18px; hei=
+ght: 18px; background: rgb(48, 128, 248); border-radius: 50%; display: inli=
+ne-flex; align-items: center; justify-content: center; }
+
+.ScreenityDropdownMenuItem, .ScreenityDropdownMenuRadioItem { font-size: 14=
+px; line-height: 1; display: flex; align-items: center; height: 40px; paddi=
+ng: 0px 22px; position: relative; user-select: none; outline: none; }
+
+.ScreenityDropdownMenuItem:hover { cursor: pointer; background-color: rgb(2=
+46, 247, 251) !important; }
+
+.ScreenityDropdownMenuItem[data-disabled] { color: rgb(110, 118, 132); curs=
+or: not-allowed; background-color: rgb(246, 247, 251) !important; }
+
+@keyframes slideUpAndFade {=20
+  0% { opacity: 0; transform: translateY(2px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes slideRightAndFade {=20
+  0% { opacity: 0; transform: translateX(-2px); }
+  100% { opacity: 1; transform: translateX(0px); }
+}
+
+@keyframes slideDownAndFade {=20
+  0% { opacity: 0; transform: translateY(-2px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes slideLeftAndFade {=20
+  0% { opacity: 0; transform: translateX(2px); }
+  100% { opacity: 1; transform: translateX(0px); }
+}
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://learnxinyminutes.com/css/index.css
+
+@charset "utf-8";
+
+@import url("normalize.css");
+
+@import url("main.css");
+
+@import url("https://fonts.googleapis.com/css?family=3DUbuntu+Mono:400,700|=
+Roboto+Slab:700|Open+Sans:400,700&subset=3Dlatin,latin-ext,cyrillic");
+
+@import url("light.css");
+
+body { font-family: "Open Sans", sans-serif; line-height: 22pt; }
+
+select { border: none; border-radius: 3px; }
+
+button { margin-left: 5px; border: none; border-radius: 3px; padding: 2px 6=
+px; text-decoration: none; }
+
+button:hover { background: rgb(245, 245, 245); }
+
+h1, h2, h3, h4, h5, h6 { font-family: "Roboto Slab", serif; }
+
+h1, h2, h3, h4, h5, h6, p, li, hr { padding: 0px; margin: 22pt 0px 0px; lin=
+e-height: 22pt; }
+
+li + li { margin-top: 0px; }
+
+.container { max-width: 60em; margin: 0px auto; }
+
+@media (max-width: 880px) {
+  .container { margin: 0px 20px; }
+}
+
+#doc { font-size: 14pt; }
+
+#doc .highlight { font-family: "Ubuntu Mono", monospace; line-height: 18pt;=
+ display: block; }
+
+#doc img { max-width: 100%; }
+
+#doc footer { margin-top: 60px; text-align: right; color: rgb(119, 119, 119=
+); }
+
+.highlight { background: rgb(238, 238, 238); padding: 0px 18pt; margin-top:=
+ 22pt; overflow-x: auto; }
+
+.highlight.c { font-style: normal; }
+
+.highlight .c1 { font-style: normal; }
+
+.highlight .nb, .highlight .nf, .highlight .k { font-weight: 700; }
+
+.highlight .n { color: rgb(51, 51, 51); }
+
+table { margin-top: 22pt; width: 100%; }
+
+th, td { text-align: left; border-bottom: 1px solid rgb(238, 238, 238); lin=
+e-height: 33pt; }
+
+th h1:first-child, th h2:first-child, th h3:first-child, th h4:first-child,=
+ th h5:first-child, th h6:first-child, th p:first-child, td h1:first-child,=
+ td h2:first-child, td h3:first-child, td h4:first-child, td h5:first-child=
+, td h6:first-child, td p:first-child { margin-top: 0px; }
+
+th.name { width: 50%; }
+
+th.lang { width: 50%; }
+
+td.name a { font-size: 1.2em; font-weight: bold; }
+
+td.lang a { background: rgb(238, 238, 238); border-bottom: 2px solid rgb(22=
+1, 221, 221); border-radius: 3px; padding: 0px 5px; text-decoration: none; =
+}
+
+td.lang a:hover { background: rgb(245, 245, 245); }
+
+td.lang a.selected { background: rgb(255, 255, 153); }
+
+@media (max-width: 620px) {
+  tr { display: block; border-bottom: 3px solid rgb(238, 238, 238); margin-=
+bottom: 10px; }
+  th.name { display: block; width: 100%; }
+  th.lang { display: none; }
+  td.name { display: block; font-size: 16pt; line-height: 24pt; }
+  td.lang { display: block; text-align: right; }
+}
+
+.share { float: right; text-align: center; line-height: 40px; background: r=
+gb(238, 238, 238); padding: 0px 20px; border-radius: 3px; border-bottom: 2p=
+x solid rgb(221, 221, 221); }
+
+.share .sharemsg { font-weight: bold; display: block; }
+
+.lang-choice { float: right; }
+
+.theme-choice { float: right; clear: right; }
+
+body, a, button, select, .share { transition: all 300ms ease-in-out 0s; }
+
+th, td { transition: border-color 400ms ease 0s; }
+
+html.dark { }
+
+html.dark body { background: rgb(17, 17, 26); color: rgb(224, 224, 224); }
+
+html.dark a { color: rgb(68, 153, 204); }
+
+html.dark a:visited { color: rgb(148, 197, 226); }
+
+html.dark button, html.dark select, html.dark .share, html.dark td.lang a {=
+ background: rgb(37, 37, 57); border-bottom: 2px solid rgb(67, 67, 103); }
+
+html.dark button:hover, html.dark button.selected, html.dark select:hover, =
+html.dark select.selected, html.dark .share:hover, html.dark .share.selecte=
+d, html.dark td.lang a:hover, html.dark td.lang a.selected { background: rg=
+b(68, 153, 204); color: rgb(224, 224, 224); }
+
+html.dark button, html.dark select { color: rgb(224, 224, 224); }
+
+html.dark button:hover { background: rgb(68, 153, 204); color: rgb(255, 255=
+, 255); }
+
+html.dark th, html.dark td { border-bottom: 1px solid rgb(37, 37, 57); }
+
+@media (max-width: 620px) {
+  html.dark tr { border-bottom: 3px solid rgb(37, 37, 57); }
+}
+
+html.dark .highlight { background: rgb(37, 37, 57); }
+
+html.dark .highlight .n { color: rgb(129, 129, 129); }
+
+html.dark .hll { background-color: rgb(39, 40, 34); }
+
+html.dark .c { color: rgb(117, 113, 94); }
+
+html.dark .err { color: rgb(150, 0, 80); background-color: rgb(30, 0, 16); =
+}
+
+html.dark .k { color: rgb(102, 217, 239); }
+
+html.dark .l { color: rgb(174, 129, 255); }
+
+html.dark .n { color: rgb(248, 248, 242); }
+
+html.dark .o { color: rgb(249, 38, 114); }
+
+html.dark .p { color: rgb(248, 248, 242); }
+
+html.dark .cm { color: rgb(117, 113, 94); }
+
+html.dark .cp { color: rgb(117, 113, 94); }
+
+html.dark .c1 { color: rgb(117, 113, 94); }
+
+html.dark .cs { color: rgb(117, 113, 94); }
+
+html.dark .ge { font-style: italic; }
+
+html.dark .gs { font-weight: bold; }
+
+html.dark .kc { color: rgb(102, 217, 239); }
+
+html.dark .kd { color: rgb(102, 217, 239); }
+
+html.dark .kn { color: rgb(249, 38, 114); }
+
+html.dark .kp { color: rgb(102, 217, 239); }
+
+html.dark .kr { color: rgb(102, 217, 239); }
+
+html.dark .kt { color: rgb(102, 217, 239); }
+
+html.dark .ld { color: rgb(230, 219, 116); }
+
+html.dark .m { color: rgb(174, 129, 255); }
+
+html.dark .s { color: rgb(230, 219, 116); }
+
+html.dark .na { color: rgb(166, 226, 46); }
+
+html.dark .nb { color: rgb(248, 248, 242); }
+
+html.dark .nc { color: rgb(166, 226, 46); }
+
+html.dark .no { color: rgb(102, 217, 239); }
+
+html.dark .nd { color: rgb(166, 226, 46); }
+
+html.dark .ni { color: rgb(248, 248, 242); }
+
+html.dark .ne { color: rgb(166, 226, 46); }
+
+html.dark .nf { color: rgb(166, 226, 46); }
+
+html.dark .nl { color: rgb(248, 248, 242); }
+
+html.dark .nn { color: rgb(248, 248, 242); }
+
+html.dark .nx { color: rgb(166, 226, 46); }
+
+html.dark .py { color: rgb(248, 248, 242); }
+
+html.dark .nt { color: rgb(249, 38, 114); }
+
+html.dark .nv { color: rgb(248, 248, 242); }
+
+html.dark .ow { color: rgb(249, 38, 114); }
+
+html.dark .w { color: rgb(248, 248, 242); }
+
+html.dark .mf { color: rgb(174, 129, 255); }
+
+html.dark .mh { color: rgb(174, 129, 255); }
+
+html.dark .mi { color: rgb(174, 129, 255); }
+
+html.dark .mo { color: rgb(174, 129, 255); }
+
+html.dark .sb { color: rgb(230, 219, 116); }
+
+html.dark .sc { color: rgb(230, 219, 116); }
+
+html.dark .sd { color: rgb(230, 219, 116); }
+
+html.dark .s2 { color: rgb(230, 219, 116); }
+
+html.dark .se { color: rgb(174, 129, 255); }
+
+html.dark .sh { color: rgb(230, 219, 116); }
+
+html.dark .si { color: rgb(230, 219, 116); }
+
+html.dark .sx { color: rgb(230, 219, 116); }
+
+html.dark .sr { color: rgb(230, 219, 116); }
+
+html.dark .s1 { color: rgb(230, 219, 116); }
+
+html.dark .ss { color: rgb(230, 219, 116); }
+
+html.dark .bp { color: rgb(248, 248, 242); }
+
+html.dark .vc { color: rgb(248, 248, 242); }
+
+html.dark .vg { color: rgb(248, 248, 242); }
+
+html.dark .vi { color: rgb(248, 248, 242); }
+
+html.dark .il { color: rgb(174, 129, 255); }
+
+html.dark .gu { color: rgb(117, 113, 94); }
+
+html.dark .gd { color: rgb(249, 38, 114); }
+
+html.dark .gi { color: rgb(166, 226, 46); }
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://learnxinyminutes.com/css/normalize.css
+
+@charset "utf-8";
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, s=
+ection, summary { display: block; }
+
+audio, canvas, video { display: inline-block; }
+
+audio:not([controls]) { display: none; height: 0px; }
+
+[hidden] { display: none; }
+
+html { font-size: 100%; text-size-adjust: 100%; }
+
+html, button, input, select, textarea { font-family: sans-serif; }
+
+body { margin: 0px; }
+
+a:focus { outline: dotted thin; }
+
+a:active, a:hover { outline: 0px; }
+
+h1 { font-size: 2em; margin: 0.67em 0px; }
+
+h2 { font-size: 1.5em; margin: 0.83em 0px; }
+
+h3 { font-size: 1.17em; margin: 1em 0px; }
+
+h4 { font-size: 1em; margin: 1.33em 0px; }
+
+h5 { font-size: 0.83em; margin: 1.67em 0px; }
+
+h6 { font-size: 0.75em; margin: 2.33em 0px; }
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+
+p, pre { margin: 1em 0px; }
+
+code, kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
+
+pre { white-space: pre-wrap; overflow-wrap: break-word; }
+
+q { quotes: none; }
+
+q::before, q::after { content: none; }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-ali=
+gn: baseline; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+dl, menu, ol, ul { margin: 1em 0px; }
+
+dd { margin: 0px 0px 0px 40px; }
+
+menu, ol, ul { padding: 0px 0px 0px 40px; }
+
+nav ul, nav ol { list-style: none none; }
+
+img { border: 0px; }
+
+svg:not(:root) { overflow: hidden; }
+
+figure { margin: 0px; }
+
+form { margin: 0px; }
+
+fieldset { border: 1px solid rgb(192, 192, 192); margin: 0px 2px; padding: =
+0.35em 0.625em 0.75em; }
+
+legend { border: 0px; padding: 0px; white-space: normal; }
+
+button, input, select, textarea { font-size: 100%; margin: 0px; vertical-al=
+ign: baseline; }
+
+button, input { line-height: normal; }
+
+button, html input[type=3D"button"], input[type=3D"reset"], input[type=3D"s=
+ubmit"] { appearance: button; cursor: pointer; }
+
+button[disabled], input[disabled] { cursor: default; }
+
+input[type=3D"checkbox"], input[type=3D"radio"] { box-sizing: border-box; p=
+adding: 0px; }
+
+input[type=3D"search"] { appearance: textfield; box-sizing: content-box; }
+
+input[type=3D"search"]::-webkit-search-cancel-button, input[type=3D"search"=
+]::-webkit-search-decoration { appearance: none; }
+
+textarea { overflow: auto; vertical-align: top; }
+
+table { border-collapse: collapse; border-spacing: 0px; }
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://learnxinyminutes.com/css/main.css
+
+@charset "utf-8";
+
+html, button, input, select, textarea { color: rgb(34, 34, 34); }
+
+body { font-size: 1em; line-height: 1.4; }
+
+::selection { background: rgb(179, 212, 252); text-shadow: none; }
+
+hr { display: block; height: 1px; border-width: 1px 0px 0px; border-right-s=
+tyle: initial; border-bottom-style: initial; border-left-style: initial; bo=
+rder-right-color: initial; border-bottom-color: initial; border-left-color:=
+ initial; border-image: initial; border-top-style: solid; border-top-color:=
+ rgb(204, 204, 204); margin: 1em 0px; padding: 0px; }
+
+img { vertical-align: middle; }
+
+fieldset { border: 0px; margin: 0px; padding: 0px; }
+
+textarea { resize: vertical; }
+
+.chromeframe { margin: 0.2em 0px; background: rgb(204, 204, 204); color: rg=
+b(0, 0, 0); padding: 0.2em 0px; }
+
+.ir { background-color: transparent; border: 0px; overflow: hidden; }
+
+.ir::before { content: ""; display: block; width: 0px; height: 100%; }
+
+.hidden { visibility: hidden; display: none !important; }
+
+.visuallyhidden { border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px;=
+ margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1=
+px; }
+
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: a=
+uto; height: auto; margin: 0px; overflow: visible; position: static; width:=
+ auto; }
+
+.invisible { visibility: hidden; }
+
+.clearfix::before, .clearfix::after { content: " "; display: table; }
+
+.clearfix::after { clear: both; }
+
+.clearfix { }
+
+@media only screen and (min-width: 35em) {
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen a=
+nd (min-resolution: 144dpi) {
+}
+
+@media print {
+  * { background: transparent !important; color: rgb(0, 0, 0) !important; b=
+ox-shadow: none !important; text-shadow: none !important; }
+  a, a:visited { text-decoration: underline; }
+  a[href]::after { content: " (" attr(href) ")"; }
+  abbr[title]::after { content: " (" attr(title) ")"; }
+  .ir a::after, a[href^=3D"javascript:"]::after, a[href^=3D"#"]::after { co=
+ntent: ""; }
+  pre, blockquote { border: 1px solid rgb(153, 153, 153); break-inside: avo=
+id; }
+  thead { display: table-header-group; }
+  tr, img { break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { break-after: avoid; }
+}
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Roboto+Slab:700|Open+Sans:400,700&subset=latin,latin-ext,cyrillic
+
+@charset "utf-8";
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4taVIGxA.woff2") form=
+at("woff2"); unicode-range: U+460-52F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+=
+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4kaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116;=
+ }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4saVIGxA.woff2") form=
+at("woff2"); unicode-range: U+1F00-1FFF; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4jaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3=
+A1, U+3A3-3FF; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4iaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-=
+FB4F; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B5caVIGxA.woff2") form=
+at("woff2"); unicode-range: U+302-303, U+305, U+307-308, U+330, U+391-3A1, =
+U+3A3-3A9, U+3B1-3C9, U+3D1, U+3D5-3D6, U+3F0-3F1, U+3F4-3F5, U+2034-2037, =
+U+2057, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2102, U+210A-210E, U+2110-2112,=
+ U+2115, U+2119-211D, U+2124, U+2128, U+212C-212D, U+212F-2131, U+2133-2138=
+, U+213C-2140, U+2145-2149, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F=
+1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319,=
+ U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B6, U+23D0, U+23DC-23E1=
+, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25=
+FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE=
+, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B5OaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E=
+4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U=
++2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+2=
+5A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+=
+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101F=
+D, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0F=
+F, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, =
+U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1=
+F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, =
+U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, =
+U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1=
+F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C=
+8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, =
+U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F51=
+3, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, =
+U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C=
+6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F70=
+0-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F89=
+0-1F8AD, U+1F8B0-1F8B1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, =
+U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA88, U+1FA90-1FABD, U+1FAB=
+F-1FAC5, U+1FACE-1FADB, U+1FAE0-1FAE8, U+1FAF0-1FAF8, U+1FB00-1FBFF; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4vaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1=
+A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1E=
+F9, U+20AB; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+100-2AF, U+304, U+308, U+329, U+1E00-1E9F, U+=
+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7=
+FF; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2") format(=
+"woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA,=
+ U+2DC, U+304, U+308, U+329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U=
++2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4taVIGxA.woff2") form=
+at("woff2"); unicode-range: U+460-52F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+=
+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4kaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116;=
+ }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4saVIGxA.woff2") form=
+at("woff2"); unicode-range: U+1F00-1FFF; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4jaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3=
+A1, U+3A3-3FF; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4iaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-=
+FB4F; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x5caVIGxA.woff2") form=
+at("woff2"); unicode-range: U+302-303, U+305, U+307-308, U+330, U+391-3A1, =
+U+3A3-3A9, U+3B1-3C9, U+3D1, U+3D5-3D6, U+3F0-3F1, U+3F4-3F5, U+2034-2037, =
+U+2057, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2102, U+210A-210E, U+2110-2112,=
+ U+2115, U+2119-211D, U+2124, U+2128, U+212C-212D, U+212F-2131, U+2133-2138=
+, U+213C-2140, U+2145-2149, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F=
+1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319,=
+ U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B6, U+23D0, U+23DC-23E1=
+, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25=
+FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE=
+, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x5OaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E=
+4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U=
++2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+2=
+5A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+=
+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101F=
+D, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0F=
+F, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, =
+U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1=
+F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, =
+U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, =
+U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1=
+F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C=
+8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, =
+U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F51=
+3, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, =
+U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C=
+6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F70=
+0-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F89=
+0-1F8AD, U+1F8B0-1F8B1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, =
+U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA88, U+1FA90-1FABD, U+1FAB=
+F-1FAC5, U+1FACE-1FADB, U+1FAE0-1FAE8, U+1FAF0-1FAF8, U+1FB00-1FBFF; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4vaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1=
+A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1E=
+F9, U+20AB; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVIGxA.woff2") form=
+at("woff2"); unicode-range: U+100-2AF, U+304, U+308, U+329, U+1E00-1E9F, U+=
+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7=
+FF; }
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700=
+; font-stretch: normal; src: url("https://fonts.gstatic.com/s/opensans/v40/=
+memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4gaVI.woff2") format(=
+"woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA,=
+ U+2DC, U+304, U+308, U+329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U=
++2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Roboto Slab"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/robotoslab/v34/BngbUXZYTXPIvIBgJJ=
+Sb6s3BzlRRfKOFbvjoa4OmYmRjRdE.woff2") format("woff2"); unicode-range: U+460=
+-52F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: "Roboto Slab"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/robotoslab/v34/BngbUXZYTXPIvIBgJJ=
+Sb6s3BzlRRfKOFbvjoa4Oma2RjRdE.woff2") format("woff2"); unicode-range: U+301=
+, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Roboto Slab"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/robotoslab/v34/BngbUXZYTXPIvIBgJJ=
+Sb6s3BzlRRfKOFbvjoa4OmY2RjRdE.woff2") format("woff2"); unicode-range: U+1F0=
+0-1FFF; }
+
+@font-face { font-family: "Roboto Slab"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/robotoslab/v34/BngbUXZYTXPIvIBgJJ=
+Sb6s3BzlRRfKOFbvjoa4OmbGRjRdE.woff2") format("woff2"); unicode-range: U+370=
+-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: "Roboto Slab"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/robotoslab/v34/BngbUXZYTXPIvIBgJJ=
+Sb6s3BzlRRfKOFbvjoa4OmYGRjRdE.woff2") format("woff2"); unicode-range: U+102=
+-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+3=
+03-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: "Roboto Slab"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/robotoslab/v34/BngbUXZYTXPIvIBgJJ=
+Sb6s3BzlRRfKOFbvjoa4OmYWRjRdE.woff2") format("woff2"); unicode-range: U+100=
+-2AF, U+304, U+308, U+329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U=
++20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Roboto Slab"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/robotoslab/v34/BngbUXZYTXPIvIBgJJ=
+Sb6s3BzlRRfKOFbvjoa4Omb2Rj.woff2") format("woff2"); unicode-range: U+0-FF, =
+U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+20=
+00-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+=
+FFFD; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 4=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFOjCneDtsqEr0keqC=
+MhbCc3CsTKlA.woff2") format("woff2"); unicode-range: U+460-52F, U+1C80-1C88=
+, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 4=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFOjCneDtsqEr0keqC=
+MhbCc-CsTKlA.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U+49=
+0-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 4=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFOjCneDtsqEr0keqC=
+MhbCc2CsTKlA.woff2") format("woff2"); unicode-range: U+1F00-1FFF; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 4=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFOjCneDtsqEr0keqC=
+MhbCc5CsTKlA.woff2") format("woff2"); unicode-range: U+370-377, U+37A-37F, =
+U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 4=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFOjCneDtsqEr0keqC=
+MhbCc0CsTKlA.woff2") format("woff2"); unicode-range: U+100-2AF, U+304, U+30=
+8, U+329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+211=
+3, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 4=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFOjCneDtsqEr0keqC=
+MhbCc6CsQ.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153,=
+ U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+2074, =
+U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFO-CneDtsqEr0keqC=
+MhbC-BL9H4tY12eg.woff2") format("woff2"); unicode-range: U+460-52F, U+1C80-=
+1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFO-CneDtsqEr0keqC=
+MhbC-BL9HxtY12eg.woff2") format("woff2"); unicode-range: U+301, U+400-45F, =
+U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFO-CneDtsqEr0keqC=
+MhbC-BL9H5tY12eg.woff2") format("woff2"); unicode-range: U+1F00-1FFF; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFO-CneDtsqEr0keqC=
+MhbC-BL9H2tY12eg.woff2") format("woff2"); unicode-range: U+370-377, U+37A-3=
+7F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFO-CneDtsqEr0keqC=
+MhbC-BL9H7tY12eg.woff2") format("woff2"); unicode-range: U+100-2AF, U+304, =
+U+308, U+329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U=
++2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Ubuntu Mono"; font-style: normal; font-weight: 7=
+00; src: url("https://fonts.gstatic.com/s/ubuntumono/v17/KFO-CneDtsqEr0keqC=
+MhbC-BL9H1tY0.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-=
+153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20=
+74, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://learnxinyminutes.com/css/light.css
+
+@charset "utf-8";
+
+body { background: rgb(253, 254, 255); color: rgb(0, 0, 0); }
+
+button, select { background: rgb(238, 238, 238); color: rgb(34, 34, 34); bo=
+rder-bottom: 2px solid rgb(221, 221, 221); }
+
+.highlight { background: rgb(238, 238, 238); }
+
+.highlight .n { color: rgb(51, 51, 51); }
+
+.hll { background-color: rgb(255, 255, 204); }
+
+.c { color: rgb(153, 153, 136); font-style: italic; }
+
+.err { color: rgb(166, 23, 23); background-color: rgb(227, 210, 210); }
+
+.k { color: rgb(0, 0, 0); font-weight: bold; }
+
+.o { color: rgb(0, 0, 0); font-weight: bold; }
+
+.cm { color: rgb(153, 153, 136); font-style: italic; }
+
+.cp { color: rgb(153, 153, 153); font-weight: bold; font-style: italic; }
+
+.c1 { color: rgb(153, 153, 136); font-style: italic; }
+
+.cs { color: rgb(153, 153, 153); font-weight: bold; font-style: italic; }
+
+.gd { color: rgb(0, 0, 0); background-color: rgb(255, 221, 221); }
+
+.ge { color: rgb(0, 0, 0); font-style: italic; }
+
+.gr { color: rgb(170, 0, 0); }
+
+.gh { color: rgb(153, 153, 153); }
+
+.gi { color: rgb(0, 0, 0); background-color: rgb(221, 255, 221); }
+
+.go { color: rgb(136, 136, 136); }
+
+.gp { color: rgb(85, 85, 85); }
+
+.gs { font-weight: bold; }
+
+.gu { color: rgb(170, 170, 170); }
+
+.gt { color: rgb(170, 0, 0); }
+
+.kc { color: rgb(0, 0, 0); font-weight: bold; }
+
+.kd { color: rgb(0, 0, 0); font-weight: bold; }
+
+.kn { color: rgb(0, 0, 0); font-weight: bold; }
+
+.kp { color: rgb(0, 0, 0); font-weight: bold; }
+
+.kr { color: rgb(0, 0, 0); font-weight: bold; }
+
+.kt { color: rgb(68, 85, 136); font-weight: bold; }
+
+.m { color: rgb(0, 153, 153); }
+
+.s { color: rgb(208, 16, 64); }
+
+.na { color: rgb(0, 128, 128); }
+
+.nb { color: rgb(0, 134, 179); }
+
+.nc { color: rgb(68, 85, 136); font-weight: bold; }
+
+.no { color: rgb(0, 128, 128); }
+
+.nd { color: rgb(60, 93, 93); font-weight: bold; }
+
+.ni { color: rgb(128, 0, 128); }
+
+.ne { color: rgb(153, 0, 0); font-weight: bold; }
+
+.nf { color: rgb(153, 0, 0); font-weight: bold; }
+
+.nl { color: rgb(153, 0, 0); font-weight: bold; }
+
+.nn { color: rgb(85, 85, 85); }
+
+.nt { color: rgb(0, 0, 128); }
+
+.nv { color: rgb(0, 128, 128); }
+
+.ow { color: rgb(0, 0, 0); font-weight: bold; }
+
+.w { color: rgb(187, 187, 187); }
+
+.mf { color: rgb(0, 153, 153); }
+
+.mh { color: rgb(0, 153, 153); }
+
+.mi { color: rgb(0, 153, 153); }
+
+.mo { color: rgb(0, 153, 153); }
+
+.sb { color: rgb(208, 16, 64); }
+
+.sc { color: rgb(208, 16, 64); }
+
+.sd { color: rgb(208, 16, 64); }
+
+.s2 { color: rgb(208, 16, 64); }
+
+.se { color: rgb(208, 16, 64); }
+
+.sh { color: rgb(208, 16, 64); }
+
+.si { color: rgb(208, 16, 64); }
+
+.sx { color: rgb(208, 16, 64); }
+
+.sr { color: rgb(0, 153, 38); }
+
+.s1 { color: rgb(208, 16, 64); }
+
+.ss { color: rgb(153, 0, 115); }
+
+.bp { color: rgb(153, 153, 153); }
+
+.vc { color: rgb(0, 128, 128); }
+
+.vg { color: rgb(0, 128, 128); }
+
+.vi { color: rgb(0, 128, 128); }
+
+.il { color: rgb(0, 153, 153); }
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://i.creativecommons.org/l/by-sa/3.0/88x31.png
+
+iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAAAAXNSR0IB2cksfwAAAARnQU1BAACx
+jnz7UZMAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAAb9QTFRF
+AAAAAAAA////////////8fHx7+/v6Ofn4+Pj4N/g39/f1tXV09bS0tXS0tXR0dTR0dTQ0NTQ0NPP
+z9PPztLOztHNzdHNzdHMz8/PzdDMzNDMzNDLzM/Ly8/Ly8/Ky87Kys3Jyc3Jyc3Iy8rLyMzIyMzH
+x8vHxsrGycjIxsrFxcnFyMfHxcnExMnExMjDw8jDxMfDw8fCwsfCwcXAwMXAwMW/wMS/v8S+v8O+
+vsO+vsK9vcK9vcK8v7+/vMG8vMG7vMC8u8C7u8C6ur+6ur+5ub65ub64uL23t7y2urm5tru1tbq0
+tLqztLmzs7iysrixtbW1srexsbewsbawsLavsLWvr7Wur7SusLOvrrStrrOtr7KvrbOsrLKrr6+v
+q7GqrKuro6Ghn6OenqCdn5+fnp2dn5aalpmWmJaXk5iTkZSRkZORkY+Pj4+PiYyJjoeLhIaEhIWE
+goWChIGCgICAfX98fH98eXx5dnN0cHJvcHBwbmxsY19hYGBgXV5dUFFQUFBQQ0RDQEBAPj8+Pzc5
+NTY1MjMxMDAwMS0uLS0tKSkpKCkoKCgoKicnJCQkIx8gICAgGxsbEBAQDg4ODQ4N9qQJ7gAAAAR0
+Uk5T/wAKDnDBpeYAAANgSURBVHjatZb7VxJBFMdvNVIR2raFGRCr1FqbihL5TMLM9zPNNE1N0x5K
+mSZpUShiRUm1uPIHd2dhGd3d4zni8fvLeL5z9uPd78y9C5yBE9EpAOjt6gg2+qslsUxwORwud6ko
+ef0Nwfau3oHhp+OTk1Mvji5QuW3NdT7J47bzXKHNVniRt1/3SL7a5jZKHh2fnMqTjNx73nLBzq1s
+pQGV3lrmrrjFKv99JA+OjE5oJa/vAGpnXYcw99HpQK7o5EO7kNPuIu/wVPqb27v6h0ayJS8kAeKR
+SBwgucCeN/oMHKzzig5uEwCUaDgQCEcVANisueqpqg129GAYaskv9yBmJShrDPYYwegzcKOv3Em5
+SthCMppHdLLGIfoaWjt7sWQKTkIUdwDoNiQZQPXPVVSc03wG9ksCj9yEleRkSWDNvFvyN2PJT8Yw
+i3WIXdDAJAa5PFV/VkZ1Z30Grr5pDyE3Wy4jL17xeOtbu/qGRiempnbAynatsKM9T/0K+fu3z7L8
+LuMzsOTmdkEpIQdkUWCXuy75H3T0DtIsIE7dKKiBkDhoz6Nf8Fr+QMgr+VfGZ2CxeAUgTHSaB1i2
+i76mNsyCgiPUBBRdIzkA+gX/5D8YsyyfVX0GLru8BQoGEYjF4+HM8h4fVmCLL6VZ9A+PHQomj38H
+VPB5HVjg0hBFIFDFp4EqSl87fdFdWfuws2949NAoSPfsbUJmZFkfhasIAEtMQMoaSM0n8HpMp+bV
+LApdkj+IFw7B2cMDMB4exiuvrv6V3+oPz2kDwHdRc84t6hvYHLc0MF4rYn7d0F+VUV8LqH9k8P4G
+iRga5MbMzAXmG6OwlKTCGAVd9FEcuaXZ4WVPLbvQ/5/mhNzhISEJkIhGEvohZPTZddsEheSu23Rc
+XUgKr1uZt/5R5rrlMzbF4hBmYd4gd5vaewZo5+Uz6O+oLW09pKXzBOMQmjMbQiG7p7oBG48OobzA
+sCbwG0guYVyrOjaFj3BMfXFd2j/oLWEF4AfnXINj65Pj0obu08RdewMHlekP+ofpBjEnu/i5/R/T
+EO/UcyGDJUYu2zRLQ7BzIe3zv8jZBczBrDCz57URAqb6+dxdfJkrstmKOPzB8mwbDGJBGES0TVNt
+L7UILqfTJbQsMax5xUafgU9ep08Ge+o/RyjkZSMkFewAAAAASUVORK5CYII=
+
+------MultipartBoundary--ZmDlYRwPgcVmmKNrSg4iutF0D0TYCe9yO8e61SOLDd------

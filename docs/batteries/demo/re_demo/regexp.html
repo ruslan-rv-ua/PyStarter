@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Регулярні вирази</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Регулярні вирази</legend>
+        <label for="text">Текст:</label>
+        <textarea id="text" rows="10" cols="50"></textarea>
+        <br />
+        <label for="regex">Регулярний вираз:</label>
+        <input type="text" id="regex" />
+        <br />
+        <label for="replacement">Заміна:</label>
+        <input type="text" id="replacement" />
+        <br />
+        <button type="button" onclick="applyRegex()">Застосувати</button>
+      </fieldset>
+    </form>
+    <div id="result" aria-live="polite"></div>
+    <script>
+      function applyRegex() {
+        const text = document.getElementById("text").value;
+        const regex = document.getElementById("regex").value;
+        const replacement = document.getElementById("replacement").value;
+        const result = document.getElementById("result");
+        const output = text.replace(new RegExp(regex, "g"), replacement);
+        result.innerText = output;
+      }
+    </script>
+  </body>
+</html>

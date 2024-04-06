@@ -12,6 +12,7 @@ hide:
 - [PEP 8 — Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) — 
 настанови по стилю Python
 - [PyPI - the Python Package Index](https://pypi.org/) — репозиторій пакетів Python
+- [Unofficial Windows Binaries for Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
 
 
 
@@ -55,8 +56,6 @@ hide:
 - [Python Cheatsheet](https://www.pythoncheatsheet.org) — 
 велика "шпаргалка" по Python, з прикладами. 
 Періодично оновлюється. 
-- [Awesome](https://github.com/sindresorhus/awesome) — 
-велика збірка довідників по практично усій IT-сфері
 - [Awesome Python](https://github.com/vinta/awesome-python) — 
 список Python-фреймворків, бібліотек, ПЗ та інших ресурсів. Must have! 
 - [Awesome Python Decorator
@@ -69,6 +68,14 @@ hide:
 ](https://therenegadecoder.com/code/python-code-snippets-for-everyday-problems/) — 
 100 сніпетів на коже день
 - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html) — Настанови Google по стилю Python. Дізнайтесь, що на думку Google можна робити а чого ні під час розробки на Python.
+
+
+## Не тільки Python
+
+- [Awesome](https://github.com/sindresorhus/awesome) — 
+велика збірка довідників по практично усій IT-сфері
+- [Learn X in Y minutes](https://learnxinyminutes.com) — 
+короткі підручники з різних тем, зокрема мов програмування. Призначені для того, щоб дати вам швидкий огляд основ, а не для того, щоб зробити вас експертом.
 
 
 <!-- ## Статті
