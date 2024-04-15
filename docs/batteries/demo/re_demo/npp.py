@@ -2,7 +2,7 @@ import re
 
 #! read this later
 status_bar = 'Normal text file length : 163    lines : 13 Ln : 17    Col : 71    Pos : 164 Windows (CR LF) UTF-8 INS'
-# Col : 71    Pos : 164
+# Ln : 17    Col : 71
 regexp = r'.*Ln : (\d+).*Col : (\d+).*'
 
 m = re.search(regexp, status_bar)

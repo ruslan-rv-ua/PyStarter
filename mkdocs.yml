@@ -306,6 +306,8 @@ nav:
   - 41. Керування проектами:
     - pyproject.toml: projects_management/pyproject_toml.md
     - Poetry: projects_management/poetry.md
+  - Visual Studio Code:
+    - Встановлення: vscode/install.md
   - Батарейки:
     - Модуль random: batteries/random.md
     - Модуль pprint: batteries/pprint.md

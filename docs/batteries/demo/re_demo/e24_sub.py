@@ -10,10 +10,4 @@ s = re.sub(pattern, r"Hi, \1!", string)
 string = "apple1 banana2 cherry3"
 pattern = r'\d'
 s = re.sub(pattern, '', string)
-
-
-
-string = "apple1 banana2 cherry3"
-pattern = r'\d'
-s = re.sub(pattern, '', string, count=1)
-
+# s = re.sub(pattern, '', string, count=1)

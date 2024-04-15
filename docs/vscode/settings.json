@@ -1,0 +1,23 @@
+{
+    "editor.accessibilitySupport": "on",
+    "workbench.colorTheme": "Default High Contrast",
+    "workbench.reduceMotion": "on",
+    "update.mode": "start",
+    "files.autoSave": "onWindowChange",
+    "workbench.startupEditor": "none",
+    "terminal.integrated.hideOnStartup": "always",
+    "security.workspace.trust.startupPrompt": "never",
+    "breadcrumbs.enabled": false,
+    "files.insertFinalNewline": true,
+    "terminal.explorerKind": "external",
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "telemetry.telemetryLevel": "off",
+    "editor.stickyScroll.enabled": false,
+    "explorer.decorations.colors": false,
+    "workbench.editor.decorations.colors": false,
+    "search.decorations.colors": false,
+    "workbench.tree.enableStickyScroll": false,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "security.workspace.trust.enabled": false
+}
