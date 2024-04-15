@@ -6,9 +6,14 @@ string = "apple, banana, cherry"
 pattern = r',\s*'
 # string = "apple,     banana, cherry"
 p = re.split(pattern, string)
-p = re.split(pattern, string, maxsplit=1)
+# p = re.split(pattern, string, maxsplit=1)
 
 # ??
 string = "apple1 banana2 cherry3"
 pattern = r'\d\s*'
+p = re.split(pattern, string)
+
+
+string = "Та де ж, дідько, я залишив свій айфон??!!!"
+pattern = r'\W+'
 p = re.split(pattern, string)
