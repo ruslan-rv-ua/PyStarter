@@ -681,21 +681,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://ruslan.rv.ua/PyStarter/projects_management/rye.html</loc>
-         <lastmod>2024-04-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>http://ruslan.rv.ua/PyStarter/projects_management/poetry_demo/cheatsheet.html</loc>
-         <lastmod>2024-04-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>http://ruslan.rv.ua/PyStarter/projects_management/poetry_demo/md-converter/index.html</loc>
-         <lastmod>2024-04-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>http://ruslan.rv.ua/PyStarter/sequences/complex_structures.html</loc>
          <lastmod>2024-04-16</lastmod>
          <changefreq>daily</changefreq>
