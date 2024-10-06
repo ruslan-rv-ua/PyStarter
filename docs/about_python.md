@@ -81,7 +81,6 @@ Python — це мова програмування високого рівня 
 - Dropbox
 - Mozilla
 - Facebook
-- Yandex
 - NASA
 - Red Hat
 - Microsoft
