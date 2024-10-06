@@ -1,6 +1,8 @@
 from pathlib import Path
+
 import requests
+
 url = "https://russianwarship.rip"
-response = requests.get(url)
-Path("index.html").write_bytes(response.content)
-print("done\a")
+text = requests.get(url=url).text
+Path("index.html").write_text(text, encoding="utf8")
+print("done")
