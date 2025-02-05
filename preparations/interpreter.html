@@ -362,9 +362,42 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      Запуск інтерпретатора
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       Завдання
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Завдання">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Завдання 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Завдання 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -389,28 +422,6 @@
   
   <span class="md-ellipsis">
     Засоби розробки
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="telecode.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Перегляд коду
     
   </span>
   
@@ -2234,9 +2245,42 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      Запуск інтерпретатора
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       Завдання
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Завдання">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Завдання 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Завдання 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2262,61 +2306,94 @@
 <p>В рамках даного курсу ми будемо використовувати інтерпретатор Python з номером версії <strong>3.12</strong>.</p>
 <h2 id="python_1">Крок за кроком: встановлення і запуск інтерпретатора Python</h2>
 <ol>
-<li>Завантажити інсталятор Python для 32-бітної або 64-бітної версії Windows з <a href="https://www.python.org/downloads/">офіційного сайта</a>
-).</li>
-<li>Запустити завантажений файл</li>
-<li>У відкрившомуся діалолговому вікні:
-    <!-- - позначити прапорець "Install launcher for all users" --><ul>
-<li>позначити прапорець "Add python.exe to PATH"</li>
-<li>натиснути кнопку "Customize Installation"</li>
-</ul>
-</li>
+<li>Завантажте інсталятор Python для 32-бітної або 64-бітної версії Windows з <a href="https://www.python.org/downloads/">офіційного сайта</a>.</li>
+<li>Запустіть завантажений файл</li>
 <li>У відкрившомуся діалолговому вікні:<ul>
-<li>позначити прапорець "Documentation"</li>
-<li>позначити прапорець "pip"</li>
-<li>зняти позначку з прапорця "tcl/tk and IDLE"</li>
-<li>зняти позначку з прапорця "Python test suite"</li>
-<li>позначити прапорець "py launcher"
-<!-- - позначити прапорець "for all users (requires admin privileges)" --></li>
-<li>натиснути кнопку "Next"</li>
+<li>позначьте прапорець "Add python.exe to PATH"</li>
+<li>активуйте кнопку "Customize Installation"</li>
 </ul>
 </li>
-<li>У відкрившомуся діалолговому вікні:<ul>
-<li>позначити прапорець "Install Python 3.12 for all users"</li>
-<li>позначити прапорець "Associate files with Python (requires the 'py' launcher)"</li>
-<li>позначити прапорець "Create shortcuts for installed applications"</li>
-<li>позначити прапорець "Add Python to environment variables"</li>
-<li>решту прапорців залишаємо без змін</li>
-<li><strong>ВАЖЛИВО!</strong> У полі редагування "Customize install location" вкажіть папку "Python312" у корені Вашого системного диску, наприклад:<blockquote>
-<p>C:\Python312</p>
-</blockquote>
-</li>
-<li>натиснути кнопку "Install"</li>
+<li>У відкрившомуся діалолговому вікні переконайтесь що позначені наступні прапорці:<ul>
+<li>Documentation</li>
+<li>pip</li>
+<li>py launcher</li>
 </ul>
 </li>
+<li>Решту прапорців залишіть без змін і активуйте кнопку "Next".</li>
+<li>У відкрившомуся діалолговому вікні переконайтесь що позначені наступні прапорці:<ul>
+<li>Install Python 3.12 for all users</li>
+<li>Associate files with Python (requires the 'py' launcher)</li>
+<li>Create shortcuts for installed applications</li>
+<li>Add Python to environment variables</li>
+</ul>
+</li>
+<li><strong>ВАЖЛИВО!</strong> У полі редагування "Customize install location" вкажіть папку у корені Вашого системного диску з наступною назвою:
+    <div class="highlight"><pre><span></span><code>Python312
+</code></pre></div>
+    Наприклад: "C:\Python312".</li>
+<li>Активуйте кнопку "Install". Почнеться процес інсталяції.</li>
 <li>Після завершення процесу інсталяції у діалоговому вікні натисніть кнопку "Close"</li>
-<li>Запустити інтерпретатор Python одним з наступних способів:<ul>
-<li>ввівши у консолі Windows команду: <strong>python</strong></li>
-<li>натиснувши гарячі клавіші <strong>Win + R</strong> відкрити діалог Windows "Виконати" і ввести у ньому команду: <strong>python</strong></li>
-<li>знайшовши Python у основному меню Windows</li>
-<li>запустивши наступний файл: <strong>c:\Python312\python.exe</strong></li>
-</ul>
-</li>
-<li>У відкрившомуся вікні з'явиться інформація про номер версії Python та інша системна інформація, і запрошення інтерпретатора для вводу команд у інтерактивному режимі <code>&gt;&gt;&gt;</code>:</li>
 </ol>
-<div class="highlight"><pre><span></span><code>Python 3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)] on win32
+<h2 id="_1">Запуск інтерпретатора</h2>
+<p>Запустити інтерпретатор Python можна одним з наступних способів:</p>
+<ul>
+<li>
+<p>ввівши у терміналі команду:</p>
+<div class="highlight"><pre><span></span><code>python
+</code></pre></div>
+</li>
+<li>
+<p>натиснувши гарячі клавіші <strong>Win + R</strong> відкрити діалог Windows "Виконати" і ввести у ньому команду:
+    <div class="highlight"><pre><span></span><code>python
+</code></pre></div></p>
+</li>
+<li>
+<p>знайшовши Python у основному меню Windows</p>
+</li>
+<li>запустивши наступний файл:
+    <div class="highlight"><pre><span></span><code>c:\Python312\python.exe
+</code></pre></div></li>
+</ul>
+<p>Після запуска у вікні термінала з'явиться інформація про номер версії Python та інша системна інформація:</p>
+<div class="highlight"><pre><span></span><code>Python 3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)] on win32
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt;
 </code></pre></div>
-<ul>
-<li>Закрийте вікно звичним способом</li>
-<li>Завершити роботу інтерпретатора можна також натиснувши гарячі клавіші <strong>Ctrl + Z</strong> та натиснувши Enter</li>
-</ul>
-<h2 id="_1">Завдання</h2>
-<ul>
+<p>Завершити роботу інтерпретатора можна натиснувши гарячі клавіші <strong>Ctrl + Z</strong> та натиснувши Enter</p>
+<h2 id="_2">Завдання</h2>
+<h4 id="1">Завдання 1</h4>
+<ol>
 <li>Встановіть інтерпретатор Python.</li>
 <li>Запустіть інтерпретатор, спробуйте зробити це різними способами.</li>
-</ul>
+</ol>
+<h4 id="2">Завдання 2</h4>
+<p>Необов'язкове завдання. Якщо у вас поки що не вистачає певних знань, не виконуйте це завдання.</p>
+<ol>
+<li>Ввідкрийте термінал</li>
+<li>
+<p>Перейдіть у папку де знаходиться, наприклад, колекція ваших музичних файлів:
+    <div class="highlight"><pre><span></span><code>cd /d d:\music\  
+</code></pre></div></p>
+</li>
+<li>
+<p>виконайте наступну команду:
+    <div class="highlight"><pre><span></span><code>python -m http.server 8007
+</code></pre></div></p>
+</li>
+<li>
+<p>Не закривайте вікно термінала!</p>
+</li>
+<li>
+<p>Відкрийте Ваш улюблений браузер (Firefox, Chrome тощо) 
+і перейдіть за наступною адресою:  </p>
+<p><a href="http://localhost:8007/">http://localhost:8007/</a></p>
+</li>
+<li>
+<p>Вивчіть і проаналізуйте вміст відкритої вебсторінки. Подумайте як це можна використати.</p>
+</li>
+<li>Поверніться у термінал і натисніть <strong>Ctrl + C</strong> щоб зупинити вебсервер.</li>
+<li>Закрийте термінал.</li>
+</ol>
 
 
 
