@@ -108,217 +108,217 @@ nav:
     - Засоби розробки: preparations/editor.md
     - Скрінрідер: preparations/screenreader.md
     # - Перегляд коду: preparations/telecode.md
-    # - Інтерактивний режим інтерпретатора Python: preparations/console.md
-  - 02. Типи даних. Змінні:
-    - Типи даних: vars_and_types/types.md
-    - Числа: vars_and_types/numbers.md
-    - Змінні: vars_and_types/vars.md
-    - Вирази та інструкції: vars_and_types/statement_and_expression.md
-    ### - Завдання: vars_and_types/problems.md
-  - 03. Python-програми:
-    - Початковий код: source_code/source_code.md
-    - Виконання програм: source_code/run_program.md
-    - Вивід результатів: source_code/print.md
-    - Коментарі: source_code/comments.md
-  - 04. Символьні рядки:
-    - Тип даних str: strings/strings.md
-    - Екрановані послідовності: strings/escapes.md
-    - Операції над символьними рядками: strings/strings_operations.md
-    - Індексація: strings/indexing.md
-    - Форматування символьних рядків: strings/fstrings.md
-  - 05. Функції:
-    - Виклик функцій: functions/functions.md
-    - Функції та вирази: functions/functions_exprs.md
-    - Перетворення типів: functions/types_convertion.md
-  - 06. Логіка:
-    - Тип даних bool: bool_logic/bool.md
-    - Логічні вирази: bool_logic/bool_expressions.md
-  - 07. Розгалуження:
-    - Інструкція if: if/if_statement.md
-    - Інструкція else: if/else_statement.md
-    - Інструкція elif: if/elif_statement.md
-    - Тернарний умовний оператор: if/ternar_if.md
-  - 08. Функції 2:
-    - Функції у програмуванні: functions_def/functions_explained.md
-    - Визначення функцій: functions_def/functions_def.md
-    - Параметри і аргументи: functions_def/functions_params.md
-    - Повернення значень: functions_def/functions_return.md
-    - Іменування функцій: functions_def/functions_naming.md
-    - Локальні та глобальні змінні: functions_def/local_global_vars.md
-  - 09. Цикли:
-    - Цикли у програмуванні: loop_while/loops.md
-    - Інструкція while: loop_while/while.md
-    - Синтаксичний цукор: loop_while/syntax_sugar.md
-    - Прийоми використання циклів: loop_while/usage.md
-  - 10. Списки і кортежі:
-    - Тип даних list: sequences/list.md
-    - Тип даних tuple: sequences/tuple.md
-    - Вкладені структури даних: sequences/complex_structures.md
-    - Послідовності в Python: sequences/sequences.md
-  - 11. Об'єкти в Python:
-    - Об'єкти і змінні: objects/objects_and_vars.md
-    - Мутабельність: objects/mutability.md
-    - Немутабельні винятки: objects/immutable_exceptions.md
-    - Посилання у контейнерах: objects/containers_bindings.md
-    - Життєвий цикл об'єкта: objects/object_lifecycle.md
-    - Знищення посилань на об'єкт: objects/del.md
-  - 12. Цикли 2:
-    - Цикл for: loop_for/for.md
-    - Тип даних range: loop_for/range.md
-    - Прийоми використання for: loop_for/usage.md
-    - Керування циклами: loop_for/loop_flow.md
-  - 13. Методи:
-    - Методи в Python: methods/methods.md
-    - Методи символьних рядків: methods_str/str_methods.md
-  - 14. Методи списків: 
-    - Методи списків: methods_list/list_methods.md
-    - Структура даних "стек": methods_list/stack.md
-  - 15. Словники:
-    - Тип даних dict: dict/dict.md
-    - Методи словників: dict/dict_methods.md
-    - Обхід словників: dict/dict_traversal.md
-  - 16. Текстові файли:
-    - Кодування текстової інформації: text_files/unicode.md
-    - Текстові файли: text_files/open_close_flush.md
-    - Читання і запис текстових файлів: text_files/read_write.md
-  - 17. Модулі:
-    - Модулі в Python: modules/modules.md
-    - Використання модулів: modules/module_usage.md
-    - Створення модулів: modules/module_composing.md
-    # - math: modules/math_module.md
-    # - Модуль random: modules/random_module.md
-    # - Модуль pprint: modules/pprint_module.md
-  - 18. Функції 3:
-    - Стратегії обчислення: functions3/strategies.md
-    - Параметри і аргументи: functions3/params_args.md
-    - Області видимості: functions3/scope.md
-    - Документування функцій: functions3/docstrings.md
-  - 19. Парадигми програмування:
-    - Основні парадигми програмування: paradigmas/paradigmas.md
-    - Імперативне програмування: paradigmas/imperative.md
-    - Об'єктно-орієнтоване програмування: paradigmas/oop.md
-    - Декларативне програмування: paradigmas/declarative.md
-    - Резюме: paradigmas/resume.md
-  - 20. ООП:
-    - Парадигма ООП: oop/basics/basis.md
-    - Класи і об'єкти: oop/basics/classes.md
-    - Життєвий цикл об'єкта: oop/basics/object_lifecycle.md
-    - Ініціалізація об'єктів: oop/basics/init.md
-    - Статичні та класові методи: oop/basics/static_and_class_methods.md
-    - Представлення об'єктів: oop/basics/object_presentation.md
-  - 21. Інкапсуляція:
-    - Інкапсуляція в ООП: oop/encapsulation/encapsulation_basis.md
-    - Приховування атрибутів: oop/encapsulation/hide_attributes.md
-    - Сетери і гетери: oop/encapsulation/setters_and_getters.md
-    - Властивості: oop/encapsulation/properties.md
-    - Обчислювані властивості: oop/encapsulation/computed_properties.md
-  - 22. Успадкування:
-    - Успадкування: oop/inheritance/inheritance_basis.md
-    - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
-    - Лінеаризація: oop/inheritance/linearization.md
-    - Множинне успадкування: oop/inheritance/multiple_inheritance.md
-    - Атрибути базового класа: oop/inheritance/call_overrided.md
-  - 23. Поліморфізм:
-    - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
-    - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
-  - 24. Атрибути:
-    - Доступ до атрибутів: oop/attributes/attributes.md
-    - Слоти: oop/attributes/slots.md
-    - Контроль доступу до атрибутів: oop/attributes/access_control.md
-    # - Дескриптори: oop/attributes/descriptors.md
-  - 25. Виняткові ситуації:
-    - Винятки: exceptions/exceptions.md
-    - Створення виняткових ситуацій: exceptions/raising_exceptions.md
-    - Обробка винятків: exceptions/handling_exceptions.md
-    - Попередження: exceptions/warnings.md
-    - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
-    - Менеджери контекста: exceptions/context_managers.md
-  - 26. Типи та структури даних:
-    - Типізація у програмуванні: types_and_structures/typing/typing.md
-    - Типи даних в Python: types_and_structures/typing/data_types.md
-    - Підказки типів: types_and_structures/typing/type_hinting.md
-  - 27. Числові типи:
-    - Системи числення: types_and_structures/numbers/number_system.md
-    - Цілі числа: types_and_structures/numbers/int.md
-    - Дійсні числа: types_and_structures/numbers/float.md
-    - Комплексні числа: types_and_structures/numbers/complex.md
-    - Булевий тип даних: types_and_structures/numbers/bool.md
-  - 28. Послідовності:
-    - Послідовності в Python: types_and_structures/sequences/sequences.md
-    - Діапазони: types_and_structures/sequences/range.md
-    - Символьні рядки: types_and_structures/sequences/string.md
-    - Бінарні послідовності: types_and_structures/sequences/binary.md
-    - Списки: types_and_structures/sequences/list.md
-    - Кортежі: types_and_structures/sequences/tuple.md
-    - Створення послідовностей: types_and_structures/sequences/creating_sequences.md
-  - 29. Відображення та множини:
-    - Хешування даних: types_and_structures/mappings_and_sets/hash.md
-    - Об'єкти, що хешуються: types_and_structures/mappings_and_sets/hashable.md
-    - Відображення в Python: types_and_structures/mappings_and_sets/mappings.md
-    - Множини в Python: types_and_structures/mappings_and_sets/sets.md
-  - 30. Ітератори:
-    - Ітератори: iterable/iterator.md
-    - Створення ітераторів: iterable/create_iterator.md
-    - Ітератори послідовностей: iterable/sequences_iterators.md
-  - 31. Генератори:
-    - Генератори: iterable/generator.md
-    - Генераторні вирази: iterable/generator_expression.md
-  - 32. Операції з ітерабельними об'єктами:
-    - Упаковка та розпаковка: iterable/iterable_pack_unpack.md
-    - Агрегація даних: iterable/iterable_aggregation.md
-    - Інші функції: iterable/iterable_functions.md
-  - 33. Функційне програмування:
-    - Парадигма ФП: functional_programming/intro.md
-    - Чисті функції: functional_programming/pure_functions.md
-    - Функції як об'єкти: functional_programming/functions_as_objects.md
-    - Функції вищого порядка: functional_programming/higher_order_functions.md
-    - Анонімні функції: functional_programming/lambda.md
-    - '"Класика" вищого порядка': functional_programming/map_filter.md
-  - 34. Замикання:
-    - Функції як результат функцій: functional_programming/closures1.md
-    - Замикання: functional_programming/closures2.md
-  - 35. Декоратори:
-    - Декоратори в Python: functional_programming/decorators1.md
-    - Практики використання: functional_programming/decorators2.md
-    - Декоратори з параметрами: functional_programming/decorators3.md
-    - '"Ввічливі" декоратори': functional_programming/decorators5.md
-  - 36. Рекурсія:
-    - Стек викликів: functional_programming/recursion1.md
-    - Рекурсія: functional_programming/recursion2.md
-  - 37. Ввід та вивід:
-    - Файли і потоки: io/files_and_streams.md
-    - Відкриття та закриття файлів: io/open_close.md
-    - Читання і запис: io/read_write.md
-    - Серіалізація даних: io/serialization.md
-  - 38. Модулі і пакети:
-    - Модулі у програмуванні: modules_and_packages/modules_in_programming.md
-    - Модулі в Python: modules_and_packages/modules_in_python.md
-    - Модулі як об'єкти: modules_and_packages/module_as_object.md
-    - Пакети: modules_and_packages/packages.md
-  - 39. Виконання програм:
-    - Інтерпретатор Python: interpreter/interpreter.md
-    - Виконання модулів і пакетів: interpreter/exec_modules_and_packages.md
-    - Передача аргументів скрипту: interpreter/script_arguments.md
-  - 40. Сторонні бібліотеки:
-    - Джерела бібліотек: libs_3rd_party/libs_sources.md
-    - Менеджер пакетів: libs_3rd_party/pip.md
-    - Віртуальні оточення: libs_3rd_party/venv.md
-  - 41. Керування проектами:
-    - pyproject.toml: projects_management/pyproject_toml.md
-    - Poetry: projects_management/poetry.md
-  - Visual Studio Code:
-    - Встановлення: vscode/install.md
-    - Комбінації клавіш: vscode/keybindings.md
-    - Доступність: vscode/accessibility.md
-  - Батарейки:
-    - Модуль random: batteries/random.md
-    - Модуль pprint: batteries/pprint.md
-    - Модуль datetime: batteries/datetime.md
-    - Модуль collections: batteries/collections.md
-    - Модуль enum: batteries/enum.md
-    - Модуль pathlib: comming_soon.md # batteries/pathlib.md
-    - Модуль re: batteries/re.md
-    - Модуль contextlib: batteries/contextlib.md
-    - Модуль itertools: batteries/itertools.md
-  - Дзен: zen.md
-  - Корисні ресурси: resources.md
+    - Інтерактивний режим інтерпретатора Python: preparations/console.md
+  # - 02. Типи даних. Змінні:
+  #   - Типи даних: vars_and_types/types.md
+  #   - Числа: vars_and_types/numbers.md
+  #   - Змінні: vars_and_types/vars.md
+  #   - Вирази та інструкції: vars_and_types/statement_and_expression.md
+  #   ### - Завдання: vars_and_types/problems.md
+  # - 03. Python-програми:
+  #   - Початковий код: source_code/source_code.md
+  #   - Виконання програм: source_code/run_program.md
+  #   - Вивід результатів: source_code/print.md
+  #   - Коментарі: source_code/comments.md
+  # - 04. Символьні рядки:
+  #   - Тип даних str: strings/strings.md
+  #   - Екрановані послідовності: strings/escapes.md
+  #   - Операції над символьними рядками: strings/strings_operations.md
+  #   - Індексація: strings/indexing.md
+  #   - Форматування символьних рядків: strings/fstrings.md
+  # - 05. Функції:
+  #   - Виклик функцій: functions/functions.md
+  #   - Функції та вирази: functions/functions_exprs.md
+  #   - Перетворення типів: functions/types_convertion.md
+  # - 06. Логіка:
+  #   - Тип даних bool: bool_logic/bool.md
+  #   - Логічні вирази: bool_logic/bool_expressions.md
+  # - 07. Розгалуження:
+  #   - Інструкція if: if/if_statement.md
+  #   - Інструкція else: if/else_statement.md
+  #   - Інструкція elif: if/elif_statement.md
+  #   - Тернарний умовний оператор: if/ternar_if.md
+  # - 08. Функції 2:
+  #   - Функції у програмуванні: functions_def/functions_explained.md
+  #   - Визначення функцій: functions_def/functions_def.md
+  #   - Параметри і аргументи: functions_def/functions_params.md
+  #   - Повернення значень: functions_def/functions_return.md
+  #   - Іменування функцій: functions_def/functions_naming.md
+  #   - Локальні та глобальні змінні: functions_def/local_global_vars.md
+  # - 09. Цикли:
+  #   - Цикли у програмуванні: loop_while/loops.md
+  #   - Інструкція while: loop_while/while.md
+  #   - Синтаксичний цукор: loop_while/syntax_sugar.md
+  #   - Прийоми використання циклів: loop_while/usage.md
+  # - 10. Списки і кортежі:
+  #   - Тип даних list: sequences/list.md
+  #   - Тип даних tuple: sequences/tuple.md
+  #   - Вкладені структури даних: sequences/complex_structures.md
+  #   - Послідовності в Python: sequences/sequences.md
+  # - 11. Об'єкти в Python:
+  #   - Об'єкти і змінні: objects/objects_and_vars.md
+  #   - Мутабельність: objects/mutability.md
+  #   - Немутабельні винятки: objects/immutable_exceptions.md
+  #   - Посилання у контейнерах: objects/containers_bindings.md
+  #   - Життєвий цикл об'єкта: objects/object_lifecycle.md
+  #   - Знищення посилань на об'єкт: objects/del.md
+  # - 12. Цикли 2:
+  #   - Цикл for: loop_for/for.md
+  #   - Тип даних range: loop_for/range.md
+  #   - Прийоми використання for: loop_for/usage.md
+  #   - Керування циклами: loop_for/loop_flow.md
+  # - 13. Методи:
+  #   - Методи в Python: methods/methods.md
+  #   - Методи символьних рядків: methods_str/str_methods.md
+  # - 14. Методи списків: 
+  #   - Методи списків: methods_list/list_methods.md
+  #   - Структура даних "стек": methods_list/stack.md
+  # - 15. Словники:
+  #   - Тип даних dict: dict/dict.md
+  #   - Методи словників: dict/dict_methods.md
+  #   - Обхід словників: dict/dict_traversal.md
+  # - 16. Текстові файли:
+  #   - Кодування текстової інформації: text_files/unicode.md
+  #   - Текстові файли: text_files/open_close_flush.md
+  #   - Читання і запис текстових файлів: text_files/read_write.md
+  # - 17. Модулі:
+  #   - Модулі в Python: modules/modules.md
+  #   - Використання модулів: modules/module_usage.md
+  #   - Створення модулів: modules/module_composing.md
+  #   # - math: modules/math_module.md
+  #   # - Модуль random: modules/random_module.md
+  #   # - Модуль pprint: modules/pprint_module.md
+  # - 18. Функції 3:
+  #   - Стратегії обчислення: functions3/strategies.md
+  #   - Параметри і аргументи: functions3/params_args.md
+  #   - Області видимості: functions3/scope.md
+  #   - Документування функцій: functions3/docstrings.md
+  # - 19. Парадигми програмування:
+  #   - Основні парадигми програмування: paradigmas/paradigmas.md
+  #   - Імперативне програмування: paradigmas/imperative.md
+  #   - Об'єктно-орієнтоване програмування: paradigmas/oop.md
+  #   - Декларативне програмування: paradigmas/declarative.md
+  #   - Резюме: paradigmas/resume.md
+  # - 20. ООП:
+  #   - Парадигма ООП: oop/basics/basis.md
+  #   - Класи і об'єкти: oop/basics/classes.md
+  #   - Життєвий цикл об'єкта: oop/basics/object_lifecycle.md
+  #   - Ініціалізація об'єктів: oop/basics/init.md
+  #   - Статичні та класові методи: oop/basics/static_and_class_methods.md
+  #   - Представлення об'єктів: oop/basics/object_presentation.md
+  # - 21. Інкапсуляція:
+  #   - Інкапсуляція в ООП: oop/encapsulation/encapsulation_basis.md
+  #   - Приховування атрибутів: oop/encapsulation/hide_attributes.md
+  #   - Сетери і гетери: oop/encapsulation/setters_and_getters.md
+  #   - Властивості: oop/encapsulation/properties.md
+  #   - Обчислювані властивості: oop/encapsulation/computed_properties.md
+  # - 22. Успадкування:
+  #   - Успадкування: oop/inheritance/inheritance_basis.md
+  #   - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
+  #   - Лінеаризація: oop/inheritance/linearization.md
+  #   - Множинне успадкування: oop/inheritance/multiple_inheritance.md
+  #   - Атрибути базового класа: oop/inheritance/call_overrided.md
+  # - 23. Поліморфізм:
+  #   - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
+  #   - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
+  # - 24. Атрибути:
+  #   - Доступ до атрибутів: oop/attributes/attributes.md
+  #   - Слоти: oop/attributes/slots.md
+  #   - Контроль доступу до атрибутів: oop/attributes/access_control.md
+  #   # - Дескриптори: oop/attributes/descriptors.md
+  # - 25. Виняткові ситуації:
+  #   - Винятки: exceptions/exceptions.md
+  #   - Створення виняткових ситуацій: exceptions/raising_exceptions.md
+  #   - Обробка винятків: exceptions/handling_exceptions.md
+  #   - Попередження: exceptions/warnings.md
+  #   - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
+  #   - Менеджери контекста: exceptions/context_managers.md
+  # - 26. Типи та структури даних:
+  #   - Типізація у програмуванні: types_and_structures/typing/typing.md
+  #   - Типи даних в Python: types_and_structures/typing/data_types.md
+  #   - Підказки типів: types_and_structures/typing/type_hinting.md
+  # - 27. Числові типи:
+  #   - Системи числення: types_and_structures/numbers/number_system.md
+  #   - Цілі числа: types_and_structures/numbers/int.md
+  #   - Дійсні числа: types_and_structures/numbers/float.md
+  #   - Комплексні числа: types_and_structures/numbers/complex.md
+  #   - Булевий тип даних: types_and_structures/numbers/bool.md
+  # - 28. Послідовності:
+  #   - Послідовності в Python: types_and_structures/sequences/sequences.md
+  #   - Діапазони: types_and_structures/sequences/range.md
+  #   - Символьні рядки: types_and_structures/sequences/string.md
+  #   - Бінарні послідовності: types_and_structures/sequences/binary.md
+  #   - Списки: types_and_structures/sequences/list.md
+  #   - Кортежі: types_and_structures/sequences/tuple.md
+  #   - Створення послідовностей: types_and_structures/sequences/creating_sequences.md
+  # - 29. Відображення та множини:
+  #   - Хешування даних: types_and_structures/mappings_and_sets/hash.md
+  #   - Об'єкти, що хешуються: types_and_structures/mappings_and_sets/hashable.md
+  #   - Відображення в Python: types_and_structures/mappings_and_sets/mappings.md
+  #   - Множини в Python: types_and_structures/mappings_and_sets/sets.md
+  # - 30. Ітератори:
+  #   - Ітератори: iterable/iterator.md
+  #   - Створення ітераторів: iterable/create_iterator.md
+  #   - Ітератори послідовностей: iterable/sequences_iterators.md
+  # - 31. Генератори:
+  #   - Генератори: iterable/generator.md
+  #   - Генераторні вирази: iterable/generator_expression.md
+  # - 32. Операції з ітерабельними об'єктами:
+  #   - Упаковка та розпаковка: iterable/iterable_pack_unpack.md
+  #   - Агрегація даних: iterable/iterable_aggregation.md
+  #   - Інші функції: iterable/iterable_functions.md
+  # - 33. Функційне програмування:
+  #   - Парадигма ФП: functional_programming/intro.md
+  #   - Чисті функції: functional_programming/pure_functions.md
+  #   - Функції як об'єкти: functional_programming/functions_as_objects.md
+  #   - Функції вищого порядка: functional_programming/higher_order_functions.md
+  #   - Анонімні функції: functional_programming/lambda.md
+  #   - '"Класика" вищого порядка': functional_programming/map_filter.md
+  # - 34. Замикання:
+  #   - Функції як результат функцій: functional_programming/closures1.md
+  #   - Замикання: functional_programming/closures2.md
+  # - 35. Декоратори:
+  #   - Декоратори в Python: functional_programming/decorators1.md
+  #   - Практики використання: functional_programming/decorators2.md
+  #   - Декоратори з параметрами: functional_programming/decorators3.md
+  #   - '"Ввічливі" декоратори': functional_programming/decorators5.md
+  # - 36. Рекурсія:
+  #   - Стек викликів: functional_programming/recursion1.md
+  #   - Рекурсія: functional_programming/recursion2.md
+  # - 37. Ввід та вивід:
+  #   - Файли і потоки: io/files_and_streams.md
+  #   - Відкриття та закриття файлів: io/open_close.md
+  #   - Читання і запис: io/read_write.md
+  #   - Серіалізація даних: io/serialization.md
+  # - 38. Модулі і пакети:
+  #   - Модулі у програмуванні: modules_and_packages/modules_in_programming.md
+  #   - Модулі в Python: modules_and_packages/modules_in_python.md
+  #   - Модулі як об'єкти: modules_and_packages/module_as_object.md
+  #   - Пакети: modules_and_packages/packages.md
+  # - 39. Виконання програм:
+  #   - Інтерпретатор Python: interpreter/interpreter.md
+  #   - Виконання модулів і пакетів: interpreter/exec_modules_and_packages.md
+  #   - Передача аргументів скрипту: interpreter/script_arguments.md
+  # - 40. Сторонні бібліотеки:
+  #   - Джерела бібліотек: libs_3rd_party/libs_sources.md
+  #   - Менеджер пакетів: libs_3rd_party/pip.md
+  #   - Віртуальні оточення: libs_3rd_party/venv.md
+  # - 41. Керування проектами:
+  #   - pyproject.toml: projects_management/pyproject_toml.md
+  #   - Poetry: projects_management/poetry.md
+  # - Visual Studio Code:
+  #   - Встановлення: vscode/install.md
+  #   - Комбінації клавіш: vscode/keybindings.md
+  #   - Доступність: vscode/accessibility.md
+  # - Батарейки:
+  #   - Модуль random: batteries/random.md
+  #   - Модуль pprint: batteries/pprint.md
+  #   - Модуль datetime: batteries/datetime.md
+  #   - Модуль collections: batteries/collections.md
+  #   - Модуль enum: batteries/enum.md
+  #   - Модуль pathlib: comming_soon.md # batteries/pathlib.md
+  #   - Модуль re: batteries/re.md
+  #   - Модуль contextlib: batteries/contextlib.md
+  #   - Модуль itertools: batteries/itertools.md
+  # - Дзен: zen.md
+  # - Корисні ресурси: resources.md
