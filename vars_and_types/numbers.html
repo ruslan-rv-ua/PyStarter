@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/vars_and_types/numbers.html">
       
       
+        <link rel="prev" href="types.html">
+      
+      
+        <link rel="next" href="vars.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -270,6 +274,280 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    02. Типи даних. Змінні
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            02. Типи даних. Змінні
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="types.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Типи даних
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Числа
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="numbers.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Числа
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#int" class="md-nav__link">
+    <span class="md-ellipsis">
+      Цілі числа (int)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#float" class="md-nav__link">
+    <span class="md-ellipsis">
+      Дійсні числа (float)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="vars.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Змінні
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="statement_and_expression.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Вирази та інструкції
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../source_code/source_code.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    03. Python-програми
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../strings/strings.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    04. Символьні рядки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -316,15 +594,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Завдання
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -344,7 +613,7 @@
 
 
 <h1 id="_1">Числа</h1>
-<p>Python підтримує як цілі, так і дробові числа. Вказувати тип числа явно не потрібно, Python сам визначить його за наявністю чи відсутністю десяткової крапки.</p>
+<p>Python підтримує як цілі, так і дробові числа. </p>
 <h3 id="int">Цілі числа (int)</h3>
 <p>Числа в Python 3 нічим не відрізняються від звичайних чисел. 
 Вони підтримують набір самих звичайних математичних операцій:</p>
@@ -412,18 +681,10 @@
 </code></pre></div>
 <h3 id="float">Дійсні числа (float)</h3>
 <p>У дійсних числах ціла частина від дробової відділяється знаком крапки. </p>
-<p>Для запису дуже великих або дуже малих по модулю чисел використовують так званий запис «з плаваючою крапкою» (також науковий або інженерний запис). 
-У цьому випадку число представляється у вигляді деякої десяткової дроби, 
-яку називають мантисою, помноженої на цілочислений ступінь десяти (порядок). 
-Наприклад, відстань від Землі до Сонця дорівнює 1.496×10¹¹. </p>
-<p>Числа с плавачою крапкою записуються так: спочатку пишеться мантиса, 
-далі пишеться буква <code>e</code>, 
-потім пишеться порядок. 
-Пробіли всередині такого запису не ставляться. </p>
-<pre><code>1.496e11
-</code></pre>
-<p>Дробові числа підтримують ті ж операції, що й цілі. 
-Однак через особливості представлення чисел у пам'яті компь'ютера  дробові числа неточні, це може спричиняти помилки при обчисленнях:</p>
+<p>Вказувати тип числа явно не потрібно, Python сам визначить його за наявністю чи відсутністю десяткової крапки.</p>
+<p>Дійсні числа підтримують ті ж операції, що й цілі. 
+Однак через особливості представлення чисел у пам'яті компь'ютера  дробові числа неточні.
+це може спричиняти помилки при обчисленнях:</p>
 <pre><code>&gt;&gt;&gt; 0.1 + 0.2
 0.30000000000000004
 &gt;&gt;&gt;
@@ -436,15 +697,16 @@
 &gt;&gt;&gt;
 &gt;&gt;&gt; 2+2.0
 4.0
-&gt;&gt;&gt; 1/2**50
-8.881784197001252e-16
 &gt;&gt;&gt;
 </code></pre>
-<h2 id="_2">Завдання</h2>
-<p>Є наступний вираз:</p>
-<pre><code>70 * 3 + 4 / 8 + 2
-</code></pre>
-<p>Розставте дужки так, щоб обидва додавання обчислювались у першу чергу.</p>
+<!-- ## Завдання
+
+Є наступний вираз:
+
+    70 * 3 + 4 / 8 + 2
+
+Розставте дужки так, щоб обидва додавання обчислювались у першу чергу.
+ -->
 
 
 
@@ -474,6 +736,46 @@
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="types.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Типи даних">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Типи даних
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="vars.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Змінні">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Змінні
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

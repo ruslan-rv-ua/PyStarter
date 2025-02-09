@@ -15,6 +15,8 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/strings/strings.html">
       
       
+        <link rel="prev" href="../source_code/comments.html">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +24,7 @@
     
     
       
-        <title>Символьні рядки (str) - PyStarter</title>
+        <title>Тип даних "символьний рядок" - PyStarter</title>
       
     
     
@@ -80,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#str" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти до змісту
         </a>
       
@@ -116,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Символьні рядки (str)
+              Тип даних "символьний рядок"
             
           </span>
         </div>
@@ -144,6 +146,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -268,6 +272,205 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../vars_and_types/types.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    02. Типи даних. Змінні
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../source_code/source_code.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    03. Python-програми
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    04. Символьні рядки
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            04. Символьні рядки
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Тип даних "символьний рядок"
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="strings.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Тип даних "символьний рядок"
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Рядки у потрійних лапках чи апострофах
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -276,7 +479,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -295,7 +500,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       Рядки у потрійних лапках чи апострофах
     </span>
@@ -316,11 +521,13 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
-<h1 id="str">Символьні рядки (str)</h1>
-<p>Символьний рядок (або просто рядок, string) — це упорядкована послідовність символів яку використовують для зберігання та представлення текстової інформації.</p>
+
+<h1 id="_1">Символьні рядки</h1>
+<p>Символьний рядок (або просто рядок, string) — це послідовність символів яку використовують для зберігання та представлення текстової інформації.</p>
 <p>Щоб створити рядок символи треба заключити у лапки або апострофи.</p>
 <pre><code>&gt;&gt;&gt; s = 'To be or not to be'
 &gt;&gt;&gt; s
@@ -347,7 +554,7 @@
 It's cool!
 &gt;&gt;&gt;
 </code></pre>
-<h3 id="_1">Рядки у потрійних лапках чи апострофах</h3>
+<h3 id="_2">Рядки у потрійних лапках чи апострофах</h3>
 <p>Якщо треба визначити блок тексту який складається з декількох рядків, тоді такі послідовності символів заключають у потрйні лапки чи апострофи. 
 Причому ми маємо змогу вільно користуватись звичайними лапками чи апострофами усередині таких блоків:</p>
 <pre><code>&gt;&gt;&gt; s = '''рядок 1
@@ -368,8 +575,13 @@ it's cool
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
@@ -385,6 +597,30 @@ it's cool
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="../source_code/comments.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Коментарі">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Коментарі
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
