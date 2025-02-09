@@ -120,7 +120,7 @@ nav:
     - Вивід результатів: source_code/print.md
     - Коментарі: source_code/comments.md
   - 04. Символьні рядки:
-    - Тип даних str: strings/strings.md
+    - Тип даних "символьний рядок": strings/strings.md
   #   - Екрановані послідовності: strings/escapes.md
   #   - Операції над символьними рядками: strings/strings_operations.md
   #   - Індексація: strings/indexing.md
