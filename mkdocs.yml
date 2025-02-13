@@ -121,9 +121,9 @@ nav:
     - Коментарі: source_code/comments.md
   - 04. Символьні рядки:
     - Тип даних "символьний рядок": strings/strings.md
-    - Екрановані послідовності: strings/escapes.md
-    - Операції над символьними рядками: strings/strings_operations.md
-    - Індексація: strings/indexing.md
+  #   - Екрановані послідовності: strings/escapes.md
+  #   - Операції над символьними рядками: strings/strings_operations.md
+  #   - Індексація та зрізи : strings/indexing.md
   # - 05. Функції:
   #   - Виклик функцій: functions/functions.md
   #   - Функції та вирази: functions/functions_exprs.md
