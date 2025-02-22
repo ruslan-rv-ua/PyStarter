@@ -124,11 +124,11 @@ nav:
     - Екрановані послідовності: strings/escapes.md
     - Операції над символьними рядками: strings/strings_operations.md
     - Індексація та зрізи : strings/indexing.md
-  # - 05. Функції:
-  #   - Виклик функцій: functions/functions.md
-  #   - Функції та вирази: functions/functions_exprs.md
-  #   - Перетворення типів: functions/types_convertion.md
-  #   - Форматування символьних рядків: strings/fstrings.md
+  - 05. Функції:
+    - Виклик функцій: functions/functions.md
+    - Функції та вирази: functions/functions_exprs.md
+    - Перетворення типів: functions/types_convertion.md
+    - Форматування символьних рядків: strings/fstrings.md
   # - 06. Логіка:
   #   - Тип даних bool: bool_logic/bool.md
   #   - Логічні вирази: bool_logic/bool_expressions.md
