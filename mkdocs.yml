@@ -129,9 +129,9 @@ nav:
     - Функції та вирази: functions/functions_exprs.md
     - Перетворення типів: functions/types_convertion.md
     - Форматування символьних рядків: strings/fstrings.md
-  # - 06. Логіка:
-  #   - Тип даних bool: bool_logic/bool.md
-  #   - Логічні вирази: bool_logic/bool_expressions.md
+  - 06. Логіка:
+    - Тип даних bool: bool_logic/bool.md
+    - Логічні вирази: bool_logic/bool_expressions.md
   # - 07. Розгалуження:
   #   - Інструкція if: if/if_statement.md
   #   - Інструкція else: if/else_statement.md
