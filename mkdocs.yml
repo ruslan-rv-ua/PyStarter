@@ -132,14 +132,14 @@ nav:
   - 06. Логіка:
     - Тип даних bool: bool_logic/bool.md
     - Логічні вирази: bool_logic/bool_expressions.md
-  # - 07. Розгалуження:
-  #   - Інструкція if: if/if_statement.md
-  #   - Інструкція else: if/else_statement.md
-  #   - Інструкція elif: if/elif_statement.md
-  #   - Тернарний умовний оператор: if/ternar_if.md
-  # - 08. Функції 2:
-  #   - Функції у програмуванні: functions_def/functions_explained.md
-  #   - Визначення функцій: functions_def/functions_def.md
+  - 07. Розгалуження:
+    - Інструкція if: if/if_statement.md
+    # - Інструкція else: if/else_statement.md
+    # - Інструкція elif: if/elif_statement.md
+    # - Тернарний умовний оператор: if/ternar_if.md
+  - 08. Функції 2:
+    - Функції у програмуванні: functions_def/functions_explained.md
+    # - Визначення функцій: functions_def/functions_def.md
   #   - Параметри і аргументи: functions_def/functions_params.md
   #   - Повернення значень: functions_def/functions_return.md
   #   - Іменування функцій: functions_def/functions_naming.md

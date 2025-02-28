@@ -14,6 +14,11 @@ text1 = "Python3.10Programming"
 text2 = "SAMPLE"
 # ваш код починається з наступного рядка
 
+first = text1[5::-1]
+second = text2[::2]
+third = text1[-4:]
+result = first + second + third
+
 # не міняйте наступний код
 assert first == "nohtyP"
 assert second == "SML"
