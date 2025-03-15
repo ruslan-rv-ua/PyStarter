@@ -8,7 +8,8 @@
 def get_age_difference(year1, year2):
 	# ваш код починається тут
 	diff = abs(year1 - year2)
-	return "Різниця у віці складає " + str(diff) + " років"
+	# return "Різниця у віці складає " + str(diff) + " років"
+	return f"Різниця у віці складає {diff} років"
 # не міняйте наступний код
 assert get_age_difference(2020, 2000) == "Різниця у віці складає 20 років"
 assert get_age_difference(2000, 2020) == "Різниця у віці складає 20 років"

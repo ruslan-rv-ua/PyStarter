@@ -608,11 +608,131 @@
         
   
   
-    <a href="../sequences/list.html" class="md-nav__link">
+    <a href="../sequences/collections.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
     10. Списки і кортежі
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="objects_and_vars.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Об'єкти в Python
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../loop_for/for.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Цикл "for"
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../methods/methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Методи
     
   </span>
   
@@ -695,7 +815,7 @@ True
 &gt;&gt;&gt;
 </code></pre>
 <p>А тепер спробуємо зі списка <code>row</code> зробити матрицю три на три. 
-Для цього скористаємось мультиплікацією послідовностей: </p>
+Для цього скористаємось реплікацією списків: </p>
 <pre><code>&gt;&gt;&gt; matrix = one_row_matrix * 3
 &gt;&gt;&gt; matrix
 [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
@@ -709,7 +829,7 @@ True
 &gt;&gt;&gt;
 </code></pre>
 <p>Не зовсім те, на що очікували... Що не так? </p>
-<p>Уся справа у тому, що операція мультиплікації 
+<p>Уся справа у тому, що операція реплікації 
 "розмножує" не самі об'єкти у послідовності, 
 а посилання на них. </p>
 <p>Поглянемо на задачу трошки інакше: </p>
@@ -737,7 +857,7 @@ True
 <pre><code>row[0] = 7
 </code></pre>
 <p>Так що створити матрицю 
-використовуючи мультиплікацію послідовностей 
+використовуючи реплікацію послідовностей 
 як наведено у прикладі нижче 
 нажаль не вийде:</p>
 <pre><code>n = 5
