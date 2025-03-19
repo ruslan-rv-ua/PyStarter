@@ -25,3 +25,4 @@ while a < 10:
 	print(line)
 	a += 1
 
+print('\n'.join(' '.join(f"{i*j:2d}" for j in range(1, 10)) for i in range(1, 10)))

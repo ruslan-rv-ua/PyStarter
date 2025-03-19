@@ -1,7 +1,8 @@
 a = 999
 b = 999
 print(a is b)
-b = int(str(999))
+# b = int(str(999))
+b = int('999')
 
 
 # r = id(a)

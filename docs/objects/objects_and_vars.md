@@ -1,3 +1,9 @@
+---
+hide:
+#  - navigation # Hide navigation
+ - toc        # Hide table of contents
+---
+
 # Об'єкти в Python
 
 Об'єкт в Python — це певна вже створена структура даних.

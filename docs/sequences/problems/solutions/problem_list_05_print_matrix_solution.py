@@ -26,11 +26,10 @@ def print_matrix(matrix):
 def print_matrix(matrix):
 	print('\n'.join(('{:5} '*len(row)).strip().format(*row) for row in matrix))
 
-matrix = [[1,2,3],[4,5,6],[7,8,9]]
-# випадково сгенерована матриця, можна розкоментувати наступний код
-'''
+
+# не модифікуйте наступний код
+# за допомогою створеної вами print_matrix() виводиться випадково згенерована матриця
 from random import randint
-n = randint(3, 6)
+n=randint(3, 6)
 matrix = [[randint(0, 9) for col in range(n)] for row in range(n)]
-'''
 print_matrix(matrix)
