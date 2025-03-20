@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/objects/immutable_exceptions.html">
       
       
+        <link rel="prev" href="mutability.html">
+      
+      
+        <link rel="next" href="containers_bindings.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Немутабельні винятки - PyStarter</title>
+        <title>Кешування об'єктів - PyStarter</title>
       
     
     
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Немутабельні винятки
+              Кешування об'єктів
             
           </span>
         </div>
@@ -144,6 +148,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -632,6 +638,235 @@
       
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    11. Об'єкти в Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            11. Об'єкти в Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="objects_and_vars.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Об'єкти і змінні
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mutability.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Мутабельні і немутабельні типи даних
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Кешування об'єктів
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="immutable_exceptions.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Кешування об'єктів
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#none" class="md-nav__link">
+    <span class="md-ellipsis">
+      Унікальний None
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="containers_bindings.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Посилання у контейнерах
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="object_lifecycle.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Життєвий цикл об'єкта
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="del.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Знищення по силань на об'єкт
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     
@@ -648,11 +883,11 @@
         
   
   
-    <a href="objects_and_vars.html" class="md-nav__link">
+    <a href="../loop_for/range.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    11. Об'єкти в Python
+    12. Цикл "for"
     
   </span>
   
@@ -676,7 +911,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -693,15 +930,6 @@
       Зміст
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Кешування об'єктів
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#none" class="md-nav__link">
@@ -725,13 +953,12 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
-<h1 id="_1">Немутабельні винятки</h1>
-<p>Для деяких об'єктів немутабельних типів існують певні "тонкощі". 
-Розглянемо їх. </p>
-<h2 id="_2">Кешування об'єктів</h2>
+
+<h1 id="_1">Кешування об'єктів</h1>
 <p>Python кешує деякі значення немутабельних типів. 
 Що це означає?</p>
 <p>Деякі значення використовуються розробниками дуже часто, 
@@ -760,14 +987,17 @@ True
 False
 &gt;&gt;&gt;
 </code></pre>
+<p>Але якщо виконати наступний код:</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="s1">&#39;hello world&#39;</span>
+<span class="n">b</span><span class="o">=</span><span class="s1">&#39;hello world&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+<p>не в інтерактивному режимі, то отримаємо <code>True</code>. Як же так?</p>
+<p>Відбувається це через оптимізацію Python, яка називається "інтернування рядків". </p>
+<p>Коли ви створюєте рядки <code>a='hello world'</code> та <code>b='hello world'</code>, Python не зберігає їх як два окремі об'єкти в пам'яті. Замість цього, він розпізнає, що це однакові рядки, і зберігає лише один екземпляр у пам'яті, на який посилаються обидві змінні.</p>
 <p>Для об'єктів мутабельних типів гарантується що інтерпретатор завжди створює новий об'єкт. 
 Тут не буде "сюрпризів" як з деякими значеннями немутабельних типів. </p>
-<!--
-Більш того, об'єкт з таким значенням протягом усієї сесії інтерпретатора 
-буде існувати лише у одному екземплярі:
--->
-
-<p>Зауважте: усе сказане вище справедливо для реалізації інтерпретатора CPython. 
+<p>Важливо зазначити, що ця оптимізація працює не завжди і не для всіх рядків. Python гарантує інтернування деяких рядків (наприклад, односимвольних та рядків, що складаються лише з букв, цифр та підкреслень), але поведінка з іншими рядками може відрізнятися залежно від версії Python та особливостей реалізації.
 Для інших реалізацій інтерпретатора мови Python поведінка може бути іншою. </p>
 <h2 id="none">Унікальний None</h2>
 <p>Тип <code>NoneType</code> має лише одне значення — <code>None</code>. 
@@ -789,8 +1019,13 @@ False
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
@@ -806,6 +1041,46 @@ False
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="mutability.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Мутабельні і немутабельні типи даних">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Мутабельні і немутабельні типи даних
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="containers_bindings.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Посилання у контейнерах">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Посилання у контейнерах
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

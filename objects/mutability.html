@@ -18,13 +18,15 @@
         <link rel="prev" href="objects_and_vars.html">
       
       
+        <link rel="next" href="immutable_exceptions.html">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
-        <title>Мутабельність - PyStarter</title>
+        <title>Мутабельні і немутабельні типи даних - PyStarter</title>
       
     
     
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Мутабельність
+              Мутабельні і немутабельні типи даних
             
           </span>
         </div>
@@ -714,7 +716,7 @@
         
   
   <span class="md-ellipsis">
-    Мутабельність
+    Мутабельні і немутабельні типи даних
     
   </span>
   
@@ -726,8 +728,136 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="immutable_exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Кешування об'єктів
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="containers_bindings.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Посилання у контейнерах
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="object_lifecycle.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Життєвий цикл об'єкта
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="del.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Знищення по силань на об'єкт
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../loop_for/range.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Цикл "for"
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -830,7 +960,7 @@ True
 [777, 2, 3]
 &gt;&gt;&gt;
 </code></pre>
-<p>А як же бути, якщо ми хочемо створити новий мутабельний об'єкт, але дані взяти з іншого? 
+<p>А як же бути, якщо ми хочемо створити новий список, але дані взяти з іншого? 
 У такому разі при створенні нового мутабельного об'єкта нам необхідно 
 зкопіювати дані з іншого. 
 Зріз завжди створює і повертає новий об'єкт. 
@@ -848,6 +978,14 @@ False
 [1, 2, 3]
 &gt;&gt;&gt;
 </code></pre>
+<p>Також можна скористатись функцією <code>list()</code>:</p>
+<pre><code>&gt;&gt;&gt; a = [1, 2, 3]
+&gt;&gt;&gt; b = list(a)
+&gt;&gt;&gt; a is b
+False
+&gt;&gt;&gt;
+</code></pre>
+<p>Зрізи працюють трохи швидше, ніж функція <code>list()</code>.</p>
 
 
 
@@ -899,6 +1037,22 @@ False
             </div>
           </a>
         
+        
+          
+          <a href="immutable_exceptions.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Кешування об&#39;єктів">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Кешування об'єктів
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

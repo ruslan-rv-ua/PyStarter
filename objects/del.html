@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/objects/del.html">
       
       
+        <link rel="prev" href="object_lifecycle.html">
+      
+      
+        <link rel="next" href="../loop_for/range.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Знищення посилань на об'єкт - PyStarter</title>
+        <title>Знищення по силань на об'єкт - PyStarter</title>
       
     
     
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Знищення посилань на об'єкт
+              Знищення по силань на об'єкт
             
           </span>
         </div>
@@ -144,6 +148,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -632,6 +638,195 @@
       
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    11. Об'єкти в Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            11. Об'єкти в Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="objects_and_vars.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Об'єкти і змінні
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mutability.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Мутабельні і немутабельні типи даних
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="immutable_exceptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Кешування об'єктів
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="containers_bindings.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Посилання у контейнерах
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="object_lifecycle.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Життєвий цикл об'єкта
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="del.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Знищення по силань на об'єкт
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     
@@ -648,11 +843,11 @@
         
   
   
-    <a href="objects_and_vars.html" class="md-nav__link">
+    <a href="../loop_for/range.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    11. Об'єкти в Python
+    12. Цикл "for"
     
   </span>
   
@@ -676,7 +871,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -699,21 +896,22 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
 
 <h1 id="_1">Знищення посилань на об'єкт</h1>
-<p>Інструкція 'del' дозволяє видаляти одне чи кілька посилань на об'єкт, у тому числі посилання контейнерних типів, таких як списки та словники.</p>
+<p>Інструкція 'del' дозволяє видаляти одне чи кілька посилань на об'єкт, у тому числі посилання у мутабельних колекціях, наприклад списках.</p>
 <div class="highlight"><pre><span></span><code><span class="k">del</span> <span class="n">reference_1</span><span class="p">[,</span> <span class="n">reference_2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">reference_n</span><span class="p">]</span>
 </code></pre></div>
 <p>В узагальненій конструкції вище, 'reference_*' представляє будь-який ідентифікатор, який може містити посилання на конкретні об'єкти. Ці посилання можуть включати:</p>
 <ul>
-<li>Ідентифікатори, такі як змінні та імена функцій</li>
+<li>Ідентифікатори, такі як змінні</li>
 <li>Індекси мутабельних послідовностей, наприклад, <code>a_list[index]</code></li>
 <li>Слайси мутабельних послідовностей, наприклад <code>a_list[start:stop:step]</code></li>
-<li>Ключі словників, наприклад <code>a_dict[key]</code></li>
 </ul>
-<p>Зауважте: видаляються лише посилання на об'єкт. </p>
+<p>Зауважте: видаляються лише посилання на об'єкти а не самі об'єкти. </p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">=</span><span class="n">a</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">a</span>
@@ -733,7 +931,7 @@
 <span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">delete</span> <span class="n">literal</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
-<p>Коли видаляється посилання на об'єкт, то у об'єкта зменьшується на 1 лічильник посилань. Але об'єкт залишається в пам'яті. Видаленням самого об'єкта з пам'яті займається вже збиральник сміття.</p>
+<p>Коли видаляється посилання на об'єкт, то у об'єкта зменьшується на 1 лічильник посилань. Але об'єкт залишається в пам'яті. Видаленням самого об'єкта з пам'яті займається вже збирач сміття.</p>
 <p>Пам'ятаючи, що елементи списка — це не що інше, як посилання на інші об'єкти, ми можемо видаляти елементи зі списка по індексу:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -762,7 +960,7 @@
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
-<p>Також можна видаляти елеменнти зі списка вказуючи зрізання:</p>
+<p>Також можна видаляти елеменнти зі списка вказуючи зріз:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">l</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">l</span>
@@ -779,20 +977,6 @@
 <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span>
 </code></pre></div>
-<p>Зі словника можна видалити ключ разом з відповідним значенням:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;three&#39;</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
-<span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
-<span class="p">{</span><span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">KeyError</span><span class="p">:</span> <span class="mi">0</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
 
 
 
@@ -800,8 +984,13 @@
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
@@ -817,6 +1006,46 @@
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="object_lifecycle.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Життєвий цикл об&#39;єкта">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Життєвий цикл об'єкта
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../loop_for/range.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Тип даних range">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Тип даних range
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
