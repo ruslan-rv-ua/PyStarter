@@ -12,13 +12,13 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/objects/addition_assigment_operator.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/dict/dict_merge_operator.html">
       
       
-        <link rel="prev" href="containers_bindings.html">
+        <link rel="prev" href="dict_methods.html">
       
       
-        <link rel="next" href="object_lifecycle.html">
+        <link rel="next" href="dict_traversal.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Конкатенація з присвоєнням - PyStarter</title>
+        <title>Оператор об'єднання словників - PyStarter</title>
       
     
     
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Конкатенація з присвоєнням
+              Оператор об'єднання словників
             
           </span>
         </div>
@@ -638,8 +638,6 @@
       
   
   
-    
-  
   
   
     
@@ -647,16 +645,17 @@
     
     
       
+        
+        
+      
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
-            
+  
+  
+    <a href="../objects/objects_and_vars.html" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     11. Об'єкти в Python
@@ -664,182 +663,12 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_14">
-            <span class="md-nav__icon md-icon"></span>
-            11. Об'єкти в Python
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="objects_and_vars.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Об'єкти і змінні
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="mutability.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Мутабельні і немутабельні типи даних
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="immutable_exceptions.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Кешування об'єктів
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="containers_bindings.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Посилання у контейнерах
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-        
-      
-      
-      <a href="addition_assigment_operator.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Конкатенація з присвоєнням
-    
-  </span>
+    </a>
   
 
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="object_lifecycle.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Життєвий цикл об'єкта
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="del.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Знищення по силань на об'єкт
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -969,6 +798,191 @@
       
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    15. Словники
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            15. Словники
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dict.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Тип даних dict
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dict_methods.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Методи словників
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="dict_merge_operator.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Оператор об'єднання словників
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dict_traversal.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Обхід словників
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../text_files/unicode.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. Текстові файли
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     
@@ -1043,52 +1057,55 @@
 
 
 
-<h1 id="_1">Конкатенація з присвоєнням</h1>
-<p>Створимо дві змінні які посилаються на один і той же список:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-</code></pre></div>
-<p>Тепер додамо до списку <code>a</code> ще декілька елементів:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span>
-</code></pre></div>
-<p>Як бачимо, список <code>b</code> не змінився. 
-Це тому, що оператор <code>+</code> (конкатенація списків) створює новий список, а не змінює старий. </p>
-<p>Тепер спробуємо зробити те ж саме, але з використанням оператора <code>+=</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
-<span class="kc">True</span>
-</code></pre></div>
-<p>Оператор <code>+=</code> для списків реалізований так, щоб модифікувати існуючий список без створення нового. 
-Він додає елементи з правого операнда до списку, на який посилається лівий операнд. 
-Оскільки і <code>a</code>, і <code>b</code> посилалися на той самий об'єкт списку в пам'яті, 
-а операція <code>+=</code> змінила цей об'єкт на місці, 
-то зміни видно через обидві змінні (<code>a</code> та <code>b</code>). 
-Ідентифікатор об'єкта (<code>id(a)</code>) залишається незмінним, і <code>a is b</code> продовжує повертати <code>True</code>. </p>
-<p>Вибір між <code>+</code> та <code>+=</code> залежить від того, чи хочете ви зберегти оригінальний список незмінним, чи модифікувати його безпосередньо. 
-Будьте особливо уважні при роботі з мутабельними типами, коли декілька змінних можуть посилатися на один і той самий об'єкт.</p>
-<p>Для немутабельних типів операція <code>+=</code> завжди створює новий об'єкт, 
-оскільки існуючий об'єкт змінити не можна.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">t1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t2</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t1</span> <span class="ow">is</span> <span class="n">t2</span>
-<span class="kc">False</span>
-</code></pre></div>
+<h1 id="_1">Оператор об'єднання словників</h1>
+<p>Оператор <code>|</code> для словників з'явився у Python 3.9 і дозволяє об'єднувати словники.
+Він створює новий словник, що містить пари "ключ-значення" з обох операндів.
+Якщо ключ присутній в обох словниках, використовується значення з правого операнда.</p>
+<pre><code>&gt;&gt;&gt; d1 = {'a': 1, 'b': 2}
+&gt;&gt;&gt; d2 = {'b': 3, 'c': 4}
+&gt;&gt;&gt; d1 | d2
+{'a': 1, 'b': 3, 'c': 4}
+&gt;&gt;&gt;
+</code></pre>
+<p>Зверніть увагу, що ключ 'b' присутній в обох словниках, але у результаті використовується значення 3 з другого словника (d2).</p>
+<p>Оператор не змінює операнди, а створює новий словник:</p>
+<pre><code>&gt;&gt;&gt; d1 = {'name': 'Сидоренко', 'age': 21}
+&gt;&gt;&gt; d2 = {'age': 30, 'phone': '+380971234567'}
+&gt;&gt;&gt; result = d1 | d2
+&gt;&gt;&gt; result
+{'name': 'Сидоренко', 'age': 30, 'phone': '+380971234567'}
+&gt;&gt;&gt; d1
+{'name': 'Сидоренко', 'age': 21}
+&gt;&gt;&gt; d2
+{'age': 30, 'phone': '+380971234567'}
+&gt;&gt;&gt;
+</code></pre>
+<p>Можна об'єднувати більше двох словників:</p>
+<pre><code>&gt;&gt;&gt; d1 = {'a': 1}
+&gt;&gt;&gt; d2 = {'b': 2}
+&gt;&gt;&gt; d3 = {'c': 3}
+&gt;&gt;&gt; d1 | d2 | d3
+{'a': 1, 'b': 2, 'c': 3}
+&gt;&gt;&gt;
+</code></pre>
+<p>Існує також оператор присвоєння <code>|=</code>, який оновлює лівий операнд:</p>
+<pre><code>&gt;&gt;&gt; d1 = {'a': 1, 'b': 2}
+&gt;&gt;&gt; d2 = {'b': 3, 'c': 4}
+&gt;&gt;&gt; d1 |= d2
+&gt;&gt;&gt; d1
+{'a': 1, 'b': 3, 'c': 4}
+&gt;&gt;&gt; d2
+{'b': 3, 'c': 4}
+&gt;&gt;&gt;
+</code></pre>
+<p>Оператор <code>|=</code> аналогічний методу <code>update()</code>:</p>
+<pre><code>&gt;&gt;&gt; d1 = {'a': 1, 'b': 2}
+&gt;&gt;&gt; d2 = {'b': 3, 'c': 4}
+&gt;&gt;&gt; d1.update(d2)  # еквівалентно d1 |= d2
+&gt;&gt;&gt; d1
+{'a': 1, 'b': 3, 'c': 4}
+&gt;&gt;&gt;
+</code></pre>
 
 
 
@@ -1125,7 +1142,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Футер" >
         
           
-          <a href="containers_bindings.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Посилання у контейнерах">
+          <a href="dict_methods.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Методи словників">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1135,20 +1152,20 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                Посилання у контейнерах
+                Методи словників
               </div>
             </div>
           </a>
         
         
           
-          <a href="object_lifecycle.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Життєвий цикл об&#39;єкта">
+          <a href="dict_traversal.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Обхід словників">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Життєвий цикл об'єкта
+                Обхід словників
               </div>
             </div>
             <div class="md-footer__button md-icon">
