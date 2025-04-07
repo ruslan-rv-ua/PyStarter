@@ -160,32 +160,34 @@ nav:
     - Мутабельні і немутабельні типи даних: objects/mutability.md
     - Кешування об'єктів: objects/immutable_exceptions.md
     - Посилання у контейнерах: objects/containers_bindings.md
+    - Операції з присвоєнням: objects/augmented_operators.md
     - Життєвий цикл об'єкта: objects/object_lifecycle.md
     - Знищення по силань на об'єкт: objects/del.md
   - 12. Цикл "for":
-    # - Цикл for: loop_for/for.md
+    - Цикл for: loop_for/for.md
     - Тип даних range: loop_for/range.md
-    # - Прийоми використання for: loop_for/usage.md
-    # - Керування циклами: loop_for/loop_flow.md
-  # - 13. Методи:
-  #   - Методи в Python: methods/methods.md
-    # - Методи символьних рядків: methods_str/str_methods.md
-  # - 14. Методи списків: 
-  #   - Методи списків: methods_list/list_methods.md
-  #   - Структура даних "стек": methods_list/stack.md
-  # - 15. Словники:
-  #   - Тип даних dict: dict/dict.md
-  #   - Методи словників: dict/dict_methods.md
-  #   - Обхід словників: dict/dict_traversal.md
-  # - 16. Модулі:
+    - Прийоми використання for: loop_for/usage.md
+    - Керування циклами: loop_for/loop_flow.md
+  - 13. Методи:
+    - Методи в Python: methods/methods.md
+    - Методи символьних рядків: methods_str/str_methods.md
+  - 14. Методи списків: 
+    - Методи списків: methods_list/list_methods.md
+    - Структура даних "стек": methods_list/stack.md
+  - 15. Словники:
+    - Тип даних dict: dict/dict.md
+    - Методи словників: dict/dict_methods.md
+    - Оператор об'єднання словників: dict/dict_merge_operator.md
+    - Обхід словників: dict/dict_traversal.md
+  - 16. Текстові файли:
+    - Текст: text_files/unicode.md
+    - Текстові файли: text_files/open_close_flush.md
+    - Читання і запис текстових файлів: text_files/read_write.md
+  # - 17. Модулі:
   #   - Модулі в Python: modules/modules.md
   #   - Використання модулів: modules/module_usage.md
   #   - Створення модулів: modules/module_composing.md
-  # - 17. Текстові файли:
-  #   - Кодування текстової інформації: text_files/unicode.md
-  #   - Текстові файли: text_files/open_close_flush.md
-  #   - Читання і запис текстових файлів: text_files/read_write.md
-  # - 18. Функції 3:
+  # - 18. І знову функції:
   #   - Стратегії обчислення: functions3/strategies.md
   #   - Параметри і аргументи: functions3/params_args.md
   #   - Області видимості: functions3/scope.md
@@ -234,8 +236,8 @@ nav:
   #   - Типізація у програмуванні: types_and_structures/typing/typing.md
   #   - Типи даних в Python: types_and_structures/typing/data_types.md
   #   - Підказки типів: types_and_structures/typing/type_hinting.md
-  # - 27. Числові типи:
-  #   - Системи числення: types_and_structures/numbers/number_system.md
+  - 27. Числові типи:
+    - Системи числення: types_and_structures/numbers/number_system.md
   #   - Цілі числа: types_and_structures/numbers/int.md
   #   - Дійсні числа: types_and_structures/numbers/float.md
   #   - Комплексні числа: types_and_structures/numbers/complex.md

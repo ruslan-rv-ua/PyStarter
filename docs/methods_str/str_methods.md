@@ -1,7 +1,7 @@
 ---
 hide:
 #  - navigation # Hide navigation
- - toc        # Hide table of contents
+- toc        # Hide table of contents
 ---
 
 # Методи символьних рядків
@@ -135,7 +135,7 @@ hide:
 	<class 'str'>
 	>>>
 
-Зауважте, що метод join() відноситься до рядка, а не до списку!
+Зауважте, що метод join() є методом символьного рядка, а не методом списка!
 Запис виду:
 
 	string.join(sequence)
@@ -187,7 +187,13 @@ hide:
 
 	>>> '  привіт\n'.strip('\n')
 	'  привіт'
-	>>> '---привіт---'.strip('-')
+	>>> '-привіт---'.strip('-')
+	'привіт'
+	>>> '- -привіт---'.strip('-')
+	' -привіт'
+	>>> '!-привіт--!'.strip('-!')
+	'привіт'
+	>>> '<привіт>'.strip('<>')
 	'привіт'
 	>>>
 
@@ -261,7 +267,24 @@ hide:
 	>>> 'Привіт'.startswith(('По', 'Пр'))
 	True
 	>>>
+
+### removeprefix()
+
+	string.removeprefix(prefix)
 	
+Повертає рядок `string` без префікса `prefix`, якщо він присутній:
+
+	>>> 'Привіт'.removeprefix('Пр')
+	'ивіт'
+	>>>
+	
+Якщо `prefix` не є префіксом `string`, рядок повертається без змін:
+
+	>>> 'Привіт'.removeprefix('По')
+	'Привіт'
+	>>>
+
+
 ### replace()
 
 	string.replace(old, new)

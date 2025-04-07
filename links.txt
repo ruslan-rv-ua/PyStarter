@@ -47,11 +47,6 @@ https://realpython.com/python-import/
 Python Shutil Module: 10 Methods You Should Know
 https://www.pythonpool.com/python-shutil/
 
-RE
-https://habr.com/ru/companies/skillbox/articles/552360/
-https://pythonist.ru/regulyarnoe-vyrazhenie-dlya-proverki-rimskih-chisel-na-python/?utm_source=telegram&utm_medium=pythonist
-https://habr.com/ru/articles/349860/
-
 dataclasses
 Дэвид Бизли сделал свой вариант датаклассов - dabeaz/dataklasses. Зачем он это сделал? Как он пишет, модуль dataclasses из стандартной библиотеки очень сложный и медленный. Его же модуль состоит из менее 100 строк кода и в 15-20 раз быстрее.
 

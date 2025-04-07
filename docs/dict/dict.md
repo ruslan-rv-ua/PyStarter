@@ -1,26 +1,8 @@
 ---
 hide:
 #  - navigation # Hide navigation
- - toc        # Hide table of contents
+- toc        # Hide table of contents
 ---
-
-Зі словника можна видалити ключ разом з відповідним значенням:
-
-```python
->>> d={'one':1, 'two':2, 3:'three'}
->>> del d[3]
->>> d
-{'one': 1, 'two': 2}
->>> del d['one']
->>> d
-{'two': 2}
->>> del d[0]
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-KeyError: 0
->>>
-```
-
 
 
 # Тип даних dict
@@ -120,3 +102,21 @@ KeyError: 0
 	>>> dict()
 	{}
 	>>>
+
+Видалити ключ зі словника:
+
+```python
+>>> d={'one':1, 'two':2, 3:'three'}
+>>> del d[3]
+>>> d
+{'one': 1, 'two': 2}
+>>> del d['one']
+>>> d
+{'two': 2}
+>>> del d[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 0
+>>>
+```
+
