@@ -956,6 +956,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setdefault" class="md-nav__link">
+    <span class="md-ellipsis">
+      setdefault()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fromkeys" class="md-nav__link">
     <span class="md-ellipsis">
       fromkeys()
@@ -1113,6 +1122,46 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../batteries/random.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Батарейки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1181,6 +1230,15 @@
   <a href="#clear" class="md-nav__link">
     <span class="md-ellipsis">
       clear()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setdefault" class="md-nav__link">
+    <span class="md-ellipsis">
+      setdefault()
     </span>
   </a>
   
@@ -1331,6 +1389,25 @@ KeyError: 'popitem(): dictionary is empty'
 {1: 11, 2: 22}
 &gt;&gt;&gt;
 </code></pre>
+<h3 id="setdefault">setdefault()</h3>
+<pre><code>d.setdefault(key[, default])
+</code></pre>
+<p>Повертає значення за ключем "key". Якщо ключа немає у словнику, додає його зі значенням "default" (за замовчуванням None) і повертає це значення.</p>
+<pre><code>&gt;&gt;&gt; d = {1: 11, 2: 22}
+&gt;&gt;&gt; d.setdefault(1)
+11
+&gt;&gt;&gt; d
+{1: 11, 2: 22}
+&gt;&gt;&gt; d.setdefault(3, 'foo')
+'foo'
+&gt;&gt;&gt; d
+{1: 11, 2: 22, 3: 'foo'}
+&gt;&gt;&gt; d.setdefault(3, 'bar')  # значення не змінюється, якщо ключ вже існує
+'foo'
+&gt;&gt;&gt; d
+{1: 11, 2: 22, 3: 'foo'}
+&gt;&gt;&gt;
+</code></pre>
 <h3 id="fromkeys">fromkeys()</h3>
 <pre><code>`dict.fromkeys(seq[, value])`
 </code></pre>
@@ -1346,7 +1423,7 @@ KeyError: 'popitem(): dictionary is empty'
 </code></pre>
 <p>Зауважте що метод <code>fromkeys()</code> викликається на класі <code>dict</code>, а не на об'єкті словника.</p>
 <hr />
-<h3 id="_2">Приклади використання</h3>
+<h2 id="_2">Приклади використання</h2>
 <p>Реалізуємо функцію <code>count_letters(string)</code>, 
 яка буде підраховувати скільки раз зустрічається кожна буква 
 у символьному рядку <code>string</code>. </p>

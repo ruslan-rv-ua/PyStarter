@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/text_files/open_close_flush.html">
       
       
+        <link rel="prev" href="unicode.html">
+      
+      
+        <link rel="next" href="read_write.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -834,6 +838,187 @@
       
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    16. Текстові файли
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            16. Текстові файли
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unicode.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Текст
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Текстові файли
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="open_close_flush.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Текстові файли
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#open" class="md-nav__link">
+    <span class="md-ellipsis">
+      open()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#close" class="md-nav__link">
+    <span class="md-ellipsis">
+      close()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flush" class="md-nav__link">
+    <span class="md-ellipsis">
+      flush()
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="read_write.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Читання і запис текстових файлів
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     
@@ -850,11 +1035,11 @@
         
   
   
-    <a href="unicode.html" class="md-nav__link">
+    <a href="../types_and_structures/numbers/number_system.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    16. Текстові файли
+    27. Числові типи
     
   </span>
   
@@ -890,11 +1075,11 @@
         
   
   
-    <a href="../types_and_structures/numbers/number_system.html" class="md-nav__link">
+    <a href="../batteries/random.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    27. Числові типи
+    Батарейки
     
   </span>
   
@@ -997,31 +1182,31 @@
 </ol>
 <h2 id="open">open()</h2>
 <p>Щоб почати роботу з файлом, його треба відкрити за допомогою функції open():</p>
-<pre><code>open(file, mode)
+<pre><code>open(file_path, mode)
 </code></pre>
-<p>Перший параметр — це шлях до файлу у файловій системі.
+<p>Перший параметр "file_path" — це шлях до файлу у файловій системі.
 Шлях до файлу може бути абсолютним, або ж відносним щодо запущеної програми на Python.</p>
 <p>Другий параметр "mode" визначає у якому режимі ми хочемо відкрити файл. Існує 4 режими:</p>
 <ul>
-<li>r (Read). Файл відкривається для читання. Якщо файлу не існує, "піднімається" вийняток FileNotFoundError</li>
+<li>r (Read). Файл відкривається для читання. Якщо файлу не існує, "піднімається" вийняток FileNotFoundError. Це режим за замовчуванням.</li>
 <li>w (Write). Файл відкривається для запису. Якщо файлу не існує, його буде створено. 
 Якщо файл вже існує, тоді усі дані які містяться у ньому будуть знищені.</li>
 <li>a (Append). Файл відкривається для дозапису.
 Якщо файла не існує, його буде створено. 
 Якщо файл вже існує, то усі дані будуть записані після вже існуючих.</li>
-<li>b (Binary). Файл відкривається у бінарному режимі. 
-Застосовується з іншими режимами (w чи r).</li>
+<li>x (eXclusive). Файл відкривається для запису. Якщо файл вже існує, "піднімається" вийняток FileExistsError.</li>
 </ul>
-<p>Функції <em>open()</em> можна вказати у якому кодуванні файл, з яким ми хочемо працювати. Зробити це можна наступним чином: після вказання імені файла і режиму у якому він відкривається ми вказуємо ще один аргумент. Запусується це так:</p>
+<p>Існує ще декілька режимів, їх буде розглянуто у наступних темах.</p>
+<p>Функції <em>open()</em> можна вказати у якому кодуванні файл, з яким ми хочемо працювати. Зробити це можна наступним чином: після вказання імені файла і режиму у якому він відкривається ми вказуємо ще один аргумент. Записується це так:</p>
 <blockquote>
 <p>encoding=&lt;кодування&gt;</p>
 </blockquote>
-<p><em>&lt;кодування&gt;</em> — це об'єкт типу <em>str</em>, у якому у символьному вигляді представлена назва кодування тексту. Дуже зручно!</p>
+<p><em>&lt;кодування&gt;</em> — це об'єкт типу <em>str</em>, у якому у символьному вигляді представлена назва кодування текста. Дуже зручно!</p>
 <p>Наприклад, якщо ми хочемо читати з текстового файла який був записаний у кодуванні utf-8, то відкривати ми цей файл будемо наступним чином:</p>
 <pre><code>text_file = open('btc_rates.csv', 'r', encoding='UTF-8')
 </code></pre>
 <p>open() повертає нам об'єкт спеціального типу "файл".
-Надалі з файлом взаємодіють через методи цього об'єкту.</p>
+Надалі з файлом взаємодіють через методи цього об'єкта.</p>
 <h2 id="close">close()</h2>
 <p>Функція close() закриває файл. 
 Після цього ми вже не маємо змоги робити щось з файлом.</p>
@@ -1081,6 +1266,46 @@ text_file.close() # буде гарантовано записано на нос
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="unicode.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Текст">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Текст
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="read_write.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Читання і запис текстових файлів">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Читання і запис текстових файлів
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
