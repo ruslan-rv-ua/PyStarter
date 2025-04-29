@@ -9,5 +9,4 @@ def outer():
         print('finish "inner()"')
     inner()
     print('finish "outer()"')
-    
 outer()

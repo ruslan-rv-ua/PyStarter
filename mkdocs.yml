@@ -183,28 +183,29 @@ nav:
     - Текст: text_files/unicode.md
     - Текстові файли: text_files/open_close_flush.md
     - Читання і запис текстових файлів: text_files/read_write.md
-  # - 17. Модулі:
-  #   - Модулі в Python: modules/modules.md
-  #   - Використання модулів: modules/module_usage.md
-  #   - Створення модулів: modules/module_composing.md
-  # - 18. І знову функції:
-  #   - Стратегії обчислення: functions3/strategies.md
-  #   - Параметри і аргументи: functions3/params_args.md
-  #   - Області видимості: functions3/scope.md
-  #   - Документування функцій: functions3/docstrings.md
-  # - 19. Парадигми програмування:
-  #   - Основні парадигми програмування: paradigmas/paradigmas.md
-  #   - Імперативне програмування: paradigmas/imperative.md
-  #   - Об'єктно-орієнтоване програмування: paradigmas/oop.md
-  #   - Декларативне програмування: paradigmas/declarative.md
-  #   - Резюме: paradigmas/resume.md
-  # - 20. ООП:
-  #   - Парадигма ООП: oop/basics/basis.md
-  #   - Класи і об'єкти: oop/basics/classes.md
-  #   - Життєвий цикл об'єкта: oop/basics/object_lifecycle.md
-  #   - Ініціалізація об'єктів: oop/basics/init.md
+  - 17. Модулі:
+    - Модулі в Python: modules/modules.md
+    - Використання модулів: modules/module_usage.md
+    - Створення модулів: modules/module_composing.md
+  - 18. І знову функції:
+    - Стратегії обчислення: functions3/strategies.md
+    - Параметри і аргументи: functions3/params_args.md
+    - Простори імен: functions3/namespaces.md
+    - Області видимості: functions3/scopes.md
+    - Документування функцій: functions3/docstrings.md
+  - 19. Парадигми програмування:
+    - Основні парадигми програмування: paradigmas/paradigmas.md
+    - Імперативне програмування: paradigmas/imperative.md
+    - Об'єктно-орієнтоване програмування: paradigmas/oop.md
+    - Декларативне програмування: paradigmas/declarative.md
+    - Резюме: paradigmas/resume.md
+  - 20. ООП:
+    - Парадигма ООП: oop/basics/basis.md
+    - Класи і об'єкти: oop/basics/classes.md
+    - Життєвий цикл об'єкта: oop/basics/object_lifecycle.md
+    - Ініціалізація об'єктів: oop/basics/init.md
+    - Представлення об'єктів: oop/basics/object_presentation.md
   #   - Статичні та класові методи: oop/basics/static_and_class_methods.md
-  #   - Представлення об'єктів: oop/basics/object_presentation.md
   # - 21. Інкапсуляція:
   #   - Інкапсуляція в ООП: oop/encapsulation/encapsulation_basis.md
   #   - Приховування атрибутів: oop/encapsulation/hide_attributes.md
@@ -236,8 +237,8 @@ nav:
   #   - Типізація у програмуванні: types_and_structures/typing/typing.md
   #   - Типи даних в Python: types_and_structures/typing/data_types.md
   #   - Підказки типів: types_and_structures/typing/type_hinting.md
-  - 27. Числові типи:
-    - Системи числення: types_and_structures/numbers/number_system.md
+  # - 27. Числові типи:
+  #   - Системи числення: types_and_structures/numbers/number_system.md
   #   - Цілі числа: types_and_structures/numbers/int.md
   #   - Дійсні числа: types_and_structures/numbers/float.md
   #   - Комплексні числа: types_and_structures/numbers/complex.md
@@ -309,15 +310,15 @@ nav:
   #   - Встановлення: vscode/install.md
   #   - Комбінації клавіш: vscode/keybindings.md
   #   - Доступність: vscode/accessibility.md
-  # - Батарейки:
-  #   - Модуль random: batteries/random.md
+  - Батарейки:
+    - Модуль random: batteries/random.md
   #   - Модуль pprint: batteries/pprint.md
-  #   - Модуль datetime: batteries/datetime.md
+    - Модуль datetime: batteries/datetime.md
   #   - Модуль collections: batteries/collections.md
   #   - Модуль enum: batteries/enum.md
   #   - Модуль pathlib: comming_soon.md # batteries/pathlib.md
   #   - Модуль re: batteries/re.md
   #   - Модуль contextlib: batteries/contextlib.md
   #   - Модуль itertools: batteries/itertools.md
-  # - Дзен: zen.md
+  - Дзен: zen.md
   # - Корисні ресурси: resources.md

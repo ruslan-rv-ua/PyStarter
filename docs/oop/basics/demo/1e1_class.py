@@ -1,4 +1,5 @@
 class Person:
+    """Simple class"""
     print('Homo Sapiens')
 
 class Person:
@@ -12,14 +13,17 @@ Person.info()
 
 p = Person()
 # type(p)
+print(type(p))
 
 #### attrs
 
 r=p.name
 
 p.name = 'Jane'
-r=p.name
-c=Person.name
+#r=p.name
+print(f'{p.name=}')
+#c=Person.name
+print(f'{Person.name=}')
 
 #### methods
 
