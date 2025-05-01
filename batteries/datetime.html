@@ -1038,6 +1038,46 @@
       
   
   
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Інкапсуляція
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -1052,10 +1092,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" checked>
         
           
-          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1067,8 +1107,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_24">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_25">
             <span class="md-nav__icon md-icon"></span>
             Батарейки
           </label>
@@ -1229,6 +1269,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#aware-naive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aware та Naive об'єкти
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aware та Naive об'єкти">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aware об'єкти
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naive об'єкти
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1384,6 +1457,39 @@
       timedelta
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aware-naive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aware та Naive об'єкти
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aware та Naive об'єкти">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aware об'єкти
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naive об'єкти
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1599,6 +1705,51 @@ datetime.timedelta(18170, 70930, 703964)
 70930
 &gt;&gt;&gt;
 </code></pre>
+<h3 id="aware-naive">Aware та Naive об'єкти</h3>
+<p>У контексті програмування та інформатики:</p>
+<ul>
+<li><strong>Aware об'єкти:</strong> (Обізнані об'єкти, усвідомлені об'єкти) — мають інформацію про певний контекст або стан.</li>
+<li><strong>Naive об'єкти:</strong> (Наївні об'єкти) — не мають інформації про певний контекст або стан.</li>
+</ul>
+<p>Об'єкти дат і часу можуть бути класифіковані як "aware" (з інформацією про часовий пояс) або "naive" (без інформації про часовий пояс).</p>
+<h4 id="aware">Aware об'єкти</h4>
+<ul>
+<li>Мають атрибут tzinfo, відмінний від None.</li>
+<li>Метод tzinfo.utcoffset(x) повертає ненульове значення.</li>
+<li>Представляють конкретний момент часу, з можливістю точного порівняння між собою.</li>
+</ul>
+<h4 id="naive">Naive об'єкти</h4>
+<ul>
+<li>tzinfo дорівнює None.</li>
+<li>Не містять інформації про часовий пояс, тому їх інтерпретація залежить від контексту (наприклад, локальний час).</li>
+<li>Порівняння з aware об'єктами може призвести до помилок.</li>
+</ul>
+<p><strong>Приклад:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dt</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span><span class="w"> </span><span class="nn">zoneinfo</span><span class="w"> </span><span class="kn">import</span> <span class="n">ZoneInfo</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dt_naive</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">dt_naive</span><span class="p">)</span>
+<span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span> <span class="mi">10</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mf">53.111195</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dt_naive</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dt_aware</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="n">ZoneInfo</span><span class="p">(</span><span class="s1">&#39;Europe/Kyiv&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">dt_aware</span><span class="p">)</span>
+<span class="mi">2025</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">01</span> <span class="mi">10</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mf">53.196062</span><span class="o">+</span><span class="mi">03</span><span class="p">:</span><span class="mi">00</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dt_aware</span><span class="o">.</span><span class="n">tzinfo</span>
+<span class="n">zoneinfo</span><span class="o">.</span><span class="n">ZoneInfo</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;Europe/Kyiv&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">dt_aware</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">)</span>
+<span class="n">Europe</span><span class="o">/</span><span class="n">Kyiv</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">(</span><span class="n">dt_aware</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">10800</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">(</span><span class="n">dt_aware</span><span class="p">)</span><span class="o">.</span><span class="n">seconds</span> <span class="o">/</span> <span class="mi">3600</span>
+<span class="mf">3.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">utc_now</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">UTC</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">(</span><span class="n">utc_now</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">utc_now</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">)</span>
+<span class="n">UTC</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 <h2 id="_5">Додаткові матеріали</h2>
 <ul>
 <li><a href="https://docs.python.org/3/library/datetime.html">Документація: модуль datetime</a></li>

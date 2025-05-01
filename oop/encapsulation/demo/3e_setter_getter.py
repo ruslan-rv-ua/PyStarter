@@ -13,7 +13,7 @@ class Person:
         return self._age
     def set_age(self, age):
         if age < 1:
-            raise ValueError(f'age must be > 0, but {age!r} given')
+            raise ValueError(f'age must be > 0, but {age!r} recieved.')
         self._age = age
             
 p = Person('Alice', 35)

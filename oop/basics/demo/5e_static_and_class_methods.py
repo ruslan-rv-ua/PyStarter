@@ -1,18 +1,19 @@
 class SomeClass:
 	def i(self):
-		print('instance method called', self)
+		print('instance method', self)
 	@classmethod
 	def c(cls):
-		print('class method called', cls)
+		print('class method', cls)
 	@staticmethod
 	def s():
-		print('static method called')
+		print('static method')
 		
-obj = SomeClass()
+
 # SomeClass.i()
 SomeClass.c()
 SomeClass.s()
 
+obj = SomeClass()
 obj.i()
 obj.c()
 obj.s()

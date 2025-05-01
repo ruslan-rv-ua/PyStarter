@@ -1050,6 +1050,46 @@
         
   
   
+    <a href="../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Інкапсуляція
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="random.html" class="md-nav__link">
       
   
@@ -1291,6 +1331,15 @@ Person(name='Alice', job='HR')
 <p>Зауважте: імена деяких методів починаються з символа підкреслення, 
 але є частиною відкритого інтерфейса. 
 Це зроблено для того, щоб уникнути колізій з іменами які визначатиме розробник. </p>
+<p>Варто використовувати <code>namedtuple</code> коли:</p>
+<ul>
+<li>потрібна немутабельна структура даних</li>
+<li>потрібен легкий та зрозумілий контейнер для даних замість повноцінного класу</li>
+<li>важлива економія пам'яті та швидкодія</li>
+<li>дані представляють собою просту колекцію полів без методів</li>
+<li>потрібно зробити код більш читабельним порівняно з простими кортежами</li>
+<li>потрібно зберегти сумісність з кодом, що очікує кортежі</li>
+</ul>
 <h3 id="defaultdict">defaultdict</h3>
 <p>Спроба отримати значення зі словника по неіснуючому ключу призводить до відповідної помилки: </p>
 <pre><code>&gt;&gt;&gt; favorites = {'fruit': 'apple'}
@@ -1440,6 +1489,7 @@ TypeError: unhashable type: 'list'
 Ознайомитись з усіма можна у відповідній документації.</p>
 <h2 id="_1">Додаткові матеріали</h2>
 <ul>
+<li><a href="https://docs.python.org/uk/3.13/library/collections.html">Документація Python: collections</a></li>
 <li><a href="https://realpython.com/python-collections-module/">Стаття Python's collections: A Buffet of Specialized Data Types</a></li>
 </ul>
 
