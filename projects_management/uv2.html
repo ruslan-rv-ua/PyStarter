@@ -1,0 +1,1644 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python.">
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/projects_management/uv2.html">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+    
+    
+      
+        <title>uv: універсальне рішення для проєктів Python - PyStarter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../_stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../_stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../_stylesheets/fixes.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#uv-python" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PyStarter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              uv: універсальне рішення для проєктів Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg>
+
+    </a>
+    PyStarter
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Про цей курс
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miths_about_education.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Міфи про навчання
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Мова програмування Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../preparations/os.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    01. Підготовка
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../vars_and_types/types.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    02. Типи даних. Змінні
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../source_code/source_code.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    03. Python-програми
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../strings/strings.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    04. Символьні рядки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functions/functions.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    05. Функції
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../bool_logic/bool.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    06. Логіка
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../if/if_statement.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    07. Розгалуження
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functions_def/functions_explained.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    08. Створення функцій
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../loop_while/loops.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    09. Цикл "while"
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sequences/collections.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Списки і кортежі
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../objects/objects_and_vars.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Об'єкти в Python
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../loop_for/for.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Цикл "for"
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../methods/methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Методи
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../methods_list/list_methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Методи списків
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../dict/dict.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. Словники
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../text_files/unicode.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. Текстові файли
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../modules/modules.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. Модулі
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functions3/strategies.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. І знову функції
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    19. Парадигми програмування
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/basics/basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    20. ООП
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Інкапсуляція
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/inheritance/inheritance_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    22. Успадкування
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../batteries/random.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Батарейки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zen.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Дзен
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Що таке uv?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uv_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Встановлення uv
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Встановлення uv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Використання самостійного інсталятора
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pypi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Встановлення з PyPI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Перевірка встановлення
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Керування проєктами Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Керування проєктами Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Створення нового проєкту
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Запуск скрипта проєкту
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Керування залежностями
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Керування залежностями">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Додавання залежностей
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оновлення залежностей
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Видалення залежностей
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Блокування та синхронізація середовища
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Блокування та синхронізація середовища">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Перегляд встановлених пакунків
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Явне блокування та синхронізація
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Збірка та публікація пакунків
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Збірка та публікація пакунків">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Конфігурація проєкту для збірки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Збірка дистрибутиву
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Публікація дистрибутиву
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Висновок
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="uv-python">uv: універсальне рішення для проєктів Python</h1>
+<p>uv – це сучасний високошвидкісний інструмент для керування пакунками та проєктами Python, розроблений на Rust. Його головна перевага – надзвичайна швидкість, що може бути у 10-100 разів вищою за стандартний pip. Давайте розглянемо, як uv може оптимізувати ваш робочий процес та стати універсальним рішенням для ваших Python проєктів.</p>
+<h2 id="uv">Що таке uv?</h2>
+<p>uv об'єднує функціональність кількох популярних інструментів екосистеми Python:</p>
+<ul>
+<li>pip і pip-tools (керування пакунками)</li>
+<li>virtualenv (керування віртуальними середовищами)</li>
+<li>pyenv (керування версіями Python)</li>
+<li>poetry (керування проєктами)</li>
+<li>twine (публікація пакунків)</li>
+</ul>
+<p>Це єдиний самостійний бінарний файл, що значно спрощує встановлення та використання.</p>
+<h2 id="uv_1">Встановлення uv</h2>
+<p>Існує кілька способів встановлення uv. Розглянемо найпопулярніші:</p>
+<h3 id="1">1. Використання самостійного інсталятора</h3>
+<p>Для Linux та macOS:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<span class="c1"># uv успішно встановлено!</span>
+</code></pre></div>
+<p>Або, використовуючи wget:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>wget<span class="w"> </span>-qO-<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<span class="c1"># uv успішно встановлено!</span>
+</code></pre></div>
+<p>Для встановлення конкретної версії:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/0.6.12/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<span class="c1"># uv 0.6.12 успішно встановлено!</span>
+</code></pre></div>
+<h3 id="2-pypi">2. Встановлення з PyPI</h3>
+<p>Використовуючи pipx для глобального доступу:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>pipx<span class="w"> </span>install<span class="w"> </span>uv
+<span class="c1"># uv успішно встановлено!</span>
+</code></pre></div>
+<h3 id="_1">Перевірка встановлення</h3>
+<p>Після встановлення перевірте версію:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>--version
+uv<span class="w"> </span><span class="m">0</span>.6.12
+</code></pre></div>
+<h2 id="python">Керування проєктами Python</h2>
+<h3 id="_2">Створення нового проєкту</h3>
+<p>Для створення та ініціалізації проєкту виконайте:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>init<span class="w"> </span>rpcats
+<span class="c1"># Створено проєкт rpcats з наступною структурою:</span>
+<span class="c1"># rpcats/</span>
+<span class="c1"># ├── .git/</span>
+<span class="c1"># ├── .gitignore</span>
+<span class="c1"># ├── .python-version</span>
+<span class="c1"># ├── README.md</span>
+<span class="c1"># ├── main.py</span>
+<span class="c1"># └── pyproject.toml</span>
+</code></pre></div>
+<p>Команда <code>uv init</code> автоматично створює:
+- Git репозиторій
+- .gitignore з типовими виключеннями
+- .python-version для вказання версії Python
+- Порожній README.md
+- main.py з базовим кодом
+- pyproject.toml з базовою конфігурацією</p>
+<h3 id="_3">Запуск скрипта проєкту</h3>
+<p>Після створення проєкту запустити головний скрипт можна так:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>main.py
+<span class="c1"># Створення віртуального середовища у .venv/</span>
+<span class="c1"># Використовується Python 3.11.7</span>
+<span class="c1"># Hello, World!</span>
+</code></pre></div>
+<p>При першому запуску uv автоматично:
+1. Створює віртуальне середовище у <code>.venv/</code>
+2. Створює файл <code>uv.lock</code> для блокування залежностей</p>
+<h2 id="_4">Керування залежностями</h2>
+<h3 id="_5">Додавання залежностей</h3>
+<p>Щоб додати нову залежність до проєкту:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>requests
+<span class="c1"># Додано requests 2.31.0 до pyproject.toml</span>
+<span class="c1"># Оновлено uv.lock</span>
+<span class="c1"># Встановлено requests 2.31.0 та його залежності</span>
+</code></pre></div>
+<p>Для додавання залежностей розробки використовуйте опцію <code>--dev</code>:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>pytest
+<span class="c1"># Додано pytest 7.4.3 до pyproject.toml у секцію [dependency-groups.dev]</span>
+<span class="c1"># Оновлено uv.lock</span>
+<span class="c1"># Встановлено pytest 7.4.3 та його залежності</span>
+</code></pre></div>
+<h3 id="_6">Оновлення залежностей</h3>
+<p>Для оновлення існуючої залежності:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>add<span class="w"> </span>--upgrade<span class="w"> </span>requests
+<span class="c1"># Оновлено requests до версії 2.32.0</span>
+<span class="c1"># Оновлено uv.lock</span>
+</code></pre></div>
+<h3 id="_7">Видалення залежностей</h3>
+<p>Щоб видалити залежність з проєкту:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>remove<span class="w"> </span>requests
+<span class="c1"># Видалено requests та його транзитивні залежності</span>
+<span class="c1"># Оновлено pyproject.toml та uv.lock</span>
+</code></pre></div>
+<h2 id="_8">Блокування та синхронізація середовища</h2>
+<p>Файл <code>uv.lock</code> містить точну інформацію про всі залежності проєкту. Він забезпечує відтворюваність середовища на будь-якій системі.</p>
+<h3 id="_9">Перегляд встановлених пакунків</h3>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>pip<span class="w"> </span>list
+<span class="c1"># Package      Version</span>
+<span class="c1"># ------------ -------</span>
+<span class="c1"># requests     2.31.0</span>
+<span class="c1"># certifi      2023.7.22</span>
+<span class="c1"># charset-normalizer 3.3.0</span>
+<span class="c1"># idna         3.4</span>
+<span class="c1"># urllib3      2.0.6</span>
+</code></pre></div>
+<h3 id="_10">Явне блокування та синхронізація</h3>
+<p>При необхідності ви можете явно виконати блокування та синхронізацію:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>lock
+<span class="c1"># Оновлено uv.lock</span>
+&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>sync
+<span class="c1"># Синхронізовано залежності з uv.lock</span>
+</code></pre></div>
+<h2 id="_11">Збірка та публікація пакунків</h2>
+<h3 id="_12">Конфігурація проєкту для збірки</h3>
+<p>У файлі <code>pyproject.toml</code> потрібно налаштувати:</p>
+<ol>
+<li>Точку входу для CLI додатків:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">[project.scripts]</span>
+<span class="n">rpcats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;main:main&quot;</span>
+</code></pre></div>
+<ol>
+<li>Систему збірки:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">[build-system]</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&gt;=42&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wheel&gt;=0.37.0&quot;</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
+</code></pre></div>
+<h3 id="_13">Збірка дистрибутиву</h3>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>build
+<span class="c1"># Створено dist/rpcats-0.1.0.tar.gz (sdist)</span>
+<span class="c1"># Створено dist/rpcats-0.1.0-py3-none-any.whl (wheel)</span>
+</code></pre></div>
+<h3 id="_14">Публікація дистрибутиву</h3>
+<p>Для публікації на TestPyPI:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>publish<span class="w"> </span>--index<span class="w"> </span>testpypi<span class="w"> </span>--token<span class="w"> </span>your_token_here
+<span class="c1"># Опубліковано rpcats-0.1.0 на TestPyPI</span>
+</code></pre></div>
+<p>Для публікації на основний PyPI:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt;<span class="w"> </span>uv<span class="w"> </span>publish<span class="w"> </span>--token<span class="w"> </span>your_token_here
+<span class="c1"># Опубліковано rpcats-0.1.0 на PyPI</span>
+</code></pre></div>
+<h2 id="_15">Висновок</h2>
+<p>uv – це потужний та швидкий інструмент, що спрощує керування проєктами Python. Його основні переваги:</p>
+<ol>
+<li>Надзвичайна швидкість (до 100 разів швидше за pip)</li>
+<li>Єдиний інструмент замість багатьох окремих</li>
+<li>Автоматичне керування віртуальними середовищами</li>
+<li>Відтворюване середовище через файл блокування</li>
+</ol>
+<p>Це робить uv відмінним вибором для будь-яких Python проєктів, від невеликих скриптів до складних програмних систем.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Ruslan Iskov <ruslan.rv.ua@gmail.com>
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ruslan-rv-ua/pystarter" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f13b1293.min.js"></script>
+      
+    
+  </body>
+</html>

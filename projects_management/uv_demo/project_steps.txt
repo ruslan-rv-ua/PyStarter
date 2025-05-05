@@ -1,0 +1,22 @@
+uv init --package md-converter
+
+cd md-converter
+
+uv add markdown-it-py click
+
+uv tree
+
+...files
+
+uv run md-converter
+
+uv run md-converter --help
+
+uv build
+
+uv python install 3.10
+uv python pin 3.10
+uv sync
+uv run python
+
+uv build
