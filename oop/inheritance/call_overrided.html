@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/oop/inheritance/call_overrided.html">
       
       
+        <link rel="prev" href="linearization.html">
+      
+      
+        <link rel="next" href="../polymorphism/polymorphism_basis.html">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Доступ до атрибутів базового класа - PyStarter</title>
+        <title>Виклик перевизначених методів - PyStarter</title>
       
     
     
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Доступ до атрибутів базового класа
+              Виклик перевизначених методів
             
           </span>
         </div>
@@ -1074,6 +1078,262 @@
       
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    22. Успадкування
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_25">
+            <span class="md-nav__icon md-icon"></span>
+            22. Успадкування
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inheritance_basis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Успадкування в ООП
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inheritance_python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Успадкування в Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="attrs_inheritance.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Успадкування атрибутів
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="multiple_inheritance.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Множинне успадкування
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="linearization.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Лінеаризація
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Виклик перевизначених методів
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="call_overrided.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Виклик перевизначених методів
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Явний виклик метода класа
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#super" class="md-nav__link">
+    <span class="md-ellipsis">
+      super()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#super_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      super() і множинна спадковість
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Додаткові матеріали
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     
@@ -1090,11 +1350,11 @@
         
   
   
-    <a href="inheritance_basis.html" class="md-nav__link">
+    <a href="../polymorphism/polymorphism_basis.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    22. Успадкування
+    23. Поліморфізм
     
   </span>
   
@@ -1293,7 +1553,7 @@
 
 
 
-<h1 id="_1">Доступ до атрибутів базового класа</h1>
+<h1 id="_1">Виклик перевизначених методів</h1>
 <p>Уявімо ситуацію, що в базовому класі, від якого ми будемо успадковувати наш новий клас, 
 вже реалізовано певний метод, котрий підходить нам по своїй функціональності, 
 але у ньому не вистачає певних речей, 
@@ -1464,6 +1724,46 @@ True
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="linearization.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Лінеаризація">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Лінеаризація
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../polymorphism/polymorphism_basis.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Поліморфізм в ООП">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Поліморфізм в ООП
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

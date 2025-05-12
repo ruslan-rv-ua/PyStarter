@@ -1128,6 +1128,46 @@
         
   
   
+    <a href="polymorphism_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    23. Поліморфізм
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
     <a href="../../types_and_structures/sequences/string.html" class="md-nav__link">
       
   
@@ -1300,7 +1340,10 @@
 <p>Назва терміна походить від англійського «duck test» («качиний тест»), який в оригіналі звучить так: </p>
 <blockquote>
 <p>If it looks like a duck, swims like a duck and quacks like a duck, then it probably is a duck.</p>
-<p>(Якщо воно виглядає як качка, плаває як качка і крякає як качка, то це напевно і є качка).</p>
+</blockquote>
+<p>Переклад:</p>
+<blockquote>
+<p>Якщо воно виглядає як качка, плаває як качка і кахкає як качка, то це, ймовірно, і є качка.</p>
 </blockquote>
 <p>Смисл качиної типізації полягає у послабленні типів. 
 Замість того, щоб піклуватись про точний клас об'єкта, 
@@ -1319,20 +1362,20 @@
 <p>Ще приклад:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Duck</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Кря!&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ках!&#39;</span><span class="p">)</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Людина імітує крякання: &quot;Кря!&quot;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;Людина імітує кахкання качки&gt;&#39;</span><span class="p">)</span>
 </code></pre></div>
 <pre><code>&gt;&gt;&gt; donald = Duck()
 &gt;&gt;&gt; john = Person('Іван')
 &gt;&gt;&gt; donald.quack()
 Кря!
 &gt;&gt;&gt; john.quack()
-Людина імітує крякання: "Кря!"
+&lt;Людина імітує кахкання качки&gt;
 &gt;&gt;&gt; john.name
 'Іван'
 &gt;&gt;&gt;
