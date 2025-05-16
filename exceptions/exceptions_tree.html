@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ієрархія класів винятків Python</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-size: 18px; /* Large font */
+      font-family: sans-serif;
+      line-height: 1.6; /* Increased line height for readability */
+      padding: 20px;
+      margin: 0;
+    }
+    h1 {
+      color: #f0f0f0; /* Lighter color for heading for contrast */
+      border-bottom: 1px solid #555;
+      padding-bottom: 0.5em;
+    }
+    ul, li {
+      list-style: none;
+      margin: 0;
+      padding-left: 20px; /* Indentation for sub-levels */
+    }
+    li {
+      margin-top: 5px; /* Spacing between items */
+    }
+    [role="tree"] {
+      padding-left: 0;
+    }
+    [role="treeitem"] {
+      cursor: pointer;
+      padding: 5px 8px; /* Increased padding for touch targets and visual separation */
+      border-radius: 4px; /* Slightly rounded corners */
+      position: relative; /* For positioning the twistie */
+    }
+    [role="treeitem"]:focus {
+      outline: 3px solid #007bff; /* Clearer, high-contrast focus indicator */
+      background-color: #3a3a3a; /* Background for focused item */
+      color: #ffffff; /* Text color for focused item */
+    }
+    li[aria-expanded="false"] > ul[role="group"] {
+      display: none;
+    }
+    .tree-node-container {
+      display: flex;
+      align-items: center;
+    }
+    .twistie {
+      display: inline-block;
+      width: 1.5em; /* Wider twistie for easier clicking */
+      text-align: center;
+      font-weight: bold;
+      color: #007bff; /* Brighter color for twistie */
+    }
+    .twistie::before {
+      content: "-"; /* Minus sign for expanded */
+      transition: transform 0.2s ease-in-out;
+    }
+    li[aria-expanded="false"] > .tree-node-container > .twistie::before {
+      content: "+"; /* Plus sign for collapsed */
+    }
+    li:not(:has(> ul[role="group"])) > .tree-node-container > .twistie {
+      visibility: hidden; /* Hide twistie for leaf nodes */
+    }
+    .label {
+      margin-left: 0.5em;
+      font-weight: bold; /* Make label bold */
+    }
+    .description {
+      margin-left: 0.5em;
+      font-style: italic;
+      color: #b0b0b0; /* Slightly lighter color for description */
+      font-size: 0.9em; /* Slightly smaller font for description */
+    }
+  </style>
+</head>
+<body>
+  <ul id="tree" role="tree">
+    <li role="treeitem" aria-expanded="true" tabindex="0">
+      <div class="tree-node-container">
+        <span class="twistie"></span><span class="label">BaseException</span><span class="description"> - Базовий клас для всіх вбудованих винятків.</span>
+      </div>
+      <ul role="group">
+        <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">SystemExit</span><span class="description"> - Виникає при виклику функції sys.exit().</span></div></li>
+        <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">KeyboardInterrupt</span><span class="description"> - Виникає, коли користувач натискає клавішу переривання (Ctrl+C або Delete).</span></div></li>
+        <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">GeneratorExit</span><span class="description"> - Виникає, коли генератор або співпрограма закривається.</span></div></li>
+        <li role="treeitem" aria-expanded="false" tabindex="-1">
+          <div class="tree-node-container">
+            <span class="twistie"></span><span class="label">Exception</span><span class="description"> - Базовий клас для всіх несистемних винятків.</span>
+          </div>
+          <ul role="group">
+            <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">StopIteration</span><span class="description"> - Виникає, коли ітератор не має більше значень.</span></div></li>
+            <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">StopAsyncIteration</span><span class="description"> - Виникає, коли асинхронний ітератор не має більше значень.</span></div></li>
+            <li role="treeitem" aria-expanded="false" tabindex="-1">
+              <div class="tree-node-container">
+                <span class="twistie"></span><span class="label">ArithmeticError</span><span class="description"> - Базовий клас для арифметичних помилок.</span>
+              </div>
+              <ul role="group">
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">FloatingPointError</span><span class="description"> - Виникає при помилці операції з плаваючою комою.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">OverflowError</span><span class="description"> - Виникає, коли результат арифметичної операції занадто великий для представлення.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">ZeroDivisionError</span><span class="description"> - Виникає при діленні на нуль.</span></div></li>
+              </ul>
+            </li>
+            <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">AssertionError</span><span class="description"> - Виникає, коли інструкція assert не виконується.</span></div></li>
+            <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">AttributeError</span><span class="description"> - Виникає при невдалому доступі до атрибута або його присвоєнні.</span></div></li>
+            <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">BufferError</span><span class="description"> - Виникає, коли операція, пов'язана з буфером, не може бути виконана.</span></div></li>
+            <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">EOFError</span><span class="description"> - Виникає, коли функція input() досягає кінця файлу без зчитування даних.</span></div></li>
+            <li role="treeitem" aria-expanded="false" tabindex="-1">
+              <div class="tree-node-container">
+                <span class="twistie"></span><span class="label">ImportError</span><span class="description"> - Виникає, коли інструкція import не може знайти модуль або ім'я.</span>
+              </div>
+              <ul role="group">
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">ModuleNotFoundError</span><span class="description"> - Підклас ImportError; виникає, коли модуль не знайдено.</span></div></li>
+              </ul>
+            </li>
+            <li role="treeitem" aria-expanded="false" tabindex="-1">
+              <div class="tree-node-container">
+                <span class="twistie"></span><span class="label">LookupError</span><span class="description"> - Базовий клас для помилок пошуку.</span>
+              </div>
+              <ul role="group">
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">IndexError</span><span class="description"> - Виникає, коли індекс послідовності виходить за межі діапазону.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">KeyError</span><span class="description"> - Виникає, коли ключ словника не знайдено.</span></div></li>
+              </ul>
+            </li>
+            <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">MemoryError</span><span class="description"> - Виникає, коли операція вичерпує пам'ять.</span></div></li>
+            <li role="treeitem" aria-expanded="false" tabindex="-1">
+              <div class="tree-node-container">
+                <span class="twistie"></span><span class="label">NameError</span><span class="description"> - Виникає, коли локальне або глобальне ім'я не знайдено.</span>
+              </div>
+              <ul role="group">
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">UnboundLocalError</span><span class="description"> - Виникає при посиланні на локальну змінну, якій не присвоєно значення.</span></div></li>
+              </ul>
+            </li>
+            <li role="treeitem" aria-expanded="false" tabindex="-1">
+              <div class="tree-node-container">
+                <span class="twistie"></span><span class="label">OSError</span><span class="description"> - Базовий клас для помилок, пов'язаних з операційною системою.</span>
+              </div>
+              <ul role="group">
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">BlockingIOError</span><span class="description"> - Виникає, коли операція блокувала б об'єкт, налаштований на неблокуючий режим.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">ChildProcessError</span><span class="description"> - Виникає при помилці в дочірньому процесі.</span></div></li>
+                <li role="treeitem" aria-expanded="false" tabindex="-1">
+                  <div class="tree-node-container">
+                    <span class="twistie"></span><span class="label">ConnectionError</span><span class="description"> - Базовий клас для помилок, пов'язаних зі з'єднанням.</span>
+                  </div>
+                  <ul role="group">
+                    <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">BrokenPipeError</span><span class="description"> - Виникає при спробі запису в канал, коли інший кінець закрито...</span></div></li>
+                    <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">ConnectionAbortedError</span><span class="description"> - Виникає, коли спроба з'єднання була перервана іншою стороною.</span></div></li>
+                    <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">ConnectionRefusedError</span><span class="description"> - Виникає, коли спроба з'єднання була відхилена іншою стороною.</span></div></li>
+                    <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">ConnectionResetError</span><span class="description"> - Виникає, коли з'єднання було розірвано іншою стороною.</span></div></li>
+                  </ul>
+                </li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">FileExistsError</span><span class="description"> - Виникає при спробі створити файл або каталог, який вже існує.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">FileNotFoundError</span><span class="description"> - Виникає, коли файл або каталог не знайдено.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">InterruptedError</span><span class="description"> - Виникає, коли системний виклик переривається вхідним сигналом.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">IsADirectoryError</span><span class="description"> - Виникає, коли операція з файлом застосовується до каталогу.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">NotADirectoryError</span><span class="description"> - Виникає, коли операція, що очікує каталог, застосовується до чогось іншого.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">PermissionError</span><span class="description"> - Виникає при спробі виконати операцію без належних прав доступу.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">ProcessLookupError</span><span class="description"> - Виникає, коли заданий процес не існує.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">TimeoutError</span><span class="description"> - Виникає, коли системна функція вичерпує час очікування.</span></div></li>
+              </ul>
+            </li>
+            <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">ReferenceError</span><span class="description"> - Виникає при спробі доступу до атрибута слабкого посилання, яке вже було зібрано.</span></div></li>
+            <li role="treeitem" aria-expanded="false" tabindex="-1">
+              <div class="tree-node-container">
+                <span class="twistie"></span><span class="label">RuntimeError</span><span class="description"> - Виникає, коли виявлено помилку, яка не належить до жодної з інших категорій.</span>
+              </div>
+              <ul role="group">
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">NotImplementedError</span><span class="description"> - Виникає, коли абстрактні методи вимагають реалізації.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">RecursionError</span><span class="description"> - Виникає, коли перевищено максимальну глибину рекурсії.</span></div></li>
+              </ul>
+            </li>
+            <li role="treeitem" aria-expanded="false" tabindex="-1">
+              <div class="tree-node-container">
+                <span class="twistie"></span><span class="label">SyntaxError</span><span class="description"> - Виникає, коли парсер зустрічає синтаксичну помилку.</span>
+              </div>
+              <ul role="group">
+                <li role="treeitem" aria-expanded="false" tabindex="-1">
+                  <div class="tree-node-container">
+                    <span class="twistie"></span><span class="label">IndentationError</span><span class="description"> - Виникає при неправильному відступі.</span>
+                  </div>
+                  <ul role="group">
+                    <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">TabError</span><span class="description"> - Виникає, коли відступи містять суперечливе використання табуляції та пробілів.</span></div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">SystemError</span><span class="description"> - Виникає, коли інтерпретатор знаходить внутрішню помилку.</span></div></li>
+            <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">TypeError</span><span class="description"> - Виникає, коли операція або функція застосовується до об'єкта невідповідного типу.</span></div></li>
+            <li role="treeitem" aria-expanded="false" tabindex="-1">
+              <div class="tree-node-container">
+                <span class="twistie"></span><span class="label">ValueError</span><span class="description"> - Виникає, коли операція або функція отримує аргумент правильного типу, але з неприпустимим значенням.</span>
+              </div>
+              <ul role="group">
+                <li role="treeitem" aria-expanded="false" tabindex="-1">
+                  <div class="tree-node-container">
+                    <span class="twistie"></span><span class="label">UnicodeError</span><span class="description"> - Базовий клас для помилок, пов'язаних з кодуванням/декодуванням Unicode.</span>
+                  </div>
+                  <ul role="group">
+                    <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">UnicodeDecodeError</span><span class="description"> - Виникає при помилці декодування Unicode.</span></div></li>
+                    <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">UnicodeEncodeError</span><span class="description"> - Виникає при помилці кодування Unicode.</span></div></li>
+                    <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">UnicodeTranslateError</span><span class="description"> - Виникає при помилці трансляції Unicode.</span></div></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li role="treeitem" aria-expanded="false" tabindex="-1">
+              <div class="tree-node-container">
+                <span class="twistie"></span><span class="label">Warning</span><span class="description"> - Базовий клас для попереджень.</span>
+              </div>
+              <ul role="group">
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">DeprecationWarning</span><span class="description"> - Попередження про застарілі функції.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">PendingDeprecationWarning</span><span class="description"> - Попередження про функції, які будуть застарілими в майбутньому.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">RuntimeWarning</span><span class="description"> - Попередження про сумнівну поведінку під час виконання.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">SyntaxWarning</span><span class="description"> - Попередження про сумнівний синтаксис.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">UserWarning</span><span class="description"> - Попередження, генеровані кодом користувача.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">FutureWarning</span><span class="description"> - Попередження про функції, які будуть змінені в майбутньому.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">ImportWarning</span><span class="description"> - Попередження, що виникають під час імпорту модулів.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">UnicodeWarning</span><span class="description"> - Попередження, пов'язані з Unicode.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">BytesWarning</span><span class="description"> - Попередження, пов'язані з байтами та байтовими рядками.</span></div></li>
+                <li role="treeitem" tabindex="-1"><div class="tree-node-container"><span class="twistie"></span><span class="label">ResourceWarning</span><span class="description"> - Попередження, пов'язані з використанням ресурсів.</span></div></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+  (function() {
+    const tree = document.getElementById('tree');
+    // Get all treeitems, including those that might be added dynamically if the tree were more complex
+    function getAllTreeitems() {
+        return Array.from(tree.querySelectorAll('[role="treeitem"]'));
+    }
+
+    function initTreeitem(item) {
+        const childGroup = item.querySelector(':scope > ul[role="group"]');
+        const hasChildren = childGroup && childGroup.children.length > 0;
+
+        if (hasChildren) {
+            if (item.getAttribute('aria-expanded') === null) {
+                 // Default to collapsed unless specified
+                item.setAttribute('aria-expanded', 'false');
+            }
+        } else {
+            // Ensure leaf nodes don't have aria-expanded
+            item.removeAttribute('aria-expanded');
+        }
+
+        // Click event for toggling and focus
+        item.addEventListener('click', e => {
+            // Prevent event from bubbling to parent treeitems
+            e.stopPropagation();
+
+            // Set focus to the clicked item
+            const allItems = getAllTreeitems();
+            allItems.forEach(i => i.setAttribute('tabindex', '-1'));
+            item.setAttribute('tabindex', '0');
+            // item.focus(); // Focus can be distracting on click for some users, consider if needed
+
+            if (hasChildren) {
+                const isExpanded = item.getAttribute('aria-expanded') === 'true';
+                item.setAttribute('aria-expanded', String(!isExpanded));
+            }
+        });
+
+        // Keydown event
+        item.addEventListener('keydown', e => {
+            e.stopPropagation(); // Prevent default browser actions for arrow keys, etc.
+
+            const allItems = getAllTreeitems();
+            const visibleItems = allItems.filter(i => {
+                let current = i;
+                while (current && current !== tree) {
+                    if (current.parentElement.getAttribute('role') === 'group' &&
+                        current.parentElement.parentElement.getAttribute('aria-expanded') === 'false') {
+                        return false;
+                    }
+                    current = current.parentElement;
+                }
+                return true;
+            });
+
+            const currentIndex = visibleItems.indexOf(item);
+            let nextItem = null;
+
+            switch (e.key) {
+                case 'ArrowDown':
+                    if (currentIndex < visibleItems.length - 1) {
+                        nextItem = visibleItems[currentIndex + 1];
+                    }
+                    e.preventDefault();
+                    break;
+                case 'ArrowUp':
+                    if (currentIndex > 0) {
+                        nextItem = visibleItems[currentIndex - 1];
+                    }
+                    e.preventDefault();
+                    break;
+                case 'ArrowRight':
+                    if (hasChildren) {
+                        if (item.getAttribute('aria-expanded') === 'false') {
+                            item.setAttribute('aria-expanded', 'true');
+                        } else { // If already expanded, move to first child
+                            const firstChild = item.querySelector(':scope > ul[role="group"] > [role="treeitem"]');
+                            if (firstChild) nextItem = firstChild;
+                        }
+                    }
+                    e.preventDefault();
+                    break;
+                case 'ArrowLeft':
+                    if (hasChildren && item.getAttribute('aria-expanded') === 'true') {
+                        item.setAttribute('aria-expanded', 'false');
+                    } else { // If collapsed or no children, move to parent
+                        const parentGroup = item.parentElement;
+                        if (parentGroup && parentGroup.getAttribute('role') === 'group') {
+                            const parentNode = parentGroup.parentElement;
+                            if (parentNode && parentNode.getAttribute('role') === 'treeitem') {
+                                nextItem = parentNode;
+                            }
+                        }
+                    }
+                    e.preventDefault();
+                    break;
+                case 'Home':
+                    nextItem = visibleItems[0];
+                    e.preventDefault();
+                    break;
+                case 'End':
+                    nextItem = visibleItems[visibleItems.length - 1];
+                    e.preventDefault();
+                    break;
+                case 'Enter':
+                case ' ': // Space key
+                    if (hasChildren) {
+                        const isExpanded = item.getAttribute('aria-expanded') === 'true';
+                        item.setAttribute('aria-expanded', String(!isExpanded));
+                    }
+                    e.preventDefault();
+                    break;
+            }
+
+            if (nextItem) {
+                item.setAttribute('tabindex', '-1');
+                nextItem.setAttribute('tabindex', '0');
+                nextItem.focus();
+            }
+        });
+    }
+
+    // Initialize all tree items
+    const initialItems = getAllTreeitems();
+    initialItems.forEach(initTreeitem);
+
+    // Set initial focus on the first tree item if available
+    if (initialItems.length > 0 && !initialItems.find(i => i.getAttribute('tabindex') === '0')) {
+        initialItems[0].setAttribute('tabindex', '0');
+        // initialItems[0].focus(); // Optionally focus on load
+    }
+  })();
+  </script>
+</body>
+</html>
