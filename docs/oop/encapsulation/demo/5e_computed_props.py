@@ -21,7 +21,7 @@ class TemperatureConverter:
     @celsius.setter
     def celsius(self, value):
         if value < -273.15:
-            raise ValueError('Temperature below -273.15°C is not possible')
+            raise ValueError('Temperature below absolute zero is not possible')
         self._celsius = value
 
     @property

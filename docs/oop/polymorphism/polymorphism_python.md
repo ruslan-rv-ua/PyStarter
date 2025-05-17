@@ -35,7 +35,9 @@
 
 > If it looks like a duck, swims like a duck and quacks like a duck, then it probably is a duck.
 
-> (Якщо воно виглядає як качка, плаває як качка і крякає як качка, то це напевно і є качка).
+Переклад:
+
+> Якщо воно виглядає як качка, плаває як качка і кахкає як качка, то це, ймовірно, і є качка.
 
 Смисл качиної типізації полягає у послабленні типів. 
 Замість того, щоб піклуватись про точний клас об'єкта, 
@@ -60,13 +62,13 @@ def func(obj):
 ```python
 class Duck:
 	def quack(self):
-		print('Кря!')
+		print('Ках!')
 
 class Person:
 	def __init__(self, name):
 		self.name = name
 	def quack(self):
-		print('Людина імітує крякання: "Кря!"')
+		print('<Людина імітує кахкання качки>')
 ```
 
 	>>> donald = Duck()
@@ -74,7 +76,7 @@ class Person:
 	>>> donald.quack()
 	Кря!
 	>>> john.quack()
-	Людина імітує крякання: "Кря!"
+	<Людина імітує кахкання качки>
 	>>> john.name
 	'Іван'
 	>>>

@@ -205,52 +205,53 @@ nav:
     - Життєвий цикл об'єкта: oop/basics/object_lifecycle.md
     - Ініціалізація об'єктів: oop/basics/init.md
     - Представлення об'єктів: oop/basics/object_presentation.md
-  #   - Статичні та класові методи: oop/basics/static_and_class_methods.md
-  # - 21. Інкапсуляція:
-  #   - Інкапсуляція в ООП: oop/encapsulation/encapsulation_basis.md
-  #   - Приховування атрибутів: oop/encapsulation/hide_attributes.md
-  #   - Сетери і гетери: oop/encapsulation/setters_and_getters.md
-  #   - Властивості: oop/encapsulation/properties.md
-  #   - Обчислювані властивості: oop/encapsulation/computed_properties.md
-  # - 22. Успадкування:
-  #   - Успадкування: oop/inheritance/inheritance_basis.md
-  #   - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
-  #   - Лінеаризація: oop/inheritance/linearization.md
-  #   - Множинне успадкування: oop/inheritance/multiple_inheritance.md
-  #   - Атрибути базового класа: oop/inheritance/call_overrided.md
-  # - 23. Поліморфізм:
-  #   - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
-  #   - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
+    - Статичні та класові методи: oop/basics/static_and_class_methods.md
+  - 21. Інкапсуляція:
+    - Інкапсуляція в ООП: oop/encapsulation/encapsulation_basis.md
+    - Приховування атрибутів: oop/encapsulation/hide_attributes.md
+    - Сетери і гетери: oop/encapsulation/setters_and_getters.md
+    - Властивості: oop/encapsulation/properties.md
+    - Обчислювані властивості: oop/encapsulation/computed_properties.md
+  - 22. Успадкування:
+    - Успадкування в ООП: oop/inheritance/inheritance_basis.md
+    - Успадкування в Python: oop/inheritance/inheritance_python.md
+    - Успадкування атрибутів: oop/inheritance/attrs_inheritance.md
+    - Множинне успадкування: oop/inheritance/multiple_inheritance.md
+    - Лінеаризація: oop/inheritance/linearization.md
+    - Виклик перевизначених методів: oop/inheritance/call_overrided.md
+  - 23. Поліморфізм:
+    - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
+    - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
   # - 24. Атрибути:
   #   - Доступ до атрибутів: oop/attributes/attributes.md
   #   - Слоти: oop/attributes/slots.md
   #   - Контроль доступу до атрибутів: oop/attributes/access_control.md
   #   # - Дескриптори: oop/attributes/descriptors.md
-  # - 25. Виняткові ситуації:
-  #   - Винятки: exceptions/exceptions.md
-  #   - Створення виняткових ситуацій: exceptions/raising_exceptions.md
-  #   - Обробка винятків: exceptions/handling_exceptions.md
-  #   - Попередження: exceptions/warnings.md
-  #   - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
+  - 25. Виняткові ситуації:
+    - Винятки: exceptions/exceptions.md
+    - Створення виняткових ситуацій: exceptions/raising_exceptions.md
+    - Обробка винятків: exceptions/handling_exceptions.md
+    - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
+    - Попередження: exceptions/warnings.md
   #   - Менеджери контекста: exceptions/context_managers.md
-  # - 26. Типи та структури даних:
-  #   - Типізація у програмуванні: types_and_structures/typing/typing.md
-  #   - Типи даних в Python: types_and_structures/typing/data_types.md
+  - 26. Типи та структури даних:
+    - Типізація у програмуванні: types_and_structures/typing/typing.md
+    # - Типи даних в Python: types_and_structures/typing/data_types.md
   #   - Підказки типів: types_and_structures/typing/type_hinting.md
-  # - 27. Числові типи:
-  #   - Системи числення: types_and_structures/numbers/number_system.md
-  #   - Цілі числа: types_and_structures/numbers/int.md
-  #   - Дійсні числа: types_and_structures/numbers/float.md
-  #   - Комплексні числа: types_and_structures/numbers/complex.md
-  #   - Булевий тип даних: types_and_structures/numbers/bool.md
-  # - 28. Послідовності:
-  #   - Послідовності в Python: types_and_structures/sequences/sequences.md
+  - 27. Числові типи:
+    - Системи числення: types_and_structures/numbers/number_system.md
+    - Цілі числа: types_and_structures/numbers/int.md
+    - Дійсні числа: types_and_structures/numbers/float.md
+    - Комплексні числа: types_and_structures/numbers/complex.md
+    # - Булевий тип даних: types_and_structures/numbers/bool.md
+  - 28. Послідовності:
+    # - Послідовності в Python: types_and_structures/sequences/sequences.md
   #   - Діапазони: types_and_structures/sequences/range.md
-  #   - Символьні рядки: types_and_structures/sequences/string.md
+    - Символьні рядки: types_and_structures/sequences/string.md
   #   - Бінарні послідовності: types_and_structures/sequences/binary.md
   #   - Списки: types_and_structures/sequences/list.md
   #   - Кортежі: types_and_structures/sequences/tuple.md
-  #   - Створення послідовностей: types_and_structures/sequences/creating_sequences.md
+    # - Створення послідовностей: types_and_structures/sequences/creating_sequences.md
   # - 29. Відображення та множини:
   #   - Хешування даних: types_and_structures/mappings_and_sets/hash.md
   #   - Об'єкти, що хешуються: types_and_structures/mappings_and_sets/hashable.md
@@ -314,10 +315,10 @@ nav:
     - Модуль random: batteries/random.md
   #   - Модуль pprint: batteries/pprint.md
     - Модуль datetime: batteries/datetime.md
-  #   - Модуль collections: batteries/collections.md
-  #   - Модуль enum: batteries/enum.md
+    - Модуль collections: batteries/collections.md
+    # - Модуль enum: batteries/enum.md
   #   - Модуль pathlib: comming_soon.md # batteries/pathlib.md
-  #   - Модуль re: batteries/re.md
+    # - Модуль re: batteries/re.md
   #   - Модуль contextlib: batteries/contextlib.md
   #   - Модуль itertools: batteries/itertools.md
   - Дзен: zen.md

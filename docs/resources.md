@@ -47,6 +47,8 @@ hide:
 Не дивлячись на відеоформат матеріалів відсотків 80-85 інформації доступно.  -->
 - [The Algorithms - Python](https://github.com/TheAlgorithms/Python) — 
 безліч алгоритмів, реалізація на Python
+- [Refactoring.Guru](https://refactoring.guru/uk/design-patterns/python) —
+підручник по рефакторингу коду, паттернам проектування, антипаттернам і принципам SOLID.
 - [Build your own X](https://github.com/danistefanovic/build-your-own-x) — 
 для тих, хто вважає що найкращий спосіб чомусь навчитись — практика
 

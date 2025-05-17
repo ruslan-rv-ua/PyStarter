@@ -1,0 +1,45 @@
+{
+  "style": {
+    "general": {
+      "language": "Ukrainian",
+      "purpose": "Educational",
+      "tone": "Informative and tutorial-oriented",
+      "structure": "Hierarchical with clear headings and subheadings"
+    },
+    "content": {
+      "introduction": "Brief conceptual overview before diving into details",
+      "explanations": "Clear, concise explanations of technical concepts",
+      "examples": "Practical code snippets with output demonstrations",
+      "progressiveComplexity": "Concepts build upon each other in logical sequence",
+      "format": "Interactive Python REPL examples showcasing expected input/output"
+    },
+    "linguistic": {
+      "sentenceStructure": "Direct and clear sentences, typically medium length",
+      "paragraphs": "Short, focused paragraphs, usually 2-4 sentences each",
+      "terminology": "Introduces technical terms with explanations and context",
+      "analogies": "Uses analogies to explain complex concepts (e.g., 'class can be represented similar to a module')"
+    },
+    "formatting": {
+      "codeBlocks": "Indented code snippets with proper syntax highlighting",
+      "consoleOutput": "Shows expected output with >>> and ... prompts to simulate Python interactive shell",
+      "lists": "Numbered lists for sequential steps or processes",
+      "emphasis": "Uses simple formatting for important terms"
+    },
+    "educational": {
+      "approach": "Building understanding through examples and explanations",
+      "assumptions": "Some background knowledge of Python basics is assumed",
+      "pacing": "Methodical introduction of concepts with reinforcement",
+      "exercises": "Interactive examples that demonstrate concepts in action"
+    }
+  },
+  "examples": {
+    "codeExample": ">>> class Adder:\n...     n = 5\n...     def add(self, v):\n...             return v + self.n\n...\n>>> a = Adder()\n>>> b = Adder()\n>>> a.n = 10\n>>> a.add(3)\n13\n>>> b.add(4)\n9\n>>>",
+    "explanation": "Тут від класа `Adder` створюється два екземпляра – `a` та `b`. Для екземпляра `a` створюється власне поле `n`. Екземпляр `b`, не має такого поля, отже успадковує його від класа `Adder`.",
+    "conceptualDescription": "В Python клас можна представити подібно модулю. Так само як у модулі у ньому можуть бути свої дані (змінні зі значеннями) і функції. Однак у випадку класів використовується дещо інша термінологія."
+  },
+  "metadata": {
+    "targetAudience": "Python programmers with basic knowledge seeking to understand OOP concepts",
+    "difficulty": "Intermediate",
+    "format": "Markdown tutorial"
+  }
+}

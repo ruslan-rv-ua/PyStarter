@@ -17,6 +17,7 @@ hide:
 Далі розглядаються деякі класи і методи, 
 а також основні прийоми роботи з датою і часом.
 
+
 ## Константи
 
 В модулі містяться константи: 
@@ -204,6 +205,58 @@ hide:
 	>>> uptime.seconds
 	70930
 	>>>
+
+### Aware та Naive об'єкти
+
+У контексті програмування та інформатики:
+
+* **Aware об'єкти:** (Обізнані об'єкти, усвідомлені об'єкти) — мають інформацію про певний контекст або стан.
+* **Naive об'єкти:** (Наївні об'єкти) — не мають інформації про певний контекст або стан.
+
+Об'єкти дат і часу можуть бути класифіковані як "aware" (з інформацією про часовий пояс) або "naive" (без інформації про часовий пояс).
+
+#### Aware об'єкти
+
+- Мають атрибут tzinfo, відмінний від None.
+- Метод tzinfo.utcoffset(x) повертає ненульове значення.
+- Представляють конкретний момент часу, з можливістю точного порівняння між собою.
+
+#### Naive об'єкти
+
+- tzinfo дорівнює None.
+- Не містять інформації про часовий пояс, тому їх інтерпретація залежить від контексту (наприклад, локальний час).
+- Порівняння з aware об'єктами може призвести до помилок.
+
+**Приклад:**
+
+```python
+>>> import datetime as dt
+>>> from zoneinfo import ZoneInfo
+>>> dt_naive = dt.datetime.now()
+>>> print(dt_naive)
+2025-05-01 10:32:53.111195
+>>> dt_naive.tzinfo is None
+True
+>>> dt_aware = dt.datetime.now(tz=ZoneInfo('Europe/Kyiv'))
+>>> print(dt_aware)
+2025-05-01 10:32:53.196062+03:00
+>>> dt_aware.tzinfo
+zoneinfo.ZoneInfo(key='Europe/Kyiv')
+>>> print(dt_aware.tzinfo)
+Europe/Kyiv
+>>> dt.datetime.utcoffset(dt_aware)
+datetime.timedelta(seconds=10800)
+>>> dt.datetime.utcoffset(dt_aware).seconds / 3600
+3.0
+>>> utc_now = dt.datetime.now(tz=dt.UTC)
+>>> dt.datetime.utcoffset(utc_now)
+datetime.timedelta(0)
+>>> print(utc_now.tzinfo)
+UTC
+>>>
+```
+
+
 ## Додаткові матеріали
 
 - [Документація: модуль datetime](https://docs.python.org/3/library/datetime.html)

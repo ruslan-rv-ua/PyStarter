@@ -64,7 +64,7 @@ assert cart.total_price == 5.5
 
 cherry = Item("cherry", 3.0)
 cart.add_item(cherry)
-assert sorted(cart.items_names) == ["apple", "banana", "cherry"]
+assert cart.items_names == ["apple", "banana", "cherry"]
 assert cart.total_price == 8.5
 cherry.price = 3.5
 assert cart.total_price == 9.0
