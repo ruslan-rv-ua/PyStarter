@@ -1,33 +1,6 @@
 # ваш код з наступного рядка
-DIGITS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-def convert_n_to_m(x, n, m):
-	if isinstance(x, str):
-		from_num = x.upper()
-	elif isinstance(x, int):
-		from_num = str(x).upper()
-	else:
-		return False
-	
-	if not all(ch in DIGITS[:n] for ch in from_num):
-		return False
-	
-	decimal = 0
-	for pow, digit in enumerate(from_num[::-1]):
-		decimal += n**pow * DIGITS.index(digit)
-	
-	if m == 1:
-		return DIGITS[0] * decimal
-		
-	to_num = ''
-	while decimal:
-		decimal, rest = divmod(decimal, m)
-		to_num = DIGITS[rest] + to_num
-	return to_num if to_num else DIGITS[0]
-
-
-'''
-Розробити функцію convert_n_to_m(x, n, m),
+'''Розробити функцію convert_n_to_m(x, n, m),
 яка приймає 3 аргументи -- ціле число (в системі числення з основою n) або рядок x, що представляє таке число, та цілі числа n та m (1 <= n, m <= 36),
 та повертає рядок -- представлення числа х у системі числення m.
 

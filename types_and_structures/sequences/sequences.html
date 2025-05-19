@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/types_and_structures/sequences/sequences.html">
       
       
+        <link rel="prev" href="../numbers/complex.html">
+      
+      
+        <link rel="next" href="string.html">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -1274,24 +1278,25 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_30" checked>
         
-  
-  
-    <a href="string.html" class="md-nav__link">
-      
+          
+          <label class="md-nav__link" for="__nav_30" id="__nav_30_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     28. Послідовності
@@ -1299,12 +1304,121 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_30_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_30">
+            <span class="md-nav__icon md-icon"></span>
+            28. Послідовності
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-        <span class="md-nav__icon md-icon"></span>
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-    </a>
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Послідовності в Python
+    
+  </span>
   
 
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="sequences.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Послідовності в Python
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Індексація
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Множення на скаляр
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="string.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Символьні рядки
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1476,11 +1590,11 @@
 </tr>
 <tr>
 <td>s[i:j]</td>
-<td>Зрізання послідовності s від i до j.</td>
+<td>Зріз послідовності s від i до j.</td>
 </tr>
 <tr>
 <td>s[i:j:k]</td>
-<td>Зрізання послідовності s від i до j з кроком k</td>
+<td>Зріз послідовності s від i до j з кроком k</td>
 </tr>
 <tr>
 <td>len(s)</td>
@@ -1566,7 +1680,7 @@
 <h3 id="_1">Індексація</h3>
 <pre><code>obj[index]
 </code></pre>
-<p><code>index</code> — або ціле число (власне індекс елемента списку), або ж зрізання — об'єкт класа <code>slice</code>:</p>
+<p><code>index</code> — або ціле число (власне індекс елемента списку), або ж зріз — об'єкт класа <code>slice</code>:</p>
 <pre><code>&gt;&gt;&gt; l=[1,2,3,4,5,6]
 &gt;&gt;&gt; s = slice(1, -1, 2)
 &gt;&gt;&gt; l[s]
@@ -1611,6 +1725,46 @@
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="../numbers/complex.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Комплексні числа">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Комплексні числа
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="string.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Символьні рядки">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Символьні рядки
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
