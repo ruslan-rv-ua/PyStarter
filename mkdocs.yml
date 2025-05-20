@@ -233,21 +233,21 @@ nav:
     - Обробка винятків: exceptions/handling_exceptions.md
     - EAFP vs LBYL: exceptions/eafp_vs_lbyl.md
     - Попередження: exceptions/warnings.md
-    # - Менеджери контекста: exceptions/context_managers.md
+    - Менеджери контекста: exceptions/context_managers.md
   - 26. Типи та структури даних:
     - Типізація у програмуванні: types_and_structures/typing/typing.md
     - Типи даних в Python: types_and_structures/typing/data_types.md
     # - Підказки типів: types_and_structures/typing/type_hinting.md
   - 27. Числові типи:
     - Системи числення: types_and_structures/numbers/number_system.md
-    - Числа в Python: types_and_structures/numbers/number_funcs.md
+    - Числа в Python: types_and_structures/numbers/number_operations.md
     - Цілі числа: types_and_structures/numbers/int.md
     - Дійсні числа: types_and_structures/numbers/float.md
     - Комплексні числа: types_and_structures/numbers/complex.md
     - Булевий тип даних: types_and_structures/numbers/bool.md
   - 28. Послідовності:
     - Послідовності в Python: types_and_structures/sequences/sequences.md
-  #   - Діапазони: types_and_structures/sequences/range.md
+    - Діапазони: types_and_structures/sequences/range.md
     - Символьні рядки: types_and_structures/sequences/string.md
   #   - Бінарні послідовності: types_and_structures/sequences/binary.md
   #   - Списки: types_and_structures/sequences/list.md

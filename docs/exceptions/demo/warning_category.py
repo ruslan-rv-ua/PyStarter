@@ -11,5 +11,3 @@ warnings.filterwarnings('error', category=MyWarning)
 
 warnings.warn('важливе попередження', MyWarning)
 print('виконано.')
-```
-

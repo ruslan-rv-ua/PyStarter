@@ -157,7 +157,7 @@ Python надає багато вбудованих функцій для роб
 3
 ```
 
-## Спеціальні методи (магічні методи)
+## Спеціальні методи
 
 Багато операцій та вбудованих функцій, що працюють з числами, насправді викликають спеціальні методи об'єктів. Розуміння цих методів корисне для створення власних числових типів або для глибшого розуміння поведінки Python.
 
@@ -189,4 +189,48 @@ Python надає багато вбудованих функцій для роб
 | `__index__(self)`   |                  | Використовується при зрізах, перетворює об'єкт на цілочисельний індекс. Наприклад, `operator.index()`. |
 
 Ці методи дозволяють об'єктам вашого класу поводитися як вбудовані числові типи при використанні стандартних операторів та функцій.
+
+Наприклад, розглянемо, як працює `__add__`:
+
+```python
+class MyNumber:
+    def __init__(self, value):
+        self.value = value
+
+    def __add__(self, other):
+        if isinstance(other, MyNumber):
+            return MyNumber(self.value + other.value)
+        elif isinstance(other, (int, float)):
+            return MyNumber(self.value + other)
+        else:
+            return NotImplemented # Важливо для правильної роботи правосторонніх операцій
+
+    def __radd__(self, other):
+        # Цей метод викликається, якщо MyNumber стоїть праворуч від оператора +,
+        # а лівий операнд не знає, як додати MyNumber.
+        # Наприклад: 5 + num1 (де num1 - екземпляр MyNumber)
+        if isinstance(other, (int, float)):
+            return MyNumber(other + self.value)
+        else:
+            return NotImplemented
+
+    def __str__(self):
+        return f"MyNumber({self.value})"
+
+num1 = MyNumber(10)
+num2 = MyNumber(20)
+
+result1 = num1 + num2  # Викликає num1.__add__(num2)
+print(result1)         # Виведе: MyNumber(30)
+
+result2 = num1 + 5     # Викликає num1.__add__(5)
+print(result2)         # Виведе: MyNumber(15)
+
+result3 = 15 + num1    # Викликає num1.__radd__(15), оскільки int не має __add__ для MyNumber
+print(result3)         # Виведе: MyNumber(25)
+
+# Якщо __radd__ не визначено, і лівий операнд не може виконати додавання,
+# виникне TypeError.
+# Якщо __add__ повертає NotImplemented, Python спробує викликати __radd__ на правому операнді.
+```
 
