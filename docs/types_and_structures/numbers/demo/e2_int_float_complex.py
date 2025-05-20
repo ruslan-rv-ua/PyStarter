@@ -12,6 +12,7 @@ class MyDateTime(datetime):
     def __int__(self):
         return int(self.timestamp())
 d = MyDateTime.now()
+r = d.timestamp()
 r = int(d)
 
 

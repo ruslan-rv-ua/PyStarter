@@ -30,7 +30,7 @@ class GeometricProgression:
         self.ratio = ratio
         self.length = length
 
-    def __getitem__(self, index: int|slice) -> int:
+    def __getitem__(self, index: int | slice) -> int:
         if isinstance(index, slice):
             return [self[i] for i in range(*index.indices(self.length))]
         if not isinstance(index, int):
@@ -60,13 +60,14 @@ class GeometricProgression:
 - start
 - ratio
 Реалізувати отримання елемента послідовності по індексу, у тому числі по від'ємному.
-Реалізувати отримання зрізання послідовності.
+Реалізувати отримання зрізу послідовності.
 Реалізувати визначення довжини послідовності.
 Реалізувати представлення послідовності у вигляді символьного рядка.
 """
 
 # юніт-тести, не міняйте наступний код
 import pytest
+
 
 class TestGeometricProgression:
     def test_properties(self):
@@ -135,16 +136,17 @@ class TestGeometricProgression:
         with pytest.raises(TypeError):
             gp[None]
         with pytest.raises(TypeError):
-            gp['index']
+            gp["index"]
         with pytest.raises(TypeError):
             gp[1.0]
         with pytest.raises(TypeError):
             gp[[]]
 
+
 options = [
     #'--no-header',
     # '--no-summary',
-    '--quiet',
+    "--quiet",
     # '--verbosity=0',
     # '--tb=short',
     # '--color=no',
