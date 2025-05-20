@@ -12,7 +12,7 @@
         <meta name="author" content="Ruslan Iskov">
       
       
-        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/number_funcs.html">
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/number_operations.html">
       
       
         <link rel="prev" href="number_system.html">
@@ -1324,7 +1324,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="number_funcs.html" class="md-nav__link md-nav__link--active">
+      <a href="number_operations.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1455,7 +1455,7 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      Спеціальні методи (магічні методи)
+      Спеціальні методи
     </span>
   </a>
   
@@ -1777,7 +1777,7 @@
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
-      Спеціальні методи (магічні методи)
+      Спеціальні методи
     </span>
   </a>
   
@@ -1989,7 +1989,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># (2**3) % 5 = 8 % 5</span>
 <span class="mi">3</span>
 </code></pre></div>
-<h2 id="_7">Спеціальні методи (магічні методи)</h2>
+<h2 id="_7">Спеціальні методи</h2>
 <p>Багато операцій та вбудованих функцій, що працюють з числами, насправді викликають спеціальні методи об'єктів. Розуміння цих методів корисне для створення власних числових типів або для глибшого розуміння поведінки Python.</p>
 <table>
 <thead>
@@ -2123,6 +2123,47 @@
 </tbody>
 </table>
 <p>Ці методи дозволяють об'єктам вашого класу поводитися як вбудовані числові типи при використанні стандартних операторів та функцій.</p>
+<p>Наприклад, розглянемо, як працює <code>__add__</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">MyNumber</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">MyNumber</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">MyNumber</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">MyNumber</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">other</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Важливо для правильної роботи правосторонніх операцій</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__radd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="c1"># Цей метод викликається, якщо MyNumber стоїть праворуч від оператора +,</span>
+        <span class="c1"># а лівий операнд не знає, як додати MyNumber.</span>
+        <span class="c1"># Наприклад: 5 + num1 (де num1 - екземпляр MyNumber)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">MyNumber</span><span class="p">(</span><span class="n">other</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;MyNumber(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="n">num1</span> <span class="o">=</span> <span class="n">MyNumber</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="n">MyNumber</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">result1</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>  <span class="c1"># Викликає num1.__add__(num2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span>         <span class="c1"># Виведе: MyNumber(30)</span>
+
+<span class="n">result2</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="mi">5</span>     <span class="c1"># Викликає num1.__add__(5)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span>         <span class="c1"># Виведе: MyNumber(15)</span>
+
+<span class="n">result3</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">+</span> <span class="n">num1</span>    <span class="c1"># Викликає num1.__radd__(15), оскільки int не має __add__ для MyNumber</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result3</span><span class="p">)</span>         <span class="c1"># Виведе: MyNumber(25)</span>
+
+<span class="c1"># Якщо __radd__ не визначено, і лівий операнд не може виконати додавання,</span>
+<span class="c1"># виникне TypeError.</span>
+<span class="c1"># Якщо __add__ повертає NotImplemented, Python спробує викликати __radd__ на правому операнді.</span>
+</code></pre></div>
 
 
 
