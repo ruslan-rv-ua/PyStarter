@@ -1466,7 +1466,7 @@
         
   
   
-    <a href="../types_and_structures/sequences/sequences.html" class="md-nav__link">
+    <a href="../types_and_structures/sequences/string.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1675,7 +1675,8 @@
 <pre><code>c:\dev\warning_test.py:21: IncorrectNameWarning: Name format maybe incorrect:Гассан Абдуррахман ібн Хоттаб
   p = Person('Гассан Абдуррахман ібн Хоттаб')
 Гассан Абдуррахман ібн Хоттаб
-&gt;&gt;&gt;
+
+Еріх Марія Ремарк
 </code></pre>
 <p>Зверніть увагу, що інтерпретатор повідомив нам, що попередження відноситься до наступного рядка програми: </p>
 <pre><code>p = Person('Гассан Абдуррахман ібн Хоттаб')
@@ -1687,6 +1688,94 @@
 конструювання якого конкретного екземпляра призвело до появи попередження. 
 Досягли ми цього задавши параметр <code>stacklevel=2</code> для функції <code>warn</code>, 
 тобто ми почали з другого рівня стеку викликів. </p>
+<!-- ## Фільтрація попереджень
+
+Модуль `warnings` дозволяє гнучко керувати тим, які попередження будуть показуватися, і як саме. Для цього використовується функція
+
+    `warnings.filterwarnings(action, message="", category=Warning, module="", lineno=0, append=False)`.
+
+Основні значення параметра `action`:
+
+*   `"error"`: перетворювати відповідні попередження на винятки.
+*   `"ignore"`: ніколи не друкувати відповідні попередження.
+*   `"always"`: завжди друкувати відповідні попередження.
+*   `"default"`: друкувати перше виникнення відповідного попередження для кожного місця (модуль + номер рядка), де воно виникає.
+*   `"module"`: друкувати перше виникнення відповідного попередження для кожного модуля, де воно виникає.
+*   `"once"`: друкувати тільки перше виникнення відповідного попередження, незалежно від місця.
+
+Ви також можете вказати `message` (регулярний вираз для тексту попередження), `category` (клас попередження), `module` (регулярний вираз для імені модуля) та `lineno` (номер рядка) для більш точного налаштування фільтрів.
+
+Приклад використання фільтрів:
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
+<span class="c1"># Визначимо власне попередження</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyCustomWarning</span><span class="p">(</span><span class="ne">UserWarning</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">function_that_warns</span><span class="p">():</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Це попередження від function_that_warns!&quot;</span><span class="p">,</span> <span class="n">MyCustomWarning</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function_that_warns виконана.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Демонстрація фільтрації попереджень ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Сценарій 1: Попередження за замовчуванням (якщо не було інших фільтрів)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1. Попередження за замовчуванням:&quot;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">resetwarnings</span><span class="p">()</span> <span class="c1"># Скидаємо всі фільтри до стану за замовчуванням</span>
+<span class="c1"># За замовчуванням UserWarning друкується один раз для кожного місця</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;always&#39;</span><span class="p">,</span> <span class="n">MyCustomWarning</span><span class="p">)</span> <span class="c1"># Для демонстрації зробимо, щоб завжди друкувалось</span>
+<span class="n">function_that_warns</span><span class="p">()</span>
+
+<span class="c1"># Сценарій 2: Ігнорування попереджень</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2. Ігнорування попереджень (MyCustomWarning):&quot;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">MyCustomWarning</span><span class="p">)</span>
+<span class="n">function_that_warns</span><span class="p">()</span> <span class="c1"># Попередження не буде показано</span>
+
+<span class="c1"># Сценарій 3: Перетворення попередження на помилку</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3. Перетворення попередження на помилку (MyCustomWarning):&quot;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">resetwarnings</span><span class="p">()</span> 
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">MyCustomWarning</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">function_that_warns</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">MyCustomWarning</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Спіймано MyCustomWarning як виняток: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Function_that_warns не була повністю виконана через помилку.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Сценарій 4: Показати попередження лише один раз</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">4. Показати попередження </span><span class="se">\&#39;</span><span class="s2">once</span><span class="se">\&#39;</span><span class="s2">:&quot;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">resetwarnings</span><span class="p">()</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;once&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">MyCustomWarning</span><span class="p">)</span>
+<span class="n">function_that_warns</span><span class="p">()</span>
+<span class="n">function_that_warns</span><span class="p">()</span> <span class="c1"># Друге попередження не буде показано</span>
+
+<span class="c1"># Повернемо стандартну поведінку</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">resetwarnings</span><span class="p">()</span>
+</code></pre></div>
+
+Очікуваний вивід (може дещо відрізнятися залежно від оточення та версії Python, особливо шлях до файлу та номер рядка у повідомленні про попередження):
+
+    --- Демонстрація фільтрації попереджень ---
+
+    1. Попередження за замовчуванням:
+    __main__:XX: MyCustomWarning: Це попередження від function_that_warns!
+      warnings.warn("Це попередження від function_that_warns!", MyCustomWarning)
+    Function_that_warns виконана.
+
+    2. Ігнорування попереджень (MyCustomWarning):
+    Function_that_warns виконана.
+
+    3. Перетворення попередження на помилку (MyCustomWarning):
+    Спіймано MyCustomWarning як виняток: Це попередження від function_that_warns!
+    Function_that_warns не була повністю виконана через помилку.
+
+    4. Показати попередження 'once':
+    __main__:XX: MyCustomWarning: Це попередження від function_that_warns!
+      warnings.warn("Це попередження від function_that_warns!", MyCustomWarning)
+    Function_that_warns виконана.
+    Function_that_warns виконана.
+
+Функція `warnings.simplefilter(action, category=Warning, lineno=0, append=False)` є спрощеною версією `filterwarnings`, яка застосовує фільтр до всіх попереджень вказаної категорії. -->
+
 <p>Детальніше про використання попереджень можна дізнатись з офіційної документації Python.</p>
 <h2 id="_2">Додаткові матеріали</h2>
 <p><a href="https://docs.python.org/3/library/warnings.html">Документація Python: попередження</a></p>

@@ -1,0 +1,2240 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python.">
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/types_and_structures/numbers/number_funcs.html">
+      
+      
+        <link rel="prev" href="number_system.html">
+      
+      
+        <link rel="next" href="int.html">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+    
+    
+      
+        <title>Числа в Python - PyStarter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../_stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../../_stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../../_stylesheets/fixes.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PyStarter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Числа в Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg>
+
+    </a>
+    PyStarter
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Про цей курс
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../miths_about_education.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Міфи про навчання
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about_python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Мова програмування Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../preparations/os.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    01. Підготовка
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../vars_and_types/types.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    02. Типи даних. Змінні
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../source_code/source_code.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    03. Python-програми
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../strings/strings.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    04. Символьні рядки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../functions/functions.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    05. Функції
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../bool_logic/bool.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    06. Логіка
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../if/if_statement.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    07. Розгалуження
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../functions_def/functions_explained.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    08. Створення функцій
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../loop_while/loops.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    09. Цикл "while"
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sequences/collections.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Списки і кортежі
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../objects/objects_and_vars.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Об'єкти в Python
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../loop_for/for.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Цикл "for"
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../methods/methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Методи
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../methods_list/list_methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Методи списків
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../dict/dict.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. Словники
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../text_files/unicode.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. Текстові файли
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../modules/modules.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. Модулі
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../functions3/strategies.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. І знову функції
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../paradigmas/paradigmas.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    19. Парадигми програмування
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../oop/basics/basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    20. ООП
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Інкапсуляція
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../oop/inheritance/inheritance_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    22. Успадкування
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../oop/polymorphism/polymorphism_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    23. Поліморфізм
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../exceptions/exceptions.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    25. Виняткові ситуації
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../typing/typing.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    26. Типи та структури даних
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_29" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_29" id="__nav_29_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    27. Числові типи
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_29_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_29">
+            <span class="md-nav__icon md-icon"></span>
+            27. Числові типи
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="number_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Системи числення
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Числа в Python
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="number_funcs.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Числа в Python
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Операції з числами
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Операції з числами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Особливості цілочисельного ділення (//)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Особливості оператора модуля (%)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Взаємозв'язок // та %
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Порівняння зі звичайним діленням (/)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Функції для роботи з числами
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Функції для роботи з числами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absx" class="md-nav__link">
+    <span class="md-ellipsis">
+      abs(x)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roundnumber-ndigits" class="md-nav__link">
+    <span class="md-ellipsis">
+      round(number[, ndigits])
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divmoda-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      divmod(a, b)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powbase-exp-mod" class="md-nav__link">
+    <span class="md-ellipsis">
+      pow(base, exp[, mod])
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Спеціальні методи (магічні методи)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="int.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Цілі числа
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="float.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Дійсні числа
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="complex.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Комплексні числа
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sequences/string.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    28. Послідовності
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../batteries/random.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Батарейки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zen.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Дзен
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Операції з числами
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Операції з числами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Особливості цілочисельного ділення (//)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Особливості оператора модуля (%)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Взаємозв'язок // та %
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Порівняння зі звичайним діленням (/)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Функції для роботи з числами
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Функції для роботи з числами">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#absx" class="md-nav__link">
+    <span class="md-ellipsis">
+      abs(x)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roundnumber-ndigits" class="md-nav__link">
+    <span class="md-ellipsis">
+      round(number[, ndigits])
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divmoda-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      divmod(a, b)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powbase-exp-mod" class="md-nav__link">
+    <span class="md-ellipsis">
+      pow(base, exp[, mod])
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Спеціальні методи (магічні методи)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+
+<h1 id="python">Числа в Python</h1>
+<p>Python підтримує різні типи чисел, включаючи цілі числа (int), числа з плаваючою комою (float) та комплексні числа (complex). Розглянемо основні операції та функції, які можна виконувати з цими типами.</p>
+<h2 id="_1">Операції з числами</h2>
+<p>Python підтримує стандартні арифметичні операції:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Оператор</th>
+<th style="text-align: left;">Значення</th>
+<th style="text-align: left;">Пояснення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>+</code></td>
+<td style="text-align: left;">додавання</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-</code></td>
+<td style="text-align: left;">віднімання</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>*</code></td>
+<td style="text-align: left;">множення</td>
+<td style="text-align: left;">При множенні чисел з плаваючою комою іноді можуть виникати невеликі похибки через особливості їх двійкового представлення. Для точних фінансових розрахунків краще використовувати модуль <code>decimal</code>.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>/</code></td>
+<td style="text-align: left;">ділення</td>
+<td style="text-align: left;">Результат завжди буде числом з плаваючою комою, навіть якщо обидва операнди цілі.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>//</code></td>
+<td style="text-align: left;">цілочисельне ділення</td>
+<td style="text-align: left;">Результат буде цілим числом, якщо обидва операнди цілі. Якщо хоча б один з операндів є числом з плаваючою комою, результат буде числом з плаваючою комою.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>%</code></td>
+<td style="text-align: left;">залишок від ділення</td>
+<td style="text-align: left;">Знак результату операції <code>%</code> такий самий, як знак дільника (другого операнда). Це може відрізнятися від поведінки в деяких інших мовах програмування.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>**</code></td>
+<td style="text-align: left;">піднесення до степеня</td>
+<td style="text-align: left;">Аналогічно функції <code>pow()</code>.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>-</code></td>
+<td style="text-align: left;">унарний мінус</td>
+<td style="text-align: left;">Змінює знак числа.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>+</code></td>
+<td style="text-align: left;">унарний плюс</td>
+<td style="text-align: left;">Не змінює знак числа, але може бути використаний для явного позначення додатного числа.</td>
+</tr>
+</tbody>
+</table>
+<p>У Python <strong>цілочисельне ділення</strong> (<code>//</code>) та <strong>оператор модуля</strong> (<code>%</code>) нерозривно пов'язані і підкоряються чітким правилам, особливо щодо від'ємних чисел. Розуміння цієї взаємодії є ключовим.</p>
+<hr />
+<h3 id="_2">Особливості цілочисельного ділення (<code>//</code>)</h3>
+<ol>
+<li>
+<p><strong>Завжди ціле число:</strong> Оператор <code>//</code> завжди повертає ціле число. Він виконує "ділення з округленням до меншого" (floor division). Це означає, що результат округлюється до найближчого цілого числа, яке <strong>менше або дорівнює</strong> точному результату ділення.</p>
+</li>
+<li>
+<p><strong>Поведінка з від'ємними числами:</strong> Це найважливіша відмінність. На відміну від деяких інших мов, Python округлює до <strong>від'ємної нескінченності</strong>.</p>
+<ul>
+<li><code>10 // 3</code> дає <code>3</code> (3.33 округлюється до 3).</li>
+<li><code>-10 // 3</code> дає <code>-4</code> (бо -3.33 округлюється до -4, оскільки -4 менше -3.33).</li>
+<li><code>10 // -3</code> дає <code>-4</code> (бо -3.33 округлюється до -4).</li>
+<li><code>-10 // -3</code> дає <code>3</code> (бо 3.33 округлюється до 3).</li>
+</ul>
+</li>
+<li>
+<p><strong>Тип результату:</strong> Якщо обидва операнди є цілими числами (<code>int</code>), результат також буде <code>int</code>. Якщо хоча б один є числом з плаваючою точкою (<code>float</code>), результат буде <code>float</code> (наприклад, <code>3.0</code>).</p>
+</li>
+</ol>
+<hr />
+<h3 id="_3">Особливості оператора модуля (<code>%</code>)</h3>
+<ol>
+<li>
+<p><strong>Визначення залишку:</strong> Оператор <code>%</code> повертає <strong>залишок</strong> від ділення.</p>
+</li>
+<li>
+<p><strong>Знак залишку:</strong> У Python <strong>знак залишку завжди збігається зі знаком дільника</strong>. Це прямий наслідок поведінки <code>//</code> при округленні до від'ємної нескінченності.</p>
+<ul>
+<li><code>10 % 3</code> дає <code>1</code> (10 = 3 * 3 + 1).</li>
+<li><code>-10 % 3</code> дає <code>2</code> (бо -10 = -4 * 3 + 2; дільник <code>3</code> позитивний, залишок <code>2</code> позитивний).</li>
+<li><code>10 % -3</code> дає <code>-2</code> (бо 10 = -4 * -3 - 2; дільник <code>-3</code> негативний, залишок <code>-2</code> негативний).</li>
+<li><code>-10 % -3</code> дає <code>-1</code> (бо -10 = 3 * -3 - 1; дільник <code>-3</code> негативний, залишок <code>-1</code> негативний).</li>
+</ul>
+</li>
+</ol>
+<h3 id="_4">Взаємозв'язок <code>//</code> та <code>%</code></h3>
+<p>В Python завжди виконується таке фундаментальне співвідношення:</p>
+<blockquote>
+<p>a = (a // b) * b + (a % b)</p>
+</blockquote>
+<p>Де:</p>
+<ul>
+<li><code>a</code> — ділене</li>
+<li><code>b</code> — дільник</li>
+<li><code>a // b</code> — результат цілочисельного ділення</li>
+<li><code>a % b</code> — залишок від ділення</li>
+</ul>
+<p>Ця властивість є ключовою для розуміння, чому Python обробляє <code>//</code> і <code>%</code> саме так. Завдяки округленню <code>//</code> до від'ємної нескінченності, оператор <code>%</code> може гарантувати, що знак залишку завжди відповідає знаку дільника. Це робить поведінку оператора модуля більш передбачуваною та корисною в багатьох алгоритмах, де важливий знак залишку.</p>
+<p>Наприклад:</p>
+<ul>
+<li><code>a = 10</code>, <code>b = 3</code>: <code>(10 // 3) * 3 + (10 % 3)</code> = <code>3 * 3 + 1</code> = <code>9 + 1</code> = <code>10</code></li>
+<li><code>a = -10</code>, <code>b = 3</code>: <code>(-10 // 3) * 3 + (-10 % 3)</code> = <code>(-4) * 3 + 2</code> = <code>-12 + 2</code> = <code>-10</code></li>
+</ul>
+<h3 id="_5">Порівняння зі звичайним діленням (<code>/</code>)</h3>
+<p>На відміну від <code>//</code>, оператор <code>/</code> (звичайне ділення) завжди виконує "справжнє" ділення і повертає число з плаваючою точкою (<code>float</code>), незалежно від типів операндів.</p>
+<ul>
+<li><code>10 / 3</code> дає <code>3.3333333333333335</code></li>
+<li><code>10 // 3</code> дає <code>3</code></li>
+</ul>
+<p>Розуміння цих нюансів є критично важливим для коректного програмування в Python, особливо при роботі з від'ємними числами та математичними операціями, де точність округлення та залишку має значення.</p>
+<h2 id="_6">Функції для роботи з числами</h2>
+<p>Python надає багато вбудованих функцій для роботи з числами.</p>
+<h3 id="absx"><code>abs(x)</code></h3>
+<p>Повертає абсолютне значення (модуль) числа <code>x</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">)</span>
+<span class="mf">3.14</span>
+</code></pre></div>
+<h3 id="roundnumber-ndigits"><code>round(number[, ndigits])</code></h3>
+<p>Округлює число <code>number</code> до <code>ndigits</code> знаків після коми. Якщо <code>ndigits</code> не вказано, округлює до найближчого цілого.</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">)</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mf">3.14</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">round</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span> <span class="c1"># Округлення до найближчого парного числа для .5</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">round</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">round</span><span class="p">(</span><span class="mf">2.675</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Також може бути неочікуваним через представлення чисел з плаваючою комою</span>
+<span class="mf">2.67</span>
+</code></pre></div>
+<strong>Особливості функції <code>round()</code>:</strong></p>
+<ol>
+<li>
+<p><strong>Округлення до найближчого парного (Round half to even):</strong>
+    Починаючи з Python 3, для чисел, що знаходяться точно посередині між двома можливими округленими значеннями (наприклад, 2.5, 3.5, або 2.675 при округленні до двох знаків), <code>round()</code> використовує стратегію "округлення до найближчого парного числа".</p>
+<ul>
+<li><code>round(2.5)</code> повертає <code>2</code> (бо 2 парне).</li>
+<li><code>round(3.5)</code> повертає <code>4</code> (бо 4 парне).
+Цей метод допомагає зменшити статистичне зміщення, яке могло б виникнути при послідовному округленні в один бік (наприклад, завжди вгору).</li>
+</ul>
+</li>
+<li>
+<p><strong>Проблеми з точністю чисел з плаваючою комою:</strong>
+    Десяткові дроби часто не можуть бути точно представлені у двійковому форматі з плаваючою комою, який використовується комп'ютерами. Це може призводити до неочікуваних результатів округлення.
+    Наприклад, <code>round(2.675, 2)</code> може повернути <code>2.67</code>. Це відбувається тому, що десяткове число <code>2.675</code> може зберігатися у пам'яті як двійкове число, що є трохи меншим, наприклад, <code>2.6749999999999998</code>. При округленні такого внутрішнього представлення до двох знаків результатом буде <code>2.67</code>.
+    Якщо потрібна висока точність для десяткових арифметичних операцій, варто розглянути використання модуля <code>decimal</code>.</p>
+</li>
+</ol>
+<h3 id="divmoda-b"><code>divmod(a, b)</code></h3>
+<p>Повертає пару чисел <code>(a // b, a % b)</code>, тобто частку та остачу від ділення <code>a</code> на <code>b</code>.</p>
+<p>Для цілих чисел результат еквівалентний <code>(a // b, a % b)</code>.
+Для чисел з плаваючою комою результат еквівалентний <code>(math.floor(a / b), a % b)</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">divmod</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">divmod</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">divmod</span><span class="p">(</span><span class="mf">10.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">10.5</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mf">3.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">10.5</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mf">1.5</span>
+</code></pre></div>
+<h3 id="powbase-exp-mod"><code>pow(base, exp[, mod])</code></h3>
+<p>Повертає <code>base</code> у степені <code>exp</code>. Якщо вказано <code>mod</code>, повертає <code>(base ** exp) % mod</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">8</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># (2**3) % 5 = 8 % 5</span>
+<span class="mi">3</span>
+</code></pre></div>
+<h2 id="_7">Спеціальні методи (магічні методи)</h2>
+<p>Багато операцій та вбудованих функцій, що працюють з числами, насправді викликають спеціальні методи об'єктів. Розуміння цих методів корисне для створення власних числових типів або для глибшого розуміння поведінки Python.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Метод</th>
+<th style="text-align: left;">Оператор/Функція</th>
+<th style="text-align: left;">Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>__add__(self, other)</code></td>
+<td style="text-align: left;"><code>+</code></td>
+<td style="text-align: left;">Додавання (<code>self + other</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__sub__(self, other)</code></td>
+<td style="text-align: left;"><code>-</code></td>
+<td style="text-align: left;">Віднімання (<code>self - other</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__mul__(self, other)</code></td>
+<td style="text-align: left;"><code>*</code></td>
+<td style="text-align: left;">Множення (<code>self * other</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__truediv__(self, other)</code></td>
+<td style="text-align: left;"><code>/</code></td>
+<td style="text-align: left;">Справжнє ділення (<code>self / other</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__floordiv__(self, other)</code></td>
+<td style="text-align: left;"><code>//</code></td>
+<td style="text-align: left;">Цілочисельне ділення (<code>self // other</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__mod__(self, other)</code></td>
+<td style="text-align: left;"><code>%</code></td>
+<td style="text-align: left;">Залишок від ділення (<code>self % other</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__divmod__(self, other)</code></td>
+<td style="text-align: left;"><code>divmod()</code></td>
+<td style="text-align: left;">Повертає пару <code>(self // other, self % other)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__pow__(self, other[, modulo])</code></td>
+<td style="text-align: left;"><code>**</code>, <code>pow()</code></td>
+<td style="text-align: left;">Піднесення до степеня (<code>self ** other</code> або <code>pow(self, other, modulo)</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__radd__(self, other)</code></td>
+<td style="text-align: left;"><code>+</code></td>
+<td style="text-align: left;">Правостороннє додавання (<code>other + self</code>), викликається, якщо <code>other</code> не підтримує <code>__add__</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__rsub__(self, other)</code></td>
+<td style="text-align: left;"><code>-</code></td>
+<td style="text-align: left;">Правостороннє віднімання (<code>other - self</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__rmul__(self, other)</code></td>
+<td style="text-align: left;"><code>*</code></td>
+<td style="text-align: left;">Правостороннє множення (<code>other * self</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__rtruediv__(self, other)</code></td>
+<td style="text-align: left;"><code>/</code></td>
+<td style="text-align: left;">Правостороннє справжнє ділення (<code>other / self</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__rfloordiv__(self, other)</code></td>
+<td style="text-align: left;"><code>//</code></td>
+<td style="text-align: left;">Правостороннє цілочисельне ділення (<code>other // self</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__rmod__(self, other)</code></td>
+<td style="text-align: left;"><code>%</code></td>
+<td style="text-align: left;">Правосторонній залишок від ділення (<code>other % self</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__rdivmod__(self, other)</code></td>
+<td style="text-align: left;"><code>divmod()</code></td>
+<td style="text-align: left;">Правосторонній <code>divmod(other, self)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__rpow__(self, other[, modulo])</code></td>
+<td style="text-align: left;"><code>**</code>, <code>pow()</code></td>
+<td style="text-align: left;">Правостороннє піднесення до степеня (<code>other ** self</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__neg__(self)</code></td>
+<td style="text-align: left;"><code>-</code> (унарний)</td>
+<td style="text-align: left;">Унарний мінус (<code>-self</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__pos__(self)</code></td>
+<td style="text-align: left;"><code>+</code> (унарний)</td>
+<td style="text-align: left;">Унарний плюс (<code>+self</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__abs__(self)</code></td>
+<td style="text-align: left;"><code>abs()</code></td>
+<td style="text-align: left;">Абсолютне значення (<code>abs(self)</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__int__(self)</code></td>
+<td style="text-align: left;"><code>int()</code></td>
+<td style="text-align: left;">Перетворення на ціле число (<code>int(self)</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__float__(self)</code></td>
+<td style="text-align: left;"><code>float()</code></td>
+<td style="text-align: left;">Перетворення на число з плаваючою комою (<code>float(self)</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__round__(self[, ndigits])</code></td>
+<td style="text-align: left;"><code>round()</code></td>
+<td style="text-align: left;">Округлення (<code>round(self, ndigits)</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__complex__(self)</code></td>
+<td style="text-align: left;"><code>complex()</code></td>
+<td style="text-align: left;">Перетворення на комплексне число (<code>complex(self)</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>__index__(self)</code></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Використовується при зрізах, перетворює об'єкт на цілочисельний індекс. Наприклад, <code>operator.index()</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Ці методи дозволяють об'єктам вашого класу поводитися як вбудовані числові типи при використанні стандартних операторів та функцій.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="number_system.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Системи числення">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Системи числення
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="int.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Цілі числа">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Цілі числа
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Ruslan Iskov <ruslan.rv.ua@gmail.com>
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ruslan-rv-ua/pystarter" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      
+    
+  </body>
+</html>

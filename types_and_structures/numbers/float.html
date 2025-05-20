@@ -1303,6 +1303,28 @@
   
   
     <li class="md-nav__item">
+      <a href="number_funcs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Числа в Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="int.html" class="md-nav__link">
         
   
@@ -1490,7 +1512,7 @@
         
   
   
-    <a href="../sequences/sequences.html" class="md-nav__link">
+    <a href="../sequences/string.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1717,6 +1739,7 @@
 <h3 id="float_1">Особливі значення типу <code>float</code></h3>
 <p>Передаючи <code>float()</code> певні значення <code>str</code> можна створювати "особливі" об'єкти. </p>
 <h4 id="_3">Нескінченність</h4>
+<p>Значення нескінченності (<code>inf</code>) використовується для представлення чисел, що перевищують максимальне можливе значення для типу <code>float</code>. Це може статися в результаті математичних операцій, таких як ділення на нуль (наприклад, <code>1/0</code>) або при роботі з дуже великими числами, які виходять за межі представлення стандартних чисел з плаваючою комою. Також <code>inf</code> може використовуватися для встановлення початкових значень в алгоритмах пошуку максимумів або мінімумів.</p>
 <pre><code>&gt;&gt;&gt; float('INFINITY')
 inf
 &gt;&gt;&gt; float('-infinity')
@@ -1736,6 +1759,9 @@ True
 <h4 id="nan">NaN</h4>
 <p>Особливий об'єкт типу <code>float</code> — <code>NaN</code> (Not a Number). 
 Означає "значення, яке не є числом". </p>
+<p><code>NaN</code> використовується для представлення результатів невизначених математичних операцій, 
+наприклад, <code>0/0</code> або <code>inf - inf</code>. Також <code>NaN</code> може вказувати на відсутність або 
+некоректність даних.</p>
 <pre><code>&gt;&gt;&gt; float('NaN')
 nan
 &gt;&gt;&gt; float('-nan')
@@ -1754,6 +1780,33 @@ nan
 &gt;&gt;&gt; isnan(nan)
 True
 &gt;&gt;&gt; isnan(float('-nan'))
+True
+&gt;&gt;&gt;
+</code></pre>
+<p>Будь-яка арифметична операція з <code>NaN</code> повертає <code>NaN</code>:</p>
+<pre><code>&gt;&gt;&gt; from math import nan
+&gt;&gt;&gt; nan + 1
+nan
+&gt;&gt;&gt; nan - 10
+nan
+&gt;&gt;&gt; nan * 5
+nan
+&gt;&gt;&gt; nan / 2
+nan
+&gt;&gt;&gt; nan / nan
+nan
+&gt;&gt;&gt;
+</code></pre>
+<p>Порівняння з <code>NaN</code> (окрім <code>!=</code>) завжди повертає <code>False</code>:</p>
+<pre><code>&gt;&gt;&gt; nan &gt; 0
+False
+&gt;&gt;&gt; nan &lt; 0
+False
+&gt;&gt;&gt; nan == 0
+False
+&gt;&gt;&gt; nan == nan
+False
+&gt;&gt;&gt; nan != nan
 True
 &gt;&gt;&gt;
 </code></pre>
