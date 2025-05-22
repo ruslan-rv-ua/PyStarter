@@ -1411,6 +1411,15 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
+      Спеціальні методи
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
       Додаткові матеріали
     </span>
   </a>
@@ -1470,6 +1479,28 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bool.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Булевий тип даних
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1497,7 +1528,7 @@
         
   
   
-    <a href="../sequences/string.html" class="md-nav__link">
+    <a href="../sequences/sequences.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1644,6 +1675,15 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Спеціальні методи
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       Додаткові матеріали
     </span>
@@ -1821,7 +1861,60 @@ MyDateTime(2021, 9, 6, 14, 19, 44, 319623)
 бітові операції на практиці використовуються досить рідко порівняно з іншими мовами програмування. 
 Тому в рамках даного курса ми не розглядаємо детально бітові операції. 
 Рекомендуємо звернутись до документації Python. </p>
-<h2 id="_4">Додаткові матеріали</h2>
+<h3 id="_4">Спеціальні методи</h3>
+<p>Цілі числа, як і інші вбудовані типи в Python, мають ряд спеціальних методів. Ось деякі з них:</p>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Оператор/Функція</th>
+<th>Опис</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__lshift__(self, other)</code></td>
+<td><code>&lt;&lt;</code></td>
+<td>Бітовий зсув вліво</td>
+</tr>
+<tr>
+<td><code>__rshift__(self, other)</code></td>
+<td><code>&gt;&gt;</code></td>
+<td>Бітовий зсув вправо</td>
+</tr>
+<tr>
+<td><code>__and__(self, other)</code></td>
+<td><code>&amp;</code></td>
+<td>Бітове "І" (AND)</td>
+</tr>
+<tr>
+<td><code>__or__(self, other)</code></td>
+<td><code>|</code></td>
+<td>Бітове "АБО" (OR)</td>
+</tr>
+<tr>
+<td><code>__xor__(self, other)</code></td>
+<td><code>^</code></td>
+<td>Бітове "виключне АБО" (XOR)</td>
+</tr>
+<tr>
+<td><code>__invert__(self)</code></td>
+<td><code>~</code></td>
+<td>Бітова інверсія (NOT)</td>
+</tr>
+<tr>
+<td><code>__int__(self)</code></td>
+<td><code>int()</code></td>
+<td>Перетворення на ціле число (зазвичай повертає <code>self</code>)</td>
+</tr>
+<tr>
+<td><code>__index__(self)</code></td>
+<td></td>
+<td>Використовується для перетворення на цілочисельний індекс (напр. у зрізах)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">Додаткові матеріали</h2>
 <ul>
 <li><a href="https://docs.python.org/3/library/stdtypes.html#bitwise-operations-on-integer-types">Документація Python: бітові операції</a></li>
 <li><a href="https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types">Документація Python: перевизначення числових операцій</a></li>

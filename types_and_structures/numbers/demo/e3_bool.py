@@ -1,5 +1,5 @@
-# __bool__()
 # bool(x)
+# __bool__()
 # False = False, None, 0, len()==0
 
 # Truthy / Falsy
