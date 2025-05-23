@@ -273,7 +273,7 @@ True
     False
     >>>
 
-Об'єкти одного класа за замовчуванням не рівні між собою (оператор `==` для об'єктів поводиться так само, як оператор `is`):
+Об'єкти одного класа за замовчуванням не рівні між собою — оператор `==` для об'єктів поводиться так само, як оператор `is`:
 
     >>> class MyClass:
     ...     def __init__(self, value):
@@ -287,3 +287,224 @@ True
     False
     >>>
 
+##### `__eq__`
+
+Цей метод викликається, коли використовується оператор `==`. 
+
+Повинен повернути:
+
+- `True`, якщо об'єкти рівні.
+- `False`, якщо об'єкти не рівні.
+- `NotImplemented`, якщо об'єкти несумісні для порівняння.
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __eq__(self, other):
+        if not isinstance(other, Person):
+            # Не порівнювати з об'єктами інших типів
+            return NotImplemented
+        return self.name == other.name and self.age == other.age
+
+p1 = Person("Іван", 30)
+p2 = Person("Марія", 25)
+p3 = Person("Іван", 30)
+```
+
+Порівнюємо два об'єкти `Person`:
+
+```python
+>>> p1 == p2
+False
+>>> p1 == p3
+True
+>>> p1 == "Іван" # завдяки NotImplemented
+False
+>>>
+```
+
+Якщо `__eq__` реалізований, а `__ne__` ні,
+то `__ne__` за замовчуванням повертає протилежне значення `__eq__`.
+
+```python
+>>> p1 != p2
+True
+>>> p1 != p3
+False
+>>>
+```
+
+Якщо `__eq__` не реалізований, він успадковується від класу `object`, який у свою чергу повертає `NotImplemented`.
+У цьому разі Python за замовчуванням порівнює ідентифікатори об'єктів (тобто, чи є це один і той же об'єкт в пам'яті).
+
+##### `__ne__`
+
+Метод викликається для оператора `!=`. 
+
+Зазвичай, якщо реалізували `__eq__`, вам не потрібно явно реалізовувати `__ne__`, 
+оскільки Python автоматично надасть реалізацію за замовчуванням, 
+яка є запереченням `__eq__`. 
+Однак, ви можете надати власну реалізацію, якщо це необхідно.
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __eq__(self, other):
+        if not isinstance(other, Point):
+            return NotImplemented
+        return self.x == other.x and self.y == other.y
+
+    # Явна реалізація __ne__ (хоча зазвичай не потрібна)
+    def __ne__(self, other):
+        print("Викликано __ne__")
+        if not isinstance(other, Point):
+            return NotImplemented
+        return not self.__eq__(other)
+
+
+p1 = Point(1, 2)
+p2 = Point(1, 2)
+p3 = Point(3, 4)
+```
+
+Порівнюємо два об'єкти `Point`:
+
+```python
+>>> p1 != p3
+Викликано __ne__
+True
+>>> p1 != p2
+Викликано __ne__
+False
+>>>
+```
+
+##### Методи впорядкованого порівняння: `__lt__`, `__le__`, `__gt__`, `__ge__`
+
+Ці методи використовуються для операторів `<`, `<=`, `>`, `>=` відповідно. 
+
+Метод ``__lt__(self, other)` повинен повернути:
+
+- `True`, якщо `self` менше `other`.
+- `False`, якщо `self` не менше `other`.
+- `NotImplemented`, якщо `self` і `other` несумісні для порівняння.
+
+Аналогічно для інших методів.
+
+Приклад з `__lt__`:
+
+```python
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def __eq__(self, other):
+        if not isinstance(other, Product):
+            return NotImplemented
+        return self.price == other.price and self.name == other.name
+
+    def __lt__(self, other):
+        if not isinstance(other, Product):
+            return NotImplemented
+        return self.price < other.price
+
+laptop = Product("Ноутбук", 1500)
+keyboard = Product("Клавіатура", 30)
+```
+
+Порівнюємо два об'єкти `Product`:
+
+```python
+>>> keyboard < laptop
+True
+>>> laptop < keyboard
+False
+>>>
+```
+
+##### `NotImplemented`
+
+Спеціальне значення `NotImplemented` використовується в методах порівняння, щоб вказати, що операція не реалізована для наданого типу `other`. Якщо метод порівняння повертає `NotImplemented`, Python спробує викликати "віддзеркалений" метод на іншому операнді. Якщо обидва повертають `NotImplemented`, виникає `TypeError`.
+
+Ось як працюють віддзеркалені методи:
+
+*   `__lt__(self, other)` та `__gt__(self, other)` є взаємними віддзеркаленнями. Тобто, якщо `a.__lt__(b)` повертає `NotImplemented`, Python спробує `b.__gt__(a)`.
+*   `__le__(self, other)` та `__ge__(self, other)` є взаємними віддзеркаленнями. Якщо `a.__le__(b)` повертає `NotImplemented`, Python спробує `b.__ge__(a)`.
+*   `__eq__(self, other)` та `__ne__(self, other)` є віддзеркаленнями самі для себе. Якщо `a.__eq__(b)` повертає `NotImplemented`, Python спробує `b.__eq__(a)`.
+
+Приклад віддзеркалених методів:
+
+```python
+class A:
+    def __init__(self, value):
+        self.value = value
+
+    def __lt__(self, other):
+        print("A.__lt__ викликано")
+        if isinstance(other, B):
+            # A не знає, як порівнюватися з B напряму для <
+            return NotImplemented
+        if isinstance(other, A):
+            return self.value < other.value
+        return NotImplemented # Для інших невідомих типів
+
+class B:
+    def __init__(self, value):
+        self.value = value
+
+    def __gt__(self, other):
+        print("B.__gt__ викликано")
+        if isinstance(other, A):
+            # B знає, як порівнюватися з A, коли B > A (що еквівалентно A < B)
+            return self.value > other.value
+        if isinstance(other, B):
+            return self.value > other.value
+        return NotImplemented # Для інших невідомих типів
+
+a1 = A(5)
+a2 = A(10)
+b1 = B(7)
+```
+
+1. Буде викликано `A.__lt__`.
+
+```python
+>>> a1 < a2
+A.__lt__ викликано
+True
+>>>
+```
+
+2. Спочатку викликається `A.__lt__(a1, b1)`, який поверне `NotImplemented`. 
+Потім Python спробує `B.__gt__(b1, a1)`.
+
+```python
+>>> a1 < b1
+A.__lt__ викликано
+B.__gt__ викликано
+True
+>>>
+```
+
+Якби `B.__gt__` також повернув `NotImplemented` або не був визначений, 
+виникла б помилка `TypeError`.
+
+Коли операнди (`a` та `b` в `a < b`) належать до різних типів, Python дотримується певних правил для визначення, який метод викликати першим:
+
+1.  **Загальний випадок:** Зазвичай Python спочатку викликає метод лівого операнда (наприклад, `a.__lt__(b)`). Якщо він повертає `NotImplemented`, тоді викликається віддзеркалений метод правого операнда (наприклад, `b.__gt__(a)`).
+2.  **Пріоритет підкласу:** Якщо тип правого операнда є прямим або непрямим підкласом типу лівого операнда, то **віддзеркалений метод правого операнда має пріоритет**. Наприклад, в операції `a < b`, якщо `type(b)` є підкласом `type(a)`, Python спочатку спробує `b.__gt__(a)`. Лише якщо цей виклик поверне `NotImplemented`, Python спробує `a.__lt__(b)`.
+<!-- 3.  **Віртуальне успадкування:** Ці правила пріоритету базуються на фактичній ієрархії класів і не враховують віртуальне успадкування (наприклад, через `ABCMeta.register`). -->
+
+Це дозволяє об'єктам різних типів коректно взаємодіяти, особливо коли один з них (наприклад, підклас) має більш специфічну логіку порівняння.
+
+##### Рекомендації
+
+- Повертайте `NotImplemented` при порівнянні з несумісними типами, замість того, щоб викликати `TypeError` напряму.
+- Будьте послідовними. Логіка порівняння повинна бути інтуїтивно зрозумілою та відповідати очікуванням. Наприклад, якщо `a == b` і `b == c`, то `a == c` повинно бути істинним.
