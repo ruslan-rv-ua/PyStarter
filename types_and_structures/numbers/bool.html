@@ -1542,6 +1542,75 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#is-is-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оператори ідентичності is та is not
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оператори порівняння значень
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Оператори порівняння значень">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__eq__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __eq__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__ne__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __ne__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__lt__-__le__-__gt__-__ge__" class="md-nav__link">
+    <span class="md-ellipsis">
+      Методи впорядкованого порівняння: __lt__, __le__, __gt__, __ge__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notimplemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      NotImplemented
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Рекомендації
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1753,6 +1822,75 @@
       Згортання операцій порівняння
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-is-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оператори ідентичності is та is not
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оператори порівняння значень
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Оператори порівняння значень">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__eq__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __eq__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__ne__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __ne__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__lt__-__le__-__gt__-__ge__" class="md-nav__link">
+    <span class="md-ellipsis">
+      Методи впорядкованого порівняння: __lt__, __le__, __gt__, __ge__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notimplemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      NotImplemented
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Рекомендації
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1996,7 +2134,7 @@ False
 <tr>
 <td>!=</td>
 <td>не дорівнює</td>
-<td></td>
+<td><code>__ne__()</code></td>
 </tr>
 <tr>
 <td>is</td>
@@ -2010,63 +2148,37 @@ False
 </tr>
 </tbody>
 </table>
-<p>Об'єкти різних типів, за винятком числових, при порівнянні на рівність завжди дають <code>False</code>. </p>
-<pre><code>&gt;&gt;&gt; [1,2] == '12'
-False
-&gt;&gt;&gt; 1 == 1.0
-True
-&gt;&gt;&gt;
+<h4 id="_7">Згортання операцій порівняння</h4>
+<p>Наступний вираз:</p>
+<pre><code>x &lt; y &lt;= z
 </code></pre>
-<p>Об'єкти одного класа за замовчуванням не рівні між собою: </p>
-<pre><code>&gt;&gt;&gt; class MyClass:
-...     def __init__(self, value):
-...             self.value = value
-...
-&gt;&gt;&gt; c1 = MyClass(1)
-&gt;&gt;&gt; c2 = MyClass(1)
-&gt;&gt;&gt; c1 == c2
-False
-&gt;&gt;&gt;
+<p>є еквівалентом виразу:</p>
+<pre><code>x &lt; y and y &lt;= z
 </code></pre>
-<p>Для порівняння на рівність клас має реалізувати відповідний магічний метод: </p>
-<pre><code>&gt;&gt;&gt; class MyClass:
-...     def __init__(self, value):
-...             self.value = value
-...     def __eq__(self, other):
-...             return self.value == other.value
-...
-&gt;&gt;&gt; c1 = MyClass(1)
-&gt;&gt;&gt; c2 = MyClass(1)
-&gt;&gt;&gt; c1 == c2
-True
-&gt;&gt;&gt;
-</code></pre>
-<p>Щоб об'єкти одного класа можна було впорядкувати (наприклад, відсортувати), 
-клас має реалізувати відповідні магічні методи: 
-<code>__lt__(), __le__(), __gt__() і __ge__()</code>. 
-Але, як правило, достатньо щоб клас реалізував <code>__lt__()</code> та <code>__eq__</code>. </p>
-<pre><code>&gt;&gt;&gt; class V:
-...     def __init__(self, value):
-...         self.value = value
-...     def __eq__(self, other):
-...         return self.value == other.value
-...     def __lt__(self, other):
-...         return self.value &lt; other.value
-...     def __repr__(self):
-...         return f'{self.__class__.__name__}({self.value})'
-...
-&gt;&gt;&gt;
-&gt;&gt;&gt; v1 = V(1)
-&gt;&gt;&gt; v2 = V(1)
-&gt;&gt;&gt; v3 = V(2)
-&gt;&gt;&gt; l = [V(777), v3, v2, v1, v3]
-&gt;&gt;&gt; l
-[V(777), V(2), V(1), V(1), V(2)]
-&gt;&gt;&gt; l.sort()
-&gt;&gt;&gt; l
-[V(1), V(1), V(2), V(2), V(777)]
-&gt;&gt;&gt;
-</code></pre>
+<p>Зауважте: значення <code>y</code> обчислюється лише один раз.</p>
+<p>Приклад:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f(</span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s2">) called&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">val</span>
+</code></pre></div>
+<p>Використання функції <code>f</code> у виразі <code>x &lt; y &lt;= z</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">called</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">called</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">called</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<p>Порівняйте з:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">called</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">called</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">called</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">called</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<h4 id="is-is-not">Оператори ідентичності <code>is</code> та <code>is not</code></h4>
 <p>Поведінка <code>is</code> та <code>is not</code> не може бути перевизначена. 
 Ця операція працює з об'єктами будь-яких класів і ніколи не піднімає винятків. </p>
 <pre><code>&gt;&gt;&gt; a=1
@@ -2075,14 +2187,217 @@ True
 False
 &gt;&gt;&gt;
 </code></pre>
-<h4 id="_7">Згортання операцій порівняння</h4>
-<p>Наступний вираз:</p>
-<pre><code>x &lt; y &lt;= z
+<h4 id="_8">Оператори порівняння значень</h4>
+<p>Об'єкти різних типів, за винятком числових, при порівнянні на рівність завжди дають <code>False</code>. </p>
+<pre><code>&gt;&gt;&gt; [1,2] == '12'
+False
+&gt;&gt;&gt; 1 == 1.0
+True
+&gt;&gt;&gt; 1 == True
+True
+&gt;&gt;&gt; [] == ()
+False
+&gt;&gt;&gt;
 </code></pre>
-<p>є еквівалентом виразу:</p>
-<pre><code>x &lt; y and y &lt;= z
+<p>Об'єкти одного класа за замовчуванням не рівні між собою — оператор <code>==</code> для об'єктів поводиться так само, як оператор <code>is</code>:</p>
+<pre><code>&gt;&gt;&gt; class MyClass:
+...     def __init__(self, value):
+...             self.value = value
+...
+&gt;&gt;&gt; c1 = MyClass(1)
+&gt;&gt;&gt; c2 = MyClass(1)
+&gt;&gt;&gt; c1 == c2
+False
+&gt;&gt;&gt; c1 is c2
+False
+&gt;&gt;&gt;
 </code></pre>
-<p>Зауважте: значення <code>y</code> обчислюється лише один раз. </p>
+<h5 id="__eq__"><code>__eq__</code></h5>
+<p>Цей метод викликається, коли використовується оператор <code>==</code>. </p>
+<p>Повинен повернути:</p>
+<ul>
+<li><code>True</code>, якщо об'єкти рівні.</li>
+<li><code>False</code>, якщо об'єкти не рівні.</li>
+<li><code>NotImplemented</code>, якщо об'єкти несумісні для порівняння.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Person</span><span class="p">):</span>
+            <span class="c1"># Не порівнювати з об&#39;єктами інших типів</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">age</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Іван&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Марія&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Іван&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</code></pre></div>
+<p>Порівнюємо два об'єкти <code>Person</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">==</span> <span class="n">p3</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">==</span> <span class="s2">&quot;Іван&quot;</span> <span class="c1"># завдяки NotImplemented</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<p>Якщо <code>__eq__</code> реалізований, а <code>__ne__</code> ні,
+то <code>__ne__</code> за замовчуванням повертає протилежне значення <code>__eq__</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">!=</span> <span class="n">p2</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">!=</span> <span class="n">p3</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<p>Якщо <code>__eq__</code> не реалізований, він успадковується від класу <code>object</code>, який у свою чергу повертає <code>NotImplemented</code>.
+У цьому разі Python за замовчуванням порівнює ідентифікатори об'єктів (тобто, чи є це один і той же об'єкт в пам'яті).</p>
+<h5 id="__ne__"><code>__ne__</code></h5>
+<p>Метод викликається для оператора <code>!=</code>. </p>
+<p>Зазвичай, якщо реалізували <code>__eq__</code>, вам не потрібно явно реалізовувати <code>__ne__</code>, 
+оскільки Python автоматично надасть реалізацію за замовчуванням, 
+яка є запереченням <code>__eq__</code>. 
+Однак, ви можете надати власну реалізацію, якщо це необхідно.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="c1"># Явна реалізація __ne__ (хоча зазвичай не потрібна)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Викликано __ne__&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Point</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+<p>Порівнюємо два об'єкти <code>Point</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">!=</span> <span class="n">p3</span>
+<span class="n">Викликано</span> <span class="fm">__ne__</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">!=</span> <span class="n">p2</span>
+<span class="n">Викликано</span> <span class="fm">__ne__</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<h5 id="__lt__-__le__-__gt__-__ge__">Методи впорядкованого порівняння: <code>__lt__</code>, <code>__le__</code>, <code>__gt__</code>, <code>__ge__</code></h5>
+<p>Ці методи використовуються для операторів <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code> відповідно. </p>
+<p>Метод <code>`__lt__(self, other)</code> повинен повернути:</p>
+<ul>
+<li><code>True</code>, якщо <code>self</code> менше <code>other</code>.</li>
+<li><code>False</code>, якщо <code>self</code> не менше <code>other</code>.</li>
+<li><code>NotImplemented</code>, якщо <code>self</code> і <code>other</code> несумісні для порівняння.</li>
+</ul>
+<p>Аналогічно для інших методів.</p>
+<p>Приклад з <code>__lt__</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Product</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Product</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">price</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Product</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">price</span>
+
+<span class="n">laptop</span> <span class="o">=</span> <span class="n">Product</span><span class="p">(</span><span class="s2">&quot;Ноутбук&quot;</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+<span class="n">keyboard</span> <span class="o">=</span> <span class="n">Product</span><span class="p">(</span><span class="s2">&quot;Клавіатура&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</code></pre></div>
+<p>Порівнюємо два об'єкти <code>Product</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">keyboard</span> <span class="o">&lt;</span> <span class="n">laptop</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">laptop</span> <span class="o">&lt;</span> <span class="n">keyboard</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<h5 id="notimplemented"><code>NotImplemented</code></h5>
+<p>Спеціальне значення <code>NotImplemented</code> використовується в методах порівняння, щоб вказати, що операція не реалізована для наданого типу <code>other</code>. Якщо метод порівняння повертає <code>NotImplemented</code>, Python спробує викликати "віддзеркалений" метод на іншому операнді. Якщо обидва повертають <code>NotImplemented</code>, виникає <code>TypeError</code>.</p>
+<p>Ось як працюють віддзеркалені методи:</p>
+<ul>
+<li><code>__lt__(self, other)</code> та <code>__gt__(self, other)</code> є взаємними віддзеркаленнями. Тобто, якщо <code>a.__lt__(b)</code> повертає <code>NotImplemented</code>, Python спробує <code>b.__gt__(a)</code>.</li>
+<li><code>__le__(self, other)</code> та <code>__ge__(self, other)</code> є взаємними віддзеркаленнями. Якщо <code>a.__le__(b)</code> повертає <code>NotImplemented</code>, Python спробує <code>b.__ge__(a)</code>.</li>
+<li><code>__eq__(self, other)</code> та <code>__ne__(self, other)</code> є віддзеркаленнями самі для себе. Якщо <code>a.__eq__(b)</code> повертає <code>NotImplemented</code>, Python спробує <code>b.__eq__(a)</code>.</li>
+</ul>
+<p>Приклад віддзеркалених методів:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A.__lt__ викликано&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+            <span class="c1"># A не знає, як порівнюватися з B напряму для &lt;</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Для інших невідомих типів</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">B</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B.__gt__ викликано&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+            <span class="c1"># B знає, як порівнюватися з A, коли B &gt; A (що еквівалентно A &lt; B)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Для інших невідомих типів</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>Буде викликано <code>A.__lt__</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="o">&lt;</span> <span class="n">a2</span>
+<span class="n">A</span><span class="o">.</span><span class="fm">__lt__</span> <span class="n">викликано</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<ol>
+<li>Спочатку викликається <code>A.__lt__(a1, b1)</code>, який поверне <code>NotImplemented</code>. 
+Потім Python спробує <code>B.__gt__(b1, a1)</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="o">&lt;</span> <span class="n">b1</span>
+<span class="n">A</span><span class="o">.</span><span class="fm">__lt__</span> <span class="n">викликано</span>
+<span class="n">B</span><span class="o">.</span><span class="fm">__gt__</span> <span class="n">викликано</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<p>Якби <code>B.__gt__</code> також повернув <code>NotImplemented</code> або не був визначений, 
+виникла б помилка <code>TypeError</code>.</p>
+<p>Коли операнди (<code>a</code> та <code>b</code> в <code>a &lt; b</code>) належать до різних типів, Python дотримується певних правил для визначення, який метод викликати першим:</p>
+<ol>
+<li><strong>Загальний випадок:</strong> Зазвичай Python спочатку викликає метод лівого операнда (наприклад, <code>a.__lt__(b)</code>). Якщо він повертає <code>NotImplemented</code>, тоді викликається віддзеркалений метод правого операнда (наприклад, <code>b.__gt__(a)</code>).</li>
+<li><strong>Пріоритет підкласу:</strong> Якщо тип правого операнда є прямим або непрямим підкласом типу лівого операнда, то <strong>віддзеркалений метод правого операнда має пріоритет</strong>. Наприклад, в операції <code>a &lt; b</code>, якщо <code>type(b)</code> є підкласом <code>type(a)</code>, Python спочатку спробує <code>b.__gt__(a)</code>. Лише якщо цей виклик поверне <code>NotImplemented</code>, Python спробує <code>a.__lt__(b)</code>.</li>
+</ol>
+<!-- 3.  **Віртуальне успадкування:** Ці правила пріоритету базуються на фактичній ієрархії класів і не враховують віртуальне успадкування (наприклад, через `ABCMeta.register`). -->
+
+<p>Це дозволяє об'єктам різних типів коректно взаємодіяти, особливо коли один з них (наприклад, підклас) має більш специфічну логіку порівняння.</p>
+<h5 id="_9">Рекомендації</h5>
+<ul>
+<li>Повертайте <code>NotImplemented</code> при порівнянні з несумісними типами, замість того, щоб викликати <code>TypeError</code> напряму.</li>
+<li>Будьте послідовними. Логіка порівняння повинна бути інтуїтивно зрозумілою та відповідати очікуванням. Наприклад, якщо <code>a == b</code> і <code>b == c</code>, то <code>a == c</code> повинно бути істинним.</li>
+</ul>
 
 
 
