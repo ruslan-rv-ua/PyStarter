@@ -222,11 +222,11 @@ nav:
   - 23. Поліморфізм:
     - Поліморфізм в ООП: oop/polymorphism/polymorphism_basis.md
     - Поліморфізм в Python: oop/polymorphism/polymorphism_python.md
-  # - 24. Атрибути:
-  #   - Доступ до атрибутів: oop/attributes/attributes.md
-  #   - Слоти: oop/attributes/slots.md
-  #   - Контроль доступу до атрибутів: oop/attributes/access_control.md
-  #   # - Дескриптори: oop/attributes/descriptors.md
+  - 24. Атрибути:
+    - Доступ до атрибутів: oop/attributes/attributes.md
+    - Слоти: oop/attributes/slots.md
+    - Контроль доступу до атрибутів: oop/attributes/access_control.md
+    # - Дескриптори: oop/attributes/descriptors.md
   - 25. Виняткові ситуації:
     - Винятки: exceptions/exceptions.md
     - Створення виняткових ситуацій: exceptions/raising_exceptions.md
@@ -249,9 +249,9 @@ nav:
     - Послідовності в Python: types_and_structures/sequences/sequences.md
     - Діапазони: types_and_structures/sequences/range.md
     - Символьні рядки: types_and_structures/sequences/string.md
-  #   - Бінарні послідовності: types_and_structures/sequences/binary.md
-  #   - Списки: types_and_structures/sequences/list.md
-  #   - Кортежі: types_and_structures/sequences/tuple.md
+    # - Бінарні послідовності: types_and_structures/sequences/binary.md
+    # - Списки: types_and_structures/sequences/list.md
+    # - Кортежі: types_and_structures/sequences/tuple.md
     # - Створення послідовностей: types_and_structures/sequences/creating_sequences.md
   # - 29. Відображення та множини:
   #   - Хешування даних: types_and_structures/mappings_and_sets/hash.md
