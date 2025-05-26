@@ -249,26 +249,26 @@ nav:
     - Послідовності в Python: types_and_structures/sequences/sequences.md
     - Діапазони: types_and_structures/sequences/range.md
     - Символьні рядки: types_and_structures/sequences/string.md
-    # - Бінарні послідовності: types_and_structures/sequences/binary.md
-    # - Списки: types_and_structures/sequences/list.md
-    # - Кортежі: types_and_structures/sequences/tuple.md
-    # - Створення послідовностей: types_and_structures/sequences/creating_sequences.md
-  # - 29. Відображення та множини:
-  #   - Хешування даних: types_and_structures/mappings_and_sets/hash.md
-  #   - Об'єкти, що хешуються: types_and_structures/mappings_and_sets/hashable.md
-  #   - Відображення в Python: types_and_structures/mappings_and_sets/mappings.md
-  #   - Множини в Python: types_and_structures/mappings_and_sets/sets.md
-  # - 30. Ітератори:
-  #   - Ітератори: iterable/iterator.md
-  #   - Створення ітераторів: iterable/create_iterator.md
-  #   - Ітератори послідовностей: iterable/sequences_iterators.md
+    - Бінарні послідовності: types_and_structures/sequences/binary.md
+    - Списки: types_and_structures/sequences/list.md
+    - Кортежі: types_and_structures/sequences/tuple.md
+    - Створення послідовностей: types_and_structures/sequences/creating_sequences.md
+  - 29. Відображення та множини:
+    - Хешування даних: types_and_structures/mappings_and_sets/hash.md
+    - Об'єкти, що хешуються: types_and_structures/mappings_and_sets/hashable.md
+    - Відображення в Python: types_and_structures/mappings_and_sets/mappings.md
+    - Множини в Python: types_and_structures/mappings_and_sets/sets.md
+  - 30. Ітератори:
+    - Ітератори: iterable/iterator.md
+    - Створення ітераторів: iterable/create_iterator.md
+    - Ітератори послідовностей: iterable/sequences_iterators.md
   # - 31. Генератори:
   #   - Генератори: iterable/generator.md
   #   - Генераторні вирази: iterable/generator_expression.md
-  # - 32. Операції з ітерабельними об'єктами:
-  #   - Упаковка та розпаковка: iterable/iterable_pack_unpack.md
-  #   - Агрегація даних: iterable/iterable_aggregation.md
-  #   - Інші функції: iterable/iterable_functions.md
+  - 32. Операції з ітерабельними об'єктами:
+    - Упаковка та розпаковка: iterable/iterable_pack_unpack.md
+    - Агрегація даних: iterable/iterable_aggregation.md
+    # - Інші функції: iterable/iterable_functions.md
   # - 33. Функційне програмування:
   #   - Парадигма ФП: functional_programming/intro.md
   #   - Чисті функції: functional_programming/pure_functions.md
@@ -314,11 +314,11 @@ nav:
   #   - Доступність: vscode/accessibility.md
   - Батарейки:
     - Модуль random: batteries/random.md
-  #   - Модуль pprint: batteries/pprint.md
+    - Модуль pprint: batteries/pprint.md
     - Модуль datetime: batteries/datetime.md
     - Модуль collections: batteries/collections.md
+    - Модуль pathlib: batteries/pathlib.md
     # - Модуль enum: batteries/enum.md
-  #   - Модуль pathlib: comming_soon.md # batteries/pathlib.md
     # - Модуль re: batteries/re.md
     # - Модуль contextlib: batteries/contextlib.md
   #   - Модуль itertools: batteries/itertools.md

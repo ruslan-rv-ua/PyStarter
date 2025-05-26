@@ -16,13 +16,13 @@ hide:
 
 Ітератор є "одноразовим": 
 якщо ми знову захочемо "пробігтись" по ітерабельному об'єкту, 
-то нам треба буде отримати новий ітератор для цього ітерабельлного об'єкта. 
+то нам треба буде отримати новий ітератор для цього ітерабельного об'єкта. 
 
 Отримати ітератор для певного об'єкта можна за допомогою функції `iter()`. 
 Ця функція робить наступне:
 
-1. Перевіряє, чи містить переданий ії об'єкт магічний метод `__iter__()`. 
-Якщо так, то вона викликає цей магічний метод, а він у свою чергу повинен повернути об`єкт-ітератор.
+1. Перевіряє, чи містить переданий їй об'єкт магічний метод `__iter__()`. 
+Якщо так, то вона викликає цей магічний метод, а він у свою чергу повинен повернути об’єкт-ітератор.
 1. Якщо ж такого магічного метода немає, 
 тоді функція `iter()` очікує що переданий їй об'єкт має магічний метод `__getitem__()`. 
 У такому випадку Python побудує і створить ітератор самостійно.
@@ -35,22 +35,22 @@ hide:
 
 Давайте спробуємо отримати ітератори для деяких сутностей Python:
 
-	>>> i = iter('hello')
-	>>> i
-	<str_iterator object at 0x0000020BDD63F198>
-	>>> i = iter([1,3,5,7])
-	>>> i
-	<list_iterator object at 0x0000020BDD63F1D0>
-	>>> i = iter({})
-	>>> i
-	<dict_keyiterator object at 0x0000020BDD32A3B8>
-	>>> i = iter({}.values())
-	>>> i
-	<dict_valueiterator object at 0x0000020BDD306638>
-	>>> i = iter({}.items())
-	>>> i
-	<dict_itemiterator object at 0x0000020BDD32A3B8>
-	>>>
+    >>> i = iter('hello')
+    >>> i
+    <str_iterator object at 0x0000020BDD63F198>
+    >>> i = iter([1,3,5,7])
+    >>> i
+    <list_iterator object at 0x0000020BDD63F1D0>
+    >>> i = iter({})
+    >>> i
+    <dict_keyiterator object at 0x0000020BDD32A3B8>
+    >>> i = iter({}.values())
+    >>> i
+    <dict_valueiterator object at 0x0000020BDD306638>
+    >>> i = iter({}.items())
+    >>> i
+    <dict_itemiterator object at 0x0000020BDD32A3B8>
+    >>>
 
 ### Отримання значень ітерабельних об'єктів
 
@@ -67,18 +67,18 @@ hide:
 цей метод має викинути один з винятків — 
 `StopIteration`: 
 
-	>>> i = iter('bye')
-	>>> next(i)
-	'b'
-	>>> next(i)
-	'y'
-	>>> next(i)
-	'e'
-	>>> next(i)
-	Traceback (most recent call last):
-	  File "<stdin>", line 1, in <module>
-	StopIteration
-	>>>
+    >>> i = iter('bye')
+    >>> next(i)
+    'b'
+    >>> next(i)
+    'y'
+    >>> next(i)
+    'e'
+    >>> next(i)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    StopIteration
+    >>>
 
 Крім того кожен ітератор має реалізовувати магічний метод `__iter__()` 
 (так само, як і сам ітерабельний об'єкт). 
@@ -87,7 +87,7 @@ hide:
 
 ```python
 def __iter__(self):
-	return self
+    return self
 ```
 
 Можна зробити висновок, 
@@ -114,27 +114,27 @@ def __iter__(self):
 Для прикладу: маємо список чисел і треба вивести квадрати цих чисел. 
 Проітеруємось по списку циклом `for`:
 
-	>>> numbers = [1,2,3]
-	>>> for n in numbers:
-	...     print(n*n)
-	...
-	1
-	4
-	9
-	>>>
+    >>> numbers = [1,2,3]
+    >>> for n in numbers:
+    ...     print(n*n)
+    ...
+    1
+    4
+    9
+    >>>
 
 А тепер реалізуємо логіку цикла `for`:
 
-	>>> numbers = [1,2,3]
-	>>> iterator = iter(numbers)
-	>>> while True:
-	...     try:
-	...         n = next(iterator)
-	...     except StopIteration:
-	...         break
-	...     print(n*n)
-	...
-	1
-	4
-	9
-	>>>
+    >>> numbers = [1,2,3]
+    >>> iterator = iter(numbers)
+    >>> while True:
+    ...     try:
+    ...         n = next(iterator)
+    ...     except StopIteration:
+    ...         break
+    ...     print(n*n)
+    ...
+    1
+    4
+    9
+    >>>
