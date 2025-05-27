@@ -1585,47 +1585,7 @@
       
   
   <span class="md-ellipsis">
-    29. Відображення та множини
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../iterable/iterable_pack_unpack.html" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    32. Операції з ітерабельними об'єктами
+    30. Відображення та множини
     
   </span>
   
@@ -1797,6 +1757,10 @@
 <li><code>r[i] &lt; stop</code> для <code>step &gt; 0</code></li>
 <li><code>r[i] &gt; stop</code> для <code>step &lt; 0</code></li>
 </ul>
+<p>Елементи обчислюються "на льоту" при зверненні до них. Це дозволяє працювати навіть із дуже великими діапазонами без значних витрат пам'яті.</p>
+<p>Щоб отримати список усіх чисел, потрібно явно перетворити діапазон у список:</p>
+<div class="highlight"><pre><span></span><code><span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># [0, 1, 2, 3, 4]</span>
+</code></pre></div>
 
 
 

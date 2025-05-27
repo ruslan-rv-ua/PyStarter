@@ -1374,47 +1374,7 @@
       
   
   <span class="md-ellipsis">
-    29. Відображення та множини
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="iterable_pack_unpack.html" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    32. Операції з ітерабельними об'єктами
+    30. Відображення та множини
     
   </span>
   
@@ -1531,19 +1491,19 @@
 
 <h1 id="_1">Ітератори послідовностей</h1>
 <p>Пригадаємо: щоб об'єкт був ітерабельним, функція <code>iter()</code> має повернути ітератор для цього об'єкта. 
-У свою чергу якщо функція <code>iter()</code> не знаходить у потенційно ітерабельного об'єкта метода <code>__iter__()</code>, 
+Якщо функція <code>iter()</code> не знаходить у потенційно ітерабельного об'єкта метода <code>__iter__()</code>,
 але знаходить магічний метод <code>__getitem__()</code>, тоді Python спробує побудувати ітератор самостійно. </p>
-<p>Методу <code>__getitem__()</code> будуть передаватись цілі невід'ємні числа, тобто як індекси для списків, але які більше або дорівнюють нулю. 
-Ми ж у свою чергу повинні реалізувати повернення необхідного значення, яке відповідає вказаному індексу. 
-Якщо переданий "індекс" виходить за межі, атже нам треба ж якимось чином обмежити довжину послідовності, то ми маємо "підняти" виняток IndexError</p>
-<p>Створимо просту послідовність — квадрати перших 100 невід'ємних чисел:</p>
+<p>Методу <code>__getitem__()</code> будуть передаватись цілі невід'ємні числа, тобто індекси для списків, які є невід'ємними (більші або дорівнюють нулю).
+Ми повинні реалізувати повернення значення, що відповідає вказаному індексу.
+Якщо переданий індекс виходить за межі (адже потрібно обмежити довжину послідовності), слід підняти виняток IndexError.</p>
+<p>Створимо просту послідовність — квадрати перших 100 невід’ємних чисел:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Squares</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">index</span> <span class="o">*</span> <span class="n">index</span>
         <span class="k">raise</span> <span class="ne">IndexError</span>
 </code></pre></div>
-<p>Тепер спробуємо отримати ітератор цієї послідовності:</p>
+<p>Тепер спробуємо отримати ітератор цієї послідовності та скористатися ним:</p>
 <pre><code>&gt;&gt;&gt; squares_iterator = iter(Squares())
 &gt;&gt;&gt; next(squares_iterator)
 0
@@ -1560,7 +1520,7 @@ File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 StopIteration
 &gt;&gt;&gt;
 </code></pre>
-<p>Ітератор при досягненні кінця послідовності "піднімає" виняток <code>StopIteration</code>, власне як і має робити ітератор. </p>
+<p>Коли ітератор досягає кінця послідовності, він піднімає виняток <code>StopIteration</code>, як і має робити ітератор.</p>
 
 
 

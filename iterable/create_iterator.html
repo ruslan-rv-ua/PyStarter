@@ -1374,47 +1374,7 @@
       
   
   <span class="md-ellipsis">
-    29. Відображення та множини
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="iterable_pack_unpack.html" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    32. Операції з ітерабельними об'єктами
+    30. Відображення та множини
     
   </span>
   
@@ -1556,16 +1516,16 @@
 
 
 <h1 id="_1">Створення ітераторів</h1>
-<p>Як вже зазначалось ітератор має реалізовувати магічні методи <code>__iter__()</code> та <code>__next__</code>.</p>
+<p>Як вже зазначалось, ітератор має реалізовувати магічні методи <code>__iter__()</code> та <code>__next__</code>.</p>
 <p>Метод <code>__iter__()</code> має повертати сам ітератор. Зазвичай він виглядає так:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">self</span>
 </code></pre></div>
 <p>Магічний метод <code>__next__</code> при кожному виклику має повертати чергове значення. 
-Коли усі значення закінчаться, то при черговому і усіх наступних викликах цей метод має "піднімати" виняток <code>StopIteration</code></p>
+Коли усі значення закінчаться, то при черговому та всіх наступних викликах цей метод має "піднімати" виняток <code>StopIteration</code></p>
 <h3 id="_2">Лічилочка</h3>
 <p>Розглянемо на прикладі. 
-Напишемо простий ітератор який реалізує "лічилочку", 
+Напишемо простий ітератор, який реалізує "лічилочку", 
 тобто перебирає усі цілі числа від 1 до вказаного значення включно.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">CountingOut</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count_to</span><span class="p">):</span>
@@ -1584,9 +1544,9 @@
 <p>Як це працює:</p>
 <ul>
 <li>у конструкторі ми запам'ятовуємо значення, до якого будемо рахувати, а також встановлюємо "поточне" значення, тобто починаємо з 1</li>
-<li>у магічному методі <code>__next__</code> повертаємо поточне значення лічилочки, якщо ми звісно ще не вийшли за межі лічби, і збільшуємо поточне значення на 1. У всіх інших випадках "піднімаємо" виняток <code>StopIteration</code>, що буде сигналізувати що лічити вже більше нічого.</li>
+<li>у магічному методі <code>__next__</code> повертаємо поточне значення лічилочки, якщо ми, звісно, ще не вийшли за межі лічби, і збільшуємо поточне значення на 1. У всіх інших випадках "піднімаємо" виняток <code>StopIteration</code>, що буде сигналізувати, що лічити вже більше нічого.</li>
 </ul>
-<p>Ну і спробуємо скористатись нашою лічилочкою:</p>
+<p>Тепер спробуємо скористатись нашою лічилочкою:</p>
 <pre><code>&gt;&gt;&gt; c = CountingOut(5)
 &gt;&gt;&gt; for n in c:
 ...     print(n)
@@ -1618,7 +1578,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">-=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="n">item</span>
 </code></pre></div>
-<p>Тепер можему зручно ітеруватись по ряду Фібоначчі:</p>
+<p>Тепер можемо зручно ітеруватися по ряду Фібоначчі:</p>
 <pre><code>&gt;&gt;&gt; for f in Fibonacci(10):
 ...     print(f)
 ...
@@ -1634,7 +1594,7 @@
 55
 &gt;&gt;&gt;
 </code></pre>
-<p>Треба створити список з чисел Фібоначчі? Не є питань:</p>
+<p>Потрібно створити список чисел Фібоначчі? Не проблема:</p>
 <pre><code>&gt;&gt;&gt; list(Fibonacci(10))
 [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 &gt;&gt;&gt;
@@ -1642,9 +1602,9 @@
 <p>Клас <code>Fibonacci</code> є:</p>
 <ul>
 <li>ітератором, тому що реалізує методи <code>__iter__()</code> та <code>__next__()</code>;</li>
-<li>ітерабельним, тому що реалізує метод <code>__iter__()</code> який повертає ітератор.</li>
+<li>ітерабельним, тому що реалізує метод <code>__iter__()</code>, який повертає ітератор.</li>
 </ul>
-<p>Проітеруватись по такому ряду чисел Фібоначчі можна лише один раз:</p>
+<p>Проітеруватися по такому ряду чисел Фібоначчі можна лише один раз:</p>
 <pre><code>&gt;&gt;&gt; fibo5 = Fibonacci(5)
 &gt;&gt;&gt; list(fibo5)
 [1, 1, 2, 3, 5]
@@ -1652,7 +1612,7 @@
 []
 &gt;&gt;&gt;
 </code></pre>
-<p>Виправимо цей "недолік": створимо окремо клас, який буде представляти ряд чисел Фібоначчі, і окремо ітератор по ньому.</p>
+<p>Виправимо цей недолік: створимо окремий клас, який представлятиме ряд чисел Фібоначчі, і окремий ітератор для нього.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">FibonacciIterator</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">=</span> <span class="n">count</span>
@@ -1678,7 +1638,7 @@
     <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">FibonacciIterator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_count</span><span class="p">)</span>
 </code></pre></div>
-<p>Тепер можна створити ряд чисел Фібоначчі необхідної довжини та ітеруватись по ньому скільки завгодно:</p>
+<p>Тепер можна створити ряд чисел Фібоначчі необхідної довжини та ітеруватися по ньому скільки завгодно:</p>
 <pre><code>&gt;&gt;&gt; fibo5 = Fibonacci(5)
 &gt;&gt;&gt; list(fibo5)
 [1, 1, 2, 3, 5]
