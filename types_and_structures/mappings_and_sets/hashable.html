@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#__hash__" class="md-skip">
+          Перейти до змісту
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1369,7 +1374,47 @@
       
   
   <span class="md-ellipsis">
-    30. Відображення та множини
+    29. Відображення та множини
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../iterable/iterable_pack_unpack.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    32. Операції з ітерабельними об'єктами
     
   </span>
   
@@ -1466,6 +1511,38 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#__hash__" class="md-nav__link">
+    <span class="md-ellipsis">
+      Метод __hash__
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Метод __hash__">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__hash___1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Найкращі практики для __hash__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1487,7 +1564,7 @@
 <p>Крім послідовностей в Python є ще дві групи контейнерів — множини та відображення. 
 Але перш ніж детально познайомитись з ними спочатку розглянемо що таке об'єкти, які хешуються.</p>
 <p>Серед вбудованих функцій Python є функція <code>hash()</code>, яка повертає хеш для переданого їй об'єкта. Хеш-значенням буде деяке ціле число (int). </p>
-<p>Насправді функція <code>hash()</code> викликає магічний метод <code>__hash__()</code> для переданого їй об'єкта. Якщо цей магічний метод об'єктом не реалізовано, то піднімається виняток.</p>
+<p>Насправді функція <code>hash()</code> викликає магічний метод <code>__hash__()</code> для переданого їй об'єкта. Якщо цей магічний метод об'єктом не реалізовано, то піднімається виняток <code>TypeError</code>.</p>
 <blockquote>
 <p><strong><em>Об'єкт, що хешується</em></strong> (hashable objects) в Python — такий об'єкт, який має хеш-значення, яке не змінюється протягом життєвого циклу об'єкта (поки його стан не змінюється, якщо це можливо), і обчислюється магічним методом <code>__hash__()</code>, а також цей об'єкт можна порівнювати з іншими об'єктами (реалізує метод <code>__eq__()</code>).</p>
 </blockquote>
@@ -1497,20 +1574,32 @@
 <p>Якщо нам треба перевірити, що два об'єкта не рівні, і якщо ці об'єкти хешуються, то ми можемо зробити це майже миттєво просто порівнявши хеш-значення цих об'єктів. Якщо хеш-значення не рівні, це означає, що об'єкти точно не рівні. </p>
 <p>Якщо нам треба перевірити, що два об'єкта рівні між собою, то ми спочатку порівнюємо хеш-значення цих об'єктів, і якщо останні не рівні, то вже можна стверджувати що і самі об'єкти не рівні і далі вже нічого не перевіряти. Це вже є дуже непоганою оптимізацією. Якщо ж хеш-значення рівні, то далі ми вже порівнюємо значення самих об'єктів.</p>
 <p>Все це дозволяє шукати об'єкти, що хешуються, серед інших об'єктів дуже швидко. </p>
-<p>Усі стандартні мутабельні об'єкти Python не є такими, що хешуються. 
-Усі стандартні немутабельні об'єкти є такими, що хешуються, якщо вони не містять у собі мутабельних об'єктів.</p>
+<p>Ця можливість в першу чергу використовується в таких структурах даних, як хеш-таблиці, які лежать в основі реалізації відображень (наприклад <code>dict</code>) та множин (<code>set</code>) в Python.</p>
+<p>Коли потрібно зберегти або знайти елемент у словнику чи множині (які використовують хеш-таблиці):</p>
+<ol>
+<li>Python обчислює хеш-значення елемента.</li>
+<li>За цим хеш-значенням швидко визначається конкретне місце в пам'яті, де елемент має зберігатися або де його шукати.</li>
+<li>Елемент або додається у це визначене місце, або шукається лише серед небагатьох елементів, що можуть там знаходитися.</li>
+</ol>
+<p>Це працює "дуже швидко", бо замість перебору всіх елементів у великій колекції, Python одразу переходить до потрібного місця в пам'яті. 
+В ідеалі, кожне таке місце містить дуже мало елементів, тому пошук, додавання чи видалення відбуваються майже миттєво.</p>
+<p>Іноді різні елементи можуть отримати однакове хеш-значення (колізія). 
+Python має способи вирішення таких ситуацій, щоб все одно працювати ефективно.</p>
+<p>Таким чином, використання хеш-значень у поєднанні з хеш-таблицями є фундаментальною причиною такої високої ефективності операцій зі словниками та множинами в Python.</p>
+<p>Усі стандартні мутабельні об'єкти Python не є такими, що хешуються. </p>
+<p>Усі стандартні немутабельні об'єкти є такими, що хешуються, якщо вони не містять у собі мутабельних об'єктів.</p>
 <pre><code>&gt;&gt;&gt; hash('hello')
 1001890812597159072
 &gt;&gt;&gt; hash(None)
 84759117
 &gt;&gt;&gt;
 </code></pre>
-<p>Хеш від цілого числа — зазвичай саме число, немає сенсу цілим числам співставляти інші цілі числа:</p>
+<p>Хеш від цілого числа в CPython — зазвичай саме число (крім дуже великих), 
+але це не гарантується специфікацією Python для всіх реалізацій:</p>
 <pre><code>&gt;&gt;&gt; hash(42)
 42
 &gt;&gt;&gt;
 </code></pre>
-<p><em>Примітка: Для більшості цілих чисел у CPython хеш дорівнює самому числу, але це не гарантується специфікацією Python для всіх реалізацій і дуже великих чисел.</em></p>
 <p>Від мутабельних об'єктів:</p>
 <pre><code>Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
@@ -1526,20 +1615,141 @@ Traceback (most recent call last):
 TypeError: unhashable type: 'list'
 &gt;&gt;&gt;
 </code></pre>
-<p>Функція <code>hash()</code> містить дві "пасхалки": </p>
+<p>Функція <code>hash()</code> містить дві "пасхалки" (специфічно для CPython, може змінюватися): </p>
 <pre><code>&gt;&gt;&gt; hash(float('inf')) # перші цифри числа Пі
 314159
 &gt;&gt;&gt; hash(float('NaN'))
 0
 &gt;&gt;&gt;
 </code></pre>
-<p><em>Примітка: Це специфічно для CPython і може змінюватися у майбутніх версіях або інших реалізаціях Python.</em></p>
 <p>Трапляються і колізії: </p>
 <pre><code>&gt;&gt;&gt; hash(-1), hash(-2)
 (-2, -2)
 &gt;&gt;&gt;
 </code></pre>
-<p><em>Примітка: Це приклад для CPython; у інших реалізаціях або версіях Python значення може відрізнятися.</em></p>
+<h2 id="__hash__">Метод <code>__hash__</code></h2>
+<p>Метод <code>__hash__(self)</code> повинен повертати ціле число. 
+Це число використовується для визначення позиції об'єкта в хеш-таблиці.</p>
+<p>Основні властивості <code>__hash__</code>:</p>
+<ol>
+<li>Якщо два об'єкти рівні (тобто <code>a == b</code> повертає <code>True</code>), то їхні хеш-коди також повинні бути рівними (<code>hash(a) == hash(b)</code>).</li>
+<li>Зворотне не обов'язково вірне: якщо <code>hash(a) == hash(b)</code>, це не означає, що <code>a == b</code>. Така ситуація називається <strong>колізією хешів</strong>. Хеш-таблиці розроблені так, щоб обробляти колізії.</li>
+<li>Об'єкт, який використовується як ключ словника або елемент множини, повинен мати незмінний хеш-код протягом усього свого життя, поки він знаходиться в цій колекції. Якщо хеш-код об'єкта змінюється, його неможливо буде знайти в колекції.</li>
+</ol>
+<p>Для вбудованих незмінних типів ( <code>int</code>, <code>str</code>, <code>tuple</code>, <code>frozenset</code>) <code>__hash__</code> вже реалізований.</p>
+<p>Якщо ваш клас не перевизначає метод <code>__eq__</code>, 
+то за замовчуванням він успадковує <code>__hash__</code> від <code>object</code>. 
+Цей <code>__hash__</code> базується на ідентифікаторі об'єкта (<code>id(self)</code>), 
+тому кожен екземпляр матиме унікальний хеш. 
+Відповідно об'єкти будуть рівні лише самі собі:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
+<span class="o">...</span>     <span class="k">pass</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">obj1</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">obj2</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="n">obj1</span><span class="p">)</span>  <span class="c1"># Унікальний хеш для obj1</span>
+<span class="mi">123456789</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="n">obj2</span><span class="p">)</span>  <span class="c1"># Унікальний хеш для obj2</span>
+<span class="mi">987654321</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">obj1</span> <span class="o">==</span> <span class="n">obj2</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="n">obj1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">hash</span><span class="p">(</span><span class="n">obj2</span><span class="p">)</span>  <span class="c1"># Хеші не рівні</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">obj1</span> <span class="ow">is</span> <span class="n">obj2</span>  <span class="c1"># Об&#39;єкти різні</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">obj1</span> <span class="o">==</span> <span class="n">obj1</span>  <span class="c1"># Об&#39;єкт рівний сам собі</span>
+<span class="kc">True</span>
+</code></pre></div>
+<p>Важливе правило: <strong>якщо <code>a == b</code> істинно, то <code>hash(a) == hash(b)</code> також має бути істинним.</strong></p>
+<p>Якщо ви перевизначаєте <code>__eq__</code> для свого класу, 
+ви також повинні перевизначити <code>__hash__</code>, 
+або явно встановити <code>__hash__ = None</code>, 
+якщо об'єкти не повинні бути хешованими.</p>
+<p>Якщо клас перевизначає <code>__eq__</code>, 
+але не перевизначає <code>__hash__</code>, 
+то Python автоматично встановлює <code>__hash__ = None</code>. 
+Це робить екземпляри класу <strong>нехешованими</strong>, 
+і їх не можна буде використовувати як ключі словників або елементи множин. 
+Це зроблено для того, щоб уникнути порушення правила "рівні об'єкти повинні мати рівні хеші", 
+якщо розробник забуде реалізувати <code>__hash__</code> відповідно до <code>__eq__</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Person</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span> <span class="c1"># Важливо для коректної роботи з іншими типами</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">age</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Хешуємо на основі атрибутів, які використовуються в __eq__</span>
+        <span class="c1"># Використання кортежу є хорошою практикою, оскільки кортежі незмінні</span>
+        <span class="c1"># і мають власний коректний __hash__.</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Person(&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> <span class="c1"># Такий самий, як a</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+</code></pre></div>
+<p>У цьому прикладі <code>__hash__</code> обчислюється на основі кортежу <code>(self.name, self.age)</code>. 
+Оскільки <code>self.name</code> та <code>self.age</code> використовуються для перевірки рівності в <code>__eq__</code>, 
+це забезпечує виконання вищезазначеного правила.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">hash</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">==</span> <span class="n">a2</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">hash</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<p>Якщо значення атрибутів, що використовуються для обчислення хешу, 
+змінюються після того, як об'єкт був доданий до словника чи множини, 
+його хеш також зміниться. 
+Це призведе до того, що об'єкт "загубиться" в колекції, оскільки Python шукатиме його в іншій "комірці" хеш-таблиці.</p>
+<p>Саме тому вбудовані мутабельні типи, такі як списки або словники, 
+не можуть бути ключами словників або елементами множин. 
+Вони не мають реалізації <code>__hash__</code>, точніше, їх <code>__hash__</code> встановлено в <code>None</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="p">{[</span><span class="mi">1</span><span class="p">]:</span> <span class="s2">&quot;oops&quot;</span><span class="p">}</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">unhashable</span> <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<p>Тобто тип даних <code>list</code> не є хешованим.</p>
+<p>Якщо ваш клас містить змінні атрибути, 
+але ви все одно хочете зробити його хешованим, 
+ви повинні гарантувати, 
+що атрибути, які використовуються в <code>__hash__</code> та <code>__eq__</code>, не будуть змінюватися. 
+Або, якщо вони можуть змінюватися, екземпляри такого класу не повинні використовуватися в хеш-колекціях після зміни.</p>
+<p>Метод <code>__hash__</code> завжди повинен повертати ціле число (<code>int</code>).</p>
+<p>Успадкування та <code>__hash__</code></p>
+<ul>
+<li>Якщо батьківський клас реалізує <code>__eq__</code> та <code>__hash__</code>, а дочірній клас перевизначає <code>__eq__</code>, то дочірній клас також повинен перевизначити <code>__hash__</code>. Якщо цього не зробити, успадкований <code>__hash__</code> може не відповідати новому <code>__eq__</code>.</li>
+<li>Якщо дочірній клас не перевизначає <code>__eq__</code>, він успадкує <code>__eq__</code> та <code>__hash__</code> від батька.</li>
+<li>Якщо дочірній клас перевизначає <code>__eq__</code>, але не <code>__hash__</code>, то <code>__hash__</code> дочірнього класу автоматично стане <code>None</code>.</li>
+</ul>
+<h3 id="__hash___1">Найкращі практики для <code>__hash__</code></h3>
+<p><code>__hash__</code> потрібен, якщо:</p>
+<ul>
+<li>Ви хочете, щоб екземпляри вашого класу можна було використовувати як ключі у відображеннях (наприклад <code>dict</code>).</li>
+<li>Ви хочете, щоб екземпляри вашого класу можна було додавати до множин (<code>set</code> або <code>frozenset</code>).</li>
+<li>Ви реалізуєте власний <code>__eq__</code> і хочете, щоб об'єкти були хешованими.</li>
+</ul>
+<p><code>__hash__</code> не потрібен (або має бути <code>None</code>), якщо:</p>
+<ul>
+<li>Екземпляри вашого класу є мутабельними таким чином, що їхня рівність або хеш-значення можуть змінитися після створення.</li>
+<li>Логіка рівності (<code>__eq__</code>) занадто складна, і забезпечити узгодженість з <code>__hash__</code> важко або недоцільно.</li>
+<li>Ви просто не плануєте використовувати екземпляри класу в хеш-колекціях.</li>
+</ul>
+<p>Метод <code>__hash__</code> повинен бути відносно швидким, 
+оскільки він викликається кожного разу, коли об'єкт додається до хеш-колекції або шукається в ній. 
+Уникайте складних обчислень у <code>__hash__</code>.</p>
 
 
 
