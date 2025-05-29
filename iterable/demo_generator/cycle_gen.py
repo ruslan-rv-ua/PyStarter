@@ -1,13 +1,9 @@
-class Cycle:
-    def __init__(self, iterable):
-        self._iterable = iterable
+def cycle(iterable):
+    while True:
+        yield from iterable
 
-    def __iter__(self):
-        return self.infinite_iterator()
-    
-    def infinite_iterator(self):
-        while True:
-            yield from self._iterable
-
-for c in Cycle([11,22,33]):
-    print(c)
+c = cycle('abc')
+for i, val in enumerate(c):
+    if i > 7:
+        break
+    print(val)

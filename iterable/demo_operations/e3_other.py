@@ -2,7 +2,7 @@ list(zip([1, 2, 3], ['a', 'b', 'c']))
 list(zip([1, 2, 3], ['a', 'b', 'c'], ['x', 'y', 'z']))
 list(zip('hello', [1, 2, 3, 4, 5]))
 list(zip([], [1, 2, 3]))
-list(zip([], [3]))
+r=list(zip([], [3]))
 list(zip([1], [1, 2, 3]))
 
 # from itertools import count
