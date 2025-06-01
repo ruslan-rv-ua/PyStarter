@@ -51,3 +51,6 @@ class Fibonacci:
 
     def __iter__(self):
         return FibonacciIterator(self._count)
+f = Fibonacci(5)
+l = list(f)
+l2 = list(f)
