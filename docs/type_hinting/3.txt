@@ -1,0 +1,109 @@
+PEP 649 и PEP 749: `__annotate__`
+
+- https://peps.python.org/pep-0649
+- https://peps.python.org/pep-0749
+
+История
+
+Одна из самых больших проблем Python – непродуманность аннотаций. Особенно их работа в рантайме.
+В чем основная проблема?
+
+
+class A:
+    @staticmethod
+    def build() -> A:  # <- тут будет NameError, потому что в теле класса `A` имя `A` еще не определено
+        return A() 
+
+
+В python3.10 хотели по-умолчанию включить from __future__ import annotations, что превращает все аннотации в строки на уровне компилятора:
+
+
+static int
+codegen_visit_annexpr(compiler *c, expr_ty annotation)
+{
+    location loc = LOC(annotation);
+    ADDOP_LOAD_CONST_NEW(c, loc, _PyAST_ExprAsUnicode(annotation));
+    return SUCCESS;
+}
+
+
+Но, не вышло. Такой подход ломает кучу кода, который резолвит аннотакции из строк в объекты. Пример:
+
+
+from __future__ import annotations
+
+def some():
+     class A: ...
+     def build_a() -> A:
+          return A()
+     return build_a
+
+import typing 
+typing.get_type_hints(some())  # NameError: A
+
+
+Что будет в 3.14?
+
+Взамен - еще с версии 3.11 - начали писать новый PEP про новый способ резолвить аннотации на основе дескрипторов. Меня даже в ПЕПе упомянули за вклад в данную фичу. Теперь компилятор не будет создавать __annotations__ словарь во время компиляции, как раньше:
+
+
+/* Every annotated class and module should have __annotations__. */
+if (find_ann(stmts)) {
+    ADDOP(c, loc, SETUP_ANNOTATIONS);
+}
+
+
+Теперь компилятор будет генерировать функцию __annotate__ в теле класса или функции, или модуля:
+
+
+RETURN_IF_ERROR(codegen_nameop(c, loc, &_Py_ID(__annotate__), Store));
+
+
+Теперь все аннотации стали ленивыми по-умолчанию.
+А уже __annotate__ будет возвращать правильные аннотации для установки в __annotations__, можно переопределить руками и проверить: 
+
+
+>>> class A:
+...      def __annotate__(format):  # TODO: support all formats
+...           print(f'{format=}')
+...           return {'a': int}
+
+>>> A.__annotations__
+format=1
+{'a': <class 'int'>}
+
+
+В качестве format могут быть 3 публичных вида:
+- VALUE – дефолт, чтобы возвращать реальные типы
+- FORWARDREF – чтобы возвращать annotationlib.ForwardRef для значений, которые "еще не определены", как в примере с классом A в самом начале
+- STRING – для возвращения строк, как при __future__.annotations, смотри _Stringifier
+
+Как теперь получать аннотации?
+
+Мы добавили модуль annotationlib, который теперь резолвит аннотации самым правильным способом. Пример:
+
+
+>>> from typing import TypedDict
+
+>>> class User(TypedDict):
+...      email: str
+...      friends: User
+
+>>> from annotationlib import get_annotations, Format
+
+>>> get_annotations(User)  # <- VALUE is default
+{'email': <class 'str'>, 'friends': <class '__main__.User'>}
+
+>>> get_annotations(User, format=Format.FORWARDREF)  # <- will be able to return VALUE in this case
+{'email': <class 'str'>, 'friends': <class '__main__.User'>}
+
+>>> get_annotations(User, format=Format.STRING)
+{'email': 'str', 'friends': 'User'}
+
+
+А вот реализация __annotate__ для TypedDict. Очень хороший пример для вашего кода.
+
+В следующих постах расскажу про модуль annotationlib, inspect.get_annotations, проблемы и сложности данной фичи. Подписывайся!
+Обсуждение: как вам данная фича? Будете использовать в своих проектах?
+
+| Поддержать | YouTube | GitHub | Чат |

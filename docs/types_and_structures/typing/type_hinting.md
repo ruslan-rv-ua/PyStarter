@@ -12,7 +12,6 @@ hide:
 
 https://dagster.io/blog/python-type-hinting
 https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
-https://habr.com/ru/articles/415829/
  -->
 
 

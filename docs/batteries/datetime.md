@@ -264,3 +264,4 @@ UTC
 - [Pendulum: Python datetimes made easy.](https://pypi.org/project/pendulum/)
 - [dateutil - powerful extensions to datetime](https://pypi.org/project/python-dateutil/)
 - [Delorean: Time Travel Made Easy](https://pypi.org/project/Delorean/)
+- [Whenever: Typed and DST-safe datetimes for Python, available in Rust or pure Python](https://github.com/ariebovenberg/whenever?tab=readme-ov-file)

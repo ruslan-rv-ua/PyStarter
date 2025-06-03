@@ -1,6 +1,4 @@
-"""Реалізуйте ітератор Enumerate, аналог вбудованого enumerate.
-"""
-from typing import Iterable
+"""Реалізуйте ітератор Enumerate, аналог вбудованого enumerate."""
 
 # unit tests
 assert tuple(Enumerate("abc", 1)) == tuple(enumerate("abc", 1))

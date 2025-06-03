@@ -23,6 +23,75 @@ hide:
 
 JSON підтримується усіма сучасними мовами програмування і знайомий багатьом розробникам, що робить його  прекрасним вибором для збереження даних для передачі між застосунками, які написано різними мовами.
 
+JSON підтримує наступні типи даних:
+
+- Рядки - текст в подвійних лапках: "Hello World"
+- Числа - цілі та дробові: 42, 3.14
+- Булеві значення - true або false
+- null - порожнє значення
+- Об'єкти - колекція пар ключ-значення в фігурних дужках
+- Масиви - упорядкований список значень в квадратних дужках
+
+Коротко розглянемо синтаксис.
+
+Об'єкти в JSON представлені як колекції пар ключ-значення, де ключі завжди є рядками, а значення можуть бути будь-якого типу, підтримуваного JSON:
+
+```json
+{
+  "name": "Іван",
+  "age": 25,
+  "isStudent": true,
+  "address": null
+}
+```
+
+Масиви в JSON представлені як упорядковані списки значень, які можуть бути будь-якого типу:
+
+```json
+[
+  "яблуко",
+  "банан",
+  "апельсин"
+]
+```
+
+Масив як значення по ключу в об'єкті:
+
+```json
+{
+  "fruits": ["apple", "banana", "cherry"],
+  "numbers": [1, 2, 3.14, true, null]
+}
+```
+
+Вкладені об'єкти та масиви також підтримуються:
+
+```json
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Марія",
+      "email": "maria@example.com",
+      "preferences": {
+        "theme": "dark",
+        "notifications": true
+      }
+    },
+    {
+      "id": 2,
+      "name": "Петро",
+      "email": "petro@example.com",
+      "preferences": {
+        "theme": "light",
+        "notifications": false
+      }
+    }
+  ]
+}
+```
+
+
 В Python цей формат підтримується вбудованим модулем `json`. 
 Модуль надає інструменти для серіалізації словників, списків, кортежів, символьних рядків, цілих і дійсних чисел, булевих значень та None. 
 Також можна реалізувати підтримку інших типів даних шляхом розширення класів `JSONEncoder` та `JSONDecoder`. 
@@ -250,7 +319,7 @@ read_data('people.bin')
 
 - [Документація Python: json — JSON encoder and decoder](https://docs.python.org/3/library/json.html)
 - [Документація Python: pickle — Python object serialization](https://docs.python.org/3/library/pickle.html)
-- [orjson:  Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy](https://pypi.org/project/orjson/)
+- [orjson:  Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy](https://github.com/ijl/orjson)
 - [dill: serialize all of Python](https://dill.readthedocs.io/en/latest/)
 - [Pydantic: the most widely used data validation library for Python](https://docs.pydantic.dev/latest/)
 - [msgspec: fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML](https://jcristharif.com/msgspec/)

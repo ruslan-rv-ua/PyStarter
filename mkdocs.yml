@@ -237,7 +237,7 @@ nav:
   - 26. Типи та структури даних:
     - Типізація у програмуванні: types_and_structures/typing/typing.md
     - Типи даних в Python: types_and_structures/typing/data_types.md
-    # - Підказки типів: types_and_structures/typing/type_hinting.md
+    - Підказки типів: types_and_structures/typing/type_hinting.md
   - 27. Числові типи:
     - Системи числення: types_and_structures/numbers/number_system.md
     - Числа в Python: types_and_structures/numbers/number_operations.md
@@ -262,13 +262,13 @@ nav:
     - Ітератори: iterable/iterator.md
     - Створення ітераторів: iterable/create_iterator.md
     - Ітератори послідовностей: iterable/sequences_iterators.md
-  # - 31. Генератори:
-  #   - Генератори: iterable/generator.md
-  #   - Генераторні вирази: iterable/generator_expression.md
+  - 31. Генератори:
+    - Генератори: iterable/generator.md
+    - Генераторні вирази: iterable/generator_expression.md
   - 32. Операції з ітерабельними об'єктами:
     - Упаковка та розпаковка: iterable/iterable_pack_unpack.md
     - Агрегація даних: iterable/iterable_aggregation.md
-    # - Інші функції: iterable/iterable_functions.md
+    - Інші функції: iterable/iterable_functions.md
   # - 33. Функційне програмування:
   #   - Парадигма ФП: functional_programming/intro.md
   #   - Чисті функції: functional_programming/pure_functions.md
@@ -287,20 +287,20 @@ nav:
   # - 36. Рекурсія:
   #   - Стек викликів: functional_programming/recursion1.md
   #   - Рекурсія: functional_programming/recursion2.md
-  # - 37. Ввід та вивід:
-  #   - Файли і потоки: io/files_and_streams.md
-  #   - Відкриття та закриття файлів: io/open_close.md
-  #   - Читання і запис: io/read_write.md
-  #   - Серіалізація даних: io/serialization.md
-  # - 38. Модулі і пакети:
-  #   - Модулі у програмуванні: modules_and_packages/modules_in_programming.md
-  #   - Модулі в Python: modules_and_packages/modules_in_python.md
-  #   - Модулі як об'єкти: modules_and_packages/module_as_object.md
-  #   - Пакети: modules_and_packages/packages.md
-  # - 39. Виконання програм:
-  #   - Інтерпретатор Python: interpreter/interpreter.md
-  #   - Виконання модулів і пакетів: interpreter/exec_modules_and_packages.md
-  #   - Передача аргументів скрипту: interpreter/script_arguments.md
+  - 37. Ввід та вивід:
+    - Файли і потоки: io/files_and_streams.md
+    - Відкриття та закриття файлів: io/open_close.md
+    - Читання і запис: io/read_write.md
+    - Серіалізація даних: io/serialization.md
+  - 38. Модулі і пакети:
+    - Модулі у програмуванні: modules_and_packages/modules_in_programming.md
+    - Модулі в Python: modules_and_packages/modules_in_python.md
+    - Модулі як об'єкти: modules_and_packages/module_as_object.md
+    - Пакети: modules_and_packages/packages.md
+  - 39. Виконання програм:
+    - Інтерпретатор Python: interpreter/interpreter.md
+    - Виконання модулів і пакетів: interpreter/exec_modules_and_packages.md
+    - Передача аргументів скрипту: interpreter/script_arguments.md
   # - 40. Сторонні бібліотеки:
   #   - Джерела бібліотек: libs_3rd_party/libs_sources.md
   #   - Менеджер пакетів: libs_3rd_party/pip.md
@@ -308,19 +308,27 @@ nav:
   # - 41. Керування проектами:
   #   - pyproject.toml: projects_management/pyproject_toml.md
   #   - Poetry: projects_management/poetry.md
-  # - Visual Studio Code:
-  #   - Встановлення: vscode/install.md
-  #   - Комбінації клавіш: vscode/keybindings.md
-  #   - Доступність: vscode/accessibility.md
+  - 42. Підказки типів:
+    - Анотації типів в Python: type_hinting/01_introduction_to_type_hinting.md
+    - Базові типи: type_hinting/02_basic_types.md
+    - Колекції: type_hinting/03_collections.md
+    - Іменовані кортежі: type_hinting/typing_namedtuple.md
+    # - Розширені можливості типізації: type_hinting/04_advanced_types_from_typing_module.md
+    # - Анотування класів та методів:  type_hinting/05_annotating_classes_and_methods.md
+  - Visual Studio Code:
+    - Встановлення: vscode/install.md
+    # - Комбінації клавіш: vscode/keybindings.md
+    # - Доступність: vscode/accessibility.md
   - Батарейки:
     - Модуль random: batteries/random.md
     - Модуль pprint: batteries/pprint.md
     - Модуль datetime: batteries/datetime.md
     - Модуль collections: batteries/collections.md
     - Модуль pathlib: batteries/pathlib.md
-    # - Модуль enum: batteries/enum.md
+    - Модуль enum: batteries/enum.md
     # - Модуль re: batteries/re.md
-    # - Модуль contextlib: batteries/contextlib.md
-  #   - Модуль itertools: batteries/itertools.md
+    - Модуль contextlib: batteries/contextlib.md
+    - Модуль itertools: batteries/itertools.md
+    - Модуль dataclasses: batteries/dataclasses.md
   - Дзен: zen.md
   # - Корисні ресурси: resources.md

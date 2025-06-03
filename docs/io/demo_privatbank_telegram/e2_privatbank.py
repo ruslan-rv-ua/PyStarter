@@ -27,7 +27,7 @@ data = response.json()
 
 
 
-exit()
+
 print('\n'*5)
 
 if response:

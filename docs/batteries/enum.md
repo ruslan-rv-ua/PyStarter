@@ -172,6 +172,95 @@ c = Color.BLACK
 	True
 	>>>
 
+### Доступ до елементів переліку
+
+Окрім прямого доступу до елементів переліку як до атрибутів класу (наприклад, `OrderStatus.PENDING`), ви можете отримувати доступ до них за іменем (у вигляді рядка) або за значенням.
+
+```python
+from enum import Enum
+
+class OrderStatus(Enum):
+    PENDING = 1
+    PROCESSING = 2
+    SHIPPED = 3
+    DELIVERED = 4
+    CANCELLED = 5
+
+# Доступ за іменем (атрибут)
+status_pending = OrderStatus.PENDING
+print(f"Доступ за атрибутом: {status_pending}")
+
+# Доступ за іменем (рядок)
+status_shipped = OrderStatus['SHIPPED']
+print(f"Доступ за іменем-рядком: {status_shipped}")
+
+# Доступ за значенням
+status_cancelled = OrderStatus(5)
+print(f"Доступ за значенням: {status_cancelled}")
+
+# Спроба доступу до неіснуючого елемента за іменем призведе до KeyError
+# status_invalid_name = OrderStatus['INVALID']
+
+# Спроба доступу до неіснуючого елемента за значенням призведе до ValueError
+# status_invalid_value = OrderStatus(10)
+```
+
+Результат виконання:
+
+    Доступ за атрибутом: OrderStatus.PENDING
+    Доступ за іменем-рядком: OrderStatus.SHIPPED
+    Доступ за значенням: OrderStatus.CANCELLED
+
+### Додавання методів до переліків
+
+Класи переліків, як і будь-які інші класи в Python, можуть містити власні методи. Це дозволяє додавати специфічну логіку, пов'язану з елементами переліку.
+
+```python
+from enum import Enum
+
+class OrderStatus(Enum):
+    PENDING = 1
+    PROCESSING = 2
+    SHIPPED = 3
+    DELIVERED = 4
+    CANCELLED = 5
+
+    def is_terminal(self):
+        """Перевіряє, чи є статус кінцевим (доставлено або скасовано)."""
+        return self in (OrderStatus.DELIVERED, OrderStatus.CANCELLED)
+
+    def describe(self):
+        """Повертає опис статусу."""
+        descriptions = {
+            OrderStatus.PENDING: "Замовлення очікує обробки.",
+            OrderStatus.PROCESSING: "Замовлення в процесі обробки.",
+            OrderStatus.SHIPPED: "Замовлення відправлено.",
+            OrderStatus.DELIVERED: "Замовлення доставлено.",
+            OrderStatus.CANCELLED: "Замовлення скасовано."
+        }
+        return descriptions.get(self, "Невідомий статус.")
+
+# Використання методів
+status1 = OrderStatus.PROCESSING
+print(f"Статус: {status1.name}")
+print(f"Опис: {status1.describe()}")
+print(f"Чи є кінцевим: {status1.is_terminal()}")
+
+status2 = OrderStatus.DELIVERED
+print(f"\\nСтатус: {status2.name}")
+print(f"Опис: {status2.describe()}")
+print(f"Чи є кінцевим: {status2.is_terminal()}")
+```
+
+Результат виконання:
+
+    Статус: PROCESSING
+    Опис: Замовлення в процесі обробки.
+    Чи є кінцевим: False
+
+    Статус: DELIVERED
+    Опис: Замовлення доставлено.
+    Чи є кінцевим: True
 
 
 ## Додаткові матеріали

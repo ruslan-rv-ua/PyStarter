@@ -11,4 +11,4 @@ class Person(object):
 
 with open('people.bin', 'rb') as file:
     data = pickle.load(file)
-
+p = data[0]

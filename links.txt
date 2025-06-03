@@ -2,6 +2,8 @@
 https://tushar.lol/post/builtins/
 ----
 
+https://dagster.io/blog/python-type-hinting
+
 
 ### for site
 
