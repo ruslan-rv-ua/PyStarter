@@ -1,0 +1,2828 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python.">
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/batteries/dataclasses.html">
+      
+      
+        <link rel="prev" href="itertools.html">
+      
+      
+        <link rel="next" href="../zen.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+    
+    
+      
+        <title>Модуль dataclasses - PyStarter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../_stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../_stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../_stylesheets/fixes.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PyStarter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Модуль dataclasses
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg>
+
+    </a>
+    PyStarter
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Про цей курс
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miths_about_education.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Міфи про навчання
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Мова програмування Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../preparations/os.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    01. Підготовка
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../vars_and_types/types.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    02. Типи даних. Змінні
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../source_code/source_code.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    03. Python-програми
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../strings/strings.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    04. Символьні рядки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functions/functions.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    05. Функції
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../bool_logic/bool.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    06. Логіка
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../if/if_statement.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    07. Розгалуження
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functions_def/functions_explained.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    08. Створення функцій
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../loop_while/loops.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    09. Цикл "while"
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sequences/collections.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Списки і кортежі
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../objects/objects_and_vars.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Об'єкти в Python
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../loop_for/for.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Цикл "for"
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../methods/methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Методи
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../methods_list/list_methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Методи списків
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../dict/dict.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. Словники
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../text_files/unicode.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. Текстові файли
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../modules/modules.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. Модулі
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functions3/strategies.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. І знову функції
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    19. Парадигми програмування
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/basics/basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    20. ООП
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Інкапсуляція
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/inheritance/inheritance_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    22. Успадкування
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/polymorphism/polymorphism_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    23. Поліморфізм
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/attributes/attributes.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    24. Атрибути
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../exceptions/exceptions.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    25. Виняткові ситуації
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../types_and_structures/typing/typing.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    26. Типи та структури даних
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../types_and_structures/numbers/number_system.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    27. Числові типи
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../types_and_structures/sequences/sequences.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    28. Послідовності
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../types_and_structures/mappings_and_sets/hash.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    29. Відображення та множини
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../iterable/iterator.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    30. Ітератори
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../iterable/generator.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    31. Генератори
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../iterable/iterable_pack_unpack.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    32. Операції з ітерабельними об'єктами
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../io/files_and_streams.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    37. Ввід та вивід
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../modules_and_packages/modules_in_programming.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    38. Модулі і пакети
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../interpreter/interpreter.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    39. Виконання програм
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../libs_3rd_party/libs_sources.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    40. Сторонні бібліотеки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../type_hinting/01_introduction_to_type_hinting.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    42. Підказки типів
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../vscode/install.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Visual Studio Code
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_42" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_42" id="__nav_42_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Батарейки
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_42_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_42">
+            <span class="md-nav__icon md-icon"></span>
+            Батарейки
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="random.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Модуль random
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pprint.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Модуль pprint
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="datetime.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Модуль datetime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="collections.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Модуль collections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pathlib.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Модуль pathlib
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="enum.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Модуль enum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contextlib.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Модуль contextlib
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="itertools.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Модуль itertools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Модуль dataclasses
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="dataclasses.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Модуль dataclasses
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Автоматично генеровані методи
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Параметри декоратора
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field" class="md-nav__link">
+    <span class="md-ellipsis">
+      Функція field() для детального налаштування полів
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пост-ініціалізаційна обробка
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Змінні класу (Class variables)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#init-only-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Змінні лише для ініціалізації (Init-only variables)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Успадкування (Inheritance)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kw_only-keyword-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      KW_ONLY для позначення keyword-only полів
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutable-default-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Змінні значення за замовчуванням (Mutable default values)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Допоміжні функції модуля dataclasses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataclasses_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Константи модуля dataclasses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обробка винятків
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Нюанси та найкращі практики
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Резюме
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zen.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Дзен
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Автоматично генеровані методи
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Параметри декоратора
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field" class="md-nav__link">
+    <span class="md-ellipsis">
+      Функція field() для детального налаштування полів
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Пост-ініціалізаційна обробка
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Змінні класу (Class variables)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#init-only-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Змінні лише для ініціалізації (Init-only variables)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Успадкування (Inheritance)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kw_only-keyword-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      KW_ONLY для позначення keyword-only полів
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutable-default-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Змінні значення за замовчуванням (Mutable default values)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Допоміжні функції модуля dataclasses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataclasses_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Константи модуля dataclasses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обробка винятків
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Нюанси та найкращі практики
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Резюме
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+
+<h1 id="_1">Датакласи</h1>
+<p>Модуль <code>dataclasses</code> надає декоратор та функції для автоматичного додавання спеціальних методів, таких як <code>__init__()</code>, <code>__repr__()</code>, <code>__eq__()</code> 
+та інших, до класів, визначених користувачем. 
+Це значно спрощує створення класів, які переважно використовуються для зберігання даних. Датакласи були вперше описані в <a href="https://www.python.org/dev/peps/pep-0557/">PEP 557</a>.</p>
+<p>Датаклас – це звичайний клас Python, 
+до якого автоматично додаються стандартні методи. 
+Основна ідея полягає в тому, щоб зменшити кількість шаблонного коду, який розробники змушені писати.</p>
+<p>Переваги:</p>
+<ul>
+<li><strong>Менше коду</strong>: Автоматична генерація методів <code>__init__</code>, <code>__repr__</code>, <code>__eq__</code> тощо.</li>
+<li><strong>Читабельність</strong>: Чітке визначення полів класу з їх типами.</li>
+<li><strong>Підтримка типів</strong>: Використання анотацій типів (<a href="https://www.python.org/dev/peps/pep-0526/">PEP 526</a>) для визначення полів.</li>
+<li><strong>Гнучкість</strong>: Можливість налаштовувати поведінку генерованих методів.</li>
+</ul>
+<p>Для створення датакласу достатньо задекорувати клас за допомогою <code>@dataclass</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">InventoryItem</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">total_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantity_on_hand</span>
+</code></pre></div>
+<p>У цьому прикладі для класу <code>InventoryItem</code> будуть автоматично згенеровані, серед іншого, 
+метод <code>__init__()</code>, який виглядатиме приблизно так:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">=</span> <span class="n">unit_price</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">quantity_on_hand</span> <span class="o">=</span> <span class="n">quantity_on_hand</span>
+</code></pre></div>
+<h3 id="_2">Автоматично генеровані методи</h3>
+<p>За замовчуванням <code>@dataclass</code> генерує наступні методи:</p>
+<ul>
+<li><strong><code>__init__(self, field1: type, field2: type, ...)</code></strong>: Ініціалізує екземпляр класу. Поля визначаються на основі анотацій типів.</li>
+<li><strong><code>__repr__(self)</code></strong>: Повертає рядкове представлення об'єкта, зручне для налагодження. Наприклад: <code>InventoryItem(name='widget', unit_price=3.0, quantity_on_hand=10)</code>.</li>
+<li><strong><code>__eq__(self, other)</code></strong>: Порівнює два екземпляри на рівність. Порівняння відбувається поелементно для всіх полів.</li>
+<li><strong><code>__lt__(self, other)</code>, <code>__le__(self, other)</code>, <code>__gt__(self, other)</code>, <code>__ge__(self, other)</code></strong>: Методи порівняння (менше, менше або дорівнює, більше, більше або дорівнює). Генеруються, якщо <code>order=True</code>. Порівняння відбувається поелементно, як у кортежів.</li>
+<li><strong><code>__hash__(self)</code></strong>: Генерується, якщо <code>eq=True</code> та <code>frozen=True</code> (або <code>unsafe_hash=True</code>).</li>
+</ul>
+<h3 id="_3">Параметри декоратора</h3>
+<p>Декоратор <code>@dataclass</code> приймає кілька необов'язкових параметрів для налаштування своєї поведінки:</p>
+<ul>
+<li><strong><code>init=True</code></strong>: Якщо <code>True</code> (за замовчуванням), генерується метод <code>__init__()</code>. Якщо <code>False</code>, метод <code>__init__()</code> не генерується (або використовується той, що вже визначений у класі).</li>
+<li><strong><code>repr=True</code></strong>: Якщо <code>True</code> (за замовчуванням), генерується метод <code>__repr__()</code>.</li>
+<li><strong><code>eq=True</code></strong>: Якщо <code>True</code> (за замовчуванням), генерується метод <code>__eq__()</code>.</li>
+<li><strong><code>order=False</code></strong>: Якщо <code>True</code>, генеруються методи <code>__lt__()</code>, <code>__le__()</code>, <code>__gt__()</code>, <code>__ge__()</code>. Це призведе до того, що екземпляри можна буде сортувати. Якщо <code>order=True</code>, а <code>eq=False</code>, виникне <code>ValueError</code>.</li>
+<li><strong><code>unsafe_hash=False</code></strong>: Якщо <code>False</code> (за замовчуванням), метод <code>__hash__()</code> генерується відповідно до значень <code>eq</code> та <code>frozen</code>.<ul>
+<li>Якщо <code>eq</code> та <code>frozen</code> обидва <code>True</code>, <code>__hash__()</code> генерується.</li>
+<li>Якщо <code>eq</code> є <code>True</code>, а <code>frozen</code> є <code>False</code>, <code>__hash__</code> встановлюється в <code>None</code>, позначаючи його як нехешований (що є поведінкою за замовчуванням для змінних класів).</li>
+<li>Якщо <code>eq</code> є <code>False</code>, <code>__hash__</code> залишається без змін (успадковується від базового класу, зазвичай <code>object.__hash__</code>).
+Якщо <code>unsafe_hash=True</code>, генерується метод <code>__hash__()</code> незалежно від налаштувань <code>eq</code> та <code>frozen</code>. Це небезпечно, якщо клас логічно незмінний, але може бути змінним.</li>
+</ul>
+</li>
+<li><strong><code>frozen=False</code></strong>: Якщо <code>True</code>, присвоєння значень полям після створення екземпляра викликатиме виняток <code>FrozenInstanceError</code>. Це робить екземпляри датакласу фактично незмінними (immutable). Якщо <code>frozen=True</code>, датаклас генеруватиме метод <code>__hash__()</code>, якщо він ще не визначений.</li>
+<li><strong><code>match_args=True</code></strong> (Python 3.10+): Якщо <code>True</code> (за замовчуванням), атрибут <code>__match_args__</code> генерується зі списку імен полів, які включені в <code>__init__</code>. Це використовується для позиційного зіставлення за шаблоном (pattern matching).</li>
+<li><strong><code>kw_only=False</code></strong> (Python 3.10+): Якщо <code>True</code>, всі поля за замовчуванням позначаються як keyword-only (тобто, їх можна передати лише за ключовим словом при створенні екземпляра). Це можна перевизначити для окремих полів за допомогою <code>field(kw_only=False)</code>.</li>
+<li><strong><code>slots=False</code></strong> (Python 3.10+): Якщо <code>True</code>, генерується атрибут <code>__slots__</code> і клас не матиме <code>__dict__</code>. Це може зекономити пам'ять для класів з великою кількістю екземплярів.</li>
+<li><strong><code>weakref_slot=False</code></strong> (Python 3.11+): Якщо <code>True</code>, додає поле <code>__weakref__</code>, що дозволяє екземплярам бути ціллю слабких посилань. Це актуально, якщо <code>slots=True</code>.</li>
+</ul>
+<p>Приклад використання параметрів:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+</code></pre></div>
+<p>Використовуємо:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span> <span class="o">&gt;</span> <span class="n">p2</span> <span class="c1"># порівнює спочатку x, потім y</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="fm">__setattr__</span>
+<span class="n">dataclasses</span><span class="o">.</span><span class="n">FrozenInstanceError</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">assign</span> <span class="n">to</span> <span class="n">field</span> <span class="s1">&#39;x&#39;</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
+<h3 id="field">Функція <code>field()</code> для детального налаштування полів</h3>
+<p>Функція <code>field()</code> використовується для налаштування кожного поля окремо. Вона приймає наступні параметри:</p>
+<ul>
+<li><strong><code>default=MISSING</code></strong>: Якщо надано, це буде значенням за замовчуванням для поля. <code>MISSING</code> – це спеціальний об'єкт-маркер, який вказує на відсутність значення.</li>
+<li><strong><code>default_factory=MISSING</code></strong>: Функція без аргументів, яка викликається для створення початкового значення поля. Це корисно для змінних типів даних (наприклад, <code>list</code> або <code>dict</code>), щоб уникнути спільного використання одного об'єкта між різними екземплярами класу. Не можна одночасно вказувати <code>default</code> та <code>default_factory</code>.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">C</span><span class="p">:</span>
+    <span class="n">mylist</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="n">c1</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
+<span class="n">c1</span><span class="o">.</span><span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">C</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="o">.</span><span class="n">mylist</span><span class="p">)</span>  <span class="c1"># Виведе: [] (а не [1])</span>
+</code></pre></div></li>
+<li><strong><code>init=True</code></strong>: Якщо <code>True</code> (за замовчуванням), це поле включається як параметр до генерованого методу <code>__init__()</code>.</li>
+<li><strong><code>repr=True</code></strong>: Якщо <code>True</code> (за замовчуванням), це поле включається до рядка, що генерується методом <code>__repr__()</code>.</li>
+<li><strong><code>hash=None</code></strong>: Може бути <code>True</code>, <code>False</code> або <code>None</code> (за замовчуванням). Якщо <code>True</code>, це поле включається до генерованого методу <code>__hash__()</code>. Якщо <code>False</code>, поле виключається. Якщо <code>None</code>, використовується значення <code>compare</code>.</li>
+<li><strong><code>compare=True</code></strong>: Якщо <code>True</code> (за замовчуванням), це поле включається до генерованих методів порівняння (<code>__eq__()</code>, <code>__gt__()</code> тощо).</li>
+<li><strong><code>metadata=None</code></strong>: Словник або <code>None</code>. Якщо надано, зберігається як <code>MappingProxyType</code> і може використовуватися сторонніми бібліотеками.</li>
+<li><strong><code>kw_only=MISSING</code></strong> (Python 3.10+): Якщо <code>True</code>, це поле буде keyword-only. Якщо <code>False</code>, воно буде позиційним. За замовчуванням (<code>MISSING</code>) використовується значення <code>kw_only</code> з декоратора <code>@dataclass</code>.</li>
+</ul>
+<p>Приклад використання <code>field()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="p">:</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">isbn</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="nb">repr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">compare</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># Не показувати в repr, не використовувати для порівняння</span>
+    <span class="n">book_id</span><span class="p">:</span> <span class="n">uuid</span><span class="o">.</span><span class="n">UUID</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># Генерується автоматично, не в __init__</span>
+
+<span class="n">book1</span> <span class="o">=</span> <span class="n">Book</span><span class="p">(</span><span class="s2">&quot;The Hobbit&quot;</span><span class="p">,</span> <span class="s2">&quot;J.R.R. Tolkien&quot;</span><span class="p">,</span> <span class="s2">&quot;12345&quot;</span><span class="p">)</span>
+<span class="n">book2</span> <span class="o">=</span> <span class="n">Book</span><span class="p">(</span><span class="s2">&quot;The Hobbit&quot;</span><span class="p">,</span> <span class="s2">&quot;J.R.R. Tolkien&quot;</span><span class="p">,</span> <span class="s2">&quot;67890&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">book1</span><span class="p">)</span>        <span class="c1"># Виведе: Book(title=&#39;The Hobbit&#39;, author=&#39;J.R.R. Tolkien&#39;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book1</span> <span class="o">==</span> <span class="n">book2</span><span class="p">)</span> <span class="c1"># Виведе: True (isbn не порівнюється)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">book1</span><span class="o">.</span><span class="n">book_id</span><span class="p">)</span>  <span class="c1"># Виведе унікальний UUID</span>
+</code></pre></div>
+<h3 id="-">Пост-ініціалізаційна обробка</h3>
+<p>Якщо в датакласі визначено метод <code>__post_init__()</code>, 
+він автоматично викликається згенерованим <code>__init__()</code> після ініціалізації всіх полів. 
+Це дозволяє виконувати додаткову валідацію або обчислення на основі переданих значень.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="n">height</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">width</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">area</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># Поле не передається в __init__</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Height and width must be positive&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">area</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+</code></pre></div>
+<h3 id="class-variables">Змінні класу (Class variables)</h3>
+<p>Змінні класу, які мають анотацію типу, розглядаються як поля датакласу за замовчуванням. 
+Якщо змінна класу не повинна бути полем екземпляра, її слід анотувати за допомогою <code>typing.ClassVar</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassVar</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
+    <span class="n">instance_var</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">class_var</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;default_class_value&quot;</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">instance_var</span><span class="p">)</span>    <span class="c1"># 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MyClass</span><span class="o">.</span><span class="n">class_var</span><span class="p">)</span>   <span class="c1"># default_class_value</span>
+<span class="c1"># print(obj.class_var)     # Також працює, але це змінна класу</span>
+</code></pre></div>
+<h3 id="init-only-variables">Змінні лише для ініціалізації (Init-only variables)</h3>
+<p>Іноді потрібно передати дані в <code>__init__</code> (і, відповідно, в <code>__post_init__</code>), 
+які не є полями датакласу. 
+Для цього використовується <code>dataclasses.InitVar</code>. 
+Такі поля передаються в <code>__post_init__</code> як аргументи.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">InitVar</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">C</span><span class="p">:</span>
+    <span class="n">i</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">j</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">database</span><span class="p">:</span> <span class="n">InitVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Не буде полем екземпляра</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">database</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">j</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">database</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># self.j = database.lookup(&#39;j_for_i&#39;, self.i) # Приклад використання</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Database provided: </span><span class="si">{</span><span class="n">database</span><span class="si">}</span><span class="s2">, i=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No database or j is set.&quot;</span><span class="p">)</span>
+
+<span class="n">c_obj1</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s2">&quot;my_db&quot;</span><span class="p">)</span> <span class="c1"># Database provided: my_db, i=10</span>
+<span class="c1"># print(c_obj1.database) # AttributeError: &#39;C&#39; object has no attribute &#39;database&#39;</span>
+<span class="n">c_obj2</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>                <span class="c1"># No database or j is set.</span>
+</code></pre></div>
+<h3 id="inheritance">Успадкування (Inheritance)</h3>
+<p>Датакласи можуть успадковуватися від інших датакласів. Правила наступні:</p>
+<ul>
+<li>Якщо дочірній клас визначає поля, вони додаються після полів батьківського класу.</li>
+<li>Якщо дочірній клас перевизначає поле батьківського класу, тип та значення за замовчуванням беруться з дочірнього класу.</li>
+<li>Порядок полів в генерованому <code>__init__</code> такий: спочатку поля батьківського класу, потім поля дочірнього.</li>
+<li><strong>Перевпорядкування keyword-only параметрів в `<strong>init</strong>()</strong>: Якщо базовий клас має keyword-only поля, а дочірній клас додає нові позиційні поля, це може призвести до помилки, оскільки всі keyword-only аргументи повинні йти після позиційних. Датакласи автоматично перевпорядковують keyword-only поля з базових класів, щоб вони йшли після всіх позиційних полів, включаючи ті, що додані в дочірніх класах.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">KW_ONLY</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_</span><span class="p">:</span> <span class="n">KW_ONLY</span> <span class="c1"># Роздільник для keyword-only полів</span>
+    <span class="n">z</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">:</span> <span class="nb">int</span> <span class="c1"># Нове позиційне поле</span>
+    <span class="c1"># z перевизначено як keyword-only в Base, t - позиційне</span>
+    <span class="c1"># w - нове keyword-only поле</span>
+    <span class="n">w</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">kw_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Очікуваний __init__ для Derived:</span>
+<span class="c1"># def __init__(self, x: int, t: int, y: int = 0, *, z: int = 10, w: int = 100):</span>
+<span class="c1"># Зверніть увагу на порядок: x (Base), t (Derived), y (Base, з default), потім KW_ONLY z (Base), w (Derived)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">Derived</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># Derived(x=1, y=0, t=2, z=30, w=100)</span>
+</code></pre></div>
+<h3 id="kw_only-keyword-only"><code>KW_ONLY</code> для позначення keyword-only полів</h3>
+<p>Спеціальний маркер <code>dataclasses.KW_ONLY</code> (зазвичай присвоюється псевдо-полю з іменем <code>_</code>) використовується для позначення того, що всі наступні поля є keyword-only.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">KW_ONLY</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">_</span><span class="p">:</span> <span class="n">KW_ONLY</span> <span class="c1"># Все, що йде далі, є keyword-only</span>
+    <span class="n">city</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Unknown&quot;</span>
+    <span class="n">country</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="c1"># p = Person(&quot;Alice&quot;, 30, &quot;New York&quot;, &quot;USA&quot;) # Помилка: city та country мають бути keyword-only</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">city</span><span class="o">=</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;USA&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="c1"># Person(name=&#39;Alice&#39;, age=30, city=&#39;New York&#39;, country=&#39;USA&#39;)</span>
+</code></pre></div>
+<h3 id="mutable-default-values">Змінні значення за замовчуванням (Mutable default values)</h3>
+<p>Використання змінних типів (наприклад, <code>list</code> або <code>dict</code>) як значень за замовчуванням напряму може призвести до того, що всі екземпляри класу будуть спільно використовувати один і той самий об'єкт. Для уникнення цього слід використовувати <code>default_factory</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+
+<span class="c1"># Неправильно:</span>
+<span class="c1"># @dataclass</span>
+<span class="c1"># class BadList:</span>
+<span class="c1">#     items: list = [] # Усі екземпляри будуть ділити цей список</span>
+
+<span class="c1"># bad1 = BadList()</span>
+<span class="c1"># bad1.items.append(1)</span>
+<span class="c1"># bad2 = BadList()</span>
+<span class="c1"># print(bad2.items) # Виведе [1]!</span>
+
+<span class="c1"># Правильно:</span>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">GoodList</span><span class="p">:</span>
+    <span class="n">items</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="n">good1</span> <span class="o">=</span> <span class="n">GoodList</span><span class="p">()</span>
+<span class="n">good1</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">good2</span> <span class="o">=</span> <span class="n">GoodList</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">good2</span><span class="o">.</span><span class="n">items</span><span class="p">)</span> <span class="c1"># Виведе []</span>
+</code></pre></div>
+<h3 id="dataclasses">Допоміжні функції модуля <code>dataclasses</code></h3>
+<ul>
+<li>
+<p><strong><code>fields(dataclass_or_instance)</code></strong>: Повертає кортеж об'єктів <code>Field</code>, що описують кожне визначене поле для датакласу. Об'єкт <code>Field</code> має атрибути: <code>name</code>, <code>type</code>, <code>default</code>, <code>default_factory</code>, <code>init</code>, <code>repr</code>, <code>hash</code>, <code>compare</code>, <code>metadata</code>, <code>kw_only</code>.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">fields</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">Point</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, Type: </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Name: x, Type: &lt;class &#39;int&#39;&gt;</span>
+<span class="c1"># Name: y, Type: &lt;class &#39;int&#39;&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong><code>is_dataclass(obj)</code></strong>: Повертає <code>True</code>, якщо <code>obj</code> є датакласом або екземпляром датакласу.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_dataclass</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">is_dataclass</span><span class="p">(</span><span class="n">Point</span><span class="p">))</span>      <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_dataclass</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_dataclass</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>        <span class="c1"># False</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong><code>asdict(instance, *, dict_factory=dict)</code></strong>: Конвертує екземпляр датакласу <code>instance</code> в словник. Кожен датаклас конвертується рекурсивно.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">asdict</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">asdict</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="c1"># {&#39;x&#39;: 10, &#39;y&#39;: 20}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong><code>astuple(instance, *, tuple_factory=tuple)</code></strong>: Конвертує екземпляр датакласу <code>instance</code> в кортеж. Кожен датаклас конвертується рекурсивно.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">astuple</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">astuple</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="c1"># (10, 20)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong><code>make_dataclass(cls_name, fields, *, bases=(), namespace=None, init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False, match_args=True, kw_only=False, slots=False, weakref_slot=False, module=None)</code></strong>: Динамічно створює новий датаклас.</p>
+<ul>
+<li><code>cls_name</code>: Ім'я створюваного класу.</li>
+<li><code>fields</code>: Список полів. Кожен елемент може бути рядком (ім'я поля, тип <code>typing.Any</code>), кортежем <code>(name, type)</code> або <code>(name, type, field_spec)</code>.</li>
+<li><code>bases</code>: Кортеж базових класів.</li>
+<li><code>namespace</code>: Словник для простору імен класу (наприклад, для додавання методів).
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_dataclass</span><span class="p">,</span> <span class="n">field</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">make_dataclass</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span>
+                   <span class="p">[(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span>
+                    <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="c1"># тип буде typing.Any</span>
+                    <span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">))],</span>
+                   <span class="n">namespace</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;add_one&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">})</span>
+
+<span class="n">c_instance</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c_instance</span><span class="p">)</span>         <span class="c1"># C(x=10, y=&#39;hello&#39;, z=5)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c_instance</span><span class="o">.</span><span class="n">add_one</span><span class="p">())</span> <span class="c1"># 11</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong><code>replace(instance, /, **changes)</code></strong>: Створює новий екземпляр того ж типу, що й <code>instance</code>, замінюючи поля значеннями з <code>changes</code>. Якщо <code>instance</code> є <code>frozen=True</code>, цей метод все одно працює, оскільки він створює новий об'єкт.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">replace</span>
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">:</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">user1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+<span class="n">user2</span> <span class="o">=</span> <span class="n">replace</span><span class="p">(</span><span class="n">user1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">user1</span><span class="p">)</span> <span class="c1"># User(id=1, name=&#39;Alice&#39;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">user2</span><span class="p">)</span> <span class="c1"># User(id=1, name=&#39;Bob&#39;)</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="dataclasses_1">Константи модуля <code>dataclasses</code></h3>
+<ul>
+<li><strong><code>MISSING</code></strong>: Спеціальний об'єкт-маркер, що позначає відсутність значення <code>default</code> або <code>default_factory</code>.</li>
+<li><strong><code>KW_ONLY</code></strong>: Спеціальний маркер типу, який використовується для позначення того, що всі наступні поля в датакласі є keyword-only.</li>
+</ul>
+<h3 id="_4">Обробка винятків</h3>
+<ul>
+<li><strong><code>FrozenInstanceError</code></strong>: Підклас <code>AttributeError</code>. Викликається, коли неявно визначений метод <code>__setattr__()</code> або <code>__delattr__()</code> викликається для датакласу, який був визначений з <code>frozen=True</code>.</li>
+</ul>
+<h2 id="_5">Нюанси та найкращі практики</h2>
+<ul>
+<li><strong>Порядок полів</strong>: Порядок полів в <code>__init__</code> визначається порядком їх оголошення в класі, з урахуванням успадкування. Поля без значень за замовчуванням повинні йти перед полями зі значеннями за замовчуванням.</li>
+<li><strong><code>frozen=True</code></strong>: Робить екземпляри незмінними, що може бути корисним для використання їх як ключів у словниках або елементів у множинах (якщо вони хешовані).</li>
+<li><strong><code>default_factory</code> для змінних типів</strong>: Завжди використовуйте <code>default_factory=list</code> (або <code>dict</code>, <code>set</code> тощо) замість <code>default=[]</code>, щоб уникнути несподіваної спільної зміни стану між екземплярами.</li>
+<li><strong><code>InitVar</code> та <code>__post_init__</code></strong>: Потужний механізм для складнішої логіки ініціалізації, яка не зберігається безпосередньо як поле.</li>
+</ul>
+<h2 id="_6">Резюме</h2>
+<p>Датакласи в Python є надзвичайно корисним інструментом, який значно спрощує створення класів для зберігання даних. Вони зменшують кількість шаблонного коду, покращують читабельність та інтегруються з системою типізації Python. Розуміння їхніх можливостей, параметрів декоратора <code>@dataclass</code> та функції <code>field()</code> дозволяє ефективно використовувати їх у різноманітних сценаріях, від простих структур даних до складніших об'єктів з кастомною логікою ініціалізації та поведінки.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="itertools.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Модуль itertools">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Модуль itertools
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../zen.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Дзен">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Дзен
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Ruslan Iskov <ruslan.rv.ua@gmail.com>
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ruslan-rv-ua/pystarter" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f13b1293.min.js"></script>
+      
+    
+  </body>
+</html>

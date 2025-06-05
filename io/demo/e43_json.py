@@ -1,11 +1,11 @@
 import json
+from typing import NamedTuple
 
-class Person(object):
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+class Person(NamedTuple):
+    name: str
+    age: int
 
-peter = Person("Петро", 20)
 mary = Person("Мар'яна", 19)
 
-s = json.dumps(peter)
+s = json.dumps(mary, ensure_ascii=False)
+r = json.loads(s)

@@ -1,0 +1,2837 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний курс з програмування мовою Python.">
+      
+      
+        <meta name="author" content="Ruslan Iskov">
+      
+      
+        <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/type_hinting/04_advanced_types_from_typing_module.html">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
+    
+    
+      
+        <title>Розширені можливості типізації в Python з модулем typing - PyStarter</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d7758b05.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../_stylesheets/dark_theme.css">
+    
+      <link rel="stylesheet" href="../_stylesheets/codehilite.css">
+    
+      <link rel="stylesheet" href="../_stylesheets/fixes.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-typing" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../index.html" title="PyStarter" class="md-header__button md-logo" aria-label="PyStarter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PyStarter
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Розширені можливості типізації в Python з модулем typing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="PyStarter" class="md-nav__button md-logo" aria-label="PyStarter" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg>
+
+    </a>
+    PyStarter
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Про цей курс
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miths_about_education.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Міфи про навчання
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_python.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Мова програмування Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../preparations/os.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    01. Підготовка
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../vars_and_types/types.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    02. Типи даних. Змінні
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../source_code/source_code.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    03. Python-програми
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../strings/strings.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    04. Символьні рядки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functions/functions.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    05. Функції
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../bool_logic/bool.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    06. Логіка
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../if/if_statement.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    07. Розгалуження
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functions_def/functions_explained.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    08. Створення функцій
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../loop_while/loops.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    09. Цикл "while"
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sequences/collections.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Списки і кортежі
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../objects/objects_and_vars.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Об'єкти в Python
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../loop_for/for.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Цикл "for"
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../methods/methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Методи
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../methods_list/list_methods.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Методи списків
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../dict/dict.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. Словники
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../text_files/unicode.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. Текстові файли
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../modules/modules.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. Модулі
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../functions3/strategies.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. І знову функції
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../paradigmas/paradigmas.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    19. Парадигми програмування
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/basics/basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    20. ООП
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/encapsulation/encapsulation_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    21. Інкапсуляція
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/inheritance/inheritance_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    22. Успадкування
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/polymorphism/polymorphism_basis.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    23. Поліморфізм
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../oop/attributes/attributes.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    24. Атрибути
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../exceptions/exceptions.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    25. Виняткові ситуації
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../types_and_structures/typing/typing.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    26. Типи та структури даних
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../types_and_structures/numbers/number_system.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    27. Числові типи
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../types_and_structures/sequences/sequences.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    28. Послідовності
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../types_and_structures/mappings_and_sets/hash.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    29. Відображення та множини
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../iterable/iterator.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    30. Ітератори
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../iterable/generator.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    31. Генератори
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../iterable/iterable_pack_unpack.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    32. Операції з ітерабельними об'єктами
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../io/files_and_streams.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    37. Ввід та вивід
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../modules_and_packages/modules_in_programming.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    38. Модулі і пакети
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../interpreter/interpreter.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    39. Виконання програм
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../libs_3rd_party/libs_sources.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    40. Сторонні бібліотеки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="01_introduction_to_type_hinting.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    42. Підказки типів
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../vscode/install.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Visual Studio Code
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../batteries/random.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Батарейки
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zen.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Дзен
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#any-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Any - Універсальний тип
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Union - Об'єднання типів
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-none" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional - Можлива відсутність значення (None)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callable-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Callable - Типізація функцій та методів
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typevar-" class="md-nav__link">
+    <span class="md-ellipsis">
+      TypeVar - Змінні типів для генериків
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TypeVar - Змінні типів для генериків">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приклад з генеричною функцією:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приклад з обмеженням (bound)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приклад з обмеженням (constraints)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generic-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generic - Створення генеричних класів
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generic - Створення генеричних класів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приклад
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#newtype-" class="md-nav__link">
+    <span class="md-ellipsis">
+      NewType - Створення семантично різних типів
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NewType - Створення семантично різних типів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приклад
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#literal-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literal - Типізація конкретних літеральних значень
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literal - Типізація конкретних літеральних значень">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приклад
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final - Позначення констант та неперевизначуваних елементів
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Final - Позначення констант та неперевизначуваних елементів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приклад
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typeddict-" class="md-nav__link">
+    <span class="md-ellipsis">
+      TypedDict - Типізація словників з фіксованою структурою
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TypedDict - Типізація словників з фіксованою структурою">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notrequired-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      NotRequired та Required
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NotRequired та Required">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notrequired" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приклад з NotRequired
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol-duck-typing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocol - Структурна типізація (Duck Typing)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocol - Структурна типізація (Duck Typing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime_checkable" class="md-nav__link">
+    <span class="md-ellipsis">
+      @runtime_checkable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="@runtime_checkable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приклад
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Псевдоніми типів (Type Aliases)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Псевдоніми типів (Type Aliases)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Приклад
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python-typing">Розширені можливості типізації в Python з модулем <code>typing</code></h1>
+<p>Модуль <code>typing</code> надає потужні інструменти для створення більш точних та виразних анотацій типів. 
+Це допомагає покращити читабельність коду, полегшує статичний аналіз та зменшує кількість помилок під час розробки. </p>
+<h2 id="any-"><code>Any</code> - Універсальний тип</h2>
+<p><code>Any</code> є спеціальним типом, який вказує на те, що змінна, параметр функції або значення, що повертається, може бути будь-якого типу. 
+Використання <code>Any</code> фактично вимикає перевірку типів для конкретного елемента.</p>
+<p>Коли використовувати:</p>
+<ul>
+<li>При інтеграції з динамічно типізованим кодом або бібліотеками без анотацій типів.</li>
+<li>Коли тип дійсно невідомий або може бути надто складним для точного визначення на даному етапі.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Застереження</p>
+<p>Використовуйте <code>Any</code> обережно, оскільки це послаблює переваги статичної типізації. Намагайтеся бути якомога конкретнішими з типами, де це можливо.</p>
+</div>
+<p>Приклад:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">process_item</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># Ми не знаємо тип &#39;item&#39;, тому можемо робити з ним будь-що,</span>
+    <span class="c1"># але статичний аналізатор не зможе допомогти виявити помилки.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Обробка елемента: </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+
+<span class="n">process_item</span><span class="p">(</span><span class="s2">&quot;Привіт&quot;</span><span class="p">)</span>
+<span class="n">process_item</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">process_item</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="union-"><code>Union</code> - Об'єднання типів</h2>
+<p><code>Union</code> дозволяє вказати, що змінна може приймати значення одного з кількох можливих типів.</p>
+<p>Синтаксис:</p>
+<ul>
+<li>Традиційний: <code>Union[Type1, Type2, ...]</code></li>
+<li>Python 3.10+: Оператор <code>|</code> ( <code>Type1 | Type2 | ...</code>)</li>
+</ul>
+<p>Приклад:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_item_id</span><span class="p">(</span><span class="n">item_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;ID елемента: </span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="c1"># Використання Union</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_item_id</span><span class="p">(</span><span class="mi">101</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_item_id</span><span class="p">(</span><span class="s2">&quot;item-abc-789&quot;</span><span class="p">))</span>
+
+<span class="c1"># Сучасний синтаксис (Python 3.10+)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_item_id_modern</span><span class="p">(</span><span class="n">item_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Сучасний ID елемента: </span><span class="si">{</span><span class="n">item_id</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_item_id_modern</span><span class="p">(</span><span class="mi">202</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_item_id_modern</span><span class="p">(</span><span class="s2">&quot;item-xyz-123&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>Усередині функції, яка приймає <code>Union</code>, часто потрібно перевіряти фактичний тип значення за допомогою <code>isinstance()</code> для безпечної роботи з ним.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">process_identifier</span><span class="p">(</span><span class="n">ident</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ident</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Числовий ідентифікатор: </span><span class="si">{</span><span class="n">ident</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ident</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Рядковий ідентифікатор: </span><span class="si">{</span><span class="n">ident</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="optional-none"><code>Optional</code> - Можлива відсутність значення (<code>None</code>)</h2>
+<p><code>Optional[T]</code> вказує, що змінна може мати тип <code>T</code> або бути <code>None</code>. 
+Це еквівалентно <code>Union[T, None]</code>.</p>
+<p>Синтаксис:</p>
+<ul>
+<li>Традиційний: <code>Optional[Type]</code></li>
+<li>Python 3.10+: <code>Type | None</code></li>
+</ul>
+<p>Приклад:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Any</span> <span class="c1"># Any додано для прикладу профілю</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">find_user_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+    <span class="n">users_db</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;alice&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;alice@example.com&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;bob&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;bob@example.com&quot;</span><span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">users_db</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+<span class="c1"># Використання Optional</span>
+<span class="n">user_profile</span> <span class="o">=</span> <span class="n">find_user_by_name</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">user_profile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Знайдено користувача: </span><span class="si">{</span><span class="n">user_profile</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Користувача не знайдено.&quot;</span><span class="p">)</span>
+
+<span class="n">user_profile_none</span> <span class="o">=</span> <span class="n">find_user_by_name</span><span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">user_profile_none</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Користувача Charlie дійсно не знайдено.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Сучасний синтаксис (Python 3.10+)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_user_by_id_modern</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
+<h2 id="callable-"><code>Callable</code> - Типізація функцій та методів</h2>
+<p><code>Callable</code> використовується для анотації об'єктів, які можна викликати, таких як функції, методи або екземпляри класів з методом <code>__call__</code>.</p>
+<p>Синтаксис:</p>
+<ul>
+<li><code>Callable[[Arg1Type, Arg2Type, ...], ReturnType]</code> для функцій з конкретними типами аргументів та значення, що повертається.</li>
+<li><code>Callable[..., ReturnType]</code> для функцій з будь-якими аргументами, але конкретним типом повернення.</li>
+<li><code>Callable</code> (або <code>Callable[..., Any]</code>) для будь-якого об'єкта, що викликається.</li>
+</ul>
+<p>Приклад:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Any</span> <span class="c1"># Any додано для logger_wrapper</span>
+
+<span class="c1"># Функція, яка приймає два цілих числа і повертає ціле число</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="c1"># Функція, яка приймає іншу функцію як аргумент</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">],</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">operation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">result_add</span> <span class="o">=</span> <span class="n">apply_operation</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Результат додавання: </span><span class="si">{</span><span class="n">result_add</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Виведе: Результат додавання: 8</span>
+
+<span class="n">result_subtract</span> <span class="o">=</span> <span class="n">apply_operation</span><span class="p">(</span><span class="n">subtract</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Результат віднімання: </span><span class="si">{</span><span class="n">result_subtract</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Виведе: Результат віднімання: 6</span>
+
+<span class="c1"># Приклад з lambda-функцією</span>
+<span class="n">result_multiply</span> <span class="o">=</span> <span class="n">apply_operation</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Результат множення: </span><span class="si">{</span><span class="n">result_multiply</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Виведе: Результат множення: 42</span>
+
+<span class="c1"># Приклад для функції, що приймає будь-які аргументи</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">logger_wrapper</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Виклик функції </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> з аргументами </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2"> та </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Функція </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> повернула </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">logged_add_result</span> <span class="o">=</span> <span class="n">logger_wrapper</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="typevar-"><code>TypeVar</code> - Змінні типів для генериків</h2>
+<p><code>TypeVar</code> дозволяє створювати генеричні функції та класи, які можуть працювати з різними типами даних, зберігаючи при цьому узгодженість типів. </p>
+<p><code>TypeVar</code> діє як заповнювач для типу, який буде визначений під час використання генеричної функції або класу.</p>
+<p>Синтаксис:</p>
+<p><code>T = TypeVar('T')</code> - створює просту змінну типу.
+<code>T_co = TypeVar('T_co', covariant=True)</code> - коваріантна змінна типу.
+<code>T_contra = TypeVar('T_contra', contravariant=True)</code> - контраваріантна змінна типу.
+<code>BoundType = TypeVar('BoundType', bound=SomeClass)</code> - змінна типу, обмежена певним класом або протоколом.
+<code>ConstrainedType = TypeVar('ConstrainedType', str, bytes)</code> - змінна типу, обмежена переліком можливих типів.</p>
+<h4 id="_1">Приклад з генеричною функцією:</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Sequence</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span> <span class="c1"># Створюємо просту змінну типу</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_first_item</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">T</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># Sequence для загальності (list, tuple, str)</span>
+    <span class="k">if</span> <span class="n">items</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Використання з різними типами.</p>
+<p><code>T</code> стає int:</p>
+<div class="highlight"><pre><span></span><code><span class="n">first_int</span> <span class="o">=</span> <span class="n">get_first_item</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> 
+</code></pre></div>
+<p><code>T</code> стає str:</p>
+<div class="highlight"><pre><span></span><code><span class="n">first_str</span> <span class="o">=</span> <span class="n">get_first_item</span><span class="p">((</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>Статичний аналізатор може попередити про неоднозначність <code>T</code> 
+або виведе тип як Union[int, str]:</p>
+<div class="highlight"><pre><span></span><code><span class="n">first_mixed</span> <span class="o">=</span> <span class="n">get_first_item</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">])</span> 
+</code></pre></div>
+<h4 id="bound">Приклад з обмеженням (bound)</h4>
+<p><code>Number</code> може бути float або будь-який підтип float (наприклад, int розглядається як підтип float в контексті типізації):</p>
+<div class="highlight"><pre><span></span><code><span class="n">Number</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;Number&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span> 
+
+<span class="k">def</span><span class="w"> </span><span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+    <span class="c1"># У реальному сценарії тут може бути складніша логіка,</span>
+    <span class="c1"># яка вимагає, щоб &#39;a&#39; та &#39;b&#39; підтримували операції для float.</span>
+    <span class="c1"># Для простоти, припускаємо, що операція &#39;+&#39; визначена.</span>
+    <span class="c1"># MyPy перевірить, що bound=float підтримує &#39;+&#39;.</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="c1"># type: ignore[operator] # type: ignore потрібен, якщо компілятор не може вивести тип для + з bound</span>
+</code></pre></div>
+<p>Number стає float:</p>
+<div class="highlight"><pre><span></span><code><span class="n">result_float</span> <span class="o">=</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+</code></pre></div>
+<p>Number стає float (int сумісний з float):</p>
+<div class="highlight"><pre><span></span><code><span class="n">result_int_as_float</span> <span class="o">=</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> 
+</code></pre></div>
+<h4 id="constraints">Приклад з обмеженням (constraints)</h4>
+<div class="highlight"><pre><span></span><code><span class="n">StrOrBytes</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;StrOrBytes&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">process_text_or_bytes</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">StrOrBytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StrOrBytes</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1"># OK, data is str</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># data is bytes</span>
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;_&#39;</span><span class="p">)</span> <span class="c1"># OK, data is bytes</span>
+
+<span class="n">processed_str</span> <span class="o">=</span> <span class="n">process_text_or_bytes</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="n">processed_bytes</span> <span class="o">=</span> <span class="n">process_text_or_bytes</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Детальніше про коваріантність та контраваріантність буде розглянуто в розділі про просунуті теми генериків.</p>
+<h2 id="generic-"><code>Generic</code> - Створення генеричних класів</h2>
+<p>Клас <code>Generic</code> використовується як базовий клас для створення користувацьких генеричних класів. 
+Це дозволяє параметризувати класи змінними типу, створеними за допомогою <code>TypeVar</code>.</p>
+<h4 id="_2">Приклад</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Generic</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Iterable</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Stack</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;pop from empty stack&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">peek</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;peek from empty stack&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_items</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Stack(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_items</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="c1"># Використання генеричного класу Stack</span>
+<span class="n">int_stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">[</span><span class="nb">int</span><span class="p">]()</span> <span class="c1"># Створюємо стек для цілих чисел</span>
+<span class="n">int_stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">str_stack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">[</span><span class="nb">str</span><span class="p">]()</span> <span class="c1"># Створюємо стек для рядків</span>
+<span class="n">str_stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Можна також успадковувати від генеричних класів. 
+Потрібно знову вказати <code>T</code> як параметр типу для <code>MyExtendedStack</code>, якщо він використовується всередині</p>
+<div class="highlight"><pre><span></span><code><span class="n">U</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">)</span> <span class="c1"># Можна використовувати іншу змінну типу, або ту саму T</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyExtendedStack</span><span class="p">(</span><span class="n">Stack</span><span class="p">[</span><span class="n">U</span><span class="p">]):</span> <span class="c1"># U передається далі, або Stack[T] якщо T визначено в цьому скоупі</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extend_from_iterable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">U</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="n">float_stack</span> <span class="o">=</span> <span class="n">MyExtendedStack</span><span class="p">[</span><span class="nb">float</span><span class="p">]()</span>
+<span class="n">float_stack</span><span class="o">.</span><span class="n">extend_from_iterable</span><span class="p">([</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="newtype-"><code>NewType</code> - Створення семантично різних типів</h2>
+<p><code>NewType</code> дозволяє створювати нові типи, які є підтипами існуючих типів на рівні статичного аналізу, але розглядаються як окремі, несумісні типи. 
+Це допомагає запобігти логічним помилкам, 
+коли різні сутності мають однаковий базовий тип представлення. 
+Наприклад, <code>int</code> для ID користувача та ID замовлення.</p>
+<div class="admonition warning">
+<p class="admonition-title">Важливо</p>
+<p><code>NewType</code> не додає жодних перевірок під час виконання. Це суто інструмент для статичних аналізаторів типу MyPy. Об'єкти, створені за допомогою <code>NewType</code>, поводяться як об'єкти базового типу під час виконання.</p>
+</div>
+<h4 id="_3">Приклад</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">NewType</span>
+
+<span class="n">UserId</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s1">&#39;UserId&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="n">ProductId</span> <span class="o">=</span> <span class="n">NewType</span><span class="p">(</span><span class="s1">&#39;ProductId&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_user_name</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="n">UserId</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="c1"># Логіка отримання імені користувача за його ID</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;User_</span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># user_id тут поводиться як int</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_product_details</span><span class="p">(</span><span class="n">product_id</span><span class="p">:</span> <span class="n">ProductId</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="c1"># Логіка отримання деталей продукту за його ID</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Product_</span><span class="si">{</span><span class="n">product_id</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># product_id тут поводиться як int</span>
+</code></pre></div>
+<p>Створення екземплярів нових типів:</p>
+<div class="highlight"><pre><span></span><code><span class="n">user_one_id</span> <span class="o">=</span> <span class="n">UserId</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+<span class="n">product_A_id</span> <span class="o">=</span> <span class="n">ProductId</span><span class="p">(</span><span class="mi">67890</span><span class="p">)</span>
+</code></pre></div>
+<p>MyPy видасть помилку: Expected UserId, got ProductId:</p>
+<div class="highlight"><pre><span></span><code><span class="n">get_user_name</span><span class="p">(</span><span class="n">product_A_id</span><span class="p">)</span>
+</code></pre></div>
+<p>MyPy видасть помилку: Expected UserId, got int</p>
+<div class="highlight"><pre><span></span><code><span class="n">get_user_name</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</code></pre></div>
+<p>Хоча MyPy бачить їх як різні, під час виконання це просто int:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Тип UserId(123): </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">UserId</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># &lt;class &#39;int&#39;&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;user_one_id == 12345: </span><span class="si">{</span><span class="n">user_one_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">12345</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># True</span>
+
+<span class="n">Помилка</span> <span class="err">—</span> <span class="n">Expected</span> <span class="n">UserId</span><span class="p">,</span> <span class="n">got</span> <span class="nb">int</span><span class="p">:</span>
+
+<span class="err">```</span><span class="n">python</span>
+<span class="n">some_int</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">user_id_from_int</span><span class="p">:</span> <span class="n">UserId</span> <span class="o">=</span> <span class="n">some_int</span> 
+</code></pre></div>
+<p>Потрібно явно викликати конструктор NewType:</p>
+<div class="highlight"><pre><span></span><code><span class="n">user_id_from_int_correct</span><span class="p">:</span> <span class="n">UserId</span> <span class="o">=</span> <span class="n">UserId</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="literal-"><code>Literal</code> - Типізація конкретних літеральних значень</h2>
+<p><code>Literal</code> дозволяє вказати, що змінна або параметр функції може приймати лише одне з декількох конкретних літеральних значень (рядків, чисел, булевих значень, <code>None</code> або Enum).</p>
+<h4 id="_4">Приклад</h4>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+
+<span class="c1"># Визначення типу для режимів доступу до файлу</span>
+<span class="n">FileOpenMode</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;ab&quot;</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">open_custom_file</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="n">FileOpenMode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Відкриття файлу &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39; в режимі &#39;</span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+<span class="n">open_custom_file</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">open_custom_file</span><span class="p">(</span><span class="s2">&quot;image.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+</code></pre></div>
+MyPy видасть помилку Argument "mode" to "open_custom_file" has incompatible type "Literal['x']"; expected "FileOpenMode":</p>
+<div class="highlight"><pre><span></span><code><span class="n">open_custom_file</span><span class="p">(</span><span class="s2">&quot;log.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span> <span class="c1"># </span>
+</code></pre></div>
+<p>Literal може містити різні типи літералів</p>
+<div class="highlight"><pre><span></span><code><span class="n">ResponseStatus</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">404</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;OK&quot;</span><span class="p">,</span> <span class="s2">&quot;Error&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">handle_response_status</span><span class="p">(</span><span class="n">status</span><span class="p">:</span> <span class="n">ResponseStatus</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">200</span> <span class="ow">or</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;OK&quot;</span> <span class="ow">or</span> <span class="n">status</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Все гаразд!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ресурс не знайдено.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">status</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Статус не визначено.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Сталася помилка або інший статус: </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">handle_response_status</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">handle_response_status</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">)</span>
+<span class="n">handle_response_status</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">handle_response_status</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<p>MyPy видасть помилку:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># handle_response_status(301)</span>
+</code></pre></div>
+<p><code>Literal</code> особливо корисний для параметрів, які керують поведінкою функції, де набір допустимих значень обмежений і відомий заздалегідь.</p>
+<h2 id="final-"><code>Final</code> - Позначення констант та неперевизначуваних елементів</h2>
+<p><code>Final</code> використовується для позначення змінних, атрибутів класів або методів, які не повинні бути перепризначені або перевизначені. Статичні аналізатори типів, такі як MyPy, перевіряють ці обмеження.</p>
+<p>Використання:</p>
+<ul>
+<li><strong>Змінні/Атрибути</strong>: <code>variable: Final[type] = value</code></li>
+<li><strong>Методи</strong>: Декоратор <code>@final</code> (з <code>typing</code> або <code>typing_extensions</code> для старіших версій Python).</li>
+</ul>
+<h4 id="_5">Приклад</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Final</span><span class="p">,</span> <span class="n">final</span>
+
+<span class="c1"># Глобальна константа</span>
+<span class="n">API_VERSION</span><span class="p">:</span> <span class="n">Final</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;v1.2.3&quot;</span>
+<span class="n">API_VERSION</span> <span class="o">=</span> <span class="s2">&quot;v2.0.0&quot;</span> <span class="c1"># MyPy видасть помилку: Cannot assign to final name &quot;API_VERSION&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Configuration</span><span class="p">:</span>
+    <span class="n">DEBUG_MODE</span><span class="p">:</span> <span class="n">Final</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
+    <span class="n">DEFAULT_TIMEOUT</span><span class="p">:</span> <span class="n">Final</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Можна ініціалізувати тут</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">debug</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DEBUG_MODE</span> <span class="o">=</span> <span class="n">debug</span> <span class="c1"># Final атрибути можна ініціалізувати в __init__</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DEFAULT_TIMEOUT</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># MyPy видасть помилку, якщо вже ініціалізовано при оголошенні</span>
+                                     <span class="c1"># і це не перше присвоєння в __init__ для цього екземпляра.</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">DEBUG_MODE</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># MyPy видасть помилку поза __init__ (або якщо це перепризначення)</span>
+
+    <span class="nd">@final</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_settings_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Debug: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">DEBUG_MODE</span><span class="si">}</span><span class="s2">, Timeout: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">DEFAULT_TIMEOUT</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">AdvancedConfiguration</span><span class="p">(</span><span class="n">Configuration</span><span class="p">):</span>
+    <span class="c1"># Не можна перевизначити метод, позначений як @final</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_settings_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span> <span class="c1"># MyPy видасть помилку: Cannot override final method &quot;get_settings_summary&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;Advanced summary&quot;</span>
+    <span class="k">pass</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">get_settings_summary</span><span class="p">())</span>
+<span class="n">config</span><span class="o">.</span><span class="n">DEFAULT_TIMEOUT</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># MyPy видасть помилку: Cannot assign to final attribute &quot;DEFAULT_TIMEOUT&quot;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">DEBUG_MODE</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># MyPy видасть помилку: Cannot assign to final attribute &quot;DEBUG_MODE&quot;</span>
+</code></pre></div>
+<p><code>Final</code> допомагає чіткіше виразити наміри в коді та запобігти випадковим змінам важливих значень або поведінки.</p>
+<h2 id="typeddict-"><code>TypedDict</code> - Типізація словників з фіксованою структурою</h2>
+<p><code>TypedDict</code> дозволяє визначати типи для словників, які мають фіксований набір рядкових ключів, і для кожного ключа – певний тип значення. Це схоже на структуру даних або інтерфейс для словників.</p>
+<p>Синтаксис:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypedDict</span><span class="p">,</span> <span class="n">NotRequired</span> <span class="c1"># NotRequired з Python 3.11+ або typing_extensions</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyDictType</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="n">key1</span><span class="p">:</span> <span class="n">type1</span>
+    <span class="n">key2</span><span class="p">:</span> <span class="n">type2</span>
+    <span class="n">optional_key</span><span class="p">:</span> <span class="n">NotRequired</span><span class="p">[</span><span class="n">type3</span><span class="p">]</span> <span class="c1"># NotRequired для необов&#39;язкових ключів</span>
+</code></pre></div>
+<h3 id="notrequired-required"><code>NotRequired</code> та <code>Required</code></h3>
+<ul>
+<li><code>NotRequired[T]</code>: Вказує, що ключ може бути відсутнім у словнику. Доступний в <code>typing</code> з Python 3.11+, для старіших версій використовуйте <code>typing_extensions.NotRequired</code>.</li>
+<li><code>Required[T]</code>: Явно вказує, що ключ є обов'язковим. Це корисно, якщо <code>TypedDict</code> визначено з <code>total=False</code>, але деякі ключі все одно мають бути обов'язковими. Доступний в <code>typing</code> з Python 3.11+, для старіших версій використовуйте <code>typing_extensions.Required</code>.</li>
+</ul>
+<p>За замовчуванням, усі ключі в <code>TypedDict</code> є обов'язковими (<code>total=True</code>). </p>
+<p>Щоб зробити всі ключі необов'язковими за замовчуванням, можна передати <code>total=False</code> при визначенні <code>TypedDict</code>:
+<code>class MyPartialDict(TypedDict, total=False): ...</code></p>
+<h4 id="notrequired">Приклад з NotRequired</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypedDict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">NotRequired</span><span class="p">,</span> <span class="n">Required</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Movie</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">year</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">director</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">genres</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">rating</span><span class="p">:</span> <span class="n">NotRequired</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="c1"># Цей ключ може бути відсутнім</span>
+    <span class="n">budget</span><span class="p">:</span> <span class="n">NotRequired</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="c1"># Може бути відсутнім, або None, якщо присутній</span>
+
+<span class="c1"># Приклад з total=False, де більшість ключів необов&#39;язкові</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PartialMovieInfo</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">title</span><span class="p">:</span> <span class="n">Required</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="c1"># title обов&#39;язковий, навіть якщо total=False</span>
+    <span class="n">year</span><span class="p">:</span> <span class="nb">int</span>            <span class="c1"># year необов&#39;язковий</span>
+    <span class="n">director</span><span class="p">:</span> <span class="nb">str</span>        <span class="c1"># director необов&#39;язковий</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">print_movie_details</span><span class="p">(</span><span class="n">movie</span><span class="p">:</span> <span class="n">Movie</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Назва: </span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Режисер: </span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;director&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Жанри: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;rating&#39;</span> <span class="ow">in</span> <span class="n">movie</span> <span class="ow">and</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># Перевірка наявності та значення</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Рейтинг: </span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">/10&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Рейтинг: не вказано або відсутній&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s1">&#39;budget&#39;</span> <span class="ow">in</span> <span class="n">movie</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;budget&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Бюджет: $</span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;budget&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Бюджет: невідомий (None)&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Бюджет: не вказано&quot;</span><span class="p">)</span>
+
+
+<span class="n">movie_data</span><span class="p">:</span> <span class="n">Movie</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Inception&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2010</span><span class="p">,</span>
+    <span class="s2">&quot;director&quot;</span><span class="p">:</span> <span class="s2">&quot;Christopher Nolan&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;genres&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Sci-Fi&quot;</span><span class="p">,</span> <span class="s2">&quot;Thriller&quot;</span><span class="p">,</span> <span class="s2">&quot;Action&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="mf">8.8</span><span class="p">,</span>
+    <span class="s2">&quot;budget&quot;</span><span class="p">:</span> <span class="mi">160000000</span>
+<span class="p">}</span>
+
+<span class="n">another_movie_data</span><span class="p">:</span> <span class="n">Movie</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;The Matrix&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1999</span><span class="p">,</span>
+    <span class="s2">&quot;director&quot;</span><span class="p">:</span> <span class="s2">&quot;Wachowskis&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;genres&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Sci-Fi&quot;</span><span class="p">,</span> <span class="s2">&quot;Action&quot;</span><span class="p">],</span>
+    <span class="c1"># Ключ &#39;rating&#39; відсутній, &#39;budget&#39; також</span>
+<span class="p">}</span>
+
+<span class="n">movie_with_none_budget</span><span class="p">:</span> <span class="n">Movie</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Tenet&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2020</span><span class="p">,</span>
+    <span class="s2">&quot;director&quot;</span><span class="p">:</span> <span class="s2">&quot;Christopher Nolan&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;genres&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Action&quot;</span><span class="p">,</span> <span class="s2">&quot;Sci-Fi&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;budget&quot;</span><span class="p">:</span> <span class="kc">None</span> <span class="c1"># Допустимо, оскільки тип budget: NotRequired[int | None]</span>
+<span class="p">}</span>
+
+<span class="n">print_movie_details</span><span class="p">(</span><span class="n">movie_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">print_movie_details</span><span class="p">(</span><span class="n">another_movie_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">print_movie_details</span><span class="p">(</span><span class="n">movie_with_none_budget</span><span class="p">)</span>
+
+
+<span class="c1"># Приклад використання PartialMovieInfo</span>
+<span class="n">partial_info</span><span class="p">:</span> <span class="n">PartialMovieInfo</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Dune&quot;</span><span class="p">}</span> <span class="c1"># Тільки title, year і director необов&#39;язкові</span>
+<span class="c1"># partial_info_invalid: PartialMovieInfo = {&quot;year&quot;: 2021} # MyPy видасть помилку: &quot;title&quot; is missing</span>
+
+<span class="c1"># MyPy видасть помилку, якщо:</span>
+<span class="c1"># - відсутній обов&#39;язковий ключ: missing_director: Movie = {&quot;title&quot;: &quot;Test&quot;, &quot;year&quot;: 2022, &quot;genres&quot;: []}</span>
+<span class="c1"># - неправильний тип значення: wrong_year_type: Movie = {&quot;title&quot;: &quot;Test&quot;, &quot;year&quot;: &quot;2022&quot;, &quot;director&quot;: &quot;N/A&quot;, &quot;genres&quot;: []}</span>
+<span class="c1"># - присутній зайвий ключ (якщо total=True): extra_key: Movie = {..., &quot;country&quot;: &quot;USA&quot;}</span>
+</code></pre></div>
+<h2 id="protocol-duck-typing"><code>Protocol</code> - Структурна типізація (Duck Typing)</h2>
+<p><code>Protocol</code> дозволяє визначати інтерфейси на основі структурної сумісності (duck typing). 
+Клас неявно реалізує протокол, якщо він має всі атрибути та методи, визначені в протоколі, з відповідними сигнатурами. 
+Явне успадкування від протоколу не є обов'язковим, але може використовуватися для чіткості та перевірки реалізації статичним аналізатором (MyPy це перевірить, якщо клас успадковує протокол).</p>
+<p>Синтаксис:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+    <span class="n">attribute</span><span class="p">:</span> <span class="n">SomeType</span> <span class="c1"># Атрибут, який має бути присутнім</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">:</span> <span class="n">ArgType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ReturnType</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">method_with_default</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span> <span class="c1"># Протоколи можуть мати реалізації за замовчуванням</span>
+</code></pre></div>
+<p>Методи в протоколі можуть мати реалізацію за замовчуванням. 
+Якщо клас, що реалізує протокол, не надає власну реалізацію такого методу, використовується реалізація з протоколу.</p>
+<h3 id="runtime_checkable"><code>@runtime_checkable</code></h3>
+<p>Декоратор <code>@runtime_checkable</code> (з <code>typing</code> або <code>typing_extensions</code> для старіших версій Python) дозволяє використовувати <code>isinstance()</code> та <code>issubclass()</code> з протоколами під час виконання. 
+Без нього <code>isinstance()</code> з протоколом зазвичай викликає <code>TypeError</code>. 
+Використання <code>@runtime_checkable</code> може мати невеликий вплив на продуктивність.</p>
+<h4 id="_6">Приклад</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span><span class="p">,</span> <span class="n">runtime_checkable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="nd">@runtime_checkable</span> <span class="c1"># Дозволяє isinstance() перевірки під час виконання</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Serializable</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span> <span class="o">...</span> <span class="c1"># Метод, який має бути реалізований</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">HasName</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="c1"># Атрибут, який має бути присутнім</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">:</span> <span class="c1"># Не успадковує явно від Serializable або HasName</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">user_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="c1"># Відповідає HasName</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span> <span class="c1"># Відповідає Serializable</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">{{</span><span class="s1">&quot;id&quot;: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">user_id</span><span class="si">}</span><span class="s1">, &quot;name&quot;: &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&quot;, &quot;email&quot;: &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="si">}</span><span class="s1">&quot;</span><span class="se">}}</span><span class="s1">&#39;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Product</span><span class="p">:</span> <span class="c1"># Не успадковує явно</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">price</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">product_id</span> <span class="o">=</span> <span class="n">product_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="c1"># Відповідає HasName</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span> <span class="c1"># Відповідає Serializable</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="se">{{</span><span class="s1">&quot;product_id&quot;: &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">product_id</span><span class="si">}</span><span class="s1">&quot;, &quot;name&quot;: &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&quot;, &quot;price&quot;: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">price</span><span class="si">}</span><span class="se">}}</span><span class="s1">&#39;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">NonSerializableData</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_val</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span> <span class="c1"># data перейменовано на data_val</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_val</span> <span class="o">=</span> <span class="n">data_val</span>
+    <span class="c1"># Не має методу serialize() і атрибуту name</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">save_to_json_string</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Serializable</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">serialize</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">print_names</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">HasName</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+
+<span class="n">user1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;alice@example.com&quot;</span><span class="p">)</span>
+<span class="n">product1</span> <span class="o">=</span> <span class="n">Product</span><span class="p">(</span><span class="s2">&quot;prod123&quot;</span><span class="p">,</span> <span class="s2">&quot;Laptop&quot;</span><span class="p">,</span> <span class="mf">999.99</span><span class="p">)</span>
+<span class="n">non_serializable_obj</span> <span class="o">=</span> <span class="n">NonSerializableData</span><span class="p">({</span><span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">})</span> <span class="c1"># non_serializable перейменовано</span>
+
+<span class="c1"># MyPy коректно обробить ці виклики</span>
+<span class="n">serialized_items</span> <span class="o">=</span> <span class="n">save_to_json_string</span><span class="p">([</span><span class="n">user1</span><span class="p">,</span> <span class="n">product1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Серіалізовані елементи: </span><span class="si">{</span><span class="n">serialized_items</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">print_names</span><span class="p">([</span><span class="n">user1</span><span class="p">,</span> <span class="n">product1</span><span class="p">])</span>
+<span class="c1"># print_names([non_serializable_obj]) # MyPy видасть помилку, бо NonSerializableData не має атрибуту &#39;name&#39;</span>
+<span class="c1"># save_to_json_string([non_serializable_obj]) # MyPy видасть помилку, бо NonSerializableData не має методу &#39;serialize&#39;</span>
+
+<span class="c1"># Перевірка під час виконання завдяки @runtime_checkable для Serializable</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;user1 is Serializable: </span><span class="si">{</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">user1</span><span class="p">,</span><span class="w"> </span><span class="n">Serializable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;product1 is Serializable: </span><span class="si">{</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">product1</span><span class="p">,</span><span class="w"> </span><span class="n">Serializable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;non_serializable_obj is Serializable: </span><span class="si">{</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">non_serializable_obj</span><span class="p">,</span><span class="w"> </span><span class="n">Serializable</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># False</span>
+
+<span class="c1"># HasName не є @runtime_checkable, тому isinstance(user1, HasName) викличе TypeError</span>
+<span class="c1"># print(f&quot;user1 is HasName: {isinstance(user1, HasName)}&quot;) # TypeError</span>
+
+<span class="c1"># Явна реалізація протоколу (допомагає MyPy перевірити клас)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Logger</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ConsoleLogger</span><span class="p">:</span> <span class="c1"># Явно не успадковує, але відповідає</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LOG: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">use_logger</span><span class="p">(</span><span class="n">logger</span><span class="p">:</span> <span class="n">Logger</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">my_logger</span> <span class="o">=</span> <span class="n">ConsoleLogger</span><span class="p">()</span>
+<span class="n">use_logger</span><span class="p">(</span><span class="n">my_logger</span><span class="p">,</span> <span class="s2">&quot;Системна подія&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="type-aliases">Псевдоніми типів (Type Aliases)</h2>
+<p>Псевдоніми типів дозволяють створювати більш зрозумілі або короткі назви 
+для складних, довгих або часто використовуваних анотацій типів. 
+Це покращує читабельність коду та полегшує рефакторинг.</p>
+<p>Синтаксис.</p>
+<p>Просте присвоєння (усі версії Python):</p>
+<div class="highlight"><pre><span></span><code><span class="err">`</span><span class="n">MyAlias</span> <span class="o">=</span> <span class="n">complex_type_annotation</span><span class="err">`</span>
+</code></pre></div>
+<p>Спеціальний синтаксис <code>type</code> (Python 3.12+, PEP 695):</p>
+<div class="highlight"><pre><span></span><code><span class="err">`</span><span class="nb">type</span> <span class="n">MyAlias</span> <span class="o">=</span> <span class="n">complex_type_annotation</span><span class="err">`</span>
+</code></pre></div>
+<p>Цей новий синтаксис чіткіше вказує на намір створення псевдоніма типу 
+і може підтримуватися інструментами статичного аналізу краще. 
+Він також дозволяє створювати генеричні псевдоніми типів: </p>
+<div class="highlight"><pre><span></span><code><span class="err">`</span><span class="nb">type</span> <span class="n">ListOrTuple</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<h4 id="_7">Приклад</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="c1"># Традиційні псевдоніми</span>
+<span class="n">Vector</span> <span class="o">=</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+<span class="n">Point2D</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+<span class="n">Headers</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
+<span class="n">JSONValue</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span>
+<span class="n">JSONDict</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">JSONValue</span><span class="p">]</span>
+<span class="n">MaybeString</span> <span class="o">=</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="c1"># Еквівалент Union[str, None] або str | None</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">scale_vector</span><span class="p">(</span><span class="n">vector</span><span class="p">:</span> <span class="n">Vector</span><span class="p">,</span> <span class="n">scalar</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vector</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">scalar</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vector</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">print_point</span><span class="p">(</span><span class="n">point</span><span class="p">:</span> <span class="n">Point2D</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;X: </span><span class="si">{</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, Y: </span><span class="si">{</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">process_request</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">headers</span><span class="p">:</span> <span class="n">Headers</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JSONDict</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Запит до </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2"> з заголовками: </span><span class="si">{</span><span class="n">headers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># ... логіка запиту ...</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;item1&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]}</span>
+
+<span class="n">user_name</span><span class="p">:</span> <span class="n">MaybeString</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">user_name_none</span><span class="p">:</span> <span class="n">MaybeString</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Використання псевдонімів покращує читабельність</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_coordinates</span><span class="p">(</span><span class="n">points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Point2D</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+        <span class="n">print_point</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+<p>Псевдоніми з новим синтаксисом (Python 3.12+):</p>
+<!-- Також цей синтаксис не можна використовувати всередині функцій або класів. -->
+
+<div class="highlight"><pre><span></span><code><span class="nb">type</span> <span class="n">Coordinates</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
+<span class="nb">type</span> <span class="n">Identifier</span> <span class="o">=</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span>
+<span class="nb">type</span> <span class="n">StringOrNone</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="c1"># Сучасний аналог Optional[str]</span>
+<span class="nb">type</span> <span class="n">Result</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">T</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="c1"># Генеричний псевдонім типу</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_distance</span><span class="p">(</span><span class="n">p1</span><span class="p">:</span> <span class="n">Coordinates</span><span class="p">,</span> <span class="n">p2</span><span class="p">:</span> <span class="n">Coordinates</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="c1"># ... логіка обчислення відстані ...</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fetch_data</span><span class="p">(</span><span class="n">uid</span><span class="p">:</span> <span class="n">Identifier</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">uid</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Data for 1&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">uid</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Test data&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="n">user_id</span><span class="p">:</span> <span class="n">Identifier</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">item_name</span><span class="p">:</span> <span class="n">StringOrNone</span> <span class="o">=</span> <span class="s2">&quot;Book&quot;</span>
+
+<span class="n">success</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fetch_data</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fetched: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Псевдоніми типів не створюють нових типів. 
+Вони просто дають інше ім'я існуючому типу. 
+Особливо корисні для складних генериків, об'єднань або для надання семантичного значення простим типам у певному контексті.</p>
+<hr />
+<p>Використання цих розширених типів з модуля <code>typing</code> значно підвищує надійність та супроводжуваність Python-коду, особливо у великих проектах та при роботі в команді. 
+Статичні аналізатори, такі як MyPy, можуть використовувати ці анотації для виявлення потенційних помилок ще до запуску програми.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Ruslan Iskov <ruslan.rv.ua@gmail.com>
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ruslan-rv-ua/pystarter" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "header.autohide", "navigation.instant", "navigation.footer", "navigation.prune"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f13b1293.min.js"></script>
+      
+    
+  </body>
+</html>
