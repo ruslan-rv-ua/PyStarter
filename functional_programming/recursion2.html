@@ -2009,12 +2009,12 @@
 <li><strong>непряма</strong> або складна, коли функція викликає себе через іншу функцію, наприклад функція A викликає функцію B, а функція B викликає функцію A.</li>
 </ul>
 <p>Кількість вкладених викликів функції називають <em>глибиною рекурсії</em>.</p>
-<p>Реалізація рекурсивних викликів функцій у мовах програмування, за правило, опирається на механізм стека викликів — адреса повернення і локальні
+<p>Реалізація рекурсивних викликів функцій у мовах програмування, як правило, опирається на механізм стека викликів — адреса повернення і локальні
 змінні функції записуються у стек, 
 завдяки чому кожен наступний
 рекурсивний виклик цієї функції використовує свій набір локальних змінних і 
 за рахунок цього працює корректно. 
-Оборотною стороною цього досить простого по
+Зворотною стороною цього досить простого по
 структурі механізму є те, що на кожен рекурсивний виклик потрібно 
 деяка кількість оперативної пам'яті комп'ютера, і при надвеликій 
 глибині рекурсії може статися переповнення стека викликів. </p>
@@ -2053,7 +2053,7 @@ F(n) = F(n-1) + F(n-2), n&gt;=2</p>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
-<p>Зауважимо, що такий алгоритм знаходження послідовності Фібоначчі не є ефективним, оскільки числа обчислюються декілька раз. Наприклад, якщо ми хочемо знайти число Фібоначчі з номером 5, то виклик функції <code>fib()</code> буде таким:</p>
+<p>Зауважимо, що такий алгоритм знаходження послідовності Фібоначчі не є ефективним, оскільки числа обчислюються декілька разів. Наприклад, якщо ми хочемо знайти число Фібоначчі з номером 5, то виклик функції <code>fib()</code> буде таким:</p>
 <pre><code>fib(5)
     fib(4)
         fib(3)
@@ -2072,7 +2072,7 @@ F(n) = F(n-1) + F(n-2), n&gt;=2</p>
 <li>з аргументом 4 викликалась 1 раз</li>
 <li>з аргументом 5 викликалась 1 раз</li>
 </ul>
-<p>Тобто усього було 9 викликів!</p>
+<p>Тобто всього було 9 викликів!</p>
 <p>А чи можна зробити так, 
 щоб уникнути повторних обчислень? 
 Можна! 
@@ -2080,11 +2080,9 @@ F(n) = F(n-1) + F(n-2), n&gt;=2</p>
 які функція порахувала для певних аргументів, 
 то ми можемо уникнути повторних рекурсивних викликів. </p>
 <p>Прийом називається "мемоізація".</p>
-<blockquote>
-<p><strong><em>Мемоізація</em></strong> (memoization, запам'ятовування) — збереження результатів виконання функцій для запобігання повторних обчислень. Це один з способів оптимізації, який застосовується для збільшення швидкості виконання комп'ютерних програм. </p>
-</blockquote>
+<p><strong><em>Мемоізація</em></strong> (memoization, запам'ятовування) — збереження результатів виконання функцій для запобігання повторних обчислень. Це один зі способів оптимізації, який застосовується для збільшення швидкості виконання комп'ютерних програм. </p>
 <p>Перед викликом функції перевіряється, 
-чи викликалась функція раніше з заданими аргументами: </p>
+чи викликалась функція раніше із заданими аргументами: </p>
 <ul>
 <li>якщо не викликалась, функція викликається і результат її виконання зберігається;</li>
 <li>якщо викликалась, використовується збережений результат.</li>
@@ -2120,7 +2118,7 @@ F(n) = F(n-1) + F(n-2), n&gt;=2</p>
     <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">1</span>
 </code></pre></div>
 <p>Взагалі питання про доцільність використання рекурсивних функцій у програмуванні неоднозначне: 
-з одного боку рекурсивна форма може бути структурно простіша і наочніше, 
+з одного боку рекурсивна форма може бути структурно простішою і наочнішою, 
 особливо коли сам алгоритм, який треба реалізувати, по своїй суті рекурсивний. 
 З іншого боку зазвичай рекомендується уникати рекурсивних програм, 
 котрі призводять (або у деяких умовах можуть призводити) до занадто великої глибини рекурсії. </p>
@@ -2184,22 +2182,22 @@ F(n) = F(n-1) + F(n-2), n&gt;=2</p>
         <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s3</span><span class="p">)</span>
 </code></pre></div>
 <p>Використовуємо:</p>
-<pre><code>&gt;&gt;&gt; hanoi(1, '1', '2', '3')
-1 - 3
-&gt;&gt;&gt; hanoi(2, '1', '2', '3')
-1 - 2
-1 - 3
-2 - 3
-&gt;&gt;&gt; hanoi(3, '1', '2', '3')
-1 - 3
-1 - 2
-3 - 2
-1 - 3
-2 - 1
-2 - 3
-1 - 3
-&gt;&gt;&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hanoi</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">hanoi</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">hanoi</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></div>
 
 
 

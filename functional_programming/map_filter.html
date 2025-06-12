@@ -22,7 +22,7 @@
     
     
       
-        <title>Класичні функції вищого порядка - PyStarter</title>
+        <title>Класичні функції вищого порядку - PyStarter</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Класичні функції вищого порядка
+              Класичні функції вищого порядку
             
           </span>
         </div>
@@ -1985,8 +1985,8 @@
 
 
 
-<h1 id="_1">Класичні функції вищого порядка</h1>
-<p>Розглянемо "класичні" функції вищого порядка, 
+<h1 id="_1">Класичні функції вищого порядку</h1>
+<p>Розглянемо "класичні" функції вищого порядку, 
 які приймають ітерабельні об'єкти і функції. </p>
 <h3 id="map"><code>map()</code></h3>
 <p>Використовується для застосування заданої функції до кожного елемента в ітерабельному об'єкті 
@@ -2006,7 +2006,7 @@
 [2, 4, 8, 15, 42]
 &gt;&gt;&gt;
 </code></pre>
-<p>Функції map() ми передали функцію int і список з символьних рядків, до елементів якого і було застосовано цю функцію.</p>
+<p>Функції map() ми передали функцію int і список символьних рядків, до елементів якого було застосовано цю функцію.</p>
 <p>Ще приклади:</p>
 <div class="highlight"><pre><span></span><code>&gt;&gt;&gt; list(map(lambda x: x**2, [1, 2, 3, 4, 5]))
 [1, 4, 9, 16, 25]
@@ -2014,6 +2014,12 @@
 [1, 2, 3, 4, 5]
 &gt;&gt;&gt; list(map(str.upper, [&#39;hello&#39;, &#39;world&#39;]))
 [&#39;HELLO&#39;, &#39;WORLD&#39;]
+</code></pre></div>
+<p>Приклад з декількома ітерабельними об'єктами:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>
+<span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">]))</span> <span class="c1"># Зупиниться по найкоротшому (один елемент)</span>
+<span class="p">[</span><span class="mi">10</span><span class="p">]</span>
 </code></pre></div>
 <h3 id="filter"><code>filter()</code></h3>
 <p>Функція <code>filter()</code> використовується для фільтрації елементів у ітерабельному об'єкті за допомогою заданої функції та повертає ітератор, що містить лише ті елементи, для яких функція повертає <code>True</code>.</p>
@@ -2031,6 +2037,10 @@
 &gt;&gt;&gt; list(filter(lambda s: len(s) &gt; 3, [&#39;apple&#39;, &#39;banana&#39;, &#39;kiwi&#39;, &#39;orange&#39;]))
 [&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;]
 </code></pre></div>
+<p>Якщо в якості функції передати <code>None</code>, <code>filter()</code> видалить елементи, які є хибними (falsey):</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]))</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+</code></pre></div>
 <h3 id="reduce"><code>reduce()</code></h3>
 <p>Використовується для послідовного застосування заданої функції до всіх елементів ітерабельного об'єкта, зводячи їх до одного значення.</p>
 <pre><code>reduce(function, iterable[, initializer])
@@ -2039,7 +2049,7 @@
 <ul>
 <li><code>function</code> — бінарна функція, яка приймає два аргументи і повертає результат;</li>
 <li><code>iterable</code> — ітерабельний об'єкт;</li>
-<li><code>initializer</code> (опційно) — початкове значення аккумулятора. Якщо не задано, то береться перший елемент ітерабельного об'єкта.</li>
+<li><code>initializer</code> (опційно) — початкове значення акумулятора. Якщо не задано, то береться перший елемент ітерабельного об'єкта.</li>
 </ul>
 <p>Якщо задано значення акумулятора, тоді для акумулятора і для першого елемента послідовності викликається задана функція. Якщо ж значення акумулятора не задано, функція викликається для перших двох елементів. 
 Результат дії заданої функції записується в акумулятор. 
@@ -2053,8 +2063,8 @@
 </code></pre>
 <p>Функції <code>reduce()</code> ми передали анонімну функцію, яка повертає добуток двох чисел. 
 Ця функція застосовується спершу до чисел 1 і 2, в результаті отримуємо 2. 
-Потім до чисел 2 (попередній результат) і 3 (наступний елемент списка), вийде 6. 
-Потім до чисел 6 і 4, і врешті решт до чисел 24 і 5. </p>
+Потім до чисел 2 (попередній результат) і 3 (наступний елемент списку), вийде 6. 
+Потім до чисел 6 і 4, і врешті-решт до чисел 24 і 5. </p>
 <p>Ще один приклад. 
 Є список списків чисел:</p>
 <pre><code>[[1, 2, 3], [4, 5], [6, 7, 8]]
@@ -2069,14 +2079,14 @@
 [1, 2, 3, 4, 5, 6, 7, 8]
 &gt;&gt;&gt;
 </code></pre>
-<p>Ще можна замість анонімної функції використати магічний метод класа <code>list</code>:</p>
+<p>Ще можна замість анонімної функції використати магічний метод класу <code>list</code>:</p>
 <pre><code>&gt;&gt;&gt; l = reduce(list.__add__, nums)
 &gt;&gt;&gt; l
 [1, 2, 3, 4, 5, 6, 7, 8]
 &gt;&gt;&gt;
 </code></pre>
 <p>Функція <code>reduce()</code> — це "класика" агрегування даних. 
-Ось як наприклад можна реалізувати функцію <code>sum()</code>:</p>
+Ось, наприклад, як можна реалізувати функцію <code>sum()</code>:</p>
 <pre><code>reduce(lambda x, y: x + y, iterable)
 </code></pre>
 <p>А ось реалізація <code>max()</code>:</p>
