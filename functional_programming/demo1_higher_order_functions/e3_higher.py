@@ -58,5 +58,5 @@ students = [
 
 def get_age(student):
     return student.age
-r = [student.name for student in sorted(students, key=get_age)]
+# r = [student.name for student in sorted(students, key=get_age)]
 

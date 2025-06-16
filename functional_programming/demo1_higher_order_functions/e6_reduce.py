@@ -11,12 +11,16 @@ s = reduce(add, numbers)
 s = reduce(add, numbers, 100)
 ########
 
-numbers = [[1, 2, 3], [4, 5], [6, 7, 8]]
+numbers = [[], [1, 2, 3], [4, 5], [6, 7, 8]]
 l = reduce(lambda l1, l2: l1+l2, numbers)
 l = reduce(list.__add__, numbers)
 
 l = reduce(add, numbers)
+r1 = sum(reduce(add, numbers))
 
 ###########
 # factorial
-f = reduce(mul, range(1, 4))
+def factorial(n):
+    return reduce(mul, range(1, n+1))
+f1 = reduce(mul, range(1, 4))
+f2 = factorial(3)

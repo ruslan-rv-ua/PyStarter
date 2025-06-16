@@ -9,9 +9,9 @@ def counter(function):
     
 p = counter(print)
 
-cprint('hello', sep=' ')
-cprint(*'hello', sep=' ')
+p('hello', sep=' ')
+p(*'hello', sep=' ')
 
-print(cprint.__code__.co_freevars, sep='\n')
+print(p.__code__.co_freevars, sep='\n')
 # print(*cprint.__closure__, sep='\n')
 
