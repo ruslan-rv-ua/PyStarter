@@ -42,13 +42,3 @@ print('done')
 f(10**7)
 print('done')
 
-
-
-
-
-
-
-
-
-
-

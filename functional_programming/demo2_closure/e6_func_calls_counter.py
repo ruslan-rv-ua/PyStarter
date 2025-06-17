@@ -8,7 +8,6 @@ def counter(function):
     return f
     
 p = counter(print)
-
 p('hello', sep=' ')
 p(*'hello', sep=' ')
 

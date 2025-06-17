@@ -18,7 +18,7 @@
         <link rel="prev" href="closures1.html">
       
       
-        <link rel="next" href="../io/files_and_streams.html">
+        <link rel="next" href="decorators1.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -1697,6 +1697,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Переваги та випадки використання замикань
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1708,6 +1717,46 @@
             
           </ul>
         </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="decorators1.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    35. Декоратори
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
       
     </li>
   
@@ -2130,6 +2179,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Переваги та випадки використання замикань
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2278,6 +2336,16 @@ Rust rocks!
 2
 &gt;&gt;&gt;
 </code></pre>
+<h3 id="_5">Переваги та випадки використання замикань</h3>
+<p>Замикання надають кілька переваг та знаходять своє застосування у різних сценаріях:</p>
+<ul>
+<li><strong>Приховування даних:</strong> Замикання дозволяють створювати змінні, які є "приватними" для внутрішньої функції. Зовнішній код не може безпосередньо отримати доступ до цих змінних, окрім як через саму функцію-замикання. Це допомагає в інкапсуляції.</li>
+<li><strong>Збереження стану:</strong> Як видно з прикладу <code>counter</code>, замикання можуть зберігати стан між викликами. Кожен виклик <code>counter()</code> створює новий незалежний стан.</li>
+<li><strong>Фабрики функцій та конфігурація:</strong> Замикання ідеально підходять для створення спеціалізованих версій функцій, як у прикладі <code>quadratic_function</code>. Ви передаєте конфігурацію один раз, а потім використовуєте налаштовану функцію.</li>
+<li><strong>Декоратори:</strong> В Python декоратори часто реалізуються за допомогою замикань. Детальніше про декоратори — у наступних розділах.</li>
+</ul>
+<p>Це лише короткий огляд. 
+Замикання є потужним інструментом у функційному програмуванні та широко використовуються в Python.</p>
 
 
 
@@ -2331,13 +2399,13 @@ Rust rocks!
         
         
           
-          <a href="../io/files_and_streams.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Файли і потоки">
+          <a href="decorators1.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: Декоратори в Python">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Файли і потоки
+                Декоратори в Python
               </div>
             </div>
             <div class="md-footer__button md-icon">

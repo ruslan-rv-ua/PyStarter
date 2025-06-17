@@ -36,7 +36,7 @@ def outer(message):
 rocks = outer('rocks')
 rocks('Python')
 sucks = outer('sucks')
-sucks('Java')
+sucks('JavaScript')
 rocks('Rust')
 
 ##########################
