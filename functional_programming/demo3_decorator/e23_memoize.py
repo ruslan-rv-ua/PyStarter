@@ -21,13 +21,13 @@ def memoize(func):
 @timeit
 @memoize
 def f1():
-	res = ' ' * 10**6
+	res = ' ' * 10**7
 
 @timeit
 @memoize
 def f2():
 	res = ''
-	for i in range(10**6):
+	for i in range(10**7):
 		res += ' '
 
 f1()

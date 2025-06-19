@@ -35,4 +35,4 @@ print()
 def iphone():
 	print('Айфон')
 	
-gift()
+iphone()

@@ -15,6 +15,10 @@
         <link rel="canonical" href="http://ruslan.rv.ua/PyStarter/functional_programming/decorators3.html">
       
       
+        <link rel="prev" href="decorators2.html">
+      
+      
+        <link rel="next" href="decorators5.html">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -1594,6 +1598,231 @@
       
   
   
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_38" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_38" id="__nav_38_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    35. Декоратори
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_38_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_38">
+            <span class="md-nav__icon md-icon"></span>
+            35. Декоратори
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="decorators1.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Декоратори в Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="decorators2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Практики використання
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Декоратори з параметрами
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="decorators3.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Декоратори з параметрами
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Клас-декоратор
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="decorators5.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    "Акуратні" декоратори
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="recursion1.html" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    36. Рекурсія
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     
@@ -2071,10 +2300,10 @@
 &gt;&gt;&gt;
 </code></pre>
 <p>З декораторів з параметрами теж можна будувати ланцюжки:</p>
-<div class="highlight"><pre><span></span><code>@make_sandwich(&#39;Хліб&#39;)
-@make_sandwich(&#39;Хрін&#39;)
-def super_sandwich(sandwich_with):
-    print(sandwich_with)
+<div class="highlight"><pre><span></span><code><span class="nd">@make_sandwich</span><span class="p">(</span><span class="s1">&#39;Хліб&#39;</span><span class="p">)</span>
+<span class="nd">@make_sandwich</span><span class="p">(</span><span class="s1">&#39;Хрін&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">super_sandwich</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sandwich_with</span><span class="p">)</span>
 </code></pre></div>
 <p>Тепер приготуємо "справжній український сендвіч" 😀:</p>
 <pre><code>&gt;&gt;&gt; super_sandwich("Сало")
@@ -2085,18 +2314,18 @@ def super_sandwich(sandwich_with):
 Хліб
 &gt;&gt;&gt;
 </code></pre>
-<p>Сама зовнішня функція <code>make_sandwich()</code> як би виготовляэ декоратори з потрібними властивостями. 
-Такі функції називають "фибриками декораторів".</p>
+<p>Сама зовнішня функція <code>make_sandwich()</code> як би виготовляє декоратори з потрібними властивостями. 
+Такі функції називають "фабриками декораторів".</p>
 <h3 id="-">Клас-декоратор</h3>
 <!-- https://habr.com/ru/post/587066/ -->
 
-<p>Отже щоб створити декоратор з параметрами ми використовували три вкладені одна в одну функції. 
+<p>Отже, щоб створити декоратор з параметрами ми використовували три вкладені одна в одну функції. 
 Виглядає трішечки монструозно...
 І саме так було прийнято писати параметризовані декоратори, 
 доки комусь у голову не прийшла світла думка, 
-що декоратор можна створити у вигляді класа. </p>
+що декоратор можна створити у вигляді класу. </p>
 <p>По суті нам необхідно розділити етапи створення з запам'ятовуванням 
-переданих параметрів і виклика, 
+переданих параметрів і виклику, 
 тобто зробити те, що роблять класи. </p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">sandwich_cover</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cover</span><span class="p">):</span>
@@ -2125,7 +2354,7 @@ def super_sandwich(sandwich_with):
 &gt;&gt;&gt;
 </code></pre>
 <p>Код виглядає набагато читабельнішим. 
-Залишилось лише змиритись з назвою класа з маленької букви, 
+Залишилося лише змиритися з назвою класу з маленької літери, 
 або ж з назвою декоратора з великої 😊.</p>
 
 
@@ -2156,6 +2385,46 @@ def super_sandwich(sandwich_with):
       
         <footer class="md-footer">
   
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Футер" >
+        
+          
+          <a href="decorators2.html" class="md-footer__link md-footer__link--prev" aria-label="Назад: Практики використання">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Практики використання
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="decorators5.html" class="md-footer__link md-footer__link--next" aria-label="Вперед: &#34;Акуратні&#34; декоратори">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                "Акуратні" декоратори
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

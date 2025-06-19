@@ -8,9 +8,8 @@ def counter(function):
     return f
     
 p = counter(print)
-p('hello', sep=' ')
-p(*'hello', sep=' ')
+#p('hello', sep=' ')
+#p(*'hello', sep=' ')
 
 print(p.__code__.co_freevars, sep='\n')
-# print(*cprint.__closure__, sep='\n')
-
+# print(*p.__closure__, sep='\n')
